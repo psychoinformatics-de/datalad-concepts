@@ -1,0 +1,8 @@
+# Linter rule set configuration
+# See https://linkml.io/linkml/schemas/linter.html for all rules
+
+# enable the recommended set of rules
+extends: recommended
+#rules:
+#  no_empty_title:
+#    level: error

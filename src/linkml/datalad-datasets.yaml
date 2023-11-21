@@ -1,0 +1,18 @@
+# models for DataLad datasets
+
+id: https://concepts.datalad.org/datalad-datasets
+name: datalad-datasets
+prefixes:
+  dlco: https://concepts.datalad.org/
+imports:
+  - datasets
+
+classes:
+  DataladDataset:
+    is_a: Dataset
+    description: >-
+      DataLad Dataset
+    slot_usage:
+      id:
+        # it is not a DataLad dataset without the ID
+        identifier: true

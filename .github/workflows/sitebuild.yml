@@ -1,0 +1,67 @@
+name: Build and deploy website
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build
+        # this is building a branch specific site
+        # when multiple branches/versions are maintained concurrently
+        # we likely need to build all of them and do a joint upload
+        run: |
+          #mkdir -p ./build/upload
+          #export "SITEDIR=./build/upload/$(git branch --show-current)"
+          #export "SITEURL=https://concepts.datalad.org/$(git branch --show-current)"
+          make mkdocs-site
+          make build/context.jsonld
+          #mv ./build/mkdocs-site $SITEDIR
+          mv ./build/mkdocs-site ./build/upload
+          mv ./build/context.jsonld ./build/upload/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          # Upload the directory created by mkdocs
+          path: ./build/upload
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub pages
+        id: deployment
+        uses: actions/deploy-pages@v2

@@ -1,0 +1,17 @@
+copyright:
+docs_dir: build/linkml-docs
+nav:
+  - Home: index.md
+  - About: about.md
+plugins:
+  - mermaid2
+repo_url: https://github.com/psychoinformatics-de/datalad-concepts
+site_author:
+site_description:
+site_dir: build/mkdocs-site
+site_name: DataLad Concepts Ontology (DLCO)
+site_url: !ENV [SITEURL, 'https://concepts.datalad.org']
+strict: true
+theme:
+  name: gitbook
+  locale: en

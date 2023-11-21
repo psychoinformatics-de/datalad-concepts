@@ -1,0 +1,16 @@
+id: https://concepts.datalad.org
+name: datalad-concepts-ontology
+title: DataLad Concepts Ontology (DLCO)
+description: |-
+  [DataLad Concepts Ontology](https://concepts.datalad.org) (DLCO)
+license: MIT
+
+prefixes:
+  linkml: https://w3id.org/linkml/
+  dlco: https://concepts.datalad.org/
+
+default_prefix: dlco
+
+imports:
+  - datasets
+  - datalad-datasets

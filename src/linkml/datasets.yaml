@@ -1,0 +1,50 @@
+# models for generic datasets
+
+id: https://concepts.datalad.org/datasets
+name: datasets
+prefixes:
+  dctypes: http://purl.org/dc/dcmitype/
+  schema: http://schema.org/
+  dlco: https://concepts.datalad.org/
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
+
+classes:
+  Dataset:
+    class_uri: dlco:Dataset
+    description: >-
+      Dataset concept
+    close_mappings:
+      - schema:Dataset
+    slots:
+      - id
+  DatasetVersion:
+    class_uri: dlco:DatasetVersion
+    description: >-
+      Dataset version
+    exact_mappings:
+      - schema:Dataset
+      - dctypes:Dataset
+  DatasetPart:
+    description: >-
+      Component of a dataset, identified by its path within that dataset.
+    attributes:
+      path:
+        description: some
+        slot_uri: dlco:path
+        required: true
+        range: Path
+  Path:
+    class_uri: dlco:Path
+    description: >-
+      POSIX relpath
+#  SubDataset:
+#    is_a: DatasetVersion
+#    description: >-
+#      Dataset as a part of another dataset
+#
+#
+slots:
+  id:
+    range: string
