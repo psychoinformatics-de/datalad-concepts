@@ -1,0 +1,185 @@
+{
+    "@context": {
+        "schema": "https://schema.org/",
+        "bibo": "https://purl.org/ontology/bibo/",
+        "dcterms": "https://purl.org/dc/terms/",
+        "nfo": "https://www.semanticdesktop.org/ontologies/2007/03/22/nfo/#",
+        "obo": "https://purl.obolibrary.org/obo/",
+        "openminds": "https://openminds.ebrains.eu/controlledTerms/",
+        "name": "schema:name",
+        "title": "schema:title",
+        "description": "schema:description",
+        "doi": "bibo:doi",
+        "version": "schema:version",
+        "license": "schema:license",
+        "authors": "schema:author",
+        "orcid": "obo:IAO_0000708",
+        "email": "schema:email",
+        "keywords": "schema:keywords",
+        "funding": {
+            "@id": "schema:funding",
+            "@context": {
+                "name": "schema:funder",
+                "identifier": "schema:identifier"
+            }
+        },
+        "publications": {
+            "@id": "schema:citation",
+            "@context": {
+                "doi": "schema:identifier",
+                "datePublished": "schema:datePublished",
+                "citation": "schema:citation"
+            }
+        },
+        "fileList": {
+            "@id": "dcterms:hasPart",
+            "@context": {
+                "contentbytesize": "nfo:fileSize",
+                "md5sum": "obo:NCIT_C171276",
+                "path": "schema:name",
+                "url": "schema:contentUrl"
+            }
+        },
+        "address": "schema:PostalAddress",
+        "sfbHomepage": "schema:mainEntityOfPage",
+        "sfbDataController": "https://w3id.org/dpv#hasDataController",
+        "sfbUsedFor": {
+            "@id": "http://www.w3.org/ns/prov#hadUsage",
+            "@context": {
+                "url": "schema:url"
+            }
+        },
+        "sfbProject": "schema:ResearchProject",
+        "sfbSampleOrganism": "openminds:Species",
+        "sfbSamplePart": "openminds:UBERONParcellation"
+    },
+    "sfbUsedFor": {
+        "@type": "http://www.w3.org/ns/prov#Activity",
+        "description": "The dataset is used as example data for testing data base backend features in automated tests",
+        "title": "Testing effort for DBI backends",
+        "url": "https://dbitest.r-dbi.org/"
+    },
+    "sfbSampleOrganism": [
+        "NCBITaxon:9238",
+        "NCBITaxon:30457",
+        "NCBITaxon:79643"
+    ],
+    "sfbSamplePart": "UBERON:0013702",
+    "fileList": [
+        {
+            "@type": "schema:DigitalDocument",
+            "md5sum": "e7e2be6b203a221949f05e02fcefd853",
+            "url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff",
+            "name": {
+                "@type": "http://purl.allotrope.org/ontologies/result#AFR_0001928",
+                "@value": "raw/adelie.csv"
+            },
+            "contentbytesize": {
+                "@type": "http://www.w3.org/2001/XMLSchema#integer",
+                "@value": "23755"
+            }
+        },
+        {
+            "@type": "schema:DigitalDocument",
+            "md5sum": "1549566fb97afa879dc9446edcf2015f",
+            "url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381",
+            "name": {
+                "@type": "http://purl.allotrope.org/ontologies/result#AFR_0001928",
+                "@value": "raw/gentoo.csv"
+            },
+            "contentbytesize": {
+                "@type": "http://www.w3.org/2001/XMLSchema#integer",
+                "@value": "11263"
+            }
+        },
+        {
+            "@type": "schema:DigitalDocument",
+            "md5sum": "e4b0710c69297031d63866ce8b888f25",
+            "url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462",
+            "name": {
+                "@type": "http://purl.allotrope.org/ontologies/result#AFR_0001928",
+                "@value": "raw/chinstrap.csv"
+            },
+            "contentbytesize": {
+                "@type": "http://www.w3.org/2001/XMLSchema#integer",
+                "@value": "18872"
+            }
+        }
+    ],
+    "doi": "https://doi.org/10.5281/zenodo.3960218",
+    "authors": [
+        {
+            "@id": "https://orcid.org/0000-0002-6047-5564",
+            "@type": "schema:Person",
+            "orcid": "0000-0002-6047-5564",
+            "schema:affiliation": "UC Santa Barbara: Santa Barbara, CA, US",
+            "email": "a@example.com",
+            "name": "Allison Horst"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-8082-1890",
+            "@type": "schema:Person",
+            "orcid": "0000-0002-8082-1890",
+            "schema:affiliation": "RStudio: Boston, MA, US",
+            "email": "b@example.com",
+            "name": "Alison Hill"
+        },
+        {
+            "@id": "https://orcid.org/0000-0002-0258-9264",
+            "@type": "schema:Person",
+            "orcid": "0000-0002-0258-9264",
+            "schema:affiliation": "University of Alaska Fairbanks: Fairbanks, AK, US",
+            "email": "c@example.com",
+            "name": "Kristen Gorman"
+        }
+    ],
+    "publications": {
+        "@type": "schema:CreativeWork",
+        "citation": "Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.",
+        "datePublished": "2014",
+        "doi": "https://doi.org/10.1371/journal.pone.0090081"
+    },
+    "schema:dateModified": "2020-07-16",
+    "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
+    "funding": [
+        {
+            "@type": "schema:Grant",
+            "name": "DFG",
+            "identifier": "431549029-INF"
+        },
+        {
+            "@type": "schema:Grant",
+            "name": "NSF-OPP",
+            "identifier": "#0217282"
+        },
+        {
+            "@type": "schema:Grant",
+            "name": "NSF-OPP",
+            "identifier": "#0823101"
+        },
+        {
+            "@type": "schema:Grant",
+            "name": "NSF-OPP",
+            "identifier": "#0741351"
+        }
+    ],
+    "keywords": [
+        "penguins",
+        "sea ice",
+        "foraging",
+        "ecological niches",
+        "islands",
+        "antarctica",
+        "animal sexual behavior",
+        "isotopes"
+    ],
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sfbHomepage": "https://github.com/allisonhorst/palmerpenguins",
+    "name": "penguins",
+    "title": "Palmer Penguins",
+    "version": "0.1.0",
+    "sfbDataController": {
+        "email": "ahorst@ucsb.edu",
+        "name": "Allison Horst"
+    }
+}
