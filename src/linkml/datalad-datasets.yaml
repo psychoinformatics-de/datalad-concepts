@@ -6,6 +6,7 @@ prefixes:
   dlco: https://concepts.datalad.org/
 imports:
   - datasets
+  - types
 
 classes:
   DataladDataset:
@@ -16,3 +17,4 @@ classes:
       id:
         # it is not a DataLad dataset without the ID
         identifier: true
+        range: UUID

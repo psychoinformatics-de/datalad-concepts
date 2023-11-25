@@ -1,0 +1,18 @@
+id: https://concepts.datalad.org/types
+name: types
+
+types:
+  UUID:
+    uri: http://purl.obolibrary.org/obo/NCIT_C54100
+    base: str
+    pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    description: >-
+      Universally Unique Identifier (UUID). 128-bit label that is, for
+      practical purposes, unique. Its uniqueness does not depend on a
+      central registration authority or coordination between the parties
+      generating them. Information labeled with UUIDs by independent
+      parties can therefore be later combined into a single database or
+      transmitted on the same channel, with a negligible probability of
+      duplication.
+    see_also:
+      - https://en.wikipedia.org/wiki/Universally_unique_identifier
