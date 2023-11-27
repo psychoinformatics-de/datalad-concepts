@@ -12,9 +12,8 @@ graph:
       #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
   
         ## .datalad subdirectory
-        #- id: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
-        #  type: Directory
-        #  name: .datalad
+  - id: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
+    objtype: Directory
         #  items:
         #    config:
         #      content: 30e9ebb10380d9460522d063e53d39adecef4d94
@@ -60,8 +59,8 @@ graph:
         ## root directory of dataset
         ## this record type is concerned with the presentation of
   # content (naming of files, organization, permissions)
-        #- id: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
-        #  type: Directory
+  - id: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
+    objtype: Directory
         #  items:
         #    .gitmodules:
         #      content: 144d450caf1e6f93af67973261ac6924fdd3169b

@@ -39,6 +39,12 @@ classes:
       - IdentifiedThing
     description: >-
       File content
+  Directory:
+    is_a: TypedThing
+    mixins:
+      - IdentifiedThing
+    description: >-
+      A container for dataset content.
 
 #  DataladDataset:
 #    is_a: Dataset
