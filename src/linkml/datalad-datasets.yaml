@@ -45,6 +45,31 @@ classes:
       - IdentifiedThing
     description: >-
       A container for dataset content.
+    attributes:
+      items:
+        description: >-
+          List of items in the directory.
+        range: DirectoryItem
+        multivalued: true
+        inlined: true
+        inlined_as_list: false
+  DirectoryItem:
+    description: >-
+      An item in a directory
+    attributes:
+      name:
+        description: >-
+          Name of a directory item.
+        # TODO this should (hopefully) mean that the value is unique
+        # within a particular context, not globally, but instead here
+        # within a single directory
+        identifier: true
+      item_type:
+        description:
+          Identifier of the item type.
+        # TODO must become an annotated enum
+        range: string
+
 
 #  DataladDataset:
 #    is_a: Dataset
