@@ -1,6 +1,6 @@
 all: mkdocs-site build/context.jsonld
 
-build/context.jsonld: src/linkml/root.yaml
+build/context.jsonld: src/linkml/ontology.yaml
 	mkdir -p build
 	gen-jsonld-context \
 		--prefixes \
@@ -19,7 +19,7 @@ linkml-docs-stamp:
 		--metadata \
 		--format markdown \
 		-d build/linkml-docs \
-		src/linkml/root.yaml
+		src/linkml/ontology.yaml
 	touch $@
 
 extra-docs: extra-docs-stamp
@@ -32,7 +32,13 @@ mkdocs-site-stamp: linkml-docs extra-docs
 	mkdocs build
 	touch $@
 
-lint: src/linkml/root.yaml
+lint: lint-ontology lint-dataset-graph-schema
+lint-ontology: src/linkml/ontology.yaml
+	linkml-lint \
+		--config .linkmllint.yaml \
+		--max-warnings 0 \
+		$<
+lint-dataset-graph-schema: src/linkml/datalad-dataset-graph.yaml
 	linkml-lint \
 		--config .linkmllint.yaml \
 		--max-warnings 0 \
@@ -40,7 +46,7 @@ lint: src/linkml/root.yaml
 
 validate: validate-datalad-dataset
 validate-datalad-dataset:
-	linkml-validate --target-class DataladDataset -s src/linkml/datalad-datasets.yaml src/examples/datalad-dataset.yaml
+	linkml-validate -s src/linkml/datalad-dataset-serialization.yaml src/examples/datalad-dataset.yaml
 
 clean:
 	rm -rf build

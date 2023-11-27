@@ -1,0 +1,24 @@
+# schema for a specific serialization format of DataLad datasets
+
+id: https://concepts.datalad.org/datalad-dataset-serialization
+name: datalad-dataset-serialization
+prefixes:
+  dlco: https://concepts.datalad.org/
+imports:
+  - datalad-datasets
+
+classes:
+  DataladDatasetGraph:
+    tree_root: true
+    description:
+      Container for graph nodes describing DataLad dataset components.
+    attributes:
+      graph:
+        description: >-
+          DataLad dataset component graph nodes.
+        multivalued: true
+        inlined_as_list: true
+        range: TypedThing
+        # this is a future TODO: can we validate a JSONLD graph
+        aliases:
+          - "@graph"

@@ -14,3 +14,5 @@ default_prefix: dlco
 imports:
   - datasets
   - datalad-datasets
+  # we are not importing this schema, it is top-level on its own
+  #- datalad-dataset-graph

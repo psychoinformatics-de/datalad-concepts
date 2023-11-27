@@ -1,1 +1,131 @@
-id: eba5177f-2040-448f-b21d-1f0ae698d0f0
+graph:
+  # content for .datalad/config
+  - id: 30e9ebb10380d9460522d063e53d39adecef4d94
+    objtype: FileContent
+      #  size: 145
+      #  checksum:
+      #    hex: 190a18037c64c43e6b11489df4bf0b9eb6d2c9bf
+      #    type: SHA-1
+      #  available_at:
+      #    # inline ObjectAvailability instances
+      #    # not including an `id` mean "under the same ID"
+      #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+  
+        ## .datalad subdirectory
+        #- id: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
+        #  type: Directory
+        #  name: .datalad
+        #  items:
+        #    config:
+        #      content: 30e9ebb10380d9460522d063e53d39adecef4d94
+        #      # this "type" is not a class name, but a value from
+        #      # an enum that defines all possible ways directory
+        #      # items could be set up (regular file, symlink,
+        #      # executable, etc).
+        #      item_type: file
+        #
+  # content for outputs.txt
+  - id: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
+    objtype: FileContent
+        #  size: 4
+        #  checksum:
+        #    hex: ba1f2511fc30423bdbb183fe33f3dd0f
+        #    type: MD5
+        #  available_at:
+        #    # stored at an S3 special remote under this key
+        #    - storage: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
+        #    # but also as a WebDAV-accessible random copy
+        #    - storage: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
+        #      # the access ID is the file name
+        #      storage_id: 'random_copy/outputs.txt'
+        #
+  # content for .gitmodules
+  - id: 144d450caf1e6f93af67973261ac6924fdd3169b
+    objtype: FileContent
+        #  size: 32
+        #  checksum:
+        #    hex: 939b0cbc65cdd62ab9fb08609afb62ae008a1728
+        #    type: SHA-1
+        #  available_at:
+        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+  # content for scripts.py
+  - id: af926ef0c359556ac1d36d71f7e173d97b893ff2
+    objtype: FileContent
+        #  size: 3255
+        #  checksum:
+        #    hex: cdb74a421ab03d015dadeabd713ede7d8227f618
+        #    type: SHA-1
+        #  available_at:
+        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+        ## root directory of dataset
+        ## this record type is concerned with the presentation of
+  # content (naming of files, organization, permissions)
+        #- id: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
+        #  type: Directory
+        #  items:
+        #    .gitmodules:
+        #      content: 144d450caf1e6f93af67973261ac6924fdd3169b
+        #      item_type: file
+        #    .datalad:
+        #      content: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
+        #    script.py:
+        #      content: af926ef0c359556ac1d36d71f7e173d97b893ff2
+        #      item_type: executable_file
+        #    outputs.txt:
+        #      content: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
+        #      item_type: file
+        #  # annotate availability of the entire tree
+        #  available_at:
+        #    # map storage to storage-specific identifier
+        #    # here the "remote" identifier is the same as for the tree, because
+        #    # the storage is a clone of the repo
+        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+        #    # the whole directory also exists as a copy in a remote zipfile
+        #    # the zipfile only contains this directory
+        #    - storage: 6860c9e8-8c76-11ee-8f18-bb3625743f23
+        #      storage_id: .
+        #
+        ## particular dataset version
+        #- id: 7726424f50c6e9a70ba31e8d44c5d86fc46170da
+        #  type: commit
+        #  # entrypoint to the content
+        #  content: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
+        #  # some other metadata
+        #  # the next too could be instances of an `Agent`
+        #  author:
+        #    - name: Michael Hanke
+        #    - email: michael.hanke@gmail.com
+        #  creator:
+        #    - name: Michael Hanke
+        #    - email: michael.hanke@gmail.com
+        #  # ISO timestamp
+        #  created: 2023-11-25T12:04:53+01:00
+        #  # commit subject
+        #  title: Initial commit
+        #  # commit message body
+        #  description: Something elaborate, as usual
+        #  # previous versions
+        #  parent_commits:
+        #
+        ## object storage instances
+        ## they can be rather heterogeneous, different parameters, etc
+        ## however, the idea is that any implementation can be made to
+        ## produce a file content given only the respective "object id"
+        ## after initialization of the respectiuve handler with these
+        ## parameters
+        #- id: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+        #  type: GitRepo
+        #  fetch_url: https://example.com/myrepo.git
+        #
+        #- id: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
+        #  type: GitAnnexS3Remote
+        #  parameters:
+        #    bucket: somebucketid
+        #
+        #- id: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
+        #  type: WebDavService
+        #  url: https://dav.example/com/user
+        #
+        #- id: 6860c9e8-8c76-11ee-8f18-bb3625743f23
+        #  type: ZipArchive
+        #  download_url: https://example.com/dumps/my.zip

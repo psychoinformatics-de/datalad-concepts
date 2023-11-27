@@ -8,13 +8,57 @@ imports:
   - datasets
   - types
 
-classes:
-  DataladDataset:
-    is_a: Dataset
+slots:
+  objtype:
+    designates_type: true
     description: >-
-      DataLad Dataset
-    slot_usage:
-      id:
-        # it is not a DataLad dataset without the ID
-        identifier: true
-        range: UUID
+      Type designator.
+    #range: uriorcurie
+    range: string
+
+  id:
+    identifier: true
+    description: >-
+      Unique identifier.
+    range: string
+
+classes:
+  TypedThing:
+    description: >-
+      Object with a type designator.
+    slots:
+      - objtype
+
+  IdentifiedThing:
+    mixin: true
+    slots:
+      - id
+  FileContent:
+    is_a: TypedThing
+    mixins:
+      - IdentifiedThing
+    description: >-
+      File content
+
+#  DataladDataset:
+#    is_a: Dataset
+#    description: >-
+#      DataLad Dataset
+#    slot_usage:
+#      id:
+#        # it is not a DataLad dataset without the ID
+#        identifier: true
+#        range: UUID
+#
+#  DataladDatasetVersion:
+#    class_uri: dlco:DataladDatasetVersion
+#    is_a: DatasetVersion
+#    description: >-
+#      DataLad Dataset version/revision/commit
+#    slot_usage:
+#      id:
+#        identifier: true
+#        range: SHA1
+#      version_of:
+#        range: DataladDataset
+#        multivalued: false
