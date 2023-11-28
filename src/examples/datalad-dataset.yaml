@@ -6,12 +6,12 @@ graph:
       #  checksum:
       #    hex: 190a18037c64c43e6b11489df4bf0b9eb6d2c9bf
       #    type: SHA-1
-      #  available_at:
-      #    # inline ObjectAvailability instances
-      #    # not including an `id` mean "under the same ID"
-      #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
-  
-        ## .datalad subdirectory
+    available_at:
+      # inline ObjectAvailability instances
+      # not including an `id` mean "under the same ID"
+      - access: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+
+  # .datalad subdirectory
   - id: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
     objtype: Directory
     items:
@@ -29,14 +29,14 @@ graph:
         #  checksum:
         #    hex: ba1f2511fc30423bdbb183fe33f3dd0f
         #    type: MD5
-        #  available_at:
-        #    # stored at an S3 special remote under this key
-        #    - storage: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
-        #    # but also as a WebDAV-accessible random copy
-        #    - storage: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
-        #      # the access ID is the file name
-        #      storage_id: 'random_copy/outputs.txt'
-        #
+    available_at:
+      # stored at an S3 special remote under this key
+      - access: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
+      # but also as a WebDAV-accessible random copy
+      - access: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
+        # the access ID is the file name
+        object_id: 'random_copy/outputs.txt'
+
   # content for .gitmodules
   - id: 144d450caf1e6f93af67973261ac6924fdd3169b
     objtype: FileContent
@@ -44,8 +44,8 @@ graph:
         #  checksum:
         #    hex: 939b0cbc65cdd62ab9fb08609afb62ae008a1728
         #    type: SHA-1
-        #  available_at:
-        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+    available_at:
+      - access: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
   # content for scripts.py
   - id: af926ef0c359556ac1d36d71f7e173d97b893ff2
     objtype: FileContent
@@ -53,10 +53,11 @@ graph:
         #  checksum:
         #    hex: cdb74a421ab03d015dadeabd713ede7d8227f618
         #    type: SHA-1
-        #  available_at:
-        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
-        ## root directory of dataset
-        ## this record type is concerned with the presentation of
+    available_at:
+      - access: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+
+  # root directory of dataset
+  # this record type is concerned with the presentation of
   # content (naming of files, organization, permissions)
   - id: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
     objtype: Directory
@@ -78,10 +79,10 @@ graph:
         #    # map storage to storage-specific identifier
         #    # here the "remote" identifier is the same as for the tree, because
         #    # the storage is a clone of the repo
-        #    - storage: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+        #    - access: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
         #    # the whole directory also exists as a copy in a remote zipfile
         #    # the zipfile only contains this directory
-        #    - storage: 6860c9e8-8c76-11ee-8f18-bb3625743f23
+        #    - access: 6860c9e8-8c76-11ee-8f18-bb3625743f23
         #      storage_id: .
         #
         ## particular dataset version
@@ -105,26 +106,38 @@ graph:
         #  description: Something elaborate, as usual
         #  # previous versions
         #  parent_commits:
-        #
-        ## object storage instances
-        ## they can be rather heterogeneous, different parameters, etc
-        ## however, the idea is that any implementation can be made to
-        ## produce a file content given only the respective "object id"
-        ## after initialization of the respectiuve handler with these
-        ## parameters
-        #- id: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
-        #  type: GitRepo
-        #  fetch_url: https://example.com/myrepo.git
-        #
-        #- id: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
-        #  type: GitAnnexS3Remote
-        #  parameters:
-        #    bucket: somebucketid
-        #
-        #- id: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
-        #  type: WebDavService
-        #  url: https://dav.example/com/user
-        #
-        #- id: 6860c9e8-8c76-11ee-8f18-bb3625743f23
-        #  type: ZipArchive
-        #  download_url: https://example.com/dumps/my.zip
+
+  # object access methods
+  # they can be rather heterogeneous, different parameters, etc
+  # however, the idea is that any implementation can be made to
+  # produce a file content given only the respective "object id"
+  # after initialization of the respectiuve handler with these
+  # parameters
+  - id: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
+    objtype: GitFetch
+    url: https://example.com/myrepo.git
+
+  - id: ffa6ae3c-8c74-11ee-ad43-5fc1dc4c8fd0
+    objtype: GitAnnexSpecialRemote
+    parameters: type=s3 bucket=somebucketid
+    # TODO name?
+
+  - id: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
+    objtype: HttpGet
+    url_template: https://dav.example/com/user/{object_id}
+
+  - id: 6860c9e8-8c76-11ee-8f18-bb3625743f23
+    objtype: ArchiveExtract
+    archive: 6c99a465f370af115b4edbdcc66badf2d015cbe5
+    archive_type: zip
+
+  # we have no checksum, annex-key or anything for this
+  # archive. Only its download URL, which has to be unique
+  # enough of an identifier. However, although it looks
+  # like a URL, it would be treated other than any random,
+  # unique string identifier
+  - id: https://dav.example/com/user/myarchive.zip
+    objtype: FileContent
+    available_at:
+      - access: aa58c8ec-8c75-11ee-a7cf-4f2bfe33f1d2
+        object_id: myarchive.zip

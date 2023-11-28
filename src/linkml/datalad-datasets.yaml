@@ -49,6 +49,83 @@ classes:
     description: >-
       File content. More or less an analog of the POSIX filesystem file,
       which is also name-less content.
+    attributes:
+      available_at:
+        description: >-
+          Information on where the file content is located, and could
+          potentially be obtained from.
+        range: ObjectAvailability
+        # we inline, because any record here should be globally unique,
+        # and not have another use outside the FileContent record.
+        # Inlining is therefore the most compact representation.
+        # We inline as a list, because neither storage id, nor item id
+        # are necessarily unique
+        inlined_as_list: true
+        multivalued: true
+
+  ObjectAvailability:
+    description: >-
+      Record of availability of some object in some storage system, under
+      a particular identifier.
+    attributes:
+      access:
+        description: >-
+          Storage containing the object.
+        range: ObjectAccessMethod
+      object_id:
+        description: >-
+          Identifier for the object in the storage.
+        range: string
+
+  ObjectAccessMethod:
+    is_a: TypedThing
+    mixins:
+      - IdentifiedThing
+    description: >-
+      Means to retrieve file content objects.
+
+  GitFetch:
+    is_a: ObjectAccessMethod
+    attributes:
+      url:
+        description: >-
+          Git fetch URL.
+        # TODO type for Git URLs (incl. the :: transport prefix)
+        range: string
+
+  GitAnnexSpecialRemote:
+    is_a: ObjectAccessMethod
+    attributes:
+      parameters:
+        description: >-
+          Parameters to be given to `git annex initremote` in order to
+          initialize the remote.
+        range: string
+
+  HttpGet:
+    is_a: ObjectAccessMethod
+    attributes:
+      url_template:
+        description: >-
+          Template of a URL to perform an HTTP GET request against.
+          Would be populated with the `object_id` from an associated
+          `ObjectAvailability` record, by some kind of mechanism.
+        # TODO proper URL template type
+        range: string
+
+  ArchiveExtract:
+    is_a: ObjectAccessMethod
+    attributes:
+      archive:
+        description: >-
+          Archive to extract from.
+        range: FileContent
+      archive_type:
+        description: >-
+          Type of archive.
+        # TODO enum?
+        range: string
+
   Directory:
     is_a: TypedThing
     mixins:
