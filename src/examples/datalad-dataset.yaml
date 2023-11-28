@@ -16,13 +16,12 @@ graph:
     objtype: Directory
     items:
       config:
-        #      content: 30e9ebb10380d9460522d063e53d39adecef4d94
-        #      # this "type" is not a class name, but a value from
-        #      # an enum that defines all possible ways directory
-        #      # items could be set up (regular file, symlink,
-        #      # executable, etc).
+        content: 30e9ebb10380d9460522d063e53d39adecef4d94
+        # this "type" is not a class name, but a value from
+        # an enum that defines all possible ways directory
+        # items could be set up (regular file, symlink,
+        # executable, etc).
         type: file
-        #
   # content for outputs.txt
   - id: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
     objtype: FileContent
@@ -63,16 +62,16 @@ graph:
     objtype: Directory
     items:
       .gitmodules:
-        #      content: 144d450caf1e6f93af67973261ac6924fdd3169b
+        content: 144d450caf1e6f93af67973261ac6924fdd3169b
         type: file
       .datalad:
-        #      content: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
+        content: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
         type: directory
       script.py:
-        #      content: af926ef0c359556ac1d36d71f7e173d97b893ff2
+        content: af926ef0c359556ac1d36d71f7e173d97b893ff2
         type: executable_file
       outputs.txt:
-        #      content: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
+        content: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
         type: file
         #  # annotate availability of the entire tree
         #  available_at:

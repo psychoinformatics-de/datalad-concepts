@@ -76,9 +76,20 @@ classes:
         # within a single directory
         identifier: true
       type:
-        description:
+        description: >-
           Identifier of the item type.
         range: DirectoryItemType
+      content:
+        # we want content to come in separate, identified records, always.
+        # this enables referencing across multiple containers (versions,
+        # directories, datasets).
+        inlined: false
+        description: >-
+          Content referenced by the directory item.
+        any_of:
+          - range: FileContent
+          - range: Directory
+          # TODO: commit/dataset
 
 
 #  DataladDataset:
