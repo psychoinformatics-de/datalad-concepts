@@ -4,6 +4,7 @@ id: https://concepts.datalad.org/datalad-datasets
 name: datalad-datasets
 prefixes:
   dlco: https://concepts.datalad.org/
+  dct: http://purl.org/dc/terms/
 imports:
   - datasets
   - types
@@ -168,6 +169,44 @@ classes:
           - range: Directory
           # TODO: commit/dataset
 
+  Commit:
+    is_a: TypedThing
+    mixins:
+      - IdentifiedThing
+    attributes:
+      tree:
+        # we want content to come in separate, identified records, always.
+        # this enables referencing across multiple containers (versions,
+        # datasets).
+        inlined: false
+        description: >-
+          Tree referenced by the commit.
+        range: Directory
+      author:
+        slot_uri: dct:author
+        # TODO dedicated class for a GitAgent
+        range: GitAgent
+      committer:
+        slot_uri: dct:creator
+        range: GitAgent
+      created:
+        slot_uri: dct:created
+        # TODO ISO date type
+        range: string
+      title:
+        range: string
+      description:
+        range: string
+
+  GitAgent:
+    description: >-
+      Agent representation in a Git context
+    attributes:
+      name:
+        range: string
+      email:
+        # TODO email
+        range: string
 
 #  DataladDataset:
 #    is_a: Dataset

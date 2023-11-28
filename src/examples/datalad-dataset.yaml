@@ -74,38 +74,29 @@ graph:
       outputs.txt:
         content: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
         type: file
-        #  # annotate availability of the entire tree
-        #  available_at:
-        #    # map storage to storage-specific identifier
-        #    # here the "remote" identifier is the same as for the tree, because
-        #    # the storage is a clone of the repo
-        #    - access: 27f0483a-8c70-11ee-b9d6-3b5dd1955fcc
-        #    # the whole directory also exists as a copy in a remote zipfile
-        #    # the zipfile only contains this directory
-        #    - access: 6860c9e8-8c76-11ee-8f18-bb3625743f23
-        #      storage_id: .
-        #
-        ## particular dataset version
-        #- id: 7726424f50c6e9a70ba31e8d44c5d86fc46170da
-        #  type: commit
-        #  # entrypoint to the content
-        #  content: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
-        #  # some other metadata
-        #  # the next too could be instances of an `Agent`
-        #  author:
-        #    - name: Michael Hanke
-        #    - email: michael.hanke@gmail.com
-        #  creator:
-        #    - name: Michael Hanke
-        #    - email: michael.hanke@gmail.com
-        #  # ISO timestamp
-        #  created: 2023-11-25T12:04:53+01:00
-        #  # commit subject
-        #  title: Initial commit
-        #  # commit message body
-        #  description: Something elaborate, as usual
-        #  # previous versions
-        #  parent_commits:
+
+  # particular dataset version
+  - id: 7726424f50c6e9a70ba31e8d44c5d86fc46170da
+    objtype: Commit
+    # entrypoint to the content
+    tree: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
+    # some other metadata
+    # the next too could be instances of an `Agent`
+    author:
+      name: Michael Hanke
+      email: michael.hanke@gmail.com
+    committer:
+      name: Michael Hanke
+      email: michael.hanke@gmail.com
+    # ISO timestamp
+    created: 2023-11-25T12:04:53+01:00
+    # commit subject
+    title: Initial commit
+    # commit message body
+    description: Something elaborate, as usual
+    # previous versions
+    # TODO we need the parent commits to have sortable versions
+    #parent_commits:
 
   # object access methods
   # they can be rather heterogeneous, different parameters, etc
