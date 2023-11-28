@@ -82,14 +82,11 @@ graph:
     tree: fb715e5f3c368ae50cf16c9b6a8e5ca23a353ea4
     # some other metadata
     # the next too could be instances of an `Agent`
-    author:
-      name: Michael Hanke
-      email: michael.hanke@gmail.com
-    committer:
-      name: Michael Hanke
-      email: michael.hanke@gmail.com
+    author: Michael Hanke <michael.hanke@gmail.com>
+    committer: Michael Hanke <michael.hanke@gmail.com>
     # ISO timestamp
-    created: 2023-11-25T12:04:53+01:00
+    #created: 2023-11-25T12:04:53+01:00
+    created: 2023 11 25
     # commit subject
     title: Initial commit
     # commit message body
@@ -97,6 +94,11 @@ graph:
     # previous versions
     # TODO we need the parent commits to have sortable versions
     #parent_commits:
+
+  - id: Michael Hanke <michael.hanke@gmail.com>
+    objtype: GitAgent
+    name: Michael Hanke
+    email: michael.hanke@gmail.com
 
   # object access methods
   # they can be rather heterogeneous, different parameters, etc
@@ -119,7 +121,8 @@ graph:
 
   - id: 6860c9e8-8c76-11ee-8f18-bb3625743f23
     objtype: ArchiveExtract
-    archive: 6c99a465f370af115b4edbdcc66badf2d015cbe5
+    # the URL is just an identifier string
+    archive: https://dav.example/com/user/myarchive.zip
     archive_type: zip
 
   # we have no checksum, annex-key or anything for this

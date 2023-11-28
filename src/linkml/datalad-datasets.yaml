@@ -147,6 +147,7 @@ classes:
       content.
     attributes:
       name:
+        range: string
         description: >-
           Name of a directory item.
         # TODO this should (hopefully) mean that the value is unique
@@ -186,12 +187,15 @@ classes:
         slot_uri: dct:author
         # TODO dedicated class for a GitAgent
         range: GitAgent
+        inlined: false
       committer:
         slot_uri: dct:creator
         range: GitAgent
+        inlined: false
       created:
         slot_uri: dct:created
         # TODO ISO date type
+        #range: datetime
         range: string
       title:
         range: string
@@ -199,9 +203,15 @@ classes:
         range: string
 
   GitAgent:
+    is_a: TypedThing
     description: >-
       Agent representation in a Git context
     attributes:
+      # TODO others could use ORCID
+      id:
+        identifier: true
+        string_serialization: "{name} <{email}>"
+        range: string
       name:
         range: string
       email:
