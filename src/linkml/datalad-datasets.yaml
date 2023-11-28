@@ -22,6 +22,15 @@ slots:
       Unique identifier.
     range: string
 
+enums:
+  DirectoryItemType:
+    # TODO add 'meaning' to all these
+    permissible_values:
+      file:
+      executable_file:
+      directory:
+      symlink:
+
 classes:
   TypedThing:
     description: >-
@@ -38,7 +47,8 @@ classes:
     mixins:
       - IdentifiedThing
     description: >-
-      File content
+      File content. More or less an analog of the POSIX filesystem file,
+      which is also name-less content.
   Directory:
     is_a: TypedThing
     mixins:
@@ -55,7 +65,8 @@ classes:
         inlined_as_list: false
   DirectoryItem:
     description: >-
-      An item in a directory
+      An item in a directory. Assigns a name and other properties to some
+      content.
     attributes:
       name:
         description: >-
@@ -64,11 +75,10 @@ classes:
         # within a particular context, not globally, but instead here
         # within a single directory
         identifier: true
-      item_type:
+      type:
         description:
           Identifier of the item type.
-        # TODO must become an annotated enum
-        range: string
+        range: DirectoryItemType
 
 
 #  DataladDataset:

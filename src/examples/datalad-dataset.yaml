@@ -21,7 +21,7 @@ graph:
         #      # an enum that defines all possible ways directory
         #      # items could be set up (regular file, symlink,
         #      # executable, etc).
-        item_type: file
+        type: file
         #
   # content for outputs.txt
   - id: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
@@ -64,16 +64,16 @@ graph:
     items:
       .gitmodules:
         #      content: 144d450caf1e6f93af67973261ac6924fdd3169b
-        item_type: file
+        type: file
       .datalad:
         #      content: d3cafe4592eb5837cfd0fc8f4637afc0dd3e7c14
-        item_type: directory
+        type: directory
       script.py:
         #      content: af926ef0c359556ac1d36d71f7e173d97b893ff2
-        item_type: executable_file
+        type: executable_file
       outputs.txt:
         #      content: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt
-        item_type: file
+        type: file
         #  # annotate availability of the entire tree
         #  available_at:
         #    # map storage to storage-specific identifier
