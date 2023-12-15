@@ -1,7 +1,7 @@
 # schema for a specific serialization format of DataLad datasets
 
-id: https://concepts.datalad.org/datalad-dataset-serialization
-name: datalad-dataset-serialization
+id: https://concepts.datalad.org/datalad-dataset-graph
+name: datalad-dataset-graph
 prefixes:
   dlco: https://concepts.datalad.org/
 imports:

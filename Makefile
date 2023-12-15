@@ -46,7 +46,7 @@ lint-dataset-graph-schema: src/linkml/datalad-dataset-graph.yaml
 
 validate: validate-datalad-dataset
 validate-datalad-dataset:
-	linkml-validate -s src/linkml/datalad-dataset-serialization.yaml src/examples/datalad-dataset.yaml
+	linkml-validate -s src/linkml/datalad-dataset-graph.yaml src/examples/datalad-dataset.yaml
 
 clean:
 	rm -rf build
