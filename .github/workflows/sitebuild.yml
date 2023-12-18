@@ -43,7 +43,7 @@ jobs:
           #mkdir -p ./build/upload
           #export "SITEDIR=./build/upload/$(git branch --show-current)"
           #export "SITEURL=https://concepts.datalad.org/$(git branch --show-current)"
-          make mkdocs-site
+          make build/mkdocs-site
           make build/context.jsonld
           #mv ./build/mkdocs-site $SITEDIR
           mv ./build/mkdocs-site ./build/upload

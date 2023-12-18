@@ -3,7 +3,7 @@
 id: https://concepts.datalad.org/datalad-datasets
 name: datalad-datasets
 prefixes:
-  dlco: https://concepts.datalad.org/
+  dlco: https://concepts.datalad.org/ontology/
   dct: http://purl.org/dc/terms/
 imports:
   - datasets

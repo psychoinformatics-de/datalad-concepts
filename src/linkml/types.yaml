@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/types
 name: types
 prefixes:
-  dlco: https://concepts.datalad.org/
+  dlco: https://concepts.datalad.org/ontology/
 
 types:
   SHA1:

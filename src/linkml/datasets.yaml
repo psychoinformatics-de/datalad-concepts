@@ -6,7 +6,7 @@ prefixes:
   dctypes: http://purl.org/dc/dcmitype/
   dct: http://purl.org/dc/terms/
   schema: http://schema.org/
-  dlco: https://concepts.datalad.org/
+  dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
 imports:
   - linkml:types

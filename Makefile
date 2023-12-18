@@ -8,8 +8,8 @@ build/context.jsonld: src/linkml/ontology.yaml
 		--mergeimports \
 		$< > $@
 
-linkml-docs: linkml-docs-stamp
-linkml-docs-stamp:
+build/linkml-docs: build/linkml-docs/ontology
+build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
 		--hierarchical-class-view \
@@ -18,19 +18,15 @@ linkml-docs-stamp:
 		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
-		-d build/linkml-docs \
-		src/linkml/ontology.yaml
-	touch $@
+		-d $@ \
+		$<
+	# try to inject any extra-docs (if any exist)
+	-cp -r src/extra-docs/$$(basename $@)/*.md $@
 
-extra-docs: extra-docs-stamp
-extra-docs-stamp:
-	mkdir -p build/linkml-docs
-	cp -r src/extra-docs/* build/linkml-docs
-
-mkdocs-site: mkdocs-site-stamp
-mkdocs-site-stamp: linkml-docs extra-docs
+build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
+	# top-level content
+	cp -r src/extra-docs/*.md $<
 	mkdocs build
-	touch $@
 
 lint: lint-ontology lint-dataset-graph-schema
 lint-ontology: src/linkml/ontology.yaml
@@ -52,4 +48,4 @@ clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean linkml-docs extra-docs  mkdocs-site lint validate
+.PHONY: clean lint validate
