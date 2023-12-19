@@ -184,22 +184,32 @@ classes:
           Tree referenced by the commit.
         range: Directory
       author:
+        description: >-
+          Place holder for an actual description
         slot_uri: dct:author
         # TODO dedicated class for a GitAgent
         range: GitAgent
         inlined: false
       committer:
+        description: >-
+          Place holder for an actual description
         slot_uri: dct:creator
         range: GitAgent
         inlined: false
       created:
+        description: >-
+          Place holder for an actual description
         slot_uri: dct:created
         # TODO ISO date type
         #range: datetime
         range: string
       title:
+        description: >-
+          Place holder for an actual description
         range: string
       description:
+        description: >-
+          Place holder for an actual description
         range: string
 
   GitAgent:
@@ -209,12 +219,16 @@ classes:
     attributes:
       # TODO others could use ORCID
       id:
+        description: >-
+          Place holder for an actual description
         identifier: true
         string_serialization: "{name} <{email}>"
         range: string
       name:
         range: string
       email:
+        description: >-
+          Place holder for an actual description
         # TODO email
         range: string
 
