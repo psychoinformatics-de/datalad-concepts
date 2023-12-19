@@ -8,15 +8,9 @@ prefixes:
 imports:
   - datasets
   - types
+  - typing
 
 slots:
-  objtype:
-    designates_type: true
-    description: >-
-      Type designator.
-    #range: uriorcurie
-    range: string
-
   id:
     identifier: true
     description: >-
@@ -33,20 +27,14 @@ enums:
       symlink:
 
 classes:
-  TypedThing:
-    description: >-
-      Object with a type designator.
-    slots:
-      - objtype
-
   IdentifiedThing:
     mixin: true
     slots:
       - id
   FileContent:
-    is_a: TypedThing
     mixins:
       - IdentifiedThing
+      - WithTypeDesignator
     description: >-
       File content. More or less an analog of the POSIX filesystem file,
       which is also name-less content.
@@ -79,9 +67,9 @@ classes:
         range: string
 
   ObjectAccessMethod:
-    is_a: TypedThing
     mixins:
       - IdentifiedThing
+      - WithTypeDesignator
     description: >-
       Means to retrieve file content objects.
 
@@ -128,9 +116,9 @@ classes:
         range: string
 
   Directory:
-    is_a: TypedThing
     mixins:
       - IdentifiedThing
+      - WithTypeDesignator
     description: >-
       A container for dataset content.
     attributes:
@@ -171,9 +159,9 @@ classes:
           # TODO: commit/dataset
 
   Commit:
-    is_a: TypedThing
     mixins:
       - IdentifiedThing
+      - WithTypeDesignator
     attributes:
       tree:
         # we want content to come in separate, identified records, always.
@@ -213,7 +201,8 @@ classes:
         range: string
 
   GitAgent:
-    is_a: TypedThing
+    mixins:
+      - WithTypeDesignator
     description: >-
       Agent representation in a Git context
     attributes:
