@@ -5,6 +5,7 @@ name: datalad-datasets
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
   dct: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - datasets
   - types
@@ -17,6 +18,15 @@ slots:
     description: >-
       Unique identifier.
     range: string
+
+  name:
+    description: >-
+      Name of the item or entity.
+    range: string
+    exact_mappings:
+      - schema:name
+      - rdfs:label
+
 
 enums:
   DirectoryItemType:
@@ -134,15 +144,17 @@ classes:
     description: >-
       An item in a directory. Assigns a name and other properties to some
       content.
-    attributes:
+    slots:
+      - name
+    slot_usage:
       name:
-        range: string
         description: >-
           Name of a directory item.
         # TODO this should (hopefully) mean that the value is unique
         # within a particular context, not globally, but instead here
         # within a single directory
         identifier: true
+    attributes:
       type:
         description: >-
           Identifier of the item type.
@@ -206,6 +218,12 @@ classes:
       - HasTypeDesignator
     description: >-
       Agent representation in a Git context
+    slots:
+      - name
+    slot_usage:
+      name:
+        description: >-
+          Full name of the agent
     attributes:
       # TODO others could use ORCID
       id:
@@ -213,8 +231,6 @@ classes:
           Place holder for an actual description
         identifier: true
         string_serialization: "{name} <{email}>"
-        range: string
-      name:
         range: string
       email:
         description: >-
