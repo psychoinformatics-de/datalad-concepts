@@ -8,7 +8,7 @@ build/context.jsonld: src/linkml/ontology.yaml
 		--mergeimports \
 		$< > $@
 
-build/linkml-docs: build/linkml-docs/ontology
+build/linkml-docs: build/linkml-docs/ontology build/linkml-docs/data-access-schema
 build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
@@ -18,6 +18,7 @@ build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
+		--example-directory src/examples/$$(basename $@) \
 		-d $@ \
 		$<
 	# try to inject any extra-docs (if any exist)
@@ -28,24 +29,40 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	cp -r src/extra-docs/*.md $<
 	mkdocs build
 
-lint: lint-ontology lint-dataset-graph-schema
-lint-ontology: src/linkml/ontology.yaml
-	linkml-lint \
-		--config .linkmllint.yaml \
-		--max-warnings 0 \
-		$<
-lint-dataset-graph-schema: src/linkml/datalad-dataset-graph.yaml
+# add additional schemas to lint here
+lint: \
+	lint-data-access-schema \
+	lint-ontology
+lint-%: src/linkml/%.yaml
 	linkml-lint \
 		--config .linkmllint.yaml \
 		--max-warnings 0 \
 		$<
 
-validate: validate-datalad-dataset
-validate-datalad-dataset:
-	linkml-validate -s src/linkml/datalad-dataset-graph.yaml src/examples/datalad-dataset.yaml
+# add additional schemas to validate examples for here.
+# each one needs to provide valid examples at
+# src/examples/<schema-name>/* and invalid examples at
+# src/counter-examples/<schema-name>/*.
+#
+# In particular the valid examples should follow the
+# naming schema <class>-<example-name>.yaml to be
+# usable as documentation examples for `gen-doc`
+validate-examples: \
+	validate-examples-data-access-schema
+validate-examples-%:
+	$(MAKE) validate-valid-examples-$* validate-invalid-examples-$*
+validate-valid-examples-%: src/linkml/%.yaml src/examples/%
+	linkml-validate -s $^/*
+validate-invalid-examples-%: src/linkml/%.yaml src/counter-examples/%
+	# loop over all counter-examples, skip the schema file itself
+	echo "Verify EXPECTED validation failures"
+	for ex in $^/*; do \
+		[ "$$ex" = "$<" ] && continue; \
+		linkml-validate -s $< $$ex && UNEXPECTEDLY VALID || true; \
+	done
 
 clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean lint validate
+.PHONY: clean lint validate-examples

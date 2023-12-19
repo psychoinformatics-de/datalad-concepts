@@ -1,0 +1,130 @@
+id: https://concepts.datalad.org/data-access-schema
+name: data-access-schema
+title: Data access schema
+description: >-
+  This is a schema draft centered around the annotation of availability of
+  objects. Such objects would typically be (or could become) the content
+  of a file.
+  This schema is not envisioned to be around for long, but it simply
+  smaller than a schema for describing complete datasets, hence simpler
+  to work with while exploring basic principles of data modeling.
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  schema: http://schema.org/
+imports:
+  - types
+  - linkml:types
+default_prefix: dlco
+
+slots:
+  metatype:
+    designates_type: true
+    description: >-
+      Type designator of a metadata object.
+    #range: uriorcurie
+    range: string
+
+  has_parameter:
+    description: >-
+      Parameter of a system or algorithm.
+
+  available_via:
+    description: >-
+      Method(s) through which an entity can be obtained.
+    related_mappings:
+      - schema:availableAtOrFrom
+
+  access_method:
+    description: >-
+      Parametrizable method(s) through which objects can be obtained,
+      given an object identifier.
+
+  object_id:
+    description: >-
+      (Alternative) identifier for an object (e.g., in a particular storage
+      system).
+    range: string
+
+
+classes:
+  # technical vehicle for this schema and its validation
+  DataObject:
+    tree_root: true
+    description: >-
+      Root object for this schema. not part of the ontology.
+    mixins:
+      - WithAvailability
+
+  # TODO move to place for common mixins
+  WithAvailability:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with an availability property.
+    slots:
+      - available_via
+    slot_usage:
+      available_via:
+        range: ObjectAvailability
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+
+  # TODO move to place for common mixins
+  WithTypeDesignator:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with a metadata type designator.
+    slots:
+      - metatype
+
+  ObjectAvailability:
+    description: >-
+      Record of availability of an object via an access method under a
+      particular identifier.
+    slots:
+      - access_method
+      - object_id
+    slot_usage:
+      access_method:
+        required: true
+        range: ObjectAccessMethod
+        inlined: true
+      object_id:
+        # not required, could be identical to an identifier in some other
+        # global context
+        required: false
+
+  ObjectAccessMethod:
+    mixins:
+      - WithTypeDesignator
+    description: >-
+      Parametrizable method through which objects can be obtained,
+      given an object identifier.
+
+  # have this one as a "full" example
+  GitAnnexSpecialRemote:
+    is_a: ObjectAccessMethod
+    description: >-
+      Obtain an annex key object from a git-annex special remote.
+    attributes:
+      special_remote_type:
+        description: >-
+          Identifier of a git-annex special remote type.
+          For an external special remote implementation, this is
+          the remainder of the executable name that follows the
+          `git-annex-remote-` prefix.
+        required: true
+        range: string
+    slots:
+      - has_parameter
+    slot_usage:
+      has_parameter:
+        description: >-
+          Parameters to be given to `git annex initremote` in order to
+          initialize the remote.
+        range: string
+        multivalued: true
+        # the next two must not be used, unless range is a class defintion
+        # and not just a type
+        #inlined: true
+        #inlined_as_list: true
