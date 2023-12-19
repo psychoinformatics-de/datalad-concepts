@@ -24,4 +24,4 @@ jobs:
 
       - name: Validate
         run: |
-          make validate
+          make validate-examples
