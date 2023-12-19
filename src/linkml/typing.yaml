@@ -18,7 +18,7 @@ slots:
     range: uriorcurie
 
 classes:
-  WithTypeDesignator:
+  HasTypeDesignator:
     mixin: true
     description: >-
       (Mixin) class for an object with a metadata type designator.

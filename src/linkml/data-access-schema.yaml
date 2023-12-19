@@ -47,10 +47,10 @@ classes:
     description: >-
       Root object for this schema. not part of the ontology.
     mixins:
-      - WithAvailability
+      - HasAvailability
 
   # TODO move to place for common mixins
-  WithAvailability:
+  HasAvailability:
     mixin: true
     description: >-
       (Mixin) class for an object with an availability property.
@@ -82,7 +82,7 @@ classes:
 
   ObjectAccessMethod:
     mixins:
-      - WithTypeDesignator
+      - HasTypeDesignator
     description: >-
       Parametrizable method through which objects can be obtained,
       given an object identifier.
