@@ -21,7 +21,8 @@ build/context.jsonld: src/linkml/ontology.yaml
 		--mergeimports \
 		$< > $@
 
-build/linkml-docs: build/linkml-docs/ontology build/linkml-docs/data-access-schema
+build/linkml-docs: build/linkml-docs/ontology build/linkml-docs/data-access-schema \
+	build/linkml-docs/research-dataset-schema
 build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
@@ -45,7 +46,8 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 # add additional schemas to lint here
 check: \
 	check-data-access-schema \
-	check-ontology
+	check-ontology \
+	check-research-dataset-schema
 check-%: src/linkml/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -75,7 +77,8 @@ check-%: src/linkml/%.yaml
 # naming schema <class>-<example-name>.yaml to be
 # usable as documentation examples for `gen-doc`
 validate-examples: \
-	validate-examples-data-access-schema
+	validate-examples-data-access-schema \
+	validate-examples-research-dataset-schema
 validate-examples-%:
 	$(MAKE) validate-valid-examples-$* validate-invalid-examples-$*
 validate-valid-examples-%: src/linkml/%.yaml src/examples/%

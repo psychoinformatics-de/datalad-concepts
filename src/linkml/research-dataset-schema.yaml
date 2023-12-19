@@ -1,0 +1,354 @@
+id: https://concepts.datalad.org/research-dataset-schema
+name: research-dataset-schema
+title: Research dataset schema
+description: >-
+  This schema draft models a generic research dataset for
+  the purpose of making it findable and understandable for
+  humans, for example via an online data catalog.
+prefixes:
+  afo: http://purl.allotrope.org/ontologies/result#
+  bibo: https://purl.org/ontology/bibo/
+  dcterms: https://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  dpv: https://w3id.org/dpv#
+  linkml: https://w3id.org/linkml/
+  obo: https://purl.obolibrary.org/obo/
+  openminds: https://openminds.ebrains.eu/controlledTerms/
+  schema: http://schema.org/
+imports:
+  - types
+  - linkml:types
+  - datasets
+default_prefix: dlco
+default_range: string
+
+
+# SLOTS
+slots:
+  address:
+    slot_uri: schema:address
+    range: string
+    description: >-
+      The physical address of an entity
+  affiliation:
+    slot_uri: schema:affiliation
+    multivalued: true
+    inlined_as_list: true
+    range: string
+    description: >-
+      The group(s), institution(s), or employer(s) that an
+      author is affiliated with. Should be a text description
+      or persistent URL from an existing vocabulary (e.g. from
+      https://ror.org/ or https://www.wikidata.org/)
+  author:
+    slot_uri: schema:author
+    multivalued: true
+    inlined_as_list: true
+    range: Author
+    description: >-
+      A list of authors of an entity
+  author_type:
+    range: authorType
+    description: >-
+      The type of author: Person or Organization
+  checksum_md5:
+    slot_uri: obo:NCIT_C171276
+    range: string
+    description: >-
+      The checksum of a file's content, calculated using an
+      MD5 hashing algorithm.
+  citation:
+    slot_uri: schema:citation
+    range: string
+    description: >-
+      A text-based citation providing information about a
+      publication, dataset, or creative work
+  content_url:
+    slot_uri: schema:contentUrl
+    range: string
+    description: >-
+      The location where a file's content is accessible.
+  controller_type:
+    range: authorType
+    description: >-
+      The type of data controller: Person or Organization
+  data_controller:
+    slot_uri: dpv:hasDataController
+    range: DataController
+    description: >-
+      A person or organization that serves as the data
+      controller of a dataset.
+  date_modified:
+    slot_uri: schema:dateModified
+    range: date
+    description: >-
+      Date of the last modification of a described dataset
+      (version), for example a release date. Must be given
+      in ISO 8601 format (YYYY-MM-DD).
+  date_published:
+    slot_uri: schema:datePublished
+    range: date
+    description: >-
+      The date on which the work was published. Must be given
+      in ISO 8601 format (i.e., YYYY-MM-DD).
+  description:
+    slot_uri: schema:description
+    range: string
+    description: >-
+      A general description of an entity
+  doi:
+    slot_uri: bibo:doi
+    description: >-
+      The Digital Object Identifier of an entity, see:
+      https://www.doi.org/the-identifier/what-is-a-doi
+  email:
+    slot_uri: schema:email
+    description: >-
+      An email address of an entity
+  has_part:
+    slot_uri: dcterms:hasPart
+    multivalued: true
+    inlined_as_list: true
+    any_of:
+      - range: dlco:File
+      - range: dlco:ResearchDataset
+    description: >-
+      Linked entities that form part of a dataset
+      such as files or other (sub)datasets
+  funding:
+    slot_uri: schema:funding
+    multivalued: true
+    inlined_as_list: true
+    range: Grant
+    description: >-
+      All sources of funding that made it possible for
+      a dataset to exist
+  funder:
+    slot_uri: schema:funder
+    description: >-
+      The funder that provided the financial resources
+      contained in a grant
+  identifier:
+    slot_uri: schema:identifier
+    identifier: true
+    description: >-
+      The name or code that uniquely identifies an entity
+  homepage:
+    slot_uri: schema:mainEntityOfPage
+    description: >-
+      A URL that hosts the primary source of information
+      and/or data for a dataset.
+  keywords:
+    slot_uri: schema:keywords
+    multivalued: true
+    inlined_as_list: true
+    description: >-
+      Keywords describing the major topical themes of a
+      dataset and that aid the discoverability of a dataset.
+  license:
+    slot_uri: schema:license
+    description: >-
+      A license document (URL) that applies to a dataset and
+      defines the terms and conditions for data use.
+  name:
+    slot_uri: schema:name
+    description: >-
+      The name of an entity
+  orcid:
+    slot_uri: obo:IAO_0000708
+    description: >-
+      The ORCID identifier of an author, see: https://orcid.org/.
+  path_posix:
+    slot_uri: afo:AFR_0001928
+    description: >-
+      The path of a file relative to the root of a dataset,
+      provided in the POSIX format.
+  publication:
+    slot_uri: schema:publication
+    multivalued: true
+    inlined_as_list: true
+    range: Publication
+    description: >-
+      A list of publications (articles, books, software, etc.)
+      associated with a dataset.
+  size_in_bytes:
+    slot_uri: schema:contentSize
+    range: integer
+    unit:
+      ucum_code: byte
+    description: >-
+      The size of a file in bytes.
+  title:
+    slot_uri: schema:title
+    description: >-
+      A text title that serves as the human-readable heading
+      of an entity. This is distinct from 'name', which could
+      (but does not necessarily have to) be human-readable.
+  url:
+    slot_uri: schema:url
+    description: >-
+      An online location where an entity can be accessed.
+  version:
+    slot_uri: schema:version
+    description: >-
+      A label that identifies the version of the dataset the
+      catalog record is describing. If a dataset is unversioned,
+      it is acceptable to state latest. Otherwise any numerical
+      label (e.g., 1.2), or text label (e.g., GITSHA 7db210fb5)
+      can be provided here. The version should change when the
+      content of the dataset changes.
+
+
+# ENUMS
+enums:
+  authorType:
+    permissible_values:
+      Person:
+        meaning: schema:Person
+      Organization:
+        meaning: schema:Organization
+
+
+# CLASSES
+classes:
+  ResearchDataset:
+    tree_root: true
+    is_a: Dataset
+    description: >-
+      A generic dataset with data entities (files) and contextual
+      entities (name, description, keywords, etc) that is to be
+      findable by both humans and machines.
+    slots:
+      - doi
+      - has_part
+      - homepage
+      - keywords
+      - license
+      - publication
+      - author
+      - data_controller
+      - description
+      - funding
+      - name
+      - title
+    slot_usage:
+      author:
+        required: true
+      data_controller:
+        required: true
+      description:
+        required: true
+      funding:
+        required: true
+      name:
+        required: true
+        identifier: true
+      title:
+        required: true
+  
+  Author:
+    class_uri: dlco:Author
+    description: >-
+      An author of a research dataset or of a publication
+    related_mappings:
+      - schema:Person
+      - schema:Organization
+    slots:
+      - affiliation
+      - email
+      - orcid
+      - author_type
+      - name
+    slot_usage:
+      author_type:
+        required: true
+      name:
+        required: true
+        description: >-
+          The human readable name of an author. For a person, this
+          should be in the format <givenName> <familyName>.
+
+  DataController:
+    class_uri: dlco:DataController
+    description: >-
+      The Person or Organization that has legal control over the
+      dataset.
+    exact_mappings:
+      - dpv:DataController
+    slots:
+      - address
+      - name
+      - email
+      - controller_type
+    slot_usage:
+      name:
+        required: true
+        description: >-
+          The human readable name of an author. For a person, this
+          should be in the format <givenName> <familyName>.
+      email:
+        required: true
+        identifier: true
+        description: >-
+          The email adress at which the data controller is reachable
+          for requests related to the dataset.
+      controller_type:
+        required: false
+        description: >-
+          The type of data controller, must be one of Person or
+          Organization.
+  
+  File:
+    class_uri: dlco:File
+    close_mappings:
+      - schema:DigitalDocument
+    description: >-
+      A file that forms part of a file tree of a dataset.
+    slots:
+      - checksum_md5
+      - size_in_bytes
+      - content_url
+      - path_posix
+    slot_usage:
+      path_posix:
+        required: true
+
+  Grant:
+    class_uri: dlco:Grant
+    close_mappings:
+      - schema:Grant
+    description: >-
+      A grant that funded the process of creating a research dataset.
+    slots:
+      - url
+      - name
+      - funder
+      - identifier
+    slot_usage:
+      funder:
+        required: true
+      identifier:
+        required: true
+  
+  Publication:
+    class_uri: dlco:Publication
+    description: >-
+      A publication (for example an article, book, or software)
+      that is associated with a research dataset.
+    close_mappings:
+      - schema:CreativeWork
+    slots:
+      - url
+      - author
+      - citation
+      - doi
+      - date_published
+    slot_usage:
+      citation:
+        required: true
+      doi:
+        required: true
+        identifier: true
+      date_published:
+        required: true
+      
