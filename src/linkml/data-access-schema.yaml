@@ -13,16 +13,11 @@ prefixes:
   schema: http://schema.org/
 imports:
   - types
+  - typing
   - linkml:types
 default_prefix: dlco
 
 slots:
-  metatype:
-    designates_type: true
-    description: >-
-      Type designator of a metadata object.
-    range: uriorcurie
-
   has_parameter:
     description: >-
       Parameter of a system or algorithm.
@@ -67,14 +62,6 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-
-  # TODO move to place for common mixins
-  WithTypeDesignator:
-    mixin: true
-    description: >-
-      (Mixin) class for an object with a metadata type designator.
-    slots:
-      - metatype
 
   ObjectAvailability:
     description: >-

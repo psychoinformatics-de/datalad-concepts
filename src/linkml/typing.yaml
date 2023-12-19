@@ -1,0 +1,26 @@
+id: https://concepts.datalad.org/typing
+name: typing
+title: Utilities for metadata type designation and inference
+description: >-
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/typing/
+imports:
+  - types
+  - linkml:types
+default_prefix: dlco
+
+slots:
+  metatype:
+    designates_type: true
+    description: >-
+      Type designator of a metadata object.
+    range: uriorcurie
+
+classes:
+  WithTypeDesignator:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with a metadata type designator.
+    slots:
+      - metatype
