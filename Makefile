@@ -1,3 +1,16 @@
+# this is a shell monster that will fail with exit(125) if a command produces
+# stderr output
+FAILIF_STDERR=bash -c 'fail_if_stderr() (rc=$$({("$$@" 2>&1 >&3 3>&- 4>&-; echo "$$?" >&4) | grep '^' >&2 3>&- 4>&-; } 4>&1); err=$$?; [ "$$rc" -eq 0 ] || exit "$$rc"; [ "$$err" -ne 0 ] || exit 125 ) 3>&1; fail_if_stderr $$@' FAILIF_STDERR
+
+# no execution when only command printed is wanted
+ifneq (,$(filter n,$(MAKEFLAGS)))
+FAILIF_STDERR=: FAILIF_STDERR
+endif
+
+
+try:
+	${FAILIF_STDERR} bash -c 'exit 12'
+
 all: mkdocs-site build/context.jsonld
 
 build/context.jsonld: src/linkml/ontology.yaml
@@ -30,14 +43,28 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	mkdocs build
 
 # add additional schemas to lint here
-lint: \
-	lint-data-access-schema \
-	lint-ontology
-lint-%: src/linkml/%.yaml
-	linkml-lint \
+check: \
+	check-data-access-schema \
+	check-ontology
+check-%: src/linkml/%.yaml
+	@echo [Check $<]
+	@echo "Run linter"
+	@linkml-lint \
 		--config .linkmllint.yaml \
 		--max-warnings 0 \
 		$<
+# generate various output formats, they all have the potential to
+# reveal "hidden" issues
+	@echo Generate a JSON-LD context
+	@${FAILIF_STDERR} gen-jsonld-context \
+		--prefixes \
+		--model \
+		--mergeimports \
+		$< > /dev/null
+	@echo Generate JSON schema
+	@${FAILIF_STDERR} gen-json-schema $< > /dev/null
+	@echo Generate OWL
+	@${FAILIF_STDERR} gen-owl $< > /dev/null
 
 # add additional schemas to validate examples for here.
 # each one needs to provide valid examples at
@@ -65,4 +92,4 @@ clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean lint validate-examples
+.PHONY: clean check validate-examples

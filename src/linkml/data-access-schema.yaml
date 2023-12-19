@@ -11,6 +11,7 @@ description: >-
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
   schema: http://schema.org/
+  linkml: https://w3id.org/linkml/
 imports:
   - types
   - typing
