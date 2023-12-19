@@ -1,6 +1,6 @@
 available_via:
   - access_method:
-      metatype: GitAnnexSpecialRemote
+      metatype: dlco:GitAnnexSpecialRemote
       special_remote_type: webdav
       has_parameter:
         - some

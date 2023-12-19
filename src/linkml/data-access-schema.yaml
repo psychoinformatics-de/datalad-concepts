@@ -21,8 +21,7 @@ slots:
     designates_type: true
     description: >-
       Type designator of a metadata object.
-    #range: uriorcurie
-    range: string
+    range: uriorcurie
 
   has_parameter:
     description: >-
