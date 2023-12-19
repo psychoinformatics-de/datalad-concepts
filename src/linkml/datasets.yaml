@@ -10,6 +10,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
 imports:
   - linkml:types
+default_prefix: dlco
 
 slots:
   version_label:

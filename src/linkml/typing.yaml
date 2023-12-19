@@ -4,7 +4,7 @@ title: Utilities for metadata type designation and inference
 description: >-
   TODO
 prefixes:
-  dlco: https://concepts.datalad.org/typing/
+  dlco: https://concepts.datalad.org/ontology/
 imports:
   - types
   - linkml:types
