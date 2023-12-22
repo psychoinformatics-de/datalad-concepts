@@ -6,13 +6,13 @@ description: >-
   the purpose of making it findable and understandable for
   humans, for example via an online data catalog.
 prefixes:
-  afo: http://purl.allotrope.org/ontologies/result#
-  bibo: https://purl.org/ontology/bibo/
+  afr: http://purl.allotrope.org/ontologies/result#
+  bibo: http://purl.org/ontology/bibo/
   dcterms: https://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
-  obo: https://purl.obolibrary.org/obo/
+  obo: http://purl.obolibrary.org/obo/
   openminds: https://openminds.ebrains.eu/controlledTerms/
   schema: http://schema.org/
 imports:
@@ -47,7 +47,7 @@ slots:
     description: >-
       A list of authors of an entity
   author_type:
-    range: authorType
+    range: AuthorType
     description: >-
       The type of author: Person or Organization
   checksum_md5:
@@ -68,7 +68,7 @@ slots:
     description: >-
       The location where a file's content is accessible.
   controller_type:
-    range: authorType
+    range: AuthorType
     description: >-
       The type of data controller: Person or Organization
   data_controller:
@@ -99,11 +99,13 @@ slots:
       A general description of an entity
   doi:
     slot_uri: bibo:doi
+    range: string
     description: >-
       The Digital Object Identifier of an entity, see:
       https://www.doi.org/the-identifier/what-is-a-doi
   email:
     slot_uri: schema:email
+    range: string
     description: >-
       An email address of an entity
   funding:
@@ -116,6 +118,7 @@ slots:
       a dataset to exist
   funder:
     slot_uri: schema:funder
+    range: string
     description: >-
       The funder that provided the financial resources
       contained in a grant
@@ -125,18 +128,20 @@ slots:
     inlined: true
     inlined_as_list: true
     any_of:
-      - range: dlco:File
-      - range: dlco:ResearchDataset
+      - range: File
+      - range: ResearchDataset
     description: >-
       Linked entities that form part of a dataset
       such as files or other (sub)datasets
   identifier:
     slot_uri: schema:identifier
+    range: string
     identifier: true
     description: >-
       The name or code that uniquely identifies an entity
   homepage:
     slot_uri: schema:mainEntityOfPage
+    range: string
     description: >-
       A URL that hosts the primary source of information
       and/or data for a dataset.
@@ -144,24 +149,29 @@ slots:
     slot_uri: schema:keywords
     multivalued: true
     inlined_as_list: true
+    range: string
     description: >-
       Keywords describing the major topical themes of a
       dataset and that aid the discoverability of a dataset.
   license:
     slot_uri: schema:license
+    range: string
     description: >-
       A license document (URL) that applies to a dataset and
       defines the terms and conditions for data use.
   name:
     slot_uri: schema:name
+    range: string
     description: >-
       The name of an entity
   orcid:
     slot_uri: obo:IAO_0000708
+    range: string
     description: >-
       The ORCID identifier of an author, see: https://orcid.org/.
   path_posix:
-    slot_uri: afo:AFR_0001928
+    slot_uri: afr:AFR_0001928
+    range: string
     description: >-
       The path of a file relative to the root of a dataset,
       provided in the POSIX format.
@@ -182,16 +192,19 @@ slots:
       The size of a file in bytes.
   title:
     slot_uri: schema:title
+    range: string
     description: >-
       A text title that serves as the human-readable heading
       of an entity. This is distinct from 'name', which could
       (but does not necessarily have to) be human-readable.
   url:
     slot_uri: schema:url
+    range: string
     description: >-
       An online location where an entity can be accessed.
   version:
     slot_uri: schema:version
+    range: string
     description: >-
       A label that identifies the version of the dataset the
       catalog record is describing. If a dataset is unversioned,
@@ -203,11 +216,13 @@ slots:
 
 # ENUMS
 enums:
-  authorType:
+  AuthorType:
+    description: >-
+     An author can either be a person or an organization
     permissible_values:
-      Person:
+      person:
         meaning: schema:Person
-      Organization:
+      organization:
         meaning: schema:Organization
 
 
@@ -254,6 +269,8 @@ classes:
   
   Author:
     class_uri: dlco:Author
+    mixins:
+      - HasTypeDesignator
     description: >-
       An author of a research dataset or of a publication
     related_mappings:
@@ -276,6 +293,8 @@ classes:
 
   DataController:
     class_uri: dlco:DataController
+    mixins:
+      - HasTypeDesignator
     description: >-
       The Person or Organization that has legal control over the
       dataset.
@@ -305,9 +324,9 @@ classes:
           Organization.
   
   File:
+    class_uri: dlco:File
     mixins:
       - HasTypeDesignator
-    class_uri: dlco:File
     close_mappings:
       - schema:DigitalDocument
     description: >-
@@ -324,6 +343,8 @@ classes:
 
   Grant:
     class_uri: dlco:Grant
+    mixins:
+      - HasTypeDesignator
     close_mappings:
       - schema:Grant
     description: >-
@@ -341,6 +362,8 @@ classes:
   
   Publication:
     class_uri: dlco:Publication
+    mixins:
+      - HasTypeDesignator
     description: >-
       A publication (for example an article, book, or software)
       that is associated with a research dataset.
