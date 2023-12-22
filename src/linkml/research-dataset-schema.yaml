@@ -17,10 +17,10 @@ prefixes:
   schema: http://schema.org/
 imports:
   - types
+  - typing
   - linkml:types
   - datasets
 default_prefix: dlco
-default_range: string
 
 
 # SLOTS
@@ -33,7 +33,6 @@ slots:
   affiliation:
     slot_uri: schema:affiliation
     multivalued: true
-    inlined_as_list: true
     range: string
     description: >-
       The group(s), institution(s), or employer(s) that an
@@ -75,6 +74,8 @@ slots:
   data_controller:
     slot_uri: dpv:hasDataController
     range: DataController
+    multivalued: true
+    inlined_as_list: true
     description: >-
       A person or organization that serves as the data
       controller of a dataset.
@@ -105,16 +106,6 @@ slots:
     slot_uri: schema:email
     description: >-
       An email address of an entity
-  has_part:
-    slot_uri: dcterms:hasPart
-    multivalued: true
-    inlined_as_list: true
-    any_of:
-      - range: dlco:File
-      - range: dlco:ResearchDataset
-    description: >-
-      Linked entities that form part of a dataset
-      such as files or other (sub)datasets
   funding:
     slot_uri: schema:funding
     multivalued: true
@@ -128,6 +119,17 @@ slots:
     description: >-
       The funder that provided the financial resources
       contained in a grant
+  has_part:
+    slot_uri: dcterms:hasPart
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    any_of:
+      - range: dlco:File
+      - range: dlco:ResearchDataset
+    description: >-
+      Linked entities that form part of a dataset
+      such as files or other (sub)datasets
   identifier:
     slot_uri: schema:identifier
     identifier: true
@@ -212,6 +214,8 @@ enums:
 # CLASSES
 classes:
   ResearchDataset:
+    mixins:
+      - HasTypeDesignator
     tree_root: true
     is_a: Dataset
     description: >-
@@ -231,6 +235,8 @@ classes:
       - funding
       - name
       - title
+      - date_modified
+      - version
     slot_usage:
       author:
         required: true
@@ -299,6 +305,8 @@ classes:
           Organization.
   
   File:
+    mixins:
+      - HasTypeDesignator
     class_uri: dlco:File
     close_mappings:
       - schema:DigitalDocument
@@ -312,6 +320,7 @@ classes:
     slot_usage:
       path_posix:
         required: true
+        identifier: true
 
   Grant:
     class_uri: dlco:Grant
