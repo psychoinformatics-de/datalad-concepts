@@ -38,19 +38,19 @@ has_part:
     size_in_bytes: 18872
     metatype: dlco:File
 author:
-  - author_type: Person
+  - author_type: person
     orcid: 0000-0002-6047-5564
     affiliation:
     - 'UC Santa Barbara: Santa Barbara, CA, US'
     email: ahorst@ucsb.edu
     name: Allison Horst
-  - author_type: Person
+  - author_type: person
     orcid: 0000-0002-8082-1890
     affiliation:
     - 'RStudio: Boston, MA, US'
     email: b@example.com
     name: Alison Hill
-  - author_type: Person
+  - author_type: person
     orcid: 0000-0002-0258-9264
     affiliation:
     - 'University of Alaska Fairbanks: Fairbanks, AK, US'
