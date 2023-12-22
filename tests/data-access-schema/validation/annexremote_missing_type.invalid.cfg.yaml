@@ -1,0 +1,8 @@
+schema: src/linkml/data-access-schema.yaml
+target_class: DataObject
+data_sources:
+  - tests/data-access-schema/validation/GitAnnexSpecialRemote-missing_type.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+  RecommendedSlotsPlugin:

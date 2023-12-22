@@ -1,0 +1,9 @@
+schema: src/linkml/git-provenance-schema.yaml
+target_class: Commit
+data_sources:
+  - src/examples/git-provenance-schema/Commit-simple.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: true
+  RecommendedSlotsPlugin:

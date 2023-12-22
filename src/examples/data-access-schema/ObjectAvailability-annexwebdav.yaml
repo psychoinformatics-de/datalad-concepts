@@ -1,0 +1,6 @@
+access_method:
+  metatype: dlco:GitAnnexSpecialRemote
+  special_remote_type: webdav
+  has_parameter:
+    - some
+object_id: MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt

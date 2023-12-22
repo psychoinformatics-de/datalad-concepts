@@ -1,0 +1,8 @@
+schema: src/linkml/data-access-schema.yaml
+target_class: ObjectAvailability
+data_sources:
+  - src/examples/data-access-schema/ObjectAvailability-annexwebdav.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+  RecommendedSlotsPlugin:
