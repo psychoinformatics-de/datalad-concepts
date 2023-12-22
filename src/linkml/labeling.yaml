@@ -1,0 +1,27 @@
+id: https://concepts.datalad.org/labeling
+name: labeling
+title: Utilities for labeling objects
+description: >-
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+default_prefix: dlco
+
+slots:
+  name:
+    description: >-
+      Name of the item or entity.
+    range: string
+    exact_mappings:
+      - schema:name
+      - rdfs:label
+
+classes:
+  HasName:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with a name.
+    slots:
+      - name

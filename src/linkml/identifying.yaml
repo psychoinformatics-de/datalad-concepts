@@ -1,0 +1,27 @@
+id: https://concepts.datalad.org/identifying
+name: identifying
+title: Utilities for identifying objects
+description: >-
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+default_prefix: dlco
+
+slots:
+  id:
+    identifier: true
+    description: >-
+      Unique identifier.
+    range: string
+
+classes:
+  HasGloballyUniqueIdentifier:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with a globally unique identifier.
+    slots:
+      - id
+    slot_usage:
+      id:
+        description: >-
+          Globally unique identifier.

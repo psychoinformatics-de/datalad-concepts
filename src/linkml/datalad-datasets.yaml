@@ -8,24 +8,11 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - datasets
+  - identifying
+  - labeling
   - types
   - typing
 default_prefix: dlco
-
-slots:
-  id:
-    identifier: true
-    description: >-
-      Unique identifier.
-    range: string
-
-  name:
-    description: >-
-      Name of the item or entity.
-    range: string
-    exact_mappings:
-      - schema:name
-      - rdfs:label
 
 
 enums:
