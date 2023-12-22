@@ -339,7 +339,6 @@ classes:
     slot_usage:
       path_posix:
         required: true
-        identifier: true
 
   Grant:
     class_uri: dlco:Grant
@@ -383,4 +382,3 @@ classes:
         identifier: true
       date_published:
         required: true
-      
