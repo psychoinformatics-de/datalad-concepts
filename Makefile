@@ -21,7 +21,10 @@ build/context.jsonld: src/linkml/ontology.yaml
 		--mergeimports \
 		$< > $@
 
-build/linkml-docs: build/linkml-docs/ontology build/linkml-docs/data-access-schema
+build/linkml-docs: \
+	build/linkml-docs/ontology \
+	build/linkml-docs/data-access-schema \
+	build/linkml-docs/git-provenance-schema
 build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
@@ -45,6 +48,7 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 # add additional schemas to lint here
 check: \
 	check-data-access-schema \
+	check-git-provenance-schema \
 	check-ontology
 check-%: src/linkml/%.yaml
 	@echo [Check $<]
@@ -75,7 +79,8 @@ check-%: src/linkml/%.yaml
 # naming schema <class>-<example-name>.yaml to be
 # usable as documentation examples for `gen-doc`
 validate-examples: \
-	validate-examples-data-access-schema
+	validate-examples-data-access-schema \
+	validate-examples-git-provenance-schema
 validate-examples-%:
 	$(MAKE) validate-valid-examples-$* validate-invalid-examples-$*
 validate-valid-examples-%: src/linkml/%.yaml src/examples/%
@@ -83,7 +88,7 @@ validate-valid-examples-%: src/linkml/%.yaml src/examples/%
 validate-invalid-examples-%: src/linkml/%.yaml src/counter-examples/%
 	# loop over all counter-examples, skip the schema file itself
 	echo "Verify EXPECTED validation failures"
-	for ex in $^/*; do \
+	@for ex in $^/*; do \
 		[ "$$ex" = "$<" ] && continue; \
 		linkml-validate -s $< $$ex && UNEXPECTEDLY VALID || true; \
 	done

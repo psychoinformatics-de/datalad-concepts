@@ -1,0 +1,77 @@
+id: https://concepts.datalad.org/git-provenance-schema
+name: git-provenance-schema
+title: Git provenance schema
+description: >-
+  This is a schema draft centered around the annotation of provenance in
+  the context of a Git commit history.
+
+  This schema is not envisioned to be around as a standalone document for
+  long, but be merged as a component into a schema for describing complete
+  datasets.
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+imports:
+  - identifying
+  - labeling
+  - provenance
+default_prefix: dlco
+
+
+slots:
+
+classes:
+  GitHistory:
+    tree_root: true
+    description: >-
+      A container for Commit records.
+    attributes:
+      commits:
+        description:
+          Any number of commits that comprise the Git history of a repository
+          or branch.
+        range: Commit
+        multivalued: true
+        inlined: true
+        inlined_as_list: false
+
+  # TODO orthogonalize/consolidate with datalad-dataset:Commit
+  Commit:
+    description: >-
+      A revision or an individual change in a Git repository.
+    mixins:
+      - HasGloballyUniqueIdentifier
+    # cannot use following mixin, because OWL generator complains
+    # WARNING:root:from_schema not populated for element was_generated_by
+    # However, using the slot directly works fine
+    # The OWL output is the same in both cases -- a bug?!
+    #  - HasGenerationProvenance
+    slots:
+      # TODO dct:created would capture the same
+      - generated_at
+      - was_generated_by
+    slot_usage:
+      was_generated_by:
+        range: Committing
+
+  Committing:
+    is_a: Activity
+    description: >-
+      The action of creating a Commit in a Git repository.
+    slots:
+      - was_associated_with
+    slot_usage:
+      was_associated_with:
+        range: GitUser
+        inlined: true
+        required: true
+
+  GitUser:
+    is_a: Agent
+    mixins:
+      - HasName
+    description: >-
+      An person, or process that interacts with a Git repository.
+    # TODO email attribute
