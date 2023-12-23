@@ -44,7 +44,6 @@ slots:
 classes:
   # technical vehicle for this schema and its validation
   DataObject:
-    tree_root: true
     description: >-
       Root object for this schema. not part of the ontology.
     mixins:

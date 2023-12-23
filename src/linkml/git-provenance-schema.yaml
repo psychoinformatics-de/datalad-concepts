@@ -30,20 +30,6 @@ slots:
 
 
 classes:
-  GitHistory:
-    tree_root: true
-    description: >-
-      A container for Commit records.
-    attributes:
-      commits:
-        description:
-          Any number of commits that comprise the Git history of a repository
-          or branch.
-        range: Commit
-        multivalued: true
-        inlined: true
-        inlined_as_list: false
-
   # TODO orthogonalize/consolidate with datalad-dataset:Commit
   Commit:
     description: >-
