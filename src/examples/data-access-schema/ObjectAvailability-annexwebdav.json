@@ -1,6 +1,6 @@
 {
   "access_method": {
-    "metatype": "dlco:GitAnnexSpecialRemote",
+    "meta_type": "dlco:GitAnnexSpecialRemote",
     "special_remote_type": "webdav",
     "has_parameter": [
       "some"

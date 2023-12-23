@@ -1,0 +1,33 @@
+id: https://concepts.datalad.org/meta_utils
+name: typing
+title: Utilities for identifying and typing metadata objects
+description: >-
+  The provided slots and mixins help to equip metadata objects with
+  standard properties for type inference and identification.
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+imports:
+  - linkml:types
+default_prefix: dlco
+
+
+slots:
+  meta_id:
+    identifier: true
+    description: >-
+      Unique identifier of a metadata object.
+    range: uriorcurie
+  meta_type:
+    designates_type: true
+    description: >-
+      Type designator of a metadata object.
+    range: uriorcurie
+
+
+classes:
+  HasMetaTypeDesignator:
+    mixin: true
+    description: >-
+      (Mixin) class for an object with a metadata type designator.
+    slots:
+      - meta_type

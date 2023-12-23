@@ -14,8 +14,7 @@ default_prefix: dlco
 imports:
   - datasets
   - datalad-datasets
-  - identifying
   - labeling
+  - meta_utils
   - provenance
   - types
-  - typing

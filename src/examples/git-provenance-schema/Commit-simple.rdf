@@ -1,0 +1,11 @@
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+gitsha:7726424f50c6e9a70ba31e8d44c5d86fc46170da a dlco:Commit ;
+    prov:wasGeneratedBy [ a dlco:Committing ;
+            prov:wasAssociatedWith [ a dlco:GitUser ;
+                    dlco:name "Michael Hanke" ] ] ;
+    dlco:gitsha "7726424f50c6e9a70ba31e8d44c5d86fc46170da"^^dlco:sha1 .
+
+

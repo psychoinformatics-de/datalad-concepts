@@ -8,12 +8,18 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - datasets
-  - identifying
   - labeling
+  - meta_utils
   - types
-  - typing
 default_prefix: dlco
 
+
+slots:
+  id:
+    identifier: true
+    description: >-
+      Unique identifier.
+    range: string
 
 enums:
   DirectoryItemType:
@@ -32,7 +38,7 @@ classes:
   FileContent:
     mixins:
       - IdentifiedThing
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     description: >-
       File content. More or less an analog of the POSIX filesystem file,
       which is also name-less content.
@@ -67,7 +73,7 @@ classes:
   ObjectAccessMethod:
     mixins:
       - IdentifiedThing
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     description: >-
       Means to retrieve file content objects.
 
@@ -116,7 +122,7 @@ classes:
   Directory:
     mixins:
       - IdentifiedThing
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     description: >-
       A container for dataset content.
     attributes:
@@ -161,7 +167,7 @@ classes:
   Commit:
     mixins:
       - IdentifiedThing
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     attributes:
       tree:
         # we want content to come in separate, identified records, always.
@@ -202,7 +208,7 @@ classes:
 
   GitAgent:
     mixins:
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     description: >-
       Agent representation in a Git context
     slots:

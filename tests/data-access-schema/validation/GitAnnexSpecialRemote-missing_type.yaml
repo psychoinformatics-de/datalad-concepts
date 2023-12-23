@@ -1,6 +1,6 @@
 available_via:
   - access_method:
-      metatype: GitAnnexSpecialRemote
+      meta_type: GitAnnexSpecialRemote
       # special_remote_type is required
       #special_remote_type: webdav
       has_parameter:

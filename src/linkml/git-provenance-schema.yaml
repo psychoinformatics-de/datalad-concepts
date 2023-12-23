@@ -10,17 +10,24 @@ description: >-
   datasets.
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
+  gitsha: https://concepts.datalad.org/namespace/gitsha/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   schema: http://schema.org/
 imports:
-  - identifying
   - labeling
+  - meta_utils
   - provenance
+  - types
 default_prefix: dlco
 
 
 slots:
+  gitsha:
+    description: >-
+      SHA1 identifier of a Git object.
+    range: SHA1
+
 
 classes:
   GitHistory:
@@ -41,20 +48,28 @@ classes:
   Commit:
     description: >-
       A revision or an individual change in a Git repository.
-    mixins:
-      - HasGloballyUniqueIdentifier
     # cannot use following mixin, because OWL generator complains
     # WARNING:root:from_schema not populated for element was_generated_by
     # However, using the slot directly works fine
     # The OWL output is the same in both cases -- a bug?!
     #  - HasGenerationProvenance
     slots:
+      - gitsha
+      - meta_id
       # TODO dct:created would capture the same
       - generated_at
       - was_generated_by
     slot_usage:
       was_generated_by:
         range: Committing
+      gitsha:
+        description: >-
+          SHA1 identifier of the commit object.
+      meta_id:
+        description: >-
+          GITSHA-based metadata document identifier in CURIE-form
+        string_serialization: "gitsha:{gitsha}"
+        pattern: "^gitsha:[0-9a-f]{40}$"
 
   Committing:
     is_a: Activity

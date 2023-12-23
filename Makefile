@@ -96,7 +96,7 @@ convert-examples-%: src/linkml/%.yaml src/examples/%
 	for ex in $^/*.yaml; do \
 		[ "$$ex" = "$<" ] && continue; \
 		echo "Converting $$ex" ; \
-		for outf in json ; do \
+		for outf in json rdf; do \
 			linkml-convert \
 				-s "$<" \
 				--target-class-from-path \
