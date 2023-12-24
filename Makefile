@@ -45,6 +45,8 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	cp -r src/extra-docs/*.md $<
 	mkdocs build
 
+check: check-models check-validation
+
 # add additional schemas to lint here
 check-models: \
 	check-model-data-access-schema \
@@ -121,4 +123,4 @@ clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean check-models check-examples convert-examples
+.PHONY: clean check check-models check-examples convert-examples
