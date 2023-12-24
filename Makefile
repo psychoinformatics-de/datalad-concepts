@@ -70,11 +70,14 @@ check-model-%: src/linkml/%.yaml
 	@echo Generate OWL
 	@${FAILIF_STDERR} gen-owl $< > /dev/null
 
+# within check-validation, conversion targets must come before the
+# respective validation targets, because some tests rely on these
+# converted formats
 check-validation: \
-	check-validation-data-access-schema \
 	convert-examples-data-access-schema \
-	check-validation-git-provenance-schema \
-	convert-examples-git-provenance-schema
+	check-validation-data-access-schema \
+	convert-examples-git-provenance-schema \
+	check-validation-git-provenance-schema
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
 check-valid-validation-%: tests/%/validation src/linkml/%.yaml
