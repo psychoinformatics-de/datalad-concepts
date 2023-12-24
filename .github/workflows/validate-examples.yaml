@@ -1,4 +1,4 @@
-name: Validate examples
+name: Validate examples and verify unmodified conversion
 
 on:
   push:
@@ -24,4 +24,4 @@ jobs:
 
       - name: Validate
         run: |
-          make validate-examples
+          make check-validation

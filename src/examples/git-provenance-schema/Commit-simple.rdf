@@ -1,0 +1,18 @@
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gitsha:7726424f50c6e9a70ba31e8d44c5d86fc46170da a dlco:Commit ;
+    prov:wasDerivedFrom gitsha:ef8fa953e10041bcc9e76b7af4b15a0e2065aedf ;
+    prov:wasGeneratedBy [ prov:endedAtTime "2023-12-23T22:26:04+01:00"^^xsd:dateTime ;
+            prov:wasAssociatedWith [ a dlco:GitUserAgent ;
+                    dlco:name "Michael Hanke" ] ;
+            prov:wasInformedBy [ prov:endedAtTime "2023-12-23T21:34:46+01:00"^^xsd:dateTime ;
+                    prov:wasAssociatedWith [ a dlco:GitUserAgent ;
+                            dlco:name "Michael Hanke" ] ;
+                    dlco:meta_type "dlco:Authoring"^^xsd:anyURI ] ;
+            dlco:meta_type "dlco:Committing"^^xsd:anyURI ] ;
+    dlco:gitsha "7726424f50c6e9a70ba31e8d44c5d86fc46170da"^^dlco:sha1 .
+
+

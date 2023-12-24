@@ -14,7 +14,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
 imports:
   - types
-  - typing
+  - meta_utils
   - linkml:types
 default_prefix: dlco
 
@@ -44,7 +44,6 @@ slots:
 classes:
   # technical vehicle for this schema and its validation
   DataObject:
-    tree_root: true
     description: >-
       Root object for this schema. not part of the ontology.
     mixins:
@@ -83,7 +82,7 @@ classes:
 
   ObjectAccessMethod:
     mixins:
-      - HasTypeDesignator
+      - HasMetaTypeDesignator
     description: >-
       Parametrizable method through which objects can be obtained,
       given an object identifier.

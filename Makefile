@@ -21,7 +21,10 @@ build/context.jsonld: src/linkml/ontology.yaml
 		--mergeimports \
 		$< > $@
 
-build/linkml-docs: build/linkml-docs/ontology build/linkml-docs/data-access-schema
+build/linkml-docs: \
+	build/linkml-docs/ontology \
+	build/linkml-docs/data-access-schema \
+	build/linkml-docs/git-provenance-schema
 build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
@@ -42,11 +45,14 @@ build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	cp -r src/extra-docs/*.md $<
 	mkdocs build
 
+check: check-models check-validation
+
 # add additional schemas to lint here
-check: \
-	check-data-access-schema \
-	check-ontology
-check-%: src/linkml/%.yaml
+check-models: \
+	check-model-data-access-schema \
+	check-model-git-provenance-schema \
+	check-model-ontology
+check-model-%: src/linkml/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
 	@linkml-lint \
@@ -66,30 +72,55 @@ check-%: src/linkml/%.yaml
 	@echo Generate OWL
 	@${FAILIF_STDERR} gen-owl $< > /dev/null
 
-# add additional schemas to validate examples for here.
-# each one needs to provide valid examples at
-# src/examples/<schema-name>/* and invalid examples at
-# src/counter-examples/<schema-name>/*.
-#
-# In particular the valid examples should follow the
-# naming schema <class>-<example-name>.yaml to be
-# usable as documentation examples for `gen-doc`
-validate-examples: \
-	validate-examples-data-access-schema
-validate-examples-%:
-	$(MAKE) validate-valid-examples-$* validate-invalid-examples-$*
-validate-valid-examples-%: src/linkml/%.yaml src/examples/%
-	linkml-validate -s $^/*
-validate-invalid-examples-%: src/linkml/%.yaml src/counter-examples/%
-	# loop over all counter-examples, skip the schema file itself
-	echo "Verify EXPECTED validation failures"
-	for ex in $^/*; do \
-		[ "$$ex" = "$<" ] && continue; \
-		linkml-validate -s $< $$ex && UNEXPECTEDLY VALID || true; \
+# within check-validation, conversion targets must come before the
+# respective validation targets, because some tests rely on these
+# converted formats
+check-validation: \
+	convert-examples-data-access-schema \
+	check-validation-data-access-schema \
+	convert-examples-git-provenance-schema \
+	check-validation-git-provenance-schema
+check-validation-%:
+	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
+check-valid-validation-%: tests/%/validation src/linkml/%.yaml
+	@for ex in $</*.valid.cfg.yaml; do \
+		echo "Validate $$ex" ; \
+		linkml-validate --config "$$ex" ; \
 	done
+check-invalid-validation-%: tests/%/validation src/linkml/%.yaml
+	@for ex in $</*.invalid.cfg.yaml; do \
+		echo "(In)validate $$ex" ; \
+		linkml-validate --config "$$ex" && UNEXPECTEDLY VALID || true; \
+	done
+
+convert-examples: \
+	convert-examples-data-access-schema \
+	convert-examples-git-provenance-schema
+convert-examples-%: src/linkml/%.yaml src/examples/%
+	# loop over all examples, skip the schema file itself
+	for ex in $^/*.yaml; do \
+		[ "$$ex" = "$<" ] && continue; \
+		echo "Converting $$ex" ; \
+		for outf in json rdf; do \
+			linkml-convert \
+				-s "$<" \
+				--target-class-from-path \
+				-t "$$outf" \
+				"$$ex" \
+				> $${ex%.yaml}.$${outf}.tmp && \
+			mv $${ex%.yaml}.$${outf}.tmp $${ex%.yaml}.$${outf} ; \
+		done \
+	done
+	@git --no-pager diff -- $^
+	@if [ -n "$$(git diff -- $^)" ]; then \
+		echo -n 'ERROR: Unexpected modification of example output. ' ; \
+   		echo 'Inspect and commit changes shown above!' ; \
+		exit 22 ; \
+	fi
+
 
 clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean check validate-examples
+.PHONY: clean check check-models check-examples convert-examples

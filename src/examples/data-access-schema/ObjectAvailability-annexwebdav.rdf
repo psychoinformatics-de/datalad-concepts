@@ -1,0 +1,10 @@
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a dlco:ObjectAvailability ;
+    dlco:access_method [ dlco:has_parameter "some" ;
+            dlco:meta_type "dlco:GitAnnexSpecialRemote"^^xsd:anyURI ;
+            dlco:special_remote_type "webdav" ] ;
+    dlco:object_id "MD5E-s4--ba1f2511fc30423bdbb183fe33f3dd0f.txt" .
+
+

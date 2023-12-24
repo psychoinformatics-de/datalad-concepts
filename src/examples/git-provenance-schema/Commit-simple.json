@@ -1,0 +1,22 @@
+{
+  "meta_id": "gitsha:7726424f50c6e9a70ba31e8d44c5d86fc46170da",
+  "was_generated_by": {
+    "was_associated_with": {
+      "name": "Michael Hanke"
+    },
+    "was_informed_by": {
+      "was_associated_with": {
+        "name": "Michael Hanke"
+      },
+      "meta_type": "dlco:Authoring",
+      "ended_at": "2023-12-23T21:34:46+01:00"
+    },
+    "meta_type": "dlco:Committing",
+    "ended_at": "2023-12-23T22:26:04+01:00"
+  },
+  "gitsha": "7726424f50c6e9a70ba31e8d44c5d86fc46170da",
+  "was_derived_from": [
+    "gitsha:ef8fa953e10041bcc9e76b7af4b15a0e2065aedf"
+  ],
+  "@type": "Commit"
+}

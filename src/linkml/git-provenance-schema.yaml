@@ -1,0 +1,103 @@
+id: https://concepts.datalad.org/git-provenance-schema
+name: git-provenance-schema
+title: Git provenance schema
+description: >-
+  This is a schema draft centered around the annotation of provenance in
+  the context of a Git commit history.
+
+  This schema is not envisioned to be around as a standalone document for
+  long, but be merged as a component into a schema for describing complete
+  datasets.
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  gitsha: https://concepts.datalad.org/namespace/gitsha/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+imports:
+  - labeling
+  - meta_utils
+  - provenance
+  - types
+default_prefix: dlco
+
+
+slots:
+  gitsha:
+    description: >-
+      SHA1 identifier of a Git object.
+    range: SHA1
+
+
+classes:
+  # TODO orthogonalize/consolidate with datalad-dataset:Commit
+  # the relevant class is not this one, but the
+  # CommitProvenance mixin
+  Commit:
+    description: >-
+      A revision or an individual change in a Git repository.
+    mixins:
+      - CommitProvenance
+    slots:
+      - gitsha
+      - meta_id
+    slot_usage:
+      gitsha:
+        description: >-
+          SHA1 identifier of the commit object.
+
+  CommitProvenance:
+    mixin: true
+    description: >-
+      The provenenance bits of a commit.
+    slots:
+      - was_derived_from
+      - was_generated_by
+    slot_usage:
+      was_generated_by:
+        range: Committing
+        required: true
+      was_derived_from:
+        range: Commit
+        multivalued: true
+        inlined: false
+
+  Authoring:
+    is_a: Activity
+    description: >-
+      The action of authoring a change in a Git repository.
+    slots:
+      - meta_type
+      - ended_at
+      - was_associated_with
+    slot_usage:
+      was_associated_with:
+        range: GitUserAgent
+        inlined: true
+        required: true
+
+  Committing:
+    is_a: Activity
+    description: >-
+      The action of creating a Commit in a Git repository.
+    slots:
+      - meta_type
+      - ended_at
+      - was_associated_with
+      - was_informed_by
+    slot_usage:
+      was_associated_with:
+        range: GitUserAgent
+        inlined: true
+        required: true
+      was_informed_by:
+        range: Authoring
+        inlined: true
+        required: true
+
+  GitUserAgent:
+    is_a: Agent
+    mixins:
+      - HasName
+    description: >-
+      An person, or process that interacts with a Git repository.
+    # TODO email attribute
