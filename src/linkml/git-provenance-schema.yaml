@@ -44,6 +44,24 @@ classes:
       gitsha:
         description: >-
           SHA1 identifier of the commit object.
+      meta_id:
+        pattern: "^gitsha:[0-9a-f]{40}$"
+        description: >-
+          SHA1 identifier written as a CURIE in an explicit
+          `gitsha:` namespace.
+
+    unique_keys:
+      gitsha:
+        description: >-
+          A commit's GITSHA is a globally unique, content-based identifier
+          of that commit.
+        notes:
+          - The `gitsha` slot could have been labled to be the one identifier
+            of a Commit-type object. However, we use `meta_type` for
+            consistency and use its CURIE-format to assign an explicit
+            namespace.
+        unique_key_slots:
+          - gitsha
 
   CommitProvenance:
     mixin: true
