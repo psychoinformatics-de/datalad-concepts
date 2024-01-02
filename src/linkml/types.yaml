@@ -1,9 +1,20 @@
 id: https://concepts.datalad.org/types
 name: types
 prefixes:
+  afo: http://purl.allotrope.org/ontologies/result#
   dlco: https://concepts.datalad.org/ontology/
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+default_prefix: dlco
 
 types:
+  HexBinary:
+    uri: xsd:hexBinary
+    base: str
+    pattern: "^[a-fA-F0-9]+$"
+    description: >-
+      hex-encoded binary data.
+
   SHA1:
     uri: dlco:sha1
     base: str
@@ -13,6 +24,7 @@ types:
        hash.
     see_also:
       - https://en.wikipedia.org/wiki/SHA-1
+
   UUID:
     uri: http://purl.obolibrary.org/obo/NCIT_C54100
     base: str
