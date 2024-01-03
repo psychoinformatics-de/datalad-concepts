@@ -1,70 +1,250 @@
-# models for generic datasets
-
 id: https://concepts.datalad.org/datasets
 name: datasets
+title: Concepts for describing dataset
+description: >
+  Provided components are modeled after the DCAT v3 vocabulary
+  (https://www.w3.org/TR/vocab-dcat-3). Within the DataLad concepts ontology
+  it provides the basic framework to describe multi-version, multi-component,
+  distributed data. For this purpose, a notable difference from DCAT v3
+  exist. 1) Resources other than datasets can have a distribution. A key
+  resource with a distribution is a file. A corresponding class has been
+  added (together with a directory class). 2) A "qualified relationship"
+  pattern has been applied to the `hasPart` relationship, in order to be
+  able to describe the particular composition of multi-component datasets
+  (from referencable component definitions). 3) Another
+  "qualified relationship" pattern has been applied to the `access_service`
+  property in order to be able to specify a (deviating) resource
+  identifier for requesting a particular resource from a `DataService`.
 prefixes:
+  afo: http://purl.allotrope.org/ontologies/result#
+  dcat: http://www.w3.org/ns/dcat#
   dctypes: http://purl.org/dc/dcmitype/
   dct: http://purl.org/dc/terms/
-  schema: http://schema.org/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
+  iao: http://purl.obolibrary.org/obo/
+  ncit: http://purl.obolibrary.org/obo/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+
 imports:
+  - checksuming
+  - meta_utils
+  - provenance
+  - types
   - linkml:types
 default_prefix: dlco
 
 slots:
-  version_label:
+  access_id:
     description: >-
-      Some string
+      An identifier with which a resource distribution can be requested from a
+      `DataService`.
+    broad_mappings:
+      - dct:identifier
     range: string
-  version_of:
+    related_mappings:
+      - dcat:servesDataset
+
+  access_service:
     description: >-
-      Some string
-    range: string
+      A data service that gives access to the distribution of a `Resource`
+    close_mappings:
+      - dcat:accessService
+    range: DataService
+    comments:
+      - Unlike `dcat:access_service`, this property does not restrict its
+        domain to a dataset.
+
+  byte_size:
+    slot_uri: dcat:byteSize
+    description: >-
+      The size of a distribution in bytes.
+    range: NonNegativeInteger
+
+  distribution:
+    description: >-
+      An available distribution of a resource.
+    range: Distribution
+    close_mappings:
+      - dcat:distribution
+    comments:
+      - Unlike `dcat:distribution`, this property does not restrict its domain to
+        a dataset.
+
+  endpoint_url:
+    description: >-
+      The root location or primary endpoint of the service
+      (a resolvable IRI).
+    range: uri
+
+  has_part:
+    slot_uri: dct:hasPart
+    description: >-
+      A related resource that is included either physically
+      or logically in the described resource.
+    range: Resource
+
+  qualified_access:
+    description: >-
+      Link to a description of a `access_service` relationship with
+      `dcat:DataService`.
+    broad_mappings:
+      - dcat:qualifiedRelation
+    range: QualifiedAccess
+
+  qualified_part:
+    description: >-
+      Link to a description of a `hasPart` relationship with another resource.
+    broad_mappings:
+      - dcat:qualifiedRelation
+    range: QualifiedPart
+
+  relation:
+    description: >-
+      The resource related to the source resource.
+
+  # TODO semantically identical to `meta_type` -- think which way to consolidate
+  # in the scope of DCAT v3 `type` is a standard property of a `Resource`
+  type:
+    designates_type: true
+    description: >-
+      The nature of the resource.
+    range: uriorcurie
+    exact_mappings:
+      - dct:type
 
 classes:
+  Resource:
+    class_uri: dcat:Resource
+    slots:
+      - has_part
+      - qualified_part
+      - type
+    slot_usage:
+      qualified_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      type:
+        description: >-
+          Type of resource, e.g. `Dataset`, `Directory`, or `File`.
+
+  QualifiedAccess:
+    description: >-
+      An association class for attaching additional information to an
+      `access_service` relationship between a `dcat:Distribution` and
+      a `dcat:DataService`.
+    broad_mappings:
+      - dcat:Relationship
+    related_mappings:
+      - dcat:access_service
+    slots:
+      - access_id
+      - relation
+    slot_usage:
+      relation:
+        range: DataService
+
+  QualifiedPart:
+    description: >-
+      An association class for attaching additional information to a
+      hasPart relationship between DCAT Resources
+    broad_mappings:
+      - dcat:Relationship
+    slots:
+      - relation
+      - at_location
+    slot_usage:
+      at_location:
+        description: >-
+          The relative location of the part within the containing entity.
+        range: PosixRelPath
+      relation:
+        range: Resource
+    comments:
+      - This class is a key element of the data model. It enables referencing
+        a particular resource (e.g., a file's content, or versioned directory
+        tree in multiple contexts, such as different versions of a dataset).
 
   Dataset:
-    class_uri: dlco:Dataset
+    is_a: Resource
     description: >-
-      Dataset concept
-    close_mappings:
-      - schema:Dataset
-
-  DatasetVersion:
-    class_uri: dlco:DatasetVersion
-    description: >-
-      Dataset version
+      A collection of data, published or curated,
+      and available for access or download in one or more
+      representations. A dataset is a conceptual entity, and can be
+      represented by one or more distributions that serialize the dataset
+      for transfer. Distributions of a dataset can be provided via data
+      services.
     exact_mappings:
-      - schema:Dataset
+      - dcat:Dataset
       - dctypes:Dataset
+      - schema:Dataset
     slots:
-      - version_label
-      - version_of
+      - distribution
 
+  Directory:
+    is_a: Resource
+    description: >-
+       Cataloging structure which contains references to other files,
+       and possibly other directories (or datasets).
+    exact_mappings:
+      - ncit:NCIT_C62486
+    broad_mappings:
+      - ncit:NCIT_C49057
+    narrow_mappings:
+      - ncit:NCIT_C172256
 
+  File:
+    is_a: Resource
+    description: >-
+      Resource for storing information, which is available to a computer
+      program and is usually based on some kind of durable storage.
+      A file is a conceptual entity, and can be represented by one or more
+      distributions that serialize the file for transfer. Distributions of
+      a file can be provided via data services.
+    slots:
+      - distribution
+    exact_mappings:
+      - afo:AFR_0000639
+    comments:
+      - Being a conceptual entity, this class does not include properties
+        for exact identification of a file's content. This is the domain
+        of a `Distribution`.
+      - It would make sense to avoid assigning a global identifier to an
+        instance of this class and instead specify inline within its
+        immediate context (e.g., a `QualifiedPart` of another `Resource`).
 
+  Distribution:
+    description: >-
+      A specific representation of a dataset (part). Such a resource
+      might be available in multiple serializations.
+    close_mappings:
+      - dcat:Distribution
+    slots:
+      - access_service
+      - byte_size
+      - checksum
+      - qualified_access
+    comments:
+      - >-
+        Compared to `dcat:Distribution` this class has a `qualified_access`
+        property to enable the specification of access-related parameters
+        that cannot be inferred from a standard `dcat:Distribution`.
 
-
-
-
-
-#  DatasetPart:
-#    description: >-
-#      Component of a dataset, identified by its path within that dataset.
-#    attributes:
-#      path:
-#        description: some
-#        slot_uri: dlco:path
-#        required: true
-#        range: Path
-#  Path:
-#    class_uri: dlco:Path
-#    description: >-
-#      POSIX relpath
-#  SubDataset:
-#    is_a: DatasetVersion
-#    description: >-
-#      Dataset as a part of another dataset
-#
-#
+  DataService:
+    description: >-
+      A collection of operations that provides access to one or more
+      datasets or data processing functions.
+    exact_mappings:
+      - dcat:DataService
+    broad_mappings:
+      - dcat:Resource
+      - dctypes:Service
+    slots:
+      - endpoint_url
+      # although we do not expect any data service to have a unique identifier
+      # we must add this slow here, rather than in derived classes, due to
+      # a potential linkml limitation/bug
+      # https://github.com/psychoinformatics-de/datalad-concepts/issues/30
+      - meta_id
