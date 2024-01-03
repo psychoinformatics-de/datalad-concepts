@@ -79,6 +79,12 @@ slots:
       (a resolvable IRI).
     range: uri
 
+  is_version_of:
+    slot_uri: DCAT:isVersionOf
+    description: >-
+      A related resource of which the described resource is a version.
+    range: MetaObject
+
   qualified_access:
     description: >-
       Link to a description of a `access_service` relationship with
@@ -172,6 +178,7 @@ classes:
       - schema:Dataset
     slots:
       - distribution
+      - is_version_of
 
   Directory:
     is_a: Resource

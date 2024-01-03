@@ -9,7 +9,9 @@
 annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemote ;
     dlco:uuid "7e0bf3e7-7d46-4093-813e-b4009826c3bf"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
 
-[] dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
+[] DCAT:isVersionOf [ a dlco:DataladDataset ;
+            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] ;
+    dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
     dlco:meta_type "dlco:MonolithicDataladDatasetVersion"^^xsd:anyURI ;
     dlco:qualified_part [ a dlco:QualifiedPart ;
             dct:relation [ dlco:distribution [ a dlco:AnnexDistribution ;
@@ -21,7 +23,6 @@ annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemote ;
                                     dct:relation annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
                                     dlco:access_id "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt" ] ] ;
                     dlco:meta_type "dlco:AnnexedFile"^^xsd:anyURI ] ;
-            prov:atLocation "README.txt"^^dlco:PosixRelPath ] ;
-    dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
+            prov:atLocation "README.txt"^^dlco:PosixRelPath ] .
 
 

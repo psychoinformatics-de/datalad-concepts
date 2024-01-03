@@ -20,6 +20,13 @@ classes:
     is_a: Dataset
     description: >-
       A version (i.e., commit) of a Datalad dataset.
+    slot_usage:
+      is_version_of:
+        range: DataladDataset
+
+  DataladDataset:
+    description: >-
+      Concept class for linking `DataladDatasetVersion` instances.
     slots:
       - uuid
     slot_usage:

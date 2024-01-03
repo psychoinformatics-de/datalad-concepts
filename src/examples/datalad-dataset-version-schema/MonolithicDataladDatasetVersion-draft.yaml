@@ -1,4 +1,5 @@
-uuid: 0b76362c-aa27-11ee-be29-b3b123281259
+is_version_of:
+  uuid: 0b76362c-aa27-11ee-be29-b3b123281259
 has_annex_remote:
   annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf:
     uuid: 7e0bf3e7-7d46-4093-813e-b4009826c3bf
