@@ -30,6 +30,7 @@ prefixes:
 imports:
   - checksuming
   - meta_utils
+  - properties
   - provenance
   - types
   - linkml:types
@@ -99,10 +100,6 @@ slots:
     broad_mappings:
       - DCAT:qualifiedRelation
     range: QualifiedPart
-
-  relation:
-    description: >-
-      The resource related to the source resource.
 
   # TODO semantically identical to `meta_type` -- think which way to consolidate
   # in the scope of DCAT v3 `type` is a standard property of a `Resource`

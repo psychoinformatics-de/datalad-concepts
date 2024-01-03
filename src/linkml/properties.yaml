@@ -4,6 +4,7 @@ title: Common properties
 description: >
   Collection of common properties.
 prefixes:
+  dct: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
@@ -24,6 +25,12 @@ slots:
       - schema:algorithm
       - iao:IAO_0000064
     range: uriorcurie
+
+  relation:
+    slot_uri: dct:relation
+    description: >-
+      The resource related to the source resource.
+    relational_role: OBJECT
 
   uuid:
     description: >-
