@@ -1,0 +1,39 @@
+# models for DataLad datasets
+
+id: https://concepts.datalad.org/datalad-dataset-version-schema
+name: datalad-dataset-version-schema
+title: DataLad dataset version schema
+description: >-
+  Schema for document describing a version of a DataLad dataset
+  TODO talk about target scope and differentiation to a more
+  stream-like/RDF-like representation of individual components
+  of such a description that is more suitable for a compact
+  description of the evolution of such a dataset across multiple
+  versions.
+prefixes:
+  annex: https://concepts.datalad.org/namespace/annex-uuid/
+  dlco: https://concepts.datalad.org/ontology/
+  dct: http://purl.org/dc/terms/
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+imports:
+  - datalad
+  - git-annex
+default_prefix: dlco
+
+classes:
+  MonolithicDataladDatasetVersion:
+    is_a: DataladDatasetVersion
+    description: >-
+      A variant of `dlco:DataladDatasetVersion` with additional properties
+      for describing all dataset aspects in a structurally compact fashion
+      with minimal duplication overhead.
+    slots:
+      - has_annex_remote
+    slot_usage:
+      has_annex_remote:
+        multivalued: true
+        inlined: true
+    comments:
+      - The propert `has_annex_remote` is for defining all remotes inline
+        with a meta_id index key, such that they can be referenced in a
+        lean fashion in `QualifiedAnnexAccess` instances.

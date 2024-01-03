@@ -12,6 +12,13 @@ imports:
 default_prefix: dlco
 
 
+slots:
+  has_annex_remote:
+    description: >-
+      A git-annex (special) remote associated with a repository
+    range: AnnexRemote
+
+
 classes:
   AnnexRemote:
     is_a: DataService

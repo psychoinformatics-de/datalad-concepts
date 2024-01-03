@@ -1,0 +1,31 @@
+# models for DataLad datasets
+
+id: https://concepts.datalad.org/datalad
+name: datalad
+title: DataLad concepts
+description: >
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  dct: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+imports:
+  - datasets
+  - properties
+default_prefix: dlco
+
+
+classes:
+  DataladDatasetVersion:
+    is_a: Dataset
+    description: >-
+      A version (i.e., commit) of a Datalad dataset.
+    slots:
+      - uuid
+    slot_usage:
+      uuid:
+        description: >-
+          UUID-style unique identifier. This property is the main
+          distinguishing feature between a DataLad dataset and
+          a plain Git or git-annex repository branch.
+        required: true

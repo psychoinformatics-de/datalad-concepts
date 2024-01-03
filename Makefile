@@ -24,7 +24,8 @@ build/context.jsonld: src/linkml/ontology.yaml
 build/linkml-docs: \
 	build/linkml-docs/ontology \
 	build/linkml-docs/data-access-schema \
-	build/linkml-docs/git-provenance-schema
+	build/linkml-docs/git-provenance-schema \
+	build/linkml-docs/datalad-dataset-version-schema
 build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
@@ -51,6 +52,7 @@ check: check-models check-validation
 check-models: \
 	check-model-data-access-schema \
 	check-model-git-provenance-schema \
+	check-model-datalad-dataset-version-schema \
 	check-model-ontology
 check-model-%: src/linkml/%.yaml
 	@echo [Check $<]
@@ -82,6 +84,8 @@ check-validation: \
 	check-validation-data-access-schema \
 	convert-examples-git-provenance-schema \
 	check-validation-git-provenance-schema \
+	convert-examples-datalad-dataset-version-schema \
+	check-validation-datalad-dataset-version-schema \
 	convert-examples-ontology
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
@@ -98,7 +102,9 @@ check-invalid-validation-%: tests/%/validation src/linkml/%.yaml
 
 convert-examples: \
 	convert-examples-data-access-schema \
-	convert-examples-git-provenance-schema
+	convert-examples-datalad-dataset-version-schema \
+	convert-examples-git-provenance-schema \
+	convert-examples-ontology
 convert-examples-%: src/linkml/%.yaml src/examples/%
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \
