@@ -5,6 +5,7 @@ description: >-
   The provided slots and mixins help to equip metadata objects with
   standard properties for type inference and identification.
 prefixes:
+  dct: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - linkml:types
@@ -22,7 +23,8 @@ slots:
     description: >-
       Type designator of a metadata object.
     range: uriorcurie
-
+    exact_mappings:
+      - dct:type
 
 classes:
   HasMetaTypeDesignator:
