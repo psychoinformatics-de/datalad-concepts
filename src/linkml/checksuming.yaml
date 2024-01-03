@@ -13,6 +13,7 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
 
 imports:
+  - properties
   - types
   - linkml:types
 default_prefix: dlco
@@ -34,16 +35,6 @@ enums:
         meaning: spdx:checksumAlgorithm_sha256
 
 slots:
-  algorithm:
-    description: >-
-      The algorithm or rules to follow to compute a score, an effective method
-      expressed as a finite list of well-defined instructions for calculating
-      a function.
-    exact_mappings:
-      - schema:algorithm
-      - iao:IAO_0000064
-    range: uriorcurie
-
   checksum:
     slot_uri: spdx:checksum
     description: >-
