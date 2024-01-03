@@ -17,7 +17,7 @@ description: >
   identifier for requesting a particular resource from a `DataService`.
 prefixes:
   afo: http://purl.allotrope.org/ontologies/result#
-  dcat: http://www.w3.org/ns/dcat#
+  DCAT: http://www.w3.org/ns/dcat#
   dctypes: http://purl.org/dc/dcmitype/
   dct: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
@@ -44,20 +44,20 @@ slots:
       - dct:identifier
     range: string
     related_mappings:
-      - dcat:servesDataset
+      - DCAT:servesDataset
 
   access_service:
     description: >-
       A data service that gives access to the distribution of a `Resource`
     close_mappings:
-      - dcat:accessService
+      - DCAT:accessService
     range: DataService
     comments:
-      - Unlike `dcat:access_service`, this property does not restrict its
+      - Unlike `DCAT:access_service`, this property does not restrict its
         domain to a dataset.
 
   byte_size:
-    slot_uri: dcat:byteSize
+    slot_uri: DCAT:byteSize
     description: >-
       The size of a distribution in bytes.
     range: NonNegativeInteger
@@ -67,9 +67,9 @@ slots:
       An available distribution of a resource.
     range: Distribution
     close_mappings:
-      - dcat:distribution
+      - DCAT:distribution
     comments:
-      - Unlike `dcat:distribution`, this property does not restrict its domain to
+      - Unlike `DCAT:distribution`, this property does not restrict its domain to
         a dataset.
 
   endpoint_url:
@@ -88,16 +88,16 @@ slots:
   qualified_access:
     description: >-
       Link to a description of a `access_service` relationship with
-      `dcat:DataService`.
+      `DCAT:DataService`.
     broad_mappings:
-      - dcat:qualifiedRelation
+      - DCAT:qualifiedRelation
     range: QualifiedAccess
 
   qualified_part:
     description: >-
       Link to a description of a `hasPart` relationship with another resource.
     broad_mappings:
-      - dcat:qualifiedRelation
+      - DCAT:qualifiedRelation
     range: QualifiedPart
 
   relation:
@@ -116,7 +116,7 @@ slots:
 
 classes:
   Resource:
-    class_uri: dcat:Resource
+    class_uri: DCAT:Resource
     slots:
       - has_part
       - qualified_part
@@ -133,12 +133,12 @@ classes:
   QualifiedAccess:
     description: >-
       An association class for attaching additional information to an
-      `access_service` relationship between a `dcat:Distribution` and
-      a `dcat:DataService`.
+      `access_service` relationship between a `DCAT:Distribution` and
+      a `DCAT:DataService`.
     broad_mappings:
-      - dcat:Relationship
+      - DCAT:Relationship
     related_mappings:
-      - dcat:access_service
+      - DCAT:access_service
     slots:
       - access_id
       - relation
@@ -151,7 +151,7 @@ classes:
       An association class for attaching additional information to a
       hasPart relationship between DCAT Resources
     broad_mappings:
-      - dcat:Relationship
+      - DCAT:Relationship
     slots:
       - relation
       - at_location
@@ -177,7 +177,7 @@ classes:
       for transfer. Distributions of a dataset can be provided via data
       services.
     exact_mappings:
-      - dcat:Dataset
+      - DCAT:Dataset
       - dctypes:Dataset
       - schema:Dataset
     slots:
@@ -220,7 +220,7 @@ classes:
       A specific representation of a dataset (part). Such a resource
       might be available in multiple serializations.
     close_mappings:
-      - dcat:Distribution
+      - DCAT:Distribution
     slots:
       - access_service
       - byte_size
@@ -228,18 +228,18 @@ classes:
       - qualified_access
     comments:
       - >-
-        Compared to `dcat:Distribution` this class has a `qualified_access`
+        Compared to `DCAT:Distribution` this class has a `qualified_access`
         property to enable the specification of access-related parameters
-        that cannot be inferred from a standard `dcat:Distribution`.
+        that cannot be inferred from a standard `DCAT:Distribution`.
 
   DataService:
     description: >-
       A collection of operations that provides access to one or more
       datasets or data processing functions.
     exact_mappings:
-      - dcat:DataService
+      - DCAT:DataService
     broad_mappings:
-      - dcat:Resource
+      - DCAT:Resource
       - dctypes:Service
     slots:
       - endpoint_url
