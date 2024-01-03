@@ -36,6 +36,6 @@ classes:
         multivalued: true
         inlined: true
     comments:
-      - The propert `has_annex_remote` is for defining all remotes inline
+      - The property `has_annex_remote` is for defining all remotes inline
         with a meta_id index key, such that they can be referenced in a
         lean fashion in `QualifiedAnnexAccess` instances.

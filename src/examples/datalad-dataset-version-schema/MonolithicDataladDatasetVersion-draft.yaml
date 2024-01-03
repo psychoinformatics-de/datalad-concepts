@@ -5,7 +5,7 @@ has_annex_remote:
 qualified_part:
   - at_location: README.txt
     relation:
-      type: dlco:AnnexedFile
+      meta_type: dlco:AnnexedFile
       distribution:
         byte_size: 3425
         checksum:

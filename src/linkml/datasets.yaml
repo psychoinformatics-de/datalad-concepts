@@ -94,13 +94,10 @@ slots:
       - DCAT:qualifiedRelation
     range: QualifiedPart
 
-  # TODO semantically identical to `meta_type` -- think which way to consolidate
-  # in the scope of DCAT v3 `type` is a standard property of a `Resource`
   type:
-    designates_type: true
     description: >-
       The nature of the resource.
-    range: uriorcurie
+    range: string
     exact_mappings:
       - dct:type
 
@@ -109,6 +106,7 @@ classes:
     class_uri: DCAT:Resource
     slots:
       - has_part
+      - meta_type
       - qualified_part
       - type
     slot_usage:
