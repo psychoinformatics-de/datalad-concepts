@@ -1,0 +1,23 @@
+id: https://concepts.datalad.org/properties
+name: properties
+title: Common properties
+description: >
+  Collection of common properties.
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  iao: http://purl.obolibrary.org/obo/
+  schema: http://schema.org/
+  spdx: http://spdx.org/rdf/terms#
+
+imports:
+  - types
+default_prefix: dlco
+
+slots:
+  uuid:
+    description: >-
+      Associated UUID identifier.
+    range: UUID
+    broad_mappings:
+      - dct:identifier
