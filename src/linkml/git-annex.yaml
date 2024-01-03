@@ -34,14 +34,6 @@ classes:
       relation:
         range: AnnexRemote
 
-  AnnexDistribution:
-    is_a: Distribution
-    description: >-
-      A distribution that is accessible via git-annex.
-    slot_usage:
-      qualified_access:
-        range: QualifiedAnnexAccess
-
   AnnexedFile:
     is_a: File
     description: >-
@@ -49,3 +41,11 @@ classes:
     slot_usage:
       distribution:
         range: AnnexDistribution
+
+  AnnexDistribution:
+    is_a: Distribution
+    description: >-
+      A distribution that is accessible via git-annex.
+    slot_usage:
+      qualified_access:
+        range: QualifiedAnnexAccess
