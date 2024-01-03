@@ -12,9 +12,11 @@ description: >-
   versions.
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
-  dlco: https://concepts.datalad.org/ontology/
+  dcat: http://www.w3.org/ns/dcat#
   dct: http://purl.org/dc/terms/
-  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  dlco: https://concepts.datalad.org/ontology/
+  prov: http://www.w3.org/ns/prov#
+  spdx: http://spdx.org/rdf/terms#
 imports:
   - datalad
   - git-annex

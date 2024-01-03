@@ -1,8 +1,8 @@
 @prefix annex: <https://concepts.datalad.org/namespace/annex-uuid/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dlco: <https://concepts.datalad.org/ontology/> .
-@prefix ns1: <dcat:> .
-@prefix ns2: <spdx:> .
-@prefix ns3: <prov:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemote ;
@@ -10,16 +10,16 @@ annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemote ;
 
 [] dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
     dlco:qualified_part [ a dlco:QualifiedPart ;
+            prov:atLocation "README.txt"^^dlco:PosixRelPath ;
             dlco:relation [ dlco:distribution [ a dlco:AnnexDistribution ;
-                            ns1:byteSize "3425"^^xsd:nonNegativeInteger ;
+                            spdx:checksum [ a spdx:Checksum ;
+                                    spdx:algorithm "md5"^^xsd:anyURI ;
+                                    spdx:checksumValue "32a617360d10e3dcbfdd0885e8d64ab8"^^xsd:hexBinary ] ;
+                            dcat:byteSize "3425"^^xsd:nonNegativeInteger ;
                             dlco:qualified_access [ a dlco:QualifiedAnnexAccess ;
                                     dlco:access_id "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt" ;
-                                    dlco:relation annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ] ;
-                            ns2:checksum [ a ns2:Checksum ;
-                                    ns2:algorithm "md5"^^xsd:anyURI ;
-                                    ns2:checksumValue "32a617360d10e3dcbfdd0885e8d64ab8"^^xsd:hexBinary ] ] ;
-                    dlco:type "dlco:AnnexedFile"^^xsd:anyURI ] ;
-            ns3:atLocation "README.txt"^^dlco:PosixRelPath ] ;
+                                    dlco:relation annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ] ] ;
+                    dlco:type "dlco:AnnexedFile"^^xsd:anyURI ] ] ;
     dlco:type "dlco:MonolithicDataladDatasetVersion"^^xsd:anyURI ;
     dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
 
