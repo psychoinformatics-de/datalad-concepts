@@ -104,6 +104,17 @@ slots:
     domain: Agent
     range: Agent
 
+  at_location:
+    slot_uri: prov:atLocation
+    description: >-
+      A location can be an identifiable geographic place (ISO 19112),
+      but it can also be a non-geographic place such as a directory,
+      row, or column. As such, there are numerous ways in which
+      location can be expressed, such as by a coordinate, address,
+      landmark, and so forth.
+    range: Location
+
+
 classes:
   Entity:
     class_uri: prov:Entity
@@ -130,3 +141,12 @@ classes:
     class_uri: prov:SoftwareAgent
     description: >-
       Running software.
+
+  Location:
+    class_uri: prov:Location
+    description: >-
+      A location can be an identifiable geographic place (ISO 19112),
+      but it can also be a non-geographic place such as a directory,
+      row, or column. As such, there are numerous ways in which location
+      can be expressed, such as by a coordinate, address, landmark, and
+      so forth.
