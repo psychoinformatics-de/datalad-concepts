@@ -79,13 +79,6 @@ slots:
       (a resolvable IRI).
     range: uri
 
-  has_part:
-    slot_uri: dct:hasPart
-    description: >-
-      A related resource that is included either physically
-      or logically in the described resource.
-    range: Resource
-
   qualified_access:
     description: >-
       Link to a description of a `access_service` relationship with
@@ -119,6 +112,8 @@ classes:
       - qualified_part
       - type
     slot_usage:
+      has_part:
+        range: Resource
       qualified_part:
         multivalued: true
         inlined: true

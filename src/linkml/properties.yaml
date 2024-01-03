@@ -26,6 +26,12 @@ slots:
       - iao:IAO_0000064
     range: uriorcurie
 
+  has_part:
+    slot_uri: dct:hasPart
+    description: >-
+      A related resource that is included either physically
+      or logically in the described resource.
+
   relation:
     slot_uri: dct:relation
     description: >-
