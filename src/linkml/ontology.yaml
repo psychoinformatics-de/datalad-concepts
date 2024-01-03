@@ -13,7 +13,7 @@ default_prefix: dlco
 
 imports:
   - datasets
-  - datalad-datasets
+  - git-annex
   - labeling
   - meta_utils
   - provenance

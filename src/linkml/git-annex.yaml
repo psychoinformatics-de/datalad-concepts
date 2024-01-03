@@ -1,0 +1,51 @@
+id: https://concepts.datalad.org/git-annex
+name: git-annex
+title: Git-annex concepts
+description: >
+  TODO
+prefixes:
+  annex: https://concepts.datalad.org/namespace/annex-uuid/
+  dlco: https://concepts.datalad.org/ontology/
+imports:
+  - datasets
+  - properties
+default_prefix: dlco
+
+
+classes:
+  AnnexRemote:
+    is_a: DataService
+    description: >-
+      A git-annex (special) remote.
+    slots:
+      - uuid
+    slot_usage:
+      meta_id:
+        required: true
+        equals_expression: "annex:{uuid}"
+
+  QualifiedAnnexAccess:
+    is_a: QualifiedAccess
+    description: >-
+      An association class for attaching additional information to an
+      `access_service` relationship between a `dcat:Distribution` and
+      a `dlco:AnnexRemote`.
+    slot_usage:
+      relation:
+        range: AnnexRemote
+
+  AnnexDistribution:
+    is_a: Distribution
+    description: >-
+      A distribution that is accessible via git-annex.
+    slot_usage:
+      qualified_access:
+        range: QualifiedAnnexAccess
+
+  AnnexedFile:
+    is_a: File
+    description: >-
+      A file in a Git repository that is managed by git-annex.
+    slot_usage:
+      distribution:
+        range: AnnexDistribution
