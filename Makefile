@@ -71,6 +71,8 @@ check-model-%: src/linkml/%.yaml
 	@${FAILIF_STDERR} gen-json-schema $< > /dev/null
 	@echo Generate OWL
 	@${FAILIF_STDERR} gen-owl $< > /dev/null
+	@echo Generate Python classes
+	@${FAILIF_STDERR} gen-python $< | python
 
 # within check-validation, conversion targets must come before the
 # respective validation targets, because some tests rely on these
