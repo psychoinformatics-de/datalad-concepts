@@ -81,7 +81,8 @@ check-validation: \
 	convert-examples-data-access-schema \
 	check-validation-data-access-schema \
 	convert-examples-git-provenance-schema \
-	check-validation-git-provenance-schema
+	check-validation-git-provenance-schema \
+	convert-examples-ontology
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
 check-valid-validation-%: tests/%/validation src/linkml/%.yaml
