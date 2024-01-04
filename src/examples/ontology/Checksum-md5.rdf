@@ -1,0 +1,8 @@
+@prefix ns1: <spdx:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+[] a ns1:Checksum ;
+    ns1:algorithm "md5"^^xsd:anyURI ;
+    ns1:checksumValue "32a617360d10e3dcbfdd0885e8d64ab8"^^xsd:hexBinary .
+
+
