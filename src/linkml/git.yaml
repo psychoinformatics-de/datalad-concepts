@@ -1,0 +1,41 @@
+id: https://concepts.datalad.org/git
+name: git
+title: Git concepts
+description: >
+  TODO
+prefixes:
+  gitsha: https://concepts.datalad.org/namespace/gitsha/
+  dlco: https://concepts.datalad.org/ontology/
+imports:
+  - meta_utils
+  - types
+default_prefix: dlco
+
+
+slots:
+  gitsha:
+    description: >-
+      SHA1 identifier of a Git object.
+    range: SHA1
+
+
+classes:
+  GitTracked:
+    mixin: true
+    description: >-
+      Mixin class for any ressource tracked by Git, thereby having a unique
+      `gitsha` identifier.
+    slots:
+      - gitsha
+      - meta_id
+    slot_usage:
+      meta_id:
+        description: >-
+          SHA1 based identifier in the form of a CURIE with an explicit
+          `gitsha:` namespace prefix.
+        equals_expression: "gitsha:{gitsha}"
+        pattern: "^gitsha:[0-9a-f]{40}$"
+    comments:
+      - Because there can only be a single main `identifier`, this mixin
+        cannot be used on classes that already have or inherited another
+        property declared as `identifier:true`.
