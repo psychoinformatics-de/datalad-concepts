@@ -56,7 +56,7 @@ classes:
           A commit's GITSHA is a globally unique, content-based identifier
           of that commit.
         notes:
-          - The `gitsha` slot could have been labled to be the one identifier
+          - The `gitsha` slot could have been labeled to be the one identifier
             of a Commit-type object. However, we use `meta_type` for
             consistency and use its CURIE-format to assign an explicit
             namespace.
