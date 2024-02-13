@@ -15,6 +15,7 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   dct: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
+  gitsha: https://concepts.datalad.org/namespace/gitsha/
   prov: http://www.w3.org/ns/prov#
   spdx: http://spdx.org/rdf/terms#
 imports:
@@ -35,8 +36,18 @@ classes:
       has_annex_remote:
         multivalued: true
         inlined: true
+      has_part:
+        range: FileInGit
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
       is_version_of:
         inlined: true
+      qualified_part:
+        range: QualifiedGitTrackedPart
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
     comments:
       - The property `has_annex_remote` is for defining all remotes inline
         with a meta_id index key, such that they can be referenced in a

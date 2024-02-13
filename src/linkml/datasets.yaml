@@ -118,6 +118,7 @@ classes:
     slot_usage:
       has_part:
         range: Resource
+        multivalued: true
       qualified_part:
         multivalued: true
         inlined: true

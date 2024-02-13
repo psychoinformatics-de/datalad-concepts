@@ -8,6 +8,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - datasets
+  - git
   - properties
 default_prefix: dlco
 
@@ -42,7 +43,7 @@ classes:
         range: AnnexRemote
 
   AnnexedFile:
-    is_a: File
+    is_a: FileInGit
     description: >-
       A file in a Git repository that is managed by git-annex.
     slot_usage:
