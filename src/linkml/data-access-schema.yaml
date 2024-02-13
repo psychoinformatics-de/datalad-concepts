@@ -110,7 +110,7 @@ classes:
           initialize the remote.
         range: string
         multivalued: true
-        # the next two must not be used, unless range is a class defintion
+        # the next two must not be used, unless range is a class definition
         # and not just a type
         #inlined: true
         #inlined_as_list: true

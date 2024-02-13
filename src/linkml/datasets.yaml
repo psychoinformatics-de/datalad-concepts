@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/datasets
 name: datasets
-title: Concepts for describing dataset
+title: Concepts for describing datasets
 description: >
   Provided components are modeled after the DCAT v3 vocabulary
   (https://www.w3.org/TR/vocab-dcat-3). Within the DataLad concepts ontology
@@ -242,7 +242,7 @@ classes:
     slots:
       - endpoint_url
       # although we do not expect any data service to have a unique identifier
-      # we must add this slow here, rather than in derived classes, due to
+      # we must add this slot here, rather than in derived classes, due to
       # a potential linkml limitation/bug
       # https://github.com/psychoinformatics-de/datalad-concepts/issues/30
       - meta_id
