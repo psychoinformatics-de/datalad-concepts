@@ -34,6 +34,7 @@ classes:
       - GitTracked
     slot_usage:
       gitsha:
+        pattern: "^[0-9a-f]{40}$"
         description: >-
           SHA1 identifier of the commit object.
 
