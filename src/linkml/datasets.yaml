@@ -109,6 +109,7 @@ slots:
 
 classes:
   Resource:
+    mixin: true
     class_uri: DCAT:Resource
     slots:
       - has_part
@@ -121,6 +122,9 @@ classes:
         multivalued: true
       qualified_part:
         multivalued: true
+        # TODO such structure-defining properties should be moved to a
+        # schema class, and should not narrow the applicability of these
+        # concept classes
         inlined: true
         inlined_as_list: true
       type:
@@ -144,6 +148,7 @@ classes:
         range: DataService
 
   QualifiedPart:
+    mixin: true
     description: >-
       An association class for attaching additional information to a
       hasPart relationship between DCAT Resources
@@ -165,6 +170,7 @@ classes:
         tree in multiple contexts, such as different versions of a dataset).
 
   Dataset:
+    mixin: true
     is_a: Resource
     description: >-
       A collection of data, published or curated,
@@ -194,6 +200,7 @@ classes:
       - ncit:NCIT_C172256
 
   File:
+    mixin: true
     is_a: Resource
     description: >-
       Resource for storing information, which is available to a computer
@@ -214,6 +221,7 @@ classes:
         immediate context (e.g., a `QualifiedPart` of another `Resource`).
 
   Distribution:
+    mixin: true
     description: >-
       A specific representation of a dataset (part). Such a resource
       might be available in multiple serializations.
@@ -231,6 +239,7 @@ classes:
         that cannot be inferred from a standard `DCAT:Distribution`.
 
   DataService:
+    mixin: true
     description: >-
       A collection of operations that provides access to one or more
       datasets or data processing functions.
@@ -241,8 +250,3 @@ classes:
       - dctypes:Service
     slots:
       - endpoint_url
-      # although we do not expect any data service to have a unique identifier
-      # we must add this slot here, rather than in derived classes, due to
-      # a potential linkml limitation/bug
-      # https://github.com/psychoinformatics-de/datalad-concepts/issues/30
-      - meta_id

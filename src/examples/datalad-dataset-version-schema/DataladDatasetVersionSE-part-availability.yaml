@@ -5,16 +5,9 @@ has_annex_remote:
     uuid: 7e0bf3e7-7d46-4093-813e-b4009826c3bf
 has_part:
   gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58:
-    meta_type: dlco:AnnexedFile
+    meta_type: dlco:AnnexedFileSE
     gitsha: b94ef1797f7bfc1ac979be122e1b538bbb0d1d58
     distribution:
-      byte_size: 3425
-      checksum:
-        algorithm: md5
-        digest: 32a617360d10e3dcbfdd0885e8d64ab8
       qualified_access:
         access_id: MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt
         relation: annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf
-qualified_part:
-  - at_location: README.txt
-    #    relation: gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58

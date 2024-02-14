@@ -22,15 +22,21 @@ slots:
 
 classes:
   AnnexRemote:
+    # The basic idea behind this mixin approach (apart from the fact that linkml
+    # more or less forced it on us) is that we have more or less separate class
+    # hierarchies within each ontology component, and the alignment between
+    # concepts is expressed via mixin relationships. We declare many classes
+    # mixins, because linkml only allows mixin classes to be derived from other
+    # mixins
+    mixin: true
     is_a: DataService
     description: >-
       A git-annex (special) remote.
     slots:
       - uuid
     slot_usage:
-      meta_id:
+      uuid:
         required: true
-        equals_expression: "annex:{uuid}"
 
   QualifiedAnnexAccess:
     is_a: QualifiedAccess
@@ -43,7 +49,9 @@ classes:
         range: AnnexRemote
 
   AnnexedFile:
+    mixin: true
     is_a: FileInGit
+      #is_a: FileInGit
     description: >-
       A file in a Git repository that is managed by git-annex.
     slot_usage:
@@ -51,6 +59,7 @@ classes:
         range: AnnexDistribution
 
   AnnexDistribution:
+    mixin: true
     is_a: Distribution
     description: >-
       A distribution that is accessible via git-annex.

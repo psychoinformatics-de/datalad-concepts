@@ -28,33 +28,36 @@ classes:
       `gitsha` identifier.
     slots:
       - gitsha
-      - meta_id
+    #  - meta_id
     slot_usage:
       gitsha:
         required: true
-      meta_id:
-        description: >-
-          SHA1 based identifier in the form of a CURIE with an explicit
-          `gitsha:` namespace prefix.
-        equals_expression: "gitsha:{gitsha}"
-        pattern: "^gitsha:[0-9a-f]{40}$"
+          #meta_id:
+          #  description: >-
+          #    SHA1 based identifier in the form of a CURIE with an explicit
+          #    `gitsha:` namespace prefix.
+          #  equals_expression: "gitsha:{gitsha}"
+          #  pattern: "^gitsha:[0-9a-f]{40}$"
     comments:
       - Because there can only be a single main `identifier`, this mixin
         cannot be used on classes that already have or inherited another
         property declared as `identifier:true`.
 
-  QualifiedGitTrackedPart:
-    is_a: QualifiedPart
-    description: >-
-      TODO we may need this to make relation point to resources with a
-      (Git) identifier only, such that we could reference by key
-    slot_usage:
-      relation:
-        range: FileInGit
-
   FileInGit:
+    mixin: true
     is_a: File
     mixins:
       - GitTracked
     description: >-
       A `File` that is tracked with Git.
+
+      #QualifiedGitTrackedPart:
+      #  mixin: true
+      #  is_a: QualifiedPart
+      #  description: >-
+      #    TODO we may need this to make relation point to resources with a
+      #    (Git) identifier only, such that we could reference by key
+      #  slot_usage:
+      #    relation:
+      #      range: FileInGit
+

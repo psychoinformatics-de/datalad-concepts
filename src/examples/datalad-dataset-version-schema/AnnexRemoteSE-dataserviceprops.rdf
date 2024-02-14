@@ -1,0 +1,9 @@
+@prefix annex: <https://concepts.datalad.org/namespace/annex-uuid/> .
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+annex:0b76362c-aa27-11ee-be29-b3b123281259 a dlco:AnnexRemoteSE ;
+    dlco:endpoint_url "s3://obj.example.com/v3"^^xsd:anyURI ;
+    dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
+
+

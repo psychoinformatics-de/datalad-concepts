@@ -1,0 +1,13 @@
+schema: src/linkml/datalad-dataset-version-schema.yaml
+target_class: DataladDatasetVersionSE
+data_sources:
+  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-minimal.yaml
+  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-types.yaml
+  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-location.yaml
+  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-availability.yaml
+  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-full.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

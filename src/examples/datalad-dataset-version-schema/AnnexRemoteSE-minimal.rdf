@@ -1,0 +1,7 @@
+@prefix annex: <https://concepts.datalad.org/namespace/annex-uuid/> .
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+
+annex:0b76362c-aa27-11ee-be29-b3b123281259 a dlco:AnnexRemoteSE ;
+    dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
+
+

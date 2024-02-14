@@ -1,7 +1,8 @@
 schema: src/linkml/datalad-dataset-version-schema.yaml
-target_class: MonolithicDataladDatasetVersion
+target_class: AnnexRemoteSE
 data_sources:
-  - src/examples/datalad-dataset-version-schema/MonolithicDataladDatasetVersion-draft.yaml
+  - src/examples/datalad-dataset-version-schema/AnnexRemoteSE-minimal.yaml
+  - src/examples/datalad-dataset-version-schema/AnnexRemoteSE-dataserviceprops.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -1,0 +1,8 @@
+is_version_of:
+  uuid: 0b76362c-aa27-11ee-be29-b3b123281259
+has_part:
+  gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58:
+    # this type-designator slot determines the object type used to
+    # interpret this inline record
+    meta_type: dlco:AnnexedFileSE
+    gitsha: b94ef1797f7bfc1ac979be122e1b538bbb0d1d58

@@ -17,6 +17,7 @@ default_prefix: dlco
 
 classes:
   DataladDatasetVersion:
+    mixin: true
     is_a: Dataset
     description: >-
       A version (i.e., commit) of a Datalad dataset.
@@ -25,6 +26,7 @@ classes:
         range: DataladDataset
 
   DataladDataset:
+    mixin: true
     description: >-
       Concept class for linking `DataladDatasetVersion` instances.
     slots:
