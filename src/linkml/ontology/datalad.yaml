@@ -1,0 +1,43 @@
+# models for DataLad datasets
+
+id: https://concepts.datalad.org/ontology/datalad
+name: datalad
+title: DataLad concepts
+description: >
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  dcterms: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+imports:
+  - ../ontology/datasets
+  - ../ontology/properties
+
+
+classes:
+  DataladDatasetVersion:
+    class_uri: dlco:DataladDatasetVersion
+    mixin: true
+    is_a: Dataset
+    description: >-
+      A version (i.e., commit) of a Datalad dataset.
+    slot_usage:
+      is_version_of:
+        range: DataladDataset
+
+  DataladDataset:
+    class_uri: dlco:DataladDataset
+    mixin: true
+    description: >-
+      Concept class for linking `DataladDatasetVersion` instances.
+    slots:
+      - uuid
+    slot_usage:
+      uuid:
+        description: >-
+          UUID-style unique identifier. This property is the main
+          distinguishing feature between a DataLad dataset and
+          a plain Git or git-annex repository branch.
+        required: true
+    close_mappings:
+      - dlco:Dataset

@@ -1,0 +1,7 @@
+components:
+  - meta_id: datalad:0b76362c-aa27-11ee-be29-b3b123281259
+    meta_type: dlccs:DataladDatasetSE
+    uuid: 0b76362c-aa27-11ee-be29-b3b123281259
+  - meta_id: gitsha:558275f650574389dcbbf7cd8ab5046482473fc8
+    meta_type: dlccs:DataladDatasetVersionSE
+    is_version_of: datalad:0b76362c-aa27-11ee-be29-b3b123281259

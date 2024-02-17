@@ -13,7 +13,7 @@ try:
 
 all: mkdocs-site build/context.jsonld
 
-build/context.jsonld: src/linkml/ontology.yaml
+build/context.jsonld: src/linkml/schemas/ontology.yaml
 	mkdir -p build
 	gen-jsonld-context \
 		--prefixes \
@@ -23,22 +23,22 @@ build/context.jsonld: src/linkml/ontology.yaml
 
 build/linkml-docs: \
 	build/linkml-docs/ontology \
-	build/linkml-docs/data-access-schema \
-	build/linkml-docs/git-provenance-schema
-build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
+	build/linkml-docs/data-access \
+	build/linkml-docs/datalad-dataset-components \
+	build/linkml-docs/datalad-dataset-version
+#   build/linkml-docs/git-provenance-schema
+build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 	gen-doc \
-		--mergeimports \
 		--hierarchical-class-view \
-		--use-slot-uris \
 		--include-top-level-diagram \
 		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
-		--example-directory src/examples/$$(basename $@) \
-		-d $@ \
+		--example-directory src/examples/$* \
+		-d $$([ "$*" = "ontology" ] && echo $@ || echo $@-schema) \
 		$<
 	# try to inject any extra-docs (if any exist)
-	-cp -r src/extra-docs/$$(basename $@)/*.md $@
+	-cp -r src/extra-docs/$*-schema/*.md $@
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	# top-level content
@@ -49,10 +49,12 @@ check: check-models check-validation
 
 # add additional schemas to lint here
 check-models: \
-	check-model-data-access-schema \
-	check-model-git-provenance-schema \
+	check-model-data-access \
+	check-model-datalad-dataset-components \
+	check-model-datalad-dataset-version \
 	check-model-ontology
-check-model-%: src/linkml/%.yaml
+#	check-model-git-provenance
+check-model-%: src/linkml/schemas/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
 	@linkml-lint \
@@ -71,32 +73,42 @@ check-model-%: src/linkml/%.yaml
 	@${FAILIF_STDERR} gen-json-schema $< > /dev/null
 	@echo Generate OWL
 	@${FAILIF_STDERR} gen-owl $< > /dev/null
+	@echo Generate Python classes
+	@${FAILIF_STDERR} gen-python $< | python
 
 # within check-validation, conversion targets must come before the
 # respective validation targets, because some tests rely on these
 # converted formats
 check-validation: \
-	convert-examples-data-access-schema \
-	check-validation-data-access-schema \
-	convert-examples-git-provenance-schema \
-	check-validation-git-provenance-schema
+	convert-examples-data-access \
+	check-validation-data-access \
+	convert-examples-datalad-dataset-components \
+	check-validation-datalad-dataset-components \
+	convert-examples-datalad-dataset-version \
+	check-validation-datalad-dataset-version \
+	convert-examples-ontology
+#	convert-examples-git-provenance
+#	check-validation-git-provenance
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
-check-valid-validation-%: tests/%/validation src/linkml/%.yaml
+check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 	@for ex in $</*.valid.cfg.yaml; do \
 		echo "Validate $$ex" ; \
 		linkml-validate --config "$$ex" ; \
 	done
-check-invalid-validation-%: tests/%/validation src/linkml/%.yaml
+check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 	@for ex in $</*.invalid.cfg.yaml; do \
 		echo "(In)validate $$ex" ; \
 		linkml-validate --config "$$ex" && UNEXPECTEDLY VALID || true; \
 	done
 
 convert-examples: \
-	convert-examples-data-access-schema \
-	convert-examples-git-provenance-schema
-convert-examples-%: src/linkml/%.yaml src/examples/%
+	convert-examples-data-access \
+	convert-examples-datalad-dataset-components \
+	convert-examples-datalad-dataset-version \
+	convert-examples-ontology
+#	convert-examples-git-provenance
+convert-examples-%: src/linkml/schemas/%.yaml src/examples/%
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \
 		[ "$$ex" = "$<" ] && continue; \

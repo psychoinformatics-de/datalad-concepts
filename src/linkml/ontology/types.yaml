@@ -1,9 +1,43 @@
-id: https://concepts.datalad.org/types
+id: https://concepts.datalad.org/ontology/types
 name: types
 prefixes:
+  afo: http://purl.allotrope.org/ontologies/result#
   dlco: https://concepts.datalad.org/ontology/
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
+default_prefix: dlco
 
 types:
+  HexBinary:
+    uri: xsd:hexBinary
+    base: str
+    pattern: "^[a-fA-F0-9]+$"
+    description: >-
+      hex-encoded binary data.
+
+  NonNegativeInteger:
+    uri: xsd:nonNegativeInteger
+    base: int
+    description: An integer
+    notes: >-
+      Integer with minimum (inclusive) value of zero, i.e. the standard
+      mathematical concept of the non-negative integers.
+    broad_mappings:
+      - schema:Integer
+
+  PosixRelPath:
+    uri: dlco:PosixRelPath
+    base: str
+    # must not start with a slash, must not contain NULL byte
+    pattern: "[^/\0][^\0]*"
+    description: >-
+      File path for a file location relative to some (implicit) reference
+      that is compliant with the POSIX standard.
+    broad_mappings:
+      - afo:AFR_0001928
+    see_also:
+      - https://en.wikipedia.org/wiki/POSIX
+
   SHA1:
     uri: dlco:sha1
     base: str
@@ -13,6 +47,7 @@ types:
        hash.
     see_also:
       - https://en.wikipedia.org/wiki/SHA-1
+
   UUID:
     uri: http://purl.obolibrary.org/obo/NCIT_C54100
     base: str

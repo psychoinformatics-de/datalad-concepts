@@ -1,0 +1,20 @@
+{
+  "is_version_of": {
+    "uuid": "0b76362c-aa27-11ee-be29-b3b123281259"
+  },
+  "has_part": {
+    "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58": {
+      "meta_id": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "gitsha": "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "meta_type": "dlco:AnnexedFileSE"
+    }
+  },
+  "qualified_part": [
+    {
+      "relation": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "at_location": "README.txt"
+    }
+  ],
+  "meta_type": "dlco:DataladDatasetVersionSE",
+  "@type": "DataladDatasetVersionSE"
+}

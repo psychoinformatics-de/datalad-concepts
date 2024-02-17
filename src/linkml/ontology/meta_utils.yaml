@@ -1,10 +1,11 @@
-id: https://concepts.datalad.org/meta_utils
-name: typing
+id: https://concepts.datalad.org/ontology/meta_utils
+name: meta_utils
 title: Utilities for identifying and typing metadata objects
 description: >-
   The provided slots and mixins help to equip metadata objects with
   standard properties for type inference and identification.
 prefixes:
+  dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - linkml:types
@@ -22,7 +23,8 @@ slots:
     description: >-
       Type designator of a metadata object.
     range: uriorcurie
-
+    exact_mappings:
+      - dcterms:type
 
 classes:
   HasMetaTypeDesignator:
@@ -31,3 +33,8 @@ classes:
       (Mixin) class for an object with a metadata type designator.
     slots:
       - meta_type
+
+  MetaObject:
+    class_uri: linkml:Any
+    description: >-
+      Utility class to enable "open" range specifications.

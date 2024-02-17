@@ -9,12 +9,13 @@ prefixes:
   linkml: https://w3id.org/linkml/
   dlco: https://concepts.datalad.org/ontology/
 
-default_prefix: dlco
-
 imports:
-  - datasets
-  - datalad-datasets
-  - labeling
-  - meta_utils
-  - provenance
-  - types
+  - ../ontology/checksumming
+  - ../ontology/datalad
+  - ../ontology/datasets
+  - ../ontology/git-annex
+  - ../ontology/labeling
+  - ../ontology/meta_utils
+  - ../ontology/properties
+  - ../ontology/provenance
+  - ../ontology/types

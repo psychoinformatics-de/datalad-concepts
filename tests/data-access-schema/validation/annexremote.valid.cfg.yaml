@@ -1,7 +1,7 @@
-schema: src/linkml/data-access-schema.yaml
+schema: src/linkml/schemas/data-access.yaml
 target_class: ObjectAvailability
 data_sources:
-  - src/examples/data-access-schema/ObjectAvailability-annexwebdav.yaml
+  - src/examples/data-access/ObjectAvailability-annexwebdav.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

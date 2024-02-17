@@ -1,9 +1,9 @@
-schema: src/linkml/git-provenance-schema.yaml
+schema: src/linkml/schemas/git-provenance.yaml
 target_class: Commit
 data_sources:
   # we test the JSON format file, not the original YAML due to
   # https://github.com/linkml/linkml/issues/1806
-  - src/examples/git-provenance-schema/Commit-simple.json
+  - src/examples/git-provenance/Commit-simple.json
 plugins:
   JsonschemaValidationPlugin:
     closed: true

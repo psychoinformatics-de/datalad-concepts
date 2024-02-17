@@ -1,16 +1,16 @@
 # models for DataLad datasets
 
-id: https://concepts.datalad.org/datalad-datasets
+id: https://concepts.datalad.org/ontology/datalad-datasets
 name: datalad-datasets
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
-  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
-  - datasets
-  - labeling
-  - meta_utils
-  - types
+  - ../ontology/datasets
+  - ../ontology/labeling
+  - ../ontology/meta_utils
+  - ../ontology/types
 default_prefix: dlco
 
 
@@ -22,7 +22,7 @@ slots:
     range: string
 
 enums:
-  DirectoryItemType:
+  DirectoryREMOVEMEItemType:
     # TODO add 'meaning' to all these
     permissible_values:
       file:
@@ -119,7 +119,7 @@ classes:
         # TODO enum?
         range: string
 
-  Directory:
+  DirectoryREMOVEME:
     mixins:
       - IdentifiedThing
       - HasMetaTypeDesignator
@@ -129,11 +129,11 @@ classes:
       items:
         description: >-
           List of items in the directory.
-        range: DirectoryItem
+        range: DirectoryREMOVEMEItem
         multivalued: true
         inlined: true
         inlined_as_list: false
-  DirectoryItem:
+  DirectoryREMOVEMEItem:
     description: >-
       An item in a directory. Assigns a name and other properties to some
       content.
@@ -151,7 +151,7 @@ classes:
       type:
         description: >-
           Identifier of the item type.
-        range: DirectoryItemType
+        range: DirectoryREMOVEMEItemType
       content:
         # we want content to come in separate, identified records, always.
         # this enables referencing across multiple containers (versions,
@@ -161,7 +161,7 @@ classes:
           Content referenced by the directory item.
         any_of:
           - range: FileContent
-          - range: Directory
+          - range: DirectoryREMOVEME
           # TODO: commit/dataset
 
   Commit:
@@ -176,24 +176,24 @@ classes:
         inlined: false
         description: >-
           Tree referenced by the commit.
-        range: Directory
+        range: DirectoryREMOVEME
       author:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:author
+        slot_uri: dcterms:author
         # TODO dedicated class for a GitAgent
         range: GitAgent
         inlined: false
       committer:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:creator
+        slot_uri: dcterms:creator
         range: GitAgent
         inlined: false
       created:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:created
+        slot_uri: dcterms:created
         # TODO ISO date type
         #range: datetime
         range: string

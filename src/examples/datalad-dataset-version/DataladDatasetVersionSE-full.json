@@ -1,0 +1,37 @@
+{
+  "is_version_of": {
+    "uuid": "0b76362c-aa27-11ee-be29-b3b123281259"
+  },
+  "has_annex_remote": {
+    "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf": {
+      "meta_id": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
+      "uuid": "7e0bf3e7-7d46-4093-813e-b4009826c3bf"
+    }
+  },
+  "has_part": {
+    "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58": {
+      "meta_id": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "gitsha": "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "distribution": {
+        "qualified_access": {
+          "relation": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
+          "access_id": "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt"
+        },
+        "byte_size": 3425,
+        "checksum": {
+          "algorithm": "md5",
+          "digest": "32a617360d10e3dcbfdd0885e8d64ab8"
+        }
+      },
+      "meta_type": "dlco:AnnexedFileSE"
+    }
+  },
+  "qualified_part": [
+    {
+      "relation": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "at_location": "README.txt"
+    }
+  ],
+  "meta_type": "dlco:DataladDatasetVersionSE",
+  "@type": "DataladDatasetVersionSE"
+}

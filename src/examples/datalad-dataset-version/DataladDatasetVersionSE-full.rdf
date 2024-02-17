@@ -1,0 +1,33 @@
+@prefix DCAT: <http://www.w3.org/ns/dcat#> .
+@prefix annex: <https://concepts.datalad.org/namespace/annex-uuid/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemoteSE ;
+    dlco:uuid "7e0bf3e7-7d46-4093-813e-b4009826c3bf"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
+
+gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 dlco:distribution [ a dlco:AnnexDistributionSE ;
+            spdx:checksum [ a spdx:Checksum ;
+                    spdx:algorithm "md5"^^xsd:anyURI ;
+                    spdx:checksumValue "32a617360d10e3dcbfdd0885e8d64ab8"^^xsd:hexBinary ] ;
+            DCAT:byteSize "3425"^^xsd:nonNegativeInteger ;
+            dlco:qualified_access [ a dlco:QualifiedAnnexAccessSE ;
+                    dcterms:relation annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
+                    dlco:access_id "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt" ] ] ;
+    dlco:gitsha "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58"^^dlco:sha1 ;
+    dlco:meta_type "dlco:AnnexedFileSE"^^xsd:anyURI .
+
+[] dcterms:hasPart gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
+    DCAT:isVersionOf [ a dlco:DataladDatasetSE ;
+            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] ;
+    dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
+    dlco:meta_type "dlco:DataladDatasetVersionSE"^^xsd:anyURI ;
+    dlco:qualified_part [ a dlco:QualifiedPartSE ;
+            dcterms:relation gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
+            prov:atLocation "README.txt"^^dlco:PosixRelPath ] .
+
+

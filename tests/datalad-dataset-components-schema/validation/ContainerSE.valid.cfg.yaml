@@ -1,0 +1,10 @@
+schema: src/linkml/schemas/datalad-dataset-components.yaml
+target_class: ContainerSE
+data_sources:
+  - src/examples/datalad-dataset-components/ContainerSE-DataladDataset-minimal.yaml
+  - src/examples/datalad-dataset-components/ContainerSE-DataladDatasetVersion-linkage.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

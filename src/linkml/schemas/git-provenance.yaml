@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/git-provenance-schema
+id: https://concepts.datalad.org/schemas/git-provenance
 name: git-provenance-schema
 title: Git provenance schema
 description: >-
@@ -14,18 +14,12 @@ prefixes:
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 imports:
-  - labeling
-  - meta_utils
-  - provenance
-  - types
+  - ../ontology/git
+  - ../ontology/labeling
+  - ../ontology/meta_utils
+  - ../ontology/provenance
+  - ../ontology/types
 default_prefix: dlco
-
-
-slots:
-  gitsha:
-    description: >-
-      SHA1 identifier of a Git object.
-    range: SHA1
 
 
 classes:
@@ -37,32 +31,12 @@ classes:
       A revision or an individual change in a Git repository.
     mixins:
       - CommitProvenance
-    slots:
-      - gitsha
-      - meta_id
+      - GitTracked
     slot_usage:
       gitsha:
         pattern: "^[0-9a-f]{40}$"
         description: >-
           SHA1 identifier of the commit object.
-      meta_id:
-        pattern: "^gitsha:[0-9a-f]{40}$"
-        description: >-
-          SHA1 identifier written as a CURIE in an explicit
-          `gitsha:` namespace.
-
-    unique_keys:
-      gitsha:
-        description: >-
-          A commit's GITSHA is a globally unique, content-based identifier
-          of that commit.
-        notes:
-          - The `gitsha` slot could have been labeled to be the one identifier
-            of a Commit-type object. However, we use `meta_type` for
-            consistency and use its CURIE-format to assign an explicit
-            namespace.
-        unique_key_slots:
-          - gitsha
 
   CommitProvenance:
     mixin: true

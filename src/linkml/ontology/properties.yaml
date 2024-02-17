@@ -1,0 +1,46 @@
+id: https://concepts.datalad.org/ontology/properties
+name: properties
+title: Common properties
+description: >
+  Collection of common properties.
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  iao: http://purl.obolibrary.org/obo/
+  schema: http://schema.org/
+  spdx: http://spdx.org/rdf/terms#
+
+imports:
+  - ../ontology/types
+default_prefix: dlco
+
+slots:
+  algorithm:
+    description: >-
+      The algorithm or rules to follow to compute a score, an effective method
+      expressed as a finite list of well-defined instructions for calculating
+      a function.
+    exact_mappings:
+      - schema:algorithm
+      - iao:IAO_0000064
+    range: uriorcurie
+
+  has_part:
+    slot_uri: dcterms:hasPart
+    description: >-
+      A related resource that is included either physically
+      or logically in the described resource.
+
+  relation:
+    slot_uri: dcterms:relation
+    description: >-
+      The resource related to the source resource.
+    relational_role: OBJECT
+
+  uuid:
+    description: >-
+      Associated UUID identifier.
+    range: UUID
+    broad_mappings:
+      - dcterms:identifier
