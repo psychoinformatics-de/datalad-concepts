@@ -30,7 +30,6 @@ build/linkml-docs/%: src/linkml/%.yaml src/extra-docs/%
 	gen-doc \
 		--mergeimports \
 		--hierarchical-class-view \
-		--use-slot-uris \
 		--include-top-level-diagram \
 		--diagram-type er_diagram \
 		--metadata \
