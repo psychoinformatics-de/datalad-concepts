@@ -24,7 +24,7 @@ classes:
   GitTracked:
     mixin: true
     description: >-
-      Mixin class for any ressource tracked by Git, thereby having a unique
+      Mixin class for any resource tracked by Git, thereby having a unique
       `gitsha` identifier.
     slots:
       - gitsha

@@ -10,7 +10,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
 
 imports:
-  - checksuming
+  - checksumming
   - datalad
   - datasets
   - git-annex

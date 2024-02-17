@@ -11,7 +11,7 @@ description: >
   added (together with a directory class). 2) A "qualified relationship"
   pattern has been applied to the `hasPart` relationship, in order to be
   able to describe the particular composition of multi-component datasets
-  (from referencable component definitions). 3) Another
+  (from referenceable component definitions). 3) Another
   "qualified relationship" pattern has been applied to the `access_service`
   property in order to be able to specify a (deviating) resource
   identifier for requesting a particular resource from a `DataService`.
@@ -28,7 +28,7 @@ prefixes:
   schema: http://schema.org/
 
 imports:
-  - checksuming
+  - checksumming
   - meta_utils
   - properties
   - provenance

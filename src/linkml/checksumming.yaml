@@ -1,9 +1,9 @@
-id: https://concepts.datalad.org/checksuming
-name: checksuming
+id: https://concepts.datalad.org/checksumming
+name: checksumming
 title: Concepts for describing checksums of digital content
 description: >
-  Slightly modfied naming of properties (for more compact/beautiful data),
-  but identical semantics to the checksuming approach used by the DCAT v3
+  Slightly modified naming of properties (for more compact/beautiful data),
+  but identical semantics to the checksumming approach used by the DCAT v3
   vocabulary (https://www.w3.org/TR/vocab-dcat-3).
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
@@ -45,7 +45,7 @@ slots:
   digest:
     slot_uri: spdx:checksumValue
     description: >-
-      Lower case hexidecimal encoded checksum digest value produced using a
+      Lower case hexadecimal encoded checksum digest value produced using a
       specific algorithm.
     range: HexBinary
 
