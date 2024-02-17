@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/types
+id: https://concepts.datalad.org/ontology/types
 name: types
 prefixes:
   afo: http://purl.allotrope.org/ontologies/result#

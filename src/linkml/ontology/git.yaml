@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/git
+id: https://concepts.datalad.org/ontology/git
 name: git
 title: Git concepts
 description: >
@@ -7,9 +7,9 @@ prefixes:
   gitsha: https://concepts.datalad.org/namespace/gitsha/
   dlco: https://concepts.datalad.org/ontology/
 imports:
-  - datasets
-  - meta_utils
-  - types
+  - ../ontology/datasets
+  - ../ontology/meta_utils
+  - ../ontology/types
 default_prefix: dlco
 
 

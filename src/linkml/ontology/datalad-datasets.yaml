@@ -1,16 +1,16 @@
 # models for DataLad datasets
 
-id: https://concepts.datalad.org/datalad-datasets
+id: https://concepts.datalad.org/ontology/datalad-datasets
 name: datalad-datasets
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
   dcterms: http://purl.org/dc/terms/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
-  - datasets
-  - labeling
-  - meta_utils
-  - types
+  - ../ontology/datasets
+  - ../ontology/labeling
+  - ../ontology/meta_utils
+  - ../ontology/types
 default_prefix: dlco
 
 

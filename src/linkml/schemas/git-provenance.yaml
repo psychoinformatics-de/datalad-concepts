@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/git-provenance-schema
+id: https://concepts.datalad.org/schemas/git-provenance
 name: git-provenance-schema
 title: Git provenance schema
 description: >-
@@ -14,11 +14,11 @@ prefixes:
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 imports:
-  - git
-  - labeling
-  - meta_utils
-  - provenance
-  - types
+  - ../ontology/git
+  - ../ontology/labeling
+  - ../ontology/meta_utils
+  - ../ontology/provenance
+  - ../ontology/types
 default_prefix: dlco
 
 

@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/checksumming
+id: https://concepts.datalad.org/ontology/checksumming
 name: checksumming
 title: Concepts for describing checksums of digital content
 description: >
@@ -13,8 +13,8 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
 
 imports:
-  - properties
-  - types
+  - ../ontology/properties
+  - ../ontology/types
   - linkml:types
 default_prefix: dlco
 

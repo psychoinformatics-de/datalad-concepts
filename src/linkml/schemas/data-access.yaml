@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/data-access-schema
+id: https://concepts.datalad.org/schemas/data-access
 name: data-access-schema
 title: Data access schema
 description: >-
@@ -13,8 +13,8 @@ prefixes:
   schema: http://schema.org/
   linkml: https://w3id.org/linkml/
 imports:
-  - types
-  - meta_utils
+  - ../ontology/types
+  - ../ontology/meta_utils
   - linkml:types
 default_prefix: dlco
 

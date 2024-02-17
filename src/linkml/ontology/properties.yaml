@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/properties
+id: https://concepts.datalad.org/ontology/properties
 name: properties
 title: Common properties
 description: >
@@ -12,7 +12,7 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
 
 imports:
-  - types
+  - ../ontology/types
 default_prefix: dlco
 
 slots:

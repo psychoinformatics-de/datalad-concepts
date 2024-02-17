@@ -1,11 +1,11 @@
-schema: src/linkml/datalad-dataset-version-schema.yaml
+schema: src/linkml/schemas/datalad-dataset-version.yaml
 target_class: DataladDatasetVersionSE
 data_sources:
-  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-minimal.yaml
-  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-types.yaml
-  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-location.yaml
-  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-part-availability.yaml
-  - src/examples/datalad-dataset-version-schema/DataladDatasetVersionSE-full.yaml
+  - src/examples/datalad-dataset-version/DataladDatasetVersionSE-minimal.yaml
+  - src/examples/datalad-dataset-version/DataladDatasetVersionSE-part-types.yaml
+  - src/examples/datalad-dataset-version/DataladDatasetVersionSE-part-location.yaml
+  - src/examples/datalad-dataset-version/DataladDatasetVersionSE-part-availability.yaml
+  - src/examples/datalad-dataset-version/DataladDatasetVersionSE-full.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

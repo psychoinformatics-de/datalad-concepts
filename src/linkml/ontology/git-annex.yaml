@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/git-annex
+id: https://concepts.datalad.org/ontology/git-annex
 name: git-annex
 title: Git-annex concepts
 description: >
@@ -7,9 +7,9 @@ prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
   dlco: https://concepts.datalad.org/ontology/
 imports:
-  - datasets
-  - git
-  - properties
+  - ../ontology/datasets
+  - ../ontology/git
+  - ../ontology/properties
 default_prefix: dlco
 
 

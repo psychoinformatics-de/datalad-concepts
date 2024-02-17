@@ -1,6 +1,6 @@
 # models for DataLad datasets
 
-id: https://concepts.datalad.org/datalad
+id: https://concepts.datalad.org/ontology/datalad
 name: datalad
 title: DataLad concepts
 description: >
@@ -10,13 +10,13 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
-  - datasets
-  - properties
-default_prefix: dlco
+  - ../ontology/datasets
+  - ../ontology/properties
 
 
 classes:
   DataladDatasetVersion:
+    class_uri: dlco:DataladDatasetVersion
     mixin: true
     is_a: Dataset
     description: >-
@@ -26,6 +26,7 @@ classes:
         range: DataladDataset
 
   DataladDataset:
+    class_uri: dlco:DataladDataset
     mixin: true
     description: >-
       Concept class for linking `DataladDatasetVersion` instances.

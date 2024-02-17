@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/datasets
+id: https://concepts.datalad.org/ontology/datasets
 name: datasets
 title: Concepts for describing datasets
 description: >
@@ -28,11 +28,11 @@ prefixes:
   schema: http://schema.org/
 
 imports:
-  - checksumming
-  - meta_utils
-  - properties
-  - provenance
-  - types
+  - ../ontology/checksumming
+  - ../ontology/meta_utils
+  - ../ontology/properties
+  - ../ontology/provenance
+  - ../ontology/types
   - linkml:types
 default_prefix: dlco
 
@@ -239,6 +239,7 @@ classes:
         that cannot be inferred from a standard `DCAT:Distribution`.
 
   DataService:
+    class_uri: dlco:DataService
     mixin: true
     description: >-
       A collection of operations that provides access to one or more

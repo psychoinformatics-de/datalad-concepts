@@ -1,6 +1,6 @@
 # models for DataLad datasets
 
-id: https://concepts.datalad.org/datalad-dataset-version-schema
+id: https://concepts.datalad.org/schemas/datalad-dataset-version
 name: datalad-dataset-version-schema
 title: DataLad dataset version schema
 description: >-
@@ -20,8 +20,8 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   spdx: http://spdx.org/rdf/terms#
 imports:
-  - datalad
-  - git-annex
+  - ../ontology/datalad
+  - ../ontology/git-annex
 default_prefix: dlco
 
 classes:
