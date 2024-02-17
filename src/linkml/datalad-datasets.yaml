@@ -4,7 +4,7 @@ id: https://concepts.datalad.org/datalad-datasets
 name: datalad-datasets
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
-  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - datasets
@@ -180,20 +180,20 @@ classes:
       author:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:author
+        slot_uri: dcterms:author
         # TODO dedicated class for a GitAgent
         range: GitAgent
         inlined: false
       committer:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:creator
+        slot_uri: dcterms:creator
         range: GitAgent
         inlined: false
       created:
         description: >-
           Place holder for an actual description
-        slot_uri: dct:created
+        slot_uri: dcterms:created
         # TODO ISO date type
         #range: datetime
         range: string

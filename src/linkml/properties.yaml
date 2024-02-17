@@ -4,7 +4,7 @@ title: Common properties
 description: >
   Collection of common properties.
 prefixes:
-  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
@@ -27,13 +27,13 @@ slots:
     range: uriorcurie
 
   has_part:
-    slot_uri: dct:hasPart
+    slot_uri: dcterms:hasPart
     description: >-
       A related resource that is included either physically
       or logically in the described resource.
 
   relation:
-    slot_uri: dct:relation
+    slot_uri: dcterms:relation
     description: >-
       The resource related to the source resource.
     relational_role: OBJECT
@@ -43,4 +43,4 @@ slots:
       Associated UUID identifier.
     range: UUID
     broad_mappings:
-      - dct:identifier
+      - dcterms:identifier

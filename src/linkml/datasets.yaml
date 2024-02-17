@@ -19,7 +19,7 @@ prefixes:
   afo: http://purl.allotrope.org/ontologies/result#
   DCAT: http://www.w3.org/ns/dcat#
   dctypes: http://purl.org/dc/dcmitype/
-  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
@@ -42,7 +42,7 @@ slots:
       An identifier with which a resource distribution can be requested from a
       `DataService`.
     broad_mappings:
-      - dct:identifier
+      - dcterms:identifier
     range: string
     related_mappings:
       - DCAT:servesDataset
@@ -105,7 +105,7 @@ slots:
       The nature of the resource.
     range: string
     exact_mappings:
-      - dct:type
+      - dcterms:type
 
 classes:
   Resource:

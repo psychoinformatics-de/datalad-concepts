@@ -14,7 +14,7 @@ prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
   datalad: https://concepts.datalad.org/namespace/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
-  dct: http://purl.org/dc/terms/
+  dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   gitsha: https://concepts.datalad.org/namespace/gitsha/
   prov: http://www.w3.org/ns/prov#
