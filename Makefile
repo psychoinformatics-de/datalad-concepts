@@ -24,6 +24,7 @@ build/context.jsonld: src/linkml/schemas/ontology.yaml
 build/linkml-docs: \
 	build/linkml-docs/ontology \
 	build/linkml-docs/data-access \
+	build/linkml-docs/datalad-dataset-components \
 	build/linkml-docs/datalad-dataset-version
 #   build/linkml-docs/git-provenance-schema
 build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
@@ -33,11 +34,11 @@ build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
-		--example-directory src/examples/$$(basename $@)-schema \
+		--example-directory src/examples/$* \
 		-d $$([ "$*" = "ontology" ] && echo $@ || echo $@-schema) \
 		$<
 	# try to inject any extra-docs (if any exist)
-	-cp -r src/extra-docs/$$(basename $@)-schema/*.md $@
+	-cp -r src/extra-docs/$*-schema/*.md $@
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	# top-level content
@@ -49,6 +50,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	check-model-data-access \
+	check-model-datalad-dataset-components \
 	check-model-datalad-dataset-version \
 	check-model-ontology
 #	check-model-git-provenance
@@ -80,6 +82,8 @@ check-model-%: src/linkml/schemas/%.yaml
 check-validation: \
 	convert-examples-data-access \
 	check-validation-data-access \
+	convert-examples-datalad-dataset-components \
+	check-validation-datalad-dataset-components \
 	convert-examples-datalad-dataset-version \
 	check-validation-datalad-dataset-version \
 	convert-examples-ontology
@@ -100,6 +104,7 @@ check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 
 convert-examples: \
 	convert-examples-data-access \
+	convert-examples-datalad-dataset-components \
 	convert-examples-datalad-dataset-version \
 	convert-examples-ontology
 #	convert-examples-git-provenance

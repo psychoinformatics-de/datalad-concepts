@@ -39,3 +39,5 @@ classes:
           distinguishing feature between a DataLad dataset and
           a plain Git or git-annex repository branch.
         required: true
+    close_mappings:
+      - dlco:Dataset

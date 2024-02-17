@@ -1,0 +1,98 @@
+id: https://concepts.datalad.org/schemas/datalad-dataset-components
+name: datalad-dataset-components
+title: Schema for any DataLad dataset component
+description: |
+  This specification defines a schema for describing a DataLad dataset
+  via a flat list of linked metadata objects. Each metadata object
+  has a simple structure with minimal property nesting.
+
+  Each object is of type `ComponentSE`, a class that has two required slots:
+  `meta_id` and `meta_type`. The former must be a unique object identifier,
+  and the latter must identify a subclass of `ComponentSE` that the object
+  represents. Both value must be given as a CURIE.
+
+  Nesting of objects is avoided, unless a DataLad dataset contains insufficient
+  information to guarantee the availability of a unique identifier for a given
+  entity.
+
+  Subclasses of `ComponentSE` represent all recognized dataset components.
+  These classes, within this schema, only define the nature of the employed
+  identifier, and the linkage to other dataset components. All other
+  properties are defined by a corresponding ontology class that is applied
+  as a "mixin".
+
+  An additional `ContainerSE` class is provided. It has a single slot
+  `components`, and can be used to represent a list of components for formats
+  and use cases that require a root class/instance.
+
+prefixes:
+  annex: https://concepts.datalad.org/namespace/annex-uuid/
+  datalad: https://concepts.datalad.org/namespace/dataset-uuid/
+  DCAT: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  dlccs: https://concepts.datalad.org/schemas/datalad-dataset-components/
+  gitsha: https://concepts.datalad.org/namespace/gitsha/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  spdx: http://spdx.org/rdf/terms#
+
+imports:
+  - ../ontology/meta_utils
+  - ../ontology/datalad
+  - ../ontology/git-annex
+
+classes:
+  ContainerSE:
+    class_uri: dlccs:Container
+    description: >-
+      A container for dataset component objects.
+    tree_root: true
+    attributes:
+      components:
+        description: >-
+          Component list.
+        multivalued: true
+        inlined_as_list: true
+        range: ComponentSE
+
+  ComponentSE:
+    class_uri: dlccs:Component
+    description: >-
+      Base class for any recognized dataset component type. This class
+      should never be used directly, only its subclasses.
+    slots:
+      - meta_id
+      - meta_type
+    slot_usage:
+      meta_type:
+        required: true
+
+  DataladDatasetVersionSE:
+    class_uri: dlccs:DataladDatasetVersionSE
+    is_a: ComponentSE
+    description: >-
+      TODO
+    mixins:
+      - DataladDatasetVersion
+    slot_usage:
+      is_version_of:
+        inlined: false
+        range: DataladDatasetSE
+      meta_id:
+        equals_expression: "gitsha:{gitsha}"
+
+  DataladDatasetSE:
+    class_uri: dlccs:DataladDatasetSE
+    is_a: ComponentSE
+    description: >-
+      Schema element for a `DataladDataset`.
+    see_also: 
+      - dlco:DataladDataset
+    comments:
+      - The required identifier format is `datalad:<dataset-uuid>`.
+    mixins:
+      - DataladDataset
+    slot_usage:
+      meta_id:
+        equals_expression: "datalad:{uuid}"
