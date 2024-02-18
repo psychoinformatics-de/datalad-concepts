@@ -30,6 +30,8 @@ description: |
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
+license: MIT
+
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
   bibo: http://purl.org/ontology/bibo/

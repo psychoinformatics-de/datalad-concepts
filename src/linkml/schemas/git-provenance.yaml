@@ -12,6 +12,7 @@ description: >-
   datasets.
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+license: MIT
 prefixes:
   bibo: http://purl.org/ontology/bibo/
   dlco: https://concepts.datalad.org/ontology/
