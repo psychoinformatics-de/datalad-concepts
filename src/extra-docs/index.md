@@ -1,4 +1,4 @@
 - [DataLad concepts ontology](ontology/)
-- [DataLad dataset components schema](datalad-dataset-components-schema/)
-- [DataLad dataset version schema](datalad-dataset-version-schema/)
-- [Git provenance schema](git-provenance-schema/)
+- [DataLad dataset components schema](schemas/datalad-dataset-components/)
+- [DataLad dataset version schema](schemas/datalad-dataset-version/)
+- [Git provenance schema](schemas/git-provenance/)
