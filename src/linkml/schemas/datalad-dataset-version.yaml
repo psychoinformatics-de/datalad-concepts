@@ -2,6 +2,8 @@
 
 id: https://concepts.datalad.org/schemas/datalad-dataset-version
 name: datalad-dataset-version-schema
+version: UNRELEASED
+status: bibo:status/draft
 title: DataLad dataset version schema
 description: >-
   Schema for document describing a version of a DataLad dataset
@@ -10,8 +12,11 @@ description: >-
   of such a description that is more suitable for a compact
   description of the evolution of such a dataset across multiple
   versions.
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
+  bibo: http://purl.org/ontology/bibo/
   datalad: https://concepts.datalad.org/namespace/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/

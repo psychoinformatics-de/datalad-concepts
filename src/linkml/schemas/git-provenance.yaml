@@ -1,5 +1,7 @@
 id: https://concepts.datalad.org/schemas/git-provenance
 name: git-provenance-schema
+version: UNRELEASED
+status: bibo:status/draft
 title: Git provenance schema
 description: >-
   This is a schema draft centered around the annotation of provenance in
@@ -8,7 +10,10 @@ description: >-
   This schema is not envisioned to be around as a standalone document for
   long, but be merged as a component into a schema for describing complete
   datasets.
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 prefixes:
+  bibo: http://purl.org/ontology/bibo/
   dlco: https://concepts.datalad.org/ontology/
   gitsha: https://concepts.datalad.org/namespace/gitsha/
   linkml: https://w3id.org/linkml/

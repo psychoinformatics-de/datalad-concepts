@@ -1,5 +1,7 @@
 id: https://concepts.datalad.org/schemas/datalad-dataset-components
 name: datalad-dataset-components
+version: UNRELEASED
+status: bibo:status/draft
 title: Schema for any DataLad dataset component
 description: |
   This specification defines a schema for describing a DataLad dataset
@@ -25,8 +27,12 @@ description: |
   `components`, and can be used to represent a list of components for formats
   and use cases that require a root class/instance.
 
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
+  bibo: http://purl.org/ontology/bibo/
   datalad: https://concepts.datalad.org/namespace/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
