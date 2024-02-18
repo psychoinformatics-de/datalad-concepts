@@ -7,9 +7,9 @@
 gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 dlco:gitsha "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58"^^dlco:sha1 ;
     dlco:meta_type "dlco:AnnexedFileSE"^^xsd:anyURI .
 
-[] dcterms:hasPart gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
+[] a dlco:DataladDatasetVersionSE ;
+    dcterms:hasPart gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
     DCAT:isVersionOf [ a dlco:DataladDatasetSE ;
-            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] ;
-    dlco:meta_type "dlco:DataladDatasetVersionSE"^^xsd:anyURI .
+            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] .
 
 

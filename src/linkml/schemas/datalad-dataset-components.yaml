@@ -58,19 +58,30 @@ classes:
 
   ComponentSE:
     class_uri: dlccs:Component
+    mixins:
+      - HasRequiredMetaTypeDesignator
     description: >-
       Base class for any recognized dataset component type. This class
       should never be used directly, only its subclasses.
     slots:
       - meta_id
-      - meta_type
+
+  GitTrackedSE:
+    is_a: ComponentSE
+    description: >-
+      Representation for any resource tracked by Git, thereby having a unique
+      `gitsha`-based identifier.
     slot_usage:
-      meta_type:
-        required: true
+      meta_id:
+        description: >-
+          SHA1 based identifier in the form of a CURIE with an explicit
+          `gitsha:` namespace prefix.
+        equals_expression: "gitsha:{gitsha}"
+        pattern: "^gitsha:[0-9a-f]{40}$"
 
   DataladDatasetVersionSE:
     class_uri: dlccs:DataladDatasetVersionSE
-    is_a: ComponentSE
+    is_a: GitTrackedSE
     description: >-
       TODO
     mixins:

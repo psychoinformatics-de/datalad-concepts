@@ -9,6 +9,5 @@
       "meta_type": "dlco:AnnexedFileSE"
     }
   },
-  "meta_type": "dlco:DataladDatasetVersionSE",
   "@type": "DataladDatasetVersionSE"
 }
