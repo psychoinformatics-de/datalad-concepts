@@ -34,6 +34,15 @@ classes:
     slots:
       - meta_type
 
+  HasRequiredMetaTypeDesignator:
+    mixin: true
+    is_a: HasMetaTypeDesignator
+    description: >-
+      (Mixin) class for an object with a required metadata type designator.
+    slot_usage:
+      meta_type:
+        required: true
+
   MetaObject:
     class_uri: linkml:Any
     description: >-

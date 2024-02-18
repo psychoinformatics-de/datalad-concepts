@@ -22,6 +22,7 @@ prefixes:
 imports:
   - ../ontology/datalad
   - ../ontology/git-annex
+  - ../ontology/meta_utils
 default_prefix: dlco
 
 classes:
@@ -87,6 +88,7 @@ classes:
   AnnexedFileSE:
     mixins:
       - AnnexedFile
+      - HasMetaTypeDesignator
     description: >-
       Data structure definition class for a `AnnexedFile`
     slots:

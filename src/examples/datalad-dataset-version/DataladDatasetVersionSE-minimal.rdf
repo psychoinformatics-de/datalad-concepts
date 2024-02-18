@@ -1,9 +1,8 @@
 @prefix DCAT: <http://www.w3.org/ns/dcat#> .
 @prefix dlco: <https://concepts.datalad.org/ontology/> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-[] DCAT:isVersionOf [ a dlco:DataladDatasetSE ;
-            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] ;
-    dlco:meta_type "dlco:DataladDatasetVersionSE"^^xsd:anyURI .
+[] a dlco:DataladDatasetVersionSE ;
+    DCAT:isVersionOf [ a dlco:DataladDatasetSE ;
+            dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] .
 
 

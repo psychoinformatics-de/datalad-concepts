@@ -58,15 +58,13 @@ classes:
 
   ComponentSE:
     class_uri: dlccs:Component
+    mixins:
+      - HasRequiredMetaTypeDesignator
     description: >-
       Base class for any recognized dataset component type. This class
       should never be used directly, only its subclasses.
     slots:
       - meta_id
-      - meta_type
-    slot_usage:
-      meta_type:
-        required: true
 
   GitTrackedSE:
     is_a: ComponentSE

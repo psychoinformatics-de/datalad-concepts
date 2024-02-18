@@ -15,6 +15,5 @@
       "at_location": "README.txt"
     }
   ],
-  "meta_type": "dlco:DataladDatasetVersionSE",
   "@type": "DataladDatasetVersionSE"
 }

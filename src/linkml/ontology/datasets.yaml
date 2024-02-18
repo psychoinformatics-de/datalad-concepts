@@ -29,7 +29,6 @@ prefixes:
 
 imports:
   - ../ontology/checksumming
-  - ../ontology/meta_utils
   - ../ontology/properties
   - ../ontology/provenance
   - ../ontology/types
@@ -113,7 +112,6 @@ classes:
     class_uri: DCAT:Resource
     slots:
       - has_part
-      - meta_type
       - qualified_part
       - type
     slot_usage:
