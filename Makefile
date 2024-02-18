@@ -27,6 +27,7 @@ build/linkml-docs: \
 	build/linkml-docs/datalad-dataset-version
 #   build/linkml-docs/git-provenance-schema
 build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
+	export OUTDIR=$$([ "$*" = "ontology" ] && echo $@ || echo build/linkml-docs/schemas/$*) && \
 	gen-doc \
 		--hierarchical-class-view \
 		--include-top-level-diagram \
@@ -34,10 +35,10 @@ build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 		--metadata \
 		--format markdown \
 		--example-directory src/examples/$* \
-		-d $$([ "$*" = "ontology" ] && echo $@ || echo $@-schema) \
-		$<
+		-d $$OUTDIR \
+		$< \
+	&& (cp -r src/extra-docs/$*-schema/*.md $$OUTDIR || true)
 	# try to inject any extra-docs (if any exist)
-	-cp -r src/extra-docs/$*-schema/*.md $@
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	# top-level content
