@@ -79,6 +79,8 @@ classes:
     description: >-
       Representation for any resource tracked by Git, thereby having a unique
       `gitsha`-based identifier.
+    comments:
+      - This is the base class of any entity that is directly tracked by Git.
     slot_usage:
       meta_id:
         description: >-
@@ -87,19 +89,83 @@ classes:
         equals_expression: "gitsha:{gitsha}"
         pattern: "^gitsha:[0-9a-f]{40}$"
 
+  QualifiedGitTrackedPartSE:
+    class_uri: dlccs:QualifiedGitTrackedPartSE
+    mixins:
+      - QualifiedPart
+    description: >-
+      Schema element for a `QualifiedPart`. Every part is represented by
+      a `GitTrackedSE`.
+    slot_usage:
+      relation:
+        range: GitTrackedSE
+
+  AnnexDistributionSE:
+    class_uri: dlccs:AnnexDistributionSE
+    mixins:
+      - AnnexDistribution
+    description: >-
+      Schema element for a `AnnexDistribution`.
+    slot_usage:
+      qualified_access:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: QualifiedAnnexAccessSE
+
+  QualifiedAnnexAccessSE:
+    class_uri: dlccs:QualifiedAnnexAccessSE
+    mixins:
+      - QualifiedAnnexAccess
+    description: >-
+      Schema element for a `QualifiedAnnexAccess`.
+    slot_usage:
+      relation:
+        range: AnnexRemoteSE
+
+  AnnexRemoteSE:
+    class_uri: dlccs:AnnexRemoteSE
+    is_a: ComponentSE
+    mixins:
+      - AnnexRemote
+    description: >-
+      Schema element for a `AnnexRemote`.
+    slots:
+      - meta_id
+    slot_usage:
+      meta_id:
+        equals_expression: "annex:{uuid}"
+
   DataladDatasetVersionSE:
     class_uri: dlccs:DataladDatasetVersionSE
     is_a: GitTrackedSE
-    description: >-
-      TODO
     mixins:
       - DataladDatasetVersion
+    description: >-
+      TODO
+    todos:
+      - Add the `Commit` interface via a mixin
     slot_usage:
+      has_annex_remote:
+        multivalued: true
+        inlined: false
+        range: AnnexRemoteSE
+        todos:
+          - see TODO in DataladDatasetVersion re this slot
+      has_part:
+        inlined: false
+        multivalued: true
+        range: GitTrackedSE
       is_version_of:
         inlined: false
         range: DataladDatasetSE
       meta_id:
         equals_expression: "gitsha:{gitsha}"
+      qualified_part:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: QualifiedGitTrackedPartSE
 
   DataladDatasetSE:
     class_uri: dlccs:DataladDatasetSE
@@ -115,3 +181,31 @@ classes:
     slot_usage:
       meta_id:
         equals_expression: "datalad:{uuid}"
+
+  GitBlobSE:
+    class_uri: dlccs:GitBlobSE
+    is_a: GitTrackedSE
+    mixins:
+      - FileInGit
+    description: >-
+      Schema element for a `FileInGit`.
+
+  AnnexedFileSE:
+    class_uri: dlccs:AnnexedFileSE
+    is_a: GitTrackedSE
+    mixins:
+      - AnnexedFile
+    description: >-
+      Schema element for a `AnnexedFile`.
+    slot_usage:
+      distribution:
+        inlined: true
+        multivalued: false
+        range: AnnexDistributionSE
+        notes:
+          - This is not multivalued, because the distribution of an annexed
+            file is an annex key, a bit identical blob. The only thing that
+            we can have multiple of are remote locations, where this key is
+            available. Even when have a URL key and the actual content may
+            be unknown (yet), the system is not made to switch between
+            distributions without filename changes.

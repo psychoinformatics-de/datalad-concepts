@@ -1,0 +1,44 @@
+components:
+  # version-less dataset
+  - meta_id: datalad:0b76362c-aa27-11ee-be29-b3b123281259
+    meta_type: dlccs:DataladDatasetSE
+    uuid: 0b76362c-aa27-11ee-be29-b3b123281259
+  # dataset version
+  - meta_id: gitsha:558275f650574389dcbbf7cd8ab5046482473fc8
+    meta_type: dlccs:DataladDatasetVersionSE
+    is_version_of: datalad:0b76362c-aa27-11ee-be29-b3b123281259
+    has_annex_remote:
+      - annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf
+    has_part:
+      # could link an entire tree as one part, which would have parts
+      # of its own
+      # such a tree would also need to support `qualified_part`
+      - gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58
+      - gitsha:56094a33cf330fef5b375aa813fc4dc07147729f
+    qualified_part:
+      - at_location: subdir/README.txt
+        relation: gitsha:56094a33cf330fef5b375aa813fc4dc07147729f
+      - at_location: subdir/data.bin
+        relation: gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58
+  # git blob
+  - meta_id: gitsha:56094a33cf330fef5b375aa813fc4dc07147729f
+    meta_type: dlccs:GitBlobSE
+    gitsha: 56094a33cf330fef5b375aa813fc4dc07147729f
+  # annexed file
+  - meta_id: gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58
+    meta_type: dlccs:AnnexedFileSE
+    gitsha: b94ef1797f7bfc1ac979be122e1b538bbb0d1d58
+    # TODO we cannot have the following yet (not even bytesize alone).
+    # For an unknown reason the json schema generator does not put the
+    # Distribution class into its output (but communicated no error
+    # either). validation then fails with
+    # jsonschema.exceptions._WrappedReferencingError: PointerToNowhere: '/$defs/Distribution'...
+    #distribution:
+    #  byte_size: 3425
+    #  qualified_access:
+    #    - access_id: MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt
+    #      relation: annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf
+  # annex remote
+  - meta_id: annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf
+    meta_type: dlccs:AnnexRemoteSE
+    uuid: 7e0bf3e7-7d46-4093-813e-b4009826c3bf
