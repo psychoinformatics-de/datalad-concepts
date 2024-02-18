@@ -68,9 +68,22 @@ classes:
       meta_type:
         required: true
 
+  GitTrackedSE:
+    is_a: ComponentSE
+    description: >-
+      Representation for any resource tracked by Git, thereby having a unique
+      `gitsha`-based identifier.
+    slot_usage:
+      meta_id:
+        description: >-
+          SHA1 based identifier in the form of a CURIE with an explicit
+          `gitsha:` namespace prefix.
+        equals_expression: "gitsha:{gitsha}"
+        pattern: "^gitsha:[0-9a-f]{40}$"
+
   DataladDatasetVersionSE:
     class_uri: dlccs:DataladDatasetVersionSE
-    is_a: ComponentSE
+    is_a: GitTrackedSE
     description: >-
       TODO
     mixins:
