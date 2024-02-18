@@ -38,7 +38,7 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
 
 imports:
-  - ../ontology/meta_utils
+  - ../ontology/schema_utils
   - ../ontology/datalad
   - ../ontology/git-annex
 

@@ -15,7 +15,7 @@ imports:
   - ../ontology/datasets
   - ../ontology/git-annex
   - ../ontology/labeling
-  - ../ontology/meta_utils
   - ../ontology/properties
   - ../ontology/provenance
+  - ../ontology/schema_utils
   - ../ontology/types
