@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/ontology/meta_utils
+id: https://concepts.datalad.org/ontology/schema_utils
 name: meta_utils
 title: Utilities for identifying and typing metadata objects
 description: >-
@@ -7,6 +7,9 @@ description: >-
 prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+imports:
+  - linkml:types
 default_prefix: dlco
 
 

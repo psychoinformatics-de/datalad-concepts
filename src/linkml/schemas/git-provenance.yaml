@@ -14,9 +14,9 @@ prefixes:
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 imports:
+  - ../ontology/schema_utils
   - ../ontology/git
   - ../ontology/labeling
-  - ../ontology/meta_utils
   - ../ontology/provenance
   - ../ontology/types
 default_prefix: dlco

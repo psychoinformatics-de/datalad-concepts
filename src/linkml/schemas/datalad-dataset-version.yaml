@@ -20,9 +20,9 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   spdx: http://spdx.org/rdf/terms#
 imports:
+  - ../ontology/schema_utils
   - ../ontology/datalad
   - ../ontology/git-annex
-  - ../ontology/meta_utils
 default_prefix: dlco
 
 classes:
