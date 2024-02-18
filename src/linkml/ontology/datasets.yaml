@@ -82,7 +82,6 @@ slots:
     slot_uri: DCAT:isVersionOf
     description: >-
       A related resource of which the described resource is a version.
-    range: MetaObject
 
   qualified_access:
     description: >-

@@ -7,8 +7,6 @@ description: >-
 prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
-imports:
-  - linkml:types
 default_prefix: dlco
 
 
@@ -42,8 +40,3 @@ classes:
     slot_usage:
       meta_type:
         required: true
-
-  MetaObject:
-    class_uri: linkml:Any
-    description: >-
-      Utility class to enable "open" range specifications.
