@@ -33,6 +33,7 @@ components:
     # Distribution class into its output (but communicated no error
     # either). validation then fails with
     # jsonschema.exceptions._WrappedReferencingError: PointerToNowhere: '/$defs/Distribution'...
+    # A tentative fix is posted at https://github.com/linkml/linkml/pull/1935
     #distribution:
     #  byte_size: 3425
     #  qualified_access:
