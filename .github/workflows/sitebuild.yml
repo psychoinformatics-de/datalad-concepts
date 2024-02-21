@@ -35,6 +35,10 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      - name: Patch linkml
+        run: |
+          tools/patch_linkml
+
       - name: Build
         # this is building a branch specific site
         # when multiple branches/versions are maintained concurrently
