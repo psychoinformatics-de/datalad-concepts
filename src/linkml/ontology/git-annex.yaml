@@ -37,6 +37,9 @@ classes:
     slot_usage:
       uuid:
         required: true
+    todos:
+      - Add support for remote (not key) specific parameters. `DataService` only
+        has `endpoint_url`
 
   QualifiedAnnexAccess:
     is_a: QualifiedAccess
@@ -47,6 +50,14 @@ classes:
     slot_usage:
       relation:
         range: AnnexRemote
+    todos:
+      - >
+        We already support the case of an alternative identifier
+        (via `QualifiedAccess`). However, for `AnnexRemote` we might also need
+        to support expressing the state of a key at a remote
+        (see `SET/GETSTATE` at
+        https://git-annex.branchable.com/design/external_special_remote_protocol).
+        A state is more or less an additional/arbitrary set of parameters.
 
   AnnexedFile:
     mixin: true

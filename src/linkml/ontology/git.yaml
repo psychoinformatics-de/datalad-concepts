@@ -38,6 +38,8 @@ classes:
       - GitTracked
     description: >-
       A `File` that is tracked with Git.
+    todos:
+      - Rename to `GitBlob`
 
       #QualifiedGitTrackedPart:
       #  mixin: true

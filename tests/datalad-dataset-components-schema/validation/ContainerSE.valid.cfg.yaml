@@ -3,6 +3,7 @@ target_class: ContainerSE
 data_sources:
   - src/examples/datalad-dataset-components/ContainerSE-DataladDataset-minimal.yaml
   - src/examples/datalad-dataset-components/ContainerSE-DataladDatasetVersion-linkage.yaml
+  - src/examples/datalad-dataset-components/ContainerSE-DatasetWFiles.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

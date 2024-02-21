@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# This script applies patches to the active linkml installation.
+# It is to be executed in the root of the repository.
+#
+
+# make JSON schema generation work with mixins
+patch -d $(python -c 'import os; import linkml.generators.jsonschemagen as m; print(os.path.dirname(m.__file__))') < patches/jsonschemagen_mixins.diff

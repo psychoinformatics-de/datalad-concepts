@@ -1,0 +1,28 @@
+This patch has been proposed for inclusion into linkml
+https://github.com/linkml/linkml/pull/1935
+However, it may be a too simple approach.
+
+Specifically, the JSON schema output generated from our
+datalad-dataset-components schema referenced any base classes that were not
+abstract, but did not include definitions for mixin classes.
+
+This change aligns the criterion to exclude abstract, but not mixin
+classes.
+
+It may be possible to exclude the references to mixin classes in the JSON
+schema output, and thereby be able to continue to exclude definitions
+for mixin classes too. However, an attempt to address this in
+`get_type_info_for_slot_subschema()` was not fully successful for me,
+but was impacted by generator parametrization.
+--- jsonschemagen.py	2024-02-21 08:55:38.699043981 +0100
++++ jsonschemagen.py	2024-02-21 08:55:10.127030454 +0100
+@@ -225,7 +225,8 @@
+         )
+ 
+     def handle_class(self, cls: ClassDefinition) -> None:
+-        if cls.mixin or cls.abstract:
++        #if cls.mixin or cls.abstract:
++        if cls.abstract:
+             return
+ 
+         subschema_type = "object"
