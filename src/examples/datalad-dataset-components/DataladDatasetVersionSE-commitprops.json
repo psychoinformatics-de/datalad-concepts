@@ -10,9 +10,9 @@
       "name": "Jane Doe",
       "email": "doe@example.com"
     },
-    "ended_at": "2002-05-30 09:30:10+06:00",
+    "ended_at": "2002-05-30T09:30:10+06:00",
     "was_informed_by": {
-      "ended_at": "2001-02-28 18:27:04+02:00",
+      "ended_at": "2001-02-28T18:27:04+02:00",
       "was_associated_with": {
         "name": "Jane Doe",
         "email": "doe@example.com"

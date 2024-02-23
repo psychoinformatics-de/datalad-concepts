@@ -6,12 +6,12 @@
 
 gitsha:558275f650574389dcbbf7cd8ab5046482473fc8 prov:wasDerivedFrom gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054 ;
     prov:wasGeneratedBy [ a dlccs:CommittingSE ;
-            prov:endedAtTime "2002-05-30 09:30:10+06:00" ;
+            prov:endedAtTime "2002-05-30T09:30:10+06:00"^^xsd:dateTime ;
             prov:wasAssociatedWith [ a dlco:GitUserAgent ;
                     dlco:email "doe@example.com"^^dlco:EmailAddress ;
                     dlco:name "Jane Doe" ] ;
             prov:wasInformedBy [ a dlco:CommitAuthoring ;
-                    prov:endedAtTime "2001-02-28 18:27:04+02:00" ;
+                    prov:endedAtTime "2001-02-28T18:27:04+02:00"^^xsd:dateTime ;
                     prov:wasAssociatedWith [ a dlco:GitUserAgent ;
                             dlco:email "doe@example.com"^^dlco:EmailAddress ;
                             dlco:name "Jane Doe" ] ] ] ;
