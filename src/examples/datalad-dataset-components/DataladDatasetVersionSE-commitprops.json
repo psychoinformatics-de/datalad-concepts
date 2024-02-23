@@ -19,5 +19,6 @@
       }
     }
   },
+  "description": "This message describes the changes done for this particular Dataset version.\n",
   "@type": "DataladDatasetVersionSE"
 }

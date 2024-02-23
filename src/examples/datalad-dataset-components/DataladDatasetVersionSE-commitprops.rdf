@@ -15,6 +15,8 @@ gitsha:558275f650574389dcbbf7cd8ab5046482473fc8 prov:wasDerivedFrom gitsha:a5296
                     prov:wasAssociatedWith [ a dlco:GitUserAgent ;
                             dlco:email "doe@example.com"^^dlco:EmailAddress ;
                             dlco:name "Jane Doe" ] ] ] ;
+    dlco:description """This message describes the changes done for this particular Dataset version.
+""" ;
     dlco:gitsha "558275f650574389dcbbf7cd8ab5046482473fc8"^^dlco:sha1 ;
     dlco:meta_type "dlccs:DataladDatasetVersionSE"^^xsd:anyURI .
 

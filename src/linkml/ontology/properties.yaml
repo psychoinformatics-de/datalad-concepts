@@ -27,6 +27,13 @@ slots:
       - iao:IAO_0000064
     range: uriorcurie
 
+  description:
+    slot_uri: dlco:description
+    description: A free-text account of the resource.
+    exact_mappings:
+      - dcterms:description
+    range: string
+
   email:
     slot_uri: dlco:email
     description: Email address associated with an entity.

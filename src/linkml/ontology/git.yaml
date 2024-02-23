@@ -42,9 +42,12 @@ classes:
       - GitTracked
         #- CommitProvenance
     slots:
+      - description
       - was_derived_from
       - was_generated_by
     slot_usage:
+      description:
+        description: The commit message.
       gitsha:
         description: >-
           SHA1 identifier of the commit object.
