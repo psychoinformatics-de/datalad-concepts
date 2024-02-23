@@ -27,6 +27,14 @@ slots:
       - iao:IAO_0000064
     range: uriorcurie
 
+  email:
+    slot_uri: dlco:email
+    description: Email address associated with an entity.
+    exact_mappings:
+      - schema:email
+      - iao:IAO_0000429
+    range: EmailAddress
+
   has_part:
     slot_uri: dcterms:hasPart
     description: >-
