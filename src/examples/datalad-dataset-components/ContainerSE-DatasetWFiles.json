@@ -1,0 +1,56 @@
+{
+  "components": [
+    {
+      "meta_id": "datalad:0b76362c-aa27-11ee-be29-b3b123281259",
+      "meta_type": "dlccs:DataladDatasetSE",
+      "uuid": "0b76362c-aa27-11ee-be29-b3b123281259"
+    },
+    {
+      "meta_id": "gitsha:558275f650574389dcbbf7cd8ab5046482473fc8",
+      "meta_type": "dlccs:DataladDatasetVersionSE",
+      "has_annex_remote": [
+        "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf"
+      ],
+      "has_part": [
+        "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+        "gitsha:56094a33cf330fef5b375aa813fc4dc07147729f"
+      ],
+      "is_version_of": "datalad:0b76362c-aa27-11ee-be29-b3b123281259",
+      "qualified_part": [
+        {
+          "relation": "gitsha:56094a33cf330fef5b375aa813fc4dc07147729f",
+          "at_location": "subdir/README.txt"
+        },
+        {
+          "relation": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+          "at_location": "subdir/data.bin"
+        }
+      ]
+    },
+    {
+      "meta_id": "gitsha:56094a33cf330fef5b375aa813fc4dc07147729f",
+      "meta_type": "dlccs:GitBlobSE",
+      "gitsha": "56094a33cf330fef5b375aa813fc4dc07147729f"
+    },
+    {
+      "meta_id": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "meta_type": "dlccs:AnnexedFileSE",
+      "gitsha": "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+      "distribution": {
+        "qualified_access": [
+          {
+            "relation": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
+            "access_id": "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt"
+          }
+        ],
+        "byte_size": 3425
+      }
+    },
+    {
+      "meta_id": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
+      "meta_type": "dlccs:AnnexRemoteSE",
+      "uuid": "7e0bf3e7-7d46-4093-813e-b4009826c3bf"
+    }
+  ],
+  "@type": "ContainerSE"
+}
