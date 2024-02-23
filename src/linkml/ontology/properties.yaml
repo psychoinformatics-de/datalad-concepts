@@ -8,6 +8,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
 
@@ -31,6 +32,13 @@ slots:
     description: >-
       A related resource that is included either physically
       or logically in the described resource.
+
+  name:
+    slot_uri: dlco:name
+    description: The name of an item or entity.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
 
   relation:
     slot_uri: dcterms:relation
