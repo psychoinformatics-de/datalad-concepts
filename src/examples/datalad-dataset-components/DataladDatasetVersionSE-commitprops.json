@@ -2,5 +2,22 @@
   "meta_id": "gitsha:558275f650574389dcbbf7cd8ab5046482473fc8",
   "meta_type": "dlccs:DataladDatasetVersionSE",
   "gitsha": "558275f650574389dcbbf7cd8ab5046482473fc8",
+  "was_derived_from": [
+    "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"
+  ],
+  "was_generated_by": {
+    "was_associated_with": {
+      "name": "Jane Doe",
+      "email": "doe@example.com"
+    },
+    "ended_at": "2002-05-30T09:30:10+06:00",
+    "was_informed_by": {
+      "ended_at": "2001-02-28T18:27:04+02:00",
+      "was_associated_with": {
+        "name": "Jane Doe",
+        "email": "doe@example.com"
+      }
+    }
+  },
   "@type": "DataladDatasetVersionSE"
 }

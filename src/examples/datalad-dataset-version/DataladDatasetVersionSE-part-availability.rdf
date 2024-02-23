@@ -3,6 +3,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix dlco: <https://concepts.datalad.org/ontology/> .
 @prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 dlco:distribution [ a dlco:AnnexDistributionSE ;
@@ -19,6 +20,10 @@ annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf a dlco:AnnexRemoteSE ;
     dcterms:hasPart gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
     DCAT:isVersionOf [ a dlco:DataladDatasetSE ;
             dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> ] ;
+    prov:wasGeneratedBy [ a dlco:CommittingSE ;
+            prov:wasAssociatedWith [ a dlco:GitUserAgent ;
+                    dlco:email "doe@example.com"^^dlco:EmailAddress ;
+                    dlco:name "Jane Doe" ] ] ;
     dlco:gitsha "558275f650574389dcbbf7cd8ab5046482473fc8"^^dlco:sha1 ;
     dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf .
 

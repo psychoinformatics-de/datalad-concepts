@@ -10,5 +10,11 @@
       "meta_type": "dlco:AnnexedFileSE"
     }
   },
+  "was_generated_by": {
+    "was_associated_with": {
+      "name": "Jane Doe",
+      "email": "doe@example.com"
+    }
+  },
   "@type": "DataladDatasetVersionSE"
 }

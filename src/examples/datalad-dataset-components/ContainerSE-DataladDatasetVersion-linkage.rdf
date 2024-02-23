@@ -4,9 +4,14 @@
 @prefix dlco: <https://concepts.datalad.org/ontology/> .
 @prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
 @prefix ns1: <https://concepts.datalad.org/schemas/datalad-dataset-components/:> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 gitsha:558275f650574389dcbbf7cd8ab5046482473fc8 DCAT:isVersionOf datalad:0b76362c-aa27-11ee-be29-b3b123281259 ;
+    prov:wasGeneratedBy [ a dlccs:CommittingSE ;
+            prov:wasAssociatedWith [ a dlco:GitUserAgent ;
+                    dlco:email "doe@example.com"^^dlco:EmailAddress ;
+                    dlco:name "Jane Doe" ] ] ;
     dlco:gitsha "558275f650574389dcbbf7cd8ab5046482473fc8"^^dlco:sha1 ;
     dlco:meta_type "dlccs:DataladDatasetVersionSE"^^xsd:anyURI .
 
