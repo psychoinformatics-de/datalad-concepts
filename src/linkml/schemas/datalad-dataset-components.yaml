@@ -52,7 +52,7 @@ imports:
 
 classes:
   ContainerSE:
-    class_uri: dlccs:Container
+    class_uri: dlccs:ContainerSE
     description: >-
       A container for dataset component objects.
     tree_root: true
@@ -65,7 +65,7 @@ classes:
         range: ComponentSE
 
   ComponentSE:
-    class_uri: dlccs:Component
+    class_uri: dlccs:ComponentSE
     mixins:
       - HasRequiredMetaTypeDesignator
     description: >-
