@@ -20,11 +20,11 @@ gitsha:558275f650574389dcbbf7cd8ab5046482473fc8 dcterms:hasPart gitsha:56094a33c
     dlco:has_annex_remote annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf ;
     dlco:meta_type "dlccs:DataladDatasetVersionSE"^^xsd:anyURI ;
     dlco:qualified_part [ a dlccs:QualifiedGitTrackedPartSE ;
-            dcterms:relation gitsha:56094a33cf330fef5b375aa813fc4dc07147729f ;
-            prov:atLocation "subdir/README.txt"^^dlco:PosixRelPath ],
-        [ a dlccs:QualifiedGitTrackedPartSE ;
             dcterms:relation gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58 ;
-            prov:atLocation "subdir/data.bin"^^dlco:PosixRelPath ] .
+            prov:atLocation "subdir/data.bin"^^dlco:PosixRelPath ],
+        [ a dlccs:QualifiedGitTrackedPartSE ;
+            dcterms:relation gitsha:56094a33cf330fef5b375aa813fc4dc07147729f ;
+            prov:atLocation "subdir/README.txt"^^dlco:PosixRelPath ] .
 
 datalad:0b76362c-aa27-11ee-be29-b3b123281259 dlco:meta_type "dlccs:DataladDatasetSE"^^xsd:anyURI ;
     dlco:uuid "0b76362c-aa27-11ee-be29-b3b123281259"^^<http://purl.obolibrary.org/obo/NCIT_C54100> .
