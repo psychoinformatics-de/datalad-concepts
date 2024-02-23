@@ -143,8 +143,6 @@ classes:
       - DataladDatasetVersion
     description: >-
       TODO
-    todos:
-      - Add the `Commit` interface via a mixin
     slot_usage:
       has_annex_remote:
         multivalued: true
