@@ -29,21 +29,6 @@ default_prefix: dlco
 
 
 classes:
-  # TODO orthogonalize/consolidate with datalad-dataset:Commit
-  # the relevant class is not this one, but the
-  # CommitProvenance mixin
-  Commit:
-    description: >-
-      A revision or an individual change in a Git repository.
-    mixins:
-      - CommitProvenance
-      - GitTracked
-    slot_usage:
-      gitsha:
-        pattern: "^[0-9a-f]{40}$"
-        description: >-
-          SHA1 identifier of the commit object.
-
   CommitProvenance:
     mixin: true
     description: >-

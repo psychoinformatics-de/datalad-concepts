@@ -1,0 +1,9 @@
+schema: src/linkml/schemas/datalad-dataset-components.yaml
+target_class: DataladDatasetVersionSE
+data_sources:
+  - src/examples/datalad-dataset-components/DataladDatasetVersionSE-commitprops.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

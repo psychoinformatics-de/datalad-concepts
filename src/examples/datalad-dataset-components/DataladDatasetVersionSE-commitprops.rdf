@@ -1,0 +1,8 @@
+@prefix dlco: <https://concepts.datalad.org/ontology/> .
+@prefix gitsha: <https://concepts.datalad.org/namespace/gitsha/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+gitsha:558275f650574389dcbbf7cd8ab5046482473fc8 dlco:gitsha "558275f650574389dcbbf7cd8ab5046482473fc8"^^dlco:sha1 ;
+    dlco:meta_type "dlccs:DataladDatasetVersionSE"^^xsd:anyURI .
+
+

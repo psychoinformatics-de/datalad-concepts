@@ -17,6 +17,7 @@ slots:
     description: >-
       SHA1 identifier of a Git object.
     range: SHA1
+    pattern: "^[0-9a-f]{40}$"
 
 
 classes:
@@ -30,6 +31,19 @@ classes:
     slot_usage:
       gitsha:
         required: true
+
+
+  Commit:
+    description: >-
+      A revision or an individual change in a Git repository.
+    mixins:
+      - GitTracked
+        #- CommitProvenance
+    slot_usage:
+      gitsha:
+        description: >-
+          SHA1 identifier of the commit object.
+
 
   FileInGit:
     mixin: true
