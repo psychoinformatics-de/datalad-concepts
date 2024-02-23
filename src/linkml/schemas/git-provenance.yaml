@@ -77,11 +77,3 @@ classes:
         range: Authoring
         inlined: true
         required: true
-
-  GitUserAgent:
-    is_a: Agent
-    mixins:
-      - HasName
-    description: >-
-      An person, or process that interacts with a Git repository.
-    # TODO email attribute
