@@ -117,12 +117,14 @@ slots:
 
 classes:
   Entity:
+    mixin: true
     class_uri: prov:Entity
     description: >-
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
 
   Activity:
+    mixin: true
     class_uri: prov:Activity
     description: >-
       An activity is something that occurs over a period of time and acts
@@ -130,6 +132,7 @@ classes:
       transforming, modifying, relocating, using, or generating entities.
 
   Agent:
+    mixin: true
     class_uri: prov:Agent
     description: >-
       Something that bears some form of responsibility for an activity
@@ -137,12 +140,14 @@ classes:
       agent's activity.
 
   SoftwareAgent:
+    mixin: true
     is_a: Agent
     class_uri: prov:SoftwareAgent
     description: >-
       Running software.
 
   Location:
+    mixin: true
     class_uri: prov:Location
     description: >-
       A location can be an identifiable geographic place (ISO 19112),
