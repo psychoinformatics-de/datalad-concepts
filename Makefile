@@ -25,7 +25,6 @@ build/linkml-docs: \
 	build/linkml-docs/ontology \
 	build/linkml-docs/datalad-dataset-components \
 	build/linkml-docs/datalad-dataset-version
-#   build/linkml-docs/git-provenance-schema
 build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 	export OUTDIR=$$([ "$*" = "ontology" ] && echo $@ || echo build/linkml-docs/schemas/$*) && \
 	gen-doc \
@@ -52,7 +51,6 @@ check-models: \
 	check-model-datalad-dataset-components \
 	check-model-datalad-dataset-version \
 	check-model-ontology
-#	check-model-git-provenance
 check-model-%: src/linkml/schemas/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -84,8 +82,6 @@ check-validation: \
 	convert-examples-datalad-dataset-version \
 	check-validation-datalad-dataset-version \
 	convert-examples-ontology
-#	convert-examples-git-provenance
-#	check-validation-git-provenance
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
 check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
@@ -103,7 +99,6 @@ convert-examples: \
 	convert-examples-datalad-dataset-components \
 	convert-examples-datalad-dataset-version \
 	convert-examples-ontology
-#	convert-examples-git-provenance
 convert-examples-%: src/linkml/schemas/%.yaml src/examples/%
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \

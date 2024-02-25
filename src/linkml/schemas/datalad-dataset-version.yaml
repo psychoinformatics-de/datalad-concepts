@@ -63,10 +63,19 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
+      was_generated_by:
+        inlined: true
+        range: CommittingSE
     comments:
       - The property `has_annex_remote` is for defining all remotes inline
         with a meta_id index key, such that they can be referenced in a
         lean fashion in `QualifiedAnnexAccess` instances.
+
+  CommittingSE:
+    mixins:
+      - Committing
+    description: >-
+      Schema element for a `Committing`.
 
   DataladDatasetSE:
     mixins:

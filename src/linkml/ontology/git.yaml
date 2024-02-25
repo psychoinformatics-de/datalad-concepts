@@ -8,6 +8,8 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
+  - ../ontology/properties
+  - ../ontology/provenance
   - ../ontology/types
 default_prefix: dlco
 
@@ -17,6 +19,7 @@ slots:
     description: >-
       SHA1 identifier of a Git object.
     range: SHA1
+    pattern: "^[0-9a-f]{40}$"
 
 
 classes:
@@ -30,6 +33,61 @@ classes:
     slot_usage:
       gitsha:
         required: true
+
+
+  Commit:
+    description: >-
+      A revision or an individual change in a Git repository.
+    mixins:
+      - GitTracked
+        #- CommitProvenance
+    slots:
+      - description
+      - was_derived_from
+      - was_generated_by
+    slot_usage:
+      description:
+        description: The commit message.
+      gitsha:
+        description: >-
+          SHA1 identifier of the commit object.
+      was_generated_by:
+        range: Committing
+        required: true
+      was_derived_from:
+        range: Commit
+        multivalued: true
+
+
+  CommitAuthoring:
+    mixin: true
+    is_a: Activity
+    description: >-
+      The action of authoring a change in a Git repository.
+    slots:
+      - ended_at
+      - was_associated_with
+    slot_usage:
+      was_associated_with:
+        range: GitUserAgent
+
+
+  Committing:
+    mixin: true
+    is_a: Activity
+    description: >-
+      The action of creating a Commit in a Git repository.
+    slots:
+      - ended_at
+      - was_associated_with
+      - was_informed_by
+    slot_usage:
+      was_associated_with:
+        range: GitUserAgent
+        required: true
+      was_informed_by:
+        range: CommitAuthoring
+
 
   FileInGit:
     mixin: true
@@ -51,3 +109,14 @@ classes:
       #    relation:
       #      range: FileInGit
 
+  GitUserAgent:
+    mixin: true
+    is_a: Agent
+    description: >-
+      An person, or process that interacts with a Git repository.
+    slots:
+      - name
+      - email
+    slot_usage:
+      name:
+        range: string

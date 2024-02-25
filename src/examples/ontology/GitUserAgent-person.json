@@ -1,0 +1,5 @@
+{
+  "name": "Jane Doe",
+  "email": "doe@example.com",
+  "@type": "GitUserAgent"
+}

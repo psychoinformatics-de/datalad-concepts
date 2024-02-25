@@ -1,0 +1,34 @@
+See https://github.com/linkml/linkml/issues/1806 for
+problem and rationale re this patch
+--- jsonschemavalidator.py	2024-02-23 16:19:45.946867800 +0100
++++ jsonschemavalidator.py	2024-02-23 16:18:26.363624044 +0100
+@@ -187,7 +187,27 @@
+         inargs["fmt"] = input_format
+ 
+     try:
+-        data_as_dict = loader.load_as_dict(source=input, **inargs)
++        if input_format == 'yaml':
++            from io import StringIO
++            from hbreader import FileInfo
++            import os
++            import yaml
++            metadata = FileInfo()
++            data = loader._read_source(
++                input,
++                metadata=metadata,
++                accept_header="text/yaml, application/yaml;q=0.9",
++            )
++            if isinstance(data, str):
++                data = StringIO(data)
++                if metadata and metadata.source_file:
++                    data.name = os.path.relpath(metadata.source_file,
++                                                metadata.base_path)
++                data_as_dict = yaml.load(data, yaml.BaseLoader)
++            else:
++                data_as_dict = data
++        else:
++            data_as_dict = loader.load_as_dict(source=input, **inargs)
+     except NotImplementedError:
+         obj = loader.load(source=input, target_class=py_target_class, **inargs)
+         data_as_dict = as_simple_dict(obj)
+

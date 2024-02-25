@@ -110,6 +110,7 @@ classes:
     mixin: true
     class_uri: DCAT:Resource
     slots:
+      - description
       - has_part
       - qualified_part
       - type

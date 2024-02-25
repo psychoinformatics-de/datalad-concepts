@@ -143,8 +143,6 @@ classes:
       - DataladDatasetVersion
     description: >-
       TODO
-    todos:
-      - Add the `Commit` interface via a mixin
     slot_usage:
       has_annex_remote:
         multivalued: true
@@ -166,6 +164,20 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: QualifiedGitTrackedPartSE
+      was_derived_from:
+        inlined: false
+        multivalued: true
+        range: DataladDatasetVersionSE
+      was_generated_by:
+        inlined: true
+        range: CommittingSE
+
+  CommittingSE:
+    class_uri: dlccs:CommittingSE
+    mixins:
+      - Committing
+    description: >-
+      Schema element for a `Committing`.
 
   DataladDatasetSE:
     class_uri: dlccs:DataladDatasetSE

@@ -11,6 +11,7 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - ../ontology/datasets
+  - ../ontology/git
   - ../ontology/properties
 
 
@@ -19,6 +20,8 @@ classes:
     class_uri: dlco:DataladDatasetVersion
     mixin: true
     is_a: Dataset
+    mixins:
+      - Commit
     description: >-
       A version (i.e., commit) of a Datalad dataset.
     slots:
