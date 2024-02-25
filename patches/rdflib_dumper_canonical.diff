@@ -1,0 +1,22 @@
+Make linkml-convert produce deterministic RDF output.
+See https://github.com/linkml/linkml/issues/1943 for details
+and caveats
+--- rdflib_dumper.py	2024-02-24 07:36:07.532183567 +0100
++++ rdflib_dumper.py	2024-02-24 07:36:26.279874637 +0100
+@@ -6,6 +6,7 @@
+ 
+ from curies import Converter
+ from rdflib import Graph, URIRef, XSD
++from rdflib.compare import to_canonical_graph
+ from rdflib.term import Node, BNode, Literal
+ from rdflib.namespace import RDF
+ 
+@@ -66,7 +67,7 @@
+         if schemaview.namespaces()._base:
+             g.base = schemaview.namespaces()._base
+         self.inject_triples(element, schemaview, g)
+-        return g
++        return to_canonical_graph(g)
+ 
+     def inject_triples(self, element: Any, schemaview: SchemaView, graph: Graph, target_type: ElementName = None) -> Node:
+         """
