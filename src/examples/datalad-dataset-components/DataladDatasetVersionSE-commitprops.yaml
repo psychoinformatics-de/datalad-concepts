@@ -7,12 +7,16 @@ description: >
 was_derived_from: 
   - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
 was_generated_by:
-  ended_at: 2002-05-30T09:30:10+06:00
+  # we cannot declare a datetime here, without causing validation
+  # issues: https://github.com/linkml/linkml/issues/1806
+  #ended_at: 2002-05-30T09:30:10+06:00
   was_associated_with:
     name: Jane Doe
     email: doe@example.com
   was_informed_by:
-    ended_at: 2001-02-28T18:27:04+02:00
+    # we cannot declare a datetime here, without causing validation
+    # issues: https://github.com/linkml/linkml/issues/1806
+    #ended_at: 2001-02-28T18:27:04+02:00
     was_associated_with:
       name: Jane Doe
       email: doe@example.com
