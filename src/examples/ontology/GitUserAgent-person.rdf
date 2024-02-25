@@ -1,7 +1,0 @@
-@prefix dlco: <https://concepts.datalad.org/ontology/> .
-
-[] a dlco:GitUserAgent ;
-    dlco:email "doe@example.com"^^dlco:EmailAddress ;
-    dlco:name "Jane Doe" .
-
-
