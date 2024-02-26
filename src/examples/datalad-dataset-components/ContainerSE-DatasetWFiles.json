@@ -39,7 +39,7 @@
       "gitsha": "13ffd94a94e32f9482528fc65d59562b011f6f87",
       "qualified_part": [
         {
-          "relation": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
+          "relation": "annexkey:MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.bin",
           "name": "data.bin"
         },
         {
@@ -54,18 +54,15 @@
       "gitsha": "56094a33cf330fef5b375aa813fc4dc07147729f"
     },
     {
-      "meta_id": "gitsha:b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
-      "meta_type": "dlccs:AnnexedFileSE",
-      "gitsha": "b94ef1797f7bfc1ac979be122e1b538bbb0d1d58",
-      "distribution": {
-        "qualified_access": [
-          {
-            "relation": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
-            "access_id": "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.txt"
-          }
-        ],
-        "byte_size": 3425
-      }
+      "meta_id": "annexkey:MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.bin",
+      "meta_type": "dlccs:StableAnnexKeySE",
+      "qualified_access": [
+        {
+          "relation": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
+          "access_id": "MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.bin"
+        }
+      ],
+      "byte_size": 3425
     },
     {
       "meta_id": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",

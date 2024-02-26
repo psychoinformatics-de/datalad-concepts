@@ -107,25 +107,14 @@ classes:
       links other trees and blobs under particular names.
 
 
-  FileInGit:
+  GitBlob:
     mixin: true
-    is_a: File
+    is_a: Distribution
     mixins:
       - GitTracked
     description: >-
-      A `File` that is tracked with Git.
-    todos:
-      - Rename to `GitBlob`
+      Content (for example of a file) that is tracked with Git.
 
-      #QualifiedGitTrackedPart:
-      #  mixin: true
-      #  is_a: QualifiedPart
-      #  description: >-
-      #    TODO we may need this to make relation point to resources with a
-      #    (Git) identifier only, such that we could reference by key
-      #  slot_usage:
-      #    relation:
-      #      range: FileInGit
 
   GitUserAgent:
     mixin: true

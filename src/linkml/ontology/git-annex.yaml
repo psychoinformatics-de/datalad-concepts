@@ -5,10 +5,10 @@ description: >
   TODO
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
+  annexkey: https://concepts.datalad.org/namespace/annex-key/
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
-  - ../ontology/git
   - ../ontology/properties
 default_prefix: dlco
 
@@ -59,21 +59,19 @@ classes:
         https://git-annex.branchable.com/design/external_special_remote_protocol).
         A state is more or less an additional/arbitrary set of parameters.
 
-  AnnexedFile:
-    mixin: true
-    is_a: FileInGit
-      #is_a: FileInGit
-    description: >-
-      A file in a Git repository that is managed by git-annex.
-    slot_usage:
-      distribution:
-        range: AnnexDistribution
-
-  AnnexDistribution:
+  StableAnnexKey:
     mixin: true
     is_a: Distribution
     description: >-
-      A distribution that is accessible via git-annex.
+      Git-annex file content blob. Keys are identified with a name. This
+      class represents keys with a stable, content-based key name, such
+      as MD5, SHA1, SHA256 and any cryptographically secure backend,
+      including the "E" variants. Importantly, not `URL` keys.
+    slots:
+      - name
     slot_usage:
       qualified_access:
         range: QualifiedAnnexAccess
+    see_also:
+      - https://git-annex.branchable.com/internals/key_format/
+      - https://git-annex.branchable.com/backends/

@@ -34,6 +34,7 @@ license: MIT
 
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
+  annexkey: https://concepts.datalad.org/namespace/annex-key/
   bibo: http://purl.org/ontology/bibo/
   datalad: https://concepts.datalad.org/namespace/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
@@ -99,19 +100,6 @@ classes:
     slot_usage:
       relation:
         range: GitTrackedSE
-
-  AnnexDistributionSE:
-    class_uri: dlccs:AnnexDistributionSE
-    mixins:
-      - AnnexDistribution
-    description: >-
-      Schema element for a `AnnexDistribution`.
-    slot_usage:
-      qualified_access:
-        inlined: true
-        inlined_as_list: true
-        multivalued: true
-        range: QualifiedAnnexAccessSE
 
   QualifiedAnnexAccessSE:
     class_uri: dlccs:QualifiedAnnexAccessSE
@@ -198,11 +186,17 @@ classes:
       - FilesystemDirectoryItem
     description: >-
       Schema element for a `FilesystemDirectoryItem`.
+    slots:
+      - relation
     slot_usage:
       relation:
-        range: GitTrackedSE
+        # union range specification does not seem to work
+        #any_of:
+        #  - range: GitTrackedSE
+        #  - range: StableAnnexKeySE
+        range: ComponentSE
     todos:
-      - make relation range a class that can only be a tree or a blob
+      - figure out why a union range specification is not working
 
   CommittingSE:
     class_uri: dlccs:CommittingSE
@@ -230,26 +224,22 @@ classes:
     class_uri: dlccs:GitBlobSE
     is_a: GitTrackedSE
     mixins:
-      - FileInGit
+      - GitBlob
     description: >-
       Schema element for a `FileInGit`.
 
-  AnnexedFileSE:
-    class_uri: dlccs:AnnexedFileSE
-    is_a: GitTrackedSE
+  StableAnnexKeySE:
+    class_uri: dlccs:StableAnnexKeySE
+    is_a: ComponentSE
     mixins:
-      - AnnexedFile
+      - StableAnnexKey
     description: >-
-      Schema element for a `AnnexedFile`.
+      Schema element for a `StableAnnexKey`.
+    slots:
+      - meta_id
     slot_usage:
-      distribution:
+      qualified_access:
         inlined: true
-        multivalued: false
-        range: AnnexDistributionSE
-        notes:
-          - This is not multivalued, because the distribution of an annexed
-            file is an annex key, a bit identical blob. The only thing that
-            we can have multiple of are remote locations, where this key is
-            available. Even when have a URL key and the actual content may
-            be unknown (yet), the system is not made to switch between
-            distributions without filename changes.
+        inlined_as_list: true
+        multivalued: true
+        range: QualifiedAnnexAccessSE
