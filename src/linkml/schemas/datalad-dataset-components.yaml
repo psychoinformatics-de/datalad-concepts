@@ -185,6 +185,24 @@ classes:
       - GitTree
     description: >-
       Schema element for a `GitTree`.
+    slot_usage:
+      qualified_part:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: FilesystemDirectoryItemSE
+
+  FilesystemDirectoryItemSE:
+    class_uri: dlccs:FilesystemDirectoryItemSE
+    mixins:
+      - FilesystemDirectoryItem
+    description: >-
+      Schema element for a `FilesystemDirectoryItem`.
+    slot_usage:
+      relation:
+        range: GitTrackedSE
+    todos:
+      - make relation range a class that can only be a tree or a blob
 
   CommittingSE:
     class_uri: dlccs:CommittingSE

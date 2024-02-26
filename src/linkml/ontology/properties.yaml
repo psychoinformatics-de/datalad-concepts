@@ -54,6 +54,7 @@ slots:
     exact_mappings:
       - rdfs:label
       - schema:name
+    range: string
 
   relation:
     slot_uri: dcterms:relation

@@ -153,15 +153,12 @@ classes:
     broad_mappings:
       - DCAT:Relationship
     slots:
+      - name
       - relation
-      - at_location
     slot_usage:
-      at_location:
+      name:
         description: >-
-          The relative location of the part within the containing entity.
-        range: PosixRelPath
-      relation:
-        range: Resource
+          The name of the part within the containing entity.
     comments:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
@@ -233,6 +230,11 @@ classes:
     description: >-
        Filesystem structure which contains references to files,
        or other directories.
+    slots:
+      - qualified_part
+    slot_usage:
+      qualified_part:
+        range: FilesystemDirectoryItem
     exact_mappings:
       - ncit:NCIT_C62486
     broad_mappings:
@@ -242,13 +244,9 @@ classes:
 
   FilesystemDirectoryItem:
     mixin: true
+    is_a: QualifiedPart
     description: >-
        Named reference of a content item in the context of a `FilesystemDirectory`
-    slots:
-      - name
-      - relation
-    todos:
-      - Possibly factor out a dedicated `Item` class and derive from it.
 
   DataService:
     class_uri: dlco:DataService
