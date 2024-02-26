@@ -43,3 +43,12 @@ classes:
     slot_usage:
       meta_type:
         required: true
+
+  SchemaElement:
+    class_uri: dlco:SchemaElement
+    description: >-
+      Base class for schema elements. These are classes that add
+      structure-defining properties to classes that implement
+      ontology concepts.
+    comments:
+      - Derived classes should carry the name suffix `SE` to allow for intuitive naming while avoiding name conflicts with ontology concept classes
