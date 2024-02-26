@@ -27,6 +27,7 @@
           "at_location": "subdir/data.bin"
         }
       ],
+      "tree": "gitsha:712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
       "was_generated_by": {
         "was_associated_with": {
           "name": "Jane Doe",

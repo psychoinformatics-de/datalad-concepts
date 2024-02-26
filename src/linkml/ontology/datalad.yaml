@@ -27,6 +27,9 @@ classes:
     slots:
       - has_annex_remote
     slot_usage:
+      distribution:
+        range: FilesystemDirectory
+        equals_expression: "{tree}"
       is_version_of:
         range: DataladDataset
     todos:

@@ -164,6 +164,10 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: QualifiedGitTrackedPartSE
+      tree:
+        inlined: false
+        multivalued: false
+        range: GitTreeSE
       was_derived_from:
         inlined: false
         multivalued: true
@@ -171,6 +175,14 @@ classes:
       was_generated_by:
         inlined: true
         range: CommittingSE
+
+  GitTreeSE:
+    class_uri: dlccs:GitTreeSE
+    is_a: GitTrackedSE
+    mixins:
+      - GitTree
+    description: >-
+      Schema element for a `GitTree`.
 
   CommittingSE:
     class_uri: dlccs:CommittingSE
