@@ -4,8 +4,8 @@ title: Git-annex concepts
 description: >
   TODO
 prefixes:
-  annex: https://concepts.datalad.org/namespace/annex-uuid/
-  annexkey: https://concepts.datalad.org/namespace/annex-key/
+  annex: https://concepts.datalad.org/ns/annex-uuid/
+  annexkey: https://concepts.datalad.org/ns/annex-key/
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
