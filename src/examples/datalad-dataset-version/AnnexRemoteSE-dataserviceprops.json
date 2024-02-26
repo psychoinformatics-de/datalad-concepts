@@ -1,6 +1,0 @@
-{
-  "meta_id": "annex:0b76362c-aa27-11ee-be29-b3b123281259",
-  "uuid": "0b76362c-aa27-11ee-be29-b3b123281259",
-  "endpoint_url": "s3://obj.example.com/v3",
-  "@type": "AnnexRemoteSE"
-}
