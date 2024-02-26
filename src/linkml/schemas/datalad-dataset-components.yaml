@@ -86,7 +86,7 @@ classes:
         description: >-
           SHA1 based identifier in the form of a CURIE with an explicit
           `gitsha:` namespace prefix.
-        equals_expression: "gitsha:{gitsha}"
+        equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
   QualifiedGitTrackedPartSE:
@@ -134,7 +134,7 @@ classes:
       - meta_id
     slot_usage:
       meta_id:
-        equals_expression: "annex:{uuid}"
+        equals_expression: '"annex:" + {uuid}'
 
   DataladDatasetVersionSE:
     class_uri: dlccs:DataladDatasetVersionSE
@@ -144,6 +144,10 @@ classes:
     description: >-
       TODO
     slot_usage:
+      distribution:
+        inlined: false
+        multivalued: false
+        range: GitTreeSE
       has_annex_remote:
         multivalued: true
         inlined: false
@@ -157,8 +161,6 @@ classes:
       is_version_of:
         inlined: false
         range: DataladDatasetSE
-      meta_id:
-        equals_expression: "gitsha:{gitsha}"
       qualified_part:
         inlined: true
         inlined_as_list: true
@@ -204,7 +206,7 @@ classes:
       - DataladDataset
     slot_usage:
       meta_id:
-        equals_expression: "datalad:{uuid}"
+        equals_expression: '"datalad:" + {uuid}'
 
   GitBlobSE:
     class_uri: dlccs:GitBlobSE

@@ -103,6 +103,7 @@ convert-examples-%: src/linkml/schemas/%.yaml src/examples/%
 			linkml-convert \
 				-s "$<" \
 				--target-class-from-path \
+				--infer \
 				-t "$$outf" \
 				"$$ex" \
 				> $${ex%.yaml}.$${outf}.tmp && \

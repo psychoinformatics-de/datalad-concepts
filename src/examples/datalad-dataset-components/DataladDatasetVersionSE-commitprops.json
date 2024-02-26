@@ -2,6 +2,7 @@
   "meta_id": "gitsha:558275f650574389dcbbf7cd8ab5046482473fc8",
   "meta_type": "dlccs:DataladDatasetVersionSE",
   "gitsha": "558275f650574389dcbbf7cd8ab5046482473fc8",
+  "distribution": "gitsha:712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
   "tree": "gitsha:712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
   "was_derived_from": [
     "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"

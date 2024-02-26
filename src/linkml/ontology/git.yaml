@@ -21,6 +21,11 @@ slots:
     range: SHA1
     pattern: "^[0-9a-f]{40}$"
 
+  tree:
+    description: >-
+      Association with a particular Git tree object.
+    range: GitTree
+
 
 classes:
   GitTracked:
@@ -43,6 +48,7 @@ classes:
         #- CommitProvenance
     slots:
       - description
+      - tree
       - was_derived_from
       - was_generated_by
     slot_usage:
@@ -51,6 +57,8 @@ classes:
       gitsha:
         description: >-
           SHA1 identifier of the commit object.
+      tree:
+        required: true
       was_generated_by:
         range: Committing
         required: true
@@ -87,6 +95,16 @@ classes:
         required: true
       was_informed_by:
         range: CommitAuthoring
+
+
+  GitTree:
+    mixin: true
+    is_a: FilesystemDirectory
+    mixins:
+      - GitTracked
+    description: >-
+      Simplified Git-analog of a UNIX filesystem directory, a container that
+      links other trees and blobs under particular names.
 
 
   FileInGit:
