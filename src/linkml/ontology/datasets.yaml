@@ -127,7 +127,7 @@ classes:
         inlined_as_list: true
       type:
         description: >-
-          Type of resource, e.g. `Dataset`, `Directory`, or `File`.
+          Type of resource, e.g. `Dataset`.
 
   QualifiedAccess:
     description: >-
@@ -153,15 +153,12 @@ classes:
     broad_mappings:
       - DCAT:Relationship
     slots:
+      - name
       - relation
-      - at_location
     slot_usage:
-      at_location:
+      name:
         description: >-
-          The relative location of the part within the containing entity.
-        range: PosixRelPath
-      relation:
-        range: Resource
+          The name of the part within the containing entity.
     comments:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
@@ -185,39 +182,6 @@ classes:
       - distribution
       - is_version_of
 
-  Directory:
-    is_a: Resource
-    description: >-
-       Cataloging structure which contains references to other files,
-       and possibly other directories (or datasets).
-    exact_mappings:
-      - ncit:NCIT_C62486
-    broad_mappings:
-      - ncit:NCIT_C49057
-    narrow_mappings:
-      - ncit:NCIT_C172256
-
-  File:
-    mixin: true
-    is_a: Resource
-    description: >-
-      Resource for storing information, which is available to a computer
-      program and is usually based on some kind of durable storage.
-      A file is a conceptual entity, and can be represented by one or more
-      distributions that serialize the file for transfer. Distributions of
-      a file can be provided via data services.
-    slots:
-      - distribution
-    exact_mappings:
-      - afo:AFR_0000639
-    comments:
-      - Being a conceptual entity, this class does not include properties
-        for exact identification of a file's content. This is the domain
-        of a `Distribution`.
-      - It would make sense to avoid assigning a global identifier to an
-        instance of this class and instead specify inline within its
-        immediate context (e.g., a `QualifiedPart` of another `Resource`).
-
   Distribution:
     mixin: true
     description: >-
@@ -235,6 +199,33 @@ classes:
         Compared to `DCAT:Distribution` this class has a `qualified_access`
         property to enable the specification of access-related parameters
         that cannot be inferred from a standard `DCAT:Distribution`.
+    todos:
+      - Now that there is a `Directory` subclass, re-evaluate the utility
+        of the `checksum` property at this level.
+
+  FilesystemDirectory:
+    mixin: true
+    is_a: Distribution
+    description: >-
+       Filesystem structure which contains references to files,
+       or other directories.
+    slots:
+      - qualified_part
+    slot_usage:
+      qualified_part:
+        range: FilesystemDirectoryItem
+    exact_mappings:
+      - ncit:NCIT_C62486
+    broad_mappings:
+      - ncit:NCIT_C49057
+    narrow_mappings:
+      - ncit:NCIT_C172256
+
+  FilesystemDirectoryItem:
+    mixin: true
+    is_a: QualifiedPart
+    description: >-
+       Named reference of a content item in the context of a `FilesystemDirectory`
 
   DataService:
     class_uri: dlco:DataService

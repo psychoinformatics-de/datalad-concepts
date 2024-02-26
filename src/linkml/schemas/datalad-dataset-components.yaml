@@ -34,6 +34,7 @@ license: MIT
 
 prefixes:
   annex: https://concepts.datalad.org/namespace/annex-uuid/
+  annexkey: https://concepts.datalad.org/namespace/annex-key/
   bibo: http://purl.org/ontology/bibo/
   datalad: https://concepts.datalad.org/namespace/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
@@ -86,7 +87,7 @@ classes:
         description: >-
           SHA1 based identifier in the form of a CURIE with an explicit
           `gitsha:` namespace prefix.
-        equals_expression: "gitsha:{gitsha}"
+        equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
   QualifiedGitTrackedPartSE:
@@ -99,19 +100,6 @@ classes:
     slot_usage:
       relation:
         range: GitTrackedSE
-
-  AnnexDistributionSE:
-    class_uri: dlccs:AnnexDistributionSE
-    mixins:
-      - AnnexDistribution
-    description: >-
-      Schema element for a `AnnexDistribution`.
-    slot_usage:
-      qualified_access:
-        inlined: true
-        inlined_as_list: true
-        multivalued: true
-        range: QualifiedAnnexAccessSE
 
   QualifiedAnnexAccessSE:
     class_uri: dlccs:QualifiedAnnexAccessSE
@@ -134,7 +122,7 @@ classes:
       - meta_id
     slot_usage:
       meta_id:
-        equals_expression: "annex:{uuid}"
+        equals_expression: '"annex:" + {uuid}'
 
   DataladDatasetVersionSE:
     class_uri: dlccs:DataladDatasetVersionSE
@@ -144,6 +132,10 @@ classes:
     description: >-
       TODO
     slot_usage:
+      distribution:
+        inlined: false
+        multivalued: false
+        range: GitTreeSE
       has_annex_remote:
         multivalued: true
         inlined: false
@@ -157,13 +149,15 @@ classes:
       is_version_of:
         inlined: false
         range: DataladDatasetSE
-      meta_id:
-        equals_expression: "gitsha:{gitsha}"
       qualified_part:
         inlined: true
         inlined_as_list: true
         multivalued: true
         range: QualifiedGitTrackedPartSE
+      tree:
+        inlined: false
+        multivalued: false
+        range: GitTreeSE
       was_derived_from:
         inlined: false
         multivalued: true
@@ -171,6 +165,38 @@ classes:
       was_generated_by:
         inlined: true
         range: CommittingSE
+
+  GitTreeSE:
+    class_uri: dlccs:GitTreeSE
+    is_a: GitTrackedSE
+    mixins:
+      - GitTree
+    description: >-
+      Schema element for a `GitTree`.
+    slot_usage:
+      qualified_part:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: FilesystemDirectoryItemSE
+
+  FilesystemDirectoryItemSE:
+    class_uri: dlccs:FilesystemDirectoryItemSE
+    mixins:
+      - FilesystemDirectoryItem
+    description: >-
+      Schema element for a `FilesystemDirectoryItem`.
+    slots:
+      - relation
+    slot_usage:
+      relation:
+        # union range specification does not seem to work
+        #any_of:
+        #  - range: GitTrackedSE
+        #  - range: StableAnnexKeySE
+        range: ComponentSE
+    todos:
+      - figure out why a union range specification is not working
 
   CommittingSE:
     class_uri: dlccs:CommittingSE
@@ -192,32 +218,28 @@ classes:
       - DataladDataset
     slot_usage:
       meta_id:
-        equals_expression: "datalad:{uuid}"
+        equals_expression: '"datalad:" + {uuid}'
 
   GitBlobSE:
     class_uri: dlccs:GitBlobSE
     is_a: GitTrackedSE
     mixins:
-      - FileInGit
+      - GitBlob
     description: >-
       Schema element for a `FileInGit`.
 
-  AnnexedFileSE:
-    class_uri: dlccs:AnnexedFileSE
-    is_a: GitTrackedSE
+  StableAnnexKeySE:
+    class_uri: dlccs:StableAnnexKeySE
+    is_a: ComponentSE
     mixins:
-      - AnnexedFile
+      - StableAnnexKey
     description: >-
-      Schema element for a `AnnexedFile`.
+      Schema element for a `StableAnnexKey`.
+    slots:
+      - meta_id
     slot_usage:
-      distribution:
+      qualified_access:
         inlined: true
-        multivalued: false
-        range: AnnexDistributionSE
-        notes:
-          - This is not multivalued, because the distribution of an annexed
-            file is an annex key, a bit identical blob. The only thing that
-            we can have multiple of are remote locations, where this key is
-            available. Even when have a URL key and the actual content may
-            be unknown (yet), the system is not made to switch between
-            distributions without filename changes.
+        inlined_as_list: true
+        multivalued: true
+        range: QualifiedAnnexAccessSE
