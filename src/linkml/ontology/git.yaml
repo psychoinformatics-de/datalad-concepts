@@ -4,7 +4,7 @@ title: Git concepts
 description: >
   TODO
 prefixes:
-  gitsha: https://concepts.datalad.org/namespace/gitsha/
+  gitsha: https://concepts.datalad.org/ns/gitsha/
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
