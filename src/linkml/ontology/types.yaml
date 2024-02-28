@@ -5,9 +5,23 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
   schema: http://schema.org/
   xsd: http://www.w3.org/2001/XMLSchema#
+imports:
+  - linkml:types
 default_prefix: dlco
 
 types:
+  Code:
+    typeof: string
+    description: >-
+      An identifier that is encoded in a string.  This is used to represent
+      identifiers that are not URIs, but are encoded as strings.  For example,
+      a person's social security number is an encoded identifier.
+    annotations:
+      prefix: "@base"
+      percent_encoded: true
+    notes:
+      - this is an un(der)documented feature that has been lifted from https://github.com/linkml/linkml-runtime/pull/223, refer to https://github.com/psychoinformatics-de/datalad-concepts/issues/66
+
   EmailAddress:
     uri: dlco:EmailAddress
     base: str

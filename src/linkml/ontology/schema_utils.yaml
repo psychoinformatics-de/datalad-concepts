@@ -9,16 +9,37 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
 imports:
-  - linkml:types
+  - ../ontology/types
 default_prefix: dlco
 
 
 slots:
+  meta_code:
+    identifier: true
+    range: Code
+    description: >-
+      Context-constraint unique identifier of a metadata object.
+      In contrast to `meta_id`, this identifier is not globally
+      unique, but its uniqueness guarantees are limited to a single
+      metadata document. This is analog to a relative IRI `@id`
+      specification in JSON-LD that needs to be expanded with
+      an appropriate (document) `@base` URI to become globally
+      unique.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+    see_also:
+      - https://concepts.datalad.org/ontology/meta_id/
   meta_id:
     identifier: true
     description: >-
-      Unique identifier of a metadata object.
+      Globally unique identifier of a metadata object.
     range: uriorcurie
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+    see_also:
+      - https://concepts.datalad.org/ontology/meta_code/
   meta_type:
     designates_type: true
     description: >-
