@@ -76,4 +76,4 @@ classes:
       (e.g., reference by identifier vs. inlined).
     comments:
       - Derived classes should carry a name suffix `Object` or `Obj` to allow for intuitive naming while avoiding name conflicts with ontology concept classes
-      - Individual schemas may want to define a subclass `Object` that, e.g., add a type designator slot. The may also want to define an `Objects` subclass to serve as a genric Container (maybe as a `tree_root`).
+      - Individual schemas may want to define a subclass `Object` that, e.g., add a type designator slot. The may also want to define an `Objects` subclass to serve as a generic Container (maybe as a `tree_root`).
