@@ -76,25 +76,25 @@ classes:
         equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
-  QualifiedGitShaIDedPartObject:
-    class_uri: dlco:QualifiedGitShaIDedPartObject
+  GitShaIDedPartObject:
+    class_uri: dlco:GitShaIDedPartObject
     is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
-      Metadata object for a [QualifiedPart](https://concepts.datalad.org/ontology/QualifiedPart).
-      Every part is represented by a [GitShaIDedObject](https://concepts.datalad.org/ontology/GitShaIDedObject).
+      Metadata object for a [QualifiedPart](https://concepts.datalad.org/ontology/QualifiedPart),
+      where the part is a [GitShaIDedObject](https://concepts.datalad.org/ontology/GitShaIDedObject).
     slot_usage:
       relation:
         range: GitShaIDedObject
 
-  QualifiedAnnexAccessObject:
-    class_uri: dlco:QualifiedAnnexAccessObject
+  AnnexAccessObject:
+    class_uri: dlco:AnnexAccessObject
     is_a: MetadataObject
     mixins:
-      - QualifiedAnnexAccess
+      - AnnexAccess
     description: >-
-      Metadata object for a [QualifiedAnnexAccess](https://concepts.datalad.org/ontology/QualifiedAnnexAccess).
+      Metadata object for a [AnnexAccess](https://concepts.datalad.org/ontology/AnnexAccess).
     slot_usage:
       relation:
         range: AnnexRemoteObject
@@ -135,7 +135,7 @@ classes:
         range: DataladDatasetObject
       qualified_part:
         multivalued: true
-        range: QualifiedGitShaIDedPartObject
+        range: GitShaIDedPartObject
       tree:
         multivalued: false
         range: GitTreeObject
@@ -245,4 +245,4 @@ classes:
     slot_usage:
       qualified_access:
         multivalued: true
-        range: QualifiedAnnexAccessObject
+        range: AnnexAccessObject

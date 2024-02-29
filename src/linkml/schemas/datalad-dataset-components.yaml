@@ -107,25 +107,25 @@ classes:
         equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
-  QualifiedGitShaIDedPartObject:
-    class_uri: dlco:QualifiedGitShaIDedPartObject
+  GitShaIDedPartObject:
+    class_uri: dlco:GitShaIDedPartObject
     is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
-      Metadata object for a `QualifiedPart`. Every part is represented by
+      Metadata object for a `QualifiedPart`, where the part is
       a `GitShaIDedObject`.
     slot_usage:
       relation:
         range: GitShaIDedObject
 
-  QualifiedAnnexAccessObject:
-    class_uri: dlco:QualifiedAnnexAccessObject
+  AnnexAccessObject:
+    class_uri: dlco:AnnexAccessObject
     is_a: MetadataObject
     mixins:
-      - QualifiedAnnexAccess
+      - AnnexAccess
     description: >-
-      Metadata object for a `QualifiedAnnexAccess`.
+      Metadata object for a `AnnexAccess`.
     slot_usage:
       relation:
         range: AnnexRemoteObject
@@ -172,7 +172,7 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: QualifiedGitShaIDedPartObject
+        range: GitShaIDedPartObject
       tree:
         inlined: false
         multivalued: false
@@ -291,4 +291,4 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: QualifiedAnnexAccessObject
+        range: AnnexAccessObject
