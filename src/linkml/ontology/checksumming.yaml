@@ -36,23 +36,27 @@ enums:
 
 slots:
   checksum:
-    slot_uri: spdx:checksum
+    slot_uri: dlco:checksum
     description: >-
       The checksum property provides a mechanism that can be used to verify
       that the contents of a file or package have not changed.
     range: Checksum
+    exact_mappings:
+      - spdx:checksum
 
   digest:
-    slot_uri: spdx:checksumValue
+    slot_uri: dlco:checksumValue
     description: >-
       Lower case hexadecimal encoded checksum digest value produced using a
       specific algorithm.
     range: HexBinary
+    exact_mappings:
+      - spdx:checksumValue
 
 
 classes:
   Checksum:
-    class_uri: spdx:Checksum
+    class_uri: dlco:Checksum
     description: >-
       A Checksum is a value that allows to check the integrity of the contents
       of a file. Even small changes to the content of the file will change its
@@ -66,3 +70,5 @@ classes:
         slot_uri: spdx:algorithm
         description: >-
           Identifies the algorithm used to produce the subject `Checksum`.
+    exact_mappings:
+      - spdx:Checksum
