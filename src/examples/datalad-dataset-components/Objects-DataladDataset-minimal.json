@@ -1,10 +1,10 @@
 {
-  "components": [
+  "objects": [
     {
-      "meta_type": "dlccs:DataladDatasetSE",
+      "meta_type": "dlccs:DataladDatasetObject",
       "meta_id": "datalad:0b76362c-aa27-11ee-be29-b3b123281259",
       "uuid": "0b76362c-aa27-11ee-be29-b3b123281259"
     }
   ],
-  "@type": "ContainerSE"
+  "@type": "Objects"
 }

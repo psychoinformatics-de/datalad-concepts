@@ -8,24 +8,24 @@ description: |
   via a flat list of linked metadata objects. Each metadata object
   has a simple structure with minimal property nesting.
 
-  Each object is of type `ComponentSE`, a class that has two required slots:
+  Each object is of type `Object`, a class that has two required slots:
   `meta_id|code` and `meta_type`. The former must be a unique object identifier,
-  and the latter must identify a subclass of `ComponentSE` that the object
+  and the latter must identify a subclass of `Object` that the object
   represents. Both value must be given as a CURIE.
 
   Nesting of objects is avoided, unless a DataLad dataset contains insufficient
   information to guarantee the availability of a unique identifier for a given
   entity.
 
-  Subclasses of `ComponentSE` represent all recognized dataset components.
+  Subclasses of `Object` represent all recognized dataset components.
   These classes, within this schema, only define the nature of the employed
   identifier, and the linkage to other dataset components. All other
   properties are defined by a corresponding ontology class that is applied
   as a "mixin".
 
-  An additional `ContainerSE` class is provided. It has a single slot
-  `components`, and can be used to represent a list of components for formats
-  and use cases that require a root class/instance.
+  An additional `Objects` class is provided. It has a single slot
+  `objects`, and can be used to represent a list of metadata objects for
+  formats and use cases that require a root class/instance.
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
@@ -52,49 +52,49 @@ imports:
   - ../ontology/git-annex
 
 classes:
-  ContainerSE:
-    class_uri: dlccs:ContainerSE
-    is_a: SchemaElement
+  Objects:
+    class_uri: dlccs:Object
+    is_a: MetadataObject
     description: >-
       A container for dataset component objects.
     tree_root: true
     attributes:
-      components:
+      objects:
         description: >-
           Component list.
         multivalued: true
         inlined_as_list: true
-        range: ComponentSE
+        range: Object
 
-  ComponentSE:
-    class_uri: dlccs:ComponentSE
-    is_a: SchemaElement
+  Object:
+    class_uri: dlccs:Object
+    is_a: MetadataObject
     mixins:
       - HasRequiredMetaTypeDesignator
     description: >-
-      Base class for any recognized dataset component type. This class
+      Base class for any recognized dataset component object type. This class
       should never be used directly, only its subclasses.
 
-  GloballyUniqueSE:
-    class_uri: dlccs:GloballyUniqueSE
-    is_a: ComponentSE
+  GUIDedObject:
+    class_uri: dlccs:GUIDedObject
+    is_a: Object
     description: >-
-      Schema element for an object that is globally uniquely identified
+      Metadata object that is globally uniquely identified
       with a URI or CURIE.
     slots:
       - meta_id
 
-  DocumentUniqueSE:
-    class_uri: dlccs:DocumentUniqueSE
-    is_a: ComponentSE
+  DUIDedObject:
+    class_uri: dlccs:DUIDedObject
+    is_a: Object
     description: >-
-      Schema element for an object that is uniquely identified within a
+      Metadata object that is uniquely identified within a
       metadata document by some code.
     slots:
       - meta_code
 
-  GitTrackedSE:
-    is_a: GloballyUniqueSE
+  GitTrackedObject:
+    is_a: GUIDedObject
     description: >-
       Representation for any resource tracked by Git, thereby having a unique
       `gitsha`-based identifier.
@@ -108,45 +108,45 @@ classes:
         equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
-  QualifiedGitTrackedPartSE:
-    class_uri: dlccs:QualifiedGitTrackedPartSE
-    is_a: SchemaElement
+  QualifiedGitTrackedPartObject:
+    class_uri: dlccs:QualifiedGitTrackedPartObject
+    is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
-      Schema element for a `QualifiedPart`. Every part is represented by
-      a `GitTrackedSE`.
+      Metadata object for a `QualifiedPart`. Every part is represented by
+      a `GitTrackedObject`.
     slot_usage:
       relation:
-        range: GitTrackedSE
+        range: GitTrackedObject
 
-  QualifiedAnnexAccessSE:
-    class_uri: dlccs:QualifiedAnnexAccessSE
-    is_a: SchemaElement
+  QualifiedAnnexAccessObject:
+    class_uri: dlccs:QualifiedAnnexAccessObject
+    is_a: MetadataObject
     mixins:
       - QualifiedAnnexAccess
     description: >-
-      Schema element for a `QualifiedAnnexAccess`.
+      Metadata object for a `QualifiedAnnexAccess`.
     slot_usage:
       relation:
-        range: AnnexRemoteSE
+        range: AnnexRemoteObject
 
-  AnnexRemoteSE:
-    class_uri: dlccs:AnnexRemoteSE
-    is_a: GloballyUniqueSE
+  AnnexRemoteObject:
+    class_uri: dlccs:AnnexRemoteObject
+    is_a: GUIDedObject
     mixins:
       - AnnexRemote
     description: >-
-      Schema element for a `AnnexRemote`.
+      Metadata object for a `AnnexRemote`.
     slots:
       - meta_id
     slot_usage:
       meta_id:
         equals_expression: '"annex:" + {uuid}'
 
-  DataladDatasetVersionSE:
-    class_uri: dlccs:DataladDatasetVersionSE
-    is_a: GitTrackedSE
+  DataladDatasetVersionObject:
+    class_uri: dlccs:DataladDatasetVersionObject
+    is_a: GitTrackedObject
     mixins:
       - DataladDatasetVersion
     description: >-
@@ -155,111 +155,111 @@ classes:
       distribution:
         inlined: false
         multivalued: false
-        range: GitTreeSE
+        range: GitTreeObject
       has_annex_remote:
         multivalued: true
         inlined: false
-        range: AnnexRemoteSE
+        range: AnnexRemoteObject
         todos:
           - see TODO in DataladDatasetVersion re this slot
       has_part:
         inlined: false
         multivalued: true
-        range: GitTrackedSE
+        range: GitTrackedObject
       is_version_of:
         inlined: false
-        range: DataladDatasetSE
+        range: DataladDatasetObject
       qualified_part:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: QualifiedGitTrackedPartSE
+        range: QualifiedGitTrackedPartObject
       tree:
         inlined: false
         multivalued: false
-        range: GitTreeSE
+        range: GitTreeObject
       was_derived_from:
         inlined: false
         multivalued: true
-        range: DataladDatasetVersionSE
+        range: DataladDatasetVersionObject
       was_generated_by:
         inlined: true
-        range: CommittingSE
+        range: CommittingObject
 
-  GitTreeSE:
-    class_uri: dlccs:GitTreeSE
-    is_a: GitTrackedSE
+  GitTreeObject:
+    class_uri: dlccs:GitTreeObject
+    is_a: GitTrackedObject
     mixins:
       - GitTree
     description: >-
-      Schema element for a `GitTree`.
+      Metadata object for a `GitTree`.
     slot_usage:
       qualified_part:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: FilesystemDirectoryItemSE
+        range: FilesystemDirectoryItemObject
 
-  FilesystemDirectoryItemSE:
-    class_uri: dlccs:FilesystemDirectoryItemSE
-    is_a: SchemaElement
+  FilesystemDirectoryItemObject:
+    class_uri: dlccs:FilesystemDirectoryItemObject
+    is_a: MetadataObject
     mixins:
       - FilesystemDirectoryItem
     description: >-
-      Schema element for a `FilesystemDirectoryItem`.
+      Metadata object for a `FilesystemDirectoryItem`.
     slots:
       - relation
     slot_usage:
       relation:
         # union range specification does not seem to work
         #any_of:
-        #  - range: GitTrackedSE
-        #  - range: StableAnnexKeySE
-        range: GloballyUniqueSE
+        #  - range: GitTrackedObject
+        #  - range: StableAnnexKeyObject
+        range: GUIDedObject
     todos:
       - figure out why a union range specification is not working
 
-  CommittingSE:
-    class_uri: dlccs:CommittingSE
-    is_a: SchemaElement
+  CommittingObject:
+    class_uri: dlccs:CommittingObject
+    is_a: MetadataObject
     mixins:
       - Committing
     description: >-
-      Schema element for a `Committing`.
+      Metadata object for a `Committing`.
     slot_usage:
       was_associated_with:
         inlined: False
-        range: GitUserAgentSE
+        range: GitUserAgentObject
       was_informed_by:
-        range: CommitAuthoringSE
+        range: CommitAuthoringObject
 
-  CommitAuthoringSE:
-    class_uri: dlccs:CommitAuthoringSE
-    is_a: SchemaElement
+  CommitAuthoringObject:
+    class_uri: dlccs:CommitAuthoringObject
+    is_a: MetadataObject
     mixins:
       - CommitAuthoring
     description: >-
-      Schema element for a `CommitAuthoring`.
+      Metadata object for a `CommitAuthoring`.
     slot_usage:
       was_associated_with:
         inlined: False
-        range: GitUserAgentSE
+        range: GitUserAgentObject
 
-  GitUserAgentSE:
-    class_uri: dlccs:GitUserAgentSE
-    is_a: DocumentUniqueSE
+  GitUserAgentObject:
+    class_uri: dlccs:GitUserAgentObject
+    is_a: DUIDedObject
     mixins:
       - GitUserAgent
     slots:
       - meta_code
     description: >-
-      Schema element for a `GitUserAgent`.
+      Metadata object for a `GitUserAgent`.
 
-  DataladDatasetSE:
-    class_uri: dlccs:DataladDatasetSE
-    is_a: GloballyUniqueSE
+  DataladDatasetObject:
+    class_uri: dlccs:DataladDatasetObject
+    is_a: GUIDedObject
     description: >-
-      Schema element for a `DataladDataset`.
+      Metadata object for a `DataladDataset`.
     see_also: 
       - dlco:DataladDataset
     comments:
@@ -270,21 +270,21 @@ classes:
       meta_id:
         equals_expression: '"datalad:" + {uuid}'
 
-  GitBlobSE:
-    class_uri: dlccs:GitBlobSE
-    is_a: GitTrackedSE
+  GitBlobObject:
+    class_uri: dlccs:GitBlobObject
+    is_a: GitTrackedObject
     mixins:
       - GitBlob
     description: >-
-      Schema element for a `FileInGit`.
+      Metadata object for a `FileInGit`.
 
-  StableAnnexKeySE:
-    class_uri: dlccs:StableAnnexKeySE
-    is_a: GloballyUniqueSE
+  StableAnnexKeyObject:
+    class_uri: dlccs:StableAnnexKeyObject
+    is_a: GUIDedObject
     mixins:
       - StableAnnexKey
     description: >-
-      Schema element for a `StableAnnexKey`.
+      Metadata object for a `StableAnnexKey`.
     slots:
       - meta_id
     slot_usage:
@@ -292,4 +292,4 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: QualifiedAnnexAccessSE
+        range: QualifiedAnnexAccessObject

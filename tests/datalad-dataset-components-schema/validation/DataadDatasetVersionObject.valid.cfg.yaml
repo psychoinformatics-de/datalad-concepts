@@ -1,7 +1,7 @@
 schema: src/linkml/schemas/datalad-dataset-components.yaml
-target_class: DataladDatasetVersionSE
+target_class: DataladDatasetVersionObject
 data_sources:
-  - src/examples/datalad-dataset-components/DataladDatasetVersionSE-commitprops.yaml
+  - src/examples/datalad-dataset-components/DataladDatasetVersionObject-commitprops.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
