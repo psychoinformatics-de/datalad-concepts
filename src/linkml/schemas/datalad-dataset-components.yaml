@@ -92,7 +92,7 @@ classes:
     slots:
       - meta_code
 
-  GitTrackedObject:
+  GitShaIDedObject:
     is_a: GUIDedTypedObject
     description: >-
       Representation for any resource tracked by Git, thereby having a unique
@@ -107,17 +107,17 @@ classes:
         equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
-  QualifiedGitTrackedPartObject:
-    class_uri: dlco:QualifiedGitTrackedPartObject
+  QualifiedGitShaIDedPartObject:
+    class_uri: dlco:QualifiedGitShaIDedPartObject
     is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
       Metadata object for a `QualifiedPart`. Every part is represented by
-      a `GitTrackedObject`.
+      a `GitShaIDedObject`.
     slot_usage:
       relation:
-        range: GitTrackedObject
+        range: GitShaIDedObject
 
   QualifiedAnnexAccessObject:
     class_uri: dlco:QualifiedAnnexAccessObject
@@ -145,7 +145,7 @@ classes:
 
   DataladDatasetVersionObject:
     class_uri: dlco:DataladDatasetVersionObject
-    is_a: GitTrackedObject
+    is_a: GitShaIDedObject
     mixins:
       - DataladDatasetVersion
     description: >-
@@ -164,7 +164,7 @@ classes:
       has_part:
         inlined: false
         multivalued: true
-        range: GitTrackedObject
+        range: GitShaIDedObject
       is_version_of:
         inlined: false
         range: DataladDatasetObject
@@ -172,7 +172,7 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: QualifiedGitTrackedPartObject
+        range: QualifiedGitShaIDedPartObject
       tree:
         inlined: false
         multivalued: false
@@ -187,7 +187,7 @@ classes:
 
   GitTreeObject:
     class_uri: dlco:GitTreeObject
-    is_a: GitTrackedObject
+    is_a: GitShaIDedObject
     mixins:
       - GitTree
     description: >-
@@ -212,7 +212,7 @@ classes:
       relation:
         # union range specification does not seem to work
         #any_of:
-        #  - range: GitTrackedObject
+        #  - range: GitShaIDedObject
         #  - range: StableAnnexKeyObject
         range: GUIDedTypedObject
     todos:
@@ -271,7 +271,7 @@ classes:
 
   GitBlobObject:
     class_uri: dlco:GitBlobObject
-    is_a: GitTrackedObject
+    is_a: GitShaIDedObject
     mixins:
       - GitBlob
     description: >-

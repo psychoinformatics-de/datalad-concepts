@@ -60,8 +60,8 @@ classes:
     slots:
       - meta_code
 
-  GitTrackedObject:
-    class_uri: dlco:GitTrackedObject
+  GitShaIDedObject:
+    class_uri: dlco:GitShaIDedObject
     is_a: MetadataObject
     description: >-
       Representation for any resource tracked by Git, thereby having a unique
@@ -76,17 +76,17 @@ classes:
         equals_expression: '"gitsha:" + {gitsha}'
         pattern: "^gitsha:[0-9a-f]{40}$"
 
-  QualifiedGitTrackedPartObject:
-    class_uri: dlco:QualifiedGitTrackedPartObject
+  QualifiedGitShaIDedPartObject:
+    class_uri: dlco:QualifiedGitShaIDedPartObject
     is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
       Metadata object for a [QualifiedPart](https://concepts.datalad.org/ontology/QualifiedPart).
-      Every part is represented by a [GitTrackedObject](https://concepts.datalad.org/ontology/GitTrackedObject).
+      Every part is represented by a [GitShaIDedObject](https://concepts.datalad.org/ontology/GitShaIDedObject).
     slot_usage:
       relation:
-        range: GitTrackedObject
+        range: GitShaIDedObject
 
   QualifiedAnnexAccessObject:
     class_uri: dlco:QualifiedAnnexAccessObject
@@ -130,12 +130,12 @@ classes:
           - see TODO in DataladDatasetVersion re this slot
       has_part:
         multivalued: true
-        range: GitTrackedObject
+        range: GitShaIDedObject
       is_version_of:
         range: DataladDatasetObject
       qualified_part:
         multivalued: true
-        range: QualifiedGitTrackedPartObject
+        range: QualifiedGitShaIDedPartObject
       tree:
         multivalued: false
         range: GitTreeObject
@@ -170,7 +170,7 @@ classes:
       relation:
         # union range specification does not seem to work
         #any_of:
-        #  - range: GitTrackedObject
+        #  - range: GitShaIDedObject
         #  - range: StableAnnexKeyObject
         range: GUIDedTypedObject
     todos:
