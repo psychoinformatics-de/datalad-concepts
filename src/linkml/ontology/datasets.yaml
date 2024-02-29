@@ -109,6 +109,8 @@ classes:
   Resource:
     mixin: true
     class_uri: DCAT:Resource
+    description: >-
+      Resource published or curated by a single agent.
     slots:
       - description
       - has_part
