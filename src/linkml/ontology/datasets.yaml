@@ -26,17 +26,16 @@ prefixes:
   ncit: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
   schema: http://schema.org/
-
 imports:
   - ../ontology/checksumming
   - ../ontology/properties
   - ../ontology/provenance
   - ../ontology/types
   - linkml:types
-default_prefix: dlco
 
 slots:
   access_id:
+    slot_uri: dlco:access_id
     description: >-
       An identifier with which a resource distribution can be requested from a
       `DataService`.
@@ -47,6 +46,7 @@ slots:
       - DCAT:servesDataset
 
   access_service:
+    slot_uri: dlco:access_service
     description: >-
       A data service that gives access to the distribution of a `Resource`
     close_mappings:
@@ -57,12 +57,15 @@ slots:
         domain to a dataset.
 
   byte_size:
-    slot_uri: DCAT:byteSize
+    slot_uri: dlco:byte_size
     description: >-
       The size of a distribution in bytes.
     range: NonNegativeInteger
+    exact_mappings:
+      - DCAT:byteSize
 
   distribution:
+    slot_uri: dlco:distribution
     description: >-
       An available distribution of a resource.
     range: Distribution
@@ -73,17 +76,21 @@ slots:
         a dataset.
 
   endpoint_url:
+    slot_uri: dlco:endpoint_url
     description: >-
       The root location or primary endpoint of the service
       (a resolvable IRI).
     range: uri
 
   is_version_of:
-    slot_uri: DCAT:isVersionOf
+    slot_uri: dlco:is_version_of
     description: >-
       A related resource of which the described resource is a version.
+    exact_mappings:
+      - DCAT:isVersionOf
 
   qualified_access:
+    slot_uri: dlco:qualified_access
     description: >-
       Link to a description of a `access_service` relationship with
       `DCAT:DataService`.
@@ -92,6 +99,7 @@ slots:
     range: QualifiedAccess
 
   qualified_part:
+    slot_uri: dlco:qualified_part
     description: >-
       Link to a description of a `hasPart` relationship with another resource.
     broad_mappings:
@@ -99,6 +107,7 @@ slots:
     range: QualifiedPart
 
   type:
+    slot_uri: dlco:type
     description: >-
       The nature of the resource.
     range: string
@@ -107,8 +116,10 @@ slots:
 
 classes:
   Resource:
+    class_uri: dlco:Resource
     mixin: true
-    class_uri: DCAT:Resource
+    description: >-
+      Resource published or curated by a single agent.
     slots:
       - description
       - has_part
@@ -128,8 +139,11 @@ classes:
       type:
         description: >-
           Type of resource, e.g. `Dataset`.
+    exact_mappings:
+      - DCAT:Resource
 
   QualifiedAccess:
+    class_uri: dlco:QualifiedAccess
     description: >-
       An association class for attaching additional information to an
       `access_service` relationship between a `DCAT:Distribution` and
@@ -146,6 +160,7 @@ classes:
         range: DataService
 
   QualifiedPart:
+    class_uri: dlco:QualifiedPart
     mixin: true
     description: >-
       An association class for attaching additional information to a
@@ -165,6 +180,7 @@ classes:
         tree in multiple contexts, such as different versions of a dataset).
 
   Dataset:
+    class_uri: dlco:Dataset
     mixin: true
     is_a: Resource
     description: >-
@@ -183,6 +199,7 @@ classes:
       - is_version_of
 
   Distribution:
+    class_uri: dlco:Distribution
     mixin: true
     description: >-
       A specific representation of a dataset (part). Such a resource
@@ -204,6 +221,7 @@ classes:
         of the `checksum` property at this level.
 
   FilesystemDirectory:
+    class_uri: dlco:FilesystemDirectory
     mixin: true
     is_a: Distribution
     description: >-
@@ -222,6 +240,7 @@ classes:
       - ncit:NCIT_C172256
 
   FilesystemDirectoryItem:
+    class_uri: dlco:FilesystemDirectoryItem
     mixin: true
     is_a: QualifiedPart
     description: >-
