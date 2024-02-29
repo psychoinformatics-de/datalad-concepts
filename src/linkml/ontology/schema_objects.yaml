@@ -143,7 +143,7 @@ classes:
         multivalued: true
         range: DataladDatasetVersionObject
       was_generated_by:
-        range: CommittingObject
+        range: CommitActivityObject
 
   GitTreeObject:
     class_uri: dlco:GitTreeObject
@@ -176,26 +176,26 @@ classes:
     todos:
       - figure out why a union range specification is not working
 
-  CommittingObject:
-    class_uri: dlco:CommittingObject
+  CommitActivityObject:
+    class_uri: dlco:CommitActivityObject
     is_a: MetadataObject
     mixins:
-      - Committing
+      - CommitActivity
     description: >-
-      Metadata object for a [Committing](https://concepts.datalad.org/ontology/Committing).
+      Metadata object for a [CommitActivity](https://concepts.datalad.org/ontology/CommitActivity).
     slot_usage:
       was_associated_with:
         range: GitUserAgentObject
       was_informed_by:
-        range: CommitAuthoringObject
+        range: AuthorActivityObject
 
-  CommitAuthoringObject:
-    class_uri: dlco:CommitAuthoringObject
+  AuthorActivityObject:
+    class_uri: dlco:AuthorActivityObject
     is_a: MetadataObject
     mixins:
-      - CommitAuthoring
+      - AuthorActivity
     description: >-
-      Metadata object for a [CommitAuthoring](https://concepts.datalad.org/ontology/CommitAuthoring).
+      Metadata object for a [AuthorActivity](https://concepts.datalad.org/ontology/AuthorActivity).
     slot_usage:
       was_associated_with:
         range: GitUserAgentObject

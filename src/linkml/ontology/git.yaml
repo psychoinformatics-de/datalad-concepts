@@ -60,14 +60,14 @@ classes:
       tree:
         required: true
       was_generated_by:
-        range: Committing
+        range: CommitActivity
         required: true
       was_derived_from:
         range: Commit
         multivalued: true
 
 
-  CommitAuthoring:
+  AuthorActivity:
     mixin: true
     is_a: Activity
     description: >-
@@ -80,7 +80,7 @@ classes:
         range: GitUserAgent
 
 
-  Committing:
+  CommitActivity:
     mixin: true
     is_a: Activity
     description: >-
@@ -94,7 +94,7 @@ classes:
         range: GitUserAgent
         required: true
       was_informed_by:
-        range: CommitAuthoring
+        range: AuthorActivity
 
 
   GitTree:
