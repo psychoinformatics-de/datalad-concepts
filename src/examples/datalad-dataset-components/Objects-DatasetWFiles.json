@@ -1,12 +1,12 @@
 {
-  "components": [
+  "objects": [
     {
-      "meta_type": "dlccs:DataladDatasetSE",
+      "meta_type": "dlco:DataladDatasetObject",
       "meta_id": "datalad:0b76362c-aa27-11ee-be29-b3b123281259",
       "uuid": "0b76362c-aa27-11ee-be29-b3b123281259"
     },
     {
-      "meta_type": "dlccs:DataladDatasetVersionSE",
+      "meta_type": "dlco:DataladDatasetVersionObject",
       "meta_id": "gitsha:558275f650574389dcbbf7cd8ab5046482473fc8",
       "gitsha": "558275f650574389dcbbf7cd8ab5046482473fc8",
       "distribution": "gitsha:712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "meta_type": "dlccs:GitTreeSE",
+      "meta_type": "dlco:GitTreeObject",
       "meta_id": "gitsha:712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
       "gitsha": "712f54082540c4f07f4f18e50fcd47e2ae9b95ed",
       "qualified_part": [
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "meta_type": "dlccs:GitTreeSE",
+      "meta_type": "dlco:GitTreeObject",
       "meta_id": "gitsha:13ffd94a94e32f9482528fc65d59562b011f6f87",
       "gitsha": "13ffd94a94e32f9482528fc65d59562b011f6f87",
       "qualified_part": [
@@ -46,12 +46,12 @@
       ]
     },
     {
-      "meta_type": "dlccs:GitBlobSE",
+      "meta_type": "dlco:GitBlobObject",
       "meta_id": "gitsha:56094a33cf330fef5b375aa813fc4dc07147729f",
       "gitsha": "56094a33cf330fef5b375aa813fc4dc07147729f"
     },
     {
-      "meta_type": "dlccs:StableAnnexKeySE",
+      "meta_type": "dlco:StableAnnexKeyObject",
       "meta_id": "annexkey:MD5E-s3425--32a617360d10e3dcbfdd0885e8d64ab8.bin",
       "qualified_access": [
         {
@@ -62,10 +62,10 @@
       "byte_size": 3425
     },
     {
-      "meta_type": "dlccs:AnnexRemoteSE",
+      "meta_type": "dlco:AnnexRemoteObject",
       "meta_id": "annex:7e0bf3e7-7d46-4093-813e-b4009826c3bf",
       "uuid": "7e0bf3e7-7d46-4093-813e-b4009826c3bf"
     }
   ],
-  "@type": "ContainerSE"
+  "@type": "Objects"
 }

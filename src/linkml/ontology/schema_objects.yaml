@@ -1,69 +1,38 @@
-id: https://concepts.datalad.org/schemas/datalad-dataset-components
-name: datalad-dataset-components
-version: UNRELEASED
-status: bibo:status/draft
-title: Schema for any DataLad dataset component
-description: |
-  This specification defines a schema for describing a DataLad dataset
-  via a flat list of linked metadata objects. Each metadata object
-  has a simple structure with minimal property nesting.
+id: https://concepts.datalad.org/ontology/schema_objects
+name: meta_objects
+title: 
+description: >-
+  Class definitions are generic and only document the semantic relationships
+  of schema metadata objects and ontology concept, not the structural
+  properties of the schema elements.
 
-  Each object is of type `TypedObject`, a class that has two required slots:
-  `meta_id|code` and `meta_type`. The former must be a unique object identifier,
-  and the latter must identify a subclass of `TypedObject` that the object
-  represents.
-
-  Nesting of objects is avoided, unless a DataLad dataset contains insufficient
-  information to guarantee the availability of a unique identifier for a given
-  entity.
-
-  Subclasses of `TypedObject` represent all recognized dataset components.
-  These classes, within this schema, only define the nature of the employed
-  identifier, and the linkage to other dataset components. All other
-  properties are defined by a corresponding ontology class that is applied
-  as a "mixin".
-
-  An additional `Objects` class is provided. It has a single slot
-  `objects`, and can be used to represent a list of metadata objects for
-  formats and use cases that require a root class/instance.
-
-comments:
-  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
-
-license: MIT
-
+  This collection is for documentation only, and should not be imported outside
+  of this ontology. This may change once linkml starts to support import
+  namespaces.
 prefixes:
-  annex: https://concepts.datalad.org/ns/annex-uuid/
-  annexkey: https://concepts.datalad.org/ns/annex-key/
-  bibo: http://purl.org/ontology/bibo/
-  datalad: https://concepts.datalad.org/ns/dataset-uuid/
-  DCAT: http://www.w3.org/ns/dcat#
-  dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
-  gitsha: https://concepts.datalad.org/ns/gitsha/
-  linkml: https://w3id.org/linkml/
-  prov: http://www.w3.org/ns/prov#
-  spdx: http://spdx.org/rdf/terms#
+notes:
+  - The class definitions below should be suitable for copy&paste as starting
+    points when composing new schemas.
+  - All classes here must derive directly from `MetadataObject`. The derivation
+    setup in a particular schema may be different for structural reasons.
+  - The description of each class must link the respective ontology concept
+    that is implemented, e.g.
+    `[X](https://concepts.datalad.org/ontology/X)`
 
-imports:
-  - ../ontology/schema_utils
-  - ../ontology/datalad
-  - ../ontology/git-annex
 
 classes:
   Objects:
     class_uri: dlco:Objects
     is_a: MetadataObject
     description: >-
-      A container for dataset component objects.
-    tree_root: true
+      A container for metadata objects.
     attributes:
       objects:
         description: >-
-          Component list.
+          Object list.
         multivalued: true
-        inlined_as_list: true
-        range: TypedObject
+        range: MetadataObject
 
   TypedObject:
     class_uri: dlco:TypedObject
@@ -71,12 +40,11 @@ classes:
     mixins:
       - HasRequiredMetaTypeDesignator
     description: >-
-      Base class for any recognized dataset component object type. This class
-      should never be used directly, only its subclasses.
+      Base class for any recognized metadata object type.
 
   GUIDedTypedObject:
     class_uri: dlco:GUIDedTypedObject
-    is_a: TypedObject
+    is_a: MetadataObject
     description: >-
       Metadata object that is globally uniquely identified
       with a URI or CURIE.
@@ -85,7 +53,7 @@ classes:
 
   DUIDedTypedObject:
     class_uri: dlco:DUIDedTypedObject
-    is_a: TypedObject
+    is_a: MetadataObject
     description: >-
       Metadata object that is uniquely identified within a
       metadata document by some code.
@@ -93,7 +61,8 @@ classes:
       - meta_code
 
   GitShaIDedObject:
-    is_a: GUIDedTypedObject
+    class_uri: dlco:GitShaIDedObject
+    is_a: MetadataObject
     description: >-
       Representation for any resource tracked by Git, thereby having a unique
       `gitsha`-based identifier.
@@ -113,8 +82,8 @@ classes:
     mixins:
       - QualifiedPart
     description: >-
-      Metadata object for a `QualifiedPart`. Every part is represented by
-      a `GitShaIDedObject`.
+      Metadata object for a [QualifiedPart](https://concepts.datalad.org/ontology/QualifiedPart).
+      Every part is represented by a [GitShaIDedObject](https://concepts.datalad.org/ontology/GitShaIDedObject).
     slot_usage:
       relation:
         range: GitShaIDedObject
@@ -125,18 +94,18 @@ classes:
     mixins:
       - QualifiedAnnexAccess
     description: >-
-      Metadata object for a `QualifiedAnnexAccess`.
+      Metadata object for a [QualifiedAnnexAccess](https://concepts.datalad.org/ontology/QualifiedAnnexAccess).
     slot_usage:
       relation:
         range: AnnexRemoteObject
 
   AnnexRemoteObject:
     class_uri: dlco:AnnexRemoteObject
-    is_a: GUIDedTypedObject
+    is_a: MetadataObject
     mixins:
       - AnnexRemote
     description: >-
-      Metadata object for a `AnnexRemote`.
+      Metadata object for a [AnnexRemote](https://concepts.datalad.org/ontology/AnnexRemote).
     slots:
       - meta_id
     slot_usage:
@@ -145,57 +114,46 @@ classes:
 
   DataladDatasetVersionObject:
     class_uri: dlco:DataladDatasetVersionObject
-    is_a: GitShaIDedObject
+    is_a: MetadataObject
     mixins:
       - DataladDatasetVersion
     description: >-
-      TODO
+      Metadata object for a [DataladDatasetVersion](https://concepts.datalad.org/ontology/DataladDatasetVersion).
     slot_usage:
       distribution:
-        inlined: false
         multivalued: false
         range: GitTreeObject
       has_annex_remote:
         multivalued: true
-        inlined: false
         range: AnnexRemoteObject
         todos:
           - see TODO in DataladDatasetVersion re this slot
       has_part:
-        inlined: false
         multivalued: true
         range: GitShaIDedObject
       is_version_of:
-        inlined: false
         range: DataladDatasetObject
       qualified_part:
-        inlined: true
-        inlined_as_list: true
         multivalued: true
         range: QualifiedGitShaIDedPartObject
       tree:
-        inlined: false
         multivalued: false
         range: GitTreeObject
       was_derived_from:
-        inlined: false
         multivalued: true
         range: DataladDatasetVersionObject
       was_generated_by:
-        inlined: true
         range: CommitActivityObject
 
   GitTreeObject:
     class_uri: dlco:GitTreeObject
-    is_a: GitShaIDedObject
+    is_a: MetadataObject
     mixins:
       - GitTree
     description: >-
-      Schema-specific implementation of [GitTreeObject](https://concepts.datalad.org/ontology/GitTreeObject).
+      Metadata object for a [GitTree](https://concepts.datalad.org/ontology/GitTree).
     slot_usage:
       qualified_part:
-        inlined: true
-        inlined_as_list: true
         multivalued: true
         range: FilesystemDirectoryItemObject
 
@@ -205,7 +163,7 @@ classes:
     mixins:
       - FilesystemDirectoryItem
     description: >-
-      Metadata object for a `FilesystemDirectoryItem`.
+      Metadata object for a [FilesystemDirectoryItem](https://concepts.datalad.org/ontology/FilesystemDirectoryItem).
     slots:
       - relation
     slot_usage:
@@ -224,10 +182,9 @@ classes:
     mixins:
       - CommitActivity
     description: >-
-      Metadata object for a `CommitActivity`.
+      Metadata object for a [CommitActivity](https://concepts.datalad.org/ontology/CommitActivity).
     slot_usage:
       was_associated_with:
-        inlined: False
         range: GitUserAgentObject
       was_informed_by:
         range: AuthorActivityObject
@@ -238,27 +195,26 @@ classes:
     mixins:
       - AuthorActivity
     description: >-
-      Metadata object for a `AuthorActivity`.
+      Metadata object for a [AuthorActivity](https://concepts.datalad.org/ontology/AuthorActivity).
     slot_usage:
       was_associated_with:
-        inlined: False
         range: GitUserAgentObject
 
   GitUserAgentObject:
     class_uri: dlco:GitUserAgentObject
-    is_a: DUIDedTypedObject
+    is_a: MetadataObject
     mixins:
       - GitUserAgent
     slots:
       - meta_code
     description: >-
-      Metadata object for a `GitUserAgent`.
+      Metadata object for a [GitUserAgent](https://concepts.datalad.org/ontology/GitUserAgent).
 
   DataladDatasetObject:
     class_uri: dlco:DataladDatasetObject
-    is_a: GUIDedTypedObject
+    is_a: MetadataObject
     description: >-
-      Metadata object for a `DataladDataset`.
+      Metadata object for a [DataladDataset](https://concepts.datalad.org/ontology/DataladDataset).
     see_also: 
       - dlco:DataladDataset
     comments:
@@ -271,24 +227,22 @@ classes:
 
   GitBlobObject:
     class_uri: dlco:GitBlobObject
-    is_a: GitShaIDedObject
+    is_a: MetadataObject
     mixins:
       - GitBlob
     description: >-
-      Metadata object for a `FileInGit`.
+      Metadata object for a [GitBlob](https://concepts.datalad.org/ontology/GitBlob).
 
   StableAnnexKeyObject:
     class_uri: dlco:StableAnnexKeyObject
-    is_a: GUIDedTypedObject
+    is_a: MetadataObject
     mixins:
       - StableAnnexKey
     description: >-
-      Metadata object for a `StableAnnexKey`.
+      Metadata object for a [StableAnnexKey](https://concepts.datalad.org/ontology/StableAnnexKey).
     slots:
       - meta_id
     slot_usage:
       qualified_access:
-        inlined: true
-        inlined_as_list: true
         multivalued: true
         range: QualifiedAnnexAccessObject

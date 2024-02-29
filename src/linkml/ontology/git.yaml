@@ -28,7 +28,7 @@ slots:
 
 
 classes:
-  GitTracked:
+  GitShaIDed:
     mixin: true
     description: >-
       Mixin class for any resource tracked by Git, thereby having a unique
@@ -44,7 +44,7 @@ classes:
     description: >-
       A revision or an individual change in a Git repository.
     mixins:
-      - GitTracked
+      - GitShaIDed
         #- CommitProvenance
     slots:
       - description
@@ -60,14 +60,14 @@ classes:
       tree:
         required: true
       was_generated_by:
-        range: Committing
+        range: CommitActivity
         required: true
       was_derived_from:
         range: Commit
         multivalued: true
 
 
-  CommitAuthoring:
+  AuthorActivity:
     mixin: true
     is_a: Activity
     description: >-
@@ -80,7 +80,7 @@ classes:
         range: GitUserAgent
 
 
-  Committing:
+  CommitActivity:
     mixin: true
     is_a: Activity
     description: >-
@@ -94,14 +94,14 @@ classes:
         range: GitUserAgent
         required: true
       was_informed_by:
-        range: CommitAuthoring
+        range: AuthorActivity
 
 
   GitTree:
     mixin: true
     is_a: FilesystemDirectory
     mixins:
-      - GitTracked
+      - GitShaIDed
     description: >-
       Simplified Git-analog of a UNIX filesystem directory, a container that
       links other trees and blobs under particular names.
@@ -111,7 +111,7 @@ classes:
     mixin: true
     is_a: Distribution
     mixins:
-      - GitTracked
+      - GitShaIDed
     description: >-
       Content (for example of a file) that is tracked with Git.
 

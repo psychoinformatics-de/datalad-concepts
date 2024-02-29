@@ -21,4 +21,5 @@ imports:
   - ../ontology/properties
   - ../ontology/provenance
   - ../ontology/schema_utils
+  - ../ontology/schema_objects
   - ../ontology/types

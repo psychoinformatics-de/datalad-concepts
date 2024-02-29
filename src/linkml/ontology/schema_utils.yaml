@@ -65,11 +65,15 @@ classes:
       meta_type:
         required: true
 
-  SchemaElement:
-    class_uri: dlco:SchemaElement
+  MetadataObject:
+    class_uri: dlco:MetadataObject
     description: >-
       Base class for schema elements. These are classes that add
       structure-defining properties to classes that implement
-      ontology concepts.
+      ontology concepts. In other words, they define the concrete
+      structure of a particular metadata document, include (and in
+      particular) the linkage between different metadata records
+      (e.g., reference by identifier vs. inlined).
     comments:
-      - Derived classes should carry the name suffix `SE` to allow for intuitive naming while avoiding name conflicts with ontology concept classes
+      - Derived classes should carry a name suffix `Object` or `Obj` to allow for intuitive naming while avoiding name conflicts with ontology concept classes
+      - Individual schemas may want to define a subclass `Object` that, e.g., add a type designator slot. The may also want to define an `Objects` subclass to serve as a generic Container (maybe as a `tree_root`).
