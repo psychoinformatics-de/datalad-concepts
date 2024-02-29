@@ -43,10 +43,13 @@ slots:
     range: EmailAddress
 
   has_part:
-    slot_uri: dcterms:hasPart
+    slot_uri: dlco:hasPart
     description: >-
       A related resource that is included either physically
       or logically in the described resource.
+    exact_mappings:
+      - dcterms:hasPart
+
 
   name:
     slot_uri: dlco:name
@@ -57,12 +60,15 @@ slots:
     range: string
 
   relation:
-    slot_uri: dcterms:relation
+    slot_uri: dlco:relation
     description: >-
       The resource related to the source resource.
     relational_role: OBJECT
+    exact_mappings:
+      - dcterms:relation
 
   uuid:
+    slot_uri: dlco:uuid
     description: >-
       Associated UUID identifier.
     range: UUID
