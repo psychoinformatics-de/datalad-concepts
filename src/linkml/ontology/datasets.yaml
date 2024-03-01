@@ -81,6 +81,8 @@ slots:
       The root location or primary endpoint of the service
       (a resolvable IRI).
     range: uri
+    exact_mappings:
+      - DCAT:endpointURL
 
   is_version_of:
     slot_uri: dlco:is_version_of
