@@ -1,0 +1,77 @@
+id: https://concepts.datalad.org/schemas/dataset-version
+name: dataset-version
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for a generic dataset version record
+description: |
+  This is a schema that a DataLad dataset generator/updator would understand
+  for importing a non-DataLad dataset specification.
+  TODO
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  DCAT: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  spdx: http://spdx.org/rdf/terms#
+
+imports:
+  - ../ontology/schema_utils
+  - ../ontology/datasets
+
+classes:
+  TypedObject:
+    class_uri: dlco:TypedObject
+    is_a: MetadataObject
+    mixins:
+      - HasRequiredMetaTypeDesignator
+    description: >-
+      Base class for any object with a type designator slot. This class
+      should never be used directly, only its subclasses.
+
+  DUIDedTypedObject:
+    class_uri: dlco:DUIDedTypedObject
+    is_a: TypedObject
+    description: >-
+      Metadata object that is uniquely identified within a
+      metadata document by some code.
+    slots:
+      - meta_code
+
+  FileContainerObject:
+    class_uri: dlco:FileContainerObject
+    is_a: TypedObject
+
+  DatasetVersionObject:
+    class_uri: dlco:DatasetVersionObject
+    mixins:
+      - Dataset
+    description: >-
+      TODO
+    slot_usage:
+      distribution:
+        inlined: true
+        multivalued: false
+        range: FileContainerObject
+          #range: GitTreeObject
+          #has_part:
+          #  inlined: true
+          #  multivalued: true
+          #  range: DatasetVersionObject
+          #    #range: GitShaIDedObject
+      is_version_of:
+        range: string
+        todos:
+          - make URL/URI
+          #range: DataladDatasetObject
+          #qualified_part:
+          #  inlined: true
+          #  inlined_as_list: true
+          #  multivalued: true
+          #  range: GitShaIDedPartObject

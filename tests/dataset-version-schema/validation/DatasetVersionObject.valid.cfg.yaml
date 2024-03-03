@@ -1,0 +1,9 @@
+schema: src/linkml/schemas/dataset-version.yaml
+target_class: DatasetVersionObject
+data_sources:
+  - src/examples/dataset-version/DatasetVersionObject-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
