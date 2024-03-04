@@ -84,7 +84,7 @@ check-validation: \
 	convert-examples-ontology
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
-	check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
+check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 	@for ex in $</*.valid.cfg.yaml; do \
 		echo "Validate $$ex" ; \
 		linkml-validate --config "$$ex" ; \

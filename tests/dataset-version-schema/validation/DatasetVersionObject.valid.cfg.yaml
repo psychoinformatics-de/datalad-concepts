@@ -1,7 +1,7 @@
 schema: src/linkml/schemas/dataset-version.yaml
 target_class: DatasetVersionObject
 data_sources:
-  - src/examples/dataset-version/DatasetVersionObject-minimal.yaml
+  - src/examples/dataset-version/DatasetVersionObject-roleattribution.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -39,8 +39,8 @@
     {
       "meta_type": "dlco:GitUserAgentObject",
       "meta_code": "doe@example.com",
-      "name": "Jane Doe",
-      "email": "doe@example.com"
+      "email": "doe@example.com",
+      "name": "Jane Doe"
     }
   ],
   "@type": "Objects"

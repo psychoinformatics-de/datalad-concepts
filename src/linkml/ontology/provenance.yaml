@@ -7,6 +7,7 @@ description: >-
   and using the [W3C PROV ontology](https://www.w3.org/TR/prov-o).
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
+  foaf: http://xmlns.com/foaf/spec/#term_
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 imports:
@@ -15,6 +16,14 @@ default_prefix: dlco
 
 
 slots:
+  agent:
+    slot_uri: dlco:agent
+    description: >-
+      References an agent which influenced an entity.
+    range: Agent
+    exact_mappings:
+      - prov:agent
+
   # Commit was_generated_by CommitActivity
   was_generated_by:
     slot_uri: dlco:wasGeneratedBy
@@ -138,11 +147,19 @@ slots:
     exact_mappings:
       - prov:atLocation
 
+  qualified_attribution:
+    slot_uri: dlco:qualified_attribution
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    exact_mappings:
+      - prov:qualifiedAttribution
+    range: Attribution
+
 
 classes:
   Entity:
-    mixin: true
     class_uri: dlco:Entity
+    mixin: true
     description: >-
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
@@ -150,8 +167,8 @@ classes:
       - prov:Entity
 
   Activity:
-    mixin: true
     class_uri: dlco:Activity
+    mixin: true
     description: >-
       An activity is something that occurs over a period of time and acts
       upon or with entities; it may include consuming, processing,
@@ -159,28 +176,53 @@ classes:
     exact_mappings:
       - prov:Activity
 
-  Agent:
+  Attribution:
+    class_uri: dlco:Attribution
     mixin: true
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    slots:
+      - agent
+    exact_mappings:
+      - prov:Attribution
+
+  Agent:
     class_uri: dlco:Agent
+    mixin: true
     description: >-
       Something that bears some form of responsibility for an activity
       taking place, for the existence of an entity, or for another
       agent's activity.
+    slots:
+      - name
     exact_mappings:
+      - foaf:Agent
       - prov:Agent
 
   SoftwareAgent:
-    mixin: true
     is_a: Agent
+    mixin: true
     class_uri: dlco:SoftwareAgent
     description: >-
       Running software.
     exact_mappings:
       - prov:SoftwareAgent
 
-  Location:
+  Person:
+    is_a: Agent
     mixin: true
+    class_uri: dlco:Person
+    description: >-
+      Person agents are people.
+    slots:
+      - email
+    exact_mappings:
+      - foaf:Person
+      - prov:Person
+
+  Location:
     class_uri: dlco:Location
+    mixin: true
     description: >-
       A location can be an identifiable geographic place (ISO 19112),
       but it can also be a non-geographic place such as a directory,

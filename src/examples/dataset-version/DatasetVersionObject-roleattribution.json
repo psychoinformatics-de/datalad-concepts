@@ -1,0 +1,17 @@
+{
+  "qualified_attribution": [
+    {
+      "agent": {
+        "meta_type": "dlco:PersonObject",
+        "name": "Jane Doe",
+        "email": "doe@example.com"
+      },
+      "had_role": [
+        "marcrel:aut",
+        "marcrel:cur"
+      ]
+    }
+  ],
+  "description": "Some key facts about the data",
+  "@type": "DatasetVersionObject"
+}

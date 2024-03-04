@@ -20,6 +20,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   spdx: http://spdx.org/rdf/terms#
+  marcrel: http://id.loc.gov/vocabulary/relators/
 
 imports:
   - ../ontology/schema_utils
@@ -47,6 +48,8 @@ classes:
   FileContainerObject:
     class_uri: dlco:FileContainerObject
     is_a: TypedObject
+    description: >-
+      TODO
 
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
@@ -75,3 +78,55 @@ classes:
           #  inlined_as_list: true
           #  multivalued: true
           #  range: GitShaIDedPartObject
+      qualified_attribution:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: RoleAttributionObject
+
+  AgentObject:
+    class_uri: dlco:AgentObject
+    mixins:
+      - Agent
+    slots:
+      - meta_type
+    description: >-
+      TODO
+
+  PersonObject:
+    class_uri: dlco:PersonObject
+    is_a: AgentObject
+    mixins:
+      - Person
+    description: >-
+      TODO
+
+  RoleObject:
+    class_uri: dlco:RoleObject
+    mixins:
+      - Role
+    description: >-
+      TODO
+    slots:
+      - meta_id
+    id_prefixes:
+      - marcrel
+    notes:
+      - We went for MARC relators as ID prefix, because of the comprehensiveness
+      - This class only has a `meta_id` slot, because it is sufficient for identification of a Role via any of the supported CURIE prefix schema(s).
+    see_also:
+      - https://id.loc.gov/vocabulary/relators.html
+
+  RoleAttributionObject:
+    class_uri: dlco:RoleAttributionObject
+    mixins:
+      - RoleAttribution
+    description: >-
+      TODO
+    slot_usage:
+      agent:
+        inlined: true
+        range: AgentObject
+      had_role:
+        multivalued: true
+        range: RoleObject

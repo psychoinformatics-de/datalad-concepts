@@ -122,7 +122,6 @@ classes:
     description: >-
       An person, or process that interacts with a Git repository.
     slots:
-      - name
       - email
     slot_usage:
       name:

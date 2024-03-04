@@ -84,6 +84,18 @@ slots:
     exact_mappings:
       - DCAT:endpointURL
 
+  had_role:
+    slot_uri: dlco:had_role
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    range: Role
+    exact_mappings:
+      - DCAT:had_role
+    comments:
+      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
+      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
+
   is_version_of:
     slot_uri: dlco:is_version_of
     description: >-
@@ -107,6 +119,8 @@ slots:
     broad_mappings:
       - DCAT:qualifiedRelation
     range: QualifiedPart
+    todos:
+      - Rename to `named_part`? See also todo for `QualifiedPart`
 
   type:
     slot_uri: dlco:type
@@ -125,11 +139,14 @@ classes:
     slots:
       - description
       - has_part
+      - qualified_attribution
       - qualified_part
       - type
     slot_usage:
       has_part:
         range: Resource
+        multivalued: true
+      qualified_attribution:
         multivalued: true
       qualified_part:
         multivalued: true
@@ -144,8 +161,50 @@ classes:
     exact_mappings:
       - DCAT:Resource
 
+  Relationship:
+    class_uri: dlco:Relationship
+    mixin: true
+    description: >-
+      An association class for attaching additional information to a
+      relationship between Resources/Entities
+    exact_mappings:
+      - DCAT:Relationship
+    slots:
+      - had_role
+      - relation
+    comments:
+      - >-
+        Use to characterize a relationship between datasets,
+        and potentially other resources,
+        where the nature of the relationship is known but is not
+        adequately characterized by the standard DCTERMS or PROV
+        properties.
+
+  Role:
+    class_uri: dlco:Role
+    mixin: true
+    description: >-
+      A role is the function of a resource or agent with respect to
+      another resource, in the context of resource attribution or
+      resource relationships.
+    exact_mappings:
+      - DCAT:Role
+ 
+  RoleAttribution:
+    class_uri: dlco:RoleAttribution
+    mixin: true
+    is_a: Attribution
+    description: >-
+      Ascribing of an entity to an agent with a particular role.
+    slots:
+      - had_role
+    broad_mappings:
+      - prov:Attribution
+
   QualifiedAccess:
     class_uri: dlco:QualifiedAccess
+    mixin: true
+    is_a: Relationship
     description: >-
       An association class for attaching additional information to an
       `access_service` relationship between a `DCAT:Distribution` and
@@ -156,7 +215,6 @@ classes:
       - DCAT:access_service
     slots:
       - access_id
-      - relation
     slot_usage:
       relation:
         range: DataService
@@ -180,6 +238,8 @@ classes:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
         tree in multiple contexts, such as different versions of a dataset).
+    todos:
+      - Rename to `NamedPart`? It would be more intuitive and is just that.
 
   Dataset:
     class_uri: dlco:Dataset

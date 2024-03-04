@@ -1,0 +1,14 @@
+description: >-
+  Some key facts about the data
+qualified_attribution:
+  - agent:
+      # to distinguish people from organizations and maybe even
+      # software agents
+      meta_type: dlco:PersonObject
+      name: Jane Doe
+      email: doe@example.com
+    had_role:
+      # for simplicity of edits/composition, we allow for multiple
+      # roles
+      - marcrel:aut
+      - marcrel:cur

@@ -50,7 +50,6 @@ slots:
     exact_mappings:
       - dcterms:hasPart
 
-
   name:
     slot_uri: dlco:name
     description: The name of an item or entity.
