@@ -10,6 +10,15 @@
         "marcrel:aut",
         "marcrel:cur"
       ]
+    },
+    {
+      "agent": {
+        "meta_type": "dlco:OrganizationObject",
+        "name": "Deutsche Forschungsgemeinschaft"
+      },
+      "had_role": [
+        "marcrel:fnd"
+      ]
     }
   ],
   "description": "Some key facts about the data",
