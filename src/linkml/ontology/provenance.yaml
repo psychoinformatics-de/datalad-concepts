@@ -155,8 +155,23 @@ slots:
       - prov:qualifiedAttribution
     range: Attribution
 
+  influencer:
+    slot_uri: dlco:influencer
+    description: >-
+      Reference the resource (Entity, Agent, or Activity) whose influence is
+      being qualified in a qualified influence pattern.
+    any_of:
+      - range: Activity
+      - range: Agent
+      - range: Entity
+    exact_mappings:
+      - prov:influencer
+
 
 classes:
+  #
+  # entities
+  #
   Entity:
     class_uri: dlco:Entity
     mixin: true
@@ -166,6 +181,9 @@ classes:
     exact_mappings:
       - prov:Entity
 
+  #
+  # activities
+  #
   Activity:
     class_uri: dlco:Activity
     mixin: true
@@ -176,16 +194,9 @@ classes:
     exact_mappings:
       - prov:Activity
 
-  Attribution:
-    class_uri: dlco:Attribution
-    mixin: true
-    description: >-
-      Attribution is the ascribing of an entity to an agent.
-    slots:
-      - agent
-    exact_mappings:
-      - prov:Attribution
-
+  #
+  # agents
+  #
   Agent:
     class_uri: dlco:Agent
     mixin: true
@@ -220,6 +231,63 @@ classes:
       - foaf:Person
       - prov:Person
 
+  #
+  # basic relations
+  #
+  Influence:
+    class_uri: dlco:Influence
+    mixin: true
+    description: >-
+      Capacity of an entity, activity, or agent to have an effect on the
+      character, development, or behavior of another.
+    slots:
+      - influencer
+      - had_role
+
+  Association:
+    class_uri: dlco:Association
+    mixin: true
+    is_a: Influence
+    description: >-
+      Assignment of responsibility to an agent for an activity, indicating
+      that the agent had a role in the activity.
+    slots:
+      - agent
+    exact_mappings:
+      - prov:Association
+    broad_mappings:
+      - prov:AgentInfluence
+      - prov:Influence
+
+  Attribution:
+    class_uri: dlco:Attribution
+    mixin: true
+    is_a: Influence
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    slots:
+      - agent
+    exact_mappings:
+      - prov:Attribution
+    broad_mappings:
+      - prov:AgentInfluence
+      - prov:Influence
+
+  EntityInfluence:
+    class_uri: dlco:EntityInfluence
+    mixin: true
+    is_a: Influence
+    description: >-
+      Capacity of an entity to have an effect on the character, development,
+      or behavior of another.
+    exact_mappings:
+      - prov:EntityInfluence
+    broad_mappings:
+      - prov:Influence
+
+  #
+  # misc concepts
+  #
   Location:
     class_uri: dlco:Location
     mixin: true
