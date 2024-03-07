@@ -23,6 +23,7 @@ build/context.jsonld: src/linkml/schemas/ontology.yaml
 
 build/linkml-docs: \
 	build/linkml-docs/datalad-dataset-components \
+	build/linkml-docs/dataset-version \
 	build/linkml-docs/ontology
 build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 	export OUTDIR=$$([ "$*" = "ontology" ] && echo $@ || echo build/linkml-docs/schemas/$*) && \
@@ -48,6 +49,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	check-model-datalad-dataset-components \
+	check-model-dataset-version \
 	check-model-ontology
 check-model-%: src/linkml/schemas/%.yaml
 	@echo [Check $<]
@@ -77,6 +79,8 @@ check-model-%: src/linkml/schemas/%.yaml
 check-validation: \
 	convert-examples-datalad-dataset-components \
 	check-validation-datalad-dataset-components \
+	convert-examples-dataset-version \
+	check-validation-dataset-version \
 	convert-examples-ontology
 check-validation-%:
 	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
@@ -93,6 +97,7 @@ check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 
 convert-examples: \
 	convert-examples-datalad-dataset-components \
+	convert-examples-dataset-version \
 	convert-examples-ontology
 convert-examples-%: src/linkml/schemas/%.yaml src/examples/%
 	# loop over all examples, skip the schema file itself

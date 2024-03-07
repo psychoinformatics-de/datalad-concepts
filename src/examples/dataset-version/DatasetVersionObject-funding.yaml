@@ -1,0 +1,11 @@
+description: >-
+  Some key facts about the data
+qualified_relation:
+  - entity:
+      meta_type: dlco:GrantObject
+      name: SFB1451
+      identifier: https://gepris.dfg.de/gepris/projekt/431549029
+      sponsor:
+        name: Deutsche Forschungsgemeinschaft
+    had_role:
+      - funding

@@ -12,7 +12,7 @@ prefixes:
 imports:
   - ../ontology/datasets
   - ../ontology/git
-  - ../ontology/properties
+  - ../ontology/common
 
 
 classes:

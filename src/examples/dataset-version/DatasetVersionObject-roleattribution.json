@@ -1,0 +1,26 @@
+{
+  "qualified_attribution": [
+    {
+      "agent": {
+        "meta_type": "dlco:PersonObject",
+        "name": "Jane Doe",
+        "email": "doe@example.com"
+      },
+      "had_role": [
+        "marcrel:aut",
+        "marcrel:cur"
+      ]
+    },
+    {
+      "agent": {
+        "meta_type": "dlco:OrganizationObject",
+        "name": "Deutsche Forschungsgemeinschaft"
+      },
+      "had_role": [
+        "marcrel:fnd"
+      ]
+    }
+  ],
+  "description": "Some key facts about the data",
+  "@type": "DatasetVersionObject"
+}

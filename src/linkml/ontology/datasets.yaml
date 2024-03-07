@@ -28,7 +28,7 @@ prefixes:
   schema: http://schema.org/
 imports:
   - ../ontology/checksumming
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/provenance
   - ../ontology/types
   - linkml:types
@@ -100,6 +100,13 @@ slots:
       - DCAT:qualifiedRelation
     range: QualifiedAccess
 
+  qualified_relation:
+    slot_uri: dlco:qualified_relation
+    description: >-
+    exact_mappings:
+      - DCAT:qualifiedRelation
+    range: EntityInfluence
+
   qualified_part:
     slot_uri: dlco:qualified_part
     description: >-
@@ -107,6 +114,8 @@ slots:
     broad_mappings:
       - DCAT:qualifiedRelation
     range: QualifiedPart
+    todos:
+      - Rename to `named_part`? See also todo for `QualifiedPart`
 
   type:
     slot_uri: dlco:type
@@ -125,11 +134,17 @@ classes:
     slots:
       - description
       - has_part
+      - qualified_attribution
+      - qualified_relation
       - qualified_part
       - type
     slot_usage:
       has_part:
         range: Resource
+        multivalued: true
+      qualified_attribution:
+        multivalued: true
+      qualified_relation:
         multivalued: true
       qualified_part:
         multivalued: true
@@ -144,8 +159,37 @@ classes:
     exact_mappings:
       - DCAT:Resource
 
+  Relationship:
+    class_uri: dlco:Relationship
+    mixin: true
+    is_a: EntityInfluence
+    description: >-
+      An association class for attaching additional information to a
+      relationship between Resources/Entities
+    slots:
+      - relation
+    slot_usage:
+      relation:
+        equals_expression: "{influencer}"
+        todos:
+          - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
+    exact_mappings:
+      - DCAT:Relationship
+      - prov:EntityInfluence
+    broad_mappings:
+      - prov:Influence
+    comments:
+      - >-
+        Use to characterize a relationship between datasets,
+        and potentially other resources,
+        where the nature of the relationship is known but is not
+        adequately characterized by the standard DCTERMS or PROV
+        properties.
+
   QualifiedAccess:
     class_uri: dlco:QualifiedAccess
+    mixin: true
+    is_a: Relationship
     description: >-
       An association class for attaching additional information to an
       `access_service` relationship between a `DCAT:Distribution` and
@@ -156,7 +200,6 @@ classes:
       - DCAT:access_service
     slots:
       - access_id
-      - relation
     slot_usage:
       relation:
         range: DataService
@@ -180,6 +223,8 @@ classes:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
         tree in multiple contexts, such as different versions of a dataset).
+    todos:
+      - Rename to `NamedPart`? It would be more intuitive and is just that.
 
   Dataset:
     class_uri: dlco:Dataset

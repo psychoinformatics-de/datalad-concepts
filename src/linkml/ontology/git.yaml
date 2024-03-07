@@ -8,7 +8,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/provenance
   - ../ontology/types
 default_prefix: dlco
@@ -122,7 +122,6 @@ classes:
     description: >-
       An person, or process that interacts with a Git repository.
     slots:
-      - name
       - email
     slot_usage:
       name:

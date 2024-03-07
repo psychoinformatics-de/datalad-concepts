@@ -13,7 +13,7 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
 
 imports:
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/types
   - linkml:types
 default_prefix: dlco
