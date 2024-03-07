@@ -8,7 +8,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
 imports:
   - ../ontology/datasets
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/provenance
   - ../ontology/types
 default_prefix: dlco

@@ -28,7 +28,7 @@ prefixes:
   schema: http://schema.org/
 imports:
   - ../ontology/checksumming
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/provenance
   - ../ontology/types
   - linkml:types

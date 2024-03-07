@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/ontology/properties
-name: properties
-title: Common properties
+id: https://concepts.datalad.org/ontology/common
+name: common
+title: Common properties and classes
 description: >
-  Collection of common properties.
+  Collection of common properties and classes.
 prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/

@@ -18,7 +18,7 @@ imports:
   - ../ontology/datalad
   - ../ontology/datasets
   - ../ontology/git-annex
-  - ../ontology/properties
+  - ../ontology/common
   - ../ontology/provenance
   - ../ontology/schema_utils
   - ../ontology/schema_objects
