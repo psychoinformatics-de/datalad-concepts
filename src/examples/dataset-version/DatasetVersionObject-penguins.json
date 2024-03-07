@@ -1,0 +1,37 @@
+{
+  "qualified_attribution": [
+    {
+      "agent": {
+        "meta_type": "dlco:PersonObject",
+        "name": "Allison Horst",
+        "email": "ahorst@example.com"
+      },
+      "had_role": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "agent": {
+        "meta_type": "dlco:PersonObject",
+        "name": "Allison Hill",
+        "email": "ahill@example.com"
+      },
+      "had_role": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "agent": {
+        "meta_type": "dlco:PersonObject",
+        "name": "Kirsten Gorman",
+        "email": "kgorman@example.com"
+      },
+      "had_role": [
+        "marcrel:aut",
+        "marcrel:cre"
+      ]
+    }
+  ],
+  "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
+  "@type": "DatasetVersionObject"
+}
