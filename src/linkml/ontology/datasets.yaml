@@ -152,14 +152,22 @@ classes:
   Relationship:
     class_uri: dlco:Relationship
     mixin: true
+    is_a: EntityInfluence
     description: >-
       An association class for attaching additional information to a
       relationship between Resources/Entities
+    slots:
+      - relation
+    slot_usage:
+      relation:
+        equals_expression: "{influencer}"
+        todos:
+          - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
     exact_mappings:
       - DCAT:Relationship
-    slots:
-      - had_role
-      - relation
+      - prov:EntityInfluence
+    broad_mappings:
+      - prov:Influence
     comments:
       - >-
         Use to characterize a relationship between datasets,
