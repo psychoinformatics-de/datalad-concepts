@@ -84,18 +84,6 @@ slots:
     exact_mappings:
       - DCAT:endpointURL
 
-  had_role:
-    slot_uri: dlco:had_role
-    description: >-
-      The function of an entity or agent with respect to another entity or
-      resource.
-    range: Role
-    exact_mappings:
-      - DCAT:had_role
-    comments:
-      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
-      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
-
   is_version_of:
     slot_uri: dlco:is_version_of
     description: >-
@@ -180,16 +168,6 @@ classes:
         adequately characterized by the standard DCTERMS or PROV
         properties.
 
-  Role:
-    class_uri: dlco:Role
-    mixin: true
-    description: >-
-      A role is the function of a resource or agent with respect to
-      another resource, in the context of resource attribution or
-      resource relationships.
-    exact_mappings:
-      - DCAT:Role
- 
   RoleAttribution:
     class_uri: dlco:RoleAttribution
     mixin: true

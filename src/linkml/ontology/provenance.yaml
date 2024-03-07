@@ -38,6 +38,19 @@ slots:
     broad_mappings:
       - prov:influencer
 
+  had_role:
+    slot_uri: dlco:had_role
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    range: Role
+    exact_mappings:
+      - prov:hadRole
+      - DCAT:had_role
+    comments:
+      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
+      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
+
   # Commit was_generated_by CommitActivity
   was_generated_by:
     slot_uri: dlco:was_generated_by
@@ -320,6 +333,17 @@ classes:
       - prov:EntityInfluence
     broad_mappings:
       - prov:Influence
+
+  Role:
+    class_uri: dlco:Role
+    mixin: true
+    description: >-
+      A role is the function of a resource or agent with respect to
+      another resource, in the context of resource attribution or
+      resource relationships.
+    exact_mappings:
+      - prov:Role
+      - DCAT:Role
 
   #
   # misc concepts
