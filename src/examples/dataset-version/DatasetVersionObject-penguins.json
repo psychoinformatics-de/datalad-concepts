@@ -74,5 +74,15 @@
     }
   ],
   "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
+  "keyword": [
+    "penguins",
+    "sea ice",
+    "foraging",
+    "ecological niches",
+    "islands",
+    "antarctica",
+    "animal sexual behavior",
+    "isotopes"
+  ],
   "@type": "DatasetVersionObject"
 }

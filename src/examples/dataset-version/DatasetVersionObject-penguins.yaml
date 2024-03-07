@@ -52,15 +52,15 @@ qualified_relation:
       sponsor:
         name: NSF Office of Polar Programs
       #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351&HistoricalAwards=false
-#keywords:
-#  - penguins
-#  - sea ice
-#  - foraging
-#  - ecological niches
-#  - islands
-#  - antarctica
-#  - animal sexual behavior
-#  - isotopes
+keyword:
+  - penguins
+  - sea ice
+  - foraging
+  - ecological niches
+  - islands
+  - antarctica
+  - animal sexual behavior
+  - isotopes
 #version: 0.1.0
 #license: https://creativecommons.org/publicdomain/zero/1.0/
 #date_modified: 2020-07-16

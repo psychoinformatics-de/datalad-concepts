@@ -125,6 +125,16 @@ slots:
     exact_mappings:
       - dcterms:type
 
+  keyword:
+    slot_uri: dlco:keyword
+    description: >-
+      A keyword or tag describing the resource.
+    range: string
+    exact_mappings:
+      - dcat:keyword
+      - schema:keywords
+
+
 classes:
   Resource:
     class_uri: dlco:Resource
@@ -133,6 +143,7 @@ classes:
       Resource published or curated by a single agent.
     slots:
       - description
+      - keyword
       - has_part
       - qualified_attribution
       - qualified_relation
@@ -141,6 +152,8 @@ classes:
     slot_usage:
       has_part:
         range: Resource
+        multivalued: true
+      keyword:
         multivalued: true
       qualified_attribution:
         multivalued: true
