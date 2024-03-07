@@ -32,6 +32,47 @@
       ]
     }
   ],
+  "qualified_relation": [
+    {
+      "entity": {
+        "meta_type": "dlco:GrantObject",
+        "identifier": "0217282",
+        "sponsor": {
+          "name": "NSF Office of Polar Programs"
+        },
+        "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
+      },
+      "had_role": [
+        "funding"
+      ]
+    },
+    {
+      "entity": {
+        "meta_type": "dlco:GrantObject",
+        "identifier": "0823101",
+        "sponsor": {
+          "name": "NSF Office of Polar Programs"
+        },
+        "name": "Palmer, Antarctica Long Term Ecological Research Project"
+      },
+      "had_role": [
+        "funding"
+      ]
+    },
+    {
+      "entity": {
+        "meta_type": "dlco:GrantObject",
+        "identifier": "0741351",
+        "sponsor": {
+          "name": "NSF Office of Polar Programs"
+        },
+        "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
+      },
+      "had_role": [
+        "funding"
+      ]
+    }
+  ],
   "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
   "@type": "DatasetVersionObject"
 }
