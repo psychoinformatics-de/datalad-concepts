@@ -82,7 +82,7 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: RoleAttributionObject
+        range: AgentInfluenceObject
 
   AgentObject:
     class_uri: dlco:AgentObject
@@ -125,10 +125,10 @@ classes:
     see_also:
       - https://id.loc.gov/vocabulary/relators.html
 
-  RoleAttributionObject:
-    class_uri: dlco:RoleAttributionObject
+  AgentInfluenceObject:
+    class_uri: dlco:AgentInfluenceObject
     mixins:
-      - RoleAttribution
+      - AgentInfluence
     description: >-
       TODO
     slot_usage:

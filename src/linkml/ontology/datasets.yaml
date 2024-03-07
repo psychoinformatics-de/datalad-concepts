@@ -176,17 +176,6 @@ classes:
         adequately characterized by the standard DCTERMS or PROV
         properties.
 
-  RoleAttribution:
-    class_uri: dlco:RoleAttribution
-    mixin: true
-    is_a: Attribution
-    description: >-
-      Ascribing of an entity to an agent with a particular role.
-    slots:
-      - had_role
-    broad_mappings:
-      - prov:Attribution
-
   QualifiedAccess:
     class_uri: dlco:QualifiedAccess
     mixin: true
