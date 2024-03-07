@@ -100,6 +100,13 @@ slots:
       - DCAT:qualifiedRelation
     range: QualifiedAccess
 
+  qualified_relation:
+    slot_uri: dlco:qualified_relation
+    description: >-
+    exact_mappings:
+      - DCAT:qualifiedRelation
+    range: EntityInfluence
+
   qualified_part:
     slot_uri: dlco:qualified_part
     description: >-
@@ -128,6 +135,7 @@ classes:
       - description
       - has_part
       - qualified_attribution
+      - qualified_relation
       - qualified_part
       - type
     slot_usage:
@@ -135,6 +143,8 @@ classes:
         range: Resource
         multivalued: true
       qualified_attribution:
+        multivalued: true
+      qualified_relation:
         multivalued: true
       qualified_part:
         multivalued: true

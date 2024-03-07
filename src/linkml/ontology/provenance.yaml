@@ -193,6 +193,8 @@ slots:
       - range: Entity
     exact_mappings:
       - prov:influencer
+    broad_mappings:
+      - dcterms:relation
 
 
 classes:

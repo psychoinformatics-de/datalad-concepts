@@ -25,6 +25,7 @@ prefixes:
 imports:
   - ../ontology/schema_utils
   - ../ontology/datasets
+  - ../ontology/projects
 
 classes:
   TypedObject:
@@ -83,6 +84,11 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: AgentInfluenceObject
+      qualified_relation:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: EntityInfluenceObject
 
   AgentObject:
     class_uri: dlco:AgentObject
@@ -106,6 +112,15 @@ classes:
     is_a: AgentObject
     #mixins:
     #- Person
+    description: >-
+      TODO
+
+  EntityObject:
+    class_uri: dlco:EntityObject
+    mixins:
+      - Entity
+    slots:
+      - meta_type
     description: >-
       TODO
 
@@ -138,3 +153,25 @@ classes:
       had_role:
         multivalued: true
         range: RoleObject
+
+  EntityInfluenceObject:
+    class_uri: dlco:EntityInfluenceObject
+    mixins:
+      - EntityInfluence
+    description: >-
+      TODO
+    slot_usage:
+      entity:
+        inlined: true
+        range: EntityObject
+      had_role:
+        multivalued: true
+        range: EntityRoles
+
+  GrantObject:
+    class_uri: dlco:GrantObject
+    is_a: EntityObject
+    mixins:
+      - Grant
+    description: >-
+      TODO

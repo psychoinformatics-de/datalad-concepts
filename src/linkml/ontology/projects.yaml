@@ -1,0 +1,45 @@
+id: https://concepts.datalad.org/ontology/projects
+name: projects
+title: Concepts for planing and executing projects
+description: >
+  Such projects could be scientific research, but the concepts in here
+  should be of general applicability.
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  iao: http://purl.obolibrary.org/obo/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  spdx: http://spdx.org/rdf/terms#
+
+imports:
+  - ../ontology/provenance
+  - ../ontology/types
+default_prefix: dlco
+
+
+slots:
+  sponsor:
+    slot_uri: dlco:sponsor
+    description: >-
+      A person or organization that supports a thing through a pledge,
+      promise, or financial contribution
+    range: Agent
+    exact_mappings:
+      - schema:sponsor
+
+
+classes:
+  Grant:
+    class_uri: dlco:Grant
+    mixin: true
+    is_a: Entity
+    description: >-
+      A grant, typically financial or otherwise quantifiable, of resources.
+    slots:
+      - identifier
+      - sponsor
+      - name
+    exact_mappings:
+      - schema:Grant

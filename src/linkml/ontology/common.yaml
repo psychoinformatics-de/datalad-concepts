@@ -50,6 +50,14 @@ slots:
     exact_mappings:
       - dcterms:hasPart
 
+  identifier:
+    slot_uri: dlco:identifier
+    description: An unambiguous reference to the resource within a given context.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+    range: string
+
   name:
     slot_uri: dlco:name
     description: The name of an item or entity.
@@ -73,3 +81,13 @@ slots:
     range: UUID
     broad_mappings:
       - dcterms:identifier
+
+
+enums:
+  EntityRoles:
+    permissible_values:
+      funding:
+        description: Some form of funding or sponsorship
+        meaning: schema:funding
+    todos:
+      - keep extending with any role definitions that may be useful for linking entities
