@@ -6,9 +6,10 @@
   "qualified_attribution": [
     {
       "agent": {
-        "meta_type": "dlco:PersonObject",
+        "meta_type": "dlco:ResearchContributorObject",
         "name": "Allison Horst",
-        "email": "ahorst@example.com"
+        "email": "ahorst@example.com",
+        "orcid": "0000-0002-6047-5564"
       },
       "had_role": [
         "marcrel:aut"
@@ -16,9 +17,10 @@
     },
     {
       "agent": {
-        "meta_type": "dlco:PersonObject",
+        "meta_type": "dlco:ResearchContributorObject",
         "name": "Allison Hill",
-        "email": "ahill@example.com"
+        "email": "ahill@example.com",
+        "orcid": "0000-0002-8082-1890"
       },
       "had_role": [
         "marcrel:aut"
@@ -26,9 +28,10 @@
     },
     {
       "agent": {
-        "meta_type": "dlco:PersonObject",
+        "meta_type": "dlco:ResearchContributorObject",
         "name": "Kirsten Gorman",
-        "email": "kgorman@example.com"
+        "email": "kgorman@example.com",
+        "orcid": "0000-0002-0258-9264"
       },
       "had_role": [
         "marcrel:aut",

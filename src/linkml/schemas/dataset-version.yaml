@@ -132,6 +132,15 @@ classes:
     description: >-
       TODO
 
+  ResearchContributorObject:
+    class_uri: dlco:ResearchContributorObject
+    is_a: PersonObject
+    mixins:
+      - ResearchContributor
+    description: >-
+      TODO
+
+
   OrganizationObject:
     class_uri: dlco:OrganizationObject
     is_a: AgentObject

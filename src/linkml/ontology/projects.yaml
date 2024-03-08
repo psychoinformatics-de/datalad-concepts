@@ -12,6 +12,7 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
+  reproduceme: https://w3id.org/reproduceme#
 
 imports:
   - ../ontology/provenance
@@ -20,6 +21,17 @@ default_prefix: dlco
 
 
 slots:
+  orcid:
+    slot_uri: dlco:orcid
+    description: >-
+      A standard alphanumeric code to uniquely identify scientific
+      and other academic authors and contributors.
+    range: ORCID
+    exact_mappings:
+      - reproduceme:ORCID
+    broad_mappings:
+      - dcterms:identifier
+
   sponsor:
     slot_uri: dlco:sponsor
     description: >-
@@ -43,3 +55,28 @@ classes:
       - name
     exact_mappings:
       - schema:Grant
+
+  ResearchContributor:
+    class_uri: dlco:ResearchContributor
+    mixin: true
+    is_a: Person
+    description: >-
+      A person that has or could contribute to some research in any capacity.
+    slots:
+      - orcid
+      #   - affiliation
+
+
+types:
+  ORCID:
+    uri: dlco:ORCID
+    typeof: string
+    description: >-
+      ORCID IDs are a subset of the International Standard Name Identifier
+      (ISNI), under the auspices of the International Organization for
+      Standardization (as ISO 27729). Both ORCID and ISNI use 16-character
+      identifiers, using the digits 0–9, and separated into groups of four
+      by hyphens. The final character, which may also be a letter "X"
+      representing the value "10", is a MOD 11-2 check digit conforming
+      to the ISO/IEC 7064:2003 standard.
+    pattern: "^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$"
