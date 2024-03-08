@@ -1,4 +1,8 @@
 {
+  "distribution": {
+    "meta_type": "dlco:FileContainerObject",
+    "license": "licenses:CC0-1.0"
+  },
   "qualified_attribution": [
     {
       "agent": {

@@ -145,6 +145,7 @@ classes:
       - description
       - keyword
       - has_part
+      - license
       - qualified_attribution
       - qualified_relation
       - qualified_part
@@ -155,6 +156,17 @@ classes:
         multivalued: true
       keyword:
         multivalued: true
+      license:
+        description: >-
+          Information about licenses and rights SHOULD be provided on the
+          level of a Distribution. Information about licenses and rights MAY
+          be provided for a Dataset/Resource in addition to but not instead
+          of the information provided for the Distributions of that Dataset.
+          Providing license or rights information for a Dataset/Resource that
+          is different from information provided for a Distribution of that
+          Dataset SHOULD be avoided as this can create legal conflicts.
+        see_also:
+          - https://www.w3.org/TR/vocab-dcat-3/#license-rights
       qualified_attribution:
         multivalued: true
       qualified_relation:
@@ -270,6 +282,7 @@ classes:
       - access_service
       - byte_size
       - checksum
+      - license
       - qualified_access
     comments:
       - >-

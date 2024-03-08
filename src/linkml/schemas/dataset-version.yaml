@@ -20,7 +20,17 @@ prefixes:
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   spdx: http://spdx.org/rdf/terms#
+  licenses: http://spdx.org/licenses/
+  customlicenses: https://concepts.datalad.org/ns/custom-licenses/
   marcrel: http://id.loc.gov/vocabulary/relators/
+
+emit_prefixes:
+  - DCAT
+  - dlco
+  - licenses
+  - customlicenses
+  - marcrel
+  - prov
 
 imports:
   - ../ontology/schema_utils
@@ -49,8 +59,14 @@ classes:
   FileContainerObject:
     class_uri: dlco:FileContainerObject
     is_a: TypedObject
+    mixins:
+      - Distribution
     description: >-
       TODO
+    slot_usage:
+      license:
+        inlined: false
+        range: LicenseDocumentObject
 
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
@@ -58,6 +74,13 @@ classes:
       - Dataset
     description: >-
       TODO
+    attributes:
+      custom_licenses:
+        multivalued: true
+        inlined: true
+        range: LicenseDocumentObject
+        description: >-
+          Container to declare custom licenses.
     slot_usage:
       distribution:
         inlined: true
@@ -79,6 +102,8 @@ classes:
           #  inlined_as_list: true
           #  multivalued: true
           #  range: GitShaIDedPartObject
+      license:
+        range: LicenseDocumentObject
       qualified_attribution:
         inlined: true
         inlined_as_list: true
@@ -175,3 +200,12 @@ classes:
       - Grant
     description: >-
       TODO
+
+  LicenseDocumentObject:
+    class_uri: dlco:LicenseDocumentObject
+    mixins:
+      - LicenseDocument
+    description: >-
+      TODO
+    slots:
+      - meta_id

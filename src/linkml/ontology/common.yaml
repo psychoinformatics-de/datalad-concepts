@@ -58,6 +58,23 @@ slots:
       - schema:identifier
     range: string
 
+  license:
+    slot_uri: dlco:license
+    description: A legal document under which the resource is made available.
+    range: LicenseDocument
+    exact_mappings:
+      - dcterms:license
+      - DCAT:license
+
+  license_text:
+    slot_uri: dlco:license_text
+    description: >-
+      A copy of the actual text of a license reference, file or snippet that is
+      associated with a License Identifier to aid in future analysis.
+    range: string
+    exact_mappings:
+      - spdx:extractedText
+
   name:
     slot_uri: dlco:name
     description: The name of an item or entity.
@@ -81,6 +98,22 @@ slots:
     range: UUID
     broad_mappings:
       - dcterms:identifier
+
+
+classes:
+  LicenseDocument:
+    class_uri: dlco:LicenseDocument
+    mixin: true
+    description: >-
+      A legal document giving official permission to do something with a resource.
+    slots:
+      - identifier
+      - license_text
+    exact_mappings:
+      - dcterms:LicenseDocument
+      - spdx:License
+    todos:
+      - spdx vocab has a needed pieces to express a any custom license
 
 
 enums:

@@ -1,0 +1,17 @@
+description: >-
+  Some key facts about the data
+# licenses should generally be given for a concrete distribution
+distribution:
+  meta_type: dlco:FileContainerObject
+  license: customlicenses:not-a-good-idea
+# but we can also provide them at the Resource level
+license: customlicenses:not-a-good-idea
+# we need a place to put LicenseDocuments for custom terms that
+# cannot simply be referenced by (C)URI(E)
+custom_licenses: 
+  customlicenses:not-a-good-idea:
+    identifier: Important, obey to avoid criminal charges
+    license_text: >-
+      All rights reserved!
+      Permission is granted to issue a reasonable request to be given permission.
+      License form content must be a minimum of 170 chars, so I keep going...

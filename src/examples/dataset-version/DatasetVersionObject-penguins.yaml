@@ -61,8 +61,10 @@ keyword:
   - antarctica
   - animal sexual behavior
   - isotopes
+distribution:
+  meta_type: dlco:FileContainerObject
+  license: licenses:CC0-1.0
 #version: 0.1.0
-#license: https://creativecommons.org/publicdomain/zero/1.0/
 #date_modified: 2020-07-16
 #name: penguins
 #title: Palmer Penguins
