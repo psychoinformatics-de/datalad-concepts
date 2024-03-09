@@ -260,6 +260,18 @@ classes:
       - foaf:Person
       - prov:Person
 
+  Organization:
+    is_a: Agent
+    mixin: true
+    class_uri: dlco:Organization
+    description: >-
+      A social or legal instititution such as a company, a society,
+      or a university.
+    exact_mappings:
+      - foaf:Organization
+      - prov:Organization
+
+
   #
   # basic relations
   #

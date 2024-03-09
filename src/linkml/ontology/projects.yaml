@@ -21,6 +21,14 @@ default_prefix: dlco
 
 
 slots:
+  affiliation:
+    slot_uri: dlco:affiliation
+    description: >-
+      An organization that an agent is affiliated with.
+    range: Organization
+    exact_mappings:
+      - schema:affiliation
+
   orcid:
     slot_uri: dlco:orcid
     description: >-
@@ -64,7 +72,7 @@ classes:
       A person that has or could contribute to some research in any capacity.
     slots:
       - orcid
-      #   - affiliation
+      - affiliation
 
 
 types:

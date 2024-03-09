@@ -2,13 +2,13 @@
   "qualified_attribution": [
     {
       "agent": {
-        "meta_type": "dlco:PersonObject",
+        "meta_type": "dlco:ResearchContributorObject",
         "name": "Jane Doe",
-        "email": "doe@example.com"
+        "email": "doe@example.com",
+        "affiliation": "DFG"
       },
       "had_role": [
-        "marcrel:aut",
-        "marcrel:cur"
+        "marcrel:aut"
       ]
     },
     {
@@ -18,7 +18,7 @@
         "meta_code": "DFG"
       },
       "had_role": [
-        "marcrel:fnd"
+        "marcrel:sht"
       ]
     }
   ],

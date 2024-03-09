@@ -139,13 +139,18 @@ classes:
       - ResearchContributor
     description: >-
       TODO
-
+    slot_usage:
+      affiliation:
+        range: OrganizationObject
 
   OrganizationObject:
     class_uri: dlco:OrganizationObject
     is_a: AgentObject
-    #mixins:
-    #- Person
+    mixins:
+      - Organization
+    slots:
+      - meta_code
+
     description: >-
       TODO
 

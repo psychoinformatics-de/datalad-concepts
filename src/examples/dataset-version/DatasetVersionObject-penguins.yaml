@@ -10,6 +10,7 @@ qualified_attribution:
       name: Allison Horst
       email: ahorst@example.com
       orcid: 0000-0002-6047-5564
+      affiliation: UCSB
     had_role:
       - marcrel:aut
   - agent:
@@ -17,6 +18,7 @@ qualified_attribution:
       name: Allison Hill
       email: ahill@example.com
       orcid: 0000-0002-8082-1890
+      affiliation: Rstudio
     had_role:
       - marcrel:aut
   - agent:
@@ -24,9 +26,30 @@ qualified_attribution:
       name: Kirsten Gorman
       email: kgorman@example.com
       orcid: 0000-0002-0258-9264
+      affiliation: UAF
     had_role:
       - marcrel:aut
       - marcrel:cre
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: UCSB
+      name: 'UC Santa Barbara: Santa Barbara, CA, US'
+    had_role:
+      # Supporting host
+      - marcrel:sht
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: RStudio
+      name: 'RStudio: Boston, MA, US'
+    had_role:
+      - marcrel:sht
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: UAF
+      name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
+    had_role:
+      - marcrel:sht
+
 qualified_relation:
   - had_role:
       - funding
@@ -76,19 +99,6 @@ distribution:
 #data_controller:
 #  - email: ahorst@ucsb.edu
 #    name: Allison Horst
-#author:
-#  - author_type: person
-#    affiliation:
-#    - 'UC Santa Barbara: Santa Barbara, CA, US'
-#    name: Allison Horst
-#  - author_type: person
-#    affiliation:
-#    - 'RStudio: Boston, MA, US'
-#    name: Alison Hill
-#  - author_type: person
-#    affiliation:
-#    - 'University of Alaska Fairbanks: Fairbanks, AK, US'
-#    name: Kristen Gorman
 #publication:
 #  - citation: 'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
 #      and Environmental Variability within a Community of Antarctic Penguins (Genus
