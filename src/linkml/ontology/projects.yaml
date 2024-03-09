@@ -29,6 +29,24 @@ slots:
     exact_mappings:
       - schema:affiliation
 
+  citation:
+    slot_uri: dlco:citation
+    description: >-
+      TODO
+    range: string
+    exact_mappings:
+      - schema:citation
+
+  doi:
+    slot_uri: dlco:doi
+    description: >-
+      TODO
+    range: string
+    exact_mappings:
+      - schema:identifier
+    todos:
+      - custom type
+
   orcid:
     slot_uri: dlco:orcid
     description: >-
@@ -63,6 +81,17 @@ classes:
       - name
     exact_mappings:
       - schema:Grant
+
+  Publication:
+    class_uri: dlco:Publication
+    mixin: true
+    is_a: Entity
+    description: >-
+      TODO
+    slots:
+      - citation
+      - doi
+      - url
 
   ResearchContributor:
     class_uri: dlco:ResearchContributor

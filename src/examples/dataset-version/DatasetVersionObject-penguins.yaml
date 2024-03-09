@@ -78,6 +78,18 @@ qualified_relation:
       sponsor:
         name: NSF Office of Polar Programs
       #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351&HistoricalAwards=false
+  - had_role:
+      - cites_as_authority
+      - is_cited_as_data_source_by
+    entity:
+      meta_type: dlco:PublicationObject
+      citation: >-
+        'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
+        and Environmental Variability within a Community of Antarctic Penguins (Genus
+        Pygoscelis). PLoS ONE 9(3): e90081.'
+      #date_published: '2014-03-05'
+      doi: https://doi.org/10.1371/journal.pone.0090081
+
 keyword:
   - penguins
   - sea ice
@@ -99,12 +111,6 @@ distribution:
 #data_controller:
 #  - email: ahorst@ucsb.edu
 #    name: Allison Horst
-#publication:
-#  - citation: 'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
-#      and Environmental Variability within a Community of Antarctic Penguins (Genus
-#      Pygoscelis). PLoS ONE 9(3): e90081.'
-#    date_published: '2014-03-05'
-#    doi: https://doi.org/10.1371/journal.pone.0090081
 #has_part:
 #  - checksum_md5: e7e2be6b203a221949f05e02fcefd853
 #    content_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff

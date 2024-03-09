@@ -14,6 +14,7 @@ license: MIT
 
 prefixes:
   bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
@@ -25,6 +26,7 @@ prefixes:
   marcrel: http://id.loc.gov/vocabulary/relators/
 
 emit_prefixes:
+  - CiTO
   - DCAT
   - dlco
   - licenses
@@ -223,3 +225,11 @@ classes:
       TODO
     slots:
       - meta_id
+
+  PublicationObject:
+    class_uri: dlco:PublicationObject
+    is_a: EntityObject
+    mixins:
+      - Publication
+    description: >-
+      TODO

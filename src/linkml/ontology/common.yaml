@@ -4,6 +4,7 @@ title: Common properties and classes
 description: >
   Collection of common properties and classes.
 prefixes:
+  CiTO: http://purl.org/spar/cito/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
@@ -91,6 +92,14 @@ slots:
     exact_mappings:
       - dcterms:relation
 
+  url:
+    slot_uri: dlco:url
+    description: >-
+      URL of the item
+    range: string
+    exact_mappings:
+      - schema:url
+
   uuid:
     slot_uri: dlco:uuid
     description: >-
@@ -118,9 +127,23 @@ classes:
 
 enums:
   EntityRoles:
+    todos:
+      - keep extending with any role definitions that may be useful for linking entities
     permissible_values:
       funding:
         description: Some form of funding or sponsorship
         meaning: schema:funding
-    todos:
-      - keep extending with any role definitions that may be useful for linking entities
+    # Inheritance does not work as advertised
+    #inherits:
+    #  - EntityCitationRoles
+    #EntityCitationRoles:
+    #permissible_values:
+      cites_as_authority:
+        description: >-
+          The subject cites the entity as one that provides an authoritative
+          description or definition of the subject under discussion.
+        meaning: CiTO:citesAsAuthority
+      is_cited_as_data_source_by:
+        description: >-
+          The subject is cited as a data source by the citing entity.
+        meaning: CiTO:isCitedAsDataSourceBy
