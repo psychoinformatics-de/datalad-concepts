@@ -135,5 +135,7 @@
     "animal sexual behavior",
     "isotopes"
   ],
+  "name": "penguins",
+  "title": "Palmer Penguins",
   "@type": "DatasetVersionObject"
 }

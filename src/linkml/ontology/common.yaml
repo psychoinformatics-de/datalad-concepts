@@ -11,6 +11,7 @@ prefixes:
   iao: http://purl.obolibrary.org/obo/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
+  sio: http://semanticscience.org/resource/
   spdx: http://spdx.org/rdf/terms#
 
 imports:
@@ -78,10 +79,11 @@ slots:
 
   name:
     slot_uri: dlco:name
-    description: The name of an item or entity.
+    description: Name of an item or entity.
     exact_mappings:
       - rdfs:label
       - schema:name
+      - foaf:name
     range: string
 
   relation:
@@ -91,6 +93,19 @@ slots:
     relational_role: OBJECT
     exact_mappings:
       - dcterms:relation
+
+  title:
+    slot_uri: dlco:title
+    description: >-
+      A summarily description of a item or entity. It is closely related to
+      a name, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+      - sio:SIO_000185
+    related_mappings:
+      - schema:name
+    range: string
 
   url:
     slot_uri: dlco:url

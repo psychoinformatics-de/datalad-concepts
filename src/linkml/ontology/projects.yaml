@@ -46,6 +46,7 @@ slots:
       - schema:identifier
     todos:
       - custom type
+      - read https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers
 
   orcid:
     slot_uri: dlco:orcid

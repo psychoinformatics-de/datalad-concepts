@@ -104,8 +104,8 @@ distribution:
   license: licenses:CC0-1.0
 #version: 0.1.0
 #date_modified: 2020-07-16
-#name: penguins
-#title: Palmer Penguins
+name: penguins
+title: Palmer Penguins
 #doi: https://doi.org/10.5281/zenodo.3960218
 #homepage: https://github.com/allisonhorst/palmerpenguins
 #data_controller:
