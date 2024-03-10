@@ -99,7 +99,7 @@ classes:
 
   GitTree:
     mixin: true
-    is_a: FilesystemDirectory
+    is_a: FileContainer
     mixins:
       - GitShaIDed
     description: >-

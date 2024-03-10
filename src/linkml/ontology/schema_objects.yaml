@@ -41,6 +41,23 @@ classes:
       - HasRequiredMetaTypeDesignator
     description: >-
       Base class for any recognized metadata object type.
+      This class should never be used directly, only its subclasses.
+
+  DistributionObject:
+    class_uri: dlco:DistributionObject
+    is_a: TypedObject
+    description: >-
+      Metadata object for a [Distribution](https://concepts.datalad.org/ontology/Distribution).
+    mixins:
+      - Distribution
+    slots:
+      - meta_code
+    slot_usage:
+      has_part:
+        multivalued: true
+        range: DistributionObject
+      license:
+        range: LicenseDocumentObject
 
   GUIDedTypedObject:
     class_uri: dlco:GUIDedTypedObject
@@ -155,15 +172,15 @@ classes:
     slot_usage:
       qualified_part:
         multivalued: true
-        range: FilesystemDirectoryItemObject
+        range: FileContainerItemObject
 
-  FilesystemDirectoryItemObject:
-    class_uri: dlco:FilesystemDirectoryItemObject
+  FileContainerItemObject:
+    class_uri: dlco:FileContainerItemObject
     is_a: MetadataObject
     mixins:
-      - FilesystemDirectoryItem
+      - FileContainerItem
     description: >-
-      Metadata object for a [FilesystemDirectoryItem](https://concepts.datalad.org/ontology/FilesystemDirectoryItem).
+      Metadata object for a [FileContainerItem](https://concepts.datalad.org/ontology/FileContainerItem).
     slots:
       - relation
     slot_usage:
@@ -172,6 +189,7 @@ classes:
         #any_of:
         #  - range: GitShaIDedObject
         #  - range: StableAnnexKeyObject
+        # TODO try making range `DistributionObject`
         range: GUIDedTypedObject
     todos:
       - figure out why a union range specification is not working
@@ -246,3 +264,39 @@ classes:
       qualified_access:
         multivalued: true
         range: AnnexAccessObject
+
+  EntityObject:
+    class_uri: dlco:EntityObject
+    is_a: MetadataObject
+    mixins:
+      - Entity
+    slots:
+      - meta_type
+    description: >-
+      Metadata object for a [Entity](https://concepts.datalad.org/ontology/Entity).
+
+  GrantObject:
+    class_uri: dlco:GrantObject
+    is_a: EntityObject
+    mixins:
+      - Grant
+    description: >-
+      Metadata object for a [Grant](https://concepts.datalad.org/ontology/Grant).
+
+  LicenseDocumentObject:
+    class_uri: dlco:LicenseDocumentObject
+    is_a: MetadataObject
+    mixins:
+      - LicenseDocument
+    description: >-
+      Metadata object for a [LicenseDocument](https://concepts.datalad.org/ontology/LicenseDocument).
+    slots:
+      - meta_id
+
+  PublicationObject:
+    class_uri: dlco:PublicationObject
+    is_a: EntityObject
+    mixins:
+      - Publication
+    description: >-
+      Metadata object for a [Publication](https://concepts.datalad.org/ontology/Publication).

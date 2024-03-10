@@ -28,7 +28,7 @@ classes:
       - has_annex_remote
     slot_usage:
       distribution:
-        range: FilesystemDirectory
+        range: FileContainer
         equals_expression: "{tree}"
       is_version_of:
         range: DataladDataset

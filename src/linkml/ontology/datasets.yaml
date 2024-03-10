@@ -347,31 +347,28 @@ classes:
     broad_mappings:
       - foaf:Document
  
-  FilesystemDirectory:
-    class_uri: dlco:FilesystemDirectory
+  FileContainer:
+    class_uri: dlco:FileContainer
     mixin: true
     is_a: Distribution
     description: >-
-       Filesystem structure which contains references to files,
-       or other directories.
+       Container that holds references to files, or other containers.
     slots:
       - qualified_part
     slot_usage:
       qualified_part:
-        range: FilesystemDirectoryItem
-    exact_mappings:
+        range: FileContainerItem
+    close_mappings:
       - ncit:NCIT_C62486
     broad_mappings:
       - ncit:NCIT_C49057
-    narrow_mappings:
-      - ncit:NCIT_C172256
 
-  FilesystemDirectoryItem:
-    class_uri: dlco:FilesystemDirectoryItem
+  FileContainerItem:
+    class_uri: dlco:FileContainerItem
     mixin: true
     is_a: QualifiedPart
     description: >-
-       Named reference of a content item in the context of a `FilesystemDirectory`
+       Named reference of a content item in the context of a `FileContainer`
 
   DataService:
     class_uri: dlco:DataService

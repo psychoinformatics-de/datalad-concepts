@@ -48,23 +48,13 @@ classes:
     mixins:
       - HasRequiredMetaTypeDesignator
     description: >-
-      Base class for any object with a type designator slot. This class
-      should never be used directly, only its subclasses.
-
-  DUIDedTypedObject:
-    class_uri: dlco:DUIDedTypedObject
-    is_a: TypedObject
-    description: >-
-      Metadata object that is uniquely identified within a
-      metadata document by some code.
-    slots:
-      - meta_code
+      Schema-specific implementation of [TypedObject](https://concepts.datalad.org/ontology/TypedObject).
 
   DistributionObject:
     class_uri: dlco:DistributionObject
     is_a: TypedObject
     description: >-
-      TODO
+      Schema-specific implementation of [Object](https://concepts.datalad.org/ontology/Object).
     mixins:
       - Distribution
     slots:
@@ -83,10 +73,9 @@ classes:
     class_uri: dlco:FileContainerObject
     is_a: DistributionObject
     mixins:
-      # this should be FileContainer and a FilesystemDirectory a subclass of it
-      - FilesystemDirectory
+      - FileContainer
     description: >-
-      TODO
+      Schema-specific implementation of [FileContainerObject](https://concepts.datalad.org/ontology/FileContainerObject).
     slot_usage:
       qualified_part:
         multivalued: true
@@ -96,16 +85,15 @@ classes:
 
   FileContainerItemObject:
     class_uri: dlco:FileContainerItemObject
+    is_a: MetadataObject
     mixins:
-      - QualifiedPart
+      - FileContainerItem
     description: >-
-      Metadata object for a `QualifiedPart`, where the part is
-      a `DistributionObject`.
+      Schema-specific implementation of [FileContainerItemObject](https://concepts.datalad.org/ontology/FileContainerItemObject).
     slot_usage:
       relation:
         inlined: false
         range: DistributionObject
-
 
   DigitalDocumentObject:
     class_uri: dlco:DigitalDocumentObject
@@ -113,19 +101,19 @@ classes:
     mixins:
       - DigitalDocument
     description: >-
-      TODO
+      Schema-specific implementation of [DigitalDocumentObject](https://concepts.datalad.org/ontology/DigitalDocumentObject).
     slot_usage:
       license:
         inlined: false
         range: LicenseDocumentObject
 
-
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
+    is_a: MetadataObject
     mixins:
       - Dataset
     description: >-
-      TODO
+      Schema-specific implementation of [DatasetVersionObject](https://concepts.datalad.org/ontology/DatasetVersionObject).
     attributes:
       custom_licenses:
         multivalued: true
@@ -171,12 +159,13 @@ classes:
 
   AgentObject:
     class_uri: dlco:AgentObject
+    is_a: MetadataObject
     mixins:
       - Agent
+    description: >-
+      Schema-specific implementation of [AgentObject](https://concepts.datalad.org/ontology/AgentObject).
     slots:
       - meta_type
-    description: >-
-      TODO
 
   PersonObject:
     class_uri: dlco:PersonObject
@@ -184,7 +173,7 @@ classes:
     mixins:
       - Person
     description: >-
-      TODO
+      Schema-specific implementation of [PersonObject](https://concepts.datalad.org/ontology/PersonObject).
 
   ResearchContributorObject:
     class_uri: dlco:ResearchContributorObject
@@ -192,7 +181,7 @@ classes:
     mixins:
       - ResearchContributor
     description: >-
-      TODO
+      Schema-specific implementation of [ResearchContributorObject](https://concepts.datalad.org/ontology/ResearchContributorObject).
     slot_usage:
       affiliation:
         range: OrganizationObject
@@ -202,27 +191,28 @@ classes:
     is_a: AgentObject
     mixins:
       - Organization
+    description: >-
+      Schema-specific implementation of [OrganizationObject](https://concepts.datalad.org/ontology/OrganizationObject).
     slots:
       - meta_code
 
-    description: >-
-      TODO
-
   EntityObject:
     class_uri: dlco:EntityObject
+    is_a: MetadataObject
     mixins:
       - Entity
     slots:
       - meta_type
     description: >-
-      TODO
+      Schema-specific implementation of [EntityObject](https://concepts.datalad.org/ontology/EntityObject).
 
   AgentRoleObject:
     class_uri: dlco:AgentRoleObject
+    is_a: MetadataObject
     mixins:
       - Role
     description: >-
-      TODO
+      Schema-specific implementation of [AgentRoleObject](https://concepts.datalad.org/ontology/AgentRoleObject).
     slots:
       - meta_id
     id_prefixes:
@@ -239,10 +229,11 @@ classes:
 
   AgentInfluenceObject:
     class_uri: dlco:AgentInfluenceObject
+    is_a: MetadataObject
     mixins:
       - AgentInfluence
     description: >-
-      TODO
+      Schema-specific implementation of [AgentInfluenceObject](https://concepts.datalad.org/ontology/AgentInfluenceObject).
     slot_usage:
       agent:
         inlined: true
@@ -253,10 +244,11 @@ classes:
 
   EntityInfluenceObject:
     class_uri: dlco:EntityInfluenceObject
+    is_a: MetadataObject
     mixins:
       - EntityInfluence
     description: >-
-      TODO
+      Schema-specific implementation of [EntityInfluenceObject](https://concepts.datalad.org/ontology/EntityInfluenceObject).
     slot_usage:
       entity:
         inlined: true
@@ -267,10 +259,11 @@ classes:
 
   EntityRoleObject:
     class_uri: dlco:EntityRoleObject
+    is_a: MetadataObject
     mixins:
       - Role
     description: >-
-      TODO
+      Schema-specific implementation of [EntityRoleObject](https://concepts.datalad.org/ontology/EntityRoleObject).
     slots:
       - meta_id
     id_prefixes:
@@ -288,14 +281,15 @@ classes:
     mixins:
       - Grant
     description: >-
-      TODO
+      Schema-specific implementation of [GrantObject](https://concepts.datalad.org/ontology/GrantObject).
 
   LicenseDocumentObject:
     class_uri: dlco:LicenseDocumentObject
+    is_a: MetadataObject
     mixins:
       - LicenseDocument
     description: >-
-      TODO
+      Schema-specific implementation of [LicenseDocumentObject](https://concepts.datalad.org/ontology/LicenseDocumentObject).
     slots:
       - meta_id
 
@@ -305,4 +299,4 @@ classes:
     mixins:
       - Publication
     description: >-
-      TODO
+      Schema-specific implementation of [PublicationObject](https://concepts.datalad.org/ontology/PublicationObject).
