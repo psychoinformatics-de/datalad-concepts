@@ -67,7 +67,14 @@ classes:
       TODO
     mixins:
       - Distribution
+    slots:
+      - meta_code
     slot_usage:
+      has_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: DistributionObject
       license:
         inlined: false
         range: LicenseDocumentObject
@@ -96,7 +103,7 @@ classes:
       a `DistributionObject`.
     slot_usage:
       relation:
-        inlined: true
+        inlined: false
         range: DistributionObject
 
 

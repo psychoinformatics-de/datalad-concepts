@@ -61,6 +61,7 @@ slots:
     description: >-
       A URL of the resource that gives access to a distribution of the dataset.
       E.g., landing page, feed, SPARQL endpoint.
+    range: uri
     close_mappings:
       - DCAT:accessURL
 
@@ -320,6 +321,7 @@ classes:
       - byte_size
       - checksum
       - download_url
+      - has_part
       - license
       - qualified_access
     comments:

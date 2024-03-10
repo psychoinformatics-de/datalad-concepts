@@ -3,6 +3,7 @@ description: >-
 # licenses should generally be given for a concrete distribution
 distribution:
   meta_type: dlco:FileContainerObject
+  meta_code: ./
   license: customlicenses:not-a-good-idea
 # but we can also provide them at the Resource level
 license: customlicenses:not-a-good-idea
