@@ -51,15 +51,6 @@ classes:
       Base class for any object with a type designator slot. This class
       should never be used directly, only its subclasses.
 
-  DUIDedTypedObject:
-    class_uri: dlco:DUIDedTypedObject
-    is_a: TypedObject
-    description: >-
-      Metadata object that is uniquely identified within a
-      metadata document by some code.
-    slots:
-      - meta_code
-
   DistributionObject:
     class_uri: dlco:DistributionObject
     is_a: TypedObject
@@ -96,6 +87,7 @@ classes:
 
   FileContainerItemObject:
     class_uri: dlco:FileContainerItemObject
+    is_a: MetadataObject
     mixins:
       - QualifiedPart
     description: >-
@@ -122,6 +114,7 @@ classes:
 
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
+    is_a: MetadataObject
     mixins:
       - Dataset
     description: >-
@@ -171,6 +164,7 @@ classes:
 
   AgentObject:
     class_uri: dlco:AgentObject
+    is_a: MetadataObject
     mixins:
       - Agent
     slots:
@@ -210,6 +204,7 @@ classes:
 
   EntityObject:
     class_uri: dlco:EntityObject
+    is_a: MetadataObject
     mixins:
       - Entity
     slots:
@@ -219,6 +214,7 @@ classes:
 
   AgentRoleObject:
     class_uri: dlco:AgentRoleObject
+    is_a: MetadataObject
     mixins:
       - Role
     description: >-
@@ -239,6 +235,7 @@ classes:
 
   AgentInfluenceObject:
     class_uri: dlco:AgentInfluenceObject
+    is_a: MetadataObject
     mixins:
       - AgentInfluence
     description: >-
@@ -253,6 +250,7 @@ classes:
 
   EntityInfluenceObject:
     class_uri: dlco:EntityInfluenceObject
+    is_a: MetadataObject
     mixins:
       - EntityInfluence
     description: >-
@@ -267,6 +265,7 @@ classes:
 
   EntityRoleObject:
     class_uri: dlco:EntityRoleObject
+    is_a: MetadataObject
     mixins:
       - Role
     description: >-
@@ -292,6 +291,7 @@ classes:
 
   LicenseDocumentObject:
     class_uri: dlco:LicenseDocumentObject
+    is_a: MetadataObject
     mixins:
       - LicenseDocument
     description: >-
