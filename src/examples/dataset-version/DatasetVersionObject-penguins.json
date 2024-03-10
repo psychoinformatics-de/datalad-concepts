@@ -63,71 +63,82 @@
   "identifier": [
     "https://doi.org/10.5281/zenodo.3960218"
   ],
+  "was_attributed_to": [
+    {
+      "meta_code": "ahorst",
+      "meta_type": "dlco:ResearchContributorObject",
+      "name": "Allison Horst",
+      "email": "ahorst@example.com",
+      "affiliation": "UCSB",
+      "orcid": "0000-0002-6047-5564"
+    },
+    {
+      "meta_code": "ahill",
+      "meta_type": "dlco:ResearchContributorObject",
+      "name": "Allison Hill",
+      "email": "ahill@example.com",
+      "affiliation": "Rstudio",
+      "orcid": "0000-0002-8082-1890"
+    },
+    {
+      "meta_code": "kgorman",
+      "meta_type": "dlco:ResearchContributorObject",
+      "name": "Kirsten Gorman",
+      "email": "kgorman@example.com",
+      "affiliation": "UAF",
+      "orcid": "0000-0002-0258-9264"
+    },
+    {
+      "meta_code": "UCSB",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "UC Santa Barbara: Santa Barbara, CA, US"
+    },
+    {
+      "meta_code": "RStudio",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "RStudio: Boston, MA, US"
+    },
+    {
+      "meta_code": "UAF",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
+    }
+  ],
   "qualified_attribution": [
     {
-      "agent": {
-        "meta_type": "dlco:ResearchContributorObject",
-        "name": "Allison Horst",
-        "email": "ahorst@example.com",
-        "affiliation": "UCSB",
-        "orcid": "0000-0002-6047-5564"
-      },
+      "agent": "ahorst",
       "had_role": [
         "marcrel:aut",
         "dpv:DataController"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:ResearchContributorObject",
-        "name": "Allison Hill",
-        "email": "ahill@example.com",
-        "affiliation": "Rstudio",
-        "orcid": "0000-0002-8082-1890"
-      },
+      "agent": "ahill",
       "had_role": [
         "marcrel:aut"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:ResearchContributorObject",
-        "name": "Kirsten Gorman",
-        "email": "kgorman@example.com",
-        "affiliation": "UAF",
-        "orcid": "0000-0002-0258-9264"
-      },
+      "agent": "kgorman",
       "had_role": [
         "marcrel:aut",
         "marcrel:cre"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:OrganizationObject",
-        "name": "UC Santa Barbara: Santa Barbara, CA, US",
-        "meta_code": "UCSB"
-      },
+      "agent": "UCSB",
       "had_role": [
         "marcrel:sht"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:OrganizationObject",
-        "name": "RStudio: Boston, MA, US",
-        "meta_code": "RStudio"
-      },
+      "agent": "RStudio",
       "had_role": [
         "marcrel:sht"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:OrganizationObject",
-        "name": "University of Alaska Fairbanks: Fairbanks, AK, US",
-        "meta_code": "UAF"
-      },
+      "agent": "UAF",
       "had_role": [
         "marcrel:sht"
       ]

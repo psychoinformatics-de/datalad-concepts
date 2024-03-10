@@ -1,0 +1,29 @@
+#
+# This example is the RO-Crate example from
+# https://stain.github.io/ro-crate/1.1/appendix/jsonld.html
+#
+title: Example RO-Crate
+was_attributed_to:
+  - meta_type: dlco:PersonObject
+    meta_code: alice
+    name: Alice
+    # "description": "One of hopefully many Contextual Entities"
+distribution:
+  meta_type: dlco:FileContainerObject
+  meta_code: ./
+    #description: >-
+    #The RO-Crate Root Data Entity
+  has_part:
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: data1.txt
+      qualified_attribution:
+        - agent: alice
+          had_role:
+            - marcrel:aut
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: data2.txt
+  qualified_part:
+    - name: data1.txt
+      relation: data1.txt
+    - name: data2.txt
+      relation: data2.txt

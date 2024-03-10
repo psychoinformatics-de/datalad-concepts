@@ -187,6 +187,7 @@ classes:
       - title
       - type
       - version
+      - was_attributed_to
     slot_usage:
       has_part:
         range: Resource
@@ -324,6 +325,7 @@ classes:
       - has_part
       - license
       - qualified_access
+      - qualified_attribution
     comments:
       - >-
         Compared to `DCAT:Distribution` this class has a `qualified_access`

@@ -68,6 +68,11 @@ classes:
       license:
         inlined: false
         range: LicenseDocumentObject
+      qualified_attribution:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: AgentInfluenceObject
 
   FileContainerObject:
     class_uri: dlco:FileContainerObject
@@ -146,6 +151,11 @@ classes:
           #  range: GitShaIDedPartObject
       license:
         range: LicenseDocumentObject
+      was_attributed_to:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: AgentObject
       qualified_attribution:
         inlined: true
         inlined_as_list: true
@@ -165,6 +175,7 @@ classes:
     description: >-
       Schema-specific implementation of [AgentObject](https://concepts.datalad.org/ontology/AgentObject).
     slots:
+      - meta_code
       - meta_type
 
   PersonObject:
@@ -193,8 +204,6 @@ classes:
       - Organization
     description: >-
       Schema-specific implementation of [OrganizationObject](https://concepts.datalad.org/ontology/OrganizationObject).
-    slots:
-      - meta_code
 
   EntityObject:
     class_uri: dlco:EntityObject
@@ -236,7 +245,6 @@ classes:
       Schema-specific implementation of [AgentInfluenceObject](https://concepts.datalad.org/ontology/AgentInfluenceObject).
     slot_usage:
       agent:
-        inlined: true
         range: AgentObject
       had_role:
         multivalued: true

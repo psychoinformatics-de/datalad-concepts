@@ -20,50 +20,54 @@ keyword:
   - isotopes
 identifier:
   - https://doi.org/10.5281/zenodo.3960218
+was_attributed_to:
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: ahorst
+    name: Allison Horst
+    email: ahorst@example.com
+    orcid: 0000-0002-6047-5564
+    affiliation: UCSB
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: ahill
+    name: Allison Hill
+    email: ahill@example.com
+    orcid: 0000-0002-8082-1890
+    affiliation: Rstudio
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: kgorman
+    name: Kirsten Gorman
+    email: kgorman@example.com
+    orcid: 0000-0002-0258-9264
+    affiliation: UAF
+  - meta_type: dlco:OrganizationObject
+    meta_code: UCSB
+    name: 'UC Santa Barbara: Santa Barbara, CA, US'
+  - meta_type: dlco:OrganizationObject
+    meta_code: RStudio
+    name: 'RStudio: Boston, MA, US'
+  - meta_type: dlco:OrganizationObject
+    meta_code: UAF
+    name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
 qualified_attribution:
-  - agent:
-      meta_type: dlco:ResearchContributorObject
-      name: Allison Horst
-      email: ahorst@example.com
-      orcid: 0000-0002-6047-5564
-      affiliation: UCSB
+  - agent: ahorst
     had_role:
       - marcrel:aut
       - dpv:DataController
-  - agent:
-      meta_type: dlco:ResearchContributorObject
-      name: Allison Hill
-      email: ahill@example.com
-      orcid: 0000-0002-8082-1890
-      affiliation: Rstudio
+  - agent: ahill
     had_role:
       - marcrel:aut
-  - agent:
-      meta_type: dlco:ResearchContributorObject
-      name: Kirsten Gorman
-      email: kgorman@example.com
-      orcid: 0000-0002-0258-9264
-      affiliation: UAF
+  - agent: kgorman
     had_role:
       - marcrel:aut
       - marcrel:cre
-  - agent:
-      meta_type: dlco:OrganizationObject
-      meta_code: UCSB
-      name: 'UC Santa Barbara: Santa Barbara, CA, US'
+  - agent: UCSB
     had_role:
       # Supporting host
       - marcrel:sht
-  - agent:
-      meta_type: dlco:OrganizationObject
-      meta_code: RStudio
-      name: 'RStudio: Boston, MA, US'
+  - agent: RStudio
     had_role:
       - marcrel:sht
-  - agent:
-      meta_type: dlco:OrganizationObject
-      meta_code: UAF
-      name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
+  - agent: UAF
     had_role:
       - marcrel:sht
 qualified_relation:
