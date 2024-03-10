@@ -56,6 +56,14 @@ slots:
       - Unlike `DCAT:access_service`, this property does not restrict its
         domain to a dataset.
 
+  access_url:
+    slot_uri: dlco:access_url
+    description: >-
+      A URL of the resource that gives access to a distribution of the dataset.
+      E.g., landing page, feed, SPARQL endpoint.
+    close_mappings:
+      - DCAT:accessURL
+
   byte_size:
     slot_uri: dlco:byte_size
     description: >-
@@ -90,6 +98,20 @@ slots:
       A related resource of which the described resource is a version.
     exact_mappings:
       - DCAT:isVersionOf
+
+  landing_page:
+    slot_uri: dlco:landing_page
+    description: >-
+      A Web page that can be navigated to in a Web browser to gain access
+      to a ressource, its distributions and/or additional information.
+    range: uri
+    exact_mappings:
+      - DCAT:landingPage
+      - foaf:page
+    comments:
+      - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dlco:access_url` on a distribution.
+    see_also:
+      - https://www.w3.org/TR/vocab-dcat-3/#example-landing-page
 
   qualified_access:
     slot_uri: dlco:qualified_access
@@ -146,6 +168,7 @@ classes:
       - keyword
       - has_part
       - identifier
+      - landing_page
       - license
       - modified
       - name
@@ -285,6 +308,7 @@ classes:
       - DCAT:Distribution
     slots:
       - access_service
+      - access_url
       - byte_size
       - checksum
       - license
