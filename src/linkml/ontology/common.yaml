@@ -9,6 +9,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
+  pav: http://purl.org/pav/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   sio: http://semanticscience.org/resource/
@@ -77,6 +78,17 @@ slots:
     exact_mappings:
       - spdx:extractedText
 
+  modified:
+    slot_uri: dlco:modified
+    description: >-
+      Date on which the resource was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
   name:
     slot_uri: dlco:name
     description: Name of an item or entity.
@@ -114,6 +126,15 @@ slots:
     range: string
     exact_mappings:
       - schema:url
+
+  version:
+    slot_uri: dlco:version
+    description: >-
+      Version indicator (name or identifier) of a resource.
+    range: string
+    exact_mappings:
+      - DCAT:version
+      - pav:version
 
   uuid:
     slot_uri: dlco:uuid

@@ -146,12 +146,14 @@ classes:
       - keyword
       - has_part
       - license
+      - modified
       - name
       - qualified_attribution
       - qualified_relation
       - qualified_part
       - title
       - type
+      - version
     slot_usage:
       has_part:
         range: Resource

@@ -136,7 +136,9 @@
     "animal sexual behavior",
     "isotopes"
   ],
+  "modified": "2020-07-16",
   "name": "penguins",
   "title": "Palmer Penguins",
+  "version": "0.1.0",
   "@type": "DatasetVersionObject"
 }
