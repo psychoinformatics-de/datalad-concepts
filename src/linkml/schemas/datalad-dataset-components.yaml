@@ -198,15 +198,15 @@ classes:
         inlined: true
         inlined_as_list: true
         multivalued: true
-        range: FilesystemDirectoryItemObject
+        range: FileContainerItemObject
 
-  FilesystemDirectoryItemObject:
-    class_uri: dlco:FilesystemDirectoryItemObject
+  FileContainerItemObject:
+    class_uri: dlco:FileContainerItemObject
     is_a: MetadataObject
     mixins:
-      - FilesystemDirectoryItem
+      - FileContainerItem
     description: >-
-      Metadata object for a `FilesystemDirectoryItem`.
+      Metadata object for a `FileContainerItem`.
     slots:
       - relation
     slot_usage:
