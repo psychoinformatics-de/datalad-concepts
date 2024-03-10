@@ -37,6 +37,14 @@ slots:
     exact_mappings:
       - schema:citation
 
+  cites_as_authority:
+    slot_uri: dlco:cites_as_authority
+    description: >-
+      Entity that provides an authoritative description or definition of the subject.
+    range: uri
+    exact_mappings:
+      - CiTO:citesAsAuthority
+
   doi:
     slot_uri: dlco:doi
     description: >-
@@ -80,8 +88,11 @@ classes:
       - identifier
       - sponsor
       - name
+      - cites_as_authority
     exact_mappings:
       - schema:Grant
+    todos:
+      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
 
   Publication:
     class_uri: dlco:Publication

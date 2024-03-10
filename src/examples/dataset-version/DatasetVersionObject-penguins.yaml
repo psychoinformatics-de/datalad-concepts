@@ -60,7 +60,7 @@ qualified_relation:
       identifier: 0217282
       sponsor:
         name: NSF Office of Polar Programs
-      #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
   - had_role:
       - schema:funding
     entity:
@@ -69,7 +69,7 @@ qualified_relation:
       identifier: "0823101"
       sponsor:
         name: NSF Office of Polar Programs
-      #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101&HistoricalAwards=false
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
   - had_role:
       - schema:funding
     entity:
@@ -78,7 +78,7 @@ qualified_relation:
       identifier: "0741351"
       sponsor:
         name: NSF Office of Polar Programs
-      #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351&HistoricalAwards=false
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351
   - had_role:
       - CiTO:citesAsAuthority
       - CiTO:isCitedAsDataSourceBy
