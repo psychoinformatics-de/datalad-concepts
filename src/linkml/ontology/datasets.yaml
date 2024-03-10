@@ -184,6 +184,7 @@ classes:
       - qualified_attribution
       - qualified_relation
       - qualified_part
+      - relation
       - title
       - type
       - version
@@ -216,6 +217,8 @@ classes:
         # concept classes
         inlined: true
         inlined_as_list: true
+      relation:
+        multivalued: true
       type:
         description: >-
           Type of resource, e.g. `Dataset`.

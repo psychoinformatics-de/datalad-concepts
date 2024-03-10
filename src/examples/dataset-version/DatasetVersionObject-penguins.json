@@ -146,57 +146,67 @@
   ],
   "qualified_relation": [
     {
-      "entity": {
-        "meta_type": "dlco:GrantObject",
-        "identifier": "0217282",
-        "sponsor": {
-          "name": "NSF Office of Polar Programs"
-        },
-        "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
-        "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false"
-      },
+      "entity": "nsf0217282",
       "had_role": [
         "schema:funding"
       ]
     },
     {
-      "entity": {
-        "meta_type": "dlco:GrantObject",
-        "identifier": "0823101",
-        "sponsor": {
-          "name": "NSF Office of Polar Programs"
-        },
-        "name": "Palmer, Antarctica Long Term Ecological Research Project",
-        "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
-      },
+      "entity": "nsf0823101",
       "had_role": [
         "schema:funding"
       ]
     },
     {
-      "entity": {
-        "meta_type": "dlco:GrantObject",
-        "identifier": "0741351",
-        "sponsor": {
-          "name": "NSF Office of Polar Programs"
-        },
-        "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
-        "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
-      },
+      "entity": "nsf0741351",
       "had_role": [
         "schema:funding"
       ]
     },
     {
-      "entity": {
-        "meta_type": "dlco:PublicationObject",
-        "citation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'",
-        "doi": "https://doi.org/10.1371/journal.pone.0090081"
-      },
+      "entity": "gormanetal",
       "had_role": [
         "CiTO:citesAsAuthority",
         "CiTO:isCitedAsDataSourceBy"
       ]
+    }
+  ],
+  "relation": [
+    {
+      "meta_code": "nsf0217282",
+      "meta_type": "dlco:GrantObject",
+      "identifier": "0217282",
+      "sponsor": {
+        "name": "NSF Office of Polar Programs"
+      },
+      "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false"
+    },
+    {
+      "meta_code": "nsf0823101",
+      "meta_type": "dlco:GrantObject",
+      "identifier": "0823101",
+      "sponsor": {
+        "name": "NSF Office of Polar Programs"
+      },
+      "name": "Palmer, Antarctica Long Term Ecological Research Project",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
+    },
+    {
+      "meta_code": "nsf0741351",
+      "meta_type": "dlco:GrantObject",
+      "identifier": "0741351",
+      "sponsor": {
+        "name": "NSF Office of Polar Programs"
+      },
+      "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
+    },
+    {
+      "meta_code": "gormanetal",
+      "meta_type": "dlco:PublicationObject",
+      "citation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'",
+      "doi": "https://doi.org/10.1371/journal.pone.0090081"
     }
   ],
   "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",

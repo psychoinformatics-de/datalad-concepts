@@ -166,6 +166,11 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: EntityInfluenceObject
+      relation:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: EntityObject
 
   AgentObject:
     class_uri: dlco:AgentObject
@@ -211,6 +216,7 @@ classes:
     mixins:
       - Entity
     slots:
+      - meta_code
       - meta_type
     description: >-
       Schema-specific implementation of [EntityObject](https://concepts.datalad.org/ontology/EntityObject).
@@ -259,7 +265,6 @@ classes:
       Schema-specific implementation of [EntityInfluenceObject](https://concepts.datalad.org/ontology/EntityInfluenceObject).
     slot_usage:
       entity:
-        inlined: true
         range: EntityObject
       had_role:
         multivalued: true
