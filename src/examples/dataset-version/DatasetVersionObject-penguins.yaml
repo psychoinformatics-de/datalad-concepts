@@ -1,0 +1,145 @@
+name: penguins
+title: Palmer Penguins
+description: >-
+  The goal of palmerpenguins is to provide a great dataset for data
+  exploration and visualization, as an alternative to iris. Data were
+  collected and made available by Dr. Kristen Gorman and the Palmer
+  Station, Antarctica LTER, a member of the Long Term Ecological
+  Research Network.
+landing_page: https://github.com/allisonhorst/palmerpenguins
+version: 0.1.0
+modified: 2020-07-16
+keyword:
+  - penguins
+  - sea ice
+  - foraging
+  - ecological niches
+  - islands
+  - antarctica
+  - animal sexual behavior
+  - isotopes
+identifier:
+  - https://doi.org/10.5281/zenodo.3960218
+qualified_attribution:
+  - agent:
+      meta_type: dlco:ResearchContributorObject
+      name: Allison Horst
+      email: ahorst@example.com
+      orcid: 0000-0002-6047-5564
+      affiliation: UCSB
+    had_role:
+      - marcrel:aut
+      - dpv:DataController
+  - agent:
+      meta_type: dlco:ResearchContributorObject
+      name: Allison Hill
+      email: ahill@example.com
+      orcid: 0000-0002-8082-1890
+      affiliation: Rstudio
+    had_role:
+      - marcrel:aut
+  - agent:
+      meta_type: dlco:ResearchContributorObject
+      name: Kirsten Gorman
+      email: kgorman@example.com
+      orcid: 0000-0002-0258-9264
+      affiliation: UAF
+    had_role:
+      - marcrel:aut
+      - marcrel:cre
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: UCSB
+      name: 'UC Santa Barbara: Santa Barbara, CA, US'
+    had_role:
+      # Supporting host
+      - marcrel:sht
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: RStudio
+      name: 'RStudio: Boston, MA, US'
+    had_role:
+      - marcrel:sht
+  - agent:
+      meta_type: dlco:OrganizationObject
+      meta_code: UAF
+      name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
+    had_role:
+      - marcrel:sht
+qualified_relation:
+  - had_role:
+      - schema:funding
+    entity:
+      meta_type: dlco:GrantObject
+      name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
+      identifier: 0217282
+      sponsor:
+        name: NSF Office of Polar Programs
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
+  - had_role:
+      - schema:funding
+    entity:
+      meta_type: dlco:GrantObject
+      name: Palmer, Antarctica Long Term Ecological Research Project
+      identifier: "0823101"
+      sponsor:
+        name: NSF Office of Polar Programs
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
+  - had_role:
+      - schema:funding
+    entity:
+      meta_type: dlco:GrantObject
+      name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
+      identifier: "0741351"
+      sponsor:
+        name: NSF Office of Polar Programs
+      cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351
+  - had_role:
+      - CiTO:citesAsAuthority
+      - CiTO:isCitedAsDataSourceBy
+    entity:
+      meta_type: dlco:PublicationObject
+      citation: >-
+        'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
+        and Environmental Variability within a Community of Antarctic Penguins (Genus
+        Pygoscelis). PLoS ONE 9(3): e90081.'
+      #date_published: '2014-03-05'
+      doi: https://doi.org/10.1371/journal.pone.0090081
+distribution:
+  meta_type: dlco:FileContainerObject
+  meta_code: ./
+  license: licenses:CC0-1.0
+  has_part:
+    - meta_type: dlco:FileContainerObject
+      meta_code: raw/
+      qualified_part:
+        - name: adelie.csv
+          relation: e7e2be6b203a221949f05e02fcefd853
+        - name: gentoo.csv
+          relation: 1549566fb97afa879dc9446edcf2015f
+        - name: chinstrap.csv
+          relation: e4b0710c69297031d63866ce8b888f25
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: e7e2be6b203a221949f05e02fcefd853
+      byte_size: 23755
+      checksum:
+        algorithm: md5
+        digest: e7e2be6b203a221949f05e02fcefd853
+      download_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: 1549566fb97afa879dc9446edcf2015f
+      byte_size: 11263
+      checksum:
+        algorithm: md5
+        digest: 1549566fb97afa879dc9446edcf2015f
+      download_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: e4b0710c69297031d63866ce8b888f25
+      byte_size: 18872
+      checksum:
+        algorithm: md5
+        digest: e4b0710c69297031d63866ce8b888f25
+      download_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462
+  qualified_part:
+    - name: raw
+      relation: raw/

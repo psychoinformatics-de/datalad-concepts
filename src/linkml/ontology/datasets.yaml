@@ -56,6 +56,15 @@ slots:
       - Unlike `DCAT:access_service`, this property does not restrict its
         domain to a dataset.
 
+  access_url:
+    slot_uri: dlco:access_url
+    description: >-
+      A URL of the resource that gives access to a distribution of the dataset.
+      E.g., landing page, feed, SPARQL endpoint.
+    range: uri
+    close_mappings:
+      - DCAT:accessURL
+
   byte_size:
     slot_uri: dlco:byte_size
     description: >-
@@ -75,6 +84,14 @@ slots:
       - Unlike `DCAT:distribution`, this property does not restrict its domain to
         a dataset.
 
+  download_url:
+    slot_uri: dlco:download_url
+    description: >-
+      URL of downloadable resourcefile in a given format.
+    range: uri
+    exact_mappings:
+      - DCAT:downloadURL
+
   endpoint_url:
     slot_uri: dlco:endpoint_url
     description: >-
@@ -90,6 +107,20 @@ slots:
       A related resource of which the described resource is a version.
     exact_mappings:
       - DCAT:isVersionOf
+
+  landing_page:
+    slot_uri: dlco:landing_page
+    description: >-
+      A Web page that can be navigated to in a Web browser to gain access
+      to a resource, its distributions and/or additional information.
+    range: uri
+    exact_mappings:
+      - DCAT:landingPage
+      - foaf:page
+    comments:
+      - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dlco:access_url` on a distribution.
+    see_also:
+      - https://www.w3.org/TR/vocab-dcat-3/#example-landing-page
 
   qualified_access:
     slot_uri: dlco:qualified_access
@@ -125,6 +156,16 @@ slots:
     exact_mappings:
       - dcterms:type
 
+  keyword:
+    slot_uri: dlco:keyword
+    description: >-
+      A keyword or tag describing the resource.
+    range: string
+    exact_mappings:
+      - dcat:keyword
+      - schema:keywords
+
+
 classes:
   Resource:
     class_uri: dlco:Resource
@@ -133,15 +174,36 @@ classes:
       Resource published or curated by a single agent.
     slots:
       - description
+      - keyword
       - has_part
+      - identifier
+      - landing_page
+      - license
+      - modified
+      - name
       - qualified_attribution
       - qualified_relation
       - qualified_part
+      - title
       - type
+      - version
     slot_usage:
       has_part:
         range: Resource
         multivalued: true
+      keyword:
+        multivalued: true
+      license:
+        description: >-
+          Information about licenses and rights SHOULD be provided on the
+          level of a Distribution. Information about licenses and rights MAY
+          be provided for a Dataset/Resource in addition to but not instead
+          of the information provided for the Distributions of that Dataset.
+          Providing license or rights information for a Dataset/Resource that
+          is different from information provided for a Distribution of that
+          Dataset SHOULD be avoided as this can create legal conflicts.
+        see_also:
+          - https://www.w3.org/TR/vocab-dcat-3/#license-rights
       qualified_attribution:
         multivalued: true
       qualified_relation:
@@ -255,8 +317,12 @@ classes:
       - DCAT:Distribution
     slots:
       - access_service
+      - access_url
       - byte_size
       - checksum
+      - download_url
+      - has_part
+      - license
       - qualified_access
     comments:
       - >-
@@ -267,6 +333,20 @@ classes:
       - Now that there is a `Directory` subclass, re-evaluate the utility
         of the `checksum` property at this level.
 
+  DigitalDocument:
+    class_uri: dlco:DigitalDocument
+    mixin: true
+    is_a: Distribution
+    description: >-
+       A digital document (text or binary).
+    slots:
+      - byte_size
+      - checksum
+    exact_mappings:
+      - schema:DigitalDocument
+    broad_mappings:
+      - foaf:Document
+ 
   FilesystemDirectory:
     class_uri: dlco:FilesystemDirectory
     mixin: true

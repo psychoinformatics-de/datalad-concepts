@@ -2,19 +2,17 @@ description: >-
   Some key facts about the data
 qualified_attribution:
   - agent:
-      # to distinguish people from organizations and maybe even
-      # software agents
-      meta_type: dlco:PersonObject
+      meta_type: dlco:ResearchContributorObject
       name: Jane Doe
       email: doe@example.com
+      # reference organization by meta_code
+      affiliation: DFG
     had_role:
-      # for simplicity of edits/composition, we allow for multiple
-      # roles
       - marcrel:aut
-      - marcrel:cur
   - agent:
       meta_type: dlco:OrganizationObject
       meta_code: DFG
       name: Deutsche Forschungsgemeinschaft
     had_role:
-      - marcrel:fnd
+      # Supporting host
+      - marcrel:sht

@@ -10,8 +10,9 @@ comments:
 license: MIT
 
 prefixes:
-  linkml: https://w3id.org/linkml/
+  CiTO: http://purl.org/spar/cito/
   dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
 
 imports:
   - ../ontology/checksumming

@@ -14,13 +14,27 @@ license: MIT
 
 prefixes:
   bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
+  dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
+  licenses: http://spdx.org/licenses/
+  customlicenses: https://concepts.datalad.org/ns/custom-licenses/
   marcrel: http://id.loc.gov/vocabulary/relators/
+
+emit_prefixes:
+  - CiTO
+  - DCAT
+  - dlco
+  - licenses
+  - customlicenses
+  - marcrel
+  - prov
 
 imports:
   - ../ontology/schema_utils
@@ -46,11 +60,65 @@ classes:
     slots:
       - meta_code
 
-  FileContainerObject:
-    class_uri: dlco:FileContainerObject
+  DistributionObject:
+    class_uri: dlco:DistributionObject
     is_a: TypedObject
     description: >-
       TODO
+    mixins:
+      - Distribution
+    slots:
+      - meta_code
+    slot_usage:
+      has_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: DistributionObject
+      license:
+        inlined: false
+        range: LicenseDocumentObject
+
+  FileContainerObject:
+    class_uri: dlco:FileContainerObject
+    is_a: DistributionObject
+    mixins:
+      # this should be FileContainer and a FilesystemDirectory a subclass of it
+      - FilesystemDirectory
+    description: >-
+      TODO
+    slot_usage:
+      qualified_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: FileContainerItemObject
+
+  FileContainerItemObject:
+    class_uri: dlco:FileContainerItemObject
+    mixins:
+      - QualifiedPart
+    description: >-
+      Metadata object for a `QualifiedPart`, where the part is
+      a `DistributionObject`.
+    slot_usage:
+      relation:
+        inlined: false
+        range: DistributionObject
+
+
+  DigitalDocumentObject:
+    class_uri: dlco:DigitalDocumentObject
+    is_a: DistributionObject
+    mixins:
+      - DigitalDocument
+    description: >-
+      TODO
+    slot_usage:
+      license:
+        inlined: false
+        range: LicenseDocumentObject
+
 
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
@@ -58,6 +126,13 @@ classes:
       - Dataset
     description: >-
       TODO
+    attributes:
+      custom_licenses:
+        multivalued: true
+        inlined: true
+        range: LicenseDocumentObject
+        description: >-
+          Container to declare custom licenses.
     slot_usage:
       distribution:
         inlined: true
@@ -69,6 +144,8 @@ classes:
           #  multivalued: true
           #  range: DatasetVersionObject
           #    #range: GitShaIDedObject
+      identifier:
+        multivalued: true
       is_version_of:
         range: string
         todos:
@@ -79,6 +156,8 @@ classes:
           #  inlined_as_list: true
           #  multivalued: true
           #  range: GitShaIDedPartObject
+      license:
+        range: LicenseDocumentObject
       qualified_attribution:
         inlined: true
         inlined_as_list: true
@@ -107,11 +186,25 @@ classes:
     description: >-
       TODO
 
+  ResearchContributorObject:
+    class_uri: dlco:ResearchContributorObject
+    is_a: PersonObject
+    mixins:
+      - ResearchContributor
+    description: >-
+      TODO
+    slot_usage:
+      affiliation:
+        range: OrganizationObject
+
   OrganizationObject:
     class_uri: dlco:OrganizationObject
     is_a: AgentObject
-    #mixins:
-    #- Person
+    mixins:
+      - Organization
+    slots:
+      - meta_code
+
     description: >-
       TODO
 
@@ -124,8 +217,8 @@ classes:
     description: >-
       TODO
 
-  RoleObject:
-    class_uri: dlco:RoleObject
+  AgentRoleObject:
+    class_uri: dlco:AgentRoleObject
     mixins:
       - Role
     description: >-
@@ -134,6 +227,10 @@ classes:
       - meta_id
     id_prefixes:
       - marcrel
+      - dpv
+    id_prefixes_are_closed: false
+    comments:
+      - To indicate a (GDPR) data controller, use `dpv:DataController`
     notes:
       - We went for MARC relators as ID prefix, because of the comprehensiveness
       - This class only has a `meta_id` slot, because it is sufficient for identification of a Role via any of the supported CURIE prefix schema(s).
@@ -152,7 +249,7 @@ classes:
         range: AgentObject
       had_role:
         multivalued: true
-        range: RoleObject
+        range: AgentRoleObject
 
   EntityInfluenceObject:
     class_uri: dlco:EntityInfluenceObject
@@ -166,12 +263,46 @@ classes:
         range: EntityObject
       had_role:
         multivalued: true
-        range: EntityRoles
+        range: EntityRoleObject
+
+  EntityRoleObject:
+    class_uri: dlco:EntityRoleObject
+    mixins:
+      - Role
+    description: >-
+      TODO
+    slots:
+      - meta_id
+    id_prefixes:
+      - CiTO
+      - schema
+    id_prefixes_are_closed: false
+    comments:
+      - To declare a funding role, use `schema:funding`
+      - To identify an authoritative data description publication, use `CiTO:citesAsAuthority`
+      - To a publication that used a data resources, use `CiTO:isCitedAsDataSourceBy`
 
   GrantObject:
     class_uri: dlco:GrantObject
     is_a: EntityObject
     mixins:
       - Grant
+    description: >-
+      TODO
+
+  LicenseDocumentObject:
+    class_uri: dlco:LicenseDocumentObject
+    mixins:
+      - LicenseDocument
+    description: >-
+      TODO
+    slots:
+      - meta_id
+
+  PublicationObject:
+    class_uri: dlco:PublicationObject
+    is_a: EntityObject
+    mixins:
+      - Publication
     description: >-
       TODO

@@ -10,7 +10,7 @@
         "name": "SFB1451"
       },
       "had_role": [
-        "funding"
+        "schema:funding"
       ]
     }
   ],

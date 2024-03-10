@@ -36,6 +36,7 @@ prefixes:
   annex: https://concepts.datalad.org/ns/annex-uuid/
   annexkey: https://concepts.datalad.org/ns/annex-key/
   bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
   datalad: https://concepts.datalad.org/ns/dataset-uuid/
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
