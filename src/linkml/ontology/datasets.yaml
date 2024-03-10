@@ -83,6 +83,14 @@ slots:
       - Unlike `DCAT:distribution`, this property does not restrict its domain to
         a dataset.
 
+  download_url:
+    slot_uri: dlco:download_url
+    description: >-
+      URL of downloadable resourcefile in a given format.
+    range: uri
+    exact_mappings:
+      - DCAT:downloadURL
+
   endpoint_url:
     slot_uri: dlco:endpoint_url
     description: >-
@@ -311,6 +319,7 @@ classes:
       - access_url
       - byte_size
       - checksum
+      - download_url
       - license
       - qualified_access
     comments:
@@ -322,6 +331,20 @@ classes:
       - Now that there is a `Directory` subclass, re-evaluate the utility
         of the `checksum` property at this level.
 
+  DigitalDocument:
+    class_uri: dlco:DigitalDocument
+    mixin: true
+    is_a: Distribution
+    description: >-
+       A digital document (text or binary).
+    slots:
+      - byte_size
+      - checksum
+    exact_mappings:
+      - schema:DigitalDocument
+    broad_mappings:
+      - foaf:Document
+ 
   FilesystemDirectory:
     class_uri: dlco:FilesystemDirectory
     mixin: true

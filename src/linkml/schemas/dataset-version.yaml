@@ -60,17 +60,58 @@ classes:
     slots:
       - meta_code
 
-  FileContainerObject:
-    class_uri: dlco:FileContainerObject
+  DistributionObject:
+    class_uri: dlco:DistributionObject
     is_a: TypedObject
+    description: >-
+      TODO
     mixins:
       - Distribution
+    slot_usage:
+      license:
+        inlined: false
+        range: LicenseDocumentObject
+
+  FileContainerObject:
+    class_uri: dlco:FileContainerObject
+    is_a: DistributionObject
+    mixins:
+      # this should be FileContainer and a FilesystemDirectory a subclass of it
+      - FilesystemDirectory
+    description: >-
+      TODO
+    slot_usage:
+      qualified_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: FileContainerItemObject
+
+  FileContainerItemObject:
+    class_uri: dlco:FileContainerItemObject
+    mixins:
+      - QualifiedPart
+    description: >-
+      Metadata object for a `QualifiedPart`, where the part is
+      a `DistributionObject`.
+    slot_usage:
+      relation:
+        inlined: true
+        range: DistributionObject
+
+
+  DigitalDocumentObject:
+    class_uri: dlco:DigitalDocumentObject
+    is_a: DistributionObject
+    mixins:
+      - DigitalDocument
     description: >-
       TODO
     slot_usage:
       license:
         inlined: false
         range: LicenseDocumentObject
+
 
   DatasetVersionObject:
     class_uri: dlco:DatasetVersionObject
