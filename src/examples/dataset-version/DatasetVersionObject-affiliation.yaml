@@ -1,18 +1,20 @@
 description: >-
   Some key facts about the data
+was_attributed_to:
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: doe
+    name: Jane Doe
+    email: doe@example.com
+    # reference organization by meta_code
+    affiliation: DFG
+  - meta_type: dlco:OrganizationObject
+    meta_code: DFG
+    name: Deutsche Forschungsgemeinschaft
 qualified_attribution:
-  - agent:
-      meta_type: dlco:ResearchContributorObject
-      name: Jane Doe
-      email: doe@example.com
-      # reference organization by meta_code
-      affiliation: DFG
+  - agent: doe
     had_role:
       - marcrel:aut
-  - agent:
-      meta_type: dlco:OrganizationObject
-      meta_code: DFG
-      name: Deutsche Forschungsgemeinschaft
+  - agent: DFG
     had_role:
       # Supporting host
       - marcrel:sht

@@ -1,0 +1,43 @@
+{
+  "distribution": {
+    "meta_type": "dlco:FileContainerObject",
+    "meta_code": "./",
+    "has_part": [
+      {
+        "meta_type": "dlco:DigitalDocumentObject",
+        "meta_code": "data1.txt",
+        "qualified_attribution": [
+          {
+            "agent": "alice",
+            "had_role": [
+              "marcrel:aut"
+            ]
+          }
+        ]
+      },
+      {
+        "meta_type": "dlco:DigitalDocumentObject",
+        "meta_code": "data2.txt"
+      }
+    ],
+    "qualified_part": [
+      {
+        "relation": "data1.txt",
+        "name": "data1.txt"
+      },
+      {
+        "relation": "data2.txt",
+        "name": "data2.txt"
+      }
+    ]
+  },
+  "was_attributed_to": [
+    {
+      "meta_code": "alice",
+      "meta_type": "dlco:PersonObject",
+      "name": "Alice"
+    }
+  ],
+  "title": "Example RO-Crate",
+  "@type": "DatasetVersionObject"
+}

@@ -1,17 +1,21 @@
 {
   "qualified_relation": [
     {
-      "entity": {
-        "meta_type": "dlco:GrantObject",
-        "identifier": "https://gepris.dfg.de/gepris/projekt/431549029",
-        "sponsor": {
-          "name": "Deutsche Forschungsgemeinschaft"
-        },
-        "name": "SFB1451"
-      },
+      "entity": "sfb1451",
       "had_role": [
         "schema:funding"
       ]
+    }
+  ],
+  "relation": [
+    {
+      "meta_code": "sfb1451",
+      "meta_type": "dlco:GrantObject",
+      "identifier": "https://gepris.dfg.de/gepris/projekt/431549029",
+      "sponsor": {
+        "name": "Deutsche Forschungsgemeinschaft"
+      },
+      "name": "SFB1451"
     }
   ],
   "description": "Some key facts about the data",

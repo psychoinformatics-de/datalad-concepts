@@ -184,9 +184,11 @@ classes:
       - qualified_attribution
       - qualified_relation
       - qualified_part
+      - relation
       - title
       - type
       - version
+      - was_attributed_to
     slot_usage:
       has_part:
         range: Resource
@@ -215,6 +217,8 @@ classes:
         # concept classes
         inlined: true
         inlined_as_list: true
+      relation:
+        multivalued: true
       type:
         description: >-
           Type of resource, e.g. `Dataset`.
@@ -324,6 +328,7 @@ classes:
       - has_part
       - license
       - qualified_access
+      - qualified_attribution
     comments:
       - >-
         Compared to `DCAT:Distribution` this class has a `qualified_access`

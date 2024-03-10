@@ -1,22 +1,27 @@
 {
+  "was_attributed_to": [
+    {
+      "meta_code": "doe",
+      "meta_type": "dlco:PersonObject",
+      "name": "Jane Doe",
+      "email": "doe@example.com"
+    },
+    {
+      "meta_code": "DFG",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "Deutsche Forschungsgemeinschaft"
+    }
+  ],
   "qualified_attribution": [
     {
-      "agent": {
-        "meta_type": "dlco:PersonObject",
-        "name": "Jane Doe",
-        "email": "doe@example.com"
-      },
+      "agent": "doe",
       "had_role": [
         "marcrel:aut",
         "marcrel:cur"
       ]
     },
     {
-      "agent": {
-        "meta_type": "dlco:OrganizationObject",
-        "name": "Deutsche Forschungsgemeinschaft",
-        "meta_code": "DFG"
-      },
+      "agent": "DFG",
       "had_role": [
         "marcrel:fnd"
       ]
