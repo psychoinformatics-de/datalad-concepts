@@ -8,4 +8,4 @@ qualified_relation:
       sponsor:
         name: Deutsche Forschungsgemeinschaft
     had_role:
-      - funding
+      - schema:funding

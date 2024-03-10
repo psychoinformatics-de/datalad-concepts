@@ -83,7 +83,7 @@
         "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
       },
       "had_role": [
-        "funding"
+        "schema:funding"
       ]
     },
     {
@@ -96,7 +96,7 @@
         "name": "Palmer, Antarctica Long Term Ecological Research Project"
       },
       "had_role": [
-        "funding"
+        "schema:funding"
       ]
     },
     {
@@ -109,7 +109,7 @@
         "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
       },
       "had_role": [
-        "funding"
+        "schema:funding"
       ]
     },
     {
@@ -119,8 +119,8 @@
         "doi": "https://doi.org/10.1371/journal.pone.0090081"
       },
       "had_role": [
-        "cites_as_authority",
-        "is_cited_as_data_source_by"
+        "CiTO:citesAsAuthority",
+        "CiTO:isCitedAsDataSourceBy"
       ]
     }
   ],

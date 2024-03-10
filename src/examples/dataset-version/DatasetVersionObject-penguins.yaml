@@ -52,7 +52,7 @@ qualified_attribution:
 
 qualified_relation:
   - had_role:
-      - funding
+      - schema:funding
     entity:
       meta_type: dlco:GrantObject
       name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
@@ -61,7 +61,7 @@ qualified_relation:
         name: NSF Office of Polar Programs
       #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
   - had_role:
-      - funding
+      - schema:funding
     entity:
       meta_type: dlco:GrantObject
       name: Palmer, Antarctica Long Term Ecological Research Project
@@ -70,7 +70,7 @@ qualified_relation:
         name: NSF Office of Polar Programs
       #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101&HistoricalAwards=false
   - had_role:
-      - funding
+      - schema:funding
     entity:
       meta_type: dlco:GrantObject
       name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
@@ -79,8 +79,8 @@ qualified_relation:
         name: NSF Office of Polar Programs
       #url: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351&HistoricalAwards=false
   - had_role:
-      - cites_as_authority
-      - is_cited_as_data_source_by
+      - CiTO:citesAsAuthority
+      - CiTO:isCitedAsDataSourceBy
     entity:
       meta_type: dlco:PublicationObject
       citation: >-

@@ -165,8 +165,8 @@ classes:
     description: >-
       TODO
 
-  RoleObject:
-    class_uri: dlco:RoleObject
+  AgentRoleObject:
+    class_uri: dlco:AgentRoleObject
     mixins:
       - Role
     description: >-
@@ -175,6 +175,7 @@ classes:
       - meta_id
     id_prefixes:
       - marcrel
+    id_prefixes_are_closed: false
     notes:
       - We went for MARC relators as ID prefix, because of the comprehensiveness
       - This class only has a `meta_id` slot, because it is sufficient for identification of a Role via any of the supported CURIE prefix schema(s).
@@ -193,7 +194,7 @@ classes:
         range: AgentObject
       had_role:
         multivalued: true
-        range: RoleObject
+        range: AgentRoleObject
 
   EntityInfluenceObject:
     class_uri: dlco:EntityInfluenceObject
@@ -207,7 +208,24 @@ classes:
         range: EntityObject
       had_role:
         multivalued: true
-        range: EntityRoles
+        range: EntityRoleObject
+
+  EntityRoleObject:
+    class_uri: dlco:EntityRoleObject
+    mixins:
+      - Role
+    description: >-
+      TODO
+    slots:
+      - meta_id
+    id_prefixes:
+      - CiTO
+      - schema
+    id_prefixes_are_closed: false
+    comments:
+      - To declare a funding role, use `schema:funding`
+      - To identify an authoritative data description publication, use `CiTO:citesAsAuthority`
+      - To a publication that used a data resources, use `CiTO:isCitedAsDataSourceBy`
 
   GrantObject:
     class_uri: dlco:GrantObject
