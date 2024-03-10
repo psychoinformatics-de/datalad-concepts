@@ -13,7 +13,8 @@
         "orcid": "0000-0002-6047-5564"
       },
       "had_role": [
-        "marcrel:aut"
+        "marcrel:aut",
+        "dpv:DataController"
       ]
     },
     {

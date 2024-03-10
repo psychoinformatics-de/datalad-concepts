@@ -18,8 +18,10 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
+  dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
   licenses: http://spdx.org/licenses/
   customlicenses: https://concepts.datalad.org/ns/custom-licenses/
@@ -175,7 +177,10 @@ classes:
       - meta_id
     id_prefixes:
       - marcrel
+      - dpv
     id_prefixes_are_closed: false
+    comments:
+      - To indicate a (GDPR) data controller, use `dpv:DataController`
     notes:
       - We went for MARC relators as ID prefix, because of the comprehensiveness
       - This class only has a `meta_id` slot, because it is sufficient for identification of a Role via any of the supported CURIE prefix schema(s).

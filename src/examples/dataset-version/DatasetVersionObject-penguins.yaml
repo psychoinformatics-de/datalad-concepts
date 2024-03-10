@@ -13,6 +13,7 @@ qualified_attribution:
       affiliation: UCSB
     had_role:
       - marcrel:aut
+      - dpv:DataController
   - agent:
       meta_type: dlco:ResearchContributorObject
       name: Allison Hill
@@ -108,9 +109,6 @@ name: penguins
 title: Palmer Penguins
 #doi: https://doi.org/10.5281/zenodo.3960218
 #homepage: https://github.com/allisonhorst/palmerpenguins
-#data_controller:
-#  - email: ahorst@ucsb.edu
-#    name: Allison Horst
 #has_part:
 #  - checksum_md5: e7e2be6b203a221949f05e02fcefd853
 #    content_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff
