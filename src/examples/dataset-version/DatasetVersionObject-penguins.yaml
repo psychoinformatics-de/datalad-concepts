@@ -107,7 +107,8 @@ version: 0.1.0
 modified: 2020-07-16
 name: penguins
 title: Palmer Penguins
-#doi: https://doi.org/10.5281/zenodo.3960218
+identifier:
+  - https://doi.org/10.5281/zenodo.3960218
 #homepage: https://github.com/allisonhorst/palmerpenguins
 #has_part:
 #  - checksum_md5: e7e2be6b203a221949f05e02fcefd853

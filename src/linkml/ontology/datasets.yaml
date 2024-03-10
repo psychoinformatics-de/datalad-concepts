@@ -145,6 +145,7 @@ classes:
       - description
       - keyword
       - has_part
+      - identifier
       - license
       - modified
       - name

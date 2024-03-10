@@ -96,6 +96,8 @@ classes:
           #  multivalued: true
           #  range: DatasetVersionObject
           #    #range: GitShaIDedObject
+      identifier:
+        multivalued: true
       is_version_of:
         range: string
         todos:
