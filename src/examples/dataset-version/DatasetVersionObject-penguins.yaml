@@ -1,9 +1,25 @@
+name: penguins
+title: Palmer Penguins
 description: >-
   The goal of palmerpenguins is to provide a great dataset for data
   exploration and visualization, as an alternative to iris. Data were
   collected and made available by Dr. Kristen Gorman and the Palmer
   Station, Antarctica LTER, a member of the Long Term Ecological
   Research Network.
+landing_page: https://github.com/allisonhorst/palmerpenguins
+version: 0.1.0
+modified: 2020-07-16
+keyword:
+  - penguins
+  - sea ice
+  - foraging
+  - ecological niches
+  - islands
+  - antarctica
+  - animal sexual behavior
+  - isotopes
+identifier:
+  - https://doi.org/10.5281/zenodo.3960218
 qualified_attribution:
   - agent:
       meta_type: dlco:ResearchContributorObject
@@ -89,15 +105,6 @@ qualified_relation:
         Pygoscelis). PLoS ONE 9(3): e90081.'
       #date_published: '2014-03-05'
       doi: https://doi.org/10.1371/journal.pone.0090081
-keyword:
-  - penguins
-  - sea ice
-  - foraging
-  - ecological niches
-  - islands
-  - antarctica
-  - animal sexual behavior
-  - isotopes
 distribution:
   meta_type: dlco:FileContainerObject
   meta_code: ./
@@ -136,10 +143,3 @@ distribution:
   qualified_part:
     - name: raw
       relation: raw/
-version: 0.1.0
-modified: 2020-07-16
-name: penguins
-title: Palmer Penguins
-identifier:
-  - https://doi.org/10.5281/zenodo.3960218
-landing_page: https://github.com/allisonhorst/palmerpenguins

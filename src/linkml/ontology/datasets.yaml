@@ -112,7 +112,7 @@ slots:
     slot_uri: dlco:landing_page
     description: >-
       A Web page that can be navigated to in a Web browser to gain access
-      to a ressource, its distributions and/or additional information.
+      to a resource, its distributions and/or additional information.
     range: uri
     exact_mappings:
       - DCAT:landingPage
