@@ -1,0 +1,223 @@
+#
+# DATS-compliant record taken from
+# https://portal.conp.ca/dataset?id=projects/multicenter-phantom
+#
+title: Multicenter Single Subject Human MRI Phantom
+description: >-
+  Longitudinal brain scans of a single human phantom acquired on multiple
+  MRI devices across North America over a period of 11 years. In addition
+  to the human brain images, lego phantom scans have been acquired in
+  parallel for quality assessments over time across sites.
+#"dates": [
+#    {
+#        "date": "2008-04-25 00:00:00",
+#        "type": {
+#            "@type": "Annotation",
+#            "value": "start date"
+#        }
+#    },
+#    {
+#        "date": "2019-04-15 00:00:00",
+#        "type": {
+#            "@type": "Annotation",
+#            "value": "end date"
+#        }
+#    }
+#],
+was_attributed_to:
+  - meta_type: dlco:OrganizationObject
+    meta_code: MCIN
+    name: McGill Center for Integrative Neuroscience
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: ACEvans
+    name: Alan C. Evans
+qualified_attribution:
+  - agent: ACEvans
+    had_role:
+      # conceptor
+      - marcrel:ccp
+      # creator
+      - marcrel:cre
+      # laboratory dirctor
+      - marcrel:ldr
+      # research team head
+      - marcrel:rth
+#"types": [
+#    {
+#        "information": {
+#            "value": "MRI",
+#            "valueIRI": ""
+#        }
+#    },
+#    {
+#        "information": {
+#            "value": "quality control subject",
+#            "valueIRI": "http://uri.interlex.org/base/ilx_0381893"
+#        }
+#    }
+#],
+version: "2.0"
+#"privacy": "open",
+#"distributions": [
+#    {
+#        "@type": "DatasetDistribution",
+#        "formats": [
+#            "MINC",
+#            "JSON"
+#        ],
+#        "size" : 40,
+#        "unit" : {
+#            "value": "GB"
+#        },
+#        "access" : {
+#            "landingPage" : "https://phantom.loris.ca",
+#                            "authorizations": [
+#                                    {
+#                                            "value": "private"
+#                                    }
+#                            ]
+#        }
+#    }
+#],
+# "isAbout": [
+#     {
+#           "identifier": {
+#                     "identifier": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606",
+#                                     "identifierSource": "NCBI Taxonomy Database"
+#           },
+#           "name":"Homo sapiens"
+#     },
+#     {
+#         "name": "adult"
+#     }
+# ],
+# "spatialCoverage": [
+#     {
+#         "name": "North America",
+#         "description": "13 scanners in 6 sites accross North America"
+#     }
+license: licenses:CC-BY-ND-4.0
+# "aggregation": "instance of dataset",
+# "dimensions": [
+#     {
+#         "name" : {
+#             "value": "resting BOLD"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "fieldmap BOLD"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "fieldmap DWI"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "DWI 65 directions"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "DWI 25 directions"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "T1W"
+#         }
+#     },
+#     {
+#         "name" : {
+#             "value": "T2W"
+#         }
+#     }
+# ],
+keyword:
+  - phantom
+  - MRI
+# "extraProperties": [
+#     {
+#         "category": "Total number of sessions",
+#         "values": [
+#             {
+#                 "value": "521"
+#             }
+#         ]
+#     },
+#             {
+#                     "category": "logo",
+#                     "values": [
+#                             {
+#                                     "value": "logo.png"
+#                             }
+#                     ]
+#             },
+#             {
+#                     "category": "CONP_status",
+#                     "values": [
+#                             {
+#                                     "value": "CONP"
+#                             }
+#                     ]
+#             },
+#             {
+#                     "category": "files",
+#                     "values": [
+#                             {
+#                                     "value": "3771"
+#                             }
+#                     ]
+#             },
+#             {
+#                     "category": "subjects",
+#                     "values": [
+#                             {
+#                                     "value": "1"
+#                             }
+#                     ]
+#             },
+#     {
+#         "category": "origin_consortium",
+#         "values": [
+#             {
+#                 "value": "IBIS"
+#             }
+#         ]
+#     },
+#     {
+#         "category": "origin_institution",
+#         "values": [
+#             {
+#                 "value": "McGill Centre for Integrative Neuroscience"
+#             }
+#         ]
+#     },
+#     {
+#         "category": "origin_city",
+#         "values": [
+#             {
+#                 "value": "Montreal"
+#             }
+#         ]
+#     },
+#     {
+#         "category": "origin_province",
+#         "values": [
+#             {
+#                 "value": "Quebec"
+#             }
+#         ]
+#     },
+#     {
+#         "category": "origin_country",
+#         "values": [
+#             {
+#                 "value": "Canada"
+#             }
+#         ]
+#     }
+# ]
+
