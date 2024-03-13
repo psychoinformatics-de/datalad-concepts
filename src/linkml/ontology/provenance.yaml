@@ -123,6 +123,18 @@ slots:
     notes:
       - we have our own `datetime`, because of a linkml problem with handling the actual one, see https://github.com/linkml/linkml/issues/1806
 
+  started_at:
+    slot_uri: dlco:started_at
+    description: >-
+      Start is when an activity is deemed to have been started by an entity,
+      known as trigger. The activity did not exist before its start.
+      Any usage, generation, or invalidation involving an activity follows
+      the activity's start.
+    domain: Activity
+    range: W3CISO8601
+    exact_mappings:
+      - prov:startedAtTime
+
   # Commit generated_at DateTime (committer time)
   generated_at:
     slot_uri: dlco:generated_at
@@ -218,6 +230,10 @@ classes:
       An activity is something that occurs over a period of time and acts
       upon or with entities; it may include consuming, processing,
       transforming, modifying, relocating, using, or generating entities.
+    slots:
+      - at_location
+      - started_at
+      - ended_at
     exact_mappings:
       - prov:Activity
 
@@ -369,5 +385,8 @@ classes:
       row, or column. As such, there are numerous ways in which location
       can be expressed, such as by a coordinate, address, landmark, and
       so forth.
+    slots:
+      - name
+      - description
     exact_mappings:
       - prov:Location

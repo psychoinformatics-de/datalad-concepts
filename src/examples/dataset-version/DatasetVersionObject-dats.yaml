@@ -8,22 +8,13 @@ description: >-
   MRI devices across North America over a period of 11 years. In addition
   to the human brain images, lego phantom scans have been acquired in
   parallel for quality assessments over time across sites.
-#"dates": [
-#    {
-#        "date": "2008-04-25 00:00:00",
-#        "type": {
-#            "@type": "Annotation",
-#            "value": "start date"
-#        }
-#    },
-#    {
-#        "date": "2019-04-15 00:00:00",
-#        "type": {
-#            "@type": "Annotation",
-#            "value": "end date"
-#        }
-#    }
-#],
+was_generated_by:
+  # data collection
+  - started_at: "2008-04-25T00:00:00"
+    ended_at: "2019-04-15T00:00:00"
+    at_location:
+      name: North America
+      description: 13 scanners in 6 sites accross North America
 was_attributed_to:
   - meta_type: dlco:OrganizationObject
     meta_code: MCIN
@@ -91,11 +82,6 @@ version: "2.0"
 #         "name": "adult"
 #     }
 # ],
-# "spatialCoverage": [
-#     {
-#         "name": "North America",
-#         "description": "13 scanners in 6 sites accross North America"
-#     }
 license: licenses:CC-BY-ND-4.0
 # "aggregation": "instance of dataset",
 # "dimensions": [

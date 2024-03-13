@@ -189,6 +189,7 @@ classes:
       - type
       - version
       - was_attributed_to
+      - was_generated_by
     slot_usage:
       has_part:
         range: Resource
