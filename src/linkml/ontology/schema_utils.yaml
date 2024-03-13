@@ -8,7 +8,9 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
 imports:
+  - ../ontology/rdfs
   - ../ontology/types
 default_prefix: dlco
 
@@ -47,6 +49,7 @@ slots:
     range: uriorcurie
     exact_mappings:
       - dcterms:type
+
 
 classes:
   HasMetaTypeDesignator:

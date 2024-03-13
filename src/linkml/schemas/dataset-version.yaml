@@ -21,6 +21,7 @@ prefixes:
   dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
   licenses: http://spdx.org/licenses/
@@ -126,6 +127,8 @@ classes:
         range: LicenseDocumentObject
         description: >-
           Container to declare custom licenses.
+    slots:
+      - properties
     slot_usage:
       distribution:
         inlined: true
@@ -161,6 +164,8 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: ActivityObject
+      properties:
+        inlined: true
       qualified_attribution:
         inlined: true
         inlined_as_list: true

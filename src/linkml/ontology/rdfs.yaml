@@ -1,0 +1,67 @@
+id: https://concepts.datalad.org/ontology/rdfs
+name: meta_utils
+title: RDFS elements
+description: >-
+  TODO
+prefixes:
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+emit_prefixes:
+  - RDFS
+imports:
+  - ../ontology/types
+
+
+slots:
+  comment:
+    slot_uri: RDFS:comment
+    description: >-
+      A human-readable description.
+    range: string
+
+  label:
+    slot_uri: RDFS:label
+    description: >-
+      A human-readable version of a resource's name.
+    range: string
+
+  range:
+    slot_uri: RDFS:range
+    description: >-
+      State that the values of a property are instances a class.
+    range: uriorcurie
+
+  type:
+    slot_uri: RDFS:type
+    description: >-
+      State that the subject is an instance of a class.
+    range: uriorcurie
+
+  value:
+    slot_uri: RDFS:value
+    description: >-
+      Value of a resource.
+    range: string
+    multivalued: true
+    relational_role: OBJECT
+
+  properties:
+    slot_uri: RDFS:property
+    description: >-
+      Container for arbitrary (extra) properties that are not covered by
+      other dedicated properties.
+    range: Property
+    multivalued: true
+    relational_role: PREDICATE
+
+
+classes:
+  Property:
+    class_uri: RDFS:Property
+    description: >-
+      RDFS based class to describe arbitrary properties.
+    slots:
+      - comment
+      - label
+      - range
+      - type
+      - value

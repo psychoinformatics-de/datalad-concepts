@@ -8,7 +8,7 @@ description: >
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
   dcterms: http://purl.org/dc/terms/
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
 imports:
   - ../ontology/datasets
   - ../ontology/git

@@ -14,7 +14,7 @@ was_generated_by:
     ended_at: "2019-04-15T00:00:00"
     at_location:
       name: North America
-      description: 13 scanners in 6 sites accross North America
+      description: 13 scanners in 6 sites across North America
 was_attributed_to:
   - meta_type: dlco:OrganizationObject
     meta_code: MCIN
@@ -29,7 +29,7 @@ qualified_attribution:
       - marcrel:ccp
       # creator
       - marcrel:cre
-      # laboratory dirctor
+      # laboratory director
       - marcrel:ldr
       # research team head
       - marcrel:rth
@@ -124,86 +124,26 @@ license: licenses:CC-BY-ND-4.0
 keyword:
   - phantom
   - MRI
-# "extraProperties": [
-#     {
-#         "category": "Total number of sessions",
-#         "values": [
-#             {
-#                 "value": "521"
-#             }
-#         ]
-#     },
-#             {
-#                     "category": "logo",
-#                     "values": [
-#                             {
-#                                     "value": "logo.png"
-#                             }
-#                     ]
-#             },
-#             {
-#                     "category": "CONP_status",
-#                     "values": [
-#                             {
-#                                     "value": "CONP"
-#                             }
-#                     ]
-#             },
-#             {
-#                     "category": "files",
-#                     "values": [
-#                             {
-#                                     "value": "3771"
-#                             }
-#                     ]
-#             },
-#             {
-#                     "category": "subjects",
-#                     "values": [
-#                             {
-#                                     "value": "1"
-#                             }
-#                     ]
-#             },
-#     {
-#         "category": "origin_consortium",
-#         "values": [
-#             {
-#                 "value": "IBIS"
-#             }
-#         ]
-#     },
-#     {
-#         "category": "origin_institution",
-#         "values": [
-#             {
-#                 "value": "McGill Centre for Integrative Neuroscience"
-#             }
-#         ]
-#     },
-#     {
-#         "category": "origin_city",
-#         "values": [
-#             {
-#                 "value": "Montreal"
-#             }
-#         ]
-#     },
-#     {
-#         "category": "origin_province",
-#         "values": [
-#             {
-#                 "value": "Quebec"
-#             }
-#         ]
-#     },
-#     {
-#         "category": "origin_country",
-#         "values": [
-#             {
-#                 "value": "Canada"
-#             }
-#         ]
-#     }
-# ]
-
+properties:
+  - label: Total number of sessions
+    value: 521
+  - label: logo
+    value: logo.png
+  - label: CONP_status
+    value: CONP
+  - label: files
+    value: 3771
+  - label: subjects
+    type: http://purl.obolibrary.org/obo/NCIT_C98703
+    value: 1
+  - label: origin_consortium
+    value: IBIS
+  - label: origin_institution
+    value: McGill Centre for Integrative Neuroscience
+  - label: origin_city
+    value: Montreal
+  - label: origin_province
+    value: Quebec
+  - label: origin_country
+    type: http://purl.obolibrary.org/obo/HSO_0000360
+    value: Canada
