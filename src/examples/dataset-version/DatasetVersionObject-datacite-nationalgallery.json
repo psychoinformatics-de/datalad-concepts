@@ -1,0 +1,139 @@
+{
+  "distribution": {
+    "meta_type": "dlco:FileContainerObject",
+    "meta_code": "./",
+    "has_part": [
+      {
+        "meta_type": "dlco:DigitalDocumentObject",
+        "meta_code": "99e832c69bce072ec0485fd1118eba88",
+        "byte_size": 13555452,
+        "checksum": {
+          "algorithm": "md5",
+          "digest": "99e832c69bce072ec0485fd1118eba88"
+        },
+        "download_url": "https://research.ng-london.org.uk/scientific/env/External%20Environmental%20Data%202010-2020%20National%20Gallery%20V1.0.json"
+      }
+    ],
+    "license": "licenses:CC-BY-4.0",
+    "qualified_part": [
+      {
+        "relation": "99e832c69bce072ec0485fd1118eba88",
+        "name": "External Environmental Data 2010-2020 National Gallery V1.0.json"
+      }
+    ]
+  },
+  "identifier": [
+    "https://doi.org/10.82433/9184-dy35"
+  ],
+  "was_attributed_to": [
+    {
+      "meta_code": "NG",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "National Gallery"
+    },
+    {
+      "meta_code": "jpadfield",
+      "meta_type": "dlco:ResearchContributorObject",
+      "name": "Joseph Padfield",
+      "affiliation": "National Gallery",
+      "orcid": "0000-0002-2572-6428"
+    },
+    {
+      "meta_code": "BFD",
+      "meta_type": "dlco:OrganizationObject",
+      "name": "Building Facilities Department, National Gallery"
+    }
+  ],
+  "qualified_attribution": [
+    {
+      "agent": "NG",
+      "had_role": [
+        "marcrel:cre",
+        "marcrel:pbl"
+      ]
+    },
+    {
+      "agent": "jpadfield",
+      "had_role": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "agent": "BFD",
+      "had_role": [
+        "marcrel:col"
+      ]
+    }
+  ],
+  "qualified_relation": [
+    {
+      "entity": "h2020_871034",
+      "had_role": [
+        "schema:funding"
+      ]
+    },
+    {
+      "entity": "padfield_zenodo",
+      "had_role": [
+        "CiTO:isDocumentedBy"
+      ]
+    },
+    {
+      "entity": "padfield_vandyke_carr",
+      "had_role": [
+        "CiTO:supports"
+      ]
+    },
+    {
+      "entity": "harrison_etal",
+      "had_role": [
+        "CiTO:isSupportedBy"
+      ]
+    }
+  ],
+  "relation": [
+    {
+      "meta_code": "h2020_871034",
+      "meta_type": "dlco:GrantObject",
+      "identifier": "871034",
+      "sponsor": {
+        "name": "H2020 Excellent Science"
+      },
+      "name": "Integrating Platforms for the European Research Infrastructure ON Heritage Science",
+      "cites_as_authority": "https://cordis.europa.eu/project/id/871034"
+    },
+    {
+      "meta_code": "padfield_zenodo",
+      "meta_type": "dlco:PublicationObject",
+      "citation": "\"Padfield, J. (2008, September 14). Web based presentation tools for environmental data used in The National Gallery. The 18th Annual International Association of Museum Facility Administrators (IAMFA), London. Zenodo. https://doi.org/10.5281/zenodo.7629200\"",
+      "doi": "https://doi.org/10.5281/zenodo.7629200"
+    },
+    {
+      "meta_code": "padfield_vandyke_carr",
+      "meta_type": "dlco:PublicationObject",
+      "citation": "\"J. Padfield, S. Vandyke and D. Carr, 'Improving our Environment', published March 2013. http://www.nationalgallery.org.uk/paintings/research/improving-our-environment.\"",
+      "url": "http://www.nationalgallery.org.uk/paintings/research/improving-our-environment"
+    },
+    {
+      "meta_code": "harrison_etal",
+      "meta_type": "dlco:PublicationObject",
+      "citation": "\"Lynne Harrison, Catherine Higgitt & Joseph Padfield (2018) Finding Common Ground: The Role of Preventive Conservation in Response to the Expectations of Contemporary Audiences at the National Gallery, London, Studies in Conservation, 63:sup1, 101-107, DOI: 10.1080/00393630.2018.1504449\"",
+      "doi": "https://doi.org/10.1080/00393630.2018.1504449"
+    }
+  ],
+  "description": "The National Gallery houses one of the greatest ‒ and most visited ‒ collections of Western European painting, often welcoming more than 6 million visitors a year. The Scientific Department researches the history of materials and techniques and their degradation mechanisms (fading, darkening, etc.), through analysis using a range of micro-analytical and imaging methods. It also works in the fields of preventive conservation and environmental management of galleries (monitoring, lighting, vibration), as well as the development of a wide range of new instruments and methods (both analytical and imaging) for technical examination of artworks, most often in collaboration with universities. The examination of the environmental conditions within The National Gallery began soon after it was established in 1824. Early concerns often related to dust and pollution. The first electronic data logger, recording light levels, was introduced in 1975, with the regular logging of temperature and relative humidity followed soon after. Today the Gallery has hundreds of sensors, monitoring the environmental conditions in over hundreds of locations, 24/7. The National Gallery currently archives millions of environmental readings every year, which are used to monitor the Gallery conditions ensuring the on-going care of the collections. These readings are also used to examine long term environmental trends, manage additional events, and within the planning and management of preventive conservation work and research at the National Gallery. The National Gallery Environmental Database is an internal, bespoke system which has been developed, over the last 20 years, to act as an archive for all of these environmental readings. This dataset contains a selected range of the data gathered from a few of the external sensors that have been used to monitor ambient light levels, temperature, relative humidity and air moisture content 24 hours a day, 7 days a week over the last two decades.",
+  "keyword": [
+    "FOS: Earth and related environmental sciences",
+    "temperature",
+    "relative humidity",
+    "illuminance",
+    "moisture content",
+    "Environmental monitoring"
+  ],
+  "landing_page": "https://research.ng-london.org.uk/scientific/env",
+  "modified": "2024-01-02",
+  "name": "external-environmental-data",
+  "title": "External Environmental Data, 2010-2020, National Gallery",
+  "version": "1.0",
+  "@type": "DatasetVersionObject"
+}
