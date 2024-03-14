@@ -70,18 +70,14 @@ version: "2.0"
 #        }
 #    }
 #],
-# "isAbout": [
-#     {
-#           "identifier": {
-#                     "identifier": "https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=9606",
-#                                     "identifierSource": "NCBI Taxonomy Database"
-#           },
-#           "name":"Homo sapiens"
-#     },
-#     {
-#         "name": "adult"
-#     }
-# ],
+qualified_relation:
+  # "name":"Homo sapiens"
+  - entity: http://purl.obolibrary.org/obo/NCBITaxon_9606
+    # "identifierSource": "NCBI Taxonomy Database"
+    had_role: schema:about
+  # "name": "adult"
+  - entity: http://purl.obolibrary.org/obo/BTO_0001043
+    had_role: schema:about
 license: licenses:CC-BY-ND-4.0
 # "aggregation": "instance of dataset",
 # "dimensions": [

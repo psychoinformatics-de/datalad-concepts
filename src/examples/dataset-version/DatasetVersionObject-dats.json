@@ -97,6 +97,20 @@
       ]
     }
   ],
+  "qualified_relation": [
+    {
+      "entity": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "had_role": [
+        "schema:about"
+      ]
+    },
+    {
+      "entity": "http://purl.obolibrary.org/obo/BTO_0001043",
+      "had_role": [
+        "schema:about"
+      ]
+    }
+  ],
   "description": "Longitudinal brain scans of a single human phantom acquired on multiple MRI devices across North America over a period of 11 years. In addition to the human brain images, lego phantom scans have been acquired in parallel for quality assessments over time across sites.",
   "keyword": [
     "phantom",

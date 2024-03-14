@@ -1,0 +1,18 @@
+{
+  "qualified_relation": [
+    {
+      "entity": "disease_cancer",
+      "had_role": [
+        "schema:about"
+      ]
+    }
+  ],
+  "relation": [
+    {
+      "meta_type": "dlco:EntityObject",
+      "meta_code": "disease_cancer",
+      "identifier": "http://purl.obolibrary.org/obo/DOID_162"
+    }
+  ],
+  "@type": "DatasetVersionObject"
+}
