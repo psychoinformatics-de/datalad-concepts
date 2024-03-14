@@ -66,13 +66,13 @@
   "license": "licenses:CC-BY-ND-4.0",
   "was_attributed_to": [
     {
-      "meta_code": "MCIN",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "MCIN",
       "name": "McGill Center for Integrative Neuroscience"
     },
     {
-      "meta_code": "ACEvans",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "ACEvans",
       "name": "Alan C. Evans"
     }
   ],

@@ -1,15 +1,15 @@
 {
   "was_attributed_to": [
     {
-      "meta_code": "doe",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "doe",
       "name": "Jane Doe",
       "email": "doe@example.com",
       "affiliation": "DFG"
     },
     {
-      "meta_code": "DFG",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "DFG",
       "name": "Deutsche Forschungsgemeinschaft"
     }
   ],

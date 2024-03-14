@@ -65,42 +65,42 @@
   ],
   "was_attributed_to": [
     {
-      "meta_code": "ahorst",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "ahorst",
       "name": "Allison Horst",
       "email": "ahorst@example.com",
       "affiliation": "UCSB",
       "orcid": "0000-0002-6047-5564"
     },
     {
-      "meta_code": "ahill",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "ahill",
       "name": "Allison Hill",
       "email": "ahill@example.com",
       "affiliation": "Rstudio",
       "orcid": "0000-0002-8082-1890"
     },
     {
-      "meta_code": "kgorman",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "kgorman",
       "name": "Kirsten Gorman",
       "email": "kgorman@example.com",
       "affiliation": "UAF",
       "orcid": "0000-0002-0258-9264"
     },
     {
-      "meta_code": "UCSB",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "UCSB",
       "name": "UC Santa Barbara: Santa Barbara, CA, US"
     },
     {
-      "meta_code": "RStudio",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "RStudio",
       "name": "RStudio: Boston, MA, US"
     },
     {
-      "meta_code": "UAF",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "UAF",
       "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
     }
   ],
@@ -173,8 +173,8 @@
   ],
   "relation": [
     {
-      "meta_code": "nsf0217282",
       "meta_type": "dlco:GrantObject",
+      "meta_code": "nsf0217282",
       "identifier": "0217282",
       "sponsor": {
         "name": "NSF Office of Polar Programs"
@@ -183,8 +183,8 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false"
     },
     {
-      "meta_code": "nsf0823101",
       "meta_type": "dlco:GrantObject",
+      "meta_code": "nsf0823101",
       "identifier": "0823101",
       "sponsor": {
         "name": "NSF Office of Polar Programs"
@@ -193,8 +193,8 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
     },
     {
-      "meta_code": "nsf0741351",
       "meta_type": "dlco:GrantObject",
+      "meta_code": "nsf0741351",
       "identifier": "0741351",
       "sponsor": {
         "name": "NSF Office of Polar Programs"
@@ -203,8 +203,8 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
     },
     {
-      "meta_code": "gormanetal",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "gormanetal",
       "citation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'",
       "doi": "https://doi.org/10.1371/journal.pone.0090081"
     }

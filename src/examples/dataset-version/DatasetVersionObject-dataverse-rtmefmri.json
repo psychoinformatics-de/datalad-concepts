@@ -21793,15 +21793,15 @@
   "license": "customlicenses:humanhealthdata",
   "was_attributed_to": [
     {
-      "meta_code": "StephanHeunis",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "StephanHeunis",
       "name": "Stephan Heunis",
       "affiliation": "Eindhoven University of Technology",
       "orcid": "0000-0003-3503-9872"
     },
     {
-      "meta_code": "TUE",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "TUE",
       "name": "Eindhoven University of Technology"
     }
   ],
@@ -21838,14 +21838,14 @@
   ],
   "relation": [
     {
-      "meta_code": "data_paper",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "data_paper",
       "citation": "Heunis S, Breeuwer M, Caballero-Gaudes C et al. rt-me-fMRI: a task and resting state dataset for real-time, multi-echo fMRI methods development and validation [version 1; peer review: 1 approved, 1 approved with reservations]. F1000Research 2021, 10:70 (https://doi.org/10.12688/f1000research.29988.1)",
       "doi": "https://doi.org/10.12688/f1000research.29988.1"
     },
     {
-      "meta_code": "methods_paper",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "methods_paper",
       "citation": "S. Heunis, M. Breeuwer, C. Caballero-Gaudes, L. Hellrung, W. Huijbers, J.F. Jansen, R. Lamerichs, S. Zinger, A.P. Aldenkamp. The effects of multi-echo fMRI combination and rapid T*-mapping on offline and real-time BOLD sensitivity. NeuroImage, 238 (2021), Article 118244, 10.1016/j.neuroimage.2021.118244",
       "doi": "https://doi.org/10.1016/j.neuroimage.2021.118244"
     }

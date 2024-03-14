@@ -217,6 +217,8 @@ classes:
     description: >-
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
+    slots:
+      - identifier
     exact_mappings:
       - prov:Entity
 

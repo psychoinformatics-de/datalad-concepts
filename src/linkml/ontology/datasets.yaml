@@ -161,6 +161,7 @@ slots:
 classes:
   Resource:
     class_uri: dlco:Resource
+    is_a: Entity
     mixin: true
     description: >-
       Resource published or curated by a single agent.
@@ -168,7 +169,6 @@ classes:
       - description
       - keyword
       - has_part
-      - identifier
       - landing_page
       - license
       - modified
