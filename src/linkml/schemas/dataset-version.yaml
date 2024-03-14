@@ -199,14 +199,13 @@ classes:
 
   AgentObject:
     class_uri: dlco:AgentObject
-    is_a: MetadataObject
+    is_a: TypedObject
     mixins:
       - Agent
     description: >-
       Schema-specific implementation of [AgentObject](https://concepts.datalad.org/ontology/AgentObject).
     slots:
       - meta_code
-      - meta_type
 
   PersonObject:
     class_uri: dlco:PersonObject
@@ -237,12 +236,11 @@ classes:
 
   EntityObject:
     class_uri: dlco:EntityObject
-    is_a: MetadataObject
+    is_a: TypedObject
     mixins:
       - Entity
     slots:
       - meta_code
-      - meta_type
     description: >-
       Schema-specific implementation of [EntityObject](https://concepts.datalad.org/ontology/EntityObject).
 
