@@ -7,10 +7,11 @@ description: |
   This is a schema that a DataLad dataset generator/updator would understand
   for importing a non-DataLad dataset specification.
 
-  General information on purpose and basic principles of this schema are
-  available at https://concepts.datalad.org/schemas/dataset-version/about
+  There is [dedicated documentation](about) with general information on the
+  purpose and basic principles of this schema.
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+see_also: https://concepts.datalad.org/schemas/dataset-version/about
 
 license: MIT
 
