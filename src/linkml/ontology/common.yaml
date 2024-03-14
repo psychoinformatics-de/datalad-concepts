@@ -10,7 +10,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   iao: http://purl.obolibrary.org/obo/
   pav: http://purl.org/pav/
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   sio: http://semanticscience.org/resource/
   spdx: http://spdx.org/rdf/terms#
@@ -93,7 +93,7 @@ slots:
     slot_uri: dlco:name
     description: Name of an item or entity.
     exact_mappings:
-      - rdfs:label
+      - RDFS:label
       - schema:name
       - foaf:name
     range: string

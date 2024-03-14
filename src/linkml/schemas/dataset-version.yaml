@@ -21,6 +21,7 @@ prefixes:
   dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
   licenses: http://spdx.org/licenses/
@@ -126,6 +127,8 @@ classes:
         range: LicenseDocumentObject
         description: >-
           Container to declare custom licenses.
+    slots:
+      - properties
     slot_usage:
       distribution:
         inlined: true
@@ -156,6 +159,13 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: AgentObject
+      was_generated_by:
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: ActivityObject
+      properties:
+        inlined: true
       qualified_attribution:
         inlined: true
         inlined_as_list: true
@@ -171,6 +181,18 @@ classes:
         inlined_as_list: true
         multivalued: true
         range: EntityObject
+
+  ActivityObject:
+    class_uri: dlco:ActivityObject
+    is_a: MetadataObject
+    mixins:
+      - Activity
+    description: >-
+      Schema-specific implementation of [ActivityObject](https://concepts.datalad.org/ontology/ActivityObject).
+    slot_usage:
+      at_location:
+        inlined: true
+        range: LocationObject
 
   AgentObject:
     class_uri: dlco:AgentObject
@@ -313,3 +335,11 @@ classes:
       - Publication
     description: >-
       Schema-specific implementation of [PublicationObject](https://concepts.datalad.org/ontology/PublicationObject).
+
+  LocationObject:
+    class_uri: dlco:LocationObject
+    is_a: MetadataObject
+    mixins:
+      - Location
+    description: >-
+      Schema-specific implementation of [LocationObject](https://concepts.datalad.org/ontology/LocationObject).

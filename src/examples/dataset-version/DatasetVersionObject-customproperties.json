@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "label": "Planned Number of Female Subjects",
+      "range": "xsd:nonNegativeInteger",
+      "type": "http://purl.obolibrary.org/obo/NCIT_C90437",
+      "value": [
+        "54"
+      ]
+    }
+  ],
+  "name": "growing-dataset",
+  "@type": "DatasetVersionObject"
+}

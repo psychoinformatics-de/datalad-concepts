@@ -22,6 +22,7 @@ imports:
   - ../ontology/common
   - ../ontology/projects
   - ../ontology/provenance
+  - ../ontology/rdfs
   - ../ontology/schema_utils
   - ../ontology/schema_objects
   - ../ontology/types
