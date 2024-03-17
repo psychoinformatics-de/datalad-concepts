@@ -4,11 +4,10 @@ title: Common properties and classes
 description: >
   Collection of common properties and classes.
 prefixes:
-  CiTO: http://purl.org/spar/cito/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
-  iao: http://purl.obolibrary.org/obo/
+  obo: http://purl.obolibrary.org/obo/
   pav: http://purl.org/pav/
   RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
@@ -17,6 +16,14 @@ prefixes:
 
 imports:
   - ../ontology/types
+emit_prefixes:
+  - dcterms
+  - dlco
+  - obo
+  - pav
+  - RDFS
+  - schema
+  - spdx
 default_prefix: dlco
 
 slots:
@@ -27,7 +34,7 @@ slots:
       a function.
     exact_mappings:
       - schema:algorithm
-      - iao:IAO_0000064
+      - obo:IAO_0000064
     range: uriorcurie
 
   description:
@@ -42,7 +49,7 @@ slots:
     description: Email address associated with an entity.
     exact_mappings:
       - schema:email
-      - iao:IAO_0000429
+      - obo:IAO_0000429
     range: EmailAddress
 
   has_part:
@@ -60,6 +67,16 @@ slots:
       - dcterms:identifier
       - schema:identifier
     range: string
+
+  is_about:
+    slot_uri: dlco:is_about
+    description: >-
+      A relation of an information artifact to an entity.
+      For example, the subject matter of the content.
+    range: uriorcurie
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
 
   license:
     slot_uri: dlco:license

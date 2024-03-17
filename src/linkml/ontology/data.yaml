@@ -16,17 +16,6 @@ imports:
   - ../ontology/provenance
 
 
-slots:
-  is_about:
-    slot_uri: dlco:is_about
-    description: >-
-      A relation of an information artifact to an entity.
-      For example, the subject matter of the content.
-    exact_mappings:
-      - schema:about
-      - obo:IAO_0000136
-
-
 classes:
   RecordedVariable:
     class_uri: dlco:RecordedVariable
@@ -37,10 +26,6 @@ classes:
       either as determined by an agent, instrument, or as randomly occuring
       through observation.
     slots:
-      #- is_about
-      - identifier
-      - name
-      - title
       #- unit
     exact_mappings:
       - obo:STATO_0000258
