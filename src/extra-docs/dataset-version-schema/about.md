@@ -118,3 +118,26 @@ qualified_attribution:
       - marcrel:aut
       - dpv:DataController
 ```
+
+### Design concerns
+
+#### Why does `dlco:Property` not support a value IRI specification?
+
+If a custom property aims to establish a particular relationship to another
+concept, as it would be identified by a an IRI (URI or CURIE), this should be
+documented with the common qualified-relation pattern.
+
+For example, indicating that a dataset linked to a repeated measures study
+design create a relation to the concept of a repeated measure design
+(`obo:OBI_0500002`), and qualify the relation to be a study design
+(`obo:OBI_0500000`).
+
+```yaml
+relation:
+  - meta_type: dlco:Entity
+    meta_code: rmd
+    identifier: obo:OBI_0500002
+qualified_relation:
+  - entity: rmd
+    had_role: obo:OBI_0500000
+```
