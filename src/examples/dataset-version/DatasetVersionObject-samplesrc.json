@@ -3,13 +3,13 @@
     {
       "entity": "http://snomed.info/id/337915000",
       "had_role": [
-        "http://purl.obolibrary.org/obo/HSO_0000244"
+        "obo:HSO_0000244"
       ]
     },
     {
-      "entity": "http://purl.obolibrary.org/obo/BTO_0000759",
+      "entity": "obo:BTO_0000759",
       "had_role": [
-        "http://purl.obolibrary.org/obo/HSO_0000243"
+        "obo:HSO_0000243"
       ]
     }
   ],

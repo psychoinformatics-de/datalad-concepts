@@ -1,7 +1,7 @@
 qualified_relation:
   # sampled from organism homo sapiens
   - entity: http://snomed.info/id/337915000
-    had_role: http://purl.obolibrary.org/obo/HSO_0000244
+    had_role: obo:HSO_0000244
   # sampled from anatomical entity liver
-  - entity: http://purl.obolibrary.org/obo/BTO_0000759
-    had_role: http://purl.obolibrary.org/obo/HSO_0000243
+  - entity: obo:BTO_0000759
+    had_role: obo:HSO_0000243

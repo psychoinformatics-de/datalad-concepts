@@ -8,7 +8,6 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
-  iao: http://purl.obolibrary.org/obo/
   RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#

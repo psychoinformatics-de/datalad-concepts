@@ -23,6 +23,7 @@ prefixes:
   dlco: https://concepts.datalad.org/ontology/
   dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
   RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
@@ -38,6 +39,7 @@ emit_prefixes:
   - licenses
   - customlicenses
   - marcrel
+  - obo
   - prov
 
 imports:

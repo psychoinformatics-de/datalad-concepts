@@ -1,6 +1,6 @@
 name: growing-dataset
 properties:
-  - type: http://purl.obolibrary.org/obo/NCIT_C90437
+  - type: obo:NCIT_C90437
     label: Planned Number of Female Subjects
     range: xsd:nonNegativeInteger
     value: 54

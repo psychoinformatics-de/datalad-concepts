@@ -93,11 +93,11 @@ relation:
     name: T2W
 qualified_relation:
   # "name":"Homo sapiens"
-  - entity: http://purl.obolibrary.org/obo/NCBITaxon_9606
+  - entity: obo:NCBITaxon_9606
     # "identifierSource": "NCBI Taxonomy Database"
     had_role: schema:about
   # "name": "adult"
-  - entity: http://purl.obolibrary.org/obo/BTO_0001043
+  - entity: obo:BTO_0001043
     had_role: schema:about
 license: licenses:CC-BY-ND-4.0
 keyword:
@@ -113,7 +113,7 @@ properties:
   - label: files
     value: 3771
   - label: subjects
-    type: http://purl.obolibrary.org/obo/NCIT_C98703
+    type: obo:NCIT_C98703
     value: 1
   - label: origin_consortium
     value: IBIS
@@ -124,7 +124,7 @@ properties:
   - label: origin_province
     value: Quebec
   - label: origin_country
-    type: http://purl.obolibrary.org/obo/HSO_0000360
+    type: obo:HSO_0000360
     value: Canada
   - label: privacy
     comment: >-

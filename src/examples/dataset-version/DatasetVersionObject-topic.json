@@ -11,7 +11,7 @@
     {
       "meta_type": "dlco:EntityObject",
       "meta_code": "disease_cancer",
-      "identifier": "http://purl.obolibrary.org/obo/DOID_162"
+      "identifier": "obo:DOID_162"
     }
   ],
   "@type": "DatasetVersionObject"

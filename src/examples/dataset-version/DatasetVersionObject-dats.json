@@ -26,7 +26,7 @@
     },
     {
       "label": "subjects",
-      "type": "http://purl.obolibrary.org/obo/NCIT_C98703",
+      "type": "obo:NCIT_C98703",
       "value": [
         "1"
       ]
@@ -57,7 +57,7 @@
     },
     {
       "label": "origin_country",
-      "type": "http://purl.obolibrary.org/obo/HSO_0000360",
+      "type": "obo:HSO_0000360",
       "value": [
         "Canada"
       ]
@@ -113,13 +113,13 @@
   ],
   "qualified_relation": [
     {
-      "entity": "http://purl.obolibrary.org/obo/NCBITaxon_9606",
+      "entity": "obo:NCBITaxon_9606",
       "had_role": [
         "schema:about"
       ]
     },
     {
-      "entity": "http://purl.obolibrary.org/obo/BTO_0001043",
+      "entity": "obo:BTO_0001043",
       "had_role": [
         "schema:about"
       ]

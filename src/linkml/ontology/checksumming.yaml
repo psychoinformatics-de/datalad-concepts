@@ -8,8 +8,6 @@ description: >
 prefixes:
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
-  iao: http://purl.obolibrary.org/obo/
-  schema: http://schema.org/
   spdx: http://spdx.org/rdf/terms#
 
 imports:
