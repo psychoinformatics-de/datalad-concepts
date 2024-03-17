@@ -23,7 +23,7 @@ classes:
     is_a: Entity
     description: >-
       A variable is a data item which can assume any of a set of values,
-      either as determined by an agent, instrument, or as randomly occuring
+      either as determined by an agent, instrument, or as randomly occurring
       through observation.
     slots:
       #- unit
