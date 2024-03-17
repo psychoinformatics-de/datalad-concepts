@@ -4,4 +4,4 @@ relation:
     identifier: obo:DOID_162
 qualified_relation:
   - entity: disease_cancer
-    had_role: schema:about
+    had_role: dlco:is_about

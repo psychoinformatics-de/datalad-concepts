@@ -3,7 +3,7 @@
     {
       "entity": "disease_cancer",
       "had_role": [
-        "schema:about"
+        "dlco:is_about"
       ]
     }
   ],

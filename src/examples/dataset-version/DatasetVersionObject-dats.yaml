@@ -95,10 +95,10 @@ qualified_relation:
   # "name":"Homo sapiens"
   - entity: obo:NCBITaxon_9606
     # "identifierSource": "NCBI Taxonomy Database"
-    had_role: schema:about
+    had_role: dlco:is_about
   # "name": "adult"
   - entity: obo:BTO_0001043
-    had_role: schema:about
+    had_role: dlco:is_about
 license: licenses:CC-BY-ND-4.0
 keyword:
   - phantom

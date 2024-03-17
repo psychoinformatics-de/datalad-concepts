@@ -115,13 +115,13 @@
     {
       "entity": "obo:NCBITaxon_9606",
       "had_role": [
-        "schema:about"
+        "dlco:is_about"
       ]
     },
     {
       "entity": "obo:BTO_0001043",
       "had_role": [
-        "schema:about"
+        "dlco:is_about"
       ]
     }
   ],
