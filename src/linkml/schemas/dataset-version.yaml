@@ -42,6 +42,7 @@ emit_prefixes:
 
 imports:
   - ../ontology/schema_utils
+  - ../ontology/data
   - ../ontology/datasets
   - ../ontology/projects
 
@@ -344,3 +345,11 @@ classes:
       - Location
     description: >-
       Schema-specific implementation of [LocationObject](https://concepts.datalad.org/ontology/LocationObject).
+
+  RecordedVariableObject:
+    class_uri: dlco:RecordedVariableObject
+    is_a: EntityObject
+    mixins:
+      - RecordedVariable
+    description: >-
+      Schema-specific implementation of [RecordedVariableObject](https://concepts.datalad.org/ontology/RecordedVariableObject).
