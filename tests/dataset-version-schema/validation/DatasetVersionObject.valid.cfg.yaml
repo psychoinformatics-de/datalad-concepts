@@ -1,7 +1,20 @@
 schema: src/linkml/schemas/dataset-version.yaml
 target_class: DatasetVersionObject
 data_sources:
+  - tests/dataset-version-schema/validation/DatasetVersionObject-dataverse-rtmefmri.yaml
+  - src/examples/dataset-version/DatasetVersionObject-affiliation.yaml
+  - src/examples/dataset-version/DatasetVersionObject-customlicense.yaml
+  - src/examples/dataset-version/DatasetVersionObject-customproperties.yaml
+  - src/examples/dataset-version/DatasetVersionObject-datacite-nationalgallery.yaml
+  - src/examples/dataset-version/DatasetVersionObject-dats.yaml
+  - src/examples/dataset-version/DatasetVersionObject-funding.yaml
+  - src/examples/dataset-version/DatasetVersionObject-identifiers.yaml
+  - src/examples/dataset-version/DatasetVersionObject-penguins.yaml
+  - src/examples/dataset-version/DatasetVersionObject-rocrate-attributions.yaml
+  - src/examples/dataset-version/DatasetVersionObject-rocrate-minimal.yaml
   - src/examples/dataset-version/DatasetVersionObject-roleattribution.yaml
+  - src/examples/dataset-version/DatasetVersionObject-samplesrc.yaml
+  - src/examples/dataset-version/DatasetVersionObject-topic.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

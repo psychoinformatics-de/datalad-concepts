@@ -188,7 +188,7 @@
       "sponsor": {
         "name": "NSF Office of Polar Programs"
       },
-      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false"
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
     },
     {
       "meta_type": "dlco:GrantObject",
@@ -212,7 +212,7 @@
       "identifier": {
         "dlns:nsfaward/0741351": {
           "meta_id": "dlns:nsfaward/0741351",
-          "notation": "246505",
+          "notation": "0741351",
           "schema_agency": "US National Science Foundation"
         }
       },
