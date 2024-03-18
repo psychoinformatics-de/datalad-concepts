@@ -1,0 +1,32 @@
+id: https://concepts.datalad.org/ontology/data
+name: data
+title: Concepts for describing data
+description: >
+  TODO
+prefixes:
+  dlco: https://concepts.datalad.org/ontology/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  schema: http://schema.org/
+emit_prefixes:
+  - dlco
+  - obo
+  - schema
+imports:
+  - ../ontology/provenance
+
+
+classes:
+  RecordedVariable:
+    class_uri: dlco:RecordedVariable
+    mixin: true
+    is_a: Entity
+    description: >-
+      A variable is a data item which can assume any of a set of values,
+      either as determined by an agent, instrument, or as randomly occurring
+      through observation.
+    slots:
+      #- unit
+    exact_mappings:
+      - obo:STATO_0000258
+      - schema:variableMeasured

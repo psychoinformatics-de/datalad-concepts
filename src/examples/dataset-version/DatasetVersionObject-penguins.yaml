@@ -18,8 +18,7 @@ keyword:
   - antarctica
   - animal sexual behavior
   - isotopes
-identifier:
-  - https://doi.org/10.5281/zenodo.3960218
+identifier: https://doi.org/10.5281/zenodo.3960218
 was_attributed_to:
   - meta_type: dlco:ResearchContributorObject
     meta_code: ahorst
@@ -74,21 +73,30 @@ relation:
   - meta_type: dlco:GrantObject
     meta_code: nsf0217282
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
-    identifier: 0217282
+    identifier:
+      dlns:nsfaward/0217282:
+        notation: 0217282
+        schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
   - meta_type: dlco:GrantObject
     meta_code: nsf0823101
     name: Palmer, Antarctica Long Term Ecological Research Project
-    identifier: "0823101"
+    identifier:
+      dlns:nsfaward/0823101:
+        notation: 0823101
+        schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
   - meta_type: dlco:GrantObject
     meta_code: nsf0741351
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
-    identifier: "0741351"
+    identifier:
+      dlns:nsfaward/0741351:
+        notation: 0741351
+        schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351

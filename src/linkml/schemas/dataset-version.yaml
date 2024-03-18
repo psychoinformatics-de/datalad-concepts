@@ -21,8 +21,10 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
+  dlns: https://concepts.datalad.org/ns/
   dpv: https://w3id.org/dpv#
   linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
   RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
@@ -38,10 +40,13 @@ emit_prefixes:
   - licenses
   - customlicenses
   - marcrel
+  - obo
   - prov
 
 imports:
   - ../ontology/schema_utils
+  - ../ontology/common
+  - ../ontology/data
   - ../ontology/datasets
   - ../ontology/projects
 
@@ -144,6 +149,8 @@ classes:
           #  range: DatasetVersionObject
           #    #range: GitShaIDedObject
       identifier:
+        range: IdentifierObject
+        inlined: true
         multivalued: true
       is_version_of:
         range: string
@@ -196,17 +203,25 @@ classes:
       at_location:
         inlined: true
         range: LocationObject
+      identifier:
+        range: IdentifierObject
+        inlined: true
+        multivalued: true
 
   AgentObject:
     class_uri: dlco:AgentObject
-    is_a: MetadataObject
+    is_a: TypedObject
     mixins:
       - Agent
+    slot_usage:
+      identifier:
+        range: IdentifierObject
+        inlined: true
+        multivalued: true
     description: >-
       Schema-specific implementation of [AgentObject](https://concepts.datalad.org/ontology/AgentObject).
     slots:
       - meta_code
-      - meta_type
 
   PersonObject:
     class_uri: dlco:PersonObject
@@ -235,14 +250,27 @@ classes:
     description: >-
       Schema-specific implementation of [OrganizationObject](https://concepts.datalad.org/ontology/OrganizationObject).
 
+  IdentifierObject:
+    class_uri: dlco:IdentifierObject
+    mixins:
+      - Identifier
+    slots:
+      - meta_id
+    description: >-
+      Schema-specific implementation of [IdentifierObject](https://concepts.datalad.org/ontology/IdentifierObject).
+
   EntityObject:
     class_uri: dlco:EntityObject
-    is_a: MetadataObject
+    is_a: TypedObject
     mixins:
       - Entity
     slots:
       - meta_code
-      - meta_type
+    slot_usage:
+      identifier:
+        range: IdentifierObject
+        inlined: true
+        multivalued: true
     description: >-
       Schema-specific implementation of [EntityObject](https://concepts.datalad.org/ontology/EntityObject).
 
@@ -330,6 +358,13 @@ classes:
       Schema-specific implementation of [LicenseDocumentObject](https://concepts.datalad.org/ontology/LicenseDocumentObject).
     slots:
       - meta_id
+    slot_usage:
+      identifier:
+        range: IdentifierObject
+        inlined: true
+        multivalued: true
+    todos:
+      - rethink use of `meta_id` here, there is `identifier` which is just as strict. If a license is contained in a dataset (in a file), a document-local identifier seems more appropriate
 
   PublicationObject:
     class_uri: dlco:PublicationObject
@@ -346,3 +381,11 @@ classes:
       - Location
     description: >-
       Schema-specific implementation of [LocationObject](https://concepts.datalad.org/ontology/LocationObject).
+
+  RecordedVariableObject:
+    class_uri: dlco:RecordedVariableObject
+    is_a: EntityObject
+    mixins:
+      - RecordedVariable
+    description: >-
+      Schema-specific implementation of [RecordedVariableObject](https://concepts.datalad.org/ontology/RecordedVariableObject).

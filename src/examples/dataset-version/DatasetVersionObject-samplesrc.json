@@ -1,0 +1,17 @@
+{
+  "qualified_relation": [
+    {
+      "entity": "http://snomed.info/id/337915000",
+      "had_role": [
+        "obo:HSO_0000244"
+      ]
+    },
+    {
+      "entity": "obo:BTO_0000759",
+      "had_role": [
+        "obo:HSO_0000243"
+      ]
+    }
+  ],
+  "@type": "DatasetVersionObject"
+}

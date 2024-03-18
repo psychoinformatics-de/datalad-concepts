@@ -3,6 +3,7 @@ name: types
 prefixes:
   afo: http://purl.allotrope.org/ontologies/result#
   dlco: https://concepts.datalad.org/ontology/
+  obo: http://purl.obolibrary.org/obo/
   schema: http://schema.org/
   xsd: http://www.w3.org/2001/XMLSchema#
 imports:
@@ -88,7 +89,7 @@ types:
       - https://en.wikipedia.org/wiki/SHA-1
 
   UUID:
-    uri: http://purl.obolibrary.org/obo/NCIT_C54100
+    uri: obo:NCIT_C54100
     base: str
     pattern: "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
     description: >-

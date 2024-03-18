@@ -16,6 +16,7 @@ prefixes:
 
 imports:
   - ../ontology/checksumming
+  - ../ontology/data
   - ../ontology/datalad
   - ../ontology/datasets
   - ../ontology/git-annex

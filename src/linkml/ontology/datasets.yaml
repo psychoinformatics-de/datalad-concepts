@@ -22,8 +22,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
   linkml: https://w3id.org/linkml/
-  iao: http://purl.obolibrary.org/obo/
-  ncit: http://purl.obolibrary.org/obo/
+  obo: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
   schema: http://schema.org/
 imports:
@@ -161,6 +160,7 @@ slots:
 classes:
   Resource:
     class_uri: dlco:Resource
+    is_a: Entity
     mixin: true
     description: >-
       Resource published or curated by a single agent.
@@ -168,7 +168,6 @@ classes:
       - description
       - keyword
       - has_part
-      - identifier
       - landing_page
       - license
       - modified
@@ -356,9 +355,9 @@ classes:
       qualified_part:
         range: FileContainerItem
     close_mappings:
-      - ncit:NCIT_C62486
+      - obo:NCIT_C62486
     broad_mappings:
-      - ncit:NCIT_C49057
+      - obo:NCIT_C49057
 
   FileContainerItem:
     class_uri: dlco:FileContainerItem

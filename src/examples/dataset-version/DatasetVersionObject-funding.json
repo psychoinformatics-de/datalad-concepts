@@ -9,13 +9,17 @@
   ],
   "relation": [
     {
-      "meta_code": "sfb1451",
       "meta_type": "dlco:GrantObject",
-      "identifier": "https://gepris.dfg.de/gepris/projekt/431549029",
+      "meta_code": "sfb1451",
+      "identifier": {
+        "https://gepris.dfg.de/gepris/projekt/431549029": {
+          "meta_id": "https://gepris.dfg.de/gepris/projekt/431549029"
+        }
+      },
+      "name": "SFB1451",
       "sponsor": {
         "name": "Deutsche Forschungsgemeinschaft"
-      },
-      "name": "SFB1451"
+      }
     }
   ],
   "description": "Some key facts about the data",

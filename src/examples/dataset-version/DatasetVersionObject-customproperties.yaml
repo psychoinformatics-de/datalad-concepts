@@ -1,6 +1,19 @@
 name: growing-dataset
+# custom property with a property type IRI, and range IRI
 properties:
-  - type: http://purl.obolibrary.org/obo/NCIT_C90437
+  - type: obo:NCIT_C90437
     label: Planned Number of Female Subjects
     range: xsd:nonNegativeInteger
     value: 54
+    comment: >-
+      A non-negative integer representing the number of planned female
+      subjects/participants.
+# link individual concepts/entities via qualified relation
+# here: study design was repeated measure design
+relation:
+  - meta_type: dlco:EntityObject
+    meta_code: rmd
+    identifier: obo:OBI_0500002
+qualified_relation:
+  - entity: rmd
+    had_role: obo:OBI_0500000

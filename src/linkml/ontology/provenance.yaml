@@ -12,6 +12,7 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
 imports:
   - linkml:types
+  - ../ontology/common
 default_prefix: dlco
 
 
@@ -208,11 +209,29 @@ slots:
 
 
 classes:
+  ProvConcept:
+    class_uri: dlco:ProvConcept
+    mixin: true
+    description: >-
+      Technical foundation of the PROV concept classes
+      `Activity`, `Agent`, `Entity`.
+    slots:
+      - description
+      - identifier
+      - is_about
+      - name
+      - title
+    narrow_mappings:
+      - prov:Activity
+      - prov:Agent
+      - prov:Entity
+
   #
   # entities
   #
   Entity:
     class_uri: dlco:Entity
+    is_a: ProvConcept
     mixin: true
     description: >-
       A physical, digital, conceptual, or other kind of thing with some
@@ -225,6 +244,7 @@ classes:
   #
   Activity:
     class_uri: dlco:Activity
+    is_a: ProvConcept
     mixin: true
     description: >-
       An activity is something that occurs over a period of time and acts
@@ -242,13 +262,12 @@ classes:
   #
   Agent:
     class_uri: dlco:Agent
+    is_a: ProvConcept
     mixin: true
     description: >-
       Something that bears some form of responsibility for an activity
       taking place, for the existence of an entity, or for another
       agent's activity.
-    slots:
-      - name
     exact_mappings:
       - foaf:Agent
       - prov:Agent

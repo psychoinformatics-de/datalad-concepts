@@ -22,25 +22,27 @@
       }
     ]
   },
-  "identifier": [
-    "https://doi.org/10.82433/9184-dy35"
-  ],
+  "identifier": {
+    "https://doi.org/10.82433/9184-dy35": {
+      "meta_id": "https://doi.org/10.82433/9184-dy35"
+    }
+  },
   "was_attributed_to": [
     {
-      "meta_code": "NG",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "NG",
       "name": "National Gallery"
     },
     {
-      "meta_code": "jpadfield",
       "meta_type": "dlco:ResearchContributorObject",
+      "meta_code": "jpadfield",
       "name": "Joseph Padfield",
       "affiliation": "National Gallery",
       "orcid": "0000-0002-2572-6428"
     },
     {
-      "meta_code": "BFD",
       "meta_type": "dlco:OrganizationObject",
+      "meta_code": "BFD",
       "name": "Building Facilities Department, National Gallery"
     }
   ],
@@ -93,30 +95,36 @@
   ],
   "relation": [
     {
-      "meta_code": "h2020_871034",
       "meta_type": "dlco:GrantObject",
-      "identifier": "871034",
+      "meta_code": "h2020_871034",
+      "identifier": {
+        "https://cordis.europa.eu/project/id/871034": {
+          "meta_id": "https://cordis.europa.eu/project/id/871034",
+          "notation": "871034",
+          "schema_agency": "European Commission"
+        }
+      },
+      "name": "Integrating Platforms for the European Research Infrastructure ON Heritage Science",
       "sponsor": {
         "name": "H2020 Excellent Science"
       },
-      "name": "Integrating Platforms for the European Research Infrastructure ON Heritage Science",
       "cites_as_authority": "https://cordis.europa.eu/project/id/871034"
     },
     {
-      "meta_code": "padfield_zenodo",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "padfield_zenodo",
       "citation": "\"Padfield, J. (2008, September 14). Web based presentation tools for environmental data used in The National Gallery. The 18th Annual International Association of Museum Facility Administrators (IAMFA), London. Zenodo. https://doi.org/10.5281/zenodo.7629200\"",
       "doi": "https://doi.org/10.5281/zenodo.7629200"
     },
     {
-      "meta_code": "padfield_vandyke_carr",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "padfield_vandyke_carr",
       "citation": "\"J. Padfield, S. Vandyke and D. Carr, 'Improving our Environment', published March 2013. http://www.nationalgallery.org.uk/paintings/research/improving-our-environment.\"",
       "url": "http://www.nationalgallery.org.uk/paintings/research/improving-our-environment"
     },
     {
-      "meta_code": "harrison_etal",
       "meta_type": "dlco:PublicationObject",
+      "meta_code": "harrison_etal",
       "citation": "\"Lynne Harrison, Catherine Higgitt & Joseph Padfield (2018) Finding Common Ground: The Role of Preventive Conservation in Response to the Expectations of Contemporary Audiences at the National Gallery, London, Studies in Conservation, 63:sup1, 101-107, DOI: 10.1080/00393630.2018.1504449\"",
       "doi": "https://doi.org/10.1080/00393630.2018.1504449"
     }

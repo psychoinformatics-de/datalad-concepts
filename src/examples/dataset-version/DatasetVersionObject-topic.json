@@ -1,0 +1,22 @@
+{
+  "qualified_relation": [
+    {
+      "entity": "disease_cancer",
+      "had_role": [
+        "dlco:is_about"
+      ]
+    }
+  ],
+  "relation": [
+    {
+      "meta_type": "dlco:EntityObject",
+      "meta_code": "disease_cancer",
+      "identifier": {
+        "obo:DOID_162": {
+          "meta_id": "obo:DOID_162"
+        }
+      }
+    }
+  ],
+  "@type": "DatasetVersionObject"
+}
