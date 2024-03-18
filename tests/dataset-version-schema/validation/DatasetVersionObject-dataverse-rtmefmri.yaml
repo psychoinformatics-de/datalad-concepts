@@ -15,10 +15,12 @@ keyword:
   - Engineering
   - Medicine, Health and Life Sciences
   - Physics
-identifier: https://doi.org/10.34894/R1TNL8
+identifier: 
+  https://doi.org/10.34894/R1TNL8:
 custom_licenses:
   customlicenses:humanhealthdata:
-    identifier: "https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8"
+    identifier:
+      https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8:
     license_text: "<h2>Data user agreement for accessing limited human health data</h2>\n
       <br>\n<i><b>By clicking \"Accept\", I agree to the terms presented below.</b></i>\n
       <br><br>\n<p>I request access to the <i><b>rt-me-fMRI</b></i> dataset collected

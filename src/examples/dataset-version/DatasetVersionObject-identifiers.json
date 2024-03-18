@@ -13,6 +13,9 @@
       "meta_type": "dlco:AgentObject",
       "meta_code": "carberry_ex2",
       "identifier": {
+        "https://en.wikipedia.org/wiki/Josiah_S._Carberry": {
+          "meta_id": "https://en.wikipedia.org/wiki/Josiah_S._Carberry"
+        },
         "http://orcid.org/0000-0002-1825-0097": {
           "meta_id": "http://orcid.org/0000-0002-1825-0097"
         }

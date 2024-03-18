@@ -95,44 +95,58 @@ qualified_relation:
   # "name":"Homo sapiens"
   - entity: obo:NCBITaxon_9606
     # "identifierSource": "NCBI Taxonomy Database"
-    had_role: dlco:is_about
+    had_role:
+      - dlco:is_about
   # "name": "adult"
   - entity: obo:BTO_0001043
-    had_role: dlco:is_about
+    had_role:
+      - dlco:is_about
 license: licenses:CC-BY-ND-4.0
 keyword:
   - phantom
   - MRI
 properties:
   - label: Total number of sessions
-    value: 521
+    value:
+      - "521"
   - label: logo
-    value: logo.png
+    value:
+      - logo.png
   - label: CONP_status
-    value: CONP
+    value:
+      - CONP
   - label: files
-    value: 3771
+    value:
+      - "3771"
   - label: subjects
     type: obo:NCIT_C98703
-    value: 1
+    value:
+      - "1"
   - label: origin_consortium
-    value: IBIS
+    value:
+      - IBIS
   - label: origin_institution
-    value: McGill Centre for Integrative Neuroscience
+    value:
+      - McGill Centre for Integrative Neuroscience
   - label: origin_city
-    value: Montreal
+    value:
+      - Montreal
   - label: origin_province
-    value: Quebec
+    value:
+      - Quebec
   - label: origin_country
     type: obo:HSO_0000360
-    value: Canada
+    value:
+      - Canada
   - label: privacy
     comment: >-
       A qualifier to describe the data protection applied to the dataset.
       This is relevant for clinical data.
-    value: open
+    value:
+      - open
   - label: aggregation
     comment: >-
       "A qualifier indicating if the entity represents an
       'instance of dataset' or a 'collection of datasets'."
-    value: instance of dataset
+    value: 
+      - instance of dataset

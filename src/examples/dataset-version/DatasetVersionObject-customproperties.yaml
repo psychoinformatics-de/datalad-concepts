@@ -4,7 +4,8 @@ properties:
   - type: obo:NCIT_C90437
     label: Planned Number of Female Subjects
     range: xsd:nonNegativeInteger
-    value: 54
+    value: 
+      - "54"
     comment: >-
       A non-negative integer representing the number of planned female
       subjects/participants.
@@ -13,7 +14,9 @@ properties:
 relation:
   - meta_type: dlco:EntityObject
     meta_code: rmd
-    identifier: obo:OBI_0500002
+    identifier: 
+      obo:OBI_0500002:
 qualified_relation:
   - entity: rmd
-    had_role: obo:OBI_0500000
+    had_role: 
+      - obo:OBI_0500000

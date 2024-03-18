@@ -7,8 +7,8 @@ description: >-
   Station, Antarctica LTER, a member of the Long Term Ecological
   Research Network.
 landing_page: https://github.com/allisonhorst/palmerpenguins
-version: 0.1.0
-modified: 2020-07-16
+version: "0.1.0"
+modified: "2020-07-16"
 keyword:
   - penguins
   - sea ice
@@ -18,7 +18,8 @@ keyword:
   - antarctica
   - animal sexual behavior
   - isotopes
-identifier: https://doi.org/10.5281/zenodo.3960218
+identifier: 
+  https://doi.org/10.5281/zenodo.3960218:
 was_attributed_to:
   - meta_type: dlco:ResearchContributorObject
     meta_code: ahorst
@@ -75,17 +76,17 @@ relation:
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
     identifier:
       dlns:nsfaward/0217282:
-        notation: 0217282
+        notation: "0217282"
         schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs
-    cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282&HistoricalAwards=false
+    cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282
   - meta_type: dlco:GrantObject
     meta_code: nsf0823101
     name: Palmer, Antarctica Long Term Ecological Research Project
     identifier:
       dlns:nsfaward/0823101:
-        notation: 0823101
+        notation: "0823101"
         schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs
@@ -95,7 +96,7 @@ relation:
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
     identifier:
       dlns:nsfaward/0741351:
-        notation: 0741351
+        notation: "0741351"
         schema_agency: US National Science Foundation
     sponsor:
       name: NSF Office of Polar Programs

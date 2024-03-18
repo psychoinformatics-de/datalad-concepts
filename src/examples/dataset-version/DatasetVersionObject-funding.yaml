@@ -4,7 +4,8 @@ relation:
   - meta_type: dlco:GrantObject
     meta_code: sfb1451
     name: SFB1451
-    identifier: https://gepris.dfg.de/gepris/projekt/431549029
+    identifier: 
+      https://gepris.dfg.de/gepris/projekt/431549029:
     sponsor:
       name: Deutsche Forschungsgemeinschaft
 qualified_relation:
