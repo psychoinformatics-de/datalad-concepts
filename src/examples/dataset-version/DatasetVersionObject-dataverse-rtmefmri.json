@@ -2,7 +2,11 @@
   "custom_licenses": {
     "customlicenses:humanhealthdata": {
       "meta_id": "customlicenses:humanhealthdata",
-      "identifier": "https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8",
+      "identifier": {
+        "https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8": {
+          "meta_id": "https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8"
+        }
+      },
       "license_text": "<h2>Data user agreement for accessing limited human health data</h2>\n <br>\n<i><b>By clicking \"Accept\", I agree to the terms presented below.</b></i>\n <br><br>\n<p>I request access to the <i><b>rt-me-fMRI</b></i> dataset collected in the DataverseNL digital repository as deposited by researchers at\n    (1) the Electrical Engineering department, Eindhoven University of Technology, (2) Kempenhaeghe, and (3) Philips\n    Research, co-located at Eindhoven, The Netherlands, and hereinafter referred to as the \"research institution\".\n<p>\n\n<p>By accepting this agreement, I become the <a\n        href=\"https://ec.europa.eu/info/law/law-topic/data-protection/reform/rules-business-and-organisations/obligations/controller-processor/what-data-controller-or-data-processor_en\">data\n        controller</a> (as defined under the European General Data Protection Regulation, i.e. the GDPR) of the data\n    that I process for my own purposes and means, and am responsible that I process these data under the following\n    terms:</p>\n<ol>\n    <li>I will comply with all relevant rules and regulations imposed by my institution and my government. This\n        agreement never has prevalence over existing general data protection regulations that are applicable in my\n        country.</li>\n    <li>I will not attempt to establish or retrieve the identity of the study participants. I will not link these data\n        to any other database in a way that could provide identifying information. I shall not request the\n        pseudonymisation key that would link these data to an individual's personal information, nor will I accept any\n        additional information about individual participants under this Data Use Agreement.</li>\n    <li>I will not redistribute these data or share access to these data with others, unless they have independently\n        applied and been granted access to these data, i.e., signed this Data Use Agreement. This includes individuals\n        in my institution.</li>\n    <li>I will reference the specific source of the accessed data when publicly presenting any results or algorithms\n        that benefited from their use:\n        <ul>\n            <li>Papers, book chapters, books, posters, oral presentations, and all other presentations of results\n                derived from the data should acknowledge the origin of the data as follows: \"Data were provided (in\n                part) by the Electrical Engineering Department, Eindhoven University of Technology, The Netherlands and\n                Kempenhaeghe Epilepsy Center, Heeze, The Netherlands”.</li>\n            <li>Authors of publications or presentations using the data should cite relevant publications describing the\n                methods developed and used by the research institution to acquire and process the data. The specific\n                publications that are appropriate to cite in any given study will depend on what the data were used and\n                for what purposes. When applicable, a list of publications will be included in the collection.</li>\n            <li>Neither the entities that constitute the research institution, nor the researchers that provide this\n                data will be liable for any results and/or derived data. They shall not be included as an author of\n                publications or presentations without consent.</li>\n        </ul>\n    </li>\n    <li>Failure to comply with this agreement will result in, but not limited to, termination of my privileges to access\n        these data.</li>\n    <li>This agreement is governed by Dutch law.</li>\n</ol>"
     }
   },
@@ -21787,9 +21791,11 @@
       }
     ]
   },
-  "identifier": [
-    "https://doi.org/10.34894/R1TNL8"
-  ],
+  "identifier": {
+    "https://doi.org/10.34894/R1TNL8": {
+      "meta_id": "https://doi.org/10.34894/R1TNL8"
+    }
+  },
   "license": "customlicenses:humanhealthdata",
   "was_attributed_to": [
     {

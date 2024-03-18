@@ -22,7 +22,11 @@
     {
       "meta_type": "dlco:EntityObject",
       "meta_code": "rmd",
-      "identifier": "obo:OBI_0500002"
+      "identifier": {
+        "obo:OBI_0500002": {
+          "meta_id": "obo:OBI_0500002"
+        }
+      }
     }
   ],
   "name": "growing-dataset",

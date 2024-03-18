@@ -22,9 +22,11 @@
       }
     ]
   },
-  "identifier": [
-    "https://doi.org/10.82433/9184-dy35"
-  ],
+  "identifier": {
+    "https://doi.org/10.82433/9184-dy35": {
+      "meta_id": "https://doi.org/10.82433/9184-dy35"
+    }
+  },
   "was_attributed_to": [
     {
       "meta_type": "dlco:OrganizationObject",
@@ -95,7 +97,13 @@
     {
       "meta_type": "dlco:GrantObject",
       "meta_code": "h2020_871034",
-      "identifier": "871034",
+      "identifier": {
+        "https://cordis.europa.eu/project/id/871034": {
+          "meta_id": "https://cordis.europa.eu/project/id/871034",
+          "notation": "871034",
+          "schema_agency": "European Commission"
+        }
+      },
       "name": "Integrating Platforms for the European Research Infrastructure ON Heritage Science",
       "sponsor": {
         "name": "H2020 Excellent Science"

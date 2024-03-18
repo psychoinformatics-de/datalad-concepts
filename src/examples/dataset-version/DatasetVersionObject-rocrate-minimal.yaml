@@ -6,8 +6,7 @@ title: >-
   "Data files associated with the manuscript:Effects of facilitated family case conferencing for ..."
 description: >-
   Palliative care planning for nursing home residents with advanced dementia ...
-identifier:
-  - https://doi.org/10.4225/59/59672c09f4a4b
+identifier: https://doi.org/10.4225/59/59672c09f4a4b
 #  "datePublished": "2017",
 distribution:
   meta_type: dlco:FileContainerObject

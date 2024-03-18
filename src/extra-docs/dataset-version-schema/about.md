@@ -121,10 +121,35 @@ qualified_attribution:
 
 ### Design concerns
 
+#### Why do `identifier` values have to have a `meta_id`?
+
+The schema does not require the use of globally unique identifiers to reference
+metadata objects (see document on `meta_code` above). However, when an
+identifier is given, this is required, because global (not document-local),
+actionable identification is the key use case that `identifier` provides over
+`meta_code`.
+
+When given identifier is not in an immediately HTTP accessible form, many identifier
+schemes can be encoded as dereferenceable HTTP IRIs (example: ORCID 0000-0002-1825-0097
+can be expressed as http://orcid.org/0000-0002-1825-0097).
+
+When this is not possible, the schema provides a custom `dlns` namespace prefix
+to be used for ad-hoc URI construction, and a dedicated `IdentifierObject`
+
+```yaml
+identifier:
+  dlns:people/carberry:
+    notation: carberry_js
+    schema_agency: Society of ambiguous names
+```
+
+See https://www.w3.org/TR/vocab-dcat-3/#dereferenceable-identifiers for more general
+information.
+
 #### Why does `dlco:Property` not support a value IRI specification?
 
 If a custom property aims to establish a particular relationship to another
-concept, as it would be identified by a an IRI (URI or CURIE), this should be
+concept, as it would be identified by an IRI (URI or CURIE), this should be
 documented with the common qualified-relation pattern.
 
 For example, indicating that a dataset linked to a repeated measures study

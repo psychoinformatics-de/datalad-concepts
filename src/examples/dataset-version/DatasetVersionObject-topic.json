@@ -11,7 +11,11 @@
     {
       "meta_type": "dlco:EntityObject",
       "meta_code": "disease_cancer",
-      "identifier": "obo:DOID_162"
+      "identifier": {
+        "obo:DOID_162": {
+          "meta_id": "obo:DOID_162"
+        }
+      }
     }
   ],
   "@type": "DatasetVersionObject"

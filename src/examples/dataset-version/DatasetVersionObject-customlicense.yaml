@@ -11,7 +11,6 @@ license: customlicenses:not-a-good-idea
 # cannot simply be referenced by (C)URI(E)
 custom_licenses: 
   customlicenses:not-a-good-idea:
-    identifier: Important, obey to avoid criminal charges
     license_text: >-
       All rights reserved!
       Permission is granted to issue a reasonable request to be given permission.

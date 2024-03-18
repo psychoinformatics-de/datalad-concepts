@@ -39,8 +39,7 @@ keyword:
   - illuminance
   - moisture content
   - Environmental monitoring
-identifier:
-  - https://doi.org/10.82433/9184-dy35
+identifier: https://doi.org/10.82433/9184-dy35
 was_attributed_to:
   - meta_type: dlco:OrganizationObject
     meta_code: NG
@@ -68,7 +67,10 @@ relation:
   - meta_type: dlco:GrantObject
     meta_code: h2020_871034
     name: "Integrating Platforms for the European Research Infrastructure ON Heritage Science"
-    identifier: '871034'
+    identifier:
+      https://cordis.europa.eu/project/id/871034:
+        notation: 871034
+        schema_agency: European Commission
     sponsor:
       name: H2020 Excellent Science
     cites_as_authority: https://cordis.europa.eu/project/id/871034

@@ -60,9 +60,11 @@
       }
     ]
   },
-  "identifier": [
-    "https://doi.org/10.5281/zenodo.3960218"
-  ],
+  "identifier": {
+    "https://doi.org/10.5281/zenodo.3960218": {
+      "meta_id": "https://doi.org/10.5281/zenodo.3960218"
+    }
+  },
   "was_attributed_to": [
     {
       "meta_type": "dlco:ResearchContributorObject",
@@ -175,7 +177,13 @@
     {
       "meta_type": "dlco:GrantObject",
       "meta_code": "nsf0217282",
-      "identifier": "0217282",
+      "identifier": {
+        "dlns:nsfaward/0217282": {
+          "meta_id": "dlns:nsfaward/0217282",
+          "notation": "0217282",
+          "schema_agency": "US National Science Foundation"
+        }
+      },
       "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
       "sponsor": {
         "name": "NSF Office of Polar Programs"
@@ -185,7 +193,13 @@
     {
       "meta_type": "dlco:GrantObject",
       "meta_code": "nsf0823101",
-      "identifier": "0823101",
+      "identifier": {
+        "dlns:nsfaward/0823101": {
+          "meta_id": "dlns:nsfaward/0823101",
+          "notation": "0823101",
+          "schema_agency": "US National Science Foundation"
+        }
+      },
       "name": "Palmer, Antarctica Long Term Ecological Research Project",
       "sponsor": {
         "name": "NSF Office of Polar Programs"
@@ -195,7 +209,13 @@
     {
       "meta_type": "dlco:GrantObject",
       "meta_code": "nsf0741351",
-      "identifier": "0741351",
+      "identifier": {
+        "dlns:nsfaward/0741351": {
+          "meta_id": "dlns:nsfaward/0741351",
+          "notation": "246505",
+          "schema_agency": "US National Science Foundation"
+        }
+      },
       "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
       "sponsor": {
         "name": "NSF Office of Polar Programs"

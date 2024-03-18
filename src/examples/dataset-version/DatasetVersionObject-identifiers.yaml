@@ -1,0 +1,29 @@
+#
+# Four ways to declare identifiers
+#
+was_attributed_to:
+  # by URI for a single identifier
+  - meta_type: dlco:AgentObject
+    meta_code: carberry_ex1
+    identifier: https://en.wikipedia.org/wiki/Josiah_S._Carberry
+  # by URI-as-a-key for any number of identifiers
+  - meta_type: dlco:AgentObject
+    meta_code: carberry_ex2
+    identifier:
+      http://orcid.org/0000-0002-1825-0097:
+  # by inline-declaration with a URI key
+  - meta_type: dlco:AgentObject
+    meta_code: carberry_ex3
+    identifier:
+      https://en.wikipedia.org/wiki/Josiah_S._Carberry:
+        notation: Josiah_S._Carberry
+        schema_agency: Wikipedia
+      http://orcid.org/0000-0002-1825-0097:
+        notation: 0000-0002-1825-0097
+        schema_agency: ORCID
+  # by inline-declaration of a schema-provide, generic namespace prefix
+  - meta_type: dlco:AgentObject
+    meta_code: carberry_ex4
+    identifier:
+      dlns:people/carberry:
+        notation: carberry_js

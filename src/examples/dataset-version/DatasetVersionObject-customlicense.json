@@ -2,7 +2,6 @@
   "custom_licenses": {
     "customlicenses:not-a-good-idea": {
       "meta_id": "customlicenses:not-a-good-idea",
-      "identifier": "Important, obey to avoid criminal charges",
       "license_text": "All rights reserved! Permission is granted to issue a reasonable request to be given permission. License form content must be a minimum of 170 chars, so I keep going..."
     }
   },
