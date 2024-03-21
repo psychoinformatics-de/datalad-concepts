@@ -168,7 +168,7 @@ classes:
         range: GitShaIDedObject
       is_version_of:
         inlined: false
-        range: DataladDatasetObject
+        #range: DataladDatasetObject
       qualified_part:
         inlined: true
         inlined_as_list: true

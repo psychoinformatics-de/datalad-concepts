@@ -1,0 +1,19 @@
+# A basic record. No linkage, just elementary properties.
+#
+# The identifier duplicated the file name in a dataset-version
+# specific namespace. However, it is nevertheless arbitrary and
+# could also be something else entirely, e.g., a Git blob SHA
+# or another checksum (with an appropriate namespace prefix).
+id: thisdsver:./some/name.ext
+byte_size: 123456789
+license: licenses:CC0-1.0
+modified: "2024-03-21"
+name: name.ext
+#
+# Checksum information is inlined, because additional linkage
+# to a unique content checksum value is an unlikely use case
+checksum:
+  - algorithm: spdx:checksumAlgorithm_md5
+    digest: 32a617360d10e3dcbfdd0885e8d64ab8
+  - algorithm: spdx:checksumAlgorithm_sha1
+    digest: c7dbac946b9860cf05a7d696b9e9591c60083859

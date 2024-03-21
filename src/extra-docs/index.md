@@ -1,6 +1,7 @@
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [DataLad concepts ontology](ontology/)
+- [Data distribution schema](schemas/data-distribution/)
 - [Dataset version schema](schemas/dataset-version/)
 - [DataLad dataset components schema](schemas/datalad-dataset-components/)
 

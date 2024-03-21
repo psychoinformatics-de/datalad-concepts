@@ -1,0 +1,574 @@
+id: https://concepts.datalad.org/schemas/data-distribution
+name: data-distribution
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for a generic data distribution record
+description: |
+  This schema is centered on the description of concrete data distributions
+  using a single root class that uniformly applies to different kinds of
+  distributions, like an individual file, an archive of files, or a directory
+  of files.
+
+  There is [dedicated documentation](about) with general information on the
+  purpose and basic principles of this schema.
+
+  Key goal is the use of global identifiers for most entities.
+
+  A standard record should mostly be a simple key value mapping, where the value
+  part is a URI or CURIE.
+
+  Few slots (provenance related) allow for the inline declaration of (typed)
+  objects, declaring an identifier that can be used to link to such an object
+  in other metadata records.
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
+  DCAT: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/ontology/
+  dlns: https://concepts.datalad.org/ns/
+  dpv: https://w3id.org/dpv#
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  prov: http://www.w3.org/ns/prov#
+  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  spdx: http://spdx.org/rdf/terms#
+  licenses: http://spdx.org/licenses/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  # convenience namespace that makes it possible to not think about
+  # a dedicated distribution/dataset/dataset-version-unqiue namespace.
+  # The prefix can be materialized ala
+  # linkml-convert -s ... -t rdf -P thisds=http://example.com/ --infer ...
+  #
+  # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
+  # to keep vocabulary and entities local to this scope
+  thisns: https://example.com/custom-namespace/
+  # a custom namespace that is unique to a particular dataset, but common
+  # across all versions of it. It could be nested inside the `thisns` namespace
+  thisds: https://example.com/custom-namespace/dataset/
+  # a custom namespace that is unique to a particular version of a single
+  # dataset. It could be nested inside the `thisds` namespace
+  thisdsver: https://example.com/custom-namespace/datasetversion/
+
+default_prefix: dlco
+
+emit_prefixes:
+  - CiTO
+  - DCAT
+  - dlco
+  - licenses
+  - marcrel
+  - obo
+  - prov
+
+imports:
+  - ../ontology/types
+
+
+slots:
+  algorithm:
+    description: >-
+      The algorithm or rules to follow to compute a score, an effective method
+      expressed as a finite list of well-defined instructions for calculating
+      a function.
+    range: uriorcurie
+    exact_mappings:
+      - schema:algorithm
+      - obo:IAO_0000064
+
+  byte_size:
+    slot_uri: dlco:byte_size
+    description: >-
+      The size of a distribution in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - DCAT:byteSize
+
+  checksum:
+    slot_uri: dlco:checksum
+    description: >-
+      The checksum property provides a mechanism that can be used to verify
+      that the contents of a file or package have not changed.
+    range: Checksum
+    exact_mappings:
+      - spdx:checksum
+
+  cites_as_authority:
+    slot_uri: dlco:cites_as_authority
+    description: >-
+      Entity that provides an authoritative description or definition of the subject.
+    range: uri
+    exact_mappings:
+      - CiTO:citesAsAuthority
+
+  description:
+    slot_uri: dlco:description
+    description: A free-text account of the resource.
+    exact_mappings:
+      - dcterms:description
+    range: string
+
+  digest:
+    slot_uri: dlco:digest
+    description: >-
+      Lower case hexadecimal encoded checksum digest value produced using a
+      specific algorithm.
+    range: HexBinary
+    exact_mappings:
+      - spdx:checksumValue
+
+  distribution:
+    slot_uri: dlco:distribution
+    description: >-
+      An available distribution of a resource.
+    range: Distribution
+    close_mappings:
+      - DCAT:distribution
+    comments:
+      - Unlike `DCAT:distribution`, this property does not restrict its domain to
+        a dataset.
+
+  entity:
+    slot_uri: dlco:entity
+    description: >-
+      References an entity which influenced an entity.
+    range: Entity
+    #domain: EntityInfluence
+    exact_mappings:
+      - prov:entity
+    broad_mappings:
+      - prov:influencer
+
+  had_role:
+    slot_uri: dlco:had_role
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    range: Role
+    exact_mappings:
+      - prov:hadRole
+      - DCAT:had_role
+    comments:
+      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
+      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
+
+  has_part:
+    slot_uri: dlco:has_part
+    description: >-
+      A related resource that is included either physically
+      or logically in the described resource.
+    exact_mappings:
+      - dcterms:hasPart
+
+  id:
+    slot_uri: dlco:id
+    identifier: true
+    description: >-
+      Globally unique identifier of a metadata object.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+
+  influencer:
+    slot_uri: dlco:influencer
+    description: >-
+      Reference the resource (Entity, Agent, or Activity) whose influence is
+      being qualified in a qualified influence pattern.
+    any_of:
+      - range: Activity
+      - range: Agent
+      - range: Entity
+    exact_mappings:
+      - prov:influencer
+    broad_mappings:
+      - dcterms:relation
+
+  is_distribution_of:
+    slot_uri: dlco:is_distribution_of
+    description: >-
+      Inverse property of `DCAT:distribution`.
+    domain: Distribution
+    range: Resource
+    inverse: distribution
+
+  is_part_of:
+    slot_uri: dlco:is_part_of
+    description: >-
+      A related resource that is included either physically
+      or logically in the described resource.
+    exact_mappings:
+      - dcterms:isPartOf
+
+  is_version_of:
+    slot_uri: dlco:is_version_of
+    description: >-
+      A related resource of which the described resource is a version.
+    range: uriorcurie
+    exact_mappings:
+      - DCAT:isVersionOf
+
+  license:
+    slot_uri: dlco:license
+    description: A legal document under which the resource is made available.
+    range: LicenseDocument
+    exact_mappings:
+      - dcterms:license
+      - DCAT:license
+
+  license_text:
+    slot_uri: dlco:license_text
+    description: >-
+      A copy of the actual text of a license reference, file or snippet that is
+      associated with a License Identifier to aid in future analysis.
+    range: string
+    exact_mappings:
+      - spdx:extractedText
+
+  modified:
+    slot_uri: dlco:modified
+    description: >-
+      Date on which the resource was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
+  name:
+    slot_uri: dlco:name
+    description: Name of an item or entity.
+    exact_mappings:
+      - RDFS:label
+      - schema:name
+      - foaf:name
+    range: string
+
+  relation:
+    slot_uri: dlco:relation
+    description: >-
+      The resource related to the source resource.
+    relational_role: OBJECT
+    exact_mappings:
+      - dcterms:relation
+
+  sponsor:
+    slot_uri: dlco:sponsor
+    description: >-
+      A person or organization that supports a thing through a pledge,
+      promise, or financial contribution
+    range: Agent
+    exact_mappings:
+      - schema:sponsor
+
+  type:
+    #slot_uri: dlco:type
+    #slot_uri: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+    slot_uri: RDF:type
+    designates_type: true
+    description: >-
+      Type designator of a metadata object.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:type
+
+  qualified_part:
+    slot_uri: dlco:qualified_part
+    description: >-
+      Qualified a `hasPart` relationship with another entity.
+    broad_mappings:
+      - DCAT:qualifiedRelation
+
+  qualified_relation:
+    slot_uri: dlco:qualified_relation
+    description: >-
+      TODO
+    exact_mappings:
+      - DCAT:qualifiedRelation
+    range: EntityInfluence
+    multivalued: true
+
+  was_attributed_to:
+    slot_uri: dlco:was_attributed_to
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    domain: Entity
+    range: Agent
+    exact_mappings:
+      - prov:wasAttributedTo
+
+
+classes:
+  ProvConcept:
+    class_uri: dlco:ProvConcept
+    description: >-
+      Technical foundation of the PROV concept classes
+      `Activity`, `Agent`, `Entity`.
+    slots:
+      - id
+      - description
+      #- identifier
+      #- is_about
+      - name
+      #- title
+      - type
+    narrow_mappings:
+      - prov:Activity
+      - prov:Agent
+      - prov:Entity
+
+  #
+  # activities
+  #
+  Activity:
+    class_uri: dlco:Activity
+    is_a: ProvConcept
+    description: >-
+      An activity is something that occurs over a period of time and acts
+      upon or with entities; it may include consuming, processing,
+      transforming, modifying, relocating, using, or generating entities.
+      #slots:
+      #  - at_location
+      #  - started_at
+      #  - ended_at
+    exact_mappings:
+      - prov:Activity
+
+
+  #
+  # entities
+  #
+  Entity:
+    class_uri: dlco:Entity
+    is_a: ProvConcept
+    description: >-
+      A physical, digital, conceptual, or other kind of thing with some
+      fixed aspects; entities may be real or imaginary.
+    exact_mappings:
+      - prov:Entity
+
+  #
+  # agents
+  #
+  Agent:
+    class_uri: dlco:Agent
+    is_a: ProvConcept
+    description: >-
+      Something that bears some form of responsibility for an activity
+      taking place, for the existence of an entity, or for another
+      agent's activity.
+    exact_mappings:
+      - foaf:Agent
+      - prov:Agent
+
+  Organization:
+    class_uri: dlco:Organization
+    is_a: Agent
+    description: >-
+      A social or legal instititution such as a company, a society,
+      or a university.
+    exact_mappings:
+      - foaf:Organization
+      - prov:Organization
+
+  Distribution:
+    class_uri: dlco:Distribution
+    tree_root: true
+    is_a: Entity
+    description: >-
+      A specific representation of data, which may come in the form of
+      a single file, or an archive or directory of many files, may be
+      standalone or part of a dataset.
+    slots:
+      - byte_size
+      - checksum
+      - has_part
+      - is_distribution_of
+      - license
+      - modified
+      - relation
+      - qualified_part
+    slot_usage:
+      checksum:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      has_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Distribution
+      relation:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Entity
+      qualified_part:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: QualifiedPart
+    exact_mappings:
+      - DCAT:Distribution
+
+  Resource:
+    class_uri: dlco:Resource
+    is_a: Entity
+    description: >-
+      Resource published or curated by a single agent.
+    notes:
+      - Try to make having specific subtypes of this class unnecessary
+    slots:
+      - is_part_of
+      - is_version_of
+      #- landing_page
+      #- modified
+      #- name
+      #- qualified_attribution
+      - qualified_relation
+      #- qualified_part
+      - relation
+      #- title
+      - was_attributed_to
+      #- was_generated_by
+    slot_usage:
+      is_part_of:
+        range: Resource
+      is_version_of:
+        range: Resource
+      relation:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Entity
+      qualified_relation:
+        range: EntityInfluence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      was_attributed_to:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Agent
+    exact_mappings:
+      - DCAT:Resource
+
+  #
+  # basic relations
+  #
+  Influence:
+    class_uri: dlco:Influence
+    description: >-
+      Capacity of an entity, activity, or agent to have an effect on the
+      character, development, or behavior of another.
+    slots:
+      - influencer
+      - had_role
+    slot_usage:
+      had_role:
+        multivalued: true
+    exact_mappings:
+      - prov:Influence
+
+  EntityInfluence:
+    class_uri: dlco:EntityInfluence
+    is_a: Influence
+    description: >-
+      Capacity of an entity to have an effect on the character, development,
+      or behavior of another.
+    slots:
+      - entity
+    slot_usage:
+      entity:
+        equals_expression: "{influencer}"
+        todos:
+          - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
+    exact_mappings:
+      - prov:EntityInfluence
+    broad_mappings:
+      - prov:Influence
+
+  Role:
+    class_uri: dlco:Role
+    description: >-
+      A role is the function of a resource or agent with respect to
+      another resource, in the context of resource attribution or
+      resource relationships.
+    slots:
+      - id
+    exact_mappings:
+      - prov:Role
+      - DCAT:Role
+
+  LicenseDocument:
+    class_uri: dlco:LicenseDocument
+    is_a: Entity
+    description: >-
+      A legal document giving official permission to do something with a resource.
+    slots:
+      - license_text
+    exact_mappings:
+      - dcterms:LicenseDocument
+      - spdx:License
+    todos:
+      - spdx vocab has a needed pieces to express a any custom license
+
+  Checksum:
+    class_uri: dlco:Checksum
+    description: >-
+      A Checksum is a value that allows to check the integrity of the contents
+      of a file. Even small changes to the content of the file will change its
+      checksum. This class allows the results of a variety of checksum and
+      cryptographic message digest algorithms to be represented.
+    slots:
+      - algorithm
+      - digest
+    slot_usage:
+      algorithm:
+        slot_uri: spdx:algorithm
+        description: >-
+          Identifies the algorithm used to produce the subject `Checksum`.
+    exact_mappings:
+      - spdx:Checksum
+
+  QualifiedPart:
+    class_uri: dlco:QualifiedPart
+    description: >-
+      An association class for attaching additional information to a
+      hasPart relationship.
+    broad_mappings:
+      - DCAT:Relationship
+    slots:
+      - name
+      - entity
+    slot_usage:
+      name:
+        description: >-
+          The name of the part within the containing entity.
+    comments:
+      - This class is a key element of the data model. It enables referencing
+        a particular resource (e.g., a file's content, or versioned directory
+        tree in multiple contexts, such as different versions of a dataset).
+
+  Grant:
+    class_uri: dlco:Grant
+    is_a: Entity
+    description: >-
+      A grant, typically financial or otherwise quantifiable, of resources.
+    slots:
+      - sponsor
+      - cites_as_authority
+    exact_mappings:
+      - schema:Grant
+    todos:
+      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.

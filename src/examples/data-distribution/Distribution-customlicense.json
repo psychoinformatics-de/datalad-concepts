@@ -1,0 +1,13 @@
+{
+  "id": "thisdsver:./some/path.ext",
+  "type": "dlco:Distribution",
+  "license": "thisds:#customlicense",
+  "relation": [
+    {
+      "id": "thisds:#customlicense",
+      "type": "dlco:LicenseDocument",
+      "license_text": "Highly custom terms, never seen before."
+    }
+  ],
+  "@type": "Distribution"
+}

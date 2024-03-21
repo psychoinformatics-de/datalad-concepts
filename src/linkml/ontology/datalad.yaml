@@ -30,8 +30,6 @@ classes:
       distribution:
         range: FileContainer
         equals_expression: "{tree}"
-      is_version_of:
-        range: DataladDataset
     todos:
       - This class has the `has_annex_remote` slot primarily for historical
         reasons. It makes sense to have it, but it is a conceptual conflict.
