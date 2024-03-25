@@ -7,7 +7,7 @@
 id: thisdsver:./some/name.ext
 byte_size: 123456789
 license: licenses:CC0-1.0
-modified: "2024-03-21"
+date_modified: "2024-03-21"
 name: name.ext
 #
 # Checksum information is inlined, because additional linkage

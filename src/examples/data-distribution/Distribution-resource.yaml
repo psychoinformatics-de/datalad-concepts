@@ -8,16 +8,16 @@
 # of the same resource exist. The resource object only has to be
 # defined once in a `relation` property
 id: thisdsver:./some/path.ext
-is_distribution_of: thisdsver:./some/path
+is_distribution_of: thisdsver:#some/path
 relation:
-  - id: thisdsver:./some/path
+  - id: thisdsver:#some/path
     type: dlco:Resource
     description: Some tabular data
-    is_part_of: thisdsver:.
-  - id: thisdsver:.
+    is_part_of: thisdsver:#
+  - id: thisdsver:#
     type: dlco:Resource
     description: A version of a collection of some data
-    is_version_of: thisds:.
-  - id: thisds:.
+    is_version_of: thisds:#
+  - id: thisds:#
     type: dlco:Resource
     description: A collection of some data
