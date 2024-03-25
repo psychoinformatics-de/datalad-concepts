@@ -1,0 +1,21 @@
+# Describe parts of a distribution
+# The identifiers are arbitrary, but symbolize the nesting
+# of a distribution in another.
+# Alternatively, content-based identifiers can be used. They
+# Enable lean documents, because parts can be referenced
+# across different locations and versions after a single
+# inline definition.
+id: thisdsver:./archive.zip
+has_part:
+  # a part of a Distribution is also a Distribution
+  - id: thisdsver:./archive.zip/subdir
+    description: A subdirectory
+    has_part:
+      - id: thisdsver:./archive.zip/subdir/file.txt
+        description: A file
+    qualified_part:
+      - name: file.txt
+        entity: thisdsver:./archive.zip/subdir/file.txt
+qualified_part:
+  - name: subdir
+    entity: thisdsver:./archive.zip/subdir

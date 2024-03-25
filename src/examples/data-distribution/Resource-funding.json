@@ -1,0 +1,28 @@
+{
+  "id": "thisdsver:#",
+  "type": "dlco:Resource",
+  "qualified_relation": [
+    {
+      "had_role": [
+        "schema:funding"
+      ],
+      "entity": "https://gepris.dfg.de/gepris/projekt/431549029"
+    }
+  ],
+  "relation": [
+    {
+      "id": "https://gepris.dfg.de/gepris/projekt/431549029",
+      "name": "SFB1451",
+      "type": "dlco:Grant",
+      "sponsor": "https://ror.org/018mejw64"
+    }
+  ],
+  "was_attributed_to": [
+    {
+      "id": "https://ror.org/018mejw64",
+      "name": "Deutsche Forschungsgemeinschaft",
+      "type": "dlco:Organization"
+    }
+  ],
+  "@type": "Resource"
+}

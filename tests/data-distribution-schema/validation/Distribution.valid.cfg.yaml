@@ -1,0 +1,12 @@
+schema: src/linkml/schemas/data-distribution.yaml
+target_class: Distribution
+data_sources:
+  - src/examples/data-distribution/Distribution-basic.yaml
+  - src/examples/data-distribution/Distribution-customlicense.yaml
+  - src/examples/data-distribution/Distribution-resource.yaml
+  - src/examples/data-distribution/Distribution-parts.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

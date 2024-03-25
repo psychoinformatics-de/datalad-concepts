@@ -104,6 +104,7 @@ slots:
     slot_uri: dlco:is_version_of
     description: >-
       A related resource of which the described resource is a version.
+    range: uriorcurie
     exact_mappings:
       - DCAT:isVersionOf
 

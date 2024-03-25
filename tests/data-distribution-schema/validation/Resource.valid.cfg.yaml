@@ -1,0 +1,9 @@
+schema: src/linkml/schemas/data-distribution.yaml
+target_class: Resource
+data_sources:
+  - src/examples/data-distribution/Resource-funding.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

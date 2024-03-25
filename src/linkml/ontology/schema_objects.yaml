@@ -148,8 +148,8 @@ classes:
       has_part:
         multivalued: true
         range: GitShaIDedObject
-      is_version_of:
-        range: DataladDatasetObject
+      #is_version_of:
+      #  range: DataladDatasetObject
       qualified_part:
         multivalued: true
         range: GitShaIDedPartObject

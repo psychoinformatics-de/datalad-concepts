@@ -1,0 +1,31 @@
+{
+  "id": "thisdsver:./archive.zip",
+  "type": "dlco:Distribution",
+  "has_part": [
+    {
+      "id": "thisdsver:./archive.zip/subdir",
+      "description": "A subdirectory",
+      "type": "dlco:Distribution",
+      "has_part": [
+        {
+          "id": "thisdsver:./archive.zip/subdir/file.txt",
+          "description": "A file",
+          "type": "dlco:Distribution"
+        }
+      ],
+      "qualified_part": [
+        {
+          "name": "file.txt",
+          "entity": "thisdsver:./archive.zip/subdir/file.txt"
+        }
+      ]
+    }
+  ],
+  "qualified_part": [
+    {
+      "name": "subdir",
+      "entity": "thisdsver:./archive.zip/subdir"
+    }
+  ],
+  "@type": "Distribution"
+}
