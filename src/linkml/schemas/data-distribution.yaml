@@ -141,6 +141,38 @@ slots:
     exact_mappings:
       - CiTO:citesAsAuthority
 
+  conforms_to:
+    slot_uri: dlco:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+    exact_mappings:
+      - dcterms:conformsTo
+
+  date_modified:
+    slot_uri: dlco:date_modified
+    description: >-
+      Date on which the resource was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
+  date_published:
+    slot_uri: dlco:date_published
+    description: >-
+      Date on which the resource was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - schema:datePublished
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
   description:
     slot_uri: dlco:description
     description: A free-text account of the resource.
@@ -194,6 +226,17 @@ slots:
       - prov:entity
     broad_mappings:
       - prov:influencer
+
+  format:
+    slot_uri: dlco:format
+    description: >-
+      The file format of a distribution.
+    domain: Distribution
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
 
   had_role:
     slot_uri: dlco:had_role
@@ -315,27 +358,19 @@ slots:
     exact_mappings:
       - spdx:extractedText
 
-  date_modified:
-    slot_uri: dlco:date_modified
+  media_type:
+    slot_uri: dlco:media_type
+    is_a: format
     description: >-
-      Date on which the resource was (last) changed, updated or modified.
-    range: W3CISO8601
+      The media type of a distribution as defined by IANA
+    domain: Distribution
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
     exact_mappings:
-      - dcterms:modified
-    notes:
-      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
-      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
-
-  date_published:
-    slot_uri: dlco:date_published
-    description: >-
-      Date on which the resource was (last) changed, updated or modified.
-    range: W3CISO8601
-    exact_mappings:
-      - schema:datePublished
-    notes:
-      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
-      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+      - DCAT:mediaType
 
   name:
     slot_uri: dlco:name
@@ -557,6 +592,7 @@ classes:
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
     slots:
+      - conforms_to
       - qualified_attribution
       - was_attributed_to
     slot_usage:
@@ -584,13 +620,15 @@ classes:
     slots:
       - byte_size
       - checksum
+      - date_modified
+      - date_published
       # TODO multivalued?
       - download_url
+      - format
       - has_part
       - is_distribution_of
       - license
-      - date_modified
-      - date_published
+      - media_type
       - relation
       - qualified_part
     slot_usage:
