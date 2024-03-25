@@ -26,6 +26,7 @@ comments:
 license: MIT
 
 prefixes:
+  ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
   DCAT: http://www.w3.org/ns/dcat#
@@ -36,10 +37,14 @@ prefixes:
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
   prov: http://www.w3.org/ns/prov#
   RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   RDFS: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
   spdx: http://spdx.org/rdf/terms#
   licenses: http://spdx.org/licenses/
   marcrel: http://id.loc.gov/vocabulary/relators/
@@ -74,6 +79,25 @@ imports:
 
 
 slots:
+  affiliation:
+    slot_uri: dlco:affiliation
+    description: >-
+      An organization that an agent is affiliated with.
+    range: Organization
+    exact_mappings:
+      - schema:affiliation
+
+  agent:
+    slot_uri: dlco:agent
+    description: >-
+      References an agent which influenced an entity.
+    range: Agent
+    domain: AgentInfluence
+    exact_mappings:
+      - prov:agent
+    broad_mappings:
+      - prov:influencer
+
   algorithm:
     description: >-
       The algorithm or rules to follow to compute a score, an effective method
@@ -100,6 +124,14 @@ slots:
     range: Checksum
     exact_mappings:
       - spdx:checksum
+
+  citation:
+    slot_uri: dlco:citation
+    description: >-
+      TODO
+    range: string
+    exact_mappings:
+      - schema:citation
 
   cites_as_authority:
     slot_uri: dlco:cites_as_authority
@@ -135,6 +167,22 @@ slots:
     comments:
       - Unlike `DCAT:distribution`, this property does not restrict its domain to
         a dataset.
+
+  download_url:
+    slot_uri: dlco:download_url
+    description: >-
+      URL of downloadable resourcefile in a given format.
+    range: uri
+    exact_mappings:
+      - DCAT:downloadURL
+
+  email:
+    slot_uri: dlco:email
+    description: Email address associated with an entity.
+    exact_mappings:
+      - schema:email
+      - obo:IAO_0000429
+    range: EmailAddress
 
   entity:
     slot_uri: dlco:entity
@@ -178,6 +226,16 @@ slots:
       - dcterms:identifier
       - schema:identifier
 
+  identifier:
+    slot_uri: dlco:identifier
+    description: An unambiguous reference to the subject within a given context.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+      - ADMS:identifier
+    range: Identifier
+    multivalued: true
+
   influencer:
     slot_uri: dlco:influencer
     description: >-
@@ -216,6 +274,30 @@ slots:
     exact_mappings:
       - DCAT:isVersionOf
 
+  keyword:
+    slot_uri: dlco:keyword
+    description: >-
+      One or more keywords or tags describing the resource.
+    range: string
+    multivalued: true
+    exact_mappings:
+      - dcat:keyword
+      - schema:keywords
+
+  landing_page:
+    slot_uri: dlco:landing_page
+    description: >-
+      A Web page that can be navigated to in a Web browser to gain access
+      to a resource, its distributions and/or additional information.
+    range: uri
+    exact_mappings:
+      - DCAT:landingPage
+      - foaf:page
+    comments:
+      - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dlco:access_url` on a distribution.
+    see_also:
+      - https://www.w3.org/TR/vocab-dcat-3/#example-landing-page
+
   license:
     slot_uri: dlco:license
     description: A legal document under which the resource is made available.
@@ -233,13 +315,24 @@ slots:
     exact_mappings:
       - spdx:extractedText
 
-  modified:
-    slot_uri: dlco:modified
+  date_modified:
+    slot_uri: dlco:date_modified
     description: >-
       Date on which the resource was (last) changed, updated or modified.
     range: W3CISO8601
     exact_mappings:
       - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
+  date_published:
+    slot_uri: dlco:date_published
+    description: >-
+      Date on which the resource was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - schema:datePublished
     notes:
       - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
       - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
@@ -253,6 +346,15 @@ slots:
       - foaf:name
     range: string
 
+  notation:
+    slot_uri: dlco:notation
+    description: >-
+      String of characters such as "T58.5" or "303.4833" used to uniquely
+      identify a concept within the scope of a given concept scheme.
+    range: string
+    exact_mappings:
+      - skos:notation
+
   relation:
     slot_uri: dlco:relation
     description: >-
@@ -260,6 +362,26 @@ slots:
     relational_role: OBJECT
     exact_mappings:
       - dcterms:relation
+
+  same_as:
+    slot_uri: dlco:same_as
+    description: >-
+      Property that determines that subject and object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subjects's identity. For example, the URL of the subjects's
+      Wikipedia page, Wikidata entry, or official website.
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs
+
+  schema_agency:
+    slot_uri: dlco:schema_agency
+    description: >-
+      Name of the agency that issued an identifier.
+    range: Agent
+    exact_mappings:
+      - ADMS:schemaAgency
 
   sponsor:
     slot_uri: dlco:sponsor
@@ -269,6 +391,19 @@ slots:
     range: Agent
     exact_mappings:
       - schema:sponsor
+
+  title:
+    slot_uri: dlco:title
+    description: >-
+      A summarily description of a item or entity. It is closely related to
+      a name, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+      - sio:SIO_000185
+    related_mappings:
+      - schema:name
+    range: string
 
   type:
     #slot_uri: dlco:type
@@ -280,6 +415,14 @@ slots:
     range: uriorcurie
     exact_mappings:
       - dcterms:type
+
+  qualified_attribution:
+    slot_uri: dlco:qualified_attribution
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    exact_mappings:
+      - prov:qualifiedAttribution
+    range: Attribution
 
   qualified_part:
     slot_uri: dlco:qualified_part
@@ -296,6 +439,15 @@ slots:
       - DCAT:qualifiedRelation
     range: EntityInfluence
     multivalued: true
+
+  version:
+    slot_uri: dlco:version
+    description: >-
+      Version indicator (name or identifier) of a resource.
+    range: string
+    exact_mappings:
+      - DCAT:version
+      - pav:version
 
   was_attributed_to:
     slot_uri: dlco:was_attributed_to
@@ -316,11 +468,19 @@ classes:
     slots:
       - id
       - description
-      #- identifier
+      - identifier
       #- is_about
       - name
-      #- title
+      - same_as
+      - title
       - type
+    slot_usage:
+      identifier:
+        inlined: true
+        inlined_as_list: true
+      same_as:
+        multivalued: true
+        range: uriorcurie
     narrow_mappings:
       - prov:Activity
       - prov:Agent
@@ -345,18 +505,6 @@ classes:
 
 
   #
-  # entities
-  #
-  Entity:
-    class_uri: dlco:Entity
-    is_a: ProvConcept
-    description: >-
-      A physical, digital, conceptual, or other kind of thing with some
-      fixed aspects; entities may be real or imaginary.
-    exact_mappings:
-      - prov:Entity
-
-  #
   # agents
   #
   Agent:
@@ -370,6 +518,17 @@ classes:
       - foaf:Agent
       - prov:Agent
 
+  Person:
+    class_uri: dlco:Person
+    is_a: Agent
+    description: >-
+      Person agents are people.
+    slots:
+      - email
+    exact_mappings:
+      - foaf:Person
+      - prov:Person
+
   Organization:
     class_uri: dlco:Organization
     is_a: Agent
@@ -379,6 +538,40 @@ classes:
     exact_mappings:
       - foaf:Organization
       - prov:Organization
+
+  ResearchContributor:
+    class_uri: dlco:ResearchContributor
+    is_a: Person
+    description: >-
+      A person that has or could contribute to some research in any capacity.
+    slots:
+      - affiliation
+
+  #
+  # entities
+  #
+  Entity:
+    class_uri: dlco:Entity
+    is_a: ProvConcept
+    description: >-
+      A physical, digital, conceptual, or other kind of thing with some
+      fixed aspects; entities may be real or imaginary.
+    slots:
+      - qualified_attribution
+      - was_attributed_to
+    slot_usage:
+      qualified_attribution:
+        range: Attribution
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      was_attributed_to:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Agent
+    exact_mappings:
+      - prov:Entity
 
   Distribution:
     class_uri: dlco:Distribution
@@ -391,10 +584,13 @@ classes:
     slots:
       - byte_size
       - checksum
+      # TODO multivalued?
+      - download_url
       - has_part
       - is_distribution_of
       - license
-      - modified
+      - date_modified
+      - date_published
       - relation
       - qualified_part
     slot_usage:
@@ -416,7 +612,7 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-        range: QualifiedPart
+        range: DistributionPart
     exact_mappings:
       - DCAT:Distribution
 
@@ -428,17 +624,15 @@ classes:
     notes:
       - Try to make having specific subtypes of this class unnecessary
     slots:
+      - date_modified
+      - date_published
       - is_part_of
       - is_version_of
-      #- landing_page
-      #- modified
-      #- name
-      #- qualified_attribution
+      - keyword
+      - landing_page
       - qualified_relation
-      #- qualified_part
       - relation
-      #- title
-      - was_attributed_to
+      - version
       #- was_generated_by
     slot_usage:
       is_part_of:
@@ -455,13 +649,44 @@ classes:
         multivalued: true
         inlined: true
         inlined_as_list: true
-      was_attributed_to:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Agent
     exact_mappings:
       - DCAT:Resource
+
+  Publication:
+    class_uri: dlco:Publication
+    is_a: Entity
+    description: >-
+      TODO
+    slots:
+      - citation
+      - date_published
+      #- url
+
+  LicenseDocument:
+    class_uri: dlco:LicenseDocument
+    is_a: Entity
+    description: >-
+      A legal document giving official permission to do something with a resource.
+    slots:
+      - license_text
+    exact_mappings:
+      - dcterms:LicenseDocument
+      - spdx:License
+    todos:
+      - spdx vocab has a needed pieces to express a any custom license
+
+  Grant:
+    class_uri: dlco:Grant
+    is_a: Entity
+    description: >-
+      A grant, typically financial or otherwise quantifiable, of resources.
+    slots:
+      - sponsor
+      - cites_as_authority
+    exact_mappings:
+      - schema:Grant
+    todos:
+      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
 
   #
   # basic relations
@@ -478,6 +703,33 @@ classes:
       had_role:
         multivalued: true
     exact_mappings:
+      - prov:Influence
+
+  AgentInfluence:
+    class_uri: dlco:AgentInfluence
+    is_a: Influence
+    description: >-
+      Capacity of an agent to have an effect on the character, development,
+      or behavior of another Entity, Agent, or Activity
+    slots:
+      - agent
+    slot_usage:
+      agent:
+        equals_expression: "{influencer}"
+        todos:
+          - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
+    exact_mappings:
+      - prov:AgentInfluence
+
+  Attribution:
+    class_uri: dlco:Attribution
+    is_a: AgentInfluence
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    exact_mappings:
+      - prov:Attribution
+    broad_mappings:
+      - prov:AgentInfluence
       - prov:Influence
 
   EntityInfluence:
@@ -498,6 +750,25 @@ classes:
     broad_mappings:
       - prov:Influence
 
+  DistributionPart:
+    class_uri: dlco:DistributionPart
+    description: >-
+      An association class for attaching additional information to a
+      hasPart relationship.
+    broad_mappings:
+      - DCAT:Relationship
+    slots:
+      - name
+      - entity
+    slot_usage:
+      name:
+        description: >-
+          The name of the part within the containing entity.
+    comments:
+      - This class is a key element of the data model. It enables referencing
+        a particular resource (e.g., a file's content, or versioned directory
+        tree in multiple contexts, such as different versions of a dataset).
+
   Role:
     class_uri: dlco:Role
     description: >-
@@ -510,19 +781,9 @@ classes:
       - prov:Role
       - DCAT:Role
 
-  LicenseDocument:
-    class_uri: dlco:LicenseDocument
-    is_a: Entity
-    description: >-
-      A legal document giving official permission to do something with a resource.
-    slots:
-      - license_text
-    exact_mappings:
-      - dcterms:LicenseDocument
-      - spdx:License
-    todos:
-      - spdx vocab has a needed pieces to express a any custom license
-
+  #
+  # utilities
+  #
   Checksum:
     class_uri: dlco:Checksum
     description: >-
@@ -541,34 +802,14 @@ classes:
     exact_mappings:
       - spdx:Checksum
 
-  QualifiedPart:
-    class_uri: dlco:QualifiedPart
+  Identifier:
+    class_uri: dlco:Identifier
     description: >-
-      An association class for attaching additional information to a
-      hasPart relationship.
-    broad_mappings:
-      - DCAT:Relationship
+       Identifier.
     slots:
-      - name
-      - entity
-    slot_usage:
-      name:
-        description: >-
-          The name of the part within the containing entity.
-    comments:
-      - This class is a key element of the data model. It enables referencing
-        a particular resource (e.g., a file's content, or versioned directory
-        tree in multiple contexts, such as different versions of a dataset).
-
-  Grant:
-    class_uri: dlco:Grant
-    is_a: Entity
-    description: >-
-      A grant, typically financial or otherwise quantifiable, of resources.
-    slots:
-      - sponsor
-      - cites_as_authority
+      - notation
+      - schema_agency
     exact_mappings:
-      - schema:Grant
-    todos:
-      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
+      - ADMS:Identifier
+    see_also:
+      - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
