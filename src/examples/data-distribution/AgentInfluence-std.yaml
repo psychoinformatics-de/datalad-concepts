@@ -1,0 +1,4 @@
+# Declare a person identified by an ORCID to have had the role of an author
+agent: https://orcid.org/0000-0001-6398-6370
+had_role:
+  - marcrel:aut

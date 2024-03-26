@@ -89,6 +89,7 @@ slots:
 
   agent:
     slot_uri: dlco:agent
+    is_a: influencer
     description: >-
       References an agent which influenced an entity.
     range: Agent
@@ -218,6 +219,7 @@ slots:
 
   entity:
     slot_uri: dlco:entity
+    is_a: influencer
     description: >-
       References an entity which influenced an entity.
     range: Entity
@@ -441,8 +443,6 @@ slots:
     range: string
 
   type:
-    #slot_uri: dlco:type
-    #slot_uri: http://www.w3.org/1999/02/22-rdf-syntax-ns#type
     slot_uri: RDF:type
     designates_type: true
     description: >-
@@ -740,6 +740,12 @@ classes:
     slot_usage:
       had_role:
         multivalued: true
+        required: true
+      influencer:
+        # we cannot make it required. The equals_expression of,
+        # e.g. `AgentInfluence` does not kick in for value inference
+        # before validation errors out
+        #required: true
     exact_mappings:
       - prov:Influence
 
@@ -753,6 +759,7 @@ classes:
       - agent
     slot_usage:
       agent:
+        required: true
         equals_expression: "{influencer}"
         todos:
           - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
@@ -780,6 +787,7 @@ classes:
       - entity
     slot_usage:
       entity:
+        required: true
         equals_expression: "{influencer}"
         todos:
           - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.

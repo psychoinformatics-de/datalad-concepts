@@ -1,0 +1,9 @@
+schema: src/linkml/schemas/data-distribution.yaml
+target_class: AgentInfluence
+data_sources:
+  - src/examples/data-distribution/AgentInfluence-std.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
