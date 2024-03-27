@@ -19,20 +19,20 @@ same_as:
   - https://www.nature.com/articles/s41597-022-01163-2
 # custom properties can be used to arbitrarily (and possibly redundantly)
 # detail the publication record for better fit with specialized consumers
-property:
-  - type: bibo:doi
+has_property:
+  - is_about: bibo:doi
     name: DOI
     value: https://doi.org/10.1038/s41597-022-01163-2
-  - type: bibo:volume
+  - is_about: bibo:volume
     name: Volume
-    value: 9
-  - type: bibo:number
+    value: "9"
+  - is_about: bibo:number
     name: Document number
-    value: 80
-  - type: bibo:numPages
+    value: "80"
+  - is_about: bibo:numPages
     name: Number of pages
-    value: 17
-    range: xsd:nonNegativeInteger
+    value: "17"
+    type: xsd:nonNegativeInteger
 
 # related entities
 relation:
