@@ -6,6 +6,63 @@ Rather than modeling a `Distribution` as a property of a [Dataset](https://www.w
 
 This choice of directionality makes this schema particularly suitable for systems with metadata capabilities that are limited to or focused on annotation of concrete files in a storage system.
 
+## "Open world" attitude
+
+### Relationships
+
+The schema is built on three foundational classes (taken from PROV-O):
+
+- `Agent`
+- `Activity`
+- `Entity`
+
+Linking concrete instances of these classes via qualified relationships is the key pattern promoted by this schema.
+For example, describing the relationship of a `Distribution` (entity) the `Resource` (entity) it is a distribution of is done by defining the `Resource` instance within the `relation` property declaration of the `Distribution`.
+The relationship is then qualified by referencing the `Resource` instance (by its identifier) via the `Distribution`'s `is_distribution_of` property.
+
+When there is no suitable, dedicated property available to characterize a relationship, the `qualified_relation` property can be used.
+Here, the object (entity) is related to the subject (entity) via a declaration of the kind of influence the object had on the subject by means of particular roles.
+Roles can be any kind of (external) identifier, thereby enabling arbitrary precision and fit to specialized use cases, without a need to inflate the number of properties in the schema.
+
+Relationships between other combinations of the three foundational classes can also be specified.
+For example influences of agents on an entity via `was_attributed_to` and `qualified_attribution`, using the same pattern.
+
+TODO: how to declare relationships when no dedicated support for a particular type combination exists.
+
+### Types
+
+Properties that are used as containers to define related objects support the declaration of specific subtypes of the respective range-defining class.
+For example, `was_attributed_to` accepts any `Agent`, but in a scientific context the specialized `ResearchContributor` class may be a more suitable type.
+Such a derived class can be indicated via the `meta_type` property.
+If declared, it is then used for data structure definition and validation for this particular record.
+
+Independent of this structure-focused type declaration, the `type` property can be used to detail the semantics of an object.
+For example, a scientific journal can be sufficiently described using the basic `Entity` schema class, but 
+it is still useful to declare its `type` to be, for example, `obo:NCIT_C93226` (peer-reviewed scientific journal).
+
+### Custom properties
+
+The schema provides a limited set of classes and properties that aim to capture a wide range of use cases in a generic fashion that balances schema complexity and applicability to particular scenarios.
+
+Whenever more specialized properties are required and desired for detailing an `Agent`, `Activity`, or `Entity` the `property` property and the associated `Property` class can be used.
+For example, the `Publication` schema class does not offer detailed bibliographic properties focused on scientific journal publications, because it aims to capture any kind of publication equally well.
+
+Arbitrary custom properties can be defined by declaring property `type`, associated `value`, and `range` (type of the value).
+Here is an example that declare the number of pages (of a journal article):
+
+```
+property:
+  - type: bibo:numPages
+    name: Number of pages
+    value: 17
+    range: xsd:nonNegativeInteger
+```
+
+The associated `Property` class is permissive.
+Properties can be declared without any type definitions (and just a `name` or `description` instead).
+
+This approach works best for property values with simple data types.
+However, `value` can also be `xsd:anyURI` to reference arbitrary (externally defined) concepts.
 
 ## Identifiers
 
