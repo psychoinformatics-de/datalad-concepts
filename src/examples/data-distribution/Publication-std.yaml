@@ -32,6 +32,7 @@ property:
   - type: bibo:numPages
     name: Number of pages
     value: 17
+    range: xsd:nonNegativeInteger
 
 # related entities
 relation:

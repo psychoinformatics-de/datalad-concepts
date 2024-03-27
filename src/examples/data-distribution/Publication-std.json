@@ -37,6 +37,7 @@
     },
     {
       "name": "Number of pages",
+      "range": "xsd:nonNegativeInteger",
       "type": "bibo:numPages",
       "value": [
         "17"
