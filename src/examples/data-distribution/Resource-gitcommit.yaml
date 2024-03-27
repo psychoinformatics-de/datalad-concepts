@@ -1,0 +1,58 @@
+id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
+# link to datalad dataset
+is_version_of: datalad-ds:cec1da92-0dbd-4df3-8602-7c72b2d12854
+identifier:
+  # two git-tags associated with the commit
+  # they must be unique across all commits in the repo, hence we
+  # use the context entity for the version-less dataset as the
+  # agency/scope
+  - notation: final2
+    schema_agency: thisds:#
+  - notation: latest
+    schema_agency: thisds:#
+# this only *single* version label we can have without making additional
+# assumptions is the commit gitsha
+version: 8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
+# commit message
+description: >
+  This message describes the changes done for this particular
+  Dataset version.
+qualified_derivation:
+  # parent commit(s)
+  - entity:
+      # in a derivation any number of entities can play a role
+      - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
+    # "change", ie. unknown what was done
+    # there are plenty of terms to drill down on the nature
+    # of the derivation
+    # - obo:NCIT_C64266: merge
+    # - obo:NCIT_C64911: add
+    had_activity: obo:NCIT_C25446
+    had_role:
+      - owl:priorVersion
+# commit activity
+was_generated_by:
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+    # go for activity type: "release", but could also be
+    # "label as such" (obo:NCIT_C64662)
+    type: obo:NCIT_C42882
+    ended_at: "2002-05-30T09:30:10+06:00"
+    qualified_association:
+      # creator of the commit
+      - agent: thisds:#gituser_doe@example.com
+        had_role:
+          - marcrel:cre
+    # author activity
+    # this is modeled as a dedicated action so that the
+    # author time can be captured as an independent property.
+    # otherwise the author role could be added above
+    was_informed_by:
+      - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+        # "preparation"
+        type: obo:NCIT_C25625
+        ended_at: "2001-02-28T18:27:04+02:00"
+        qualified_association:
+          # author of the commit
+          - agent: thisds:#gituser_doe@example.com
+            had_role:
+              - marcrel:aut

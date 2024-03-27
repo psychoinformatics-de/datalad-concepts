@@ -88,17 +88,15 @@ relation:
     qualified_relation:
       - had_role:
           - schema:funding
-        entity: thisds:#nsf0217282
-      - had_role:
-          - schema:funding
-        entity: thisds:#nsf0823101
-      - had_role:
-          - schema:funding
-        entity: thisds:#nsf0741351
+        entity:
+          - thisds:#nsf0217282
+          - thisds:#nsf0823101
+          - thisds:#nsf0741351
       - had_role:
           - CiTO:citesAsAuthority
           - CiTO:isCitedAsDataSourceBy
-        entity: thisds:#gormanetal
+        entity: 
+          - thisds:#gormanetal
     same_as:
       - https://doi.org/10.5281/zenodo.3960218
     title: Palmer Penguins

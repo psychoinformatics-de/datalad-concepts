@@ -5,7 +5,8 @@ relation:
     name: SFB1451
     sponsor: https://ror.org/018mejw64
 qualified_relation:
-  - entity: https://gepris.dfg.de/gepris/projekt/431549029
+  - entity:
+      - https://gepris.dfg.de/gepris/projekt/431549029
     had_role:
       - schema:funding
 was_attributed_to:

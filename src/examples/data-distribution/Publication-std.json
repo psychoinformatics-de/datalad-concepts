@@ -165,49 +165,23 @@
       "had_role": [
         "http://id.loc.gov/vocabulary/relators/prp"
       ],
-      "entity": "https://portal.issn.org/resource/issn/2052-4463"
+      "entity": [
+        "https://portal.issn.org/resource/issn/2052-4463"
+      ]
     },
     {
       "had_role": [
         "schema:funding"
       ],
-      "entity": "thisds:#grant_bmbf01GQ1905"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "thisds:#grant_bmbf01GQ1411"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "thisds:#grant_nsc"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "thisds:#grant_nsf1429999"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "thisds:#grant_nsf1912266"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "https://cordis.europa.eu/project/id/826421"
-    },
-    {
-      "had_role": [
-        "schema:funding"
-      ],
-      "entity": "https://cordis.europa.eu/project/id/945539"
+      "entity": [
+        "thisds:#grant_bmbf01GQ1905",
+        "thisds:#grant_bmbf01GQ1411",
+        "thisds:#grant_nsc",
+        "thisds:#grant_nsf1429999",
+        "thisds:#grant_nsf1912266",
+        "https://cordis.europa.eu/project/id/826421",
+        "https://cordis.europa.eu/project/id/945539"
+      ]
     }
   ],
   "relation": [
