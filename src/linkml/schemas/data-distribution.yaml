@@ -263,6 +263,15 @@ slots:
     exact_mappings:
       - dcterms:hasPart
 
+  has_property:
+    slot_uri: dlco:has_property
+    description: >-
+      Relation between a subject and a quality, capability or role that it bears.
+    range: Property
+    relational_role: PREDICATE
+    exact_mappings:
+      - sio:SIO_000233
+
   id:
     slot_uri: dlco:id
     identifier: true
@@ -306,6 +315,14 @@ slots:
     exact_mappings:
       - schema:about
       - obo:IAO_0000136
+
+  is_defined_by:
+    slot_uri: dlco:is_defined_by
+    description: >-
+      The definition of the subject resource.
+    range: uriorcurie
+    exact_mappings:
+      - RDFS:isDefinedBy
 
   is_distribution_of:
     slot_uri: dlco:is_distribution_of
@@ -404,14 +421,6 @@ slots:
     exact_mappings:
       - skos:notation
 
-  property:
-    slot_uri: dlco:property
-    description: >-
-      An arbitrary (extra) property that is not covered by
-      other dedicated properties.
-    range: Property
-    relational_role: PREDICATE
-
   range:
     slot_uri: RDFS:range
     description: >-
@@ -487,6 +496,15 @@ slots:
     exact_mappings:
       - dcterms:type
 
+  qualified_association:
+    slot_uri: dlco:qualified_association
+    description: >-
+      Assignment of responsibility to an agent for an activity, indicating
+      that the agent had a role in the activity.
+    exact_mappings:
+      - prov:qualifiedAssociation
+    range: AgentInfluence
+
   qualified_attribution:
     slot_uri: dlco:qualified_attribution
     description: >-
@@ -511,12 +529,19 @@ slots:
     range: EntityInfluence
     multivalued: true
 
+  unit:
+    slot_uri: dlco:unit
+    description: >-
+      A unit of measurement is a standardized quantity of a physical quality.
+    range: uriorcurie
+    exact_mappings:
+      - obo:UO_0000000
+
   value:
     slot_uri: RDFS:value
     description: >-
       Value of a resource.
     range: string
-    multivalued: true
     relational_role: OBJECT
 
   version:
@@ -528,12 +553,48 @@ slots:
       - DCAT:version
       - pav:version
 
+  was_influenced_by:
+    slot_uri: dlco:was_influenced_by
+    description: >-
+      Capacity of an entity, activity, or agent to have an effect on the
+      character, development, or behavior of another.
+    domain: ProvConcept
+    range: ProvConcept
+    exact_mappings:
+      - prov:wasInfluencedBy
+
+  was_associated_with:
+    slot_uri: dlco:was_associated_with
+    is_a: was_influenced_by
+    description: >-
+      An activity association is an assignment of responsibility to an agent
+      for an activity, indicating that the agent had a role in the activity.
+      It further allows for a plan to be specified, which is the plan intended
+      by the agent to achieve some goals in the context of this activity.
+    domain: Activity
+    range: Agent
+    exact_mappings:
+      - prov:wasAssociatedWith
+
   was_attributed_to:
     slot_uri: dlco:was_attributed_to
+    is_a: was_influenced_by
     description: >-
       Attribution is the ascribing of an entity to an agent.
     domain: Entity
     range: Agent
+    exact_mappings:
+      - prov:wasAttributedTo
+
+  was_generated_by:
+    slot_uri: dlco:was_generated_by
+    is_a: was_influenced_by
+    description: >-
+      Generation is the completion of production of a new entity by an activity.
+      This entity did not exist before generation and becomes available for usage
+      after this generation.
+    domain: Entity
+    range: Activity
     exact_mappings:
       - prov:wasAttributedTo
 
@@ -551,7 +612,7 @@ classes:
       - is_about
       - meta_type
       - name
-      - property
+      - has_property
       - same_as
       - title
       - type
@@ -561,7 +622,7 @@ classes:
         inlined_as_list: true
       is_about:
         multivalued: true
-      property:
+      has_property:
         multivalued: true
       same_as:
         multivalued: true
@@ -581,10 +642,23 @@ classes:
       An activity is something that occurs over a period of time and acts
       upon or with entities; it may include consuming, processing,
       transforming, modifying, relocating, using, or generating entities.
-      #slots:
+    slots:
+      - qualified_association
+      - was_associated_with
       #  - at_location
       #  - started_at
       #  - ended_at
+    slot_usage:
+      was_associated_with:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Agent
+      qualified_association:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: AgentInfluence
     exact_mappings:
       - prov:Activity
 
@@ -653,6 +727,7 @@ classes:
       - qualified_relation
       - relation
       - was_attributed_to
+      - was_generated_by
     slot_usage:
       relation:
         multivalued: true
@@ -674,6 +749,11 @@ classes:
         inlined: true
         inlined_as_list: true
         range: Agent
+      was_generated_by:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Activity
     exact_mappings:
       - prov:Entity
 
@@ -915,24 +995,32 @@ classes:
   Property:
     class_uri: dlco:Property
     description: >-
-      RDFS inspired class to describe arbitrary properties.
-      The class captures the predicate and object aspects
-      of a relationship with the subject. `description`,
-      `name`, and `type` describe and define the nature of
-      the predicate, while `value` represents the object,
-      and `range` declares the type of the object.
+      An inherent quality, function, disposition or process characteristic
+      that is being observed or measured.
     slots:
       - description
+      - is_about
+      - is_defined_by
+      - meta_type
       - name
-      - range
+      - title
       - type
       - value
     slot_usage:
-      description:
-        aliases:
-          - comment
-      name:
-        aliases:
-          - label
+      is_defined_by:
+        description:
+          The property value is defined by this term.
+    exact_mappings:
+      - sio:SIO_000614
+
+  QuantitativeProperty:
+    class_uri: dlco:QuantitativeProperty
+    is_a: Property
+    description: >-
+      An inherent quantitative property that is being observed or measured.
+    slots:
+      - unit
+      #- scale
+      #- distribution
     close_mappings:
-      - RDFS:Property
+      - obo:NCIT_C70766

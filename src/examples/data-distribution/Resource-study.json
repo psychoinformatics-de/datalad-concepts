@@ -1,0 +1,69 @@
+{
+  "id": "thisdsver:#",
+  "meta_type": "dlco:Resource",
+  "was_generated_by": [
+    {
+      "id": "thisds:#study_2005-004406-93",
+      "identifier": [
+        {
+          "notation": "2005-004406-93",
+          "schema_agency": "https://eudract.ema.europa.eu"
+        }
+      ],
+      "meta_type": "dlco:Activity",
+      "title": "Study about the effectiveness of a disease treatment",
+      "type": "obo:NCIT_C71104",
+      "qualified_association": [
+        {
+          "had_role": [
+            "obo:NCIT_C142710",
+            "obo:NCIT_C94342"
+          ],
+          "agent": "thisds:#s001"
+        },
+        {
+          "had_role": [
+            "obo:NCIT_C142710",
+            "obo:NCIT_C173188"
+          ],
+          "agent": "thisds:#s002"
+        }
+      ],
+      "was_associated_with": [
+        {
+          "id": "thisds:#s001",
+          "meta_type": "dlco:Agent",
+          "name": "s001",
+          "has_property": [
+            {
+              "is_about": "obo:PATO_0002201",
+              "is_defined_by": "obo:PATO_0002204",
+              "meta_type": "dlco:Property"
+            }
+          ]
+        },
+        {
+          "id": "thisds:#s002",
+          "meta_type": "dlco:Agent",
+          "name": "s002",
+          "has_property": [
+            {
+              "is_about": "obo:PATO_0000047",
+              "is_defined_by": "obo:PATO_0000384",
+              "meta_type": "dlco:Property",
+              "value": "male"
+            },
+            {
+              "is_about": "obo:NCIT_C37908",
+              "meta_type": "dlco:QuantitativeProperty",
+              "name": "age (years)",
+              "value": "36",
+              "unit": "obo:UO_0000036"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "@type": "Resource"
+}

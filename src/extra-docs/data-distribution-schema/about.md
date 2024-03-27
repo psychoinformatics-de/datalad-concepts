@@ -44,7 +44,7 @@ it is still useful to declare its `type` to be, for example, `obo:NCIT_C93226` (
 
 The schema provides a limited set of classes and properties that aim to capture a wide range of use cases in a generic fashion that balances schema complexity and applicability to particular scenarios.
 
-Whenever more specialized properties are required and desired for detailing an `Agent`, `Activity`, or `Entity` the `property` property and the associated `Property` class can be used.
+Whenever more specialized properties are required and desired for detailing an `Agent`, `Activity`, or `Entity` the `has_property` property and the associated `Property` and `QuantitativeProperty` classes can be used.
 For example, the `Publication` schema class does not offer detailed bibliographic properties focused on scientific journal publications, because it aims to capture any kind of publication equally well.
 
 Arbitrary custom properties can be defined by declaring property `type`, associated `value`, and `range` (type of the value).
@@ -52,10 +52,10 @@ Here is an example that declare the number of pages (of a journal article):
 
 ```
 property:
-  - type: bibo:numPages
+  - is_about: bibo:numPages
     name: Number of pages
-    value: 17
-    range: xsd:nonNegativeInteger
+    value: "17"
+    type: xsd:nonNegativeInteger
 ```
 
 The associated `Property` class is permissive.
