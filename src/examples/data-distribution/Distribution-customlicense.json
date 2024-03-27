@@ -1,7 +1,6 @@
 {
   "id": "thisdsver:./some/path.ext",
   "type": "dlco:Distribution",
-  "license": "thisds:#customlicense",
   "relation": [
     {
       "id": "thisds:#customlicense",
@@ -9,5 +8,6 @@
       "license_text": "Highly custom terms, never seen before."
     }
   ],
+  "license": "thisds:#customlicense",
   "@type": "Distribution"
 }

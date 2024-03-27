@@ -1,13 +1,6 @@
 {
   "id": "thisdsver:#",
   "type": "dlco:Resource",
-  "was_attributed_to": [
-    {
-      "id": "https://ror.org/018mejw64",
-      "name": "Deutsche Forschungsgemeinschaft",
-      "type": "dlco:Organization"
-    }
-  ],
   "qualified_relation": [
     {
       "had_role": [
@@ -22,6 +15,13 @@
       "name": "SFB1451",
       "type": "dlco:Grant",
       "sponsor": "https://ror.org/018mejw64"
+    }
+  ],
+  "was_attributed_to": [
+    {
+      "id": "https://ror.org/018mejw64",
+      "name": "Deutsche Forschungsgemeinschaft",
+      "type": "dlco:Organization"
     }
   ],
   "@type": "Resource"

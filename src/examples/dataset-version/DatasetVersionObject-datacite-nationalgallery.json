@@ -113,19 +113,19 @@
     {
       "meta_type": "dlco:PublicationObject",
       "meta_code": "padfield_zenodo",
-      "citation": "\"Padfield, J. (2008, September 14). Web based presentation tools for environmental data used in The National Gallery. The 18th Annual International Association of Museum Facility Administrators (IAMFA), London. Zenodo. https://doi.org/10.5281/zenodo.7629200\"",
+      "notation": "\"Padfield, J. (2008, September 14). Web based presentation tools for environmental data used in The National Gallery. The 18th Annual International Association of Museum Facility Administrators (IAMFA), London. Zenodo. https://doi.org/10.5281/zenodo.7629200\"",
       "doi": "https://doi.org/10.5281/zenodo.7629200"
     },
     {
       "meta_type": "dlco:PublicationObject",
       "meta_code": "padfield_vandyke_carr",
-      "citation": "\"J. Padfield, S. Vandyke and D. Carr, 'Improving our Environment', published March 2013. http://www.nationalgallery.org.uk/paintings/research/improving-our-environment.\"",
+      "notation": "\"J. Padfield, S. Vandyke and D. Carr, 'Improving our Environment', published March 2013. http://www.nationalgallery.org.uk/paintings/research/improving-our-environment.\"",
       "url": "http://www.nationalgallery.org.uk/paintings/research/improving-our-environment"
     },
     {
       "meta_type": "dlco:PublicationObject",
       "meta_code": "harrison_etal",
-      "citation": "\"Lynne Harrison, Catherine Higgitt & Joseph Padfield (2018) Finding Common Ground: The Role of Preventive Conservation in Response to the Expectations of Contemporary Audiences at the National Gallery, London, Studies in Conservation, 63:sup1, 101-107, DOI: 10.1080/00393630.2018.1504449\"",
+      "notation": "\"Lynne Harrison, Catherine Higgitt & Joseph Padfield (2018) Finding Common Ground: The Role of Preventive Conservation in Response to the Expectations of Contemporary Audiences at the National Gallery, London, Studies in Conservation, 63:sup1, 101-107, DOI: 10.1080/00393630.2018.1504449\"",
       "doi": "https://doi.org/10.1080/00393630.2018.1504449"
     }
   ],

@@ -79,6 +79,15 @@ imports:
 
 
 slots:
+  address:
+    slot_uri: dlco:address
+    description:
+      Physical address of the subject, such as a postal address, a bibliographic
+      locator, or a coordinate of some kind.
+    range: string
+    close_mappings:
+      - schema:address
+
   affiliation:
     slot_uri: dlco:affiliation
     description: >-
@@ -125,14 +134,6 @@ slots:
     range: Checksum
     exact_mappings:
       - spdx:checksum
-
-  citation:
-    slot_uri: dlco:citation
-    description: >-
-      TODO
-    range: string
-    exact_mappings:
-      - schema:citation
 
   cites_as_authority:
     slot_uri: dlco:cites_as_authority
@@ -294,6 +295,16 @@ slots:
       - prov:influencer
     broad_mappings:
       - dcterms:relation
+
+  is_about:
+    slot_uri: dlco:is_about
+    description: >-
+      A relation of an information artifact to an entity.
+      For example, the subject matter of the content.
+    range: uriorcurie
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
 
   is_distribution_of:
     slot_uri: dlco:is_distribution_of
@@ -504,7 +515,7 @@ classes:
       - id
       - description
       - identifier
-      #- is_about
+      - is_about
       - name
       - same_as
       - title
@@ -513,6 +524,8 @@ classes:
       identifier:
         inlined: true
         inlined_as_list: true
+      is_about:
+        multivalued: true
       same_as:
         multivalued: true
         range: uriorcurie
@@ -559,6 +572,7 @@ classes:
     description: >-
       Person agents are people.
     slots:
+      - address
       - email
     exact_mappings:
       - foaf:Person
@@ -570,6 +584,8 @@ classes:
     description: >-
       A social or legal instititution such as a company, a society,
       or a university.
+    slots:
+      - address
     exact_mappings:
       - foaf:Organization
       - prov:Organization
@@ -581,6 +597,9 @@ classes:
       A person that has or could contribute to some research in any capacity.
     slots:
       - affiliation
+    slot_usage:
+      affiliation:
+        multivalued: true
 
   #
   # entities
@@ -594,10 +613,22 @@ classes:
     slots:
       - conforms_to
       - qualified_attribution
+      - qualified_relation
+      - relation
       - was_attributed_to
     slot_usage:
+      relation:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Entity
       qualified_attribution:
         range: Attribution
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      qualified_relation:
+        range: EntityInfluence
         multivalued: true
         inlined: true
         inlined_as_list: true
@@ -629,7 +660,6 @@ classes:
       - is_distribution_of
       - license
       - media_type
-      - relation
       - qualified_part
     slot_usage:
       checksum:
@@ -641,11 +671,6 @@ classes:
         inlined: true
         inlined_as_list: true
         range: Distribution
-      relation:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Entity
       qualified_part:
         multivalued: true
         inlined: true
@@ -668,8 +693,6 @@ classes:
       - is_version_of
       - keyword
       - landing_page
-      - qualified_relation
-      - relation
       - version
       #- was_generated_by
     slot_usage:
@@ -677,16 +700,6 @@ classes:
         range: Resource
       is_version_of:
         range: Resource
-      relation:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Entity
-      qualified_relation:
-        range: EntityInfluence
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
     exact_mappings:
       - DCAT:Resource
 
@@ -696,9 +709,11 @@ classes:
     description: >-
       TODO
     slots:
-      - citation
+      - address
+      - date_modified
       - date_published
-      #- url
+      - license
+      - notation
 
   LicenseDocument:
     class_uri: dlco:LicenseDocument
@@ -724,7 +739,7 @@ classes:
     exact_mappings:
       - schema:Grant
     todos:
-      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
+      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
 
   #
   # basic relations

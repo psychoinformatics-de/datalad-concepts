@@ -1,7 +1,6 @@
 {
   "id": "thisdsver:./some/path.ext",
   "type": "dlco:Distribution",
-  "is_distribution_of": "thisdsver:#some/path",
   "relation": [
     {
       "id": "thisdsver:#some/path",
@@ -21,5 +20,6 @@
       "type": "dlco:Resource"
     }
   ],
+  "is_distribution_of": "thisdsver:#some/path",
   "@type": "Distribution"
 }

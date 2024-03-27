@@ -1,0 +1,9 @@
+schema: src/linkml/schemas/data-distribution.yaml
+target_class: Publication
+data_sources:
+  - src/examples/data-distribution/Publication-std.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

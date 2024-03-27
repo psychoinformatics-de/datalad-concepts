@@ -88,14 +88,14 @@ qualified_attribution:
 relation:
   - meta_type: dlco:PublicationObject
     meta_code: data_paper
-    citation: 'Heunis S, Breeuwer M, Caballero-Gaudes C et al. rt-me-fMRI: a task
+    notation: 'Heunis S, Breeuwer M, Caballero-Gaudes C et al. rt-me-fMRI: a task
       and resting state dataset for real-time, multi-echo fMRI methods development
       and validation [version 1; peer review: 1 approved, 1 approved with reservations].
       F1000Research 2021, 10:70 (https://doi.org/10.12688/f1000research.29988.1)'
     doi: https://doi.org/10.12688/f1000research.29988.1
   - meta_type: dlco:PublicationObject
     meta_code: methods_paper
-    citation: S. Heunis, M. Breeuwer, C. Caballero-Gaudes, L. Hellrung, W. Huijbers,
+    notation: S. Heunis, M. Breeuwer, C. Caballero-Gaudes, L. Hellrung, W. Huijbers,
       J.F. Jansen, R. Lamerichs, S. Zinger, A.P. Aldenkamp. The effects of multi-echo
       fMRI combination and rapid T*-mapping on offline and real-time BOLD sensitivity.
       NeuroImage, 238 (2021), Article 118244, 10.1016/j.neuroimage.2021.118244

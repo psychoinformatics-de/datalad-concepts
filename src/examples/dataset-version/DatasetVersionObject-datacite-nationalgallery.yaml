@@ -77,7 +77,7 @@ relation:
     cites_as_authority: https://cordis.europa.eu/project/id/871034
   - meta_type: dlco:PublicationObject
     meta_code: padfield_zenodo
-    citation: >-
+    notation: >-
       "Padfield, J. (2008, September 14). Web based presentation tools
       for environmental data used in The National Gallery. The 18th Annual
       International Association of Museum Facility Administrators (IAMFA),
@@ -85,13 +85,13 @@ relation:
     doi: https://doi.org/10.5281/zenodo.7629200
   - meta_type: dlco:PublicationObject
     meta_code: padfield_vandyke_carr
-    citation: >-
+    notation: >-
       "J. Padfield, S. Vandyke and D. Carr, 'Improving our Environment', published
       March 2013. http://www.nationalgallery.org.uk/paintings/research/improving-our-environment."
     url: http://www.nationalgallery.org.uk/paintings/research/improving-our-environment
   - meta_type: dlco:PublicationObject
     meta_code: harrison_etal
-    citation: >-
+    notation: >-
       "Lynne Harrison, Catherine Higgitt & Joseph Padfield (2018) Finding Common
       Ground: The Role of Preventive Conservation in Response to the Expectations
       of Contemporary Audiences at the National Gallery, London, Studies in
@@ -99,7 +99,7 @@ relation:
     doi: https://doi.org/10.1080/00393630.2018.1504449
   # - meta_type: dlco:PublicationObject
   #   meta_code: env
-  #   citation: >-
+  #   notation: >-
   #     """
   #   url: https://research.ng-london.org.uk/scientific/env/
 qualified_relation:
