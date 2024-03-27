@@ -28,14 +28,6 @@ slots:
     exact_mappings:
       - schema:affiliation
 
-  citation:
-    slot_uri: dlco:citation
-    description: >-
-      TODO
-    range: string
-    exact_mappings:
-      - schema:citation
-
   cites_as_authority:
     slot_uri: dlco:cites_as_authority
     description: >-
@@ -89,7 +81,7 @@ classes:
     exact_mappings:
       - schema:Grant
     todos:
-      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
+      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
 
   Publication:
     class_uri: dlco:Publication
@@ -98,7 +90,7 @@ classes:
     description: >-
       TODO
     slots:
-      - citation
+      - notation
       - doi
       - url
 

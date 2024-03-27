@@ -1,7 +1,7 @@
 id: thisdsver:./some/path.ext
 relation:
   - id: thisds:#customlicense
-    type: dlco:LicenseDocument
+    meta_type: dlco:LicenseDocument
     license_text: >-
       Highly custom terms, never seen before.
 license: thisds:#customlicense

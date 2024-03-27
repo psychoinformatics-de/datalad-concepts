@@ -1,0 +1,356 @@
+id: https://doi.org/10.1038/s41597-022-01163-2
+title: "FAIRly big: A framework for computationally reproducible processing of large-scale data"
+address: "Scientific Data 9:80"
+date_modified: "2022-02-11"
+date_published: "2022-03-11"
+notation:
+  "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
+description:
+  "Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset)."
+identifier:
+  - notation: 10.1038/s41597-022-01163-2
+    schema_agency: https://doi.org
+is_about:
+  - https://www.nature.com/subjects/data-processing
+  - https://www.nature.com/subjects/data-publication-and-archiving
+  - https://www.nature.com/subjects/software
+license: licenses:CC-BY-4.0
+same_as:
+  - https://www.nature.com/articles/s41597-022-01163-2
+# custom properties can be used to arbitrarily (and possibly redundantly)
+# detail the publication record for better fit with specialized consumers
+property:
+  - type: bibo:doi
+    name: DOI
+    value: https://doi.org/10.1038/s41597-022-01163-2
+  - type: bibo:volume
+    name: Volume
+    value: 9
+  - type: bibo:number
+    name: Document number
+    value: 80
+  - type: bibo:numPages
+    name: Number of pages
+    value: 17
+
+# related entities
+relation:
+  - id: https://cordis.europa.eu/project/id/945539
+    meta_type: dlco:Grant
+    name: HBP SGA3
+    title: Human Brain Project Specific Grant Agreement 3
+    identifier:
+      - notation: "945539"
+        schema_agency: https://cordis.europa.eu
+    cites_as_authority: https://cordis.europa.eu/project/id/945539
+  - id: https://cordis.europa.eu/project/id/826421
+    meta_type: dlco:Grant
+    name: VirtualBrainCloud
+    title: Personalized Recommendations for Neurodegenerative Disease
+    identifier:
+      - notation: "826421"
+        schema_agency: https://cordis.europa.eu
+    cites_as_authority: https://cordis.europa.eu/project/id/826421
+  - id: thisds:#grant_nsf1912266
+    meta_type: dlco:Grant
+    title: "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science"
+    identifier:
+      - notation: "1912266"
+        # NSF
+        schema_agency: https://ror.org/021nxhr62
+    cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266
+  - id: thisds:#grant_nsf1429999
+    meta_type: dlco:Grant
+    title: "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'"
+    identifier:
+      - notation: "1429999"
+        schema_agency: https://ror.org/021nxhr62
+    cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999
+  - id: thisds:#grant_nsc
+    meta_type: dlco:Grant
+    name: ETIUDA
+    identifier:
+      - notation: 2018/28/T/HS6/00507
+        schema_agency: https://www.ncn.gov.pl
+  - id: thisds:#grant_bmbf01GQ1411
+    meta_type: dlco:Grant
+    title: Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution
+    identifier:
+      - notation: 01GQ1411
+        schema_agency: https://www.bmbf.de
+  - id: thisds:#grant_bmbf01GQ1905
+    meta_type: dlco:Grant
+    name: METALAD
+    title: DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche
+    identifier:
+      - notation: 01GQ1905
+        schema_agency: https://www.bmbf.de
+  - id: https://portal.issn.org/resource/issn/2052-4463
+    meta_type: dlco:Entity
+    # peer-reviewed scientific journal
+    type: obo:NCIT_C93226
+    title: Scientific data
+    identifier:
+      - notation: 2052-4463
+        schema_agency: https://portal.issn.org
+    same_as:
+      - https://www.nature.com/sdata
+
+# entity roles
+qualified_relation:
+  # publication place: journal scientific data
+  - entity: https://portal.issn.org/resource/issn/2052-4463
+    had_role:
+      - http://id.loc.gov/vocabulary/relators/prp
+  # grants that funded the work
+  - entity: thisds:#grant_bmbf01GQ1905
+    had_role:
+      - schema:funding
+  - entity: thisds:#grant_bmbf01GQ1411
+    had_role:
+      - schema:funding
+  - entity: thisds:#grant_nsc
+    had_role:
+      - schema:funding
+  - entity: thisds:#grant_nsf1429999
+    had_role:
+      - schema:funding
+  - entity: thisds:#grant_nsf1912266
+    had_role:
+      - schema:funding
+  - entity: https://cordis.europa.eu/project/id/826421
+    had_role:
+      - schema:funding
+  - entity: https://cordis.europa.eu/project/id/945539
+    had_role:
+      - schema:funding
+
+# related agents
+was_attributed_to:
+  # authors
+  - id: http://orcid.org/0000-0003-2917-3450
+    meta_type: dlco:ResearchContributor
+    name: Adina S. Wagner
+    email: adina.wagner@t-online.de
+    identifier:
+      - notation: 0000-0003-2917-3450
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+  - id: http://orcid.org/0000-0003-2213-7465
+    meta_type: dlco:ResearchContributor
+    name: Laura K. Waite
+    identifier:
+      - notation: 0000-0003-2213-7465
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+  - id: http://orcid.org/0000-0003-0820-2662
+    meta_type: dlco:ResearchContributor
+    name: Małgorzata Wierzba
+    identifier:
+      - notation: 0000-0003-0820-2662
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/04waf7p94
+  - id: http://orcid.org/0000-0001-7163-3110
+    meta_type: dlco:ResearchContributor
+    name: Felix Hoffstaedter
+    identifier:
+      - notation: 0000-0001-7163-3110
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+  - id: http://orcid.org/0000-0002-8402-6173
+    meta_type: dlco:ResearchContributor
+    name: Alexander Q. Waite
+    identifier:
+      - notation: 0000-0002-8402-6173
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+  - id: http://orcid.org/0000-0001-7628-0801
+    meta_type: dlco:ResearchContributor
+    name: Benjamin Poldrack
+    identifier:
+      - notation: 0000-0001-7628-0801
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+  # identifier is publication scope, taken from publisher website
+  - id: https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3
+    meta_type: dlco:ResearchContributor
+    name: Simon B. Eickhoff
+    affiliation:
+      - https://ror.org/02nv7yv05
+      - https://ror.org/024z2rq82
+    same_as:
+      - https://scholar.google.com/citations?user=wjpISMAAAAAJ
+  - id: http://orcid.org/0000-0001-6398-6370
+    meta_type: dlco:ResearchContributor
+    name: Michael Hanke
+    identifier:
+      - notation: 0000-0001-6398-6370
+        schema_agency: http://orcid.org
+    affiliation:
+      - https://ror.org/02nv7yv05
+      - https://ror.org/024z2rq82
+
+  # author institutions
+  - id: https://ror.org/02nv7yv05
+    meta_type: dlco:Organization
+    name: FZJ-INM7
+    title: Institute of Neuroscience and Medicine, Brain & Behaviour (INM-7), Research Center Jülich, Jülich, Germany
+    identifier:
+      - notation: 02nv7yv05
+        schema_agency: https://ror.org
+  - id: https://ror.org/024z2rq82
+    meta_type: dlco:Organization
+    name: HHU-ISN
+    title: Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University Düsseldorf, Düsseldorf, Germany
+    identifier:
+      - notation: 024z2rq82
+        schema_agency: https://ror.org
+  - id: https://ror.org/04waf7p94
+    meta_type: dlco:Organization
+    name: Nencki
+    title: Laboratory of Brain Imaging, Nencki Institute of Experimental Biology, Polish Academy of Sciences, Warsaw, Poland
+    identifier:
+      - notation: 04waf7p94
+        schema_agency: https://ror.org
+
+  # data provider
+  - id: https://ror.org/02frzq211
+    meta_type: dlco:Organization
+    name: UK Biobank
+    identifier:
+      - notation: 02frzq211
+        schema_agency: https://ror.org
+
+  # funder
+  - id: https://ror.org/00k4n6c32
+    meta_type: dlco:Organization
+    name: European Commission
+    identifier:
+      - notation: 00k4n6c32
+        schema_agency: https://ror.org
+  - id: https://ror.org/021nxhr62
+    name: US National Science Foundation
+    identifier:
+      - notation: 021nxhr62
+        schema_agency: https://ror.org
+    same_as:
+      - https://www.nsf.org
+  - id: https://ror.org/04pz7b180
+    meta_type: dlco:Organization
+    name: Federal Ministry of Education and Research
+    address: Kapelle-Ufer 1, D-10117 Berlin, Germany
+    identifier:
+      - notation: 04pz7b180
+        schema_agency: https://ror.org
+    same_as:
+      - https://www.bmbf.de
+  - id: https://www.ncn.gov.pl
+    meta_type: dlco:Organization
+    name: National Science Center Poland
+
+  # publisher
+  - id: https://ror.org/03dsk4d59
+    meta_type: dlco:Organization
+    name: Springer Nature (United Kingdom)
+    identifier:
+      - notation: 03dsk4d59
+        schema_agency: https://ror.org
+
+# agent roles
+qualified_attribution:
+  # adina
+  - agent: http://orcid.org/0000-0003-2917-3450
+    had_role:
+      # author
+      - marcrel:aut
+      # contact person
+      - obo:NCIT_C25461
+      # first author
+      - obo:MS_1002034
+      # conceptor
+      - marcrel:ccp
+  # laura
+  - agent: http://orcid.org/0000-0003-2213-7465
+    had_role:
+      - marcrel:aut
+      - obo:MS_1002034
+      - marcrel:ccp
+  # małgorzata
+  - agent: http://orcid.org/0000-0003-0820-2662
+    had_role:
+      - marcrel:aut
+      - obo:MS_1002034
+      - marcrel:ccp
+  # felix
+  - agent: http://orcid.org/0000-0001-7163-3110
+    had_role:
+      - marcrel:aut
+      - marcrel:ccp
+  # alex
+  - agent: http://orcid.org/0000-0002-8402-6173
+    had_role:
+      - marcrel:aut
+      - marcrel:ccp
+  # benjamin
+  - agent: http://orcid.org/0000-0001-7628-0801
+    had_role:
+      - marcrel:aut
+      - marcrel:ccp
+  # simon
+  - agent: https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3
+    had_role:
+      - marcrel:aut
+  # michael
+  - agent: http://orcid.org/0000-0001-6398-6370
+    had_role:
+      - marcrel:aut
+      # conceptor
+      - marcrel:ccp
+      # senior author
+      - obo:MS_1002035
+  # fzj
+  - agent: https://ror.org/02nv7yv05
+    had_role:
+      # supporting host
+      - marcrel:sht
+  # nencki
+  - agent: https://ror.org/04waf7p94
+    had_role:
+      - marcrel:sht
+  # hhu
+  - agent: https://ror.org/024z2rq82
+    had_role:
+      - marcrel:sht
+  # ukbiobank
+  - agent: https://ror.org/02frzq211
+    had_role:
+      # data source
+      - obo:NCIT_C16493
+  # bmbf
+  - agent: https://ror.org/04pz7b180
+    had_role:
+      # funder
+      - marcrel:fnd
+  # ec
+  - agent: https://ror.org/00k4n6c32
+    had_role:
+      - marcrel:fnd
+  # nsf
+  - agent: https://ror.org/021nxhr62
+    had_role:
+      - marcrel:fnd
+  # nsc
+  - agent: https://www.ncn.gov.pl
+    had_role:
+      - marcrel:fnd
+  # springer/nature
+  - agent: https://ror.org/03dsk4d59
+    had_role:
+      # publisher
+      - marcrel:pbl

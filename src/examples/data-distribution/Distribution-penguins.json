@@ -1,139 +1,6 @@
 {
   "id": "thisdsver:.",
-  "type": "dlco:Distribution",
-  "was_attributed_to": [
-    {
-      "id": "thisds:#ahorst",
-      "identifier": [
-        {
-          "notation": "0000-0002-6047-5564",
-          "schema_agency": "https://orcid.org"
-        }
-      ],
-      "name": "Allison Horst",
-      "same_as": [
-        "https://orcid.org/0000-0002-6047-5564"
-      ],
-      "type": "dlco:ResearchContributor",
-      "email": "ahorst@example.com",
-      "affiliation": "thisds:#UCSB"
-    },
-    {
-      "id": "thisds:#ahill",
-      "identifier": [
-        {
-          "notation": "0000-0002-8082-1890",
-          "schema_agency": "https://orcid.org"
-        }
-      ],
-      "name": "Allison Hill",
-      "type": "dlco:ResearchContributor",
-      "email": "ahill@example.com",
-      "affiliation": "thisds:#Rstudio"
-    },
-    {
-      "id": "thisds:#kgorman",
-      "identifier": [
-        {
-          "notation": "0000-0002-0258-9264",
-          "schema_agency": "https://orcid.org"
-        }
-      ],
-      "name": "Kirsten Gorman",
-      "type": "dlco:ResearchContributor",
-      "email": "kgorman@example.com",
-      "affiliation": "https://ror.org/01j7nq853"
-    },
-    {
-      "id": "thisds:#UCSB",
-      "name": "UC Santa Barbara: Santa Barbara, CA, US",
-      "type": "dlco:Organization"
-    },
-    {
-      "id": "thisds:#RStudio",
-      "name": "RStudio: Boston, MA, US",
-      "type": "dlco:Organization"
-    },
-    {
-      "id": "https://ror.org/01j7nq853",
-      "identifier": [
-        {
-          "notation": "01j7nq853",
-          "schema_agency": "https://ror.org"
-        }
-      ],
-      "name": "University of Alaska Fairbanks: Fairbanks, AK, US",
-      "type": "dlco:Organization"
-    },
-    {
-      "id": "https://ror.org/05nwjp114",
-      "identifier": [
-        {
-          "notation": "05nwjp114",
-          "schema_agency": "https://ror.org"
-        }
-      ],
-      "name": "NSF Office of Polar Programs",
-      "type": "dlco:Agent"
-    },
-    {
-      "id": "https://ror.org/021nxhr62",
-      "identifier": [
-        {
-          "notation": "021nxhr62",
-          "schema_agency": "https://ror.org"
-        }
-      ],
-      "name": "US National Science Foundation",
-      "same_as": [
-        "https://www.nsf.org"
-      ],
-      "type": "dlco:Agent"
-    }
-  ],
-  "has_part": [
-    {
-      "id": "thisdsver:./adelie.csv",
-      "type": "dlco:Distribution",
-      "byte_size": 23755,
-      "checksum": [
-        {
-          "algorithm": "md5",
-          "digest": "e7e2be6b203a221949f05e02fcefd853"
-        }
-      ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff",
-      "media_type": "text/csv"
-    },
-    {
-      "id": "thisdsver:./gentoo.csv",
-      "type": "dlco:Distribution",
-      "byte_size": 11263,
-      "checksum": [
-        {
-          "algorithm": "md5",
-          "digest": "1549566fb97afa879dc9446edcf2015f"
-        }
-      ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381",
-      "media_type": "text/csv"
-    },
-    {
-      "id": "thisdsver:./chinstrap.csv",
-      "type": "dlco:Distribution",
-      "byte_size": 18872,
-      "checksum": [
-        {
-          "algorithm": "md5",
-          "digest": "e4b0710c69297031d63866ce8b888f25"
-        }
-      ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462",
-      "media_type": "text/csv"
-    }
-  ],
-  "is_distribution_of": "thisdsver:#",
-  "license": "licenses:CC0-1.0",
+  "meta_type": "dlco:Distribution",
   "relation": [
     {
       "id": "thisdsver:#",
@@ -144,12 +11,12 @@
           "schema_agency": "https://doi.org"
         }
       ],
+      "meta_type": "dlco:Resource",
       "name": "penguins",
       "same_as": [
         "https://doi.org/10.5281/zenodo.3960218"
       ],
       "title": "Palmer Penguins",
-      "type": "dlco:Resource",
       "qualified_attribution": [
         {
           "had_role": [
@@ -190,19 +57,6 @@
           "agent": "https://ror.org/01j7nq853"
         }
       ],
-      "date_modified": "2020-07-16",
-      "is_version_of": "thisds:#",
-      "keyword": [
-        "penguins",
-        "sea ice",
-        "foraging",
-        "ecological niches",
-        "islands",
-        "antarctica",
-        "animal sexual behavior",
-        "isotopes"
-      ],
-      "landing_page": "https://github.com/allisonhorst/palmerpenguins",
       "qualified_relation": [
         {
           "had_role": [
@@ -230,6 +84,19 @@
           "entity": "thisds:#gormanetal"
         }
       ],
+      "date_modified": "2020-07-16",
+      "is_version_of": "thisds:#",
+      "keyword": [
+        "penguins",
+        "sea ice",
+        "foraging",
+        "ecological niches",
+        "islands",
+        "antarctica",
+        "animal sexual behavior",
+        "isotopes"
+      ],
+      "landing_page": "https://github.com/allisonhorst/palmerpenguins",
       "version": "0.1.0"
     },
     {
@@ -240,8 +107,8 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
-      "type": "dlco:Grant",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
     },
@@ -253,8 +120,8 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "Palmer, Antarctica Long Term Ecological Research Project",
-      "type": "dlco:Grant",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
     },
@@ -266,8 +133,8 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
-      "type": "dlco:Grant",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
     },
@@ -279,7 +146,7 @@
           "schema_agency": "https://doi.org"
         }
       ],
-      "type": "dlco:Publication",
+      "meta_type": "dlco:Publication",
       "qualified_attribution": [
         {
           "had_role": [
@@ -288,10 +155,149 @@
           "agent": "thisds:#kgorman"
         }
       ],
-      "citation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'",
-      "date_published": "2014-03-05"
+      "date_published": "2014-03-05",
+      "notation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'"
     }
   ],
+  "was_attributed_to": [
+    {
+      "id": "thisds:#ahorst",
+      "identifier": [
+        {
+          "notation": "0000-0002-6047-5564",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Allison Horst",
+      "same_as": [
+        "https://orcid.org/0000-0002-6047-5564"
+      ],
+      "email": "ahorst@example.com",
+      "affiliation": [
+        "thisds:#UCSB"
+      ]
+    },
+    {
+      "id": "thisds:#ahill",
+      "identifier": [
+        {
+          "notation": "0000-0002-8082-1890",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Allison Hill",
+      "email": "ahill@example.com",
+      "affiliation": [
+        "thisds:#Rstudio"
+      ]
+    },
+    {
+      "id": "thisds:#kgorman",
+      "identifier": [
+        {
+          "notation": "0000-0002-0258-9264",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Kirsten Gorman",
+      "email": "kgorman@example.com",
+      "affiliation": [
+        "https://ror.org/01j7nq853"
+      ]
+    },
+    {
+      "id": "thisds:#UCSB",
+      "meta_type": "dlco:Organization",
+      "name": "UC Santa Barbara: Santa Barbara, CA, US"
+    },
+    {
+      "id": "thisds:#RStudio",
+      "meta_type": "dlco:Organization",
+      "name": "RStudio: Boston, MA, US"
+    },
+    {
+      "id": "https://ror.org/01j7nq853",
+      "identifier": [
+        {
+          "notation": "01j7nq853",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Organization",
+      "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
+    },
+    {
+      "id": "https://ror.org/05nwjp114",
+      "identifier": [
+        {
+          "notation": "05nwjp114",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Agent",
+      "name": "NSF Office of Polar Programs"
+    },
+    {
+      "id": "https://ror.org/021nxhr62",
+      "identifier": [
+        {
+          "notation": "021nxhr62",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Agent",
+      "name": "US National Science Foundation",
+      "same_as": [
+        "https://www.nsf.org"
+      ]
+    }
+  ],
+  "has_part": [
+    {
+      "id": "thisdsver:./adelie.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 23755,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "e7e2be6b203a221949f05e02fcefd853"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff",
+      "media_type": "text/csv"
+    },
+    {
+      "id": "thisdsver:./gentoo.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 11263,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "1549566fb97afa879dc9446edcf2015f"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381",
+      "media_type": "text/csv"
+    },
+    {
+      "id": "thisdsver:./chinstrap.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 18872,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "e4b0710c69297031d63866ce8b888f25"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462",
+      "media_type": "text/csv"
+    }
+  ],
+  "is_distribution_of": "thisdsver:#",
+  "license": "licenses:CC0-1.0",
   "qualified_part": [
     {
       "name": "adelie.csv",

@@ -103,7 +103,7 @@ relation:
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351
   - meta_type: dlco:PublicationObject
     meta_code: gormanetal
-    citation: >-
+    notation: >-
       'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
       and Environmental Variability within a Community of Antarctic Penguins (Genus
       Pygoscelis). PLoS ONE 9(3): e90081.'

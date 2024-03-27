@@ -40,7 +40,7 @@ qualified_part:
 is_distribution_of: thisdsver:#
 relation:
   - id: thisdsver:#
-    type: dlco:Resource
+    meta_type: dlco:Resource
     date_modified: "2020-07-16"
     description: >-
       The goal of palmerpenguins is to provide a great dataset for data
@@ -105,7 +105,7 @@ relation:
     version: "0.1.0"
 
   - id: thisds:#nsf0217282
-    type: dlco:Grant
+    meta_type: dlco:Grant
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
     identifier:
       - notation: "0217282"
@@ -113,7 +113,7 @@ relation:
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282
   - id: thisds:#nsf0823101
-    type: dlco:Grant
+    meta_type: dlco:Grant
     name: Palmer, Antarctica Long Term Ecological Research Project
     identifier:
       - notation: "0823101"
@@ -121,7 +121,7 @@ relation:
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
   - id: thisds:#nsf0741351
-    type: dlco:Grant
+    meta_type: dlco:Grant
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
     identifier:
       - notation: "0741351"
@@ -131,8 +131,8 @@ relation:
   # the following publication ID could also be the DOI, but having a global ID is not
   # a requirement (although almost unconditionally advantageous)
   - id: thisds:#gormanetal
-    type: dlco:Publication
-    citation: >-
+    meta_type: dlco:Publication
+    notation: >-
       'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
       and Environmental Variability within a Community of Antarctic Penguins (Genus
       Pygoscelis). PLoS ONE 9(3): e90081.'
@@ -154,41 +154,44 @@ relation:
 # namespace conflict would ever happen across dataset versions.
 was_attributed_to:
   - id: thisds:#ahorst
-    type: dlco:ResearchContributor
+    meta_type: dlco:ResearchContributor
     name: Allison Horst
     email: ahorst@example.com
     identifier:
       - notation: 0000-0002-6047-5564
         schema_agency: https://orcid.org
-    affiliation: thisds:#UCSB
+    affiliation:
+      - thisds:#UCSB
     # we can also use the ORCID as an equivalence statement, and web resource
     # to link to
     same_as:
       - https://orcid.org/0000-0002-6047-5564
   - id: thisds:#ahill
-    type: dlco:ResearchContributor
+    meta_type: dlco:ResearchContributor
     name: Allison Hill
     email: ahill@example.com
     identifier:
       - notation: 0000-0002-8082-1890
         schema_agency: https://orcid.org
-    affiliation: thisds:#Rstudio
+    affiliation:
+      - thisds:#Rstudio
   - id: thisds:#kgorman
-    type: dlco:ResearchContributor
+    meta_type: dlco:ResearchContributor
     name: Kirsten Gorman
     email: kgorman@example.com
     identifier:
       - notation: 0000-0002-0258-9264
         schema_agency: https://orcid.org
-    affiliation: https://ror.org/01j7nq853
+    affiliation:
+      - https://ror.org/01j7nq853
   - id: thisds:#UCSB
-    type: dlco:Organization
+    meta_type: dlco:Organization
     name: 'UC Santa Barbara: Santa Barbara, CA, US'
   - id: thisds:#RStudio
-    type: dlco:Organization
+    meta_type: dlco:Organization
     name: 'RStudio: Boston, MA, US'
   - id: https://ror.org/01j7nq853
-    type: dlco:Organization
+    meta_type: dlco:Organization
     name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
     identifier:
       - notation: 01j7nq853

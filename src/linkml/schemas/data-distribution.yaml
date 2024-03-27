@@ -79,6 +79,15 @@ imports:
 
 
 slots:
+  address:
+    slot_uri: dlco:address
+    description:
+      Physical address of the subject, such as a postal address, a bibliographic
+      locator, or a coordinate of some kind.
+    range: string
+    close_mappings:
+      - schema:address
+
   affiliation:
     slot_uri: dlco:affiliation
     description: >-
@@ -126,14 +135,6 @@ slots:
     exact_mappings:
       - spdx:checksum
 
-  citation:
-    slot_uri: dlco:citation
-    description: >-
-      TODO
-    range: string
-    exact_mappings:
-      - schema:citation
-
   cites_as_authority:
     slot_uri: dlco:cites_as_authority
     description: >-
@@ -179,6 +180,7 @@ slots:
     description: A free-text account of the resource.
     exact_mappings:
       - dcterms:description
+      - RDFS:comment
     range: string
 
   digest:
@@ -295,6 +297,16 @@ slots:
     broad_mappings:
       - dcterms:relation
 
+  is_about:
+    slot_uri: dlco:is_about
+    description: >-
+      A relation of an information artifact to an entity.
+      For example, the subject matter of the content.
+    range: uriorcurie
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
   is_distribution_of:
     slot_uri: dlco:is_distribution_of
     description: >-
@@ -392,6 +404,20 @@ slots:
     exact_mappings:
       - skos:notation
 
+  property:
+    slot_uri: dlco:property
+    description: >-
+      An arbitrary (extra) property that is not covered by
+      other dedicated properties.
+    range: Property
+    relational_role: PREDICATE
+
+  range:
+    slot_uri: RDFS:range
+    description: >-
+      State that the values of a property are instances a class.
+    range: uriorcurie
+
   relation:
     slot_uri: dlco:relation
     description: >-
@@ -442,11 +468,21 @@ slots:
       - schema:name
     range: string
 
-  type:
-    slot_uri: RDF:type
+  meta_type:
+    slot_uri: dlco:meta_type
     designates_type: true
     description: >-
-      Type designator of a metadata object.
+      Type designator of a metadata object for validation and schema structure
+      handling purposes. This is used to indicate specialized schema classes
+      for properties that accept a hierarchy of classes as their range.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:type
+
+  type:
+    slot_uri: RDF:type
+    description: >-
+      State that the subject is an instance of a class.
     range: uriorcurie
     exact_mappings:
       - dcterms:type
@@ -474,6 +510,14 @@ slots:
       - DCAT:qualifiedRelation
     range: EntityInfluence
     multivalued: true
+
+  value:
+    slot_uri: RDFS:value
+    description: >-
+      Value of a resource.
+    range: string
+    multivalued: true
+    relational_role: OBJECT
 
   version:
     slot_uri: dlco:version
@@ -504,8 +548,10 @@ classes:
       - id
       - description
       - identifier
-      #- is_about
+      - is_about
+      - meta_type
       - name
+      - property
       - same_as
       - title
       - type
@@ -513,6 +559,10 @@ classes:
       identifier:
         inlined: true
         inlined_as_list: true
+      is_about:
+        multivalued: true
+      property:
+        multivalued: true
       same_as:
         multivalued: true
         range: uriorcurie
@@ -559,6 +609,7 @@ classes:
     description: >-
       Person agents are people.
     slots:
+      - address
       - email
     exact_mappings:
       - foaf:Person
@@ -570,6 +621,8 @@ classes:
     description: >-
       A social or legal instititution such as a company, a society,
       or a university.
+    slots:
+      - address
     exact_mappings:
       - foaf:Organization
       - prov:Organization
@@ -581,6 +634,9 @@ classes:
       A person that has or could contribute to some research in any capacity.
     slots:
       - affiliation
+    slot_usage:
+      affiliation:
+        multivalued: true
 
   #
   # entities
@@ -594,10 +650,22 @@ classes:
     slots:
       - conforms_to
       - qualified_attribution
+      - qualified_relation
+      - relation
       - was_attributed_to
     slot_usage:
+      relation:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Entity
       qualified_attribution:
         range: Attribution
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      qualified_relation:
+        range: EntityInfluence
         multivalued: true
         inlined: true
         inlined_as_list: true
@@ -629,7 +697,6 @@ classes:
       - is_distribution_of
       - license
       - media_type
-      - relation
       - qualified_part
     slot_usage:
       checksum:
@@ -641,11 +708,6 @@ classes:
         inlined: true
         inlined_as_list: true
         range: Distribution
-      relation:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Entity
       qualified_part:
         multivalued: true
         inlined: true
@@ -668,8 +730,6 @@ classes:
       - is_version_of
       - keyword
       - landing_page
-      - qualified_relation
-      - relation
       - version
       #- was_generated_by
     slot_usage:
@@ -677,16 +737,6 @@ classes:
         range: Resource
       is_version_of:
         range: Resource
-      relation:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Entity
-      qualified_relation:
-        range: EntityInfluence
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
     exact_mappings:
       - DCAT:Resource
 
@@ -696,9 +746,11 @@ classes:
     description: >-
       TODO
     slots:
-      - citation
+      - address
+      - date_modified
       - date_published
-      #- url
+      - license
+      - notation
 
   LicenseDocument:
     class_uri: dlco:LicenseDocument
@@ -724,7 +776,7 @@ classes:
     exact_mappings:
       - schema:Grant
     todos:
-      - We might also want to support `citation` here to support funder-recommended or funder-required citation forms.
+      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
 
   #
   # basic relations
@@ -859,3 +911,28 @@ classes:
       - ADMS:Identifier
     see_also:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
+
+  Property:
+    class_uri: dlco:Property
+    description: >-
+      RDFS inspired class to describe arbitrary properties.
+      The class captures the predicate and object aspects
+      of a relationship with the subject. `description`,
+      `name`, and `type` describe and define the nature of
+      the predicate, while `value` represents the object,
+      and `range` declares the type of the object.
+    slots:
+      - description
+      - name
+      - range
+      - type
+      - value
+    slot_usage:
+      description:
+        aliases:
+          - comment
+      name:
+        aliases:
+          - label
+    close_mappings:
+      - RDFS:Property
