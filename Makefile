@@ -91,12 +91,12 @@ check-validation-%:
 check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 	@for ex in $</*.valid.cfg.yaml; do \
 		echo "Validate $$ex" ; \
-		linkml-validate --config "$$ex" ; \
+		linkml-validate --config "$$ex" || exit 5 ; \
 	done
 check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 	@for ex in $</*.invalid.cfg.yaml; do \
 		echo "(In)validate $$ex" ; \
-		linkml-validate --config "$$ex" && UNEXPECTEDLY VALID || true; \
+		linkml-validate --config "$$ex" && exit 5 || true; \
 	done
 
 convert-examples: \

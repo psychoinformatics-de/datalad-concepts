@@ -1,0 +1,11 @@
+id: gitsha:9a48c2bf7e97a081f2b1ab68eb909bbfc86267be
+# when the parts are defined elsewhere (e.g., in a joint collection
+# of metadata records on dataset aspects) there is no need to
+# reiterate any information here: just link content under a name
+qualified_part:
+  - entity: annex-key:MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
+    name: table.csv
+  - entity: gitsha:e12e9505cff5417f594d719b99720b4c39d86434
+    name: index.html
+# this tree is the top-level tree of a particular commit
+is_distribution_of: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f

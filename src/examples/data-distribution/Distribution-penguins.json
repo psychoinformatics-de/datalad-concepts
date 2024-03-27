@@ -62,26 +62,20 @@
           "had_role": [
             "schema:funding"
           ],
-          "entity": "thisds:#nsf0217282"
-        },
-        {
-          "had_role": [
-            "schema:funding"
-          ],
-          "entity": "thisds:#nsf0823101"
-        },
-        {
-          "had_role": [
-            "schema:funding"
-          ],
-          "entity": "thisds:#nsf0741351"
+          "entity": [
+            "thisds:#nsf0217282",
+            "thisds:#nsf0823101",
+            "thisds:#nsf0741351"
+          ]
         },
         {
           "had_role": [
             "CiTO:citesAsAuthority",
             "CiTO:isCitedAsDataSourceBy"
           ],
-          "entity": "thisds:#gormanetal"
+          "entity": [
+            "thisds:#gormanetal"
+          ]
         }
       ],
       "date_modified": "2020-07-16",

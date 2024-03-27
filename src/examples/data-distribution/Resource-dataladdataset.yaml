@@ -1,0 +1,10 @@
+id: datalad-ds:cec1da92-0dbd-4df3-8602-7c72b2d12854
+# we need a definition for a DataLad dataset
+#type: ...
+identifier:
+  - notation: cec1da92-0dbd-4df3-8602-7c72b2d12854
+    schema_agency: https://datalad.org
+# here could be any additional properties or linked resources
+# that are related to the dataset in general and not just to a particular
+# version
+#is_about: ...
