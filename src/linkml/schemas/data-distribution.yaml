@@ -180,6 +180,7 @@ slots:
     description: A free-text account of the resource.
     exact_mappings:
       - dcterms:description
+      - RDFS:comment
     range: string
 
   digest:
@@ -403,6 +404,20 @@ slots:
     exact_mappings:
       - skos:notation
 
+  property:
+    slot_uri: dlco:property
+    description: >-
+      An arbitrary (extra) property that is not covered by
+      other dedicated properties.
+    range: Property
+    relational_role: PREDICATE
+
+  range:
+    slot_uri: RDFS:range
+    description: >-
+      State that the values of a property are instances a class.
+    range: uriorcurie
+
   relation:
     slot_uri: dlco:relation
     description: >-
@@ -496,6 +511,14 @@ slots:
     range: EntityInfluence
     multivalued: true
 
+  value:
+    slot_uri: RDFS:value
+    description: >-
+      Value of a resource.
+    range: string
+    multivalued: true
+    relational_role: OBJECT
+
   version:
     slot_uri: dlco:version
     description: >-
@@ -528,6 +551,7 @@ classes:
       - is_about
       - meta_type
       - name
+      - property
       - same_as
       - title
       - type
@@ -536,6 +560,8 @@ classes:
         inlined: true
         inlined_as_list: true
       is_about:
+        multivalued: true
+      property:
         multivalued: true
       same_as:
         multivalued: true
@@ -885,3 +911,28 @@ classes:
       - ADMS:Identifier
     see_also:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
+
+  Property:
+    class_uri: dlco:Property
+    description: >-
+      RDFS inspired class to describe arbitrary properties.
+      The class captures the predicate and object aspects
+      of a relationship with the subject. `description`,
+      `name`, and `type` describe and define the nature of
+      the predicate, while `value` represents the object,
+      and `range` declares the type of the object.
+    slots:
+      - description
+      - name
+      - range
+      - type
+      - value
+    slot_usage:
+      description:
+        aliases:
+          - comment
+      name:
+        aliases:
+          - label
+    close_mappings:
+      - RDFS:Property
