@@ -1,7 +1,7 @@
 {
   "id": "thisdsver:./some/name.ext",
+  "meta_type": "dlco:Distribution",
   "name": "name.ext",
-  "type": "dlco:Distribution",
   "byte_size": 123456789,
   "checksum": [
     {

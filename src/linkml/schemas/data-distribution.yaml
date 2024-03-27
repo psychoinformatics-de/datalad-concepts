@@ -453,11 +453,21 @@ slots:
       - schema:name
     range: string
 
-  type:
-    slot_uri: RDF:type
+  meta_type:
+    slot_uri: dlco:meta_type
     designates_type: true
     description: >-
-      Type designator of a metadata object.
+      Type designator of a metadata object for validation and schema structure
+      handling purposes. This is used to indicate specialized schema classes
+      for properties that accept a hierarchy of classes as their range.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:type
+
+  type:
+    slot_uri: RDF:type
+    description: >-
+      State that the subject is an instance of a class.
     range: uriorcurie
     exact_mappings:
       - dcterms:type
@@ -516,6 +526,7 @@ classes:
       - description
       - identifier
       - is_about
+      - meta_type
       - name
       - same_as
       - title

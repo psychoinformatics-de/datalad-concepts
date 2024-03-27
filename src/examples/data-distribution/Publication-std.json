@@ -12,11 +12,41 @@
     "https://www.nature.com/subjects/data-publication-and-archiving",
     "https://www.nature.com/subjects/software"
   ],
+  "meta_type": "dlco:Publication",
+  "property": [
+    {
+      "name": "DOI",
+      "type": "bibo:doi",
+      "value": [
+        "https://doi.org/10.1038/s41597-022-01163-2"
+      ]
+    },
+    {
+      "name": "Volume",
+      "type": "bibo:volume",
+      "value": [
+        "9"
+      ]
+    },
+    {
+      "name": "Document number",
+      "type": "bibo:number",
+      "value": [
+        "80"
+      ]
+    },
+    {
+      "name": "Number of pages",
+      "type": "bibo:numPages",
+      "value": [
+        "17"
+      ]
+    }
+  ],
   "same_as": [
     "https://www.nature.com/articles/s41597-022-01163-2"
   ],
   "title": "FAIRly big: A framework for computationally reproducible processing of large-scale data",
-  "type": "dlco:Publication",
   "qualified_attribution": [
     {
       "had_role": [
@@ -192,9 +222,9 @@
           "schema_agency": "https://cordis.europa.eu"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "HBP SGA3",
       "title": "Human Brain Project Specific Grant Agreement 3",
-      "type": "dlco:Grant",
       "cites_as_authority": "https://cordis.europa.eu/project/id/945539"
     },
     {
@@ -205,9 +235,9 @@
           "schema_agency": "https://cordis.europa.eu"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "VirtualBrainCloud",
       "title": "Personalized Recommendations for Neurodegenerative Disease",
-      "type": "dlco:Grant",
       "cites_as_authority": "https://cordis.europa.eu/project/id/826421"
     },
     {
@@ -218,8 +248,8 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
+      "meta_type": "dlco:Grant",
       "title": "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science",
-      "type": "dlco:Grant",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266"
     },
     {
@@ -230,8 +260,8 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
+      "meta_type": "dlco:Grant",
       "title": "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'",
-      "type": "dlco:Grant",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999"
     },
     {
@@ -242,8 +272,8 @@
           "schema_agency": "https://www.ncn.gov.pl"
         }
       ],
-      "name": "ETIUDA",
-      "type": "dlco:Grant"
+      "meta_type": "dlco:Grant",
+      "name": "ETIUDA"
     },
     {
       "id": "thisds:#grant_bmbf01GQ1411",
@@ -253,8 +283,8 @@
           "schema_agency": "https://www.bmbf.de"
         }
       ],
-      "title": "Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution",
-      "type": "dlco:Grant"
+      "meta_type": "dlco:Grant",
+      "title": "Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution"
     },
     {
       "id": "thisds:#grant_bmbf01GQ1905",
@@ -264,9 +294,9 @@
           "schema_agency": "https://www.bmbf.de"
         }
       ],
+      "meta_type": "dlco:Grant",
       "name": "METALAD",
-      "title": "DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche",
-      "type": "dlco:Grant"
+      "title": "DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche"
     },
     {
       "id": "https://portal.issn.org/resource/issn/2052-4463",
@@ -276,14 +306,12 @@
           "schema_agency": "https://portal.issn.org"
         }
       ],
-      "is_about": [
-        "obo:NCIT_C93226"
-      ],
+      "meta_type": "dlco:Entity",
       "same_as": [
         "https://www.nature.com/sdata"
       ],
       "title": "Scientific data",
-      "type": "dlco:Entity"
+      "type": "obo:NCIT_C93226"
     }
   ],
   "was_attributed_to": [
@@ -295,8 +323,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Adina S. Wagner",
-      "type": "dlco:ResearchContributor",
       "email": "adina.wagner@t-online.de",
       "affiliation": [
         "https://ror.org/02nv7yv05"
@@ -310,8 +338,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Laura K. Waite",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05"
       ]
@@ -324,8 +352,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Małgorzata Wierzba",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/04waf7p94"
       ]
@@ -338,8 +366,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Felix Hoffstaedter",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05"
       ]
@@ -352,8 +380,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Alexander Q. Waite",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05"
       ]
@@ -366,19 +394,19 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Benjamin Poldrack",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05"
       ]
     },
     {
       "id": "https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3",
+      "meta_type": "dlco:ResearchContributor",
       "name": "Simon B. Eickhoff",
       "same_as": [
         "https://scholar.google.com/citations?user=wjpISMAAAAAJ"
       ],
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05",
         "https://ror.org/024z2rq82"
@@ -392,8 +420,8 @@
           "schema_agency": "http://orcid.org"
         }
       ],
+      "meta_type": "dlco:ResearchContributor",
       "name": "Michael Hanke",
-      "type": "dlco:ResearchContributor",
       "affiliation": [
         "https://ror.org/02nv7yv05",
         "https://ror.org/024z2rq82"
@@ -407,9 +435,9 @@
           "schema_agency": "https://ror.org"
         }
       ],
+      "meta_type": "dlco:Organization",
       "name": "FZJ-INM7",
-      "title": "Institute of Neuroscience and Medicine, Brain & Behaviour (INM-7), Research Center Jülich, Jülich, Germany",
-      "type": "dlco:Organization"
+      "title": "Institute of Neuroscience and Medicine, Brain & Behaviour (INM-7), Research Center Jülich, Jülich, Germany"
     },
     {
       "id": "https://ror.org/024z2rq82",
@@ -419,9 +447,9 @@
           "schema_agency": "https://ror.org"
         }
       ],
+      "meta_type": "dlco:Organization",
       "name": "HHU-ISN",
-      "title": "Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University Düsseldorf, Düsseldorf, Germany",
-      "type": "dlco:Organization"
+      "title": "Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University Düsseldorf, Düsseldorf, Germany"
     },
     {
       "id": "https://ror.org/04waf7p94",
@@ -431,9 +459,9 @@
           "schema_agency": "https://ror.org"
         }
       ],
+      "meta_type": "dlco:Organization",
       "name": "Nencki",
-      "title": "Laboratory of Brain Imaging, Nencki Institute of Experimental Biology, Polish Academy of Sciences, Warsaw, Poland",
-      "type": "dlco:Organization"
+      "title": "Laboratory of Brain Imaging, Nencki Institute of Experimental Biology, Polish Academy of Sciences, Warsaw, Poland"
     },
     {
       "id": "https://ror.org/02frzq211",
@@ -443,8 +471,8 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "name": "UK Biobank",
-      "type": "dlco:Organization"
+      "meta_type": "dlco:Organization",
+      "name": "UK Biobank"
     },
     {
       "id": "https://ror.org/00k4n6c32",
@@ -454,8 +482,8 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "name": "European Commission",
-      "type": "dlco:Organization"
+      "meta_type": "dlco:Organization",
+      "name": "European Commission"
     },
     {
       "id": "https://ror.org/021nxhr62",
@@ -465,11 +493,11 @@
           "schema_agency": "https://ror.org"
         }
       ],
+      "meta_type": "dlco:Agent",
       "name": "US National Science Foundation",
       "same_as": [
         "https://www.nsf.org"
-      ],
-      "type": "dlco:Agent"
+      ]
     },
     {
       "id": "https://ror.org/04pz7b180",
@@ -479,17 +507,17 @@
           "schema_agency": "https://ror.org"
         }
       ],
+      "meta_type": "dlco:Organization",
       "name": "Federal Ministry of Education and Research",
       "same_as": [
         "https://www.bmbf.de"
       ],
-      "type": "dlco:Organization",
       "address": "Kapelle-Ufer 1, D-10117 Berlin, Germany"
     },
     {
       "id": "https://www.ncn.gov.pl",
-      "name": "National Science Center Poland",
-      "type": "dlco:Organization"
+      "meta_type": "dlco:Organization",
+      "name": "National Science Center Poland"
     },
     {
       "id": "https://ror.org/03dsk4d59",
@@ -499,8 +527,8 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "name": "Springer Nature (United Kingdom)",
-      "type": "dlco:Organization"
+      "meta_type": "dlco:Organization",
+      "name": "Springer Nature (United Kingdom)"
     }
   ],
   "address": "Scientific Data 9:80",
