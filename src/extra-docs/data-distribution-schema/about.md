@@ -52,7 +52,7 @@ Here is an example that declare the number of pages (of a journal article):
 
 ```
 property:
-  - is_about: bibo:numPages
+  - type: bibo:numPages
     name: Number of pages
     value: "17"
     type: xsd:nonNegativeInteger

@@ -452,7 +452,7 @@ slots:
   range:
     slot_uri: RDFS:range
     description: >-
-      State that the values of a property are instances a class.
+      State that the values of a property are instances of a class.
     range: uriorcurie
 
   relation:
@@ -1089,12 +1089,12 @@ classes:
       that is being observed or measured.
     slots:
       - description
-      - is_about
       - is_defined_by
       - meta_type
       - name
       - title
       - type
+      - range
       - value
     slot_usage:
       is_defined_by:
