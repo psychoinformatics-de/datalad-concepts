@@ -11,7 +11,7 @@ has_property:
   - meta_type: dlco:QuantitativeProperty
     type: obo:NCIT_C181733
     name: biospecimen weight (kg)
-    value: 145.3
+    value: "145.3"
     # kilogram
     unit: obo:UO_0000009
     range: xsd:decimal
