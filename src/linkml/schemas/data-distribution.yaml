@@ -625,6 +625,10 @@ slots:
       Value of a resource.
     range: string
     relational_role: OBJECT
+    notes:
+      - We would really want to be able to leave the range undefined and permit
+        any type. However, linkml requires a range specification. A workaround
+        via linkml:Any does not produce a satisfactory solution.
 
   version:
     slot_uri: dlco:version
