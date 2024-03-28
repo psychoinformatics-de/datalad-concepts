@@ -1,6 +1,7 @@
 schema: src/linkml/schemas/data-distribution.yaml
 target_class: Resource
 data_sources:
+  - src/examples/data-distribution/Resource-customproperty.yaml
   - src/examples/data-distribution/Resource-funding.yaml
   - src/examples/data-distribution/Resource-study.yaml
   - src/examples/data-distribution/Resource-gitcommit.yaml

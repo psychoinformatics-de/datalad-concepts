@@ -1,0 +1,17 @@
+# arbitrary well-defined properties can be attached to any
+# Agent, Activity, or Entity
+#
+# Example: dataset on something heavy from Canada
+id: thisdsver:#
+has_property:
+  - type: obo:HSO_0000360
+    name: origin country
+    value: Canada
+    is_defined_by: http://dbpedia.org/resource/Canada
+  - meta_type: dlco:QuantitativeProperty
+    type: obo:NCIT_C181733
+    name: biospecimen weight (kg)
+    value: "145.3"
+    # kilogram
+    unit: obo:UO_0000009
+    range: xsd:decimal

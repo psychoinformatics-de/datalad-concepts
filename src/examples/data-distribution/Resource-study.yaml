@@ -13,20 +13,20 @@ was_generated_by:
         name: s001
         has_property:
           # handedness
-          - is_about: obo:PATO_0002201
+          - type: obo:PATO_0002201
             # ambidextrous
             is_defined_by: obo:PATO_0002204
       - id: thisds:#s002
         name: s002
         has_property:
           # biological sex
-          - is_about: obo:PATO_0000047
+          - type: obo:PATO_0000047
             value: male
             is_defined_by: obo:PATO_0000384
           # age in years
           - meta_type: dlco:QuantitativeProperty
             # length of a person's life, stated in years since birth
-            is_about: obo:NCIT_C37908
+            type: obo:NCIT_C37908
             name: age (years)
             value: "36"
             unit: obo:UO_0000036

@@ -20,19 +20,19 @@ same_as:
 # custom properties can be used to arbitrarily (and possibly redundantly)
 # detail the publication record for better fit with specialized consumers
 has_property:
-  - is_about: bibo:doi
+  - type: bibo:doi
     name: DOI
     value: https://doi.org/10.1038/s41597-022-01163-2
-  - is_about: bibo:volume
+  - type: bibo:volume
     name: Volume
     value: "9"
-  - is_about: bibo:number
+  - type: bibo:number
     name: Document number
     value: "80"
-  - is_about: bibo:numPages
+  - type: bibo:numPages
     name: Number of pages
     value: "17"
-    type: xsd:nonNegativeInteger
+    range: xsd:nonNegativeInteger
 
 # related entities
 relation:

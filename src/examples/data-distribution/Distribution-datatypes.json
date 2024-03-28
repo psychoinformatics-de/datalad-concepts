@@ -3,10 +3,10 @@
   "meta_type": "dlco:Distribution",
   "has_property": [
     {
-      "is_about": "obo:NCIT_C42645",
       "is_defined_by": "obo:NCIT_C95650",
       "meta_type": "dlco:Property",
       "name": "data type",
+      "type": "obo:NCIT_C42645",
       "value": "encapsulated image data"
     }
   ],

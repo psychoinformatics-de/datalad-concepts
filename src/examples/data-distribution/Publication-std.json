@@ -15,28 +15,28 @@
   "meta_type": "dlco:Publication",
   "has_property": [
     {
-      "is_about": "bibo:doi",
       "meta_type": "dlco:Property",
       "name": "DOI",
+      "type": "bibo:doi",
       "value": "https://doi.org/10.1038/s41597-022-01163-2"
     },
     {
-      "is_about": "bibo:volume",
       "meta_type": "dlco:Property",
       "name": "Volume",
+      "type": "bibo:volume",
       "value": "9"
     },
     {
-      "is_about": "bibo:number",
       "meta_type": "dlco:Property",
       "name": "Document number",
+      "type": "bibo:number",
       "value": "80"
     },
     {
-      "is_about": "bibo:numPages",
       "meta_type": "dlco:Property",
       "name": "Number of pages",
-      "type": "xsd:nonNegativeInteger",
+      "type": "bibo:numPages",
+      "range": "xsd:nonNegativeInteger",
       "value": "17"
     }
   ],
