@@ -826,6 +826,8 @@ classes:
     slot_usage:
       affiliation:
         multivalued: true
+    broad_mappings:
+      - prov:Person
 
   #
   # entities
@@ -951,13 +953,20 @@ classes:
     class_uri: dlco:Publication
     is_a: Entity
     description: >-
-      TODO
+      A document that is the output of a publishing process.
+      This can printed or electronic work offered for distribution,
+      and may have been made available by a publisher.
     slots:
       - address
       - date_modified
       - date_published
       - license
       - notation
+    exact_mappings:
+      - obo:IAO_0000311
+      - obo:NCIT_C48471
+    close_mappings:
+      - sio:SIO_000087
 
   LicenseDocument:
     class_uri: dlco:LicenseDocument
