@@ -1,0 +1,25 @@
+id: thisdsver:./file.jpeg
+# two approaches:
+# first using the common qualified-relation pattern.
+qualified_relation:
+  - entity:
+      # encapsulated image data
+      - obo:NCIT_C95650
+    had_role:
+      # data type
+      - obo:NCIT_C42645
+# when standardized terms for identifying data types are not available,
+# the can be defined in a custom entity.
+#relation:
+#  - id: thisds:#dtype_funky
+#    ...
+
+# this is an alternative approach via a custom property.
+# it is also combinable with a custom data type definition in
+# a relation.
+has_property:
+  - is_about: obo:NCIT_C42645
+    is_defined_by: obo:NCIT_C95650
+    # optionally:
+    name: data type
+    value: encapsulated image data

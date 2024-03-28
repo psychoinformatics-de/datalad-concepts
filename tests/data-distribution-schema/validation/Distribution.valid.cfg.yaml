@@ -6,6 +6,7 @@ data_sources:
   - src/examples/data-distribution/Distribution-resource.yaml
   - src/examples/data-distribution/Distribution-parts.yaml
   - src/examples/data-distribution/Distribution-formats.yaml
+  - src/examples/data-distribution/Distribution-datatypes.yaml
   - src/examples/data-distribution/Distribution-annexkey.yaml
   - src/examples/data-distribution/Distribution-gitblob.yaml
   - src/examples/data-distribution/Distribution-gittree.yaml

@@ -1,0 +1,24 @@
+{
+  "id": "thisdsver:./file.jpeg",
+  "meta_type": "dlco:Distribution",
+  "has_property": [
+    {
+      "is_about": "obo:NCIT_C42645",
+      "is_defined_by": "obo:NCIT_C95650",
+      "meta_type": "dlco:Property",
+      "name": "data type",
+      "value": "encapsulated image data"
+    }
+  ],
+  "qualified_relation": [
+    {
+      "had_role": [
+        "obo:NCIT_C42645"
+      ],
+      "entity": [
+        "obo:NCIT_C95650"
+      ]
+    }
+  ],
+  "@type": "Distribution"
+}
