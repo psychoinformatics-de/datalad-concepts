@@ -5,6 +5,7 @@ nav:
   - About: about.md
   - Schemas:
     - Distribution (unreleased): s/distribution/unreleased/index.md
+    - Demo derived schema: s/derived-example/unreleased/index.md
 plugins:
   - mermaid2
 repo_url: https://github.com/psychoinformatics-de/datalad-concepts

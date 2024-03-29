@@ -1,7 +1,7 @@
-schema: src/linkml/schemas/derived-example.yaml
+schema: src/derived-example/unreleased.yaml
 target_class: AgentInfluence
 data_sources:
-  - src/examples/derived-example/AgentInfluence-std.yaml
+  - src/derived-example/unreleased/examples/AgentInfluence-std.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

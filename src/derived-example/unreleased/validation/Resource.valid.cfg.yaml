@@ -1,0 +1,13 @@
+schema: src/derived-example/unreleased.yaml
+target_class: Resource
+data_sources:
+  - src/derived-example/unreleased/examples/Resource-customproperty.yaml
+  - src/derived-example/unreleased/examples/Resource-funding.yaml
+  - src/derived-example/unreleased/examples/Resource-study.yaml
+  - src/derived-example/unreleased/examples/Resource-gitcommit.yaml
+  - src/derived-example/unreleased/examples/Resource-dataladdataset.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
