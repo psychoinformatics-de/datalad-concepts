@@ -3,7 +3,8 @@ docs_dir: build/linkml-docs
 nav:
   - Home: index.md
   - About: about.md
-  - Distribution (unreleased): s/distribution/unreleased/index.md
+  - Schemas:
+    - Distribution (unreleased): s/distribution/unreleased/index.md
 plugins:
   - mermaid2
 repo_url: https://github.com/psychoinformatics-de/datalad-concepts
