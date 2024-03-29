@@ -24,7 +24,7 @@ was_generated_by:
             value: male
             is_defined_by: obo:PATO_0000384
           # age in years
-          - meta_type: dlco:QuantitativeProperty
+          - meta_type: dldist:QuantitativeProperty
             # length of a person's life, stated in years since birth
             type: obo:NCIT_C37908
             name: age (years)

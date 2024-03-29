@@ -11,13 +11,13 @@ id: exthisdsver:./some/path.ext
 is_distribution_of: exthisdsver:#some/path
 relation:
   - id: exthisdsver:#some/path
-    meta_type: dlco:Resource
+    meta_type: dldist:Resource
     description: Some tabular data
     is_part_of: exthisdsver:#
   - id: exthisdsver:#
-    meta_type: dlco:Resource
+    meta_type: dldist:Resource
     description: A version of a collection of some data
     is_version_of: exthisds:#
   - id: exthisds:#
-    meta_type: dlco:Resource
+    meta_type: dldist:Resource
     description: A collection of some data

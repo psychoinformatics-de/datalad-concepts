@@ -5,12 +5,12 @@
   "has_part": [
     {
       "id": "exthisdsver:./dataset_description.json",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "media_type": "application/json"
     },
     {
       "id": "exthisdsver:./participants.tsv",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "format": "http://edamontology.org/format_3475"
     }
   ],

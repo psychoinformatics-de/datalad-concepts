@@ -1,6 +1,6 @@
 {
   "id": "gitsha:9a48c2bf7e97a081f2b1ab68eb909bbfc86267be",
-  "meta_type": "dlco:Distribution",
+  "meta_type": "dldist:Distribution",
   "is_distribution_of": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
   "qualified_part": [
     {

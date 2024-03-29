@@ -19,9 +19,8 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org/ontology/
-  # TODO homogenize with base schema
-  dlco1: https://concepts.datalad.org/
+  dlco: https://concepts.datalad.org/
+  dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dex: https://example.org/ns/ex/terms/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
@@ -50,14 +49,14 @@ default_prefix: dex
 emit_prefixes:
   - CiTO
   - DCAT
-  - dlco
+  - dldist
   - licenses
   - marcrel
   - obo
   - prov
 
 imports:
-  - dlco1:schemas/data-distribution
+  - dlco:s/distribution/unreleased
 
 classes:
   DExResearchContributor:

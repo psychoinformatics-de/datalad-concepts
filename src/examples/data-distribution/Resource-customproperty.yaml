@@ -8,7 +8,7 @@ has_property:
     name: origin country
     value: Canada
     is_defined_by: http://dbpedia.org/resource/Canada
-  - meta_type: dlco:QuantitativeProperty
+  - meta_type: dldist:QuantitativeProperty
     type: obo:NCIT_C181733
     name: biospecimen weight (kg)
     value: "145.3"

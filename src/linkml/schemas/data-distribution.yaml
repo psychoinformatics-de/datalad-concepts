@@ -1,5 +1,5 @@
-id: https://concepts.datalad.org/schemas/data-distribution
-name: data-distribution
+id: https://concepts.datalad.org/s/distribution/unreleased
+name: distribution-schema
 version: UNRELEASED
 status: bibo:status/draft
 title: Schema for a generic data distribution record
@@ -34,8 +34,8 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org/ontology/
-  dlns: https://concepts.datalad.org/ns/
+  dlco: https://concepts.datalad.org/
+  dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
   gitsha: https://concepts.datalad.org/ns/gitsha/
@@ -70,12 +70,12 @@ prefixes:
   # dataset. It could be nested inside the `thisds` namespace
   exthisdsver: https://example.org/ns/datasetversion/
 
-default_prefix: dlco
+default_prefix: dldist
 
 emit_prefixes:
   - CiTO
   - DCAT
-  - dlco
+  - dldist
   - licenses
   - marcrel
   - obo
@@ -87,7 +87,7 @@ imports:
 
 types:
   EmailAddress:
-    uri: dlco:EmailAddress
+    uri: dldist:EmailAddress
     base: str
     description: RFC 5322 compliant email address
     pattern: '(?:[a-z0-9!#$%&''*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&''*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])'
@@ -131,7 +131,7 @@ types:
 
 slots:
   address:
-    slot_uri: dlco:address
+    slot_uri: dldist:address
     description:
       Physical address of the subject, such as a postal address, a bibliographic
       locator, or a coordinate of some kind.
@@ -140,7 +140,7 @@ slots:
       - schema:address
 
   affiliation:
-    slot_uri: dlco:affiliation
+    slot_uri: dldist:affiliation
     description: >-
       An organization that an agent is affiliated with.
     range: Organization
@@ -148,7 +148,7 @@ slots:
       - schema:affiliation
 
   agent:
-    slot_uri: dlco:agent
+    slot_uri: dldist:agent
     is_a: influencer
     description: >-
       References an agent which influenced an entity.
@@ -170,7 +170,7 @@ slots:
       - obo:IAO_0000064
 
   byte_size:
-    slot_uri: dlco:byte_size
+    slot_uri: dldist:byte_size
     description: >-
       The size of a distribution in bytes.
     range: NonNegativeInteger
@@ -178,7 +178,7 @@ slots:
       - DCAT:byteSize
 
   checksum:
-    slot_uri: dlco:checksum
+    slot_uri: dldist:checksum
     description: >-
       The checksum property provides a mechanism that can be used to verify
       that the contents of a file or package have not changed.
@@ -187,7 +187,7 @@ slots:
       - spdx:checksum
 
   cites_as_authority:
-    slot_uri: dlco:cites_as_authority
+    slot_uri: dldist:cites_as_authority
     description: >-
       Entity that provides an authoritative description or definition of the subject.
     range: uri
@@ -195,7 +195,7 @@ slots:
       - CiTO:citesAsAuthority
 
   conforms_to:
-    slot_uri: dlco:conforms_to
+    slot_uri: dldist:conforms_to
     description: >-
       An established standard to which the subject conforms.
     range: uriorcurie
@@ -205,7 +205,7 @@ slots:
       - dcterms:conformsTo
 
   date_modified:
-    slot_uri: dlco:date_modified
+    slot_uri: dldist:date_modified
     description: >-
       Date on which the resource was (last) changed, updated or modified.
     range: W3CISO8601
@@ -216,7 +216,7 @@ slots:
       - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
 
   date_published:
-    slot_uri: dlco:date_published
+    slot_uri: dldist:date_published
     description: >-
       Date on which the resource was (last) changed, updated or modified.
     range: W3CISO8601
@@ -227,7 +227,7 @@ slots:
       - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
 
   description:
-    slot_uri: dlco:description
+    slot_uri: dldist:description
     description: A free-text account of the resource.
     exact_mappings:
       - dcterms:description
@@ -235,7 +235,7 @@ slots:
     range: string
 
   digest:
-    slot_uri: dlco:digest
+    slot_uri: dldist:digest
     description: >-
       Lower case hexadecimal encoded checksum digest value produced using a
       specific algorithm.
@@ -244,7 +244,7 @@ slots:
       - spdx:checksumValue
 
   distribution:
-    slot_uri: dlco:distribution
+    slot_uri: dldist:distribution
     description: >-
       An available distribution of a resource.
     range: Distribution
@@ -255,7 +255,7 @@ slots:
         a dataset.
 
   download_url:
-    slot_uri: dlco:download_url
+    slot_uri: dldist:download_url
     description: >-
       URL of downloadable resourcefile in a given format.
     range: uri
@@ -263,7 +263,7 @@ slots:
       - DCAT:downloadURL
 
   email:
-    slot_uri: dlco:email
+    slot_uri: dldist:email
     description: Email address associated with an entity.
     exact_mappings:
       - schema:email
@@ -271,7 +271,7 @@ slots:
     range: EmailAddress
 
   ended_at:
-    slot_uri: dlco:ended_at
+    slot_uri: dldist:ended_at
     description: >-
       End is when an activity is deemed to have been ended by an entity,
       known as trigger. The activity no longer exists after its end.
@@ -283,7 +283,7 @@ slots:
       - prov:endedAtTime
 
   entity:
-    slot_uri: dlco:entity
+    slot_uri: dldist:entity
 
     is_a: influencer
     description: >-
@@ -296,7 +296,7 @@ slots:
       - prov:influencer
 
   format:
-    slot_uri: dlco:format
+    slot_uri: dldist:format
     description: >-
       The file format of a distribution.
     domain: Distribution
@@ -307,7 +307,7 @@ slots:
       - When type of the distribution is defined by IANA, `media_type` should be used.
 
   had_activity:
-    slot_uri: dlco:had_activity
+    slot_uri: dldist:had_activity
     description: >-
       The function of an entity or agent with respect to another entity or
       resource.
@@ -318,7 +318,7 @@ slots:
       - prov:hadActivity
 
   had_role:
-    slot_uri: dlco:had_role
+    slot_uri: dldist:had_role
     description: >-
       The function of an entity or agent with respect to another entity or
       resource.
@@ -331,7 +331,7 @@ slots:
       - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
 
   has_part:
-    slot_uri: dlco:has_part
+    slot_uri: dldist:has_part
     description: >-
       A related resource that is included either physically
       or logically in the described resource.
@@ -339,7 +339,7 @@ slots:
       - dcterms:hasPart
 
   has_property:
-    slot_uri: dlco:has_property
+    slot_uri: dldist:has_property
     description: >-
       Relation between a subject and a quality, capability or role that it bears.
     range: Property
@@ -348,7 +348,7 @@ slots:
       - sio:SIO_000233
 
   id:
-    slot_uri: dlco:id
+    slot_uri: dldist:id
     identifier: true
     description: >-
       Globally unique identifier of a metadata object.
@@ -358,7 +358,7 @@ slots:
       - schema:identifier
 
   identifier:
-    slot_uri: dlco:identifier
+    slot_uri: dldist:identifier
     description: An unambiguous reference to the subject within a given context.
     exact_mappings:
       - dcterms:identifier
@@ -368,7 +368,7 @@ slots:
     multivalued: true
 
   influencer:
-    slot_uri: dlco:influencer
+    slot_uri: dldist:influencer
     description: >-
       Reference the resource (Entity, Agent, or Activity) whose influence is
       being qualified in a qualified influence pattern.
@@ -382,7 +382,7 @@ slots:
       - dcterms:relation
 
   is_about:
-    slot_uri: dlco:is_about
+    slot_uri: dldist:is_about
     description: >-
       A relation of an information artifact to an entity.
       For example, the subject matter of the content.
@@ -392,7 +392,7 @@ slots:
       - obo:IAO_0000136
 
   is_defined_by:
-    slot_uri: dlco:is_defined_by
+    slot_uri: dldist:is_defined_by
     description: >-
       The definition of the subject resource.
     range: uriorcurie
@@ -400,7 +400,7 @@ slots:
       - RDFS:isDefinedBy
 
   is_distribution_of:
-    slot_uri: dlco:is_distribution_of
+    slot_uri: dldist:is_distribution_of
     description: >-
       Inverse property of `DCAT:distribution`.
     domain: Distribution
@@ -408,7 +408,7 @@ slots:
     inverse: distribution
 
   is_part_of:
-    slot_uri: dlco:is_part_of
+    slot_uri: dldist:is_part_of
     description: >-
       A related resource that is included either physically
       or logically in the described resource.
@@ -416,7 +416,7 @@ slots:
       - dcterms:isPartOf
 
   is_version_of:
-    slot_uri: dlco:is_version_of
+    slot_uri: dldist:is_version_of
     description: >-
       A related resource of which the described resource is a version.
     range: uriorcurie
@@ -424,7 +424,7 @@ slots:
       - DCAT:isVersionOf
 
   keyword:
-    slot_uri: dlco:keyword
+    slot_uri: dldist:keyword
     description: >-
       One or more keywords or tags describing the resource.
     range: string
@@ -434,7 +434,7 @@ slots:
       - schema:keywords
 
   landing_page:
-    slot_uri: dlco:landing_page
+    slot_uri: dldist:landing_page
     description: >-
       A Web page that can be navigated to in a Web browser to gain access
       to a resource, its distributions and/or additional information.
@@ -443,12 +443,12 @@ slots:
       - DCAT:landingPage
       - foaf:page
     comments:
-      - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dlco:access_url` on a distribution.
+      - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dldist:access_url` on a distribution.
     see_also:
       - https://www.w3.org/TR/vocab-dcat-3/#example-landing-page
 
   license:
-    slot_uri: dlco:license
+    slot_uri: dldist:license
     description: A legal document under which the resource is made available.
     range: LicenseDocument
     exact_mappings:
@@ -456,7 +456,7 @@ slots:
       - DCAT:license
 
   license_text:
-    slot_uri: dlco:license_text
+    slot_uri: dldist:license_text
     description: >-
       A copy of the actual text of a license reference, file or snippet that is
       associated with a License Identifier to aid in future analysis.
@@ -465,7 +465,7 @@ slots:
       - spdx:extractedText
 
   media_type:
-    slot_uri: dlco:media_type
+    slot_uri: dldist:media_type
     is_a: format
     description: >-
       The media type of a distribution as defined by IANA
@@ -479,7 +479,7 @@ slots:
       - DCAT:mediaType
 
   name:
-    slot_uri: dlco:name
+    slot_uri: dldist:name
     description: Name of an item or entity.
     exact_mappings:
       - RDFS:label
@@ -488,7 +488,7 @@ slots:
     range: string
 
   notation:
-    slot_uri: dlco:notation
+    slot_uri: dldist:notation
     description: >-
       String of characters such as "T58.5" or "303.4833" used to uniquely
       identify a concept within the scope of a given concept scheme.
@@ -503,7 +503,7 @@ slots:
     range: uriorcurie
 
   relation:
-    slot_uri: dlco:relation
+    slot_uri: dldist:relation
     description: >-
       The resource related to the source resource.
     relational_role: OBJECT
@@ -511,7 +511,7 @@ slots:
       - dcterms:relation
 
   same_as:
-    slot_uri: dlco:same_as
+    slot_uri: dldist:same_as
     description: >-
       Property that determines that subject and object are equal.
       Can be used to indicate a URL of a reference Web page that unambiguously
@@ -523,7 +523,7 @@ slots:
       - schema:sameAs
 
   schema_agency:
-    slot_uri: dlco:schema_agency
+    slot_uri: dldist:schema_agency
     description: >-
       Name of the agency that issued an identifier.
     range: Agent
@@ -531,7 +531,7 @@ slots:
       - ADMS:schemaAgency
 
   sponsor:
-    slot_uri: dlco:sponsor
+    slot_uri: dldist:sponsor
     description: >-
       A person or organization that supports a thing through a pledge,
       promise, or financial contribution
@@ -540,7 +540,7 @@ slots:
       - schema:sponsor
 
   title:
-    slot_uri: dlco:title
+    slot_uri: dldist:title
     description: >-
       A summarily description of a item or entity. It is closely related to
       a name, but often less compact and more descriptive. Typically used for
@@ -553,7 +553,7 @@ slots:
     range: string
 
   meta_type:
-    slot_uri: dlco:meta_type
+    slot_uri: dldist:meta_type
     designates_type: true
     description: >-
       Type designator of a metadata object for validation and schema structure
@@ -572,7 +572,7 @@ slots:
       - dcterms:type
 
   qualified_association:
-    slot_uri: dlco:qualified_association
+    slot_uri: dldist:qualified_association
     description: >-
       Assignment of responsibility to an agent for an activity, indicating
       that the agent had a role in the activity.
@@ -581,7 +581,7 @@ slots:
     range: AgentInfluence
 
   qualified_attribution:
-    slot_uri: dlco:qualified_attribution
+    slot_uri: dldist:qualified_attribution
     description: >-
       Attribution is the ascribing of an entity to an agent.
     exact_mappings:
@@ -589,7 +589,7 @@ slots:
     range: Attribution
 
   qualified_derivation:
-    slot_uri: dlco:qualified_derivation
+    slot_uri: dldist:qualified_derivation
     description: >-
       A transformation of an entity into another, an update of an entity
       resulting in a new one, or the construction of a new entity based
@@ -599,14 +599,14 @@ slots:
     range: Derivation
 
   qualified_part:
-    slot_uri: dlco:qualified_part
+    slot_uri: dldist:qualified_part
     description: >-
       Qualified a `hasPart` relationship with another entity.
     broad_mappings:
       - DCAT:qualifiedRelation
 
   qualified_relation:
-    slot_uri: dlco:qualified_relation
+    slot_uri: dldist:qualified_relation
     description: >-
       TODO
     exact_mappings:
@@ -615,7 +615,7 @@ slots:
     multivalued: true
 
   unit:
-    slot_uri: dlco:unit
+    slot_uri: dldist:unit
     description: >-
       A unit of measurement is a standardized quantity of a physical quality.
     range: uriorcurie
@@ -634,7 +634,7 @@ slots:
         via linkml:Any does not produce a satisfactory solution.
 
   version:
-    slot_uri: dlco:version
+    slot_uri: dldist:version
     description: >-
       Version indicator (name or identifier) of a resource.
     range: string
@@ -643,7 +643,7 @@ slots:
       - pav:version
 
   was_influenced_by:
-    slot_uri: dlco:was_influenced_by
+    slot_uri: dldist:was_influenced_by
     description: >-
       Capacity of an entity, activity, or agent to have an effect on the
       character, development, or behavior of another.
@@ -653,7 +653,7 @@ slots:
       - prov:wasInfluencedBy
 
   was_associated_with:
-    slot_uri: dlco:was_associated_with
+    slot_uri: dldist:was_associated_with
     is_a: was_influenced_by
     description: >-
       An activity association is an assignment of responsibility to an agent
@@ -666,7 +666,7 @@ slots:
       - prov:wasAssociatedWith
 
   was_attributed_to:
-    slot_uri: dlco:was_attributed_to
+    slot_uri: dldist:was_attributed_to
     is_a: was_influenced_by
     description: >-
       Attribution is the ascribing of an entity to an agent.
@@ -676,7 +676,7 @@ slots:
       - prov:wasAttributedTo
 
   was_derived_from:
-    slot_uri: dlco:was_derived_from
+    slot_uri: dldist:was_derived_from
     is_a: was_influenced_by
     description: >-
       Derivation is a transformation of an entity into another,
@@ -688,7 +688,7 @@ slots:
       - prov:wasDerivedFrom
 
   was_generated_by:
-    slot_uri: dlco:was_generated_by
+    slot_uri: dldist:was_generated_by
     is_a: was_influenced_by
     description: >-
       Generation is the completion of production of a new entity by an activity.
@@ -700,7 +700,7 @@ slots:
       - prov:wasAttributedTo
 
   was_informed_by:
-    slot_uri: dlco:was_informed_by
+    slot_uri: dldist:was_informed_by
     is_a: was_influenced_by
     description: >-
       Communication is the exchange of an entity by two activities, one activity
@@ -713,7 +713,7 @@ slots:
 
 classes:
   ProvConcept:
-    class_uri: dlco:ProvConcept
+    class_uri: dldist:ProvConcept
     description: >-
       Technical foundation of the PROV concept classes
       `Activity`, `Agent`, `Entity`.
@@ -748,7 +748,7 @@ classes:
   # activities
   #
   Activity:
-    class_uri: dlco:Activity
+    class_uri: dldist:Activity
     is_a: ProvConcept
     description: >-
       An activity is something that occurs over a period of time and acts
@@ -785,7 +785,7 @@ classes:
   # agents
   #
   Agent:
-    class_uri: dlco:Agent
+    class_uri: dldist:Agent
     is_a: ProvConcept
     description: >-
       Something that bears some form of responsibility for an activity
@@ -796,7 +796,7 @@ classes:
       - prov:Agent
 
   Person:
-    class_uri: dlco:Person
+    class_uri: dldist:Person
     is_a: Agent
     description: >-
       Person agents are people.
@@ -808,7 +808,7 @@ classes:
       - prov:Person
 
   Organization:
-    class_uri: dlco:Organization
+    class_uri: dldist:Organization
     is_a: Agent
     description: >-
       A social or legal instititution such as a company, a society,
@@ -820,7 +820,7 @@ classes:
       - prov:Organization
 
   ResearchContributor:
-    class_uri: dlco:ResearchContributor
+    class_uri: dldist:ResearchContributor
     is_a: Person
     description: >-
       A person that has or could contribute to some research in any capacity.
@@ -836,7 +836,7 @@ classes:
   # entities
   #
   Entity:
-    class_uri: dlco:Entity
+    class_uri: dldist:Entity
     is_a: ProvConcept
     description: >-
       A physical, digital, conceptual, or other kind of thing with some
@@ -890,7 +890,7 @@ classes:
       - prov:Entity
 
   Distribution:
-    class_uri: dlco:Distribution
+    class_uri: dldist:Distribution
     is_a: Entity
     description: >-
       A specific representation of data, which may come in the form of
@@ -928,7 +928,7 @@ classes:
       - DCAT:Distribution
 
   Resource:
-    class_uri: dlco:Resource
+    class_uri: dldist:Resource
     is_a: Entity
     description: >-
       Resource published or curated by a single agent.
@@ -952,7 +952,7 @@ classes:
       - DCAT:Resource
 
   Publication:
-    class_uri: dlco:Publication
+    class_uri: dldist:Publication
     is_a: Entity
     description: >-
       A document that is the output of a publishing process.
@@ -971,7 +971,7 @@ classes:
       - sio:SIO_000087
 
   LicenseDocument:
-    class_uri: dlco:LicenseDocument
+    class_uri: dldist:LicenseDocument
     is_a: Entity
     description: >-
       A legal document giving official permission to do something with a resource.
@@ -984,7 +984,7 @@ classes:
       - spdx vocab has a needed pieces to express a any custom license
 
   Grant:
-    class_uri: dlco:Grant
+    class_uri: dldist:Grant
     is_a: Entity
     description: >-
       A grant, typically financial or otherwise quantifiable, of resources.
@@ -1000,7 +1000,7 @@ classes:
   # basic relations
   #
   Influence:
-    class_uri: dlco:Influence
+    class_uri: dldist:Influence
     description: >-
       Capacity of an entity, activity, or agent to have an effect on the
       character, development, or behavior of another.
@@ -1020,7 +1020,7 @@ classes:
       - prov:Influence
 
   AgentInfluence:
-    class_uri: dlco:AgentInfluence
+    class_uri: dldist:AgentInfluence
     is_a: Influence
     description: >-
       Capacity of an agent to have an effect on the character, development,
@@ -1037,7 +1037,7 @@ classes:
       - prov:AgentInfluence
 
   Attribution:
-    class_uri: dlco:Attribution
+    class_uri: dldist:Attribution
     is_a: AgentInfluence
     description: >-
       Attribution is the ascribing of an entity to an agent.
@@ -1048,7 +1048,7 @@ classes:
       - prov:Influence
 
   EntityInfluence:
-    class_uri: dlco:EntityInfluence
+    class_uri: dldist:EntityInfluence
     is_a: Influence
     description: >-
       Capacity of an entity to have an effect on the character, development,
@@ -1066,7 +1066,7 @@ classes:
       - prov:Influence
 
   Derivation:
-    class_uri: dlco:Derivation
+    class_uri: dldist:Derivation
     is_a: EntityInfluence
     description: >-
       Transformation of an entity into another, an update of an entity
@@ -1078,7 +1078,7 @@ classes:
       - prov:Derivation
 
   DistributionPart:
-    class_uri: dlco:DistributionPart
+    class_uri: dldist:DistributionPart
     description: >-
       An association class for attaching additional information to a
       hasPart relationship.
@@ -1097,7 +1097,7 @@ classes:
         tree in multiple contexts, such as different versions of a dataset).
 
   Role:
-    class_uri: dlco:Role
+    class_uri: dldist:Role
     description: >-
       A role is the function of a resource or agent with respect to
       another resource, in the context of resource attribution or
@@ -1112,7 +1112,7 @@ classes:
   # utilities
   #
   Checksum:
-    class_uri: dlco:Checksum
+    class_uri: dldist:Checksum
     description: >-
       A Checksum is a value that allows to check the integrity of the contents
       of a file. Even small changes to the content of the file will change its
@@ -1130,7 +1130,7 @@ classes:
       - spdx:Checksum
 
   Identifier:
-    class_uri: dlco:Identifier
+    class_uri: dldist:Identifier
     description: >-
        Identifier.
     slots:
@@ -1142,7 +1142,7 @@ classes:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
 
   Property:
-    class_uri: dlco:Property
+    class_uri: dldist:Property
     description: >-
       An inherent quality, function, disposition or process characteristic
       that is being observed or measured.
@@ -1163,7 +1163,7 @@ classes:
       - sio:SIO_000614
 
   QuantitativeProperty:
-    class_uri: dlco:QuantitativeProperty
+    class_uri: dldist:QuantitativeProperty
     is_a: Property
     description: >-
       An inherent quantitative property that is being observed or measured.

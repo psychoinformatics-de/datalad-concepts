@@ -4,7 +4,7 @@
   "relation": [
     {
       "id": "exthisds:#customlicense",
-      "meta_type": "dlco:LicenseDocument",
+      "meta_type": "dldist:LicenseDocument",
       "license_text": "Highly custom terms, never seen before."
     }
   ],

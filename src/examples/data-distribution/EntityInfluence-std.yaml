@@ -2,4 +2,4 @@
 entity: 
   - https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Mind_melds
 had_role:
-  - dlco:is_about
+  - dldist:is_about

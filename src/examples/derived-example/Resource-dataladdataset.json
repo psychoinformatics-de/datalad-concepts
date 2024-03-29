@@ -6,6 +6,6 @@
       "schema_agency": "https://datalad.org"
     }
   ],
-  "meta_type": "dlco:Resource",
+  "meta_type": "dldist:Resource",
   "@type": "Resource"
 }

@@ -5,12 +5,12 @@
     {
       "id": "exthisdsver:./archive.zip/subdir",
       "description": "A subdirectory",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "has_part": [
         {
           "id": "exthisdsver:./archive.zip/subdir/file.txt",
           "description": "A file",
-          "meta_type": "dlco:Distribution"
+          "meta_type": "dldist:Distribution"
         }
       ],
       "qualified_part": [

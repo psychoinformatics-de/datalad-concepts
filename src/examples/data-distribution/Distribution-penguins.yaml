@@ -40,7 +40,7 @@ qualified_part:
 is_distribution_of: exthisdsver:#
 relation:
   - id: exthisdsver:#
-    meta_type: dlco:Resource
+    meta_type: dldist:Resource
     date_modified: "2020-07-16"
     description: >-
       The goal of palmerpenguins is to provide a great dataset for data
@@ -103,7 +103,7 @@ relation:
     version: "0.1.0"
 
   - id: exthisds:#nsf0217282
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
     identifier:
       - notation: "0217282"
@@ -111,7 +111,7 @@ relation:
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282
   - id: exthisds:#nsf0823101
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: Palmer, Antarctica Long Term Ecological Research Project
     identifier:
       - notation: "0823101"
@@ -119,7 +119,7 @@ relation:
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
   - id: exthisds:#nsf0741351
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
     identifier:
       - notation: "0741351"
@@ -129,7 +129,7 @@ relation:
   # the following publication ID could also be the DOI, but having a global ID is not
   # a requirement (although almost unconditionally advantageous)
   - id: exthisds:#gormanetal
-    meta_type: dlco:Publication
+    meta_type: dldist:Publication
     notation: >-
       'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
       and Environmental Variability within a Community of Antarctic Penguins (Genus
@@ -152,7 +152,7 @@ relation:
 # namespace conflict would ever happen across dataset versions.
 was_attributed_to:
   - id: exthisds:#ahorst
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Allison Horst
     email: ahorst@example.com
     identifier:
@@ -165,7 +165,7 @@ was_attributed_to:
     same_as:
       - https://orcid.org/0000-0002-6047-5564
   - id: exthisds:#ahill
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Allison Hill
     email: ahill@example.com
     identifier:
@@ -174,7 +174,7 @@ was_attributed_to:
     affiliation:
       - exthisds:#Rstudio
   - id: exthisds:#kgorman
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Kirsten Gorman
     email: kgorman@example.com
     identifier:
@@ -183,13 +183,13 @@ was_attributed_to:
     affiliation:
       - https://ror.org/01j7nq853
   - id: exthisds:#UCSB
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: 'UC Santa Barbara: Santa Barbara, CA, US'
   - id: exthisds:#RStudio
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: 'RStudio: Boston, MA, US'
   - id: https://ror.org/01j7nq853
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
     identifier:
       - notation: 01j7nq853

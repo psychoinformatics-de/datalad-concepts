@@ -11,7 +11,7 @@
       "schema_agency": "exthisds:#"
     }
   ],
-  "meta_type": "dlco:Resource",
+  "meta_type": "dldist:Resource",
   "qualified_derivation": [
     {
       "had_role": [
@@ -26,7 +26,7 @@
   "was_generated_by": [
     {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
-      "meta_type": "dlco:Activity",
+      "meta_type": "dldist:Activity",
       "type": "obo:NCIT_C42882",
       "qualified_association": [
         {
@@ -39,7 +39,7 @@
       "was_informed_by": [
         {
           "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
-          "meta_type": "dlco:Activity",
+          "meta_type": "dldist:Activity",
           "type": "obo:NCIT_C25625",
           "qualified_association": [
             {

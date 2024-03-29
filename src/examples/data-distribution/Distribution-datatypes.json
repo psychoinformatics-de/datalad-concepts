@@ -1,10 +1,10 @@
 {
   "id": "exthisdsver:./file.jpeg",
-  "meta_type": "dlco:Distribution",
+  "meta_type": "dldist:Distribution",
   "has_property": [
     {
       "is_defined_by": "obo:NCIT_C95650",
-      "meta_type": "dlco:Property",
+      "meta_type": "dldist:Property",
       "name": "data type",
       "type": "obo:NCIT_C42645",
       "value": "encapsulated image data"

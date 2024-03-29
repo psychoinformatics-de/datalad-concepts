@@ -37,7 +37,7 @@ has_property:
 # related entities
 relation:
   - id: https://cordis.europa.eu/project/id/945539
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: HBP SGA3
     title: Human Brain Project Specific Grant Agreement 3
     identifier:
@@ -45,7 +45,7 @@ relation:
         schema_agency: https://cordis.europa.eu
     cites_as_authority: https://cordis.europa.eu/project/id/945539
   - id: https://cordis.europa.eu/project/id/826421
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: VirtualBrainCloud
     title: Personalized Recommendations for Neurodegenerative Disease
     identifier:
@@ -53,7 +53,7 @@ relation:
         schema_agency: https://cordis.europa.eu
     cites_as_authority: https://cordis.europa.eu/project/id/826421
   - id: exthisds:#grant_nsf1912266
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     title: "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science"
     identifier:
       - notation: "1912266"
@@ -61,33 +61,33 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266
   - id: exthisds:#grant_nsf1429999
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     title: "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'"
     identifier:
       - notation: "1429999"
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999
   - id: exthisds:#grant_nsc
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: ETIUDA
     identifier:
       - notation: 2018/28/T/HS6/00507
         schema_agency: https://www.ncn.gov.pl
   - id: exthisds:#grant_bmbf01GQ1411
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     title: Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution
     identifier:
       - notation: 01GQ1411
         schema_agency: https://www.bmbf.de
   - id: exthisds:#grant_bmbf01GQ1905
-    meta_type: dlco:Grant
+    meta_type: dldist:Grant
     name: METALAD
     title: DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche
     identifier:
       - notation: 01GQ1905
         schema_agency: https://www.bmbf.de
   - id: https://portal.issn.org/resource/issn/2052-4463
-    meta_type: dlco:Entity
+    meta_type: dldist:Entity
     # peer-reviewed scientific journal
     type: obo:NCIT_C93226
     title: Scientific data
@@ -120,7 +120,7 @@ qualified_relation:
 was_attributed_to:
   # authors
   - id: http://orcid.org/0000-0003-2917-3450
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Adina S. Wagner
     email: adina.wagner@t-online.de
     identifier:
@@ -129,7 +129,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0003-2213-7465
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Laura K. Waite
     identifier:
       - notation: 0000-0003-2213-7465
@@ -137,7 +137,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0003-0820-2662
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Małgorzata Wierzba
     identifier:
       - notation: 0000-0003-0820-2662
@@ -145,7 +145,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/04waf7p94
   - id: http://orcid.org/0000-0001-7163-3110
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Felix Hoffstaedter
     identifier:
       - notation: 0000-0001-7163-3110
@@ -153,7 +153,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0002-8402-6173
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Alexander Q. Waite
     identifier:
       - notation: 0000-0002-8402-6173
@@ -161,7 +161,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0001-7628-0801
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Benjamin Poldrack
     identifier:
       - notation: 0000-0001-7628-0801
@@ -170,7 +170,7 @@ was_attributed_to:
       - https://ror.org/02nv7yv05
   # identifier is publication scope, taken from publisher website
   - id: https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Simon B. Eickhoff
     affiliation:
       - https://ror.org/02nv7yv05
@@ -178,7 +178,7 @@ was_attributed_to:
     same_as:
       - https://scholar.google.com/citations?user=wjpISMAAAAAJ
   - id: http://orcid.org/0000-0001-6398-6370
-    meta_type: dlco:ResearchContributor
+    meta_type: dldist:ResearchContributor
     name: Michael Hanke
     identifier:
       - notation: 0000-0001-6398-6370
@@ -189,21 +189,21 @@ was_attributed_to:
 
   # author institutions
   - id: https://ror.org/02nv7yv05
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: FZJ-INM7
     title: Institute of Neuroscience and Medicine, Brain & Behaviour (INM-7), Research Center Jülich, Jülich, Germany
     identifier:
       - notation: 02nv7yv05
         schema_agency: https://ror.org
   - id: https://ror.org/024z2rq82
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: HHU-ISN
     title: Institute of Systems Neuroscience, Medical Faculty, Heinrich Heine University Düsseldorf, Düsseldorf, Germany
     identifier:
       - notation: 024z2rq82
         schema_agency: https://ror.org
   - id: https://ror.org/04waf7p94
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: Nencki
     title: Laboratory of Brain Imaging, Nencki Institute of Experimental Biology, Polish Academy of Sciences, Warsaw, Poland
     identifier:
@@ -212,7 +212,7 @@ was_attributed_to:
 
   # data provider
   - id: https://ror.org/02frzq211
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: UK Biobank
     identifier:
       - notation: 02frzq211
@@ -220,7 +220,7 @@ was_attributed_to:
 
   # funder
   - id: https://ror.org/00k4n6c32
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: European Commission
     identifier:
       - notation: 00k4n6c32
@@ -233,7 +233,7 @@ was_attributed_to:
     same_as:
       - https://www.nsf.org
   - id: https://ror.org/04pz7b180
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: Federal Ministry of Education and Research
     address: Kapelle-Ufer 1, D-10117 Berlin, Germany
     identifier:
@@ -242,12 +242,12 @@ was_attributed_to:
     same_as:
       - https://www.bmbf.de
   - id: https://www.ncn.gov.pl
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: National Science Center Poland
 
   # publisher
   - id: https://ror.org/03dsk4d59
-    meta_type: dlco:Organization
+    meta_type: dldist:Organization
     name: Springer Nature (United Kingdom)
     identifier:
       - notation: 03dsk4d59

@@ -11,7 +11,7 @@
           "schema_agency": "https://doi.org"
         }
       ],
-      "meta_type": "dlco:Resource",
+      "meta_type": "dldist:Resource",
       "name": "penguins",
       "same_as": [
         "https://doi.org/10.5281/zenodo.3960218"
@@ -101,7 +101,7 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
-      "meta_type": "dlco:Grant",
+      "meta_type": "dldist:Grant",
       "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
@@ -114,7 +114,7 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
-      "meta_type": "dlco:Grant",
+      "meta_type": "dldist:Grant",
       "name": "Palmer, Antarctica Long Term Ecological Research Project",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
@@ -127,7 +127,7 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
-      "meta_type": "dlco:Grant",
+      "meta_type": "dldist:Grant",
       "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
       "sponsor": "https://ror.org/05nwjp114",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
@@ -140,7 +140,7 @@
           "schema_agency": "https://doi.org"
         }
       ],
-      "meta_type": "dlco:Publication",
+      "meta_type": "dldist:Publication",
       "qualified_attribution": [
         {
           "had_role": [
@@ -162,7 +162,7 @@
           "schema_agency": "https://orcid.org"
         }
       ],
-      "meta_type": "dlco:ResearchContributor",
+      "meta_type": "dldist:ResearchContributor",
       "name": "Allison Horst",
       "same_as": [
         "https://orcid.org/0000-0002-6047-5564"
@@ -180,7 +180,7 @@
           "schema_agency": "https://orcid.org"
         }
       ],
-      "meta_type": "dlco:ResearchContributor",
+      "meta_type": "dldist:ResearchContributor",
       "name": "Allison Hill",
       "email": "ahill@example.com",
       "affiliation": [
@@ -195,7 +195,7 @@
           "schema_agency": "https://orcid.org"
         }
       ],
-      "meta_type": "dlco:ResearchContributor",
+      "meta_type": "dldist:ResearchContributor",
       "name": "Kirsten Gorman",
       "email": "kgorman@example.com",
       "affiliation": [
@@ -204,12 +204,12 @@
     },
     {
       "id": "exthisds:#UCSB",
-      "meta_type": "dlco:Organization",
+      "meta_type": "dldist:Organization",
       "name": "UC Santa Barbara: Santa Barbara, CA, US"
     },
     {
       "id": "exthisds:#RStudio",
-      "meta_type": "dlco:Organization",
+      "meta_type": "dldist:Organization",
       "name": "RStudio: Boston, MA, US"
     },
     {
@@ -220,7 +220,7 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dlco:Organization",
+      "meta_type": "dldist:Organization",
       "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
     },
     {
@@ -231,7 +231,7 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dlco:Agent",
+      "meta_type": "dldist:Agent",
       "name": "NSF Office of Polar Programs"
     },
     {
@@ -242,7 +242,7 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dlco:Agent",
+      "meta_type": "dldist:Agent",
       "name": "US National Science Foundation",
       "same_as": [
         "https://www.nsf.org"
@@ -252,7 +252,7 @@
   "has_part": [
     {
       "id": "exthisdsver:./adelie.csv",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "byte_size": 23755,
       "checksum": [
         {
@@ -265,7 +265,7 @@
     },
     {
       "id": "exthisdsver:./gentoo.csv",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "byte_size": 11263,
       "checksum": [
         {
@@ -278,7 +278,7 @@
     },
     {
       "id": "exthisdsver:./chinstrap.csv",
-      "meta_type": "dlco:Distribution",
+      "meta_type": "dldist:Distribution",
       "byte_size": 18872,
       "checksum": [
         {

@@ -1,6 +1,6 @@
 {
   "id": "exthisdsver:./some/name.ext",
-  "meta_type": "dlco:Distribution",
+  "meta_type": "dldist:Distribution",
   "name": "name.ext",
   "byte_size": 123456789,
   "checksum": [
