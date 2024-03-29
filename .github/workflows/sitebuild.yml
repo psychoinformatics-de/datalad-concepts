@@ -48,10 +48,10 @@ jobs:
           #export "SITEDIR=./build/upload/$(git branch --show-current)"
           #export "SITEURL=https://concepts.datalad.org/$(git branch --show-current)"
           make build/mkdocs-site
-          make build/context.jsonld
+          #make build/context.jsonld
           #mv ./build/mkdocs-site $SITEDIR
           mv ./build/mkdocs-site ./build/upload
-          mv ./build/context.jsonld ./build/upload/
+          #mv ./build/context.jsonld ./build/upload/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
