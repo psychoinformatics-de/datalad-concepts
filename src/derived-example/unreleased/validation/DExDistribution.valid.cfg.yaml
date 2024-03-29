@@ -1,0 +1,18 @@
+schema: src/derived-example/unreleased.yaml
+target_class: DExDistribution
+data_sources:
+  - src/derived-example/unreleased/examples/DExDistribution-basic.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-customlicense.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-resource.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-parts.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-formats.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-datatypes.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-annexkey.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-gitblob.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-gittree.yaml
+  - src/derived-example/unreleased/examples/DExDistribution-penguins.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

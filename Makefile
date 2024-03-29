@@ -14,8 +14,8 @@ try:
 all: build/mkdocs-site
 
 build/linkml-docs: \
-	build/linkml-docs/s/distribution/unreleased
-#	build/linkml-docs/derived-example/unreleased
+	build/linkml-docs/s/distribution/unreleased \
+	build/linkml-docs/s/derived-example/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	gen-doc \
 		--hierarchical-class-view \
@@ -39,8 +39,8 @@ check: check-models check-validation
 
 # add additional schemas to lint here
 check-models: \
-	checkmodel/distribution/unreleased
-#	check-model-derived-example-unreleased
+	checkmodel/distribution/unreleased \
+	checkmodel/derived-example/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -68,9 +68,9 @@ checkmodel/%: src/%.yaml
 # converted formats
 check-validation: \
 	convertexamples/distribution/unreleased \
-	checkvalidation/distribution/unreleased
-#	convert-examples-derived-example-unreleased \
-#	check-validation-derived-example-unreleased
+	checkvalidation/distribution/unreleased \
+	convertexamples/derived-example/unreleased \
+	checkvalidation/derived-example/unreleased
 checkvalidation/%:
 	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
