@@ -11,34 +11,23 @@ endif
 try:
 	${FAILIF_STDERR} bash -c 'exit 12'
 
-all: mkdocs-site build/context.jsonld
-
-build/context.jsonld: src/linkml/schemas/ontology.yaml
-	mkdir -p build
-	gen-jsonld-context \
-		--prefixes \
-		--model \
-		--mergeimports \
-		$< > $@
+all: build/mkdocs-site
 
 build/linkml-docs: \
-	build/linkml-docs/data-distribution \
-	build/linkml-docs/derived-example \
-	build/linkml-docs/dataset-version \
-	build/linkml-docs/ontology
-build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
-	export OUTDIR=$$([ "$*" = "ontology" ] && echo $@ || echo build/linkml-docs/schemas/$*) && \
+	build/linkml-docs/s/distribution/unreleased
+#	build/linkml-docs/derived-example/unreleased
+build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	gen-doc \
 		--hierarchical-class-view \
 		--include-top-level-diagram \
 		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
-		--example-directory src/examples/$* \
-		-d $$OUTDIR \
+		--example-directory src/$*/examples/ \
+		-d $@ \
 		$< \
-	&& (cp -r src/extra-docs/$*-schema/*.md $$OUTDIR || true) \
-	&& cp $< $${OUTDIR}.yaml
+	&& (cp -r src/$*/extra-docs/*.md $@ || true) \
+	&& cp $< $@.yaml
 	# try to inject any extra-docs (if any exist)
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
@@ -50,11 +39,9 @@ check: check-models check-validation
 
 # add additional schemas to lint here
 check-models: \
-	check-model-data-distribution \
-	check-model-derived-example \
-	check-model-dataset-version \
-	check-model-ontology
-check-model-%: src/linkml/schemas/%.yaml
+	checkmodel/distribution/unreleased
+#	check-model-derived-example-unreleased
+checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
 	@linkml-lint \
@@ -80,32 +67,27 @@ check-model-%: src/linkml/schemas/%.yaml
 # respective validation targets, because some tests rely on these
 # converted formats
 check-validation: \
-	convert-examples-data-distribution \
-	check-validation-data-distribution \
-	convert-examples-derived-example \
-	check-validation-derived-example \
-	convert-examples-dataset-version \
-	check-validation-dataset-version \
-	convert-examples-ontology
-check-validation-%:
-	$(MAKE) check-valid-validation-$* check-invalid-validation-$*
-check-valid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
+	convertexamples/distribution/unreleased \
+	checkvalidation/distribution/unreleased
+#	convert-examples-derived-example-unreleased \
+#	check-validation-derived-example-unreleased
+checkvalidation/%:
+	$(MAKE) checkvalid/$* checkinvalid/$*
+checkvalid/%: src/%/validation src/%.yaml
 	@for ex in $</*.valid.cfg.yaml; do \
 		echo "Validate $$ex" ; \
 		linkml-validate --config "$$ex" || exit 5 ; \
 	done
-check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
+checkinvalid/%: src/%/validation src/%.yaml
 	@for ex in $</*.invalid.cfg.yaml; do \
 		echo "(In)validate $$ex" ; \
 		linkml-validate --config "$$ex" && exit 5 || true; \
 	done
 
 convert-examples: \
-	convert-examples-data-distribution \
-	convert-examples-derived-example \
-	convert-examples-dataset-version \
-	convert-examples-ontology
-convert-examples-%: src/linkml/schemas/%.yaml src/examples/%
+	convertexamples/distribution/unreleased
+#	convert-examples-derived-example-unreleased
+convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \
 		[ "$$ex" = "$<" ] && continue; \
@@ -133,4 +115,4 @@ clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean check check-models check-examples convert-examples
+.PHONY: clean check check-models check-validation convert-examples

@@ -1,0 +1,13 @@
+{
+  "id": "exthisdsver:./some/path.ext",
+  "meta_type": "dldist:Distribution",
+  "relation": [
+    {
+      "id": "exthisds:#customlicense",
+      "meta_type": "dldist:LicenseDocument",
+      "license_text": "Highly custom terms, never seen before."
+    }
+  ],
+  "license": "exthisds:#customlicense",
+  "@type": "Distribution"
+}

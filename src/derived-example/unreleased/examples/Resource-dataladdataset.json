@@ -1,0 +1,11 @@
+{
+  "id": "datalad-ds:cec1da92-0dbd-4df3-8602-7c72b2d12854",
+  "identifier": [
+    {
+      "notation": "cec1da92-0dbd-4df3-8602-7c72b2d12854",
+      "schema_agency": "https://datalad.org"
+    }
+  ],
+  "meta_type": "dldist:Resource",
+  "@type": "Resource"
+}

@@ -1,0 +1,19 @@
+{
+  "id": "exthisdsver:./some/name.ext",
+  "meta_type": "dldist:Distribution",
+  "name": "name.ext",
+  "byte_size": 123456789,
+  "checksum": [
+    {
+      "algorithm": "spdx:checksumAlgorithm_md5",
+      "digest": "32a617360d10e3dcbfdd0885e8d64ab8"
+    },
+    {
+      "algorithm": "spdx:checksumAlgorithm_sha1",
+      "digest": "c7dbac946b9860cf05a7d696b9e9591c60083859"
+    }
+  ],
+  "date_modified": "2024-03-21",
+  "license": "licenses:CC0-1.0",
+  "@type": "Distribution"
+}

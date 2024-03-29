@@ -1,0 +1,7 @@
+id: exthisdsver:./some/path.ext
+relation:
+  - id: exthisds:#customlicense
+    meta_type: dldist:LicenseDocument
+    license_text: >-
+      Highly custom terms, never seen before.
+license: exthisds:#customlicense

@@ -1,0 +1,105 @@
+id: https://concepts.datalad.org/schemas/derived-example
+name: derived-example
+version: UNRELEASED
+status: bibo:status/draft
+title: Demo of a derived schema
+description: |
+  TODO
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  annex-uuid: https://concepts.datalad.org/ns/annex-uuid/
+  annex-key: https://concepts.datalad.org/ns/annex-key/
+  bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
+  DCAT: http://www.w3.org/ns/dcat#
+  datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/
+  dldist: https://concepts.datalad.org/s/distribution/unreleased/
+  dex: https://example.org/ns/ex/terms/
+  dpv: https://w3id.org/dpv#
+  foaf: http://xmlns.com/foaf/0.1/
+  gitsha: https://concepts.datalad.org/ns/gitsha/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  spdx: http://spdx.org/rdf/terms#
+  licenses: http://spdx.org/licenses/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+
+  exns: https://example.org/ns/
+  exthisds: https://example.org/ns/dataset/
+  exthisdsver: https://example.org/ns/datasetversion/
+
+
+default_prefix: dex
+
+emit_prefixes:
+  - CiTO
+  - DCAT
+  - dldist
+  - licenses
+  - marcrel
+  - obo
+  - prov
+
+imports:
+  - dlco:s/distribution/unreleased
+
+classes:
+  DExResearchContributor:
+    class_uri: dex:ResearchContributor
+    is_a: Person
+    description: >-
+      A person that has or could contribute to some research in any capacity.
+    slots:
+      - affiliation
+    slot_usage:
+      affiliation:
+        multivalued: true
+
+  DExDistribution:
+    class_uri: dex:ExDistribution
+    is_a: Distribution
+    description: >-
+      Specialized `Distribution` class for a particular domain.
+    attributes:
+      fid:
+        slot_uri: dex:fid
+        description: >-
+          Storage-related identifier that is universally available in this
+          domain.
+        range: NonNegativeInteger
+
+  JournalArticle:
+    class_uri: dex:JournalPublication
+    is_a: Publication
+    description: >-
+      A publication that is an article in a journal.
+    attributes:
+      doi:
+        slot_uri: bibo:doi
+        description: DOI
+        range: uri
+        notes:
+          - In this domain, a DOI identifier has to be given as a URL
+      number_of_pages:
+        slot_uri: bibo:numPages
+        description: Number of pages
+        range: NonNegativeInteger
+      pof:
+        slot_uri: dex:pof
+        description: Obscure but very important identifier in this domain
+        range: string

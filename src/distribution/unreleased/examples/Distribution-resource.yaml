@@ -1,0 +1,23 @@
+# Link a distribution to the resource it is representing, and the
+# (versioned) data collections it is part of.
+# The identifiers are arbitrary, but symbolize the distribution
+# to be a format-specific materialization of a general resource
+#
+# The resource record is not inlined at `is_distribution_of`,
+# because this avoids duplication in cases where multiple distributions
+# of the same resource exist. The resource object only has to be
+# defined once in a `relation` property
+id: exthisdsver:./some/path.ext
+is_distribution_of: exthisdsver:#some/path
+relation:
+  - id: exthisdsver:#some/path
+    meta_type: dldist:Resource
+    description: Some tabular data
+    is_part_of: exthisdsver:#
+  - id: exthisdsver:#
+    meta_type: dldist:Resource
+    description: A version of a collection of some data
+    is_version_of: exthisds:#
+  - id: exthisds:#
+    meta_type: dldist:Resource
+    description: A collection of some data

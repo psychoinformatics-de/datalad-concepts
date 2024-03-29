@@ -1,0 +1,25 @@
+{
+  "id": "exthisdsver:./some/path.ext",
+  "meta_type": "dldist:Distribution",
+  "relation": [
+    {
+      "id": "exthisdsver:#some/path",
+      "description": "Some tabular data",
+      "meta_type": "dldist:Resource",
+      "is_part_of": "exthisdsver:#"
+    },
+    {
+      "id": "exthisdsver:#",
+      "description": "A version of a collection of some data",
+      "meta_type": "dldist:Resource",
+      "is_version_of": "exthisds:#"
+    },
+    {
+      "id": "exthisds:#",
+      "description": "A collection of some data",
+      "meta_type": "dldist:Resource"
+    }
+  ],
+  "is_distribution_of": "exthisdsver:#some/path",
+  "@type": "Distribution"
+}
