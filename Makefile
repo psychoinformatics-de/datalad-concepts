@@ -36,7 +36,8 @@ build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
 		--example-directory src/examples/$* \
 		-d $$OUTDIR \
 		$< \
-	&& (cp -r src/extra-docs/$*-schema/*.md $$OUTDIR || true)
+	&& (cp -r src/extra-docs/$*-schema/*.md $$OUTDIR || true) \
+	&& cp $< $${OUTDIR}.yaml
 	# try to inject any extra-docs (if any exist)
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
