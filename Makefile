@@ -23,6 +23,7 @@ build/context.jsonld: src/linkml/schemas/ontology.yaml
 
 build/linkml-docs: \
 	build/linkml-docs/data-distribution \
+	build/linkml-docs/derived-example \
 	build/linkml-docs/dataset-version \
 	build/linkml-docs/ontology
 build/linkml-docs/%: src/linkml/schemas/%.yaml src/extra-docs/%-schema
@@ -50,6 +51,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	check-model-data-distribution \
+	check-model-derived-example \
 	check-model-dataset-version \
 	check-model-ontology
 check-model-%: src/linkml/schemas/%.yaml
@@ -80,6 +82,8 @@ check-model-%: src/linkml/schemas/%.yaml
 check-validation: \
 	convert-examples-data-distribution \
 	check-validation-data-distribution \
+	convert-examples-derived-example \
+	check-validation-derived-example \
 	convert-examples-dataset-version \
 	check-validation-dataset-version \
 	convert-examples-ontology
@@ -98,7 +102,7 @@ check-invalid-validation-%: tests/%-schema/validation src/linkml/schemas/%.yaml
 
 convert-examples: \
 	convert-examples-data-distribution \
-	convert-examples-datalad-dataset-components \
+	convert-examples-derived-example \
 	convert-examples-dataset-version \
 	convert-examples-ontology
 convert-examples-%: src/linkml/schemas/%.yaml src/examples/%

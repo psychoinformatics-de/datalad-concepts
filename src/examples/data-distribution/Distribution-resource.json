@@ -1,25 +1,25 @@
 {
-  "id": "thisdsver:./some/path.ext",
+  "id": "exthisdsver:./some/path.ext",
   "meta_type": "dlco:Distribution",
   "relation": [
     {
-      "id": "thisdsver:#some/path",
+      "id": "exthisdsver:#some/path",
       "description": "Some tabular data",
       "meta_type": "dlco:Resource",
-      "is_part_of": "thisdsver:#"
+      "is_part_of": "exthisdsver:#"
     },
     {
-      "id": "thisdsver:#",
+      "id": "exthisdsver:#",
       "description": "A version of a collection of some data",
       "meta_type": "dlco:Resource",
-      "is_version_of": "thisds:#"
+      "is_version_of": "exthisds:#"
     },
     {
-      "id": "thisds:#",
+      "id": "exthisds:#",
       "description": "A collection of some data",
       "meta_type": "dlco:Resource"
     }
   ],
-  "is_distribution_of": "thisdsver:#some/path",
+  "is_distribution_of": "exthisdsver:#some/path",
   "@type": "Distribution"
 }

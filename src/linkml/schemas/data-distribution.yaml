@@ -52,20 +52,23 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
   licenses: http://spdx.org/licenses/
   marcrel: http://id.loc.gov/vocabulary/relators/
-  # convenience namespace that makes it possible to not think about
+  # example convenience namespaces that make it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
-  # The prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P thisds=http://example.com/ --infer ...
+  # the prefix can be materialized ala
+  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
+  #
+  # the three following prefixes are examples. a use case specific derived
+  # schema needs to define its own, differently named and defined namespaces.
   #
   # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
   # to keep vocabulary and entities local to this scope
-  thisns: https://example.com/custom-namespace/
+  exthisns: https://example.org/ns/
   # a custom namespace that is unique to a particular dataset, but common
   # across all versions of it. It could be nested inside the `thisns` namespace
-  thisds: https://example.com/custom-namespace/dataset/
+  exthisds: https://example.org/ns/dataset/
   # a custom namespace that is unique to a particular version of a single
   # dataset. It could be nested inside the `thisds` namespace
-  thisdsver: https://example.com/custom-namespace/datasetversion/
+  exthisdsver: https://example.org/ns/datasetversion/
 
 default_prefix: dlco
 
@@ -888,7 +891,6 @@ classes:
 
   Distribution:
     class_uri: dlco:Distribution
-    tree_root: true
     is_a: Entity
     description: >-
       A specific representation of data, which may come in the form of

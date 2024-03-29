@@ -76,26 +76,26 @@ However, sometimes no identifiers are available, and there are no resources for 
 For such cases, the schema provide three built-in prefixes that map to exemplary IRI prefixes.
 These prefixes can be used to establish an implicit identification schema that is local to a particular scope.
 
-- `thisns`: A custom umbrella namespace relevant in the context of a dataset
-- `thisds`: A custom namespace that is unique to the particular dataset that is being described
-- `thisver`: A custom namespace that is unique to the particular version of the dataset that is being described
+- `exthisns`: A custom umbrella namespace relevant in the context of a dataset
+- `exthisds`: A custom namespace that is unique to the particular dataset that is being described
+- `exthisver`: A custom namespace that is unique to the particular version of the dataset that is being described
 
-The `thisns` namespace is the most important one.
+The `exthisns` namespace is the most important one.
 It can be used to declare and refer to definitions of an `Agent`, `Activity`, or `Entity` using a "localized" identification concept for which no setup for dereferenceable IRIs exists (yet).
 For example the identification of people in a consortium that spans multiple organizations, where a global identifier like ORCID cannot be required.
 
-Likewise, `thisds` and `thisdsver` can be used as abstract (yet undetermined) namespace references in **store** metadata records.
+Likewise, `exthisds` and `exthisdsver` can be used as abstract (yet undetermined) namespace references in **store** metadata records.
 This can be useful when a suitable schema for persistent datasets and/or dataset version identifier does not yet exist, at the time for creation of such records.
 
 ### Identifiers for data entities and contextual entities
 
 This schema does not require, but enables a formal/visible distinction of identifiers for data entities (e.g., files) and contextual entities (e.g., people, licenses, grants), as done, for example in the [RO-crate specification](https://www.researchobject.org/ro-crate/specification.html).
 
-For example, in order to identify a file in a distribution of a particular version of a dataset, the identifier `thisdsver:./some/file.txt` can be used.
+For example, in order to identify a file in a distribution of a particular version of a dataset, the identifier `exthisdsver:./some/file.txt` can be used.
 The `./` would indicate a data entity.
-The `thisdsver` declares the scope of this localized identifier to be that of this particular version of the dataset.
+The `exthisdsver` declares the scope of this localized identifier to be that of this particular version of the dataset.
 
-A custom license can be assigned an identifier `thisdsver:#customlicense`.
+A custom license can be assigned an identifier `exthisdsver:#customlicense`.
 The `#` would indicate a contextual entity.
-Again, the `thisdsver` declares the scope of this localized identifier to be that of this particular version of the dataset.
+Again, the `exthisdsver` declares the scope of this localized identifier to be that of this particular version of the dataset.
 This makes it possible to declare custom license terms for a particular data distribution at hand, without having to be concerned with the analysis of term changes across versions that would require a new identifier.

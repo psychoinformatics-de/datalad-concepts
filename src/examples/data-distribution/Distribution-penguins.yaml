@@ -1,27 +1,27 @@
 # we identify the dataset distribution (incl. its parts) as the main data entity
 # of this dataset version. However, this is arbitrary. It could also be an
 # archive or directory in a larger distribution context.
-id: thisdsver:.
+id: exthisdsver:.
 license: licenses:CC0-1.0
 # we describe the full penguin dataset distribution here. However, this is an
 # arbitrary choice. We could also have a near-identical record that is focused
 # on a single file in the dataset -- while also contextual relationships
 has_part:
-  - id: thisdsver:./adelie.csv
+  - id: exthisdsver:./adelie.csv
     byte_size: 23755
     checksum:
       - algorithm: md5
         digest: e7e2be6b203a221949f05e02fcefd853
     download_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff
     media_type: text/csv
-  - id: thisdsver:./gentoo.csv
+  - id: exthisdsver:./gentoo.csv
     byte_size: 11263
     checksum:
       - algorithm: md5
         digest: 1549566fb97afa879dc9446edcf2015f
     download_url: https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381
     media_type: text/csv
-  - id: thisdsver:./chinstrap.csv
+  - id: exthisdsver:./chinstrap.csv
     byte_size: 18872
     checksum:
       - algorithm: md5
@@ -30,16 +30,16 @@ has_part:
     media_type: text/csv
 qualified_part:
   - name: adelie.csv
-    entity: thisdsver:./adelie.csv
+    entity: exthisdsver:./adelie.csv
   - name: gentoo.csv
-    entity: thisdsver:./gentoo.csv
+    entity: exthisdsver:./gentoo.csv
   - name: chinstrap.csv
-    entity: thisdsver:./chinstrap.csv
+    entity: exthisdsver:./chinstrap.csv
 #
 # relation to contextual entities
-is_distribution_of: thisdsver:#
+is_distribution_of: exthisdsver:#
 relation:
-  - id: thisdsver:#
+  - id: exthisdsver:#
     meta_type: dlco:Resource
     date_modified: "2020-07-16"
     description: >-
@@ -48,7 +48,7 @@ relation:
       collected and made available by Dr. Kristen Gorman and the Palmer
       Station, Antarctica LTER, a member of the Long Term Ecological
       Research Network.
-    is_version_of: thisds:#
+    is_version_of: exthisds:#
     keyword:
       - penguins
       - sea ice
@@ -64,22 +64,22 @@ relation:
       - notation: 10.5281/zenodo.3960218
         schema_agency: https://doi.org
     qualified_attribution:
-      - agent: thisds:#ahorst
+      - agent: exthisds:#ahorst
         had_role:
           - marcrel:aut
           - dpv:DataController
-      - agent: thisds:#ahill
+      - agent: exthisds:#ahill
         had_role:
           - marcrel:aut
-      - agent: thisds:#kgorman
+      - agent: exthisds:#kgorman
         had_role:
           - marcrel:aut
           - marcrel:cre
-      - agent: thisds:#UCSB
+      - agent: exthisds:#UCSB
         had_role:
           # Supporting host
           - marcrel:sht
-      - agent: thisds:#RStudio
+      - agent: exthisds:#RStudio
         had_role:
           - marcrel:sht
       - agent: https://ror.org/01j7nq853
@@ -89,20 +89,20 @@ relation:
       - had_role:
           - schema:funding
         entity:
-          - thisds:#nsf0217282
-          - thisds:#nsf0823101
-          - thisds:#nsf0741351
+          - exthisds:#nsf0217282
+          - exthisds:#nsf0823101
+          - exthisds:#nsf0741351
       - had_role:
           - CiTO:citesAsAuthority
           - CiTO:isCitedAsDataSourceBy
         entity: 
-          - thisds:#gormanetal
+          - exthisds:#gormanetal
     same_as:
       - https://doi.org/10.5281/zenodo.3960218
     title: Palmer Penguins
     version: "0.1.0"
 
-  - id: thisds:#nsf0217282
+  - id: exthisds:#nsf0217282
     meta_type: dlco:Grant
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
     identifier:
@@ -110,7 +110,7 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282
-  - id: thisds:#nsf0823101
+  - id: exthisds:#nsf0823101
     meta_type: dlco:Grant
     name: Palmer, Antarctica Long Term Ecological Research Project
     identifier:
@@ -118,7 +118,7 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
-  - id: thisds:#nsf0741351
+  - id: exthisds:#nsf0741351
     meta_type: dlco:Grant
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
     identifier:
@@ -128,7 +128,7 @@ relation:
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351
   # the following publication ID could also be the DOI, but having a global ID is not
   # a requirement (although almost unconditionally advantageous)
-  - id: thisds:#gormanetal
+  - id: exthisds:#gormanetal
     meta_type: dlco:Publication
     notation: >-
       'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
@@ -139,7 +139,7 @@ relation:
       - notation: 10.1371/journal.pone.0090081
         schema_agency: https://doi.org
     qualified_attribution:
-      - agent: thisds:#kgorman
+      - agent: exthisds:#kgorman
         had_role:
           - marcrel:aut
 
@@ -151,7 +151,7 @@ relation:
 # We use the `thisds` prefix based on the assumption that no
 # namespace conflict would ever happen across dataset versions.
 was_attributed_to:
-  - id: thisds:#ahorst
+  - id: exthisds:#ahorst
     meta_type: dlco:ResearchContributor
     name: Allison Horst
     email: ahorst@example.com
@@ -159,12 +159,12 @@ was_attributed_to:
       - notation: 0000-0002-6047-5564
         schema_agency: https://orcid.org
     affiliation:
-      - thisds:#UCSB
+      - exthisds:#UCSB
     # we can also use the ORCID as an equivalence statement, and web resource
     # to link to
     same_as:
       - https://orcid.org/0000-0002-6047-5564
-  - id: thisds:#ahill
+  - id: exthisds:#ahill
     meta_type: dlco:ResearchContributor
     name: Allison Hill
     email: ahill@example.com
@@ -172,8 +172,8 @@ was_attributed_to:
       - notation: 0000-0002-8082-1890
         schema_agency: https://orcid.org
     affiliation:
-      - thisds:#Rstudio
-  - id: thisds:#kgorman
+      - exthisds:#Rstudio
+  - id: exthisds:#kgorman
     meta_type: dlco:ResearchContributor
     name: Kirsten Gorman
     email: kgorman@example.com
@@ -182,10 +182,10 @@ was_attributed_to:
         schema_agency: https://orcid.org
     affiliation:
       - https://ror.org/01j7nq853
-  - id: thisds:#UCSB
+  - id: exthisds:#UCSB
     meta_type: dlco:Organization
     name: 'UC Santa Barbara: Santa Barbara, CA, US'
-  - id: thisds:#RStudio
+  - id: exthisds:#RStudio
     meta_type: dlco:Organization
     name: 'RStudio: Boston, MA, US'
   - id: https://ror.org/01j7nq853

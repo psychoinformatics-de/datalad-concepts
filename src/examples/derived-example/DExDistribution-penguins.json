@@ -1,0 +1,310 @@
+{
+  "id": "exthisdsver:.",
+  "meta_type": "dex:ExDistribution",
+  "relation": [
+    {
+      "id": "exthisdsver:#",
+      "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
+      "identifier": [
+        {
+          "notation": "10.5281/zenodo.3960218",
+          "schema_agency": "https://doi.org"
+        }
+      ],
+      "meta_type": "dlco:Resource",
+      "name": "penguins",
+      "same_as": [
+        "https://doi.org/10.5281/zenodo.3960218"
+      ],
+      "title": "Palmer Penguins",
+      "qualified_attribution": [
+        {
+          "had_role": [
+            "marcrel:aut",
+            "dpv:DataController"
+          ],
+          "agent": "exthisds:#ahorst"
+        },
+        {
+          "had_role": [
+            "marcrel:aut"
+          ],
+          "agent": "exthisds:#ahill"
+        },
+        {
+          "had_role": [
+            "marcrel:aut",
+            "marcrel:cre"
+          ],
+          "agent": "exthisds:#kgorman"
+        },
+        {
+          "had_role": [
+            "marcrel:sht"
+          ],
+          "agent": "exthisds:#UCSB"
+        },
+        {
+          "had_role": [
+            "marcrel:sht"
+          ],
+          "agent": "exthisds:#RStudio"
+        },
+        {
+          "had_role": [
+            "marcrel:sht"
+          ],
+          "agent": "https://ror.org/01j7nq853"
+        }
+      ],
+      "qualified_relation": [
+        {
+          "had_role": [
+            "schema:funding"
+          ],
+          "entity": [
+            "exthisds:#nsf0217282",
+            "exthisds:#nsf0823101",
+            "exthisds:#nsf0741351"
+          ]
+        },
+        {
+          "had_role": [
+            "CiTO:citesAsAuthority",
+            "CiTO:isCitedAsDataSourceBy"
+          ],
+          "entity": [
+            "exthisds:#gormanetal"
+          ]
+        }
+      ],
+      "date_modified": "2020-07-16",
+      "is_version_of": "exthisds:#",
+      "keyword": [
+        "penguins",
+        "sea ice",
+        "foraging",
+        "ecological niches",
+        "islands",
+        "antarctica",
+        "animal sexual behavior",
+        "isotopes"
+      ],
+      "landing_page": "https://github.com/allisonhorst/palmerpenguins",
+      "version": "0.1.0"
+    },
+    {
+      "id": "exthisds:#nsf0217282",
+      "identifier": [
+        {
+          "notation": "0217282",
+          "schema_agency": "https://ror.org/021nxhr62"
+        }
+      ],
+      "meta_type": "dlco:Grant",
+      "name": "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment",
+      "sponsor": "https://ror.org/05nwjp114",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
+    },
+    {
+      "id": "exthisds:#nsf0823101",
+      "identifier": [
+        {
+          "notation": "0823101",
+          "schema_agency": "https://ror.org/021nxhr62"
+        }
+      ],
+      "meta_type": "dlco:Grant",
+      "name": "Palmer, Antarctica Long Term Ecological Research Project",
+      "sponsor": "https://ror.org/05nwjp114",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
+    },
+    {
+      "id": "exthisds:#nsf0741351",
+      "identifier": [
+        {
+          "notation": "0741351",
+          "schema_agency": "https://ror.org/021nxhr62"
+        }
+      ],
+      "meta_type": "dlco:Grant",
+      "name": "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf",
+      "sponsor": "https://ror.org/05nwjp114",
+      "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
+    },
+    {
+      "id": "exthisds:#gormanetal",
+      "identifier": [
+        {
+          "notation": "10.1371/journal.pone.0090081",
+          "schema_agency": "https://doi.org"
+        }
+      ],
+      "meta_type": "dlco:Publication",
+      "qualified_attribution": [
+        {
+          "had_role": [
+            "marcrel:aut"
+          ],
+          "agent": "exthisds:#kgorman"
+        }
+      ],
+      "date_published": "2014-03-05",
+      "notation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'"
+    }
+  ],
+  "was_attributed_to": [
+    {
+      "id": "exthisds:#ahorst",
+      "identifier": [
+        {
+          "notation": "0000-0002-6047-5564",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Allison Horst",
+      "same_as": [
+        "https://orcid.org/0000-0002-6047-5564"
+      ],
+      "email": "ahorst@example.com",
+      "affiliation": [
+        "exthisds:#UCSB"
+      ]
+    },
+    {
+      "id": "exthisds:#ahill",
+      "identifier": [
+        {
+          "notation": "0000-0002-8082-1890",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Allison Hill",
+      "email": "ahill@example.com",
+      "affiliation": [
+        "exthisds:#Rstudio"
+      ]
+    },
+    {
+      "id": "exthisds:#kgorman",
+      "identifier": [
+        {
+          "notation": "0000-0002-0258-9264",
+          "schema_agency": "https://orcid.org"
+        }
+      ],
+      "meta_type": "dlco:ResearchContributor",
+      "name": "Kirsten Gorman",
+      "email": "kgorman@example.com",
+      "affiliation": [
+        "https://ror.org/01j7nq853"
+      ]
+    },
+    {
+      "id": "exthisds:#UCSB",
+      "meta_type": "dlco:Organization",
+      "name": "UC Santa Barbara: Santa Barbara, CA, US"
+    },
+    {
+      "id": "exthisds:#RStudio",
+      "meta_type": "dlco:Organization",
+      "name": "RStudio: Boston, MA, US"
+    },
+    {
+      "id": "https://ror.org/01j7nq853",
+      "identifier": [
+        {
+          "notation": "01j7nq853",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Organization",
+      "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
+    },
+    {
+      "id": "https://ror.org/05nwjp114",
+      "identifier": [
+        {
+          "notation": "05nwjp114",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Agent",
+      "name": "NSF Office of Polar Programs"
+    },
+    {
+      "id": "https://ror.org/021nxhr62",
+      "identifier": [
+        {
+          "notation": "021nxhr62",
+          "schema_agency": "https://ror.org"
+        }
+      ],
+      "meta_type": "dlco:Agent",
+      "name": "US National Science Foundation",
+      "same_as": [
+        "https://www.nsf.org"
+      ]
+    }
+  ],
+  "has_part": [
+    {
+      "id": "exthisdsver:./adelie.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 23755,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "e7e2be6b203a221949f05e02fcefd853"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff",
+      "media_type": "text/csv"
+    },
+    {
+      "id": "exthisdsver:./gentoo.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 11263,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "1549566fb97afa879dc9446edcf2015f"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381",
+      "media_type": "text/csv"
+    },
+    {
+      "id": "exthisdsver:./chinstrap.csv",
+      "meta_type": "dlco:Distribution",
+      "byte_size": 18872,
+      "checksum": [
+        {
+          "algorithm": "md5",
+          "digest": "e4b0710c69297031d63866ce8b888f25"
+        }
+      ],
+      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462",
+      "media_type": "text/csv"
+    }
+  ],
+  "is_distribution_of": "exthisdsver:#",
+  "license": "licenses:CC0-1.0",
+  "qualified_part": [
+    {
+      "name": "adelie.csv",
+      "entity": "exthisdsver:./adelie.csv"
+    },
+    {
+      "name": "gentoo.csv",
+      "entity": "exthisdsver:./gentoo.csv"
+    },
+    {
+      "name": "chinstrap.csv",
+      "entity": "exthisdsver:./chinstrap.csv"
+    }
+  ],
+  "@type": "DExDistribution"
+}

@@ -7,17 +7,17 @@
 # because this avoids duplication in cases where multiple distributions
 # of the same resource exist. The resource object only has to be
 # defined once in a `relation` property
-id: thisdsver:./some/path.ext
-is_distribution_of: thisdsver:#some/path
+id: exthisdsver:./some/path.ext
+is_distribution_of: exthisdsver:#some/path
 relation:
-  - id: thisdsver:#some/path
+  - id: exthisdsver:#some/path
     meta_type: dlco:Resource
     description: Some tabular data
-    is_part_of: thisdsver:#
-  - id: thisdsver:#
+    is_part_of: exthisdsver:#
+  - id: exthisdsver:#
     meta_type: dlco:Resource
     description: A version of a collection of some data
-    is_version_of: thisds:#
-  - id: thisds:#
+    is_version_of: exthisds:#
+  - id: exthisds:#
     meta_type: dlco:Resource
     description: A collection of some data

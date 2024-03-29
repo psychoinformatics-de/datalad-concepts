@@ -1,9 +1,9 @@
 {
-  "id": "thisdsver:.",
+  "id": "exthisdsver:.",
   "meta_type": "dlco:Distribution",
   "relation": [
     {
-      "id": "thisdsver:#",
+      "id": "exthisdsver:#",
       "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
       "identifier": [
         {
@@ -23,32 +23,32 @@
             "marcrel:aut",
             "dpv:DataController"
           ],
-          "agent": "thisds:#ahorst"
+          "agent": "exthisds:#ahorst"
         },
         {
           "had_role": [
             "marcrel:aut"
           ],
-          "agent": "thisds:#ahill"
+          "agent": "exthisds:#ahill"
         },
         {
           "had_role": [
             "marcrel:aut",
             "marcrel:cre"
           ],
-          "agent": "thisds:#kgorman"
+          "agent": "exthisds:#kgorman"
         },
         {
           "had_role": [
             "marcrel:sht"
           ],
-          "agent": "thisds:#UCSB"
+          "agent": "exthisds:#UCSB"
         },
         {
           "had_role": [
             "marcrel:sht"
           ],
-          "agent": "thisds:#RStudio"
+          "agent": "exthisds:#RStudio"
         },
         {
           "had_role": [
@@ -63,9 +63,9 @@
             "schema:funding"
           ],
           "entity": [
-            "thisds:#nsf0217282",
-            "thisds:#nsf0823101",
-            "thisds:#nsf0741351"
+            "exthisds:#nsf0217282",
+            "exthisds:#nsf0823101",
+            "exthisds:#nsf0741351"
           ]
         },
         {
@@ -74,12 +74,12 @@
             "CiTO:isCitedAsDataSourceBy"
           ],
           "entity": [
-            "thisds:#gormanetal"
+            "exthisds:#gormanetal"
           ]
         }
       ],
       "date_modified": "2020-07-16",
-      "is_version_of": "thisds:#",
+      "is_version_of": "exthisds:#",
       "keyword": [
         "penguins",
         "sea ice",
@@ -94,7 +94,7 @@
       "version": "0.1.0"
     },
     {
-      "id": "thisds:#nsf0217282",
+      "id": "exthisds:#nsf0217282",
       "identifier": [
         {
           "notation": "0217282",
@@ -107,7 +107,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
     },
     {
-      "id": "thisds:#nsf0823101",
+      "id": "exthisds:#nsf0823101",
       "identifier": [
         {
           "notation": "0823101",
@@ -120,7 +120,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
     },
     {
-      "id": "thisds:#nsf0741351",
+      "id": "exthisds:#nsf0741351",
       "identifier": [
         {
           "notation": "0741351",
@@ -133,7 +133,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
     },
     {
-      "id": "thisds:#gormanetal",
+      "id": "exthisds:#gormanetal",
       "identifier": [
         {
           "notation": "10.1371/journal.pone.0090081",
@@ -146,7 +146,7 @@
           "had_role": [
             "marcrel:aut"
           ],
-          "agent": "thisds:#kgorman"
+          "agent": "exthisds:#kgorman"
         }
       ],
       "date_published": "2014-03-05",
@@ -155,7 +155,7 @@
   ],
   "was_attributed_to": [
     {
-      "id": "thisds:#ahorst",
+      "id": "exthisds:#ahorst",
       "identifier": [
         {
           "notation": "0000-0002-6047-5564",
@@ -169,11 +169,11 @@
       ],
       "email": "ahorst@example.com",
       "affiliation": [
-        "thisds:#UCSB"
+        "exthisds:#UCSB"
       ]
     },
     {
-      "id": "thisds:#ahill",
+      "id": "exthisds:#ahill",
       "identifier": [
         {
           "notation": "0000-0002-8082-1890",
@@ -184,11 +184,11 @@
       "name": "Allison Hill",
       "email": "ahill@example.com",
       "affiliation": [
-        "thisds:#Rstudio"
+        "exthisds:#Rstudio"
       ]
     },
     {
-      "id": "thisds:#kgorman",
+      "id": "exthisds:#kgorman",
       "identifier": [
         {
           "notation": "0000-0002-0258-9264",
@@ -203,12 +203,12 @@
       ]
     },
     {
-      "id": "thisds:#UCSB",
+      "id": "exthisds:#UCSB",
       "meta_type": "dlco:Organization",
       "name": "UC Santa Barbara: Santa Barbara, CA, US"
     },
     {
-      "id": "thisds:#RStudio",
+      "id": "exthisds:#RStudio",
       "meta_type": "dlco:Organization",
       "name": "RStudio: Boston, MA, US"
     },
@@ -251,7 +251,7 @@
   ],
   "has_part": [
     {
-      "id": "thisdsver:./adelie.csv",
+      "id": "exthisdsver:./adelie.csv",
       "meta_type": "dlco:Distribution",
       "byte_size": 23755,
       "checksum": [
@@ -264,7 +264,7 @@
       "media_type": "text/csv"
     },
     {
-      "id": "thisdsver:./gentoo.csv",
+      "id": "exthisdsver:./gentoo.csv",
       "meta_type": "dlco:Distribution",
       "byte_size": 11263,
       "checksum": [
@@ -277,7 +277,7 @@
       "media_type": "text/csv"
     },
     {
-      "id": "thisdsver:./chinstrap.csv",
+      "id": "exthisdsver:./chinstrap.csv",
       "meta_type": "dlco:Distribution",
       "byte_size": 18872,
       "checksum": [
@@ -290,20 +290,20 @@
       "media_type": "text/csv"
     }
   ],
-  "is_distribution_of": "thisdsver:#",
+  "is_distribution_of": "exthisdsver:#",
   "license": "licenses:CC0-1.0",
   "qualified_part": [
     {
       "name": "adelie.csv",
-      "entity": "thisdsver:./adelie.csv"
+      "entity": "exthisdsver:./adelie.csv"
     },
     {
       "name": "gentoo.csv",
-      "entity": "thisdsver:./gentoo.csv"
+      "entity": "exthisdsver:./gentoo.csv"
     },
     {
       "name": "chinstrap.csv",
-      "entity": "thisdsver:./chinstrap.csv"
+      "entity": "exthisdsver:./chinstrap.csv"
     }
   ],
   "@type": "Distribution"
