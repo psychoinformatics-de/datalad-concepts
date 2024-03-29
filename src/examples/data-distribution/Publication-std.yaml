@@ -52,7 +52,7 @@ relation:
       - notation: "826421"
         schema_agency: https://cordis.europa.eu
     cites_as_authority: https://cordis.europa.eu/project/id/826421
-  - id: thisds:#grant_nsf1912266
+  - id: exthisds:#grant_nsf1912266
     meta_type: dlco:Grant
     title: "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science"
     identifier:
@@ -60,26 +60,26 @@ relation:
         # NSF
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266
-  - id: thisds:#grant_nsf1429999
+  - id: exthisds:#grant_nsf1429999
     meta_type: dlco:Grant
     title: "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'"
     identifier:
       - notation: "1429999"
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999
-  - id: thisds:#grant_nsc
+  - id: exthisds:#grant_nsc
     meta_type: dlco:Grant
     name: ETIUDA
     identifier:
       - notation: 2018/28/T/HS6/00507
         schema_agency: https://www.ncn.gov.pl
-  - id: thisds:#grant_bmbf01GQ1411
+  - id: exthisds:#grant_bmbf01GQ1411
     meta_type: dlco:Grant
     title: Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution
     identifier:
       - notation: 01GQ1411
         schema_agency: https://www.bmbf.de
-  - id: thisds:#grant_bmbf01GQ1905
+  - id: exthisds:#grant_bmbf01GQ1905
     meta_type: dlco:Grant
     name: METALAD
     title: DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche
@@ -106,11 +106,11 @@ qualified_relation:
       - http://id.loc.gov/vocabulary/relators/prp
   # grants that funded the work
   - entity:
-      - thisds:#grant_bmbf01GQ1905
-      - thisds:#grant_bmbf01GQ1411
-      - thisds:#grant_nsc
-      - thisds:#grant_nsf1429999
-      - thisds:#grant_nsf1912266
+      - exthisds:#grant_bmbf01GQ1905
+      - exthisds:#grant_bmbf01GQ1411
+      - exthisds:#grant_nsc
+      - exthisds:#grant_nsf1429999
+      - exthisds:#grant_nsf1912266
       - https://cordis.europa.eu/project/id/826421
       - https://cordis.europa.eu/project/id/945539
     had_role:

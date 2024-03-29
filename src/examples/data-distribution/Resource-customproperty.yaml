@@ -2,7 +2,7 @@
 # Agent, Activity, or Entity
 #
 # Example: dataset on something heavy from Canada
-id: thisdsver:#
+id: exthisdsver:#
 has_property:
   - type: obo:HSO_0000360
     name: origin country

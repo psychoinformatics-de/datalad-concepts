@@ -5,17 +5,17 @@
 # Enable lean documents, because parts can be referenced
 # across different locations and versions after a single
 # inline definition.
-id: thisdsver:./archive.zip
+id: exthisdsver:./archive.zip
 has_part:
   # a part of a Distribution is also a Distribution
-  - id: thisdsver:./archive.zip/subdir
+  - id: exthisdsver:./archive.zip/subdir
     description: A subdirectory
     has_part:
-      - id: thisdsver:./archive.zip/subdir/file.txt
+      - id: exthisdsver:./archive.zip/subdir/file.txt
         description: A file
     qualified_part:
       - name: file.txt
-        entity: thisdsver:./archive.zip/subdir/file.txt
+        entity: exthisdsver:./archive.zip/subdir/file.txt
 qualified_part:
   - name: subdir
-    entity: thisdsver:./archive.zip/subdir
+    entity: exthisdsver:./archive.zip/subdir

@@ -7,9 +7,9 @@ identifier:
   # use the context entity for the version-less dataset as the
   # agency/scope
   - notation: final2
-    schema_agency: thisds:#
+    schema_agency: exthisds:#
   - notation: latest
-    schema_agency: thisds:#
+    schema_agency: exthisds:#
 # this only *single* version label we can have without making additional
 # assumptions is the commit gitsha
 version: 8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
@@ -39,7 +39,7 @@ was_generated_by:
     ended_at: "2002-05-30T09:30:10+06:00"
     qualified_association:
       # creator of the commit
-      - agent: thisds:#gituser_doe@example.com
+      - agent: exthisds:#gituser_doe@example.com
         had_role:
           - marcrel:cre
     # author activity
@@ -53,6 +53,6 @@ was_generated_by:
         ended_at: "2001-02-28T18:27:04+02:00"
         qualified_association:
           # author of the commit
-          - agent: thisds:#gituser_doe@example.com
+          - agent: exthisds:#gituser_doe@example.com
             had_role:
               - marcrel:aut

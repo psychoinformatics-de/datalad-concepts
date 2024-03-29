@@ -1,14 +1,14 @@
 {
-  "id": "thisdsver:./archive.zip",
+  "id": "exthisdsver:./archive.zip",
   "meta_type": "dlco:Distribution",
   "has_part": [
     {
-      "id": "thisdsver:./archive.zip/subdir",
+      "id": "exthisdsver:./archive.zip/subdir",
       "description": "A subdirectory",
       "meta_type": "dlco:Distribution",
       "has_part": [
         {
-          "id": "thisdsver:./archive.zip/subdir/file.txt",
+          "id": "exthisdsver:./archive.zip/subdir/file.txt",
           "description": "A file",
           "meta_type": "dlco:Distribution"
         }
@@ -16,7 +16,7 @@
       "qualified_part": [
         {
           "name": "file.txt",
-          "entity": "thisdsver:./archive.zip/subdir/file.txt"
+          "entity": "exthisdsver:./archive.zip/subdir/file.txt"
         }
       ]
     }
@@ -24,7 +24,7 @@
   "qualified_part": [
     {
       "name": "subdir",
-      "entity": "thisdsver:./archive.zip/subdir"
+      "entity": "exthisdsver:./archive.zip/subdir"
     }
   ],
   "@type": "Distribution"

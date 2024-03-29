@@ -1,15 +1,15 @@
 {
-  "id": "thisdsver:.",
+  "id": "exthisdsver:.",
   "meta_type": "dlco:Distribution",
   "conforms_to": "https://bids-specification.readthedocs.io/en/v1.4.0",
   "has_part": [
     {
-      "id": "thisdsver:./dataset_description.json",
+      "id": "exthisdsver:./dataset_description.json",
       "meta_type": "dlco:Distribution",
       "media_type": "application/json"
     },
     {
-      "id": "thisdsver:./participants.tsv",
+      "id": "exthisdsver:./participants.tsv",
       "meta_type": "dlco:Distribution",
       "format": "http://edamontology.org/format_3475"
     }
