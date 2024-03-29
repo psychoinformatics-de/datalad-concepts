@@ -1,7 +1,7 @@
-schema: src/linkml/schemas/data-distribution.yaml
+schema: src/distribution/unreleased.yaml
 target_class: EntityInfluence
 data_sources:
-  - src/examples/data-distribution/EntityInfluence-std.yaml
+  - src/distribution/unreleased/examples/EntityInfluence-std.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -1,7 +1,7 @@
-schema: src/linkml/schemas/data-distribution.yaml
-target_class: Publication
+schema: src/distribution/unreleased.yaml
+target_class: AgentInfluence
 data_sources:
-  - src/examples/data-distribution/Publication-std.yaml
+  - src/distribution/unreleased/examples/AgentInfluence-std.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
