@@ -152,7 +152,7 @@ relation:
 # namespace conflict would ever happen across dataset versions.
 was_attributed_to:
   - id: exthisds:#ahorst
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Allison Horst
     email: ahorst@example.com
     identifier:
@@ -165,7 +165,7 @@ was_attributed_to:
     same_as:
       - https://orcid.org/0000-0002-6047-5564
   - id: exthisds:#ahill
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Allison Hill
     email: ahill@example.com
     identifier:
@@ -174,7 +174,7 @@ was_attributed_to:
     affiliation:
       - exthisds:#Rstudio
   - id: exthisds:#kgorman
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Kirsten Gorman
     email: kgorman@example.com
     identifier:

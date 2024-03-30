@@ -802,7 +802,11 @@ classes:
       Person agents are people.
     slots:
       - address
+      - affiliation
       - email
+    slot_usage:
+      affiliation:
+        multivalued: true
     exact_mappings:
       - foaf:Person
       - prov:Person
@@ -818,19 +822,6 @@ classes:
     exact_mappings:
       - foaf:Organization
       - prov:Organization
-
-  ResearchContributor:
-    class_uri: dldist:ResearchContributor
-    is_a: Person
-    description: >-
-      A person that has or could contribute to some research in any capacity.
-    slots:
-      - affiliation
-    slot_usage:
-      affiliation:
-        multivalued: true
-    broad_mappings:
-      - prov:Person
 
   #
   # entities

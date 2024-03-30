@@ -32,7 +32,7 @@ TODO: how to declare relationships when no dedicated support for a particular ty
 ### Types
 
 Properties that are used as containers to define related objects support the declaration of specific subtypes of the respective range-defining class.
-For example, `was_attributed_to` accepts any `Agent`, but in a scientific context the specialized `ResearchContributor` class may be a more suitable type.
+For example, `was_attributed_to` accepts any `Agent`, but specialized classes maybe be more suitable in particular contexts.
 Such a derived class can be indicated via the `meta_type` property.
 If declared, it is then used for data structure definition and validation for this particular record.
 

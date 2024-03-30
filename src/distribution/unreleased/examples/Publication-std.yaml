@@ -120,7 +120,7 @@ qualified_relation:
 was_attributed_to:
   # authors
   - id: http://orcid.org/0000-0003-2917-3450
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Adina S. Wagner
     email: adina.wagner@t-online.de
     identifier:
@@ -129,7 +129,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0003-2213-7465
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Laura K. Waite
     identifier:
       - notation: 0000-0003-2213-7465
@@ -137,7 +137,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0003-0820-2662
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Małgorzata Wierzba
     identifier:
       - notation: 0000-0003-0820-2662
@@ -145,7 +145,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/04waf7p94
   - id: http://orcid.org/0000-0001-7163-3110
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Felix Hoffstaedter
     identifier:
       - notation: 0000-0001-7163-3110
@@ -153,7 +153,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0002-8402-6173
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Alexander Q. Waite
     identifier:
       - notation: 0000-0002-8402-6173
@@ -161,7 +161,7 @@ was_attributed_to:
     affiliation:
       - https://ror.org/02nv7yv05
   - id: http://orcid.org/0000-0001-7628-0801
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Benjamin Poldrack
     identifier:
       - notation: 0000-0001-7628-0801
@@ -170,7 +170,7 @@ was_attributed_to:
       - https://ror.org/02nv7yv05
   # identifier is publication scope, taken from publisher website
   - id: https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Simon B. Eickhoff
     affiliation:
       - https://ror.org/02nv7yv05
@@ -178,7 +178,7 @@ was_attributed_to:
     same_as:
       - https://scholar.google.com/citations?user=wjpISMAAAAAJ
   - id: http://orcid.org/0000-0001-6398-6370
-    meta_type: dldist:ResearchContributor
+    meta_type: dldist:Person
     name: Michael Hanke
     identifier:
       - notation: 0000-0001-6398-6370
