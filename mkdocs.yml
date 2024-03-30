@@ -8,6 +8,11 @@ nav:
     - Demo derived schema: s/derived-example/unreleased/index.md
 plugins:
   - mermaid2
+  - redirects:
+      redirect_maps:
+          # map unversioned URLs to the latest version
+          's/distribution/index.md': 's/distribution/unreleased/index.md'
+  - search
 repo_url: https://github.com/psychoinformatics-de/datalad-concepts
 site_author:
 site_description:
