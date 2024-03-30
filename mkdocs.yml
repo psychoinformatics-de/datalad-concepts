@@ -13,8 +13,7 @@ plugins:
           # map unversioned URLs to the latest version
           's/distribution/index.md': 's/distribution/unreleased/index.md'
   - search
-repo_url: https://github.com/psychoinformatics-de/datalad-concepts
-site_author:
+site_author: DataLad Team
 site_description:
 site_dir: build/mkdocs-site
 site_name: DataLad Concepts
@@ -22,5 +21,5 @@ site_url: !ENV [SITEURL, 'https://concepts.datalad.org']
 # false, because we have many doc files that are not mentioned in "nav"
 strict: false
 theme:
-  name: gitbook
+  name: mkdocs
   locale: en
