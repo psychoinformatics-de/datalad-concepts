@@ -59,16 +59,11 @@ imports:
   - dlco:s/distribution/unreleased
 
 classes:
-  DExResearchContributor:
+  ResearchContributor:
     class_uri: dex:ResearchContributor
     is_a: Person
     description: >-
       A person that has or could contribute to some research in any capacity.
-    slots:
-      - affiliation
-    slot_usage:
-      affiliation:
-        multivalued: true
 
   DExDistribution:
     class_uri: dex:ExDistribution
