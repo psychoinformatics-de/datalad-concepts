@@ -167,10 +167,10 @@
       "same_as": [
         "https://orcid.org/0000-0002-6047-5564"
       ],
-      "email": "ahorst@example.com",
       "affiliation": [
         "exthisds:#UCSB"
-      ]
+      ],
+      "email": "ahorst@example.com"
     },
     {
       "id": "exthisds:#ahill",
@@ -182,10 +182,10 @@
       ],
       "meta_type": "dldist:Person",
       "name": "Allison Hill",
-      "email": "ahill@example.com",
       "affiliation": [
         "exthisds:#Rstudio"
-      ]
+      ],
+      "email": "ahill@example.com"
     },
     {
       "id": "exthisds:#kgorman",
@@ -197,10 +197,10 @@
       ],
       "meta_type": "dldist:Person",
       "name": "Kirsten Gorman",
-      "email": "kgorman@example.com",
       "affiliation": [
         "https://ror.org/01j7nq853"
-      ]
+      ],
+      "email": "kgorman@example.com"
     },
     {
       "id": "exthisds:#UCSB",
