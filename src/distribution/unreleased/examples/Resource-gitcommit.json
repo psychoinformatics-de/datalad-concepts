@@ -20,6 +20,7 @@
       "entity": [
         "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"
       ],
+      "meta_type": "dldist:Derivation",
       "had_activity": "obo:NCIT_C25446"
     }
   ],

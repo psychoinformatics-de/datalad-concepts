@@ -34,6 +34,7 @@ prefixes:
   DCAT: http://www.w3.org/ns/dcat#
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
+  DCTYPES: http://purl.org/dc/dcmitype/
   dlco: https://concepts.datalad.org/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dpv: https://w3id.org/dpv#
@@ -130,6 +131,17 @@ types:
 
 
 slots:
+  access_id:
+    slot_uri: dldist:access_id
+    description: >-
+      An identifier with which a resource distribution can be requested from a
+      `DataService`.
+    broad_mappings:
+      - dcterms:identifier
+    range: string
+    related_mappings:
+      - DCAT:servesDataset
+
   address:
     slot_uri: dldist:address
     description:
@@ -570,6 +582,15 @@ slots:
     range: uriorcurie
     exact_mappings:
       - dcterms:type
+
+  qualified_access:
+    slot_uri: dlco:qualified_access
+    description: >-
+      Link to a description of a `access_service` relationship with
+      `DCAT:DataService`.
+    broad_mappings:
+      - DCAT:qualifiedRelation
+    range: QualifiedAccess
 
   qualified_association:
     slot_uri: dldist:qualified_association
@@ -1046,6 +1067,7 @@ classes:
       or behavior of another.
     slots:
       - entity
+      - meta_type
     slot_usage:
       entity:
         multivalued: true
@@ -1164,3 +1186,39 @@ classes:
       #- distribution
     close_mappings:
       - obo:NCIT_C70766
+
+  #
+  # data access
+  #
+  DataService:
+    class_uri: dldist:DataService
+    is_a: Resource
+    description: >-
+      A collection of operations that provides access to one or more
+      distributions or data processing functions.
+    exact_mappings:
+      - DCAT:DataService
+    broad_mappings:
+      - DCAT:Resource
+      - DCTYPES:Service
+    todos:
+      - Enable indication what kind of credentials are required for access, and where to obtain them.
+
+  QualifiedAccess:
+    class_uri: dldist:QualifiedAccess
+    mixin: true
+    is_a: EntityInfluence
+    description: >-
+      An association class for attaching additional information to an
+      `access_service` relationship between a `DCAT:Distribution` and
+      a `DCAT:DataService`.
+    related_mappings:
+      - DCAT:access_service
+    slots:
+      - access_id
+    slot_usage:
+      had_role:
+        # in this context we can auto-fill the role
+        ifabsent: string(DCAT:DataService)
+      entity:
+        range: DataService
