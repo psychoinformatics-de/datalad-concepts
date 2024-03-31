@@ -167,7 +167,8 @@
       ],
       "entity": [
         "https://portal.issn.org/resource/issn/2052-4463"
-      ]
+      ],
+      "meta_type": "dldist:EntityInfluence"
     },
     {
       "had_role": [
@@ -181,7 +182,8 @@
         "exthisds:#grant_nsf1912266",
         "https://cordis.europa.eu/project/id/826421",
         "https://cordis.europa.eu/project/id/945539"
-      ]
+      ],
+      "meta_type": "dldist:EntityInfluence"
     }
   ],
   "relation": [

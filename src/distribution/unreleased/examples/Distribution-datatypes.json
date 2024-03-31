@@ -17,7 +17,8 @@
       ],
       "entity": [
         "obo:NCIT_C95650"
-      ]
+      ],
+      "meta_type": "dldist:EntityInfluence"
     }
   ],
   "@type": "Distribution"
