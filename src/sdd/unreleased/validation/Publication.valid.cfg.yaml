@@ -1,4 +1,4 @@
-schema: src/distribution/unreleased.yaml
+schema: src/sdd/unreleased.yaml
 target_class: Publication
 data_sources:
   - src/distribution/unreleased/examples/Publication-std.yaml

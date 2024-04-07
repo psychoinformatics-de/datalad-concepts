@@ -15,7 +15,7 @@ all: build/mkdocs-site
 
 build/linkml-docs: \
 	build/linkml-docs/s/distribution/unreleased \
-	build/linkml-docs/s/derived-example/unreleased
+	build/linkml-docs/s/sdd/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	gen-doc \
 		--hierarchical-class-view \
@@ -40,7 +40,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	checkmodel/distribution/unreleased \
-	checkmodel/derived-example/unreleased
+	checkmodel/sdd/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -69,8 +69,8 @@ checkmodel/%: src/%.yaml
 check-validation: \
 	convertexamples/distribution/unreleased \
 	checkvalidation/distribution/unreleased \
-	convertexamples/derived-example/unreleased \
-	checkvalidation/derived-example/unreleased
+	convertexamples/sdd/unreleased \
+	checkvalidation/sdd/unreleased
 checkvalidation/%:
 	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
@@ -85,8 +85,8 @@ checkinvalid/%: src/%/validation src/%.yaml
 	done
 
 convert-examples: \
-	convertexamples/distribution/unreleased
-#	convert-examples-derived-example-unreleased
+	convertexamples/distribution/unreleased \
+	convertexamples/sdd/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \

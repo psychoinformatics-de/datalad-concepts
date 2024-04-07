@@ -1,7 +1,7 @@
-schema: src/derived-example/unreleased.yaml
-target_class: Publication
+schema: src/sdd/unreleased.yaml
+target_class: AgentInfluence
 data_sources:
-  - src/derived-example/unreleased/examples/Publication-std.yaml
+  - src/distribution/unreleased/examples/AgentInfluence-std.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

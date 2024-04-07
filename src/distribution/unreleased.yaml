@@ -198,14 +198,6 @@ slots:
     exact_mappings:
       - spdx:checksum
 
-  cites_as_authority:
-    slot_uri: dldist:cites_as_authority
-    description: >-
-      Entity that provides an authoritative description or definition of the subject.
-    range: uri
-    exact_mappings:
-      - CiTO:citesAsAuthority
-
   conforms_to:
     slot_uri: dldist:conforms_to
     description: >-
@@ -541,15 +533,6 @@ slots:
     range: Agent
     exact_mappings:
       - ADMS:schemaAgency
-
-  sponsor:
-    slot_uri: dldist:sponsor
-    description: >-
-      A person or organization that supports a thing through a pledge,
-      promise, or financial contribution
-    range: Agent
-    exact_mappings:
-      - schema:sponsor
 
   title:
     slot_uri: dldist:title
@@ -963,25 +946,6 @@ classes:
     exact_mappings:
       - DCAT:Resource
 
-  Publication:
-    class_uri: dldist:Publication
-    is_a: Entity
-    description: >-
-      A document that is the output of a publishing process.
-      This can printed or electronic work offered for distribution,
-      and may have been made available by a publisher.
-    slots:
-      - address
-      - date_modified
-      - date_published
-      - license
-      - notation
-    exact_mappings:
-      - obo:IAO_0000311
-      - obo:NCIT_C48471
-    close_mappings:
-      - sio:SIO_000087
-
   LicenseDocument:
     class_uri: dldist:LicenseDocument
     is_a: Entity
@@ -994,19 +958,6 @@ classes:
       - spdx:License
     todos:
       - spdx vocab has a needed pieces to express a any custom license
-
-  Grant:
-    class_uri: dldist:Grant
-    is_a: Entity
-    description: >-
-      A grant, typically financial or otherwise quantifiable, of resources.
-    slots:
-      - sponsor
-      - cites_as_authority
-    exact_mappings:
-      - schema:Grant
-    todos:
-      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
 
   #
   # basic relations
