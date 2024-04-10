@@ -14,6 +14,8 @@ try:
 all: build/mkdocs-site
 
 build/linkml-docs: \
+	build/linkml-docs/s/thing/unreleased \
+	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
 	build/linkml-docs/s/sdd/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
@@ -39,6 +41,8 @@ check: check-models check-validation
 
 # add additional schemas to lint here
 check-models: \
+	checkmodel/thing/unreleased \
+	checkmodel/prov/unreleased \
 	checkmodel/distribution/unreleased \
 	checkmodel/sdd/unreleased
 checkmodel/%: src/%.yaml
@@ -67,6 +71,10 @@ checkmodel/%: src/%.yaml
 # respective validation targets, because some tests rely on these
 # converted formats
 check-validation: \
+	convertexamples/thing/unreleased \
+	checkvalidation/thing/unreleased \
+	convertexamples/prov/unreleased \
+	checkvalidation/prov/unreleased \
 	convertexamples/distribution/unreleased \
 	checkvalidation/distribution/unreleased \
 	convertexamples/sdd/unreleased \
@@ -85,6 +93,8 @@ checkinvalid/%: src/%/validation src/%.yaml
 	done
 
 convert-examples: \
+	convertexamples/thing/unreleased \
+	convertexamples/prov/unreleased \
 	convertexamples/distribution/unreleased \
 	convertexamples/sdd/unreleased
 convertexamples/%: src/%.yaml src/%/examples

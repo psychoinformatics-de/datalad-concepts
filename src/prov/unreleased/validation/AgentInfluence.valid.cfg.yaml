@@ -1,7 +1,7 @@
-schema: src/distribution/unreleased.yaml
-target_class: EntityInfluence
+schema: src/prov/unreleased.yaml
+target_class: AgentInfluence
 data_sources:
-  - src/distribution/unreleased/examples/EntityInfluence-std.yaml
+  - src/prov/unreleased/examples/AgentInfluence-std.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

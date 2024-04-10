@@ -1,0 +1,294 @@
+id: https://concepts.datalad.org/s/thing/unreleased
+name: thing-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for a generic data description
+description: |
+  This schema provides a generic `Thing` concept as a basic building block.
+  Key concepts of this schema are that any `Thing`
+ 
+  - must be given a unique identifier (`id`) for referencing in metadata records, separate from any other identifier(s) that may apply to a `Thing` (`identifier`)
+  - can be described using generic properties without prescribing a particular vocabulary, such type (`type`), equivalence (`same_as`), and topic (`is_about`)
+  - a dedicated `meta_type` slot enables the distinction of the semantic type of a `Thing` from the type of data structure used to represent the `Thing` in a particular data record
+
+  Moreover, qualitative (`Property`) and quantitative (`QuantitativeProperty`) properties can be assigned to a `Thing` (`has_property`), again without prescribing a particular vocabulary.
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  bibo: http://purl.org/ontology/bibo/
+  dcterms: http://purl.org/dc/terms/
+  DCTYPES: http://purl.org/dc/dcmitype/
+  dlco: https://concepts.datalad.org/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+  # example convenience namespaces that make it possible to not think about
+  # a dedicated distribution/dataset/dataset-version-unqiue namespace.
+  # the prefix can be materialized ala
+  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
+  #
+  # the three following prefixes are examples. a use case specific derived
+  # schema needs to define its own, differently named and defined namespaces.
+  #
+  # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
+  # to keep vocabulary and entities local to this scope
+  exthisns: https://example.org/ns/
+  # a custom namespace that is unique to a particular dataset, but common
+  # across all versions of it. It could be nested inside the `thisns` namespace
+  exthisds: https://example.org/ns/dataset/
+  # a custom namespace that is unique to apparticular version of a single
+  # dataset. It could be nested inside the `thisds` namespace
+  exthisdsver: https://example.org/ns/datasetversion/
+
+default_prefix: dlthing
+
+emit_prefixes:
+  - dlthing
+  - obo
+
+imports:
+  - linkml:types
+
+slots:
+  description:
+    slot_uri: dlthing:description
+    description: A free-text account of the resource.
+    exact_mappings:
+      - dcterms:description
+      - RDFS:comment
+    range: string
+
+  has_property:
+    slot_uri: dlthing:has_property
+    description: >-
+      Relation between a subject and a quality, capability or role that it bears.
+    range: Property
+    relational_role: PREDICATE
+    exact_mappings:
+      - sio:SIO_000233
+
+  id:
+    slot_uri: dlthing:id
+    identifier: true
+    description: >-
+      Globally unique identifier of a metadata object.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+
+  identifier:
+    slot_uri: dlthing:identifier
+    description: An unambiguous reference to the subject within a given context.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+      - ADMS:identifier
+    range: Identifier
+    multivalued: true
+
+  is_about:
+    slot_uri: dlthing:is_about
+    description: >-
+      A relation of an information artifact to an entity.
+      For example, the subject matter of the content.
+    range: uriorcurie
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
+  is_defined_by:
+    slot_uri: dlthing:is_defined_by
+    description: >-
+      The definition of the subject resource.
+    range: uriorcurie
+    exact_mappings:
+      - RDFS:isDefinedBy
+
+  name:
+    slot_uri: dlthing:name
+    description: Name of an item or entity.
+    exact_mappings:
+      - RDFS:label
+      - schema:name
+      - foaf:name
+    range: string
+
+  notation:
+    slot_uri: dlthing:notation
+    description: >-
+      String of characters such as "T58.5" or "303.4833" used to uniquely
+      identify a concept within the scope of a given concept scheme.
+    range: string
+    exact_mappings:
+      - skos:notation
+
+  range:
+    slot_uri: RDFS:range
+    description: >-
+      State that the values of a property are instances of a class.
+    range: uriorcurie
+
+  same_as:
+    slot_uri: dlthing:same_as
+    description: >-
+      Property that determines that subject and object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subjects's identity. For example, the URL of the subjects's
+      Wikipedia page, Wikidata entry, or official website.
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs
+
+  schema_agency:
+    slot_uri: dlthing:schema_agency
+    description: >-
+      Name of the agency that issued an identifier.
+    range: Thing
+    exact_mappings:
+      - ADMS:schemaAgency
+    notes:
+      - The `range` could be tighter (i.e., `Agent`), but we do not have this concept in here (see `prov` schema).
+
+  title:
+    slot_uri: dlthing:title
+    description: >-
+      A summarily description of a item or entity. It is closely related to
+      a name, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+      - sio:SIO_000185
+    related_mappings:
+      - schema:name
+    range: string
+
+  meta_type:
+    slot_uri: dlthing:meta_type
+    designates_type: true
+    description: >-
+      Type designator of a metadata object for validation and schema structure
+      handling purposes. This is used to indicate specialized schema classes
+      for properties that accept a hierarchy of classes as their range.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:type
+
+  type:
+    slot_uri: RDF:type
+    description: >-
+      State that the subject is an instance of a class.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:type
+
+  unit:
+    slot_uri: dlthing:unit
+    description: >-
+      A unit of measurement is a standardized quantity of a physical quality.
+    range: uriorcurie
+    exact_mappings:
+      - obo:UO_0000000
+
+  value:
+    slot_uri: RDFS:value
+    description: >-
+      Value of a resource.
+    range: string
+    relational_role: OBJECT
+    notes:
+      - We would really want to be able to leave the range undefined and permit
+        any type. However, linkml requires a range specification. A workaround
+        via linkml:Any does not produce a satisfactory solution.
+
+
+classes:
+  Thing:
+    class_uri: dlthing:Thing
+    description: >-
+      The most basic item.
+    slots:
+      - id
+      - description
+      - identifier
+      - is_about
+      - meta_type
+      - name
+      - has_property
+      - same_as
+      - title
+      - type
+    slot_usage:
+      identifier:
+        inlined: true
+        inlined_as_list: true
+      is_about:
+        multivalued: true
+      has_property:
+        multivalued: true
+      same_as:
+        multivalued: true
+        range: uriorcurie
+    exact_mappings:
+      - schema:Thing
+
+  #
+  # utilities
+  #
+  Identifier:
+    class_uri: dlthing:Identifier
+    description: >-
+       Identifier.
+    slots:
+      - notation
+      - schema_agency
+    exact_mappings:
+      - ADMS:Identifier
+    see_also:
+      - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
+
+  Property:
+    class_uri: dlthing:Property
+    description: >-
+      An inherent quality, function, disposition or process characteristic
+      that is being observed or measured.
+    slots:
+      - description
+      - is_defined_by
+      - meta_type
+      - name
+      - title
+      - type
+      - range
+      - value
+    slot_usage:
+      is_defined_by:
+        description:
+          The property value is defined by this term.
+    exact_mappings:
+      - sio:SIO_000614
+
+  QuantitativeProperty:
+    class_uri: dlthing:QuantitativeProperty
+    is_a: Property
+    description: >-
+      An inherent quantitative property that is being observed or measured.
+    slots:
+      - unit
+      #- scale
+      #- distribution
+    close_mappings:
+      - obo:NCIT_C70766

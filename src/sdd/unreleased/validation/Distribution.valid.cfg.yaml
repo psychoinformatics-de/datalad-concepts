@@ -10,7 +10,7 @@ data_sources:
   - src/distribution/unreleased/examples/Distribution-annexkey.yaml
   - src/distribution/unreleased/examples/Distribution-gitblob.yaml
   - src/distribution/unreleased/examples/Distribution-gittree.yaml
-  - src/distribution/unreleased/examples/Distribution-penguins.yaml
+  - src/sdd/unreleased/examples/Distribution-penguins.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

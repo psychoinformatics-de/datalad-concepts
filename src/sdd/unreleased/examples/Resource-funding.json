@@ -9,13 +9,13 @@
       "entity": [
         "https://gepris.dfg.de/gepris/projekt/431549029"
       ],
-      "meta_type": "dldist:EntityInfluence"
+      "meta_type": "dlprov:EntityInfluence"
     }
   ],
   "relation": [
     {
       "id": "https://gepris.dfg.de/gepris/projekt/431549029",
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "name": "SFB1451",
       "sponsor": "https://ror.org/018mejw64"
     }

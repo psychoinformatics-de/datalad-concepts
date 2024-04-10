@@ -12,28 +12,28 @@
     "https://www.nature.com/subjects/data-publication-and-archiving",
     "https://www.nature.com/subjects/software"
   ],
-  "meta_type": "dldist:Publication",
+  "meta_type": "dlsdd:Publication",
   "has_property": [
     {
-      "meta_type": "dldist:Property",
+      "meta_type": "dlthing:Property",
       "name": "DOI",
       "type": "bibo:doi",
       "value": "https://doi.org/10.1038/s41597-022-01163-2"
     },
     {
-      "meta_type": "dldist:Property",
+      "meta_type": "dlthing:Property",
       "name": "Volume",
       "type": "bibo:volume",
       "value": "9"
     },
     {
-      "meta_type": "dldist:Property",
+      "meta_type": "dlthing:Property",
       "name": "Document number",
       "type": "bibo:number",
       "value": "80"
     },
     {
-      "meta_type": "dldist:Property",
+      "meta_type": "dlthing:Property",
       "name": "Number of pages",
       "type": "bibo:numPages",
       "range": "xsd:nonNegativeInteger",
@@ -168,7 +168,7 @@
       "entity": [
         "https://portal.issn.org/resource/issn/2052-4463"
       ],
-      "meta_type": "dldist:EntityInfluence"
+      "meta_type": "dlprov:EntityInfluence"
     },
     {
       "had_role": [
@@ -183,7 +183,7 @@
         "https://cordis.europa.eu/project/id/826421",
         "https://cordis.europa.eu/project/id/945539"
       ],
-      "meta_type": "dldist:EntityInfluence"
+      "meta_type": "dlprov:EntityInfluence"
     }
   ],
   "relation": [
@@ -195,7 +195,7 @@
           "schema_agency": "https://cordis.europa.eu"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "name": "HBP SGA3",
       "title": "Human Brain Project Specific Grant Agreement 3",
       "cites_as_authority": "https://cordis.europa.eu/project/id/945539"
@@ -208,7 +208,7 @@
           "schema_agency": "https://cordis.europa.eu"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "name": "VirtualBrainCloud",
       "title": "Personalized Recommendations for Neurodegenerative Disease",
       "cites_as_authority": "https://cordis.europa.eu/project/id/826421"
@@ -221,7 +221,7 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "title": "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266"
     },
@@ -233,7 +233,7 @@
           "schema_agency": "https://ror.org/021nxhr62"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "title": "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'",
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999"
     },
@@ -245,7 +245,7 @@
           "schema_agency": "https://www.ncn.gov.pl"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "name": "ETIUDA"
     },
     {
@@ -256,7 +256,7 @@
           "schema_agency": "https://www.bmbf.de"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "title": "Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution"
     },
     {
@@ -267,7 +267,7 @@
           "schema_agency": "https://www.bmbf.de"
         }
       ],
-      "meta_type": "dldist:Grant",
+      "meta_type": "dlsdd:Grant",
       "name": "METALAD",
       "title": "DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche"
     },
@@ -279,7 +279,7 @@
           "schema_agency": "https://portal.issn.org"
         }
       ],
-      "meta_type": "dldist:Entity",
+      "meta_type": "dlprov:Entity",
       "same_as": [
         "https://www.nature.com/sdata"
       ],
@@ -466,7 +466,7 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dldist:Agent",
+      "meta_type": "dlprov:Agent",
       "name": "US National Science Foundation",
       "same_as": [
         "https://www.nsf.org"

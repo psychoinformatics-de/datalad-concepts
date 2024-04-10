@@ -10,7 +10,7 @@
           "schema_agency": "https://eudract.ema.europa.eu"
         }
       ],
-      "meta_type": "dldist:Activity",
+      "meta_type": "dlprov:Activity",
       "title": "Study about the effectiveness of a disease treatment",
       "type": "obo:NCIT_C71104",
       "qualified_association": [
@@ -32,29 +32,29 @@
       "was_associated_with": [
         {
           "id": "exthisds:#s001",
-          "meta_type": "dldist:Agent",
+          "meta_type": "dlprov:Agent",
           "name": "s001",
           "has_property": [
             {
               "is_defined_by": "obo:PATO_0002204",
-              "meta_type": "dldist:Property",
+              "meta_type": "dlthing:Property",
               "type": "obo:PATO_0002201"
             }
           ]
         },
         {
           "id": "exthisds:#s002",
-          "meta_type": "dldist:Agent",
+          "meta_type": "dlprov:Agent",
           "name": "s002",
           "has_property": [
             {
               "is_defined_by": "obo:PATO_0000384",
-              "meta_type": "dldist:Property",
+              "meta_type": "dlthing:Property",
               "type": "obo:PATO_0000047",
               "value": "male"
             },
             {
-              "meta_type": "dldist:QuantitativeProperty",
+              "meta_type": "dlthing:QuantitativeProperty",
               "name": "age (years)",
               "type": "obo:NCIT_C37908",
               "value": "36",
