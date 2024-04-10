@@ -1,0 +1,8 @@
+{
+  "id": "https://doi.org/10.21105/joss.03262",
+  "is_about": [
+    "https://www.scicrunch.org/resolver/SCR_003931"
+  ],
+  "meta_type": "dlthing:Thing",
+  "@type": "Thing"
+}

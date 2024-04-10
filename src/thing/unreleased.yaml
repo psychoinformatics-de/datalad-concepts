@@ -21,36 +21,26 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
-  DCTYPES: http://purl.org/dc/dcmitype/
-  dlco: https://concepts.datalad.org/
   dlthing: https://concepts.datalad.org/s/thing/unreleased/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
-  pav: http://purl.org/pav/
   RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   RDFS: http://www.w3.org/2000/01/rdf-schema#
-  schema: http://schema.org/
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
-  # example convenience namespaces that make it possible to not think about
+  # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
-  # the prefix can be materialized ala
+  # The prefix can be materialized ala
   # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
   #
-  # the three following prefixes are examples. a use case specific derived
-  # schema needs to define its own, differently named and defined namespaces.
+  # The following prefix is an example, a use case specific derived
+  # schema needs to define its own, differently named and defined namespace(s).
   #
-  # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
+  # A custom umbrella namespace (e.g. for a project, a consortium, a domain)
   # to keep vocabulary and entities local to this scope
   exthisns: https://example.org/ns/
-  # a custom namespace that is unique to a particular dataset, but common
-  # across all versions of it. It could be nested inside the `thisns` namespace
-  exthisds: https://example.org/ns/dataset/
-  # a custom namespace that is unique to apparticular version of a single
-  # dataset. It could be nested inside the `thisds` namespace
-  exthisdsver: https://example.org/ns/datasetversion/
 
 default_prefix: dlthing
 
@@ -64,7 +54,7 @@ imports:
 slots:
   description:
     slot_uri: dlthing:description
-    description: A free-text account of the resource.
+    description: A free-text account of the thing.
     exact_mappings:
       - dcterms:description
       - RDFS:comment
@@ -102,7 +92,7 @@ slots:
   is_about:
     slot_uri: dlthing:is_about
     description: >-
-      A relation of an information artifact to an entity.
+      A relation of an information artifact to a thing.
       For example, the subject matter of the content.
     range: uriorcurie
     exact_mappings:
@@ -112,14 +102,14 @@ slots:
   is_defined_by:
     slot_uri: dlthing:is_defined_by
     description: >-
-      The definition of the subject resource.
+      The definition of the subject thing.
     range: uriorcurie
     exact_mappings:
       - RDFS:isDefinedBy
 
   name:
     slot_uri: dlthing:name
-    description: Name of an item or entity.
+    description: Name of a thing.
     exact_mappings:
       - RDFS:label
       - schema:name
@@ -166,7 +156,7 @@ slots:
   title:
     slot_uri: dlthing:title
     description: >-
-      A summarily description of a item or entity. It is closely related to
+      A summarily description of a thing. It is closely related to
       a name, but often less compact and more descriptive. Typically used for
       documents.
     exact_mappings:
@@ -206,13 +196,8 @@ slots:
   value:
     slot_uri: RDFS:value
     description: >-
-      Value of a resource.
-    range: string
+      Value of a thing.
     relational_role: OBJECT
-    notes:
-      - We would really want to be able to leave the range undefined and permit
-        any type. However, linkml requires a range specification. A workaround
-        via linkml:Any does not produce a satisfactory solution.
 
 
 classes:
@@ -238,6 +223,8 @@ classes:
       is_about:
         multivalued: true
       has_property:
+        inlined: true
+        inlined_as_list: true
         multivalued: true
       same_as:
         multivalued: true
@@ -278,6 +265,26 @@ classes:
       is_defined_by:
         description:
           The property value is defined by this term.
+      name:
+        # if we know no type, we require a name to have at least something
+        required: false if type else true
+      type:
+        # best to have a precise type
+        recommended: true
+      range:
+        # unless we have a defined value, best to know a range class for
+        # a value
+        recommended: false if is_defined_by else true
+      value:
+        range: string
+        # unless we have a defined value given, we require a value
+        # specification -- no purpose in having a property without
+        # any value assigned
+        required: false if is_defined_by else true
+        notes:
+          - We would really want to be able to leave the range undefined and permit
+            any type. However, linkml requires a range specification. A workaround
+            via linkml:Any does not produce a satisfactory solution.
     exact_mappings:
       - sio:SIO_000614
 

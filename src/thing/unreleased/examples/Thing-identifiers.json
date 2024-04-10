@@ -1,0 +1,32 @@
+{
+  "id": "https://ror.org/02nv7yv05",
+  "identifier": [
+    {
+      "notation": "02nv7yv05",
+      "schema_agency": "https://ror.org"
+    },
+    {
+      "notation": "5008462-8",
+      "schema_agency": "https://d-nb.info"
+    },
+    {
+      "notation": "n83199611",
+      "schema_agency": "https://lccn.loc.gov"
+    },
+    {
+      "notation": "148696642",
+      "schema_agency": "https://viaf.org"
+    },
+    {
+      "notation": "DE 122624631",
+      "schema_agency": "https://www.bzst.de"
+    }
+  ],
+  "meta_type": "dlthing:Thing",
+  "same_as": [
+    "https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich",
+    "https://www.fz-juelich.de",
+    "https://www.wikidata.org/wiki/Q697111"
+  ],
+  "@type": "Thing"
+}

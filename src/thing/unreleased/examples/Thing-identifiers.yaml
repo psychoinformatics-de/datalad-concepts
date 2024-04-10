@@ -1,0 +1,29 @@
+# Identification options for a thing.
+#
+# `id` is the identifier of the metadata record. In practice it can
+# by any of the identifiers below. In a particular context, it is often
+# useful to agree on a particular type of identifier to simplify knowledge
+# aggregation for individual things. Arbitrary other identifiers
+# can be recorded in addition.
+id: https://ror.org/02nv7yv05
+identifier:
+  # Research Organization Registry
+  - notation: 02nv7yv05
+    schema_agency: https://ror.org
+  # German National Library
+  - notation: 5008462-8
+    schema_agency: https://d-nb.info
+  # Library of Congress Control Number
+  - notation: n83199611
+    schema_agency: https://lccn.loc.gov
+  # Virtual International Authority File
+  - notation: "148696642"
+    schema_agency: https://viaf.org
+  # VAT number
+  - notation: "DE 122624631"
+    schema_agency: https://www.bzst.de
+# Use `same_as` to point to other sources talking about the same thing
+same_as:
+  - https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich
+  - https://www.fz-juelich.de
+  - https://www.wikidata.org/wiki/Q697111
