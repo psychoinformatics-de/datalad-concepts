@@ -363,10 +363,6 @@ slots:
 
 classes:
   #
-  # activities
-  #
-
-  #
   # agents
   #
   Person:
@@ -460,7 +456,6 @@ classes:
       - keyword
       - landing_page
       - version
-      #- was_generated_by
     slot_usage:
       is_part_of:
         range: Resource
