@@ -169,6 +169,16 @@ slots:
     exact_mappings:
       - spdx:checksum
 
+  conforms_to:
+    slot_uri: dlprov:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+    exact_mappings:
+      - dcterms:conformsTo
+
   date_modified:
     slot_uri: dldist:date_modified
     description: >-
@@ -400,6 +410,7 @@ classes:
     slots:
       - byte_size
       - checksum
+      - conforms_to
       - date_modified
       - date_published
       # TODO multivalued?
