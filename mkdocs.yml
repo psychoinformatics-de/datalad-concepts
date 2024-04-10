@@ -7,12 +7,16 @@ nav:
     - Thing (unreleased): s/thing/unreleased/index.md
     - Provenance (unreleased): s/prov/unreleased/index.md
     - Distribution (unreleased): s/distribution/unreleased/index.md
+    - Scientific data distribution (unreleased): s/datalad-dataset/unreleased/index.md
 plugins:
   - mermaid2
   - redirects:
       redirect_maps:
           # map unversioned URLs to the latest version
+          's/thing/index.md': 's/thing/unreleased/index.md'
+          's/prov/index.md': 's/prov/unreleased/index.md'
           's/distribution/index.md': 's/distribution/unreleased/index.md'
+          's/sdd/index.md': 's/sdd/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:

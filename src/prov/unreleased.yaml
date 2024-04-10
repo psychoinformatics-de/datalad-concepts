@@ -111,18 +111,6 @@ slots:
     broad_mappings:
       - prov:influencer
 
-  conforms_to:
-    slot_uri: dlprov:conforms_to
-    description: >-
-      An established standard to which the subject conforms.
-    range: uriorcurie
-    comments:
-      - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
-    exact_mappings:
-      - dcterms:conformsTo
-    todos:
-      - Consider making a `Things` property
-
   ended_at:
     slot_uri: dlprov:ended_at
     description: >-
@@ -368,7 +356,6 @@ classes:
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
     slots:
-      - conforms_to
       - qualified_attribution
       - qualified_derivation
       - qualified_relation
