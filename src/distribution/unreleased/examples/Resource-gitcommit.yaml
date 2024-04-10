@@ -30,9 +30,24 @@ qualified_derivation:
     had_activity: obo:NCIT_C25446
     had_role:
       - owl:priorVersion
-# commit activity
-was_generated_by:
+relation:
+  # author activity
+  # this is modeled as a dedicated action so that the
+  # author time can be captured as an independent property.
+  # otherwise the author role could be added above
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+    meta_type: dlprov:Activity
+    # "preparation"
+    type: obo:NCIT_C25625
+    ended_at: "2001-02-28T18:27:04+02:00"
+    qualified_association:
+      # author of the commit
+      - agent: exthisds:#gituser_doe@example.com
+        had_role:
+          - marcrel:aut
+  # commit activity
   - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+    meta_type: dlprov:Activity
     # go for activity type: "release", but could also be
     # "label as such" (obo:NCIT_C64662)
     type: obo:NCIT_C42882
@@ -42,17 +57,7 @@ was_generated_by:
       - agent: exthisds:#gituser_doe@example.com
         had_role:
           - marcrel:cre
-    # author activity
-    # this is modeled as a dedicated action so that the
-    # author time can be captured as an independent property.
-    # otherwise the author role could be added above
     was_informed_by:
-      - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
-        # "preparation"
-        type: obo:NCIT_C25625
-        ended_at: "2001-02-28T18:27:04+02:00"
-        qualified_association:
-          # author of the commit
-          - agent: exthisds:#gituser_doe@example.com
-            had_role:
-              - marcrel:aut
+      - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+was_generated_by:
+  - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing

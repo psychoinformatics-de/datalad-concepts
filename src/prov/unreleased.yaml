@@ -4,29 +4,25 @@ version: UNRELEASED
 status: bibo:status/draft
 title: Schema for a generic data provenance
 description: |
-  This schema is centered on the description of concrete data distributions
-  using a single root class that uniformly applies to different kinds of
-  distributions, like an individual file, an archive of files, or a directory
-  of files.
+  This schema builds on the [Thing schema](https://concepts.datalad.org/s/thing), and diversifies it to capture the key provenance concepts `Agent`, `Activity`, `Entity` and their relationships.
+  It does that by drawing on (a subset) of the PROV data model [PROV-DM](https://www.w3.org/TR/prov-dm).
 
-  There is [dedicated documentation](about.md) with general information on the
-  purpose and basic principles of this schema.
+  Central paradigm of the schema is the [qualified relation pattern](https://patterns.dataincubator.org/book/qualified-relation.html).
+  The three `Thing` derived key concepts `Agent`, `Activity`, and `Entity` each provide a `relation` (symmetric property) slot for **inline declaration** of related things.
+  This `relation` slot is also the **only** slots that permits inline declaration.
+  A relationship can be further characterized by referencing a `Thing` by its object identifier in slots like `was_attributed_to` (for an `Agent`).
+  Full relation qualification is supported via inline declaration of `Influence` (derived) class instances in slots like
+ 
+  - `qualified_relation`: for an `EntityInfluence` on an `Entity`
+  - `qualified_association`: for an `AgentInfluence` on an `Activity`
+  - `qualified_attribution`: for an `AgentInfluence` on an `Entity`
 
-  Key goal is the use of global identifiers for most entities.
-
-  A standard record should mostly be a simple key value mapping, where the value
-  part is a URI or CURIE.
-
-  Few slots (provenance related) allow for the inline declaration of (typed)
-  objects, declaring an identifier that can be used to link to such an object
-  in other metadata records.
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 license: MIT
 
 prefixes:
-  ADMS: http://www.w3.org/ns/adms#
   annex-key: https://concepts.datalad.org/ns/annex-key/
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
@@ -124,6 +120,8 @@ slots:
       - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
     exact_mappings:
       - dcterms:conformsTo
+    todos:
+      - Consider making a `Things` property
 
   ended_at:
     slot_uri: dlprov:ended_at
@@ -191,8 +189,14 @@ slots:
   relation:
     slot_uri: dlprov:relation
     description: >-
-      The resource related to the source resource.
+      The subject has a relation to the object.
+    domain: Thing
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+    range: Thing
     relational_role: OBJECT
+    symmetric: true
     exact_mappings:
       - dcterms:relation
 
@@ -235,8 +239,8 @@ slots:
   was_influenced_by:
     slot_uri: dlprov:was_influenced_by
     description: >-
-      Capacity of an entity, activity, or agent to have an effect on the
-      character, development, or behavior of another.
+      The object had an effect on the character, development, or behavior of
+      the subject.
     domain: Thing
     range: Thing
     exact_mappings:
@@ -314,6 +318,7 @@ classes:
       transforming, modifying, relocating, using, or generating entities.
     slots:
       - qualified_association
+      - relation
       - was_associated_with
       - was_informed_by
       #  - at_location
@@ -322,13 +327,11 @@ classes:
     slot_usage:
       was_associated_with:
         multivalued: true
-        inlined: true
-        inlined_as_list: true
+        inlined: false
         range: Agent
       was_informed_by:
         multivalued: true
-        inlined: true
-        inlined_as_list: true
+        inlined: false
         range: Activity
       qualified_association:
         multivalued: true
@@ -349,6 +352,8 @@ classes:
       Something that bears some form of responsibility for an activity
       taking place, for the existence of an entity, or for another
       agent's activity.
+    slots:
+      - relation
     exact_mappings:
       - foaf:Agent
       - prov:Agent
@@ -372,11 +377,6 @@ classes:
       - was_derived_from
       - was_generated_by
     slot_usage:
-      relation:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: Entity
       qualified_attribution:
         range: Attribution
         multivalued: true
@@ -394,18 +394,15 @@ classes:
         inlined_as_list: true
       was_attributed_to:
         multivalued: true
-        inlined: true
-        inlined_as_list: true
+        inlined: false
         range: Agent
       was_derived_from:
         range: Entity
         multivalued: true
-        inlined: true
-        inlined_as_list: true
+        inlined: false
       was_generated_by:
         multivalued: true
-        inlined: true
-        inlined_as_list: true
+        inlined: false
         range: Activity
     exact_mappings:
       - prov:Entity

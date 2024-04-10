@@ -1,7 +1,39 @@
 {
   "id": "exthisdsver:#",
   "meta_type": "dldist:Resource",
-  "was_generated_by": [
+  "relation": [
+    {
+      "id": "exthisds:#s001",
+      "meta_type": "dlprov:Agent",
+      "name": "s001",
+      "has_property": [
+        {
+          "is_defined_by": "obo:PATO_0002204",
+          "meta_type": "dlthing:Property",
+          "type": "obo:PATO_0002201"
+        }
+      ]
+    },
+    {
+      "id": "exthisds:#s002",
+      "meta_type": "dlprov:Agent",
+      "name": "s002",
+      "has_property": [
+        {
+          "is_defined_by": "obo:PATO_0000384",
+          "meta_type": "dlthing:Property",
+          "type": "obo:PATO_0000047",
+          "value": "male"
+        },
+        {
+          "meta_type": "dlthing:QuantitativeProperty",
+          "name": "age (years)",
+          "type": "obo:NCIT_C37908",
+          "value": "36",
+          "unit": "obo:UO_0000036"
+        }
+      ]
+    },
     {
       "id": "exthisds:#study_2005-004406-93",
       "identifier": [
@@ -28,42 +60,11 @@
           ],
           "agent": "exthisds:#s002"
         }
-      ],
-      "was_associated_with": [
-        {
-          "id": "exthisds:#s001",
-          "meta_type": "dlprov:Agent",
-          "name": "s001",
-          "has_property": [
-            {
-              "is_defined_by": "obo:PATO_0002204",
-              "meta_type": "dlthing:Property",
-              "type": "obo:PATO_0002201"
-            }
-          ]
-        },
-        {
-          "id": "exthisds:#s002",
-          "meta_type": "dlprov:Agent",
-          "name": "s002",
-          "has_property": [
-            {
-              "is_defined_by": "obo:PATO_0000384",
-              "meta_type": "dlthing:Property",
-              "type": "obo:PATO_0000047",
-              "value": "male"
-            },
-            {
-              "meta_type": "dlthing:QuantitativeProperty",
-              "name": "age (years)",
-              "type": "obo:NCIT_C37908",
-              "value": "36",
-              "unit": "obo:UO_0000036"
-            }
-          ]
-        }
       ]
     }
+  ],
+  "was_generated_by": [
+    "exthisds:#study_2005-004406-93"
   ],
   "@type": "Resource"
 }

@@ -97,27 +97,7 @@ relation:
     same_as:
       - https://www.nature.com/sdata
 
-# entity roles
-qualified_relation:
-  # publication place: journal scientific data
-  - entity: 
-      - https://portal.issn.org/resource/issn/2052-4463
-    had_role:
-      - http://id.loc.gov/vocabulary/relators/prp
-  # grants that funded the work
-  - entity:
-      - exthisds:#grant_bmbf01GQ1905
-      - exthisds:#grant_bmbf01GQ1411
-      - exthisds:#grant_nsc
-      - exthisds:#grant_nsf1429999
-      - exthisds:#grant_nsf1912266
-      - https://cordis.europa.eu/project/id/826421
-      - https://cordis.europa.eu/project/id/945539
-    had_role:
-      - schema:funding
-
-# related agents
-was_attributed_to:
+  # related agents
   # authors
   - id: http://orcid.org/0000-0003-2917-3450
     meta_type: dldist:Person
@@ -252,6 +232,46 @@ was_attributed_to:
     identifier:
       - notation: 03dsk4d59
         schema_agency: https://ror.org
+
+# attribution to agents -- redundant here, but could be
+# used to link agents without declaring a specific role
+was_attributed_to:
+  - http://orcid.org/0000-0003-2917-3450
+  - http://orcid.org/0000-0003-2213-7465
+  - http://orcid.org/0000-0003-0820-2662
+  - http://orcid.org/0000-0001-7163-3110
+  - http://orcid.org/0000-0002-8402-6173
+  - http://orcid.org/0000-0001-7628-0801
+  - https://www.nature.com/articles/s41597-022-01163-2#auth-Simon_B_-Eickhoff-Aff1-Aff3
+  - http://orcid.org/0000-0001-6398-6370
+  - https://ror.org/02nv7yv05
+  - https://ror.org/024z2rq82
+  - https://ror.org/04waf7p94
+  - https://ror.org/02frzq211
+  - https://ror.org/00k4n6c32
+  - https://ror.org/021nxhr62
+  - https://ror.org/04pz7b180
+  - https://www.ncn.gov.pl
+  - https://ror.org/03dsk4d59
+
+# entity roles
+qualified_relation:
+  # publication place: journal scientific data
+  - entity:
+      - https://portal.issn.org/resource/issn/2052-4463
+    had_role:
+      - http://id.loc.gov/vocabulary/relators/prp
+  # grants that funded the work
+  - entity:
+      - exthisds:#grant_bmbf01GQ1905
+      - exthisds:#grant_bmbf01GQ1411
+      - exthisds:#grant_nsc
+      - exthisds:#grant_nsf1429999
+      - exthisds:#grant_nsf1912266
+      - https://cordis.europa.eu/project/id/826421
+      - https://cordis.europa.eu/project/id/945539
+    had_role:
+      - schema:funding
 
 # agent roles
 qualified_attribution:
