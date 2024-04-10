@@ -1,35 +1,38 @@
 id: exthisdsver:#
-was_generated_by:
+relation:
+  # study participants (role assigned below)
+  - id: exthisds:#s001
+    meta_type: dlprov:Agent
+    name: s001
+    has_property:
+      # handedness
+      - type: obo:PATO_0002201
+        # ambidextrous
+        is_defined_by: obo:PATO_0002204
+  - id: exthisds:#s002
+    meta_type: dlprov:Agent
+    name: s002
+    has_property:
+      # biological sex
+      - type: obo:PATO_0000047
+        value: male
+        is_defined_by: obo:PATO_0000384
+      # age in years
+      - meta_type: dlthing:QuantitativeProperty
+        # length of a person's life, stated in years since birth
+        type: obo:NCIT_C37908
+        name: age (years)
+        value: "36"
+        unit: obo:UO_0000036
+  # study activity
   - id: exthisds:#study_2005-004406-93
+    meta_type: dlprov:Activity
     title: Study about the effectiveness of a disease treatment
     # registered clinical trial
     type: obo:NCIT_C71104
     identifier:
       - notation: 2005-004406-93
         schema_agency: https://eudract.ema.europa.eu
-    # study participants (role assigned below)
-    was_associated_with:
-      - id: exthisds:#s001
-        name: s001
-        has_property:
-          # handedness
-          - type: obo:PATO_0002201
-            # ambidextrous
-            is_defined_by: obo:PATO_0002204
-      - id: exthisds:#s002
-        name: s002
-        has_property:
-          # biological sex
-          - type: obo:PATO_0000047
-            value: male
-            is_defined_by: obo:PATO_0000384
-          # age in years
-          - meta_type: dlthing:QuantitativeProperty
-            # length of a person's life, stated in years since birth
-            type: obo:NCIT_C37908
-            name: age (years)
-            value: "36"
-            unit: obo:UO_0000036
     qualified_association:
       - agent: exthisds:#s001
         had_role:
@@ -42,4 +45,5 @@ was_generated_by:
           - obo:NCIT_C142710
           # subject Assigned to Protocol Treatment Arm
           - obo:NCIT_C173188
-  
+was_generated_by:
+  - exthisds:#study_2005-004406-93

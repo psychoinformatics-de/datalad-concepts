@@ -153,9 +153,7 @@
       ],
       "date_published": "2014-03-05",
       "notation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'"
-    }
-  ],
-  "was_attributed_to": [
+    },
     {
       "id": "exthisds:#ahorst",
       "identifier": [
@@ -233,7 +231,7 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dlprov:Agent",
+      "meta_type": "dlthing:Thing",
       "name": "NSF Office of Polar Programs"
     },
     {
@@ -244,12 +242,22 @@
           "schema_agency": "https://ror.org"
         }
       ],
-      "meta_type": "dlprov:Agent",
+      "meta_type": "dlthing:Thing",
       "name": "US National Science Foundation",
       "same_as": [
         "https://www.nsf.org"
       ]
     }
+  ],
+  "was_attributed_to": [
+    "exthisds:#ahorst",
+    "exthisds:#ahill",
+    "exthisds:#kgorman",
+    "exthisds:#UCSB",
+    "exthisds:#RStudio",
+    "https://ror.org/01j7nq853",
+    "https://ror.org/05nwjp114",
+    "https://ror.org/021nxhr62"
   ],
   "has_part": [
     {

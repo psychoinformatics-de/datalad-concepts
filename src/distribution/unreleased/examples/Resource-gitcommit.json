@@ -24,7 +24,21 @@
       "had_activity": "obo:NCIT_C25446"
     }
   ],
-  "was_generated_by": [
+  "relation": [
+    {
+      "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
+      "meta_type": "dlprov:Activity",
+      "type": "obo:NCIT_C25625",
+      "qualified_association": [
+        {
+          "had_role": [
+            "marcrel:aut"
+          ],
+          "agent": "exthisds:#gituser_doe@example.com"
+        }
+      ],
+      "ended_at": "2001-02-28T18:27:04+02:00"
+    },
     {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
       "meta_type": "dlprov:Activity",
@@ -38,23 +52,13 @@
         }
       ],
       "was_informed_by": [
-        {
-          "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
-          "meta_type": "dlprov:Activity",
-          "type": "obo:NCIT_C25625",
-          "qualified_association": [
-            {
-              "had_role": [
-                "marcrel:aut"
-              ],
-              "agent": "exthisds:#gituser_doe@example.com"
-            }
-          ],
-          "ended_at": "2001-02-28T18:27:04+02:00"
-        }
+        "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring"
       ],
       "ended_at": "2002-05-30T09:30:10+06:00"
     }
+  ],
+  "was_generated_by": [
+    "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing"
   ],
   "is_version_of": "datalad-ds:cec1da92-0dbd-4df3-8602-7c72b2d12854",
   "version": "8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",

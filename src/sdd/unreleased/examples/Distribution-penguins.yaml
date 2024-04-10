@@ -143,14 +143,13 @@ relation:
         had_role:
           - marcrel:aut
 
-# Relevant agents.
-# There definition in the scope of the Distribution is arbitrary.
-# They could also be defined inlined at the Resource level, or
-# even not at all in this document (assuming a definition using
-# the exact same identifier would be available elsewhere).
-# We use the `thisds` prefix based on the assumption that no
-# namespace conflict would ever happen across dataset versions.
-was_attributed_to:
+  # Relevant agents.
+  # There definition in the scope of the Distribution is arbitrary.
+  # They could also be defined inlined at the Resource level, or
+  # even not at all in this document (assuming a definition using
+  # the exact same identifier would be available elsewhere).
+  # We use the `thisds` prefix based on the assumption that no
+  # namespace conflict would ever happen across dataset versions.
   - id: exthisds:#ahorst
     meta_type: dldist:Person
     name: Allison Horst
@@ -206,3 +205,12 @@ was_attributed_to:
         schema_agency: https://ror.org
     same_as:
       - https://www.nsf.org
+was_attributed_to:
+  - exthisds:#ahorst
+  - exthisds:#ahill
+  - exthisds:#kgorman
+  - exthisds:#UCSB
+  - exthisds:#RStudio
+  - https://ror.org/01j7nq853
+  - https://ror.org/05nwjp114
+  - https://ror.org/021nxhr62

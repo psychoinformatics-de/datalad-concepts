@@ -18,14 +18,15 @@
       "meta_type": "dlsdd:Grant",
       "name": "SFB1451",
       "sponsor": "https://ror.org/018mejw64"
-    }
-  ],
-  "was_attributed_to": [
+    },
     {
       "id": "https://ror.org/018mejw64",
       "meta_type": "dldist:Organization",
       "name": "Deutsche Forschungsgemeinschaft"
     }
+  ],
+  "was_attributed_to": [
+    "https://ror.org/018mejw64"
   ],
   "@type": "Resource"
 }
