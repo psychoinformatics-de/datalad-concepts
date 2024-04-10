@@ -1,8 +1,7 @@
-# arbitrary well-defined properties can be attached to any
-# Thing (e.g., Agent, Activity, or Entity)
+# Arbitrary (well-defined) properties can be attached to any Thing.
 #
 # Example: something heavy from Canada
-id: exthisdsver:#
+id: exthisns:mything
 has_property:
   - type: obo:HSO_0000360
     name: origin country
