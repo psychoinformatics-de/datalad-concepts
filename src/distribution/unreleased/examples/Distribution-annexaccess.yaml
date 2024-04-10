@@ -26,8 +26,8 @@ relation:
         value: id@joeyh.name
 qualified_relation:
   - meta_type: dldist:QualifiedAccess
+    # one or more annex remotes ...
     entity:
-      # one or more annex remotes ...
       - annex-uuid:0a8713ca-ef42-11ee-a805-d3e9a774e795
     # ... from which this annex key is available
     access_id: MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
@@ -35,4 +35,3 @@ qualified_relation:
     # does not support defaults for multivalued slots
     had_role:
       - DCAT:DataService
-

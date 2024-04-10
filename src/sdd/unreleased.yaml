@@ -20,6 +20,7 @@ prefixes:
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dlsdd: https://concepts.datalad.org/s/sdd/unreleased/
   dex: https://example.org/ns/ex/terms/
@@ -57,7 +58,7 @@ emit_prefixes:
   - prov
 
 imports:
-  - dlco:s/distribution/unreleased
+  - ../distribution/unreleased
 
 
 slots:

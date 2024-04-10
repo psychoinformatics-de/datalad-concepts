@@ -26,23 +26,23 @@
       "name": "box.com",
       "has_property": [
         {
-          "meta_type": "dldist:Property",
+          "meta_type": "dlthing:Property",
           "name": "type",
           "value": "webdav"
         },
         {
-          "meta_type": "dldist:Property",
+          "meta_type": "dlthing:Property",
           "name": "url",
           "type": "DCAT:endpointURL",
           "value": "https://dav.box.com/dav/git-annex"
         },
         {
-          "meta_type": "dldist:Property",
+          "meta_type": "dlthing:Property",
           "name": "chunk",
           "value": "10mb"
         },
         {
-          "meta_type": "dldist:Property",
+          "meta_type": "dlthing:Property",
           "name": "keyid",
           "value": "id@joeyh.name"
         }

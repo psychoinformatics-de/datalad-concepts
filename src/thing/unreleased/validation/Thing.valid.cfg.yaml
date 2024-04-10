@@ -1,7 +1,7 @@
-schema: src/sdd/unreleased.yaml
-target_class: AgentInfluence
+schema: src/thing/unreleased.yaml
+target_class: Thing
 data_sources:
-  - src/prov/unreleased/examples/AgentInfluence-std.yaml
+  - src/thing/unreleased/examples/Thing-customproperty.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

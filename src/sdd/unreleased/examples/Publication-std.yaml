@@ -37,7 +37,7 @@ has_property:
 # related entities
 relation:
   - id: https://cordis.europa.eu/project/id/945539
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     name: HBP SGA3
     title: Human Brain Project Specific Grant Agreement 3
     identifier:
@@ -45,7 +45,7 @@ relation:
         schema_agency: https://cordis.europa.eu
     cites_as_authority: https://cordis.europa.eu/project/id/945539
   - id: https://cordis.europa.eu/project/id/826421
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     name: VirtualBrainCloud
     title: Personalized Recommendations for Neurodegenerative Disease
     identifier:
@@ -53,7 +53,7 @@ relation:
         schema_agency: https://cordis.europa.eu
     cites_as_authority: https://cordis.europa.eu/project/id/826421
   - id: exthisds:#grant_nsf1912266
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     title: "Collaborative Proposal: CRCNS US-German Data Sharing Proposal: DataLad - a decentralized system for integrated discovery, management, and publication of digital objects of science"
     identifier:
       - notation: "1912266"
@@ -61,33 +61,33 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1912266
   - id: exthisds:#grant_nsf1429999
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     title: "CRCNS US-German Data Sharing: DataGit - converging catalogues, warehouses, and deployment logistics into a federated 'data distribution'"
     identifier:
       - notation: "1429999"
         schema_agency: https://ror.org/021nxhr62
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=1429999
   - id: exthisds:#grant_nsc
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     name: ETIUDA
     identifier:
       - notation: 2018/28/T/HS6/00507
         schema_agency: https://www.ncn.gov.pl
   - id: exthisds:#grant_bmbf01GQ1411
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     title: Datagit - Kombination von Katalogen, Datenbanken und Verteilungslogistik in eine Daten-Distribution
     identifier:
       - notation: 01GQ1411
         schema_agency: https://www.bmbf.de
   - id: exthisds:#grant_bmbf01GQ1905
-    meta_type: dldist:Grant
+    meta_type: dlsdd:Grant
     name: METALAD
     title: DataLad - ein dezentrales System für Forschungsdatenverwaltung, -publikation und -suche
     identifier:
       - notation: 01GQ1905
         schema_agency: https://www.bmbf.de
   - id: https://portal.issn.org/resource/issn/2052-4463
-    meta_type: dldist:Entity
+    meta_type: dlprov:Entity
     # peer-reviewed scientific journal
     type: obo:NCIT_C93226
     title: Scientific data

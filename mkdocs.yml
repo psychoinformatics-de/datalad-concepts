@@ -4,8 +4,9 @@ nav:
   - Home: index.md
   - About: about.md
   - Schemas:
+    - Thing (unreleased): s/thing/unreleased/index.md
+    - Provenance (unreleased): s/prov/unreleased/index.md
     - Distribution (unreleased): s/distribution/unreleased/index.md
-    - Demo derived schema: s/derived-example/unreleased/index.md
 plugins:
   - mermaid2
   - redirects:

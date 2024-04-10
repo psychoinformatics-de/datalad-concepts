@@ -1,16 +1,16 @@
 {
   "id": "exthisdsver:#",
-  "meta_type": "dldist:Resource",
+  "meta_type": "dlthing:Thing",
   "has_property": [
     {
       "is_defined_by": "http://dbpedia.org/resource/Canada",
-      "meta_type": "dldist:Property",
+      "meta_type": "dlthing:Property",
       "name": "origin country",
       "type": "obo:HSO_0000360",
       "value": "Canada"
     },
     {
-      "meta_type": "dldist:QuantitativeProperty",
+      "meta_type": "dlthing:QuantitativeProperty",
       "name": "biospecimen weight (kg)",
       "type": "obo:NCIT_C181733",
       "range": "xsd:decimal",
@@ -18,5 +18,5 @@
       "unit": "obo:UO_0000009"
     }
   ],
-  "@type": "Resource"
+  "@type": "Thing"
 }

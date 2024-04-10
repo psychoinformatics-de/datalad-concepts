@@ -20,14 +20,14 @@
       "entity": [
         "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"
       ],
-      "meta_type": "dldist:Derivation",
+      "meta_type": "dlprov:Derivation",
       "had_activity": "obo:NCIT_C25446"
     }
   ],
   "was_generated_by": [
     {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
-      "meta_type": "dldist:Activity",
+      "meta_type": "dlprov:Activity",
       "type": "obo:NCIT_C42882",
       "qualified_association": [
         {
@@ -40,7 +40,7 @@
       "was_informed_by": [
         {
           "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
-          "meta_type": "dldist:Activity",
+          "meta_type": "dlprov:Activity",
           "type": "obo:NCIT_C25625",
           "qualified_association": [
             {

@@ -1,0 +1,505 @@
+id: https://concepts.datalad.org/s/prov/unreleased
+name: prov-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for a generic data provenance
+description: |
+  This schema is centered on the description of concrete data distributions
+  using a single root class that uniformly applies to different kinds of
+  distributions, like an individual file, an archive of files, or a directory
+  of files.
+
+  There is [dedicated documentation](about.md) with general information on the
+  purpose and basic principles of this schema.
+
+  Key goal is the use of global identifiers for most entities.
+
+  A standard record should mostly be a simple key value mapping, where the value
+  part is a URI or CURIE.
+
+  Few slots (provenance related) allow for the inline declaration of (typed)
+  objects, declaring an identifier that can be used to link to such an object
+  in other metadata records.
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  annex-key: https://concepts.datalad.org/ns/annex-key/
+  bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
+  DCAT: http://www.w3.org/ns/dcat#
+  datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
+  dcterms: http://purl.org/dc/terms/
+  DCTYPES: http://purl.org/dc/dcmitype/
+  dlco: https://concepts.datalad.org/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dpv: https://w3id.org/dpv#
+  foaf: http://xmlns.com/foaf/0.1/
+  gitsha: https://concepts.datalad.org/ns/gitsha/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  spdx: http://spdx.org/rdf/terms#
+  licenses: http://spdx.org/licenses/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  # example convenience namespaces that make it possible to not think about
+  # a dedicated distribution/dataset/dataset-version-unqiue namespace.
+  # the prefix can be materialized ala
+  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
+  #
+  # the three following prefixes are examples. a use case specific derived
+  # schema needs to define its own, differently named and defined namespaces.
+  #
+  # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
+  # to keep vocabulary and entities local to this scope
+  exthisns: https://example.org/ns/
+  # a custom namespace that is unique to a particular dataset, but common
+  # across all versions of it. It could be nested inside the `thisns` namespace
+  exthisds: https://example.org/ns/dataset/
+  # a custom namespace that is unique to a particular version of a single
+  # dataset. It could be nested inside the `thisds` namespace
+  exthisdsver: https://example.org/ns/datasetversion/
+
+default_prefix: dlprov
+
+emit_prefixes:
+  - CiTO
+  - DCAT
+  - dlprov
+  - licenses
+  - marcrel
+  - obo
+  - prov
+
+imports:
+  - ../thing/unreleased
+
+types:
+  W3CISO8601:
+    uri: https://www.w3.org/TR/NOTE-datetime
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
+    typeof: string
+    pattern: '^(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
+    see_also: https://www.w3.org/TR/NOTE-datetime
+
+
+slots:
+  agent:
+    slot_uri: dlprov:agent
+    is_a: influencer
+    description: >-
+      References an agent which influenced an entity.
+    range: Agent
+    domain: AgentInfluence
+    exact_mappings:
+      - prov:agent
+    broad_mappings:
+      - prov:influencer
+
+  conforms_to:
+    slot_uri: dlprov:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+    exact_mappings:
+      - dcterms:conformsTo
+
+  ended_at:
+    slot_uri: dlprov:ended_at
+    description: >-
+      End is when an activity is deemed to have been ended by an entity,
+      known as trigger. The activity no longer exists after its end.
+      Any usage, generation, or invalidation involving an activity
+      precedes the activity's end.
+    domain: Activity
+    range: W3CISO8601
+    exact_mappings:
+      - prov:endedAtTime
+
+  entity:
+    slot_uri: dlprov:entity
+
+    is_a: influencer
+    description: >-
+      References an entity which influenced an entity.
+    range: Entity
+    #domain: EntityInfluence
+    exact_mappings:
+      - prov:entity
+    broad_mappings:
+      - prov:influencer
+
+  had_activity:
+    slot_uri: dlprov:had_activity
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    # TODO do we need an activity class?
+    #range: Activity
+    range: uriorcurie
+    exact_mappings:
+      - prov:hadActivity
+
+  had_role:
+    slot_uri: dlprov:had_role
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    range: Role
+    exact_mappings:
+      - prov:hadRole
+      - DCAT:had_role
+    comments:
+      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
+      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
+
+  influencer:
+    slot_uri: dlprov:influencer
+    description: >-
+      Reference the resource (Entity, Agent, or Activity) whose influence is
+      being qualified in a qualified influence pattern.
+    any_of:
+      - range: Activity
+      - range: Agent
+      - range: Entity
+    exact_mappings:
+      - prov:influencer
+    broad_mappings:
+      - dcterms:relation
+
+  relation:
+    slot_uri: dlprov:relation
+    description: >-
+      The resource related to the source resource.
+    relational_role: OBJECT
+    exact_mappings:
+      - dcterms:relation
+
+  qualified_association:
+    slot_uri: dlprov:qualified_association
+    description: >-
+      Assignment of responsibility to an agent for an activity, indicating
+      that the agent had a role in the activity.
+    exact_mappings:
+      - prov:qualifiedAssociation
+    range: AgentInfluence
+
+  qualified_attribution:
+    slot_uri: dlprov:qualified_attribution
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    exact_mappings:
+      - prov:qualifiedAttribution
+    range: Attribution
+
+  qualified_derivation:
+    slot_uri: dlprov:qualified_derivation
+    description: >-
+      A transformation of an entity into another, an update of an entity
+      resulting in a new one, or the construction of a new entity based
+      on a pre-existing entity.
+    exact_mappings:
+      - prov:qualifiedDerivation
+    range: Derivation
+
+  qualified_relation:
+    slot_uri: dlprov:qualified_relation
+    description: >-
+      TODO
+    exact_mappings:
+      - DCAT:qualifiedRelation
+    range: EntityInfluence
+    multivalued: true
+
+  was_influenced_by:
+    slot_uri: dlprov:was_influenced_by
+    description: >-
+      Capacity of an entity, activity, or agent to have an effect on the
+      character, development, or behavior of another.
+    domain: Thing
+    range: Thing
+    exact_mappings:
+      - prov:wasInfluencedBy
+
+  was_associated_with:
+    slot_uri: dlprov:was_associated_with
+    is_a: was_influenced_by
+    description: >-
+      An activity association is an assignment of responsibility to an agent
+      for an activity, indicating that the agent had a role in the activity.
+      It further allows for a plan to be specified, which is the plan intended
+      by the agent to achieve some goals in the context of this activity.
+    domain: Activity
+    range: Agent
+    exact_mappings:
+      - prov:wasAssociatedWith
+
+  was_attributed_to:
+    slot_uri: dlprov:was_attributed_to
+    is_a: was_influenced_by
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    domain: Entity
+    range: Agent
+    exact_mappings:
+      - prov:wasAttributedTo
+
+  was_derived_from:
+    slot_uri: dlprov:was_derived_from
+    is_a: was_influenced_by
+    description: >-
+      Derivation is a transformation of an entity into another,
+      an update of an entity resulting in a new one, or the
+      construction of a new entity based on a pre-existing entity.
+    domain: Entity
+    range: Entity
+    exact_mappings:
+      - prov:wasDerivedFrom
+
+  was_generated_by:
+    slot_uri: dlprov:was_generated_by
+    is_a: was_influenced_by
+    description: >-
+      Generation is the completion of production of a new entity by an activity.
+      This entity did not exist before generation and becomes available for usage
+      after this generation.
+    domain: Entity
+    range: Activity
+    exact_mappings:
+      - prov:wasAttributedTo
+
+  was_informed_by:
+    slot_uri: dlprov:was_informed_by
+    is_a: was_influenced_by
+    description: >-
+      Communication is the exchange of an entity by two activities, one activity
+      using the entity generated by the other.
+    domain: Activity
+    range: Activity
+    exact_mappings:
+      - prov:wasInformedBy
+
+
+classes:
+  #
+  # activities
+  #
+  Activity:
+    class_uri: dlprov:Activity
+    is_a: Thing
+    description: >-
+      An activity is something that occurs over a period of time and acts
+      upon or with entities; it may include consuming, processing,
+      transforming, modifying, relocating, using, or generating entities.
+    slots:
+      - qualified_association
+      - was_associated_with
+      - was_informed_by
+      #  - at_location
+      #  - started_at
+      - ended_at
+    slot_usage:
+      was_associated_with:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Agent
+      was_informed_by:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Activity
+      qualified_association:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: AgentInfluence
+    exact_mappings:
+      - prov:Activity
+
+
+  #
+  # agents
+  #
+  Agent:
+    class_uri: dlprov:Agent
+    is_a: Thing
+    description: >-
+      Something that bears some form of responsibility for an activity
+      taking place, for the existence of an entity, or for another
+      agent's activity.
+    exact_mappings:
+      - foaf:Agent
+      - prov:Agent
+
+  #
+  # entities
+  #
+  Entity:
+    class_uri: dlprov:Entity
+    is_a: Thing
+    description: >-
+      A physical, digital, conceptual, or other kind of thing with some
+      fixed aspects; entities may be real or imaginary.
+    slots:
+      - conforms_to
+      - qualified_attribution
+      - qualified_derivation
+      - qualified_relation
+      - relation
+      - was_attributed_to
+      - was_derived_from
+      - was_generated_by
+    slot_usage:
+      relation:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Entity
+      qualified_attribution:
+        range: Attribution
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      qualified_derivation:
+        range: Derivation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      qualified_relation:
+        range: EntityInfluence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      was_attributed_to:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Agent
+      was_derived_from:
+        range: Entity
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      was_generated_by:
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        range: Activity
+    exact_mappings:
+      - prov:Entity
+
+  #
+  # basic relations
+  #
+  Influence:
+    class_uri: dlprov:Influence
+    description: >-
+      Capacity of an entity, activity, or agent to have an effect on the
+      character, development, or behavior of another.
+    slots:
+      - influencer
+      - had_role
+    slot_usage:
+      had_role:
+        multivalued: true
+        required: true
+      influencer:
+        # we cannot make it required. The equals_expression of,
+        # e.g. `AgentInfluence` does not kick in for value inference
+        # before validation errors out
+        #required: true
+    exact_mappings:
+      - prov:Influence
+
+  AgentInfluence:
+    class_uri: dlprov:AgentInfluence
+    is_a: Influence
+    description: >-
+      Capacity of an agent to have an effect on the character, development,
+      or behavior of another Entity, Agent, or Activity
+    slots:
+      - agent
+    slot_usage:
+      agent:
+        required: true
+        equals_expression: "{influencer}"
+        todos:
+          - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
+    exact_mappings:
+      - prov:AgentInfluence
+
+  Attribution:
+    class_uri: dlprov:Attribution
+    is_a: AgentInfluence
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    exact_mappings:
+      - prov:Attribution
+    broad_mappings:
+      - prov:AgentInfluence
+      - prov:Influence
+
+  EntityInfluence:
+    class_uri: dlprov:EntityInfluence
+    is_a: Influence
+    description: >-
+      Capacity of an entity to have an effect on the character, development,
+      or behavior of another.
+    slots:
+      - entity
+      - meta_type
+    slot_usage:
+      entity:
+        multivalued: true
+        range: Entity
+        required: true
+    exact_mappings:
+      - prov:EntityInfluence
+    broad_mappings:
+      - prov:Influence
+
+  Derivation:
+    class_uri: dlprov:Derivation
+    is_a: EntityInfluence
+    description: >-
+      Transformation of an entity into another, an update of an entity
+      resulting in a new one, or the construction of a new entity based
+      on a pre-existing entity.
+    slots:
+      - had_activity
+    exact_mappings:
+      - prov:Derivation
+
+  Role:
+    class_uri: dlprov:Role
+    description: >-
+      A role is the function of a resource or agent with respect to
+      another resource, in the context of resource attribution or
+      resource relationships.
+    slots:
+      - id
+    exact_mappings:
+      - prov:Role
+      - DCAT:Role
