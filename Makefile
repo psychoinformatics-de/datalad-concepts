@@ -32,6 +32,11 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	&& (cp -r src/$*/extra-docs/*.md $@ || true) \
 	&& cp $< $@.yaml
 	# try to inject any extra-docs (if any exist)
+	# generate OWL
+	gen-owl \
+		-f owl \
+		--mergeimports \
+		$< > $@.owl.ttl
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	# top-level content
