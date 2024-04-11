@@ -1,0 +1,18 @@
+schema: src/distribution/unreleased.yaml
+target_class: Distribution
+data_sources:
+  - src/distribution/unreleased/examples/Distribution-basic.yaml
+  - src/datalad-dataset/unreleased/examples/Distribution-annexaccess.yaml
+  - src/distribution/unreleased/examples/Distribution-customlicense.yaml
+  - src/distribution/unreleased/examples/Distribution-resource.yaml
+  - src/distribution/unreleased/examples/Distribution-parts.yaml
+  - src/distribution/unreleased/examples/Distribution-formats.yaml
+  - src/distribution/unreleased/examples/Distribution-datatypes.yaml
+  - src/datalad-dataset/unreleased/examples/Distribution-annexkey.yaml
+  - src/distribution/unreleased/examples/Distribution-gitblob.yaml
+  - src/datalad-dataset/unreleased/examples/Distribution-gittree.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

@@ -4,7 +4,8 @@ version: UNRELEASED
 status: bibo:status/draft
 title: Scientific data distribution
 description: |
-  TODO
+  At the moment, this is no more than a place for moving existing concepts too
+  that are not generic enough to work in larger contexts.
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 

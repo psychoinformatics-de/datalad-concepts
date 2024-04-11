@@ -1,0 +1,11 @@
+schema: src/distribution/unreleased.yaml
+target_class: Resource
+data_sources:
+  - src/distribution/unreleased/examples/Resource-study.yaml
+  - src/datalad-dataset/unreleased/examples/Resource-gitcommit.yaml
+  - src/datalad-dataset/unreleased/examples/Resource-dataladdataset.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

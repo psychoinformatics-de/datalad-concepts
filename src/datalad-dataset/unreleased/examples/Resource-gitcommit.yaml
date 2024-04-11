@@ -1,6 +1,6 @@
-id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
+id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
 # link to datalad dataset
-is_version_of: https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854
+is_version_of: datalad-ds:cec1da92-0dbd-4df3-8602-7c72b2d12854
 identifier:
   # two git-tags associated with the commit
   # they must be unique across all commits in the repo, hence we
@@ -21,7 +21,7 @@ qualified_derivation:
   # parent commit(s)
   - entity:
       # in a derivation any number of entities can play a role
-      - https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054
+      - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
     # "change", ie. unknown what was done
     # there are plenty of terms to drill down on the nature
     # of the derivation
@@ -35,7 +35,7 @@ relation:
   # this is modeled as a dedicated action so that the
   # author time can be captured as an independent property.
   # otherwise the author role could be added above
-  - id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
     meta_type: dlprov:Activity
     # "preparation"
     type: obo:NCIT_C25625
@@ -46,7 +46,7 @@ relation:
         had_role:
           - marcrel:aut
   # commit activity
-  - id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
     meta_type: dlprov:Activity
     # go for activity type: "release", but could also be
     # "label as such" (obo:NCIT_C64662)
@@ -58,6 +58,6 @@ relation:
         had_role:
           - marcrel:cre
     was_informed_by:
-      - https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+      - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
 was_generated_by:
-  - https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+  - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
