@@ -4,14 +4,14 @@ version: UNRELEASED
 status: bibo:status/draft
 title: Schema for a generic data description
 description: |
-  This schema provides a generic `Thing` concept as a basic building block.
+  This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
-  - must be given a unique identifier (`id`) for referencing in metadata records, separate from any other identifier(s) that may apply to a `Thing` (`identifier`)
-  - can be described using generic properties without prescribing a particular vocabulary, such type (`type`), equivalence (`same_as`), and topic (`is_about`)
-  - a dedicated `meta_type` slot enables the distinction of the semantic type of a `Thing` from the type of data structure used to represent the `Thing` in a particular data record
+  - must be given a unique identifier ([`id`](id)) for referencing in metadata records, separate from any other identifier(s) that may apply to a `Thing` ([`identifier`](identifier))
+  - can be described using generic properties without prescribing a particular vocabulary, such type ([`type`](type)), equivalence ([`same_as`](same_as)), and topic ([`is_about`](is_about))
+  - a dedicated [`meta_type`](meta_type) slot enables the distinction of the semantic type of a `Thing` from the type of data structure used to represent the `Thing` in a particular data record
 
-  Moreover, qualitative (`Property`) and quantitative (`QuantitativeProperty`) properties can be assigned to a `Thing` (`has_property`), again without prescribing a particular vocabulary.
+  Moreover, qualitative ([`Property`](Property)) and quantitative ([`QuantitativeProperty`](QuantitativeProperty)) properties can be assigned to a `Thing` ([`has_property`](has_property)), again without prescribing a particular vocabulary.
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
