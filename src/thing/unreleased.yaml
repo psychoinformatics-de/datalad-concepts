@@ -44,8 +44,14 @@ prefixes:
 
 default_prefix: dlthing
 
+# list of Curie prefixes that are used in the representation of instances of
+# the model. All prefixes in this list are added to the prefix sections of
+# the target models.
 emit_prefixes:
+  # needed to indicate a QuantitativeProperty via `meta_type`
   - dlthing
+  # single prefix that enables a huge range of ontologies ready-to-use for
+  # descriptions -- seems worth emitting
   - obo
 
 imports:

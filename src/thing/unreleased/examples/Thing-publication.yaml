@@ -1,0 +1,48 @@
+# A scientific publication.
+# This is a simplified example lacking any relation descriptions
+# (e.g. authors, funding, etc), see publication examples for
+# other schemas for those aspects.
+id: https://doi.org/10.1038/s41597-022-01163-2
+type: bibo:AcademicArticle
+name: "FAIRLy big"
+title: "FAIRly big: A framework for computationally reproducible processing of large-scale data"
+description:
+  "Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset)."
+identifier:
+  - notation: 10.1038/s41597-022-01163-2
+    schema_agency: https://doi.org
+# related topics
+is_about:
+  - https://www.nature.com/subjects/data-processing
+  - https://www.nature.com/subjects/data-publication-and-archiving
+  - https://www.nature.com/subjects/software
+#license: licenses:CC-BY-4.0
+same_as:
+  - https://www.nature.com/articles/s41597-022-01163-2
+# custom properties can be used to arbitrarily (and possibly redundantly)
+# detail the publication record for better fit with specialized consumers
+has_property:
+  - type: dcterms:bibliographicCitation
+    value: "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
+  - type: dcterms:isPartOf
+    value: Scientific Data
+    is_defined_by: https://portal.issn.org/resource/issn/2052-4463
+  - type: bibo:doi
+    name: DOI
+    value: https://doi.org/10.1038/s41597-022-01163-2
+  - type: bibo:volume
+    name: Volume
+    value: "9"
+  - type: bibo:number
+    name: Document number
+    value: "80"
+  - type: bibo:numPages
+    name: Number of pages
+    value: "17"
+    range: xsd:nonNegativeInteger
+  - type: dcterms:modified
+    range: xsd:date
+    value: "2022-02-11"
+  - type: dcterms:date
+    range: xsd:date
+    value: "2022-03-11"

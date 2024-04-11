@@ -5,6 +5,7 @@ data_sources:
   - src/thing/unreleased/examples/Thing-identifiers.yaml
   - src/thing/unreleased/examples/Thing-topic.yaml
   - src/thing/unreleased/examples/Thing-customproperty.yaml
+  - src/thing/unreleased/examples/Thing-publication.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
