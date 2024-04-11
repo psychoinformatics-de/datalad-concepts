@@ -1,0 +1,16 @@
+{
+  "id": "gitsha:9a48c2bf7e97a081f2b1ab68eb909bbfc86267be",
+  "meta_type": "dldist:Distribution",
+  "is_distribution_of": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
+  "qualified_part": [
+    {
+      "name": "table.csv",
+      "entity": "annex-key:MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv"
+    },
+    {
+      "name": "index.html",
+      "entity": "gitsha:e12e9505cff5417f594d719b99720b4c39d86434"
+    }
+  ],
+  "@type": "Distribution"
+}
