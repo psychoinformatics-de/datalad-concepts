@@ -6,6 +6,13 @@ title: Scientific data distribution
 description: |
   At the moment, this is no more than a place for moving existing concepts too
   that are not generic enough to work in larger contexts.
+
+  Available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
