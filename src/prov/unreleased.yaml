@@ -17,6 +17,12 @@ description: |
   - `qualified_association`: for an `AgentInfluence` on an `Activity`
   - `qualified_attribution`: for an `AgentInfluence` on an `Entity`
 
+  Available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 

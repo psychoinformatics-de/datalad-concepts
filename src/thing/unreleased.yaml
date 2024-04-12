@@ -15,8 +15,9 @@ description: |
 
   Available as
 
-  - [OWL TTL](../unreleased.owl.ttl)
+  - [JSON-LD context](../unreleased.jsonld)
   - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

@@ -11,6 +11,12 @@ description: |
 
   - custom namespaces for Git SHA, git-annex key, git-annex remote, and DataLad dataset identifiers
 
+  Available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 

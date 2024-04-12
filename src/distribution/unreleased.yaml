@@ -20,6 +20,13 @@ description: |
   Few slots (provenance related) allow for the inline declaration of (typed)
   objects, declaring an identifier that can be used to link to such an object
   in other metadata records.
+
+  Available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 

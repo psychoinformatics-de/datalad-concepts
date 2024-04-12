@@ -37,6 +37,10 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		-f owl \
 		--mergeimports \
 		$< > $@.owl.ttl
+	# jsonld context
+	gen-jsonld-context \
+		--mergeimports \
+		$< > $@.jsonld
 
 build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
 	# top-level content
