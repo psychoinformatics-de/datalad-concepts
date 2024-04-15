@@ -128,6 +128,32 @@ slots:
     related_mappings:
       - DCAT:servesDataset
 
+  access_service:
+    slot_uri: dldist:access_service
+    description: >-
+      A data service that gives access to the subject.
+    comments:
+      - SHOULD be used to link to a description of a dcat:DataService that can provide access to the subject.
+    range: uriorcurie
+    exact_mappings:
+      - DCAT:accessService
+    related_mappings:
+      - DCAT:accessURL
+      - DCAT:landingPage
+
+  access_url:
+    slot_uri: dldist:access_url
+    description: >-
+      URL that gives access to the subject. This can be, e.g, a landing page, feed, SPARQL endpoint.
+    range: uri
+    comments:
+      - If the subject is available directly, typically through a HTTP Get request, `download_url` SHOULD be used instead.
+    exact_mappings:
+      - DCAT:accessURL
+    related_mappings:
+      - DCAT:downloadURL
+      - DCAT:landingPage
+
   address:
     slot_uri: dldist:address
     description:
@@ -227,10 +253,15 @@ slots:
   download_url:
     slot_uri: dldist:download_url
     description: >-
-      URL of downloadable resourcefile in a given format.
+      URL that gives direct access to the subject in the form of a downloadable file in a given format.
     range: uri
+    comments:
+      - SHOULD be used for the URL at which this distribution is available directly, typically through a HTTP Get request.
     exact_mappings:
       - DCAT:downloadURL
+    related_mappings:
+      - DCAT:accessURL
+      - DCAT:landingPage
 
   email:
     slot_uri: dldist:email
@@ -406,7 +437,10 @@ classes:
       A specific representation of data, which may come in the form of
       a single file, or an archive or directory of many files, may be
       standalone or part of a dataset.
+    comments:
+      - If a distribution is accessible only through a landing page, then the landing page URL associated with respective ressource SHOULD be duplicated as `access_url` on a distribution.
     slots:
+      - access_url
       - byte_size
       - checksum
       - conforms_to
@@ -422,10 +456,14 @@ classes:
       - qualified_access
       - qualified_part
     slot_usage:
+      access_url:
+        multivalued: true
       checksum:
         multivalued: true
         inlined: true
         inlined_as_list: true
+      download_url:
+        multivalued: true
       has_part:
         multivalued: true
         inlined: true

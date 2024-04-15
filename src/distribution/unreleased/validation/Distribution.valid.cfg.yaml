@@ -2,6 +2,7 @@ schema: src/distribution/unreleased.yaml
 target_class: Distribution
 data_sources:
   - src/distribution/unreleased/examples/Distribution-basic.yaml
+  - src/distribution/unreleased/examples/Distribution-directurlaccess.yaml
   - src/distribution/unreleased/examples/Distribution-annexaccess.yaml
   - src/distribution/unreleased/examples/Distribution-customlicense.yaml
   - src/distribution/unreleased/examples/Distribution-resource.yaml
