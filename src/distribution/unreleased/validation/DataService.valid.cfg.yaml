@@ -1,0 +1,9 @@
+schema: src/distribution/unreleased.yaml
+target_class: DataService
+data_sources:
+  - src/distribution/unreleased/examples/DataService-annexremote.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

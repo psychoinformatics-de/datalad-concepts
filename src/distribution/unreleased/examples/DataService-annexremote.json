@@ -1,0 +1,46 @@
+{
+  "id": "https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795",
+  "identifier": [
+    {
+      "notation": "0a8713ca-ef42-11ee-a805-d3e9a774e795",
+      "schema_agency": "https://git-annex.branchable.com"
+    }
+  ],
+  "meta_type": "dldist:DataService",
+  "name": "box.com",
+  "has_property": [
+    {
+      "name": "type",
+      "value": "webdav",
+      "meta_type": "dlthing:Property"
+    },
+    {
+      "name": "url",
+      "type": "DCAT:endpointURL",
+      "value": "https://dav.box.com/dav/git-annex",
+      "meta_type": "dlthing:Property"
+    },
+    {
+      "name": "chunk",
+      "value": "10mb",
+      "meta_type": "dlthing:Property"
+    },
+    {
+      "name": "keyid",
+      "value": "id@joeyh.name",
+      "meta_type": "dlthing:Property"
+    }
+  ],
+  "type": "https://git-annex.branchable.com/special_remotes",
+  "endpoint_description": "https://git-annex.branchable.com/special_remotes/webdav/",
+  "endpoint_url": "https://dav.box.com/dav/git-annex",
+  "has_parameter": [
+    {
+      "description": "git-annex key",
+      "name": "key",
+      "type": "obo:NCIT_C99023",
+      "range": "https://git-annex.branchable.com/internals/key_format"
+    }
+  ],
+  "@type": "DataService"
+}

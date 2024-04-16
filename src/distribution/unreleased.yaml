@@ -4,24 +4,41 @@ version: UNRELEASED
 status: bibo:status/draft
 title: Schema for a generic data distribution record
 description: |
-  This schema is centered on the description of concrete data distributions
-  using a single root class that uniformly applies to different kinds of
-  distributions, like an individual file, an archive of files, or a directory
-  of files.
+  This schema is centered on the [`Distribution`](Distribution) class for
+  describing concrete data distributions, such as an individual file, an archive
+  of files, or a directory of files.
 
-  There is [dedicated documentation](about.md) with general information on the
-  purpose and basic principles of this schema.
+  The schema builds on the elements and principles of the
+  [Thing](https://concepts.datalad.org/s/thing) and
+  [Provenance](https://concepts.datalad.org/s/prov) schemas, and extends them
+  with elements from [DCAT vocabulary](https://www.w3.org/TR/vocab-dcat-3).
 
-  Key goal is the use of global identifiers for most entities.
+  Through the joint set of included concepts and properties this schema
+  supports the description of
 
-  A standard record should mostly be a simple key value mapping, where the value
-  part is a URI or CURIE.
+  - data versions and composition
+  - data access methods
+  - data access rights and policies
+  - related resources, including topics, data types/formats
+  - provenance of data and related entities
 
-  Few slots (provenance related) allow for the inline declaration of (typed)
-  objects, declaring an identifier that can be used to link to such an object
-  in other metadata records.
+  Importantly, all this information can be represented using the
+  [`Distribution`](Distribution) class as a structural container. Hence this schema
+  is particularly suitable for systems that (only) support attaching metadata to
+  data objects.
 
-  Available as
+  For more information, see the [general documentation](about.md), and concrete
+  examples on the documentation pages of individual classes. Some noteworthy
+  examples are
+
+  - [data type annotation](Distribution/#example-distribution-datatypes)
+  - [data format annotation](Distribution/#example-distribution-format)
+  - [dataset as an outcome of a study](Resource/#example-resource-study)
+  - [access to a `Distribution`](Distribution/#example-distribution-access)
+  - [dataset version in the form of a Git commit](Resource/#example-resource-gitcommit)
+  - [git-annex remote as a `DataService`](DataService/#example-dataservice-annexremote)
+
+  The schema is available as
 
   - [JSON-LD context](../unreleased.jsonld)
   - [LinkML YAML](../unreleased.yaml)
@@ -117,24 +134,13 @@ types:
 
 
 slots:
-  access_id:
-    slot_uri: dldist:access_id
-    description: >-
-      An identifier with which a resource distribution can be requested from a
-      `DataService`.
-    broad_mappings:
-      - dcterms:identifier
-    range: string
-    related_mappings:
-      - DCAT:servesDataset
-
   access_service:
     slot_uri: dldist:access_service
     description: >-
-      A data service that gives access to the subject.
+      A data service that gives access to a distribution.
     comments:
       - SHOULD be used to link to a description of a dcat:DataService that can provide access to the subject.
-    range: uriorcurie
+    range: DataService
     exact_mappings:
       - DCAT:accessService
     related_mappings:
@@ -198,15 +204,13 @@ slots:
     exact_mappings:
       - spdx:checksum
 
-  conforms_to:
-    slot_uri: dlprov:conforms_to
+  contact_point:
+    slot_uri: dldist:contact_point
     description: >-
-      An established standard to which the subject conforms.
-    range: uriorcurie
-    comments:
-      - This property SHOULD be used to indicate the model, schema, ontology, view or profile that this representation of a dataset conforms to. This is (generally) a complementary concern to the media-type or format.
+      Relevant contact information for the subject.
+    range: Agent
     exact_mappings:
-      - dcterms:conformsTo
+      - DCAT:contactPoint
 
   date_modified:
     slot_uri: dldist:date_modified
@@ -263,6 +267,20 @@ slots:
       - DCAT:accessURL
       - DCAT:landingPage
 
+  download_url_template:
+    slot_uri: dldist:download_url_template
+    description: >-
+      A URL template with placeholders enclosed in braces (`{example}`).
+      When expanded with a given set of named parameters, the instantiated template
+      forms a valid URL suitable for requesting a download.
+    range: string
+    notes:
+      - the `range` is string, because structural elements of the URL (e.g., the protocol) could also be a placeholder.
+    close_mappings:
+      - linkml:structured_pattern
+    related_mappings:
+      - dldist:download_url
+
   email:
     slot_uri: dldist:email
     description: Email address associated with an entity.
@@ -270,6 +288,29 @@ slots:
       - schema:email
       - obo:IAO_0000429
     range: EmailAddress
+
+  endpoint_description:
+    slot_uri: dldist:endpoint_description
+    description: >-
+      A description of the services available via the end-points,
+      including their operations, parameters etc.
+    range: uri
+    exact_mappings:
+      - DCAT:downloadURL
+    related_mappings:
+      - dldist:endpoint_url
+      - dlthing:conforms_to
+
+  endpoint_url:
+    slot_uri: dldist:endpoint_url
+    description: >-
+      The root location or primary endpoint of a service (a Web-resolvable IRI).
+    range: uri
+    exact_mappings:
+      - DCAT:endpointURL
+    related_mappings:
+      - dldist:endpoint_description
+      - dlthing:conforms_to
 
   format:
     slot_uri: dldist:format
@@ -281,6 +322,15 @@ slots:
       - dcterms:format
     notes:
       - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  has_parameter:
+    slot_uri: dldist:has_parameter
+    description: >-
+      Relation between a process or function and an information entity which
+      modulates the behaviour of the subject.
+    close_mappings:
+      - sio:SIO_000552
+      - obo:OBI_0000293
 
   has_part:
     slot_uri: dldist:has_part
@@ -438,12 +488,12 @@ classes:
       a single file, or an archive or directory of many files, may be
       standalone or part of a dataset.
     comments:
-      - If a distribution is accessible only through a landing page, then the landing page URL associated with respective ressource SHOULD be duplicated as `access_url` on a distribution.
+      - If a distribution is accessible only through a landing page, then the landing page URL associated with respective resource SHOULD be duplicated as `access_url` on a distribution.
     slots:
+      - access_service
       - access_url
       - byte_size
       - checksum
-      - conforms_to
       - date_modified
       - date_published
       # TODO multivalued?
@@ -456,6 +506,8 @@ classes:
       - qualified_access
       - qualified_part
     slot_usage:
+      access_service:
+        multivalued: true
       access_url:
         multivalued: true
       checksum:
@@ -490,6 +542,7 @@ classes:
     notes:
       - Try to make having specific subtypes of this class unnecessary
     slots:
+      - contact_point
       - date_modified
       - date_published
       - is_part_of
@@ -570,6 +623,27 @@ classes:
     description: >-
       A collection of operations that provides access to one or more
       distributions or data processing functions.
+    slots:
+      - download_url_template
+      - endpoint_description
+      - endpoint_url
+      - has_parameter
+    slot_usage:
+      has_parameter:
+        description: >-
+          Parameter that needs to be supplied in order to request a
+          particular `Distribution` from the `DataService`.
+          Any such concrete parameter values can be specific in a
+          dedicated `QualifiedAccess` relation, linking a `Distribution`
+          to a `DataService`.
+          A `Parameter` value property given in the scope of a `DataService`
+          can be considered as a default value.
+        inlined: true
+        inlined_as_list: true
+        multivalued: true
+        range: Parameter
+    comments:
+      - Characteristics of a particular `Dataservice` that do not vary across `Distributions` that can be requested from the `DataService` are considered properties (`has_property`) of the `Dataservice`. In contrast, information needed in addition for requesting a particular `Distribution` are considered an access request parameter (`has_parameter`). Such parameters can be declared for a `DataService`, and provided for a particular `Distribution` via a dedicated `QualifiedAccess` relation.
     exact_mappings:
       - DCAT:DataService
     broad_mappings:
@@ -580,7 +654,6 @@ classes:
 
   QualifiedAccess:
     class_uri: dldist:QualifiedAccess
-    is_a: EntityInfluence
     description: >-
       An association class for attaching additional information to an
       `access_service` relationship between a `DCAT:Distribution` and
@@ -588,16 +661,20 @@ classes:
     related_mappings:
       - DCAT:access_service
     slots:
-      - access_id
+      - access_service
+      - has_parameter
     slot_usage:
-      #had_role:
-        # in this context we can auto-fill the role
-        # (but had_role is multivalued, and linkml does not support
-        # defaults for multivalued slots)
-        # ifabsent: string(DCAT:DataService)
-      entity:
-        # must duplicate multivalued property, although unchanged
-        # otherwise linkml will use wrong dtype for identifier
-        # (array of CURIE)
+      access_service:
         multivalued: true
         range: DataService
+      has_parameter:
+        multivalued: true
+        range: Parameter
+
+  Parameter:
+    class_uri: dldist:Parameter
+    is_a: Characteristic
+    description: >-
+      A variable whose value changes the characteristics of a system or a function.
+    exact_mappings:
+      - sio:SIO_000144

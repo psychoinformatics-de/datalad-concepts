@@ -4,10 +4,10 @@
   "has_property": [
     {
       "is_defined_by": "obo:NCIT_C95650",
-      "meta_type": "dlthing:Property",
       "name": "data type",
       "type": "obo:NCIT_C42645",
-      "value": "encapsulated image data"
+      "value": "encapsulated image data",
+      "meta_type": "dlthing:Property"
     }
   ],
   "qualified_relation": [

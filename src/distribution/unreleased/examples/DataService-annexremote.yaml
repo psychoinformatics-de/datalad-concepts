@@ -1,0 +1,39 @@
+# specification of a git-annex special remote as a DataService
+id: https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
+meta_type: dldist:DataService
+name: box.com
+# TODO have a definition of a generic annex remote
+type: https://git-annex.branchable.com/special_remotes
+identifier:
+  - notation: 0a8713ca-ef42-11ee-a805-d3e9a774e795
+    schema_agency: https://git-annex.branchable.com
+endpoint_url: https://dav.box.com/dav/git-annex
+# we are using a box.com WebDAV endpoint, but through a git-annex special remote,
+# hence its documentation is the more appropriate description
+endpoint_description: https://git-annex.branchable.com/special_remotes/webdav/
+# as a generic approach specify init/enableremote parameters
+# as key-value pairs. each of them could have associated
+# definitions to communicate the semantics in a more commonly
+# understood way.
+# These are modeled as properties of the dataservice, because the dataservice
+# is a generic git-annex special remote, and only these (fixed) properties
+# define protocol/layout/content of the dataservice
+has_property:
+  - name: type
+    value: webdav
+  - name: url
+    value: https://dav.box.com/dav/git-annex
+    type: DCAT:endpointURL
+  - name: chunk
+    value: 10mb
+  - name: keyid
+    value: id@joeyh.name
+# identification of parameters that have to be provided in order to perform
+# content retrieval
+has_parameter:
+  - name: key
+    description: git-annex key
+    # content identifier
+    type: obo:NCIT_C99023
+    # (ab)use design document on annex keys as range identifier
+    range: https://git-annex.branchable.com/internals/key_format

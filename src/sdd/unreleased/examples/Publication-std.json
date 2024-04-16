@@ -15,29 +15,29 @@
   "meta_type": "dlsdd:Publication",
   "has_property": [
     {
-      "meta_type": "dlthing:Property",
       "name": "DOI",
       "type": "bibo:doi",
-      "value": "https://doi.org/10.1038/s41597-022-01163-2"
+      "value": "https://doi.org/10.1038/s41597-022-01163-2",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Volume",
       "type": "bibo:volume",
-      "value": "9"
+      "value": "9",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Document number",
       "type": "bibo:number",
-      "value": "80"
+      "value": "80",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Number of pages",
       "type": "bibo:numPages",
       "range": "xsd:nonNegativeInteger",
-      "value": "17"
+      "value": "17",
+      "meta_type": "dlthing:Property"
     }
   ],
   "same_as": [
