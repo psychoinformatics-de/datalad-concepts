@@ -222,7 +222,7 @@ slots:
   qualified_relation:
     slot_uri: dlprov:qualified_relation
     description: >-
-      TODO
+      Characterizes the relationship or role of an entity with respect to the subject entity.
     exact_mappings:
       - DCAT:qualifiedRelation
     range: EntityInfluence
