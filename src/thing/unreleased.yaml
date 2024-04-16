@@ -132,7 +132,7 @@ slots:
   notation:
     slot_uri: dlthing:notation
     description: >-
-      String of characters such as "T58.5" or "303.4833" used to uniquely
+      String of characters such as "T58:5" or "30:4833" used to uniquely
       identify a concept within the scope of a given concept scheme.
     range: string
     exact_mappings:
@@ -260,15 +260,13 @@ classes:
     see_also:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
 
-  Property:
-    class_uri: dlthing:Property
+  Characteristic:
+    class_uri: dlthing:Characteristic
     description: >-
-      An inherent quality, function, disposition or process characteristic
-      that is being observed or measured.
+      An inherent quality, function, disposition or process characteristic.
     slots:
       - description
       - is_defined_by
-      - meta_type
       - name
       - title
       - type
@@ -300,6 +298,17 @@ classes:
             via linkml:Any does not produce a satisfactory solution.
     exact_mappings:
       - sio:SIO_000614
+
+  Property:
+    class_uri: dlthing:Property
+    is_a: Characteristic
+    description: >-
+      An inherent quality, function, disposition or process characteristic
+      that is being observed or measured.
+    slots:
+      - meta_type
+    exact_mappings:
+      - sio:SIO_000613
 
   QuantitativeProperty:
     class_uri: dlthing:QuantitativeProperty
