@@ -65,6 +65,16 @@ imports:
   - linkml:types
 
 slots:
+  conforms_to:
+    slot_uri: dlthing:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
   description:
     slot_uri: dlthing:description
     description: A free-text account of the thing.
@@ -220,6 +230,7 @@ classes:
       The most basic item.
     slots:
       - id
+      - conforms_to
       - description
       - identifier
       - is_about
@@ -230,6 +241,8 @@ classes:
       - title
       - type
     slot_usage:
+      conforms_to:
+        multivalued: true
       identifier:
         inlined: true
         inlined_as_list: true
