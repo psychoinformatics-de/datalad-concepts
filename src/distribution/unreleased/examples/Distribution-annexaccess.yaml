@@ -1,37 +1,13 @@
-# specification of a distribution access via a git-annex
-# special remote -- without using specifialized concepts
+# specification of a distribution access via a git-annex special remote
 id: https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
-relation:
-  - id: https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
-    meta_type: dldist:DataService
-    name: box.com
-    # TODO have a definition of a generic annex remote
-    type: https://git-annex.branchable.com/special_remotes/webdav
-    identifier:
-      - notation: 0a8713ca-ef42-11ee-a805-d3e9a774e795
-        schema_agency: https://git-annex.branchable.com
-    # as a generic approach specify init/enableremote parameters
-    # as key-value pairs. each of them could have associated
-    # definitions to communicate the semantics in a more commonly
-    # understood way
-    has_property:
-      - name: type
-        value: webdav
-      - name: url
-        value: https://dav.box.com/dav/git-annex
-        type: DCAT:endpointURL
-      - name: chunk
-        value: 10mb
-      - name: keyid
-        value: id@joeyh.name
-qualified_relation:
-  - meta_type: dldist:QualifiedAccess
-    # one or more annex remotes ...
-    entity:
+qualified_access:
+  - access_service:
+      # see example DataService-annexremote for a matching specification
       - https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
-    # ... from which this annex key is available
-    access_id: MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
-    # we need to make the role explicit, because linkml currently
-    # does not support defaults for multivalued slots
-    had_role:
-      - DCAT:DataService
+        # there could be more remotes from which the same key is provided
+    # identify the annex key matching this Distribution, to complete the information
+    # required to perform a request. The name has to match the parameter specification
+    # of the access service
+    has_parameter:
+      - name: key
+        value: MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv

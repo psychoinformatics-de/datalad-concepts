@@ -33,8 +33,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
-  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
   # Example convenience namespace that makes it possible to not think about
@@ -65,12 +65,22 @@ imports:
   - linkml:types
 
 slots:
+  conforms_to:
+    slot_uri: dlthing:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
   description:
     slot_uri: dlthing:description
     description: A free-text account of the thing.
     exact_mappings:
       - dcterms:description
-      - RDFS:comment
+      - rdfs:comment
     range: string
 
   has_property:
@@ -118,13 +128,13 @@ slots:
       The definition of the subject thing.
     range: uriorcurie
     exact_mappings:
-      - RDFS:isDefinedBy
+      - rdfs:isDefinedBy
 
   name:
     slot_uri: dlthing:name
     description: Name of a thing.
     exact_mappings:
-      - RDFS:label
+      - rdfs:label
       - schema:name
       - foaf:name
     range: string
@@ -132,14 +142,14 @@ slots:
   notation:
     slot_uri: dlthing:notation
     description: >-
-      String of characters such as "T58.5" or "303.4833" used to uniquely
+      String of characters such as "T58:5" or "30:4833" used to uniquely
       identify a concept within the scope of a given concept scheme.
     range: string
     exact_mappings:
       - skos:notation
 
   range:
-    slot_uri: RDFS:range
+    slot_uri: rdfs:range
     description: >-
       State that the values of a property are instances of a class.
     range: uriorcurie
@@ -191,7 +201,7 @@ slots:
       - dcterms:type
 
   type:
-    slot_uri: RDF:type
+    slot_uri: rdf:type
     description: >-
       State that the subject is an instance of a class.
     range: uriorcurie
@@ -207,7 +217,7 @@ slots:
       - obo:UO_0000000
 
   value:
-    slot_uri: RDFS:value
+    slot_uri: rdfs:value
     description: >-
       Value of a thing.
     relational_role: OBJECT
@@ -220,6 +230,7 @@ classes:
       The most basic item.
     slots:
       - id
+      - conforms_to
       - description
       - identifier
       - is_about
@@ -230,6 +241,8 @@ classes:
       - title
       - type
     slot_usage:
+      conforms_to:
+        multivalued: true
       identifier:
         inlined: true
         inlined_as_list: true
@@ -260,15 +273,13 @@ classes:
     see_also:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
 
-  Property:
-    class_uri: dlthing:Property
+  Characteristic:
+    class_uri: dlthing:Characteristic
     description: >-
-      An inherent quality, function, disposition or process characteristic
-      that is being observed or measured.
+      An inherent quality, function, disposition or process characteristic.
     slots:
       - description
       - is_defined_by
-      - meta_type
       - name
       - title
       - type
@@ -300,6 +311,17 @@ classes:
             via linkml:Any does not produce a satisfactory solution.
     exact_mappings:
       - sio:SIO_000614
+
+  Property:
+    class_uri: dlthing:Property
+    is_a: Characteristic
+    description: >-
+      An inherent quality, function, disposition or process characteristic
+      that is being observed or measured.
+    slots:
+      - meta_type
+    exact_mappings:
+      - sio:SIO_000613
 
   QuantitativeProperty:
     class_uri: dlthing:QuantitativeProperty

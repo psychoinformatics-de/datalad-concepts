@@ -16,52 +16,52 @@
   "name": "FAIRLy big",
   "has_property": [
     {
-      "meta_type": "dlthing:Property",
       "type": "dcterms:bibliographicCitation",
-      "value": "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
+      "value": "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022).",
+      "meta_type": "dlthing:Property"
     },
     {
       "is_defined_by": "https://portal.issn.org/resource/issn/2052-4463",
-      "meta_type": "dlthing:Property",
       "type": "dcterms:isPartOf",
-      "value": "Scientific Data"
+      "value": "Scientific Data",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "DOI",
       "type": "bibo:doi",
-      "value": "https://doi.org/10.1038/s41597-022-01163-2"
+      "value": "https://doi.org/10.1038/s41597-022-01163-2",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Volume",
       "type": "bibo:volume",
-      "value": "9"
+      "value": "9",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Document number",
       "type": "bibo:number",
-      "value": "80"
+      "value": "80",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "name": "Number of pages",
       "type": "bibo:numPages",
       "range": "xsd:nonNegativeInteger",
-      "value": "17"
+      "value": "17",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "type": "dcterms:modified",
       "range": "xsd:date",
-      "value": "2022-02-11"
+      "value": "2022-02-11",
+      "meta_type": "dlthing:Property"
     },
     {
-      "meta_type": "dlthing:Property",
       "type": "dcterms:date",
       "range": "xsd:date",
-      "value": "2022-03-11"
+      "value": "2022-03-11",
+      "meta_type": "dlthing:Property"
     }
   ],
   "same_as": [

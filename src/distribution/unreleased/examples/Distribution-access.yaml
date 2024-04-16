@@ -1,0 +1,71 @@
+id: exthisdsver:./some/path.ext
+# if a distribution is accessible directly (e.g. HTTP GET)
+# any number of download URLs can be recorded
+download_url: 
+  # file on a webserver
+  - https://www.example.com/path.ext
+  # see the rest of the record below for how this URL is constructed
+  - https://coscine.example.com/coscine/api/v2/projects/p123/resources/r456/blobs/k789
+# if a distribution is not accessible directly,
+# different types of access URLs can be recorded
+access_url:
+  # dataservice query endpoint URL, matching `access_service.endpoint_url`
+  - https://coscine.example.com/coscine
+# references to any data service that can give access to the file
+access_service:
+  - https://coscine.example.com
+# if needed, a dataservice record can be declared inlined as a relation.
+# typically a dataservice would be define in a more general record, rather
+# than inlined in a specific distribution record (done here for demonstration
+# purposes).
+relation:
+  - id: https://coscine.example.com
+    meta_type: dldist:DataService
+    # (ab)using the URL of the upstream instance as a type identifier
+    type: https://coscine.rwth-aachen.de
+    # identify a person/organization to contact for any inquiries about the data service.
+    # value is identifier of an agent record
+    contact_point: exthisns:coscine-admin
+    # any general (human-readable) description of the dataservice
+    description: Central RDM service at example.com
+    # API description
+    endpoint_description: https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json
+    # API end point
+    endpoint_url: https://coscine.example.com/coscine
+    # parameter needed to perform an access request can be enumerated.
+    # providing type (and possibly range, description, and default values, can
+    # help to pass useful information to a user, or to implement generic
+    # request handler)
+    has_parameter:
+      - name: projectId
+        description: Coscine project identifier
+        # project identifier
+        type: obo:NCIT_C165055
+      - name: resourceId
+        description: Coscine resource identifier
+        # resource identifier
+        type: obo:NCIT_C165071
+      - name: key
+        description: Coscine blob identifier
+        # content identifier
+        type: obo:NCIT_C99023
+    # specify how download URLs can be determined from a template and
+    # content-specific parameters.
+    # this is optional, but enables generic, dataservice-unspecific download
+    # handler implementations.
+    download_url_template: https://coscine.example.com/coscine/api/v2/projects/{projectId}/resources/{resourceId}/blobs/{key}
+
+# qualified relation to describe how a specific distribution can be obtained
+# from a particular dataservice
+qualified_access:
+    # providing dataservice
+  - access_service:
+      - https://coscine.example.com
+    # service parameter needed for obtaining `exthisdsver:./some/path.ext`
+    has_parameter:
+      - name: projectId
+        value: p123
+      - name: resourceId
+        value: r456
+      - name: key
+        value: k789

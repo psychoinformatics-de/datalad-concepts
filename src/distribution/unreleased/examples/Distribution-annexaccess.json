@@ -1,53 +1,17 @@
 {
   "id": "https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv",
   "meta_type": "dldist:Distribution",
-  "qualified_relation": [
+  "qualified_access": [
     {
-      "had_role": [
-        "DCAT:DataService"
-      ],
-      "entity": [
+      "access_service": [
         "https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795"
       ],
-      "meta_type": "dldist:QualifiedAccess",
-      "access_id": "MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv"
-    }
-  ],
-  "relation": [
-    {
-      "id": "https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795",
-      "identifier": [
+      "has_parameter": [
         {
-          "notation": "0a8713ca-ef42-11ee-a805-d3e9a774e795",
-          "schema_agency": "https://git-annex.branchable.com"
+          "name": "key",
+          "value": "MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv"
         }
-      ],
-      "meta_type": "dldist:DataService",
-      "name": "box.com",
-      "has_property": [
-        {
-          "meta_type": "dlthing:Property",
-          "name": "type",
-          "value": "webdav"
-        },
-        {
-          "meta_type": "dlthing:Property",
-          "name": "url",
-          "type": "DCAT:endpointURL",
-          "value": "https://dav.box.com/dav/git-annex"
-        },
-        {
-          "meta_type": "dlthing:Property",
-          "name": "chunk",
-          "value": "10mb"
-        },
-        {
-          "meta_type": "dlthing:Property",
-          "name": "keyid",
-          "value": "id@joeyh.name"
-        }
-      ],
-      "type": "https://git-annex.branchable.com/special_remotes/webdav"
+      ]
     }
   ],
   "@type": "Distribution"

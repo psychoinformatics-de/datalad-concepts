@@ -270,7 +270,9 @@
           "digest": "e7e2be6b203a221949f05e02fcefd853"
         }
       ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff",
+      "download_url": [
+        "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff"
+      ],
       "media_type": "text/csv"
     },
     {
@@ -283,7 +285,9 @@
           "digest": "1549566fb97afa879dc9446edcf2015f"
         }
       ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381",
+      "download_url": [
+        "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381"
+      ],
       "media_type": "text/csv"
     },
     {
@@ -296,7 +300,9 @@
           "digest": "e4b0710c69297031d63866ce8b888f25"
         }
       ],
-      "download_url": "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462",
+      "download_url": [
+        "https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.221.2&entityid=fe853aa8f7a59aa84cdd3197619ef462"
+      ],
       "media_type": "text/csv"
     }
   ],

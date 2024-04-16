@@ -9,8 +9,8 @@
       "has_property": [
         {
           "is_defined_by": "obo:PATO_0002204",
-          "meta_type": "dlthing:Property",
-          "type": "obo:PATO_0002201"
+          "type": "obo:PATO_0002201",
+          "meta_type": "dlthing:Property"
         }
       ]
     },
@@ -21,15 +21,15 @@
       "has_property": [
         {
           "is_defined_by": "obo:PATO_0000384",
-          "meta_type": "dlthing:Property",
           "type": "obo:PATO_0000047",
-          "value": "male"
+          "value": "male",
+          "meta_type": "dlthing:Property"
         },
         {
-          "meta_type": "dlthing:QuantitativeProperty",
           "name": "age (years)",
           "type": "obo:NCIT_C37908",
           "value": "36",
+          "meta_type": "dlthing:QuantitativeProperty",
           "unit": "obo:UO_0000036"
         }
       ]

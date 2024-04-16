@@ -1,0 +1,65 @@
+{
+  "id": "exthisdsver:./some/path.ext",
+  "meta_type": "dldist:Distribution",
+  "relation": [
+    {
+      "id": "https://coscine.example.com",
+      "description": "Central RDM service at example.com",
+      "meta_type": "dldist:DataService",
+      "type": "https://coscine.rwth-aachen.de",
+      "contact_point": "exthisns:coscine-admin",
+      "download_url_template": "https://coscine.example.com/coscine/api/v2/projects/{projectId}/resources/{resourceId}/blobs/{key}",
+      "endpoint_description": "https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json",
+      "endpoint_url": "https://coscine.example.com/coscine",
+      "has_parameter": [
+        {
+          "description": "Coscine project identifier",
+          "name": "projectId",
+          "type": "obo:NCIT_C165055"
+        },
+        {
+          "description": "Coscine resource identifier",
+          "name": "resourceId",
+          "type": "obo:NCIT_C165071"
+        },
+        {
+          "description": "Coscine blob identifier",
+          "name": "key",
+          "type": "obo:NCIT_C99023"
+        }
+      ]
+    }
+  ],
+  "access_service": [
+    "https://coscine.example.com"
+  ],
+  "access_url": [
+    "https://coscine.example.com/coscine"
+  ],
+  "download_url": [
+    "https://www.example.com/path.ext",
+    "https://coscine.example.com/coscine/api/v2/projects/p123/resources/r456/blobs/k789"
+  ],
+  "qualified_access": [
+    {
+      "access_service": [
+        "https://coscine.example.com"
+      ],
+      "has_parameter": [
+        {
+          "name": "projectId",
+          "value": "p123"
+        },
+        {
+          "name": "resourceId",
+          "value": "r456"
+        },
+        {
+          "name": "key",
+          "value": "k789"
+        }
+      ]
+    }
+  ],
+  "@type": "Distribution"
+}

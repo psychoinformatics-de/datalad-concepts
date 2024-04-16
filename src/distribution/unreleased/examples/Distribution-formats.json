@@ -1,7 +1,9 @@
 {
   "id": "exthisdsver:.",
+  "conforms_to": [
+    "https://bids-specification.readthedocs.io/en/v1.4.0"
+  ],
   "meta_type": "dldist:Distribution",
-  "conforms_to": "https://bids-specification.readthedocs.io/en/v1.4.0",
   "has_part": [
     {
       "id": "exthisdsver:./dataset_description.json",
