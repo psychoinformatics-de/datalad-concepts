@@ -33,8 +33,8 @@ prefixes:
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
-  RDF: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  RDFS: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
   # Example convenience namespace that makes it possible to not think about
@@ -80,7 +80,7 @@ slots:
     description: A free-text account of the thing.
     exact_mappings:
       - dcterms:description
-      - RDFS:comment
+      - rdfs:comment
     range: string
 
   has_property:
@@ -128,13 +128,13 @@ slots:
       The definition of the subject thing.
     range: uriorcurie
     exact_mappings:
-      - RDFS:isDefinedBy
+      - rdfs:isDefinedBy
 
   name:
     slot_uri: dlthing:name
     description: Name of a thing.
     exact_mappings:
-      - RDFS:label
+      - rdfs:label
       - schema:name
       - foaf:name
     range: string
@@ -149,7 +149,7 @@ slots:
       - skos:notation
 
   range:
-    slot_uri: RDFS:range
+    slot_uri: rdfs:range
     description: >-
       State that the values of a property are instances of a class.
     range: uriorcurie
@@ -201,7 +201,7 @@ slots:
       - dcterms:type
 
   type:
-    slot_uri: RDF:type
+    slot_uri: rdf:type
     description: >-
       State that the subject is an instance of a class.
     range: uriorcurie
@@ -217,7 +217,7 @@ slots:
       - obo:UO_0000000
 
   value:
-    slot_uri: RDFS:value
+    slot_uri: rdfs:value
     description: >-
       Value of a thing.
     relational_role: OBJECT
