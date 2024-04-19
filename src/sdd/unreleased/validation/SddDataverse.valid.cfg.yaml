@@ -1,0 +1,9 @@
+schema: src/sdd/unreleased.yaml
+target_class: Distribution
+data_sources:
+  - src/sdd/unreleased/validation/Distribution-dataverse-rtmefmri.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
