@@ -190,7 +190,7 @@ slots:
     range: string
 
   meta_type:
-    slot_uri: dlthing:meta_type
+    slot_uri: rdf:type
     designates_type: true
     description: >-
       Type designator of a metadata object for validation and schema structure
