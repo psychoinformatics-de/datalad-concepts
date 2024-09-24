@@ -1,0 +1,598 @@
+id: https://concepts.datalad.org/s/sddnb/unreleased
+name: sddnb
+version: UNRELEASED
+status: bibo:status/draft
+title: Scientific data distribution, with UI annotations, for integration with NeuroBagel
+description: |
+  See: https://hub.datalad.org/datalink/org/issues/2
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  annex-uuid: https://concepts.datalad.org/ns/annex-uuid/
+  annex-key: https://concepts.datalad.org/ns/annex-key/
+  bibo: http://purl.org/ontology/bibo/
+  CiTO: http://purl.org/spar/cito/
+  DCAT: http://www.w3.org/ns/dcat#
+  dash: http://datashapes.org/dash#
+  datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
+  dcterms: http://purl.org/dc/terms/
+  dlco: https://concepts.datalad.org/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  dldist: https://concepts.datalad.org/s/distribution/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlsddnb: https://concepts.datalad.org/s/sddnb/unreleased/
+  dlsddui: https://concepts.datalad.org/s/sddui/unreleased/
+  dex: https://example.org/ns/ex/terms/
+  dpv: https://w3id.org/dpv#
+  foaf: http://xmlns.com/foaf/0.1/
+  gitsha: https://concepts.datalad.org/ns/gitsha/
+  licenses: http://spdx.org/licenses/
+  linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  nb: http://neurobagel.org/vocab/
+  ncit: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  snomed: http://purl.bioontology.org/ontology/SNOMEDCT/
+  spdx: http://spdx.org/rdf/terms#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+  exns: https://example.org/ns/
+  exthisds: https://example.org/ns/dataset/
+  exthisdsver: https://example.org/ns/datasetversion/
+
+
+default_prefix: dex
+
+emit_prefixes:
+  - CiTO
+  - DCAT
+  - dldist
+  - licenses
+  - marcrel
+  - obo
+  - prov
+
+imports:
+  - ../distribution/unreleased
+
+
+slots:
+  cites_as_authority:
+    slot_uri: dlsddnb:cites_as_authority
+    description: >-
+      Entity that provides an authoritative description or definition of the subject.
+    range: uri
+    exact_mappings:
+      - CiTO:citesAsAuthority
+
+  sponsor:
+    slot_uri: dlsddnb:sponsor
+    description: >-
+      A person or organization that supports a thing through a pledge,
+      promise, or financial contribution
+    range: Agent
+    exact_mappings:
+      - schema:sponsor
+
+  has_sample:
+    slot_uri: dlsddnb:has_sample
+    description: >-
+      A sample collected from a study participant
+    range: StudySample
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+  has_participant:
+    slot_uri: dlsddnb:has_participant
+    description: >-
+      A participant in a scientific research study
+    range: StudyParticipant
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+  has_session:
+    slot_uri: dlsddnb:has_session
+    description: >-
+      A sample collection session of a scientific research study
+    range: StudySession
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+  participant_id:
+    slot_uri: dlsddnb:participant_id
+    description: >-
+      The unique ID of the study participant that a study sample belongs to
+    range: StudyParticipant
+    exact_mappings:
+      - nb:ParticipantID
+    annotations:
+      nb:IdentifierNeurobagel: true
+      nb:Description: A participant ID
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:ParticipantID",
+            "Label": "Unique subjectdentifier"
+          },
+          "Identifies": "participant"
+        }
+
+  session_id:
+    slot_uri: dlsddnb:session_id
+    description: >-
+      The study session that a study sample belongs to
+    range: StudySession
+    exact_mappings:
+      - nb:SessionID
+    annotations:
+      nb:IdentifierNeurobagel: true
+      nb:Description: A session ID
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:SessionID",
+            "Label": "Unique session identifier"
+          },
+          "Identifies": "session"
+        }
+  
+  pheno_age:
+    slot_uri: dlsddnb:pheno_age
+    description: >-
+      Participant age as a European decimal value at the time of sample collection
+    range: decimal
+    exact_mappings:
+      - nb:Age
+    annotations:
+      nb:ContinuousColumn: true
+      nb:Description: A session ID
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Age",
+            "Label": "Chronological age"
+          },
+          "Transformation": {
+            "TermURL": "nb:FromEuro",
+            "Label": "European decimal value"
+          },
+          "MissingValues": ["NA"]
+        }
+
+  pheno_sex:
+    slot_uri: dlsddnb:pheno_sex
+    description: >-
+      Participant sex assigned at birth
+    range: SexOptions
+    exact_mappings:
+      - nb:Age
+    annotations:
+      nb:CategoricalColumn: true
+      nb:Description: Sex variable
+      nb:Levels: >-
+        {
+          "M": "Male",
+          "F": "Female"
+        }
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Sex",
+            "Label": "Sex"
+          },
+          "Levels": {
+            "M": {
+              "TermURL": "snomed:248153007",
+              "Label": "Male"
+            },
+            "F": {
+              "TermURL": "snomed:248152002",
+              "Label": "Female"
+            }
+          },
+          "MissingValues": ["missing"]
+        }
+  
+  pheno_group:
+    slot_uri: dlsddnb:pheno_group
+    description: >-
+      A group in the study that the partipant from which the sample was taken belongs to
+    range: GroupOptions
+    exact_mappings:
+      - nb:Diagnosis
+    annotations:
+      nb:CategoricalColumn: true
+      nb:Description: Group variable
+      nb:Levels: >-
+        {
+          "PAT": "Patient",
+          "CTRL": "Control subject"
+        }
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Diagnosis",
+            "Label": "Diagnosis"
+          },
+          "Levels": {
+            "PAT": {
+              "TermURL": "snomed:406506008",
+              "Label": "Attention deficit hyperactivity disorder"
+            },
+            "CTRL": {
+              "TermURL": "ncit:C94342",
+              "Label": "Healthy Control"
+            }
+          },
+          "MissingValues": ["NA"]
+        }
+
+  tool1_item1:
+    slot_uri: dlsddnb:tool1_item1
+    description: >-
+      Item 1 score for the Montreal Cognitive Assessment
+    range: string
+    annotations:
+      nb:ToolNeurobagel: true
+      nb:Description: Item 1 score for the Montreal Cognitive Assessment
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Assessment",
+              "Label": "Assessment tool"
+          },
+          "IsPartOf": {
+            "TermURL": "cogatlas:trm_57964b8a66aed",
+            "Label": "Montreal Cognitive Assessment"
+          },
+          "MissingValues": ["missing"]
+        }
+
+  tool1_item2:
+    slot_uri: dlsddnb:tool1_item2
+    description: >-
+      Item 2 score for the Montreal Cognitive Assessment
+    range: string
+    annotations:
+      nb:ToolNeurobagel: true
+      nb:Description: Item 2 score for the Montreal Cognitive Assessment
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Assessment",
+                "Label": "Assessment tool"
+          },
+          "IsPartOf": {
+            "TermURL": "cogatlas:trm_57964b8a66aed",
+            "Label": "Montreal Cognitive Assessment"
+          },
+          "MissingValues": ["missing"]
+        }
+  
+  tool2_item1:
+    slot_uri: dlsddnb:tool2_item1
+    description: >-
+      Item 1 score for the Unified Parkinson's Disease Rating Scale
+    annotations:
+      nb:ToolNeurobagel: true
+      nb:Description: Item 1 score for the Unified Parkinson's Disease Rating Scale
+      nb:Annotations: >-
+        {
+          "IsAbout": {
+            "TermURL": "nb:Assessment",
+            "Label": "Assessment tool"
+          },
+          "IsPartOf": {
+            "TermURL": "cogatlas:tsk_4a57abb949ece",
+            "Label": "Unified Parkinson's Disease Rating Scale"
+          },
+          "MissingValues": ["not completed"]
+        }
+
+
+enums:
+  SexOptions:
+    permissible_values:
+      M:
+        description: Male
+      F:
+        description: Female
+  GroupOptions:
+    permissible_values:
+      PAT:
+        description: Patient
+      CTRL:
+        description: Control subject
+
+
+classes:
+  ScientificDataDistribution:
+    class_uri: dlsddnb:ScientificDataDistribution
+    is_a: Distribution
+    description: >-
+      A dataset collected for the purpose of conducting scientific research.
+      It may come in the form of a single file, or an archive or directory of many files.
+      It may be standalone or part of another dataset.
+    comments:
+      - If a distribution is accessible only through a landing page, then the landing page URL associated with respective resource SHOULD be duplicated as `access_url` on a distribution.
+    slot_usage:
+      name:
+        title: Name
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 0
+      title:
+        title: Title
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 1
+      description:
+        title: Description
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 2
+          dash:singleLine: False
+      meta_type:
+        title: Meta type
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 3
+      id:
+        title: ID
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 4
+      identifier:
+        title: Identifier
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 5
+      same_as:
+        title: Same As
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 6
+      is_about:
+        title: Is About
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 7
+      conforms_to:
+        title: Conforms To
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 8
+      is_distribution_of:
+        title: Is Distribution Of
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 9
+      license:
+        title: License
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 10
+      date_modified:
+        title: Date Modified
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 11
+      date_published:
+        title: Date Published
+        annotations:
+          sh:group: dlsddnb:BasicPropertyGroup
+          sh:order: 12
+      format:
+        title: Data Format
+        annotations:
+          sh:group: dlsddnb:DataPropertyGroup
+          sh:order: 0
+      byte_size:
+        title: Byte Size
+        annotations:
+          sh:group: dlsddnb:DataPropertyGroup
+          sh:order: 1
+      media_type:
+        title: Media Type
+        annotations:
+          sh:group: dlsddnb:DataPropertyGroup
+          sh:order: 2
+      checksum:
+        title: Checksum
+        annotations:
+          sh:group: dlsddnb:DataPropertyGroup
+          sh:order: 3
+      has_part:
+        range: ScientificDataDistribution
+        title: Part
+        annotations:
+          sh:group: dlsddnb:PartsPropertyGroup
+          sh:order: 0
+      qualified_part:
+        title: Qualified Part
+        annotations:
+          sh:group: dlsddnb:PartsPropertyGroup
+          sh:order: 1
+      was_generated_by:
+        title: Was Generated By
+        annotations:
+          sh:group: dlsddnb:ProvenancePropertyGroup
+          sh:order: 0
+      was_derived_from:
+        title: Was Derived From
+        annotations:
+          sh:group: dlsddnb:ProvenancePropertyGroup
+          sh:order: 1
+      qualified_derivation:
+        title: Qualified Derivation
+        annotations:
+          sh:group: dlsddnb:ProvenancePropertyGroup
+          sh:order: 2
+      was_attributed_to:
+        title: Was Attributed To
+        annotations:
+          sh:group: dlsddnb:ProvenancePropertyGroup
+          sh:order: 3
+      qualified_attribution:
+        title: Qualified Attribution
+        annotations:
+          sh:group: dlsddnb:ProvenancePropertyGroup
+          sh:order: 4
+      has_property:
+        title: Has Property
+        annotations:
+          sh:group: dlsddnb:RelationPropertyGroup
+          sh:order: 0
+      relation:
+        title: Relation
+        annotations:
+          sh:group: dlsddnb:RelationPropertyGroup
+          sh:order: 1
+      qualified_relation:
+        title: Qualified Relation
+        annotations:
+          sh:group: dlsddnb:RelationPropertyGroup
+          sh:order: 2
+      access_url:
+        title: Access URL
+        annotations:
+          sh:group: dlsddnb:AccessPropertyGroup
+          sh:order: 0
+      download_url:
+        title: Download URL
+        annotations:
+          sh:group: dlsddnb:AccessPropertyGroup
+          sh:order: 1
+      access_service:
+        title: Access Service
+        annotations:
+          sh:group: dlsddnb:AccessPropertyGroup
+          sh:order: 2
+      qualified_access:
+        title: Qualified Access
+        annotations:
+          sh:group: dlsddnb:AccessPropertyGroup
+          sh:order: 3
+      has_participant:
+        title: Participants
+        annotations:
+          sh:group: dlsddnb:SamplePropertyGroup
+          sh:order: 0
+      has_session:
+        title: Sessions
+        annotations:
+          sh:group: dlsddnb:SamplePropertyGroup
+          sh:order: 1
+      has_sample:
+        title: Samples
+        required: true
+        annotations:
+          sh:group: dlsddnb:SamplePropertyGroup
+          sh:order: 2
+
+  StudyParticipant:
+    class_uri: dlsddnb:StudyParticipant
+    is_a: Thing
+    description: >-
+      A participant in a scientific research study that is related to this ScientificDataDistribution
+      and for which samples have been collected, possibly across multiple `StudySession`s
+    slots:
+      - has_sample
+    slot_usage:
+      id:
+        title: Participant ID
+    todos:
+      - "Should this be `is_a: Entity` rather than `is_a: Thing`"
+
+  StudySession:
+    class_uri: dlsddnb:StudySession
+    is_a: Thing
+    description: >-
+      A session, possibly one of multiple, that forms part of a scientific research study that
+      is related to this ScientificDataDistribution and for which samples have been collected
+    slot_usage:
+      id:
+        title: Session ID
+    todos:
+      - "Should this be `is_a: Entity` rather than `is_a: Thing`"
+
+  StudySample:
+    class_uri: dlsddnb:StudySample
+    is_a: Thing
+    description: >-
+      A sample or measure collected during a scientific research study related to this ScientificDataDistribution
+      A sample belongs to a specific StudyParticipant and may have been collected as part of a specific StudySession
+    slot_usage:
+      participant_id:
+        required: true
+        title: Participant ID
+      session_id:
+        required: false
+        title: Session ID
+      pheno_age:
+        required: true
+        title: Participant Age
+      pheno_sex:
+        required: true
+        title: Participant Sex
+      group:
+        required: true
+        title: Study Group
+      tool1_item1:
+        required: false
+        title: MCA score 1
+      tool1_item2:
+        required: false
+        title: MCA score 2
+      tool2_item1:
+        required: false
+        title: UPDRS score 1
+    todos:
+      - "Should this be `is_a: Entity` rather than `is_a: Thing`"
+
+  Grant:
+    class_uri: dlsddnb:Grant
+    is_a: Entity
+    description: >-
+      A grant, typically financial or otherwise quantifiable, of resources.
+    slots:
+      - sponsor
+      - cites_as_authority
+    exact_mappings:
+      - schema:Grant
+    todos:
+      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
+
+  Publication:
+    class_uri: dlsddnb:Publication
+    is_a: Entity
+    description: >-
+      A document that is the output of a publishing process.
+      This can printed or electronic work offered for distribution,
+      and may have been made available by a publisher.
+    slots:
+      - address
+      - date_modified
+      - date_published
+      - license
+      - notation
+    exact_mappings:
+      - obo:IAO_0000311
+      - obo:NCIT_C48471
+    close_mappings:
+      - sio:SIO_000087
