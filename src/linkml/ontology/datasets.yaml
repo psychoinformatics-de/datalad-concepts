@@ -17,7 +17,7 @@ description: >
   identifier for requesting a particular resource from a `DataService`.
 prefixes:
   afo: http://purl.allotrope.org/ontologies/result#
-  DCAT: http://www.w3.org/ns/dcat#
+  dcat: http://www.w3.org/ns/dcat#
   dctypes: http://purl.org/dc/dcmitype/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/ontology/
@@ -42,17 +42,17 @@ slots:
       - dcterms:identifier
     range: string
     related_mappings:
-      - DCAT:servesDataset
+      - dcat:servesDataset
 
   access_service:
     slot_uri: dlco:access_service
     description: >-
       A data service that gives access to the distribution of a `Resource`
     close_mappings:
-      - DCAT:accessService
+      - dcat:accessService
     range: DataService
     comments:
-      - Unlike `DCAT:access_service`, this property does not restrict its
+      - Unlike `dcat:access_service`, this property does not restrict its
         domain to a dataset.
 
   access_url:
@@ -62,7 +62,7 @@ slots:
       E.g., landing page, feed, SPARQL endpoint.
     range: uri
     close_mappings:
-      - DCAT:accessURL
+      - dcat:accessURL
 
   byte_size:
     slot_uri: dlco:byte_size
@@ -70,7 +70,7 @@ slots:
       The size of a distribution in bytes.
     range: NonNegativeInteger
     exact_mappings:
-      - DCAT:byteSize
+      - dcat:byteSize
 
   distribution:
     slot_uri: dlco:distribution
@@ -78,9 +78,9 @@ slots:
       An available distribution of a resource.
     range: Distribution
     close_mappings:
-      - DCAT:distribution
+      - dcat:distribution
     comments:
-      - Unlike `DCAT:distribution`, this property does not restrict its domain to
+      - Unlike `dcat:distribution`, this property does not restrict its domain to
         a dataset.
 
   download_url:
@@ -89,7 +89,7 @@ slots:
       URL of downloadable resourcefile in a given format.
     range: uri
     exact_mappings:
-      - DCAT:downloadURL
+      - dcat:downloadURL
 
   endpoint_url:
     slot_uri: dlco:endpoint_url
@@ -98,7 +98,7 @@ slots:
       (a resolvable IRI).
     range: uri
     exact_mappings:
-      - DCAT:endpointURL
+      - dcat:endpointURL
 
   is_version_of:
     slot_uri: dlco:is_version_of
@@ -106,7 +106,7 @@ slots:
       A related resource of which the described resource is a version.
     range: uriorcurie
     exact_mappings:
-      - DCAT:isVersionOf
+      - dcat:isVersionOf
 
   landing_page:
     slot_uri: dlco:landing_page
@@ -115,7 +115,7 @@ slots:
       to a resource, its distributions and/or additional information.
     range: uri
     exact_mappings:
-      - DCAT:landingPage
+      - dcat:landingPage
       - foaf:page
     comments:
       - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dlco:access_url` on a distribution.
@@ -126,16 +126,16 @@ slots:
     slot_uri: dlco:qualified_access
     description: >-
       Link to a description of a `access_service` relationship with
-      `DCAT:DataService`.
+      `dcat:DataService`.
     broad_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
     range: QualifiedAccess
 
   qualified_relation:
     slot_uri: dlco:qualified_relation
     description: >-
     exact_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
     range: EntityInfluence
 
   qualified_part:
@@ -143,7 +143,7 @@ slots:
     description: >-
       Link to a description of a `hasPart` relationship with another resource.
     broad_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
     range: QualifiedPart
     todos:
       - Rename to `named_part`? See also todo for `QualifiedPart`
@@ -215,7 +215,7 @@ classes:
         description: >-
           Type of resource, e.g. `Dataset`.
     exact_mappings:
-      - DCAT:Resource
+      - dcat:Resource
 
   Relationship:
     class_uri: dlco:Relationship
@@ -232,7 +232,7 @@ classes:
         todos:
           - Ideally this would be a structured_alias to `influencer`. However, this does not seem to work at all in the way that it is described.
     exact_mappings:
-      - DCAT:Relationship
+      - dcat:Relationship
       - prov:EntityInfluence
     broad_mappings:
       - prov:Influence
@@ -250,12 +250,12 @@ classes:
     is_a: Relationship
     description: >-
       An association class for attaching additional information to an
-      `access_service` relationship between a `DCAT:Distribution` and
-      a `DCAT:DataService`.
+      `access_service` relationship between a `dcat:Distribution` and
+      a `dcat:DataService`.
     broad_mappings:
-      - DCAT:Relationship
+      - dcat:Relationship
     related_mappings:
-      - DCAT:access_service
+      - dcat:access_service
     slots:
       - access_id
     slot_usage:
@@ -269,7 +269,7 @@ classes:
       An association class for attaching additional information to a
       hasPart relationship between DCAT Resources
     broad_mappings:
-      - DCAT:Relationship
+      - dcat:Relationship
     slots:
       - name
       - relation
@@ -296,7 +296,7 @@ classes:
       for transfer. Distributions of a dataset can be provided via data
       services.
     exact_mappings:
-      - DCAT:Dataset
+      - dcat:Dataset
       - dctypes:Dataset
       - schema:Dataset
     slots:
@@ -310,7 +310,7 @@ classes:
       A specific representation of a dataset (part). Such a resource
       might be available in multiple serializations.
     close_mappings:
-      - DCAT:Distribution
+      - dcat:Distribution
     slots:
       - access_service
       - access_url
@@ -323,9 +323,9 @@ classes:
       - qualified_attribution
     comments:
       - >-
-        Compared to `DCAT:Distribution` this class has a `qualified_access`
+        Compared to `dcat:Distribution` this class has a `qualified_access`
         property to enable the specification of access-related parameters
-        that cannot be inferred from a standard `DCAT:Distribution`.
+        that cannot be inferred from a standard `dcat:Distribution`.
     todos:
       - Now that there is a `Directory` subclass, re-evaluate the utility
         of the `checksum` property at this level.
@@ -374,9 +374,9 @@ classes:
       A collection of operations that provides access to one or more
       datasets or data processing functions.
     exact_mappings:
-      - DCAT:DataService
+      - dcat:DataService
     broad_mappings:
-      - DCAT:Resource
+      - dcat:Resource
       - dctypes:Service
     slots:
       - endpoint_url

@@ -47,7 +47,7 @@ slots:
     range: Role
     exact_mappings:
       - prov:hadRole
-      - DCAT:had_role
+      - dcat:had_role
     comments:
       - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
       - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
@@ -390,7 +390,7 @@ classes:
       resource relationships.
     exact_mappings:
       - prov:Role
-      - DCAT:Role
+      - dcat:Role
 
   #
   # misc concepts

@@ -45,7 +45,7 @@ classes:
     is_a: QualifiedAccess
     description: >-
       An association class for attaching additional information to an
-      `access_service` relationship between a `DCAT:Distribution` and
+      `access_service` relationship between a `dcat:Distribution` and
       a `dlco:AnnexRemote`.
     slot_usage:
       relation:
