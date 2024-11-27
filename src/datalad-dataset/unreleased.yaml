@@ -31,7 +31,7 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
-  DCTYPES: http://purl.org/dc/dcmitype/
+  dctypes: http://purl.org/dc/dcmitype/
   dlco: https://concepts.datalad.org/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dpv: https://w3id.org/dpv#
