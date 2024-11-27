@@ -53,7 +53,7 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
-  DCAT: http://www.w3.org/ns/dcat#
+  dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   DCTYPES: http://purl.org/dc/dcmitype/
   dlco: https://concepts.datalad.org/
@@ -93,7 +93,7 @@ default_prefix: dldist
 
 emit_prefixes:
   - CiTO
-  - DCAT
+  - dcat
   - dldist
   - licenses
   - marcrel
@@ -140,10 +140,10 @@ slots:
       - SHOULD be used to link to a description of a dcat:DataService that can provide access to the subject.
     range: DataService
     exact_mappings:
-      - DCAT:accessService
+      - dcat:accessService
     related_mappings:
-      - DCAT:accessURL
-      - DCAT:landingPage
+      - dcat:accessURL
+      - dcat:landingPage
 
   access_url:
     slot_uri: dldist:access_url
@@ -153,10 +153,10 @@ slots:
     comments:
       - If the subject is available directly, typically through a HTTP Get request, `download_url` SHOULD be used instead.
     exact_mappings:
-      - DCAT:accessURL
+      - dcat:accessURL
     related_mappings:
-      - DCAT:downloadURL
-      - DCAT:landingPage
+      - dcat:downloadURL
+      - dcat:landingPage
 
   address:
     slot_uri: dldist:address
@@ -191,7 +191,7 @@ slots:
       The size of a distribution in bytes.
     range: NonNegativeInteger
     exact_mappings:
-      - DCAT:byteSize
+      - dcat:byteSize
 
   checksum:
     slot_uri: dldist:checksum
@@ -208,7 +208,7 @@ slots:
       Relevant contact information for the subject.
     range: Agent
     exact_mappings:
-      - DCAT:contactPoint
+      - dcat:contactPoint
 
   date_modified:
     slot_uri: dldist:date_modified
@@ -247,9 +247,9 @@ slots:
       An available distribution of a resource.
     range: Distribution
     close_mappings:
-      - DCAT:distribution
+      - dcat:distribution
     comments:
-      - Unlike `DCAT:distribution`, this property does not restrict its domain to
+      - Unlike `dcat:distribution`, this property does not restrict its domain to
         a dataset.
 
   download_url:
@@ -260,10 +260,10 @@ slots:
     comments:
       - SHOULD be used for the URL at which this distribution is available directly, typically through a HTTP Get request.
     exact_mappings:
-      - DCAT:downloadURL
+      - dcat:downloadURL
     related_mappings:
-      - DCAT:accessURL
-      - DCAT:landingPage
+      - dcat:accessURL
+      - dcat:landingPage
 
   download_url_template:
     slot_uri: dldist:download_url_template
@@ -294,7 +294,7 @@ slots:
       including their operations, parameters etc.
     range: uri
     exact_mappings:
-      - DCAT:downloadURL
+      - dcat:downloadURL
     related_mappings:
       - dldist:endpoint_url
       - dlthing:conforms_to
@@ -305,7 +305,7 @@ slots:
       The root location or primary endpoint of a service (a Web-resolvable IRI).
     range: uri
     exact_mappings:
-      - DCAT:endpointURL
+      - dcat:endpointURL
     related_mappings:
       - dldist:endpoint_description
       - dlthing:conforms_to
@@ -341,7 +341,7 @@ slots:
   is_distribution_of:
     slot_uri: dldist:is_distribution_of
     description: >-
-      Inverse property of `DCAT:distribution`.
+      Inverse property of `dcat:distribution`.
     domain: Distribution
     range: Resource
     inverse: distribution
@@ -360,7 +360,7 @@ slots:
       A related resource of which the described resource is a version.
     range: uriorcurie
     exact_mappings:
-      - DCAT:isVersionOf
+      - dcat:isVersionOf
 
   keyword:
     slot_uri: dldist:keyword
@@ -379,7 +379,7 @@ slots:
       to a resource, its distributions and/or additional information.
     range: uri
     exact_mappings:
-      - DCAT:landingPage
+      - dcat:landingPage
       - foaf:page
     comments:
       - If the distribution(s) are accessible only through a landing page (i.e., direct download URLs are not known), then the landing page link SHOULD be duplicated as `dldist:access_url` on a distribution.
@@ -392,7 +392,7 @@ slots:
     range: LicenseDocument
     exact_mappings:
       - dcterms:license
-      - DCAT:license
+      - dcat:license
 
   license_text:
     slot_uri: dldist:license_text
@@ -415,15 +415,15 @@ slots:
     see_also:
       - https://www.iana.org/assignments/media-types
     exact_mappings:
-      - DCAT:mediaType
+      - dcat:mediaType
 
   qualified_access:
     slot_uri: dlco:qualified_access
     description: >-
       Link to a description of a `access_service` relationship with
-      `DCAT:DataService`.
+      `dcat:DataService`.
     broad_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
     range: QualifiedAccess
 
   qualified_part:
@@ -431,7 +431,7 @@ slots:
     description: >-
       Qualified a `hasPart` relationship with another entity.
     broad_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
 
   version:
     slot_uri: dldist:version
@@ -439,7 +439,7 @@ slots:
       Version indicator (name or identifier) of a resource.
     range: string
     exact_mappings:
-      - DCAT:version
+      - dcat:version
       - pav:version
 
 
@@ -530,7 +530,7 @@ classes:
         inlined_as_list: true
         range: DistributionPart
     exact_mappings:
-      - DCAT:Distribution
+      - dcat:Distribution
 
   Resource:
     class_uri: dldist:Resource
@@ -554,7 +554,7 @@ classes:
       is_version_of:
         range: Resource
     exact_mappings:
-      - DCAT:Resource
+      - dcat:Resource
 
   LicenseDocument:
     class_uri: dldist:LicenseDocument
@@ -578,7 +578,7 @@ classes:
       An association class for attaching additional information to a
       hasPart relationship.
     broad_mappings:
-      - DCAT:Relationship
+      - dcat:Relationship
     slots:
       - name
       - entity
@@ -643,9 +643,9 @@ classes:
     comments:
       - Characteristics of a particular `Dataservice` that do not vary across `Distributions` that can be requested from the `DataService` are considered properties (`has_property`) of the `Dataservice`. In contrast, information needed in addition for requesting a particular `Distribution` are considered an access request parameter (`has_parameter`). Such parameters can be declared for a `DataService`, and provided for a particular `Distribution` via a dedicated `QualifiedAccess` relation.
     exact_mappings:
-      - DCAT:DataService
+      - dcat:DataService
     broad_mappings:
-      - DCAT:Resource
+      - dcat:Resource
       - DCTYPES:Service
     todos:
       - Enable indication what kind of credentials are required for access, and where to obtain them.
@@ -654,10 +654,10 @@ classes:
     class_uri: dldist:QualifiedAccess
     description: >-
       An association class for attaching additional information to an
-      `access_service` relationship between a `DCAT:Distribution` and
-      a `DCAT:DataService`.
+      `access_service` relationship between a `dcat:Distribution` and
+      a `dcat:DataService`.
     related_mappings:
-      - DCAT:access_service
+      - dcat:access_service
     slots:
       - access_service
       - has_parameter

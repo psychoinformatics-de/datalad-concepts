@@ -16,7 +16,7 @@
     },
     {
       "name": "url",
-      "type": "DCAT:endpointURL",
+      "type": "dcat:endpointURL",
       "value": "https://dav.box.com/dav/git-annex",
       "meta_type": "dlthing:Property"
     },

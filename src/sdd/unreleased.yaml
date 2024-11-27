@@ -24,7 +24,7 @@ prefixes:
   annex-key: https://concepts.datalad.org/ns/annex-key/
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
-  DCAT: http://www.w3.org/ns/dcat#
+  dcat: http://www.w3.org/ns/dcat#
   datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
@@ -56,7 +56,7 @@ default_prefix: dex
 
 emit_prefixes:
   - CiTO
-  - DCAT
+  - dcat
   - dldist
   - licenses
   - marcrel

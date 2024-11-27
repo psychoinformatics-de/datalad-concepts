@@ -23,7 +23,7 @@ has_property:
     value: webdav
   - name: url
     value: https://dav.box.com/dav/git-annex
-    type: DCAT:endpointURL
+    type: dcat:endpointURL
   - name: chunk
     value: 10mb
   - name: keyid

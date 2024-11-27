@@ -90,7 +90,7 @@ slots:
     range: LicenseDocument
     exact_mappings:
       - dcterms:license
-      - DCAT:license
+      - dcat:license
 
   license_text:
     slot_uri: dlco:license_text
@@ -173,7 +173,7 @@ slots:
       Version indicator (name or identifier) of a resource.
     range: string
     exact_mappings:
-      - DCAT:version
+      - dcat:version
       - pav:version
 
   uuid:

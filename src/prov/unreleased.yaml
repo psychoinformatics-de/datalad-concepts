@@ -31,7 +31,7 @@ license: MIT
 prefixes:
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
-  DCAT: http://www.w3.org/ns/dcat#
+  dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   DCTYPES: http://purl.org/dc/dcmitype/
   dlco: https://concepts.datalad.org/
@@ -72,7 +72,7 @@ default_prefix: dlprov
 
 emit_prefixes:
   - CiTO
-  - DCAT
+  - dcat
   - dlprov
   - licenses
   - marcrel
@@ -157,7 +157,7 @@ slots:
     range: Role
     exact_mappings:
       - prov:hadRole
-      - DCAT:had_role
+      - dcat:had_role
     comments:
       - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
       - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
@@ -222,7 +222,7 @@ slots:
     description: >-
       Characterizes the relationship or role of an entity with respect to the subject entity.
     exact_mappings:
-      - DCAT:qualifiedRelation
+      - dcat:qualifiedRelation
     range: EntityInfluence
     multivalued: true
 
@@ -488,4 +488,4 @@ classes:
       - id
     exact_mappings:
       - prov:Role
-      - DCAT:Role
+      - dcat:Role
