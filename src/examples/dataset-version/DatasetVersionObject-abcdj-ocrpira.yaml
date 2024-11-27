@@ -1,0 +1,98 @@
+name: ocr-PIRA-cohort
+title: Longitudinal clinical data in Ocrelizumab-treated multiple sclerosis patients
+description: >-
+  A clinical dataset of ocrelizumab treated multiple sclerosis patients at the HHU University
+  Clinic Düsseldorf with routinely collected clinical, imaging and OCT results (no imaging data).
+  Data was collected for routine visits from 2018 to 2022.
+landing_page: https://data.abcd-j.de/dataset/db7592d0-6206-5684-a29c-8059a6033241/0.1.0
+version: 0.1.0
+modified: 2023-03-01
+keyword:
+  - clinical data
+  - multiple sclerosis
+  - ocrelizumab
+  - PIRA
+  - EDS
+was_attributed_to:
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: jensingwersen
+    name: Jens Ingwersen
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: larsmasanneck
+    name: Lars Masanneck
+    email: lars.masanneck@med.uni-duesseldorf.de
+    orcid: 0000-0003-2496-1415
+    address: Geb. 13.53, Moorenstraße 5, 40225 Düsseldorf
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: marcpawlitzki
+    name: Marc Pawlitzki
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: sarasamadzadeh
+    name: Sara Samadzadeh
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: margitweise
+    name: Margit Weise
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: orhanaktas
+    name: Orhan Aktas
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: svengmeuth
+    name: Sven G. Meuth
+  - meta_type: dlco:ResearchContributorObject
+    meta_code: philippalbrecht
+    name: Philipp Albrecht
+qualified_attribution:
+  - agent: jensingwersen
+    had_role:
+      - marcrel:aut
+  - agent: larsmasanneck
+    had_role:
+      - marcrel:aut
+      - dpv:DataController
+  - agent: marcpawlitzki
+    had_role:
+      - marcrel:aut
+  - agent: sarasamadzadeh
+    had_role:
+      - marcrel:aut
+  - agent: margitweise
+    had_role:
+      - marcrel:aut
+  - agent: orhanaktas
+    had_role:
+      - marcrel:aut
+  - agent: svengmeuth
+    had_role:
+      - marcrel:aut
+  - agent: philippalbrecht
+    had_role:
+      - marcrel:aut
+relation:
+  - meta_type: dlco:PublicationObject
+    meta_code: ingwersen_etal
+    citation: >-
+      "Ingwersen, J., Masanneck, L., Pawlitzki, M. et al. Real-world evidence of ocrelizumab-treated
+      relapsing multiple sclerosis cohort shows changes in progression independent of relapse
+      activity mirroring phase 3 trials. Sci Rep 13, 15003 (2023)."
+    doi: https://doi.org/10.1038/s41598-023-40940-w
+qualified_relation:
+  - had_role:
+      - CiTO:isDocumentedBy
+      - CiTO:citesAsAuthority
+    entity: ingwersen_etal
+distribution:
+  meta_type: dlco:FileContainerObject
+  meta_code: ./
+  has_part:
+    - meta_type: dlco:DigitalDocumentObject
+      meta_code: cPIRA_OCR_ps_220918_w_CD19
+      byte_size: 62318
+  qualified_part:
+    - name: cPIRA_OCR_ps_220918_w_CD19.xlsx
+      relation: cPIRA_OCR_ps_220918_w_CD19
+# "usedFor": {
+#     "@type": "http://www.w3.org/ns/prov#Activity",
+#     "title": "Progression independent from relapse in ocrelizumab-treated relapsing multiple sclerosis cohort"
+# },
+# "sampleOrganism": "NCBITaxon:9606",
+# "samplePart": "UBERON:0000955",
