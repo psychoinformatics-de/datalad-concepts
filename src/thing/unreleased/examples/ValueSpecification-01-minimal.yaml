@@ -1,0 +1,9 @@
+# The absolute minimum of a value specification is an
+# identifier and a value. For something where no identifier
+# can be assigned, `AttributeSpecification` can be used
+# for attaching it to and identifiable thing.
+# Such a plain value specification should only be used when
+# additional essential properties can be aggregated via the
+# identifier.
+id: exthisns:measurement853
+value: "special"
