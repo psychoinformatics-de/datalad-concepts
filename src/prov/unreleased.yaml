@@ -2,22 +2,19 @@ id: https://concepts.datalad.org/s/prov/unreleased
 name: prov-schema
 version: UNRELEASED
 status: bibo:status/draft
-title: Schema for a generic data provenance
+title: Schema for a generic data provenance annotation
 description: |
   This schema builds on the [Thing schema](https://concepts.datalad.org/s/thing), and diversifies it to capture the key provenance concepts `Agent`, `Activity`, `Entity` and their relationships.
   It does that by drawing on (a subset) of the PROV data model [PROV-DM](https://www.w3.org/TR/prov-dm).
 
   Central paradigm of the schema is the [qualified relation pattern](https://patterns.dataincubator.org/book/qualified-relation.html).
-  The three `Thing` derived key concepts `Agent`, `Activity`, and `Entity` each provide a `relation` (symmetric property) slot for **inline declaration** of related things.
-  This `relation` slot is also the **only** slots that permits inline declaration.
-  A relationship can be further characterized by referencing a `Thing` by its object identifier in slots like `was_attributed_to` (for an `Agent`).
-  Full relation qualification is supported via inline declaration of `Influence` (derived) class instances in slots like
+  The three `Thing` derived key concepts `Agent`, `Activity`, and `Entity` build on the `Thing` slot `relation` (symmetric property) for **inline declaration** of related things, and extend the basic means of qualifying a relationship via `is_characterized_by` with provenance specific slots and corresponding association classes. For example:
  
   - `qualified_relation`: for an `EntityInfluence` on an `Entity`
   - `qualified_association`: for an `AgentInfluence` on an `Activity`
   - `qualified_attribution`: for an `AgentInfluence` on an `Entity`
 
-  Available as
+  The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)
   - [LinkML YAML](../unreleased.yaml)
@@ -143,9 +140,7 @@ slots:
     description: >-
       The function of an entity or agent with respect to another entity or
       resource.
-    # TODO do we need an activity class?
-    #range: Activity
-    range: uriorcurie
+    range: Activity
     exact_mappings:
       - prov:hadActivity
 
@@ -174,20 +169,6 @@ slots:
     exact_mappings:
       - prov:influencer
     broad_mappings:
-      - dcterms:relation
-
-  relation:
-    slot_uri: dlprov:relation
-    description: >-
-      The subject has a relation to the object.
-    domain: Thing
-    inlined: true
-    inlined_as_list: true
-    multivalued: true
-    range: Thing
-    relational_role: OBJECT
-    symmetric: true
-    exact_mappings:
       - dcterms:relation
 
   qualified_association:
@@ -308,7 +289,6 @@ classes:
       transforming, modifying, relocating, using, or generating entities.
     slots:
       - qualified_association
-      - relation
       - was_associated_with
       - was_informed_by
       #  - at_location
@@ -342,8 +322,6 @@ classes:
       Something that bears some form of responsibility for an activity
       taking place, for the existence of an entity, or for another
       agent's activity.
-    slots:
-      - relation
     exact_mappings:
       - foaf:Agent
       - prov:Agent
@@ -361,7 +339,6 @@ classes:
       - qualified_attribution
       - qualified_derivation
       - qualified_relation
-      - relation
       - was_attributed_to
       - was_derived_from
       - was_generated_by
@@ -455,7 +432,7 @@ classes:
       or behavior of another.
     slots:
       - entity
-      - meta_type
+      - schema_type
     slot_usage:
       entity:
         multivalued: true
@@ -480,12 +457,11 @@ classes:
 
   Role:
     class_uri: dlprov:Role
+    is_a: Thing
     description: >-
       A role is the function of a resource or agent with respect to
       another resource, in the context of resource attribution or
       resource relationships.
-    slots:
-      - id
     exact_mappings:
       - prov:Role
       - dcat:Role
