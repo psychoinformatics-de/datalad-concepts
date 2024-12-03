@@ -1,0 +1,5 @@
+{
+  "object": "https://helmholtz.de",
+  "predicate": "schema:about",
+  "@type": "Statement"
+}
