@@ -1,0 +1,10 @@
+schema: src/thing/unreleased.yaml
+target_class: Thing
+data_sources:
+  - src/thing/unreleased/examples/Property-01-minimal.yaml
+  - src/thing/unreleased/examples/Property-02-as_a_thing.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

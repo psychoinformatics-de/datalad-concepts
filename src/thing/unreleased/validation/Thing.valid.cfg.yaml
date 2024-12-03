@@ -1,11 +1,10 @@
 schema: src/thing/unreleased.yaml
 target_class: Thing
 data_sources:
-  - src/thing/unreleased/examples/Thing-minimal.yaml
-  - src/thing/unreleased/examples/Thing-identifiers.yaml
-  - src/thing/unreleased/examples/Thing-topic.yaml
-  - src/thing/unreleased/examples/Thing-customproperty.yaml
-  - src/thing/unreleased/examples/Thing-publication.yaml
+  - src/thing/unreleased/examples/Thing-01-minimal.yaml
+  - src/thing/unreleased/examples/Thing-02-identifiers.yaml
+  - src/thing/unreleased/examples/Thing-03-topic.yaml
+  - src/thing/unreleased/examples/Thing-04-publication.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
