@@ -42,9 +42,9 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		--mergeimports \
 		$< > $@.jsonld
 
-build/mkdocs-site: build/linkml-docs src/extra-docs/*.md
+build/mkdocs-site: build/linkml-docs extra-docs/*.md
 	# top-level content
-	cp -r src/extra-docs/*.md $<
+	cp -r extra-docs/*.md $<
 	mkdocs build
 
 check: check-models check-validation
