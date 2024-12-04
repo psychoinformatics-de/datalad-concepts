@@ -1,16 +1,28 @@
 {
   "id": "exthisdsver:./archive.zip",
-  "meta_type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "has_part": [
     {
       "id": "exthisdsver:./archive.zip/subdir",
-      "description": "A subdirectory",
-      "meta_type": "dldist:Distribution",
+      "has_attributes": [
+        {
+          "predicate": "dcterms:description",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "A subdirectory"
+        }
+      ],
+      "schema_type": "dldist:Distribution",
       "has_part": [
         {
           "id": "exthisdsver:./archive.zip/subdir/file.txt",
-          "description": "A file",
-          "meta_type": "dldist:Distribution"
+          "has_attributes": [
+            {
+              "predicate": "dcterms:description",
+              "schema_type": "dlthing:AttributeSpecification",
+              "value": "A file"
+            }
+          ],
+          "schema_type": "dldist:Distribution"
         }
       ],
       "qualified_part": [

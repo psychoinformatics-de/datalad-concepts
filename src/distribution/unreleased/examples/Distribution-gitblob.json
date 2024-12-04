@@ -1,6 +1,6 @@
 {
   "id": "gitsha:e12e9505cff5417f594d719b99720b4c39d86434",
-  "meta_type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "byte_size": 63165,
   "checksum": [
     {

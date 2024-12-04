@@ -8,7 +8,7 @@ was_attributed_to:
   - exthisds:#EindhovenUniversityofTechnology
 relation:
   - id: exthisdsver:#
-    meta_type: dldist:Resource
+    schema_type: dldist:Resource
     date_modified: '2023-11-13'
     description: rt-me-fMRI is a multi-echo functional magnetic resonance imaging
       dataset (N=28 healthy volunteers) with four task-based and two resting state
@@ -53,7 +53,7 @@ relation:
         entity:
           - exthisds:#methods_paper
   - id: exthisds:#StephanHeunis
-    meta_type: dldist:Person
+    schema_type: dldist:Person
     name: Stephan Heunis
     identifier:
       - schema_agency: https://orcid.org
@@ -63,7 +63,7 @@ relation:
     same_as:
       - https://orcid.org/0000-0003-3503-9872
   - id: exthisds:#EindhovenUniversityofTechnology
-    meta_type: dldist:Organization
+    schema_type: dldist:Organization
     name: Eindhoven University of Technology
     identifier:
       - schema_agency: https://ror.org
@@ -73,7 +73,7 @@ relation:
     same_as:
       - https://ror.org/02c2kyt77https://www.wikidata.org/wiki/Q280824
   - id: exthisds:#data_paper
-    meta_type: dlsdd:Publication
+    schema_type: dlsdd:Publication
     notation: 'Heunis S, Breeuwer M, Caballero-Gaudes C et al. rt-me-fMRI: a task
       and resting state dataset for real-time, multi-echo fMRI methods development
       and validation [version 1; peer review: 1 approved, 1 approved with reservations].
@@ -89,7 +89,7 @@ relation:
           - marcrel:col
           - marcrel:cre
   - id: exthisds:#methods_paper
-    meta_type: dlsdd:Publication
+    schema_type: dlsdd:Publication
     notation: S. Heunis, M. Breeuwer, C. Caballero-Gaudes, L. Hellrung, W. Huijbers,
       J.F. Jansen, R. Lamerichs, S. Zinger, A.P. Aldenkamp. The effects of multi-echo
       fMRI combination and rapid T*-mapping on offline and real-time BOLD sensitivity.
@@ -103,7 +103,7 @@ relation:
         had_role:
           - marcrel:aut
   - id: exthisds:#humanhealthdatalicense
-    meta_type: dldist:LicenseDocument
+    schema_type: dldist:LicenseDocument
     same_as:
       - https://dataverse.nl/api/datasets/:persistentId/versions/1.4/customlicense?persistentId=doi:10.34894/R1TNL8
     license_text: "<h2>Data user agreement for accessing limited human health data</h2>\n

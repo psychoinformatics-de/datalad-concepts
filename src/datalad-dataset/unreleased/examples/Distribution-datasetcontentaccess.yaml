@@ -3,10 +3,13 @@ id: gitsha:eb4d2457a1165519c61859152fe0e3394200d75d
 # abusing the documentation as a type definition URL of a Git commit
 # TODO define term in `datalad-dataset` schema
 type: https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects
-identifier:
-  # a Git SHA
-  notation: eb4d2457a1165519c61859152fe0e3394200d75d
-  schema_agency: https://git-scm.com
+has_attributes:
+  - predicate: ADMS:identifier
+    # a Git SHA
+    value: eb4d2457a1165519c61859152fe0e3394200d75d
+    has_attributes:
+      - predicate: ADMS:SchemaAgency
+        value: https://git-scm.com
 # A hosted (http-accessible) Git repository is the access service for this
 # commit and the associated tree.
 # We could also consider all of GitHub as an access service, and declare
@@ -15,14 +18,14 @@ identifier:
 # applicable to any Git repo hosted anywhere
 access_service:
   - https://github.com/datalad-datasets/machinelearning-books.git
-relation:
+relations:
   # we leave inline information on the hosted Git repo in a relation.
   # use id from access_service property above
   - id: https://github.com/datalad-datasets/machinelearning-books.git
     # identify as a dataservice -- not strictly needed for an implementation
     # that wants to obtain the commit, because we have the id from `access_service`
     # to match against
-    meta_type: dldist:DataService
+    schema_type: dldist:DataService
     # we use the DOAP (description of a project) term to identify this dataservice
     # as a Git repository.
     # TODO define term in `datalad-dataset` schema

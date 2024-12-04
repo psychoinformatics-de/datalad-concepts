@@ -1,15 +1,12 @@
 {
   "id": "exthisdsver:./file.jpeg",
-  "meta_type": "dldist:Distribution",
-  "has_property": [
+  "is_characterized_by": [
     {
-      "is_defined_by": "obo:NCIT_C95650",
-      "name": "data type",
-      "type": "obo:NCIT_C42645",
-      "value": "encapsulated image data",
-      "meta_type": "dlthing:Property"
+      "object": "obo:NCIT_C95650",
+      "predicate": "obo:NCIT_C42645"
     }
   ],
+  "schema_type": "dldist:Distribution",
   "qualified_relation": [
     {
       "had_role": [
@@ -18,7 +15,7 @@
       "entity": [
         "obo:NCIT_C95650"
       ],
-      "meta_type": "dlprov:EntityInfluence"
+      "schema_type": "dlprov:EntityInfluence"
     }
   ],
   "@type": "Distribution"

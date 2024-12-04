@@ -14,12 +14,7 @@ qualified_relation:
 #  - id: exthisds:#dtype_funky
 #    ...
 
-# this is an alternative approach via a custom property.
-# it is also combinable with a custom data type definition in
-# a relation.
-has_property:
-  - type: obo:NCIT_C42645
-    is_defined_by: obo:NCIT_C95650
-    # optionally:
-    name: data type
-    value: encapsulated image data
+# this is an alternative approach
+is_characterized_by:
+  - predicate: obo:NCIT_C42645
+    object: obo:NCIT_C95650

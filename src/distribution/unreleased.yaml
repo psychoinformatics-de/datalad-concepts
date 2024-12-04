@@ -293,11 +293,6 @@ slots:
       A description of the services available via the end-points,
       including their operations, parameters etc.
     range: uri
-    exact_mappings:
-      - dcat:downloadURL
-    related_mappings:
-      - dldist:endpoint_url
-      - dlthing:conforms_to
 
   endpoint_url:
     slot_uri: dldist:endpoint_url
@@ -307,8 +302,8 @@ slots:
     exact_mappings:
       - dcat:endpointURL
     related_mappings:
+      - dcat:downloadURL
       - dldist:endpoint_description
-      - dlthing:conforms_to
 
   format:
     slot_uri: dldist:format
@@ -320,15 +315,6 @@ slots:
       - dcterms:format
     notes:
       - When type of the distribution is defined by IANA, `media_type` should be used.
-
-  has_parameter:
-    slot_uri: dldist:has_parameter
-    description: >-
-      Relation between a process or function and an information entity which
-      modulates the behaviour of the subject.
-    close_mappings:
-      - sio:SIO_000552
-      - obo:OBI_0000293
 
   has_part:
     slot_uri: dldist:has_part
@@ -416,6 +402,15 @@ slots:
       - https://www.iana.org/assignments/media-types
     exact_mappings:
       - dcat:mediaType
+
+  name:
+    slot_uri: dlthing:name
+    description: Name of a thing.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
+      - foaf:name
+    range: string
 
   qualified_access:
     slot_uri: dlco:qualified_access
@@ -625,21 +620,6 @@ classes:
       - download_url_template
       - endpoint_description
       - endpoint_url
-      - has_parameter
-    slot_usage:
-      has_parameter:
-        description: >-
-          Parameter that needs to be supplied in order to request a
-          particular `Distribution` from the `DataService`.
-          Any such concrete parameter values can be specific in a
-          dedicated `QualifiedAccess` relation, linking a `Distribution`
-          to a `DataService`.
-          A `Parameter` value property given in the scope of a `DataService`
-          can be considered as a default value.
-        inlined: true
-        inlined_as_list: true
-        multivalued: true
-        range: Parameter
     comments:
       - Characteristics of a particular `Dataservice` that do not vary across `Distributions` that can be requested from the `DataService` are considered properties (`has_property`) of the `Dataservice`. In contrast, information needed in addition for requesting a particular `Distribution` are considered an access request parameter (`has_parameter`). Such parameters can be declared for a `DataService`, and provided for a particular `Distribution` via a dedicated `QualifiedAccess` relation.
     exact_mappings:
@@ -660,19 +640,7 @@ classes:
       - dcat:access_service
     slots:
       - access_service
-      - has_parameter
     slot_usage:
       access_service:
         multivalued: true
         range: DataService
-      has_parameter:
-        multivalued: true
-        range: Parameter
-
-  Parameter:
-    class_uri: dldist:Parameter
-    is_a: Characteristic
-    description: >-
-      A variable whose value changes the characteristics of a system or a function.
-    exact_mappings:
-      - sio:SIO_000144

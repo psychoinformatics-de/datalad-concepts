@@ -1,11 +1,24 @@
 {
   "id": "https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854",
-  "identifier": [
+  "has_attributes": [
     {
-      "notation": "cec1da92-0dbd-4df3-8602-7c72b2d12854",
-      "schema_agency": "https://datalad.org"
+      "predicate": "dcterms:identifier",
+      "has_attributes": [
+        {
+          "predicate": "skos:notation",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "cec1da92-0dbd-4df3-8602-7c72b2d12854"
+        },
+        {
+          "predicate": "ADMS:schemaAgency",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "https://datalad.org"
+        }
+      ],
+      "schema_type": "dlthing:AttributeSpecification",
+      "type": "ADMS:Identifier"
     }
   ],
-  "meta_type": "dldist:Resource",
+  "schema_type": "dldist:Resource",
   "@type": "Resource"
 }
