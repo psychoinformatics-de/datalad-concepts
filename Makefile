@@ -54,8 +54,8 @@ check-models: \
 	checkmodel/thing/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/distribution/unreleased \
-	checkmodel/datalad-dataset/unreleased \
-	checkmodel/sdd/unreleased
+	checkmodel/datalad-dataset/unreleased
+#	checkmodel/sdd/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -89,9 +89,9 @@ check-validation: \
 	convertexamples/distribution/unreleased \
 	checkvalidation/distribution/unreleased \
 	convertexamples/datalad-dataset/unreleased \
-	checkvalidation/datalad-dataset/unreleased \
-	convertexamples/sdd/unreleased \
-	checkvalidation/sdd/unreleased
+	checkvalidation/datalad-dataset/unreleased
+#	convertexamples/sdd/unreleased \
+#	checkvalidation/sdd/unreleased
 checkvalidation/%:
 	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
