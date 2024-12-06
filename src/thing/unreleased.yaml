@@ -307,8 +307,10 @@ classes:
     slot_usage:
       value:
         required: true
-        notes: >-
-          It is required, because when it is not needed, `Thing` should be
-          used as a type. Its absence is therefore likely a sign of an error.
+        notes:
+          - >-
+            It is required, because when it is not needed, `Thing` should
+            be used as a type. Its absence is therefore likely a sign of
+            an error.
     exact_mappings:
       - obo:OBI_0001933
