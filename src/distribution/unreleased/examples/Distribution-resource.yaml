@@ -9,15 +9,21 @@
 # defined once in a `relation` property
 id: exthisdsver:./some/path.ext
 is_distribution_of: exthisdsver:#some/path
-relation:
+relations:
   - id: exthisdsver:#some/path
-    meta_type: dldist:Resource
-    description: Some tabular data
+    schema_type: dldist:Resource
+    has_attributes:
+      - predicate: dcterms:description
+        value: "Some tabular data"
     is_part_of: exthisdsver:#
   - id: exthisdsver:#
-    meta_type: dldist:Resource
-    description: A version of a collection of some data
+    schema_type: dldist:Resource
+    has_attributes:
+      - predicate: dcterms:description
+        value: A version of a collection of some data"
     is_version_of: exthisds:#
   - id: exthisds:#
-    meta_type: dldist:Resource
-    description: A collection of some data
+    schema_type: dldist:Resource
+    has_attributes:
+      - predicate: dcterms:description
+        value: "A collection of some data"

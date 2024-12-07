@@ -1,7 +1,13 @@
 {
   "id": "exthisdsver:./some/name.ext",
-  "meta_type": "dldist:Distribution",
-  "name": "name.ext",
+  "has_attributes": [
+    {
+      "predicate": "foaf:name",
+      "schema_type": "dlthing:AttributeSpecification",
+      "value": "name.ext"
+    }
+  ],
+  "schema_type": "dldist:Distribution",
   "byte_size": 123456789,
   "checksum": [
     {

@@ -8,7 +8,9 @@ id: exthisdsver:./some/name.ext
 byte_size: 123456789
 license: licenses:CC0-1.0
 date_modified: "2024-03-21"
-name: name.ext
+has_attributes:
+  - predicate: foaf:name
+    value: "name.ext"
 #
 # Checksum information is inlined, because additional linkage
 # to a unique content checksum value is an unlikely use case

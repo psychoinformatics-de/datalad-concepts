@@ -1,28 +1,36 @@
 {
   "id": "gitsha:eb4d2457a1165519c61859152fe0e3394200d75d",
-  "identifier": [
-    {
-      "notation": "eb4d2457a1165519c61859152fe0e3394200d75d",
-      "schema_agency": "https://git-scm.com"
-    }
-  ],
-  "meta_type": "dldist:Distribution",
-  "type": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects",
-  "relation": [
+  "relations": [
     {
       "id": "https://github.com/datalad-datasets/machinelearning-books.git",
-      "meta_type": "dldist:DataService",
+      "schema_type": "dldist:DataService",
       "type": "http://usefulinc.com/ns/doap#GitRepository",
       "endpoint_url": "https://github.com/datalad-datasets/machinelearning-books.git"
     }
   ],
+  "has_attributes": [
+    {
+      "predicate": "ADMS:identifier",
+      "has_attributes": [
+        {
+          "predicate": "ADMS:SchemaAgency",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "https://git-scm.com"
+        }
+      ],
+      "schema_type": "dlthing:AttributeSpecification",
+      "value": "eb4d2457a1165519c61859152fe0e3394200d75d"
+    }
+  ],
+  "schema_type": "dldist:Distribution",
+  "type": "https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects",
   "access_service": [
     "https://github.com/datalad-datasets/machinelearning-books.git"
   ],
   "has_part": [
     {
       "id": "gitsha:f776e30f386b83e13196eab6445f30d3ab54c155",
-      "meta_type": "dldist:Distribution",
+      "schema_type": "dldist:Distribution",
       "access_service": [
         "https://github.com/datalad-datasets/machinelearning-books.git"
       ]

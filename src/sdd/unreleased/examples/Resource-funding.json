@@ -1,6 +1,6 @@
 {
   "id": "exthisdsver:#",
-  "meta_type": "dldist:Resource",
+  "schema_type": "dldist:Resource",
   "qualified_relation": [
     {
       "had_role": [
@@ -9,19 +9,19 @@
       "entity": [
         "https://gepris.dfg.de/gepris/projekt/431549029"
       ],
-      "meta_type": "dlprov:EntityInfluence"
+      "schema_type": "dlprov:EntityInfluence"
     }
   ],
   "relation": [
     {
       "id": "https://gepris.dfg.de/gepris/projekt/431549029",
-      "meta_type": "dlsdd:Grant",
+      "schema_type": "dlsdd:Grant",
       "name": "SFB1451",
       "sponsor": "https://ror.org/018mejw64"
     },
     {
       "id": "https://ror.org/018mejw64",
-      "meta_type": "dldist:Organization",
+      "schema_type": "dldist:Organization",
       "name": "Deutsche Forschungsgemeinschaft"
     }
   ],

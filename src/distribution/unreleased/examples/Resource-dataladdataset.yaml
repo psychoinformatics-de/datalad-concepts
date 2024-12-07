@@ -1,9 +1,14 @@
 id: https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854
 # we need a definition for a DataLad dataset
 #type: ...
-identifier:
-  - notation: cec1da92-0dbd-4df3-8602-7c72b2d12854
-    schema_agency: https://datalad.org
+has_attributes:
+  - predicate: dcterms:identifier
+    type: ADMS:Identifier
+    has_attributes:
+      - predicate: skos:notation
+        value: cec1da92-0dbd-4df3-8602-7c72b2d12854
+      - predicate: ADMS:schemaAgency
+        value: https://datalad.org
 # here could be any additional properties or linked resources
 # that are related to the dataset in general and not just to a particular
 # version

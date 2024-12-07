@@ -1,38 +1,51 @@
 id: exthisdsver:#
-relation:
+relations:
   # study participants (role assigned below)
   - id: exthisds:#s001
-    meta_type: dlprov:Agent
-    name: s001
-    has_property:
+    schema_type: dlprov:Agent
+    has_attributes:
+      - predicate: foaf:name
+        value: s001
+    is_characterized_by:
       # handedness
-      - type: obo:PATO_0002201
+      - predicate: obo:PATO_0002201
         # ambidextrous
-        is_defined_by: obo:PATO_0002204
+        object: obo:PATO_0002204
   - id: exthisds:#s002
-    meta_type: dlprov:Agent
-    name: s002
-    has_property:
+    schema_type: dlprov:Agent
+    is_characterized_by:
       # biological sex
-      - type: obo:PATO_0000047
-        value: male
-        is_defined_by: obo:PATO_0000384
+      - predicate: obo:PATO_0000047
+        # male
+        object: obo:PATO_0000384
+    has_attributes:
+      - predicate: foaf:name
+        value: s002
       # age in years
-      - meta_type: dlthing:QuantitativeProperty
-        # length of a person's life, stated in years since birth
-        type: obo:NCIT_C37908
-        name: age (years)
+      # length of a person's life, stated in years since birth
+      - predicate: obo:NCIT_C37908
         value: "36"
-        unit: obo:UO_0000036
+        has_attributes:
+          - predicate: foaf:name
+            value: "age (years)"
+        is_characterized_by:
+          # unit
+          - predicate: obo:UO_0000000
+            object: obo:UO_0000036
   # study activity
   - id: exthisds:#study_2005-004406-93
-    meta_type: dlprov:Activity
-    title: Study about the effectiveness of a disease treatment
+    schema_type: dlprov:Activity
+    has_attributes:
+      - predicate: dcterms:title
+        value: "Study about the effectiveness of a disease treatment"
+      - predicate: ADMS:identifier
+        has_attributes:
+          - predicate: skos:notation
+            value: 2005-004406-93
+          - predicate: ADMS:schema_agency
+            value: https://eudract.ema.europa.eu
     # registered clinical trial
     type: obo:NCIT_C71104
-    identifier:
-      - notation: 2005-004406-93
-        schema_agency: https://eudract.ema.europa.eu
     qualified_association:
       - agent: exthisds:#s001
         had_role:

@@ -1,49 +1,84 @@
 {
   "id": "exthisdsver:#",
-  "meta_type": "dldist:Resource",
-  "relation": [
+  "relations": [
     {
       "id": "exthisds:#s001",
-      "meta_type": "dlprov:Agent",
-      "name": "s001",
-      "has_property": [
+      "has_attributes": [
         {
-          "is_defined_by": "obo:PATO_0002204",
-          "type": "obo:PATO_0002201",
-          "meta_type": "dlthing:Property"
+          "predicate": "foaf:name",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "s001"
         }
-      ]
+      ],
+      "is_characterized_by": [
+        {
+          "object": "obo:PATO_0002204",
+          "predicate": "obo:PATO_0002201"
+        }
+      ],
+      "schema_type": "dlprov:Agent"
     },
     {
       "id": "exthisds:#s002",
-      "meta_type": "dlprov:Agent",
-      "name": "s002",
-      "has_property": [
+      "has_attributes": [
         {
-          "is_defined_by": "obo:PATO_0000384",
-          "type": "obo:PATO_0000047",
-          "value": "male",
-          "meta_type": "dlthing:Property"
+          "predicate": "foaf:name",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "s002"
         },
         {
-          "name": "age (years)",
-          "type": "obo:NCIT_C37908",
-          "value": "36",
-          "meta_type": "dlthing:QuantitativeProperty",
-          "unit": "obo:UO_0000036"
+          "predicate": "obo:NCIT_C37908",
+          "has_attributes": [
+            {
+              "predicate": "foaf:name",
+              "schema_type": "dlthing:AttributeSpecification",
+              "value": "age (years)"
+            }
+          ],
+          "is_characterized_by": [
+            {
+              "object": "obo:UO_0000036",
+              "predicate": "obo:UO_0000000"
+            }
+          ],
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "36"
         }
-      ]
+      ],
+      "is_characterized_by": [
+        {
+          "object": "obo:PATO_0000384",
+          "predicate": "obo:PATO_0000047"
+        }
+      ],
+      "schema_type": "dlprov:Agent"
     },
     {
       "id": "exthisds:#study_2005-004406-93",
-      "identifier": [
+      "has_attributes": [
         {
-          "notation": "2005-004406-93",
-          "schema_agency": "https://eudract.ema.europa.eu"
+          "predicate": "dcterms:title",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "Study about the effectiveness of a disease treatment"
+        },
+        {
+          "predicate": "ADMS:identifier",
+          "has_attributes": [
+            {
+              "predicate": "skos:notation",
+              "schema_type": "dlthing:AttributeSpecification",
+              "value": "2005-004406-93"
+            },
+            {
+              "predicate": "ADMS:schema_agency",
+              "schema_type": "dlthing:AttributeSpecification",
+              "value": "https://eudract.ema.europa.eu"
+            }
+          ],
+          "schema_type": "dlthing:AttributeSpecification"
         }
       ],
-      "meta_type": "dlprov:Activity",
-      "title": "Study about the effectiveness of a disease treatment",
+      "schema_type": "dlprov:Activity",
       "type": "obo:NCIT_C71104",
       "qualified_association": [
         {
@@ -63,6 +98,7 @@
       ]
     }
   ],
+  "schema_type": "dldist:Resource",
   "was_generated_by": [
     "exthisds:#study_2005-004406-93"
   ],
