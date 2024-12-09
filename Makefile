@@ -62,6 +62,7 @@ checkmodel/%: src/%.yaml
 	@linkml-lint \
 		--config .linkmllint.yaml \
 		--max-warnings 0 \
+		--validate \
 		$<
 # generate various output formats, they all have the potential to
 # reveal "hidden" issues
