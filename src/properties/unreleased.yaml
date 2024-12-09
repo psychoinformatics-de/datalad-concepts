@@ -1,0 +1,172 @@
+id: https://concepts.datalad.org/s/properties/unreleased
+name: properties
+version: UNRELEASED
+status: bibo:status/draft
+title: Collection of common properties for use in schemas
+description: |
+  This schema provides a collection of common properties for use in other
+  schemas. It can be imported directly into other linkml schemas, or
+  any of its individual property definitions can be used by their
+  URI as vocabulary components or definitions (e.g., `dlprops:name`
+  identified by this [URI](`name`)).
+
+  Class definitions are only included insofar as they define ranges
+  for particular property slots.
+
+  Slot names use the plural form whenever they are directly declared as
+  "multivalued" in this schema, otherwise the singular form is used for
+  the slot name. The `slot_uri` always uses the singular form.
+
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  bibo: http://purl.org/ontology/bibo/
+  dcterms: http://purl.org/dc/terms/
+  dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: dlprops
+
+imports:
+  - linkml:types
+
+slots:
+  conforms_to:
+    slot_uri: dlprops:conforms_to
+    description: >-
+      An established standard to which the subject conforms.
+    range: uriorcurie
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
+  description:
+    slot_uri: dlprops:description
+    description: A free-text account of the subject.
+    exact_mappings:
+      - dcterms:description
+      - rdfs:comment
+    range: string
+
+  identifiers:
+    slot_uri: dlprops:identifier
+    description: An unambiguous reference to the subject within a given context.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+      - ADMS:identifier
+    range: Identifier
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+  is_about:
+    slot_uri: dlprops:is_about
+    description: >-
+      A relation of an information artifact to the subject, such as
+      a URL identifying the topic of a document.
+    range: uriorcurie
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
+  name:
+    slot_uri: dlprops:name
+    description: >-
+      Name of the subject. A name is closely related to a `title`, but often
+      more compact and identifier-like, but without the implication of
+      uniqueness of an identifier. A name is often used by technical systems
+      to display an item in an organizational structure, such as a file
+      in a directory hierarchy.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
+      - foaf:name
+    close_mappings:
+      - dlprops:title
+    range: string
+
+  notation:
+    slot_uri: dlprops:notation
+    description: >-
+      String of characters such as "T58:5" or "30:4833" used to uniquely
+      identify a concept within the scope of a given concept scheme.
+    range: string
+    exact_mappings:
+      - skos:notation
+
+  same_as:
+    slot_uri: dlprops:same_as
+    description: >-
+      Declares that the subject and an object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subject's identity. For example, the URL of the subject's
+      Wikipedia page, Wikidata entry, or official website.
+    range: uriorcurie
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs
+
+  schema_agency:
+    slot_uri: dlprops:schema_agency
+    description: >-
+      Name of the agency that issued an identifier.
+    range: uriorcurie
+    exact_mappings:
+      - ADMS:schemaAgency
+
+  title:
+    slot_uri: dlprops:title
+    description: >-
+      A summarily description of the subject. It is closely related to
+      a `name`, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+      - sio:SIO_000185
+    related_mappings:
+      - schema:name
+    range: string
+
+
+classes:
+  Identifier:
+    class_uri: dlprops:Identifier
+    description: >-
+      An identifier is a label that uniquely identifies an item in a
+      particular context. Some identifiers are globally unique. All
+      identifiers are unique within the scope of their issuing
+      agency.
+    slots:
+      - notation
+      - schema_agency
+    slot_usage:
+      notation:
+        required: true
+      schema_agency:
+        required: true
+    exact_mappings:
+      - ADMS:Identifier
+    see_also:
+      - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
