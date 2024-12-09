@@ -5,6 +5,7 @@ nav:
   - About: about.md
   - Schemas:
     - Thing (unreleased): s/thing/unreleased/index.md
+    - Properties (unreleased): s/properties/unreleased/index.md
     - Provenance (unreleased): s/prov/unreleased/index.md
     - Distribution (unreleased): s/distribution/unreleased/index.md
     - DataLad dataset (unreleased): s/datalad-dataset/unreleased/index.md
@@ -15,6 +16,7 @@ plugins:
       redirect_maps:
           # map unversioned URLs to the latest version
           's/thing/index.md': 's/thing/unreleased/index.md'
+          's/properties/index.md': 's/properties/unreleased/index.md'
           's/prov/index.md': 's/prov/unreleased/index.md'
           's/distribution/index.md': 's/distribution/unreleased/index.md'
           's/datalad-dataset/index.md': 's/datalad-dataset/unreleased/index.md'
