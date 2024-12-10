@@ -126,9 +126,10 @@ types:
     uri: xsd:nonNegativeInteger
     base: int
     description: An integer
-    notes: >-
-      Integer with minimum (inclusive) value of zero, i.e. the standard
-      mathematical concept of the non-negative integers.
+    notes:
+      - >-
+        Integer with minimum (inclusive) value of zero, i.e. the standard
+        mathematical concept of the non-negative integers.
     broad_mappings:
       - schema:Integer
 
