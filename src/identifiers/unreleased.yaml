@@ -1,0 +1,119 @@
+id: https://concepts.datalad.org/s/identifiers/unreleased
+name: identifiers-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema components to express identifiers of things
+description: |
+  This schema implements some aspects of the [identifier
+  concept](https://www.w3.org/TR/vocab-adms/#dt_identifier) of the [Asset
+  Description Metadata Schema](https://www.w3.org/TR/vocab-adms/#dt_identifier)
+  (ADMS). The provided [`identifiers` slot](identifiers) can be used to annotate
+  entities with identifiers with arbitrary scopes and issued by arbitrary agencies.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  bibo: http://purl.org/ontology/bibo/
+  dcterms: http://purl.org/dc/terms/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  linkml: https://w3id.org/linkml/
+  skos: http://www.w3.org/2004/02/skos/core#
+
+default_prefix: dlidentifiers
+
+imports:
+  - linkml:types
+
+slots:
+  creator:
+    slot_uri: dlidentifiers:creator
+    description: >-
+      An agent responsible for making an entity.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:creator
+
+  identifiers:
+    slot_uri: dlidentifiers:identifier
+    description: An unambiguous reference to the subject within a given context.
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
+      - ADMS:identifier
+    range: Identifier
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
+  notation:
+    slot_uri: dlidentifiers:notation
+    description: >-
+      String of characters such as "T58:5" or "30:4833" used to uniquely
+      identify a concept within the scope of a given concept scheme.
+    range: string
+    exact_mappings:
+      - skos:notation
+
+  schema_agency:
+    slot_uri: dlidentifiers:schema_agency
+    description: >-
+      Name of the agency that issued an identifier.
+    range: string
+    exact_mappings:
+      - ADMS:schemaAgency
+
+
+classes:
+  Identifier:
+    class_uri: dlidentifiers:Identifier
+    description: >-
+      An identifier is a label that uniquely identifies an item in a
+      particular context. Some identifiers are globally unique. All
+      identifiers are unique within the scope of their issuing
+      agency.
+    slots:
+      - creator
+      - notation
+      - schema_agency
+    slot_usage:
+      notation:
+        required: true
+    exact_mappings:
+      - ADMS:Identifier
+    see_also:
+      - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
+
+  DOI:
+    class_uri: dlidentifiers:DOI
+    is_a: Identifier
+    description: >-
+      Digital Object Identifier (DOI; ISO 26324), an identifier system governed by the
+      DOI Foundation, where individual identifiers are issued by one of several registration
+      agencies.
+    slot_usage:
+      creator:
+        ifabsent: string(https://doi.org)
+        description: By default, the creator is identified as "https://doi.org".
+      notation:
+        description: >-
+          The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
+      schema_agency:
+        ifabsent: string(DOI Foundation)
+        description: By default, the schema agency is identified as `DOI Foundation`.
+    defining_slots:
+      - creator
+    unique_keys:
+      value:
+        description: The DOI notation is globally unique within the scope of DOIs
+        unique_key_slots:
+          - notation
