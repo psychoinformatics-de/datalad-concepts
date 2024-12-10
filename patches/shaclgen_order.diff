@@ -1,0 +1,26 @@
+Prevent creation of faulty order lists, where order should just be
+a single numerical value. See for context:
+https://github.com/linkml/linkml/pull/2111#issuecomment-2116208229
+--- shaclgen.py
++++ shaclgen.py
+@@ -112,8 +112,6 @@ class ShaclGenerator(Generator):
+                         g.add((pnode, p, Literal(v)))
+ 
+                 prop_pv(SH.path, slot_uri)
+-                prop_pv_literal(SH.order, order)
+-                order += 1
+                 prop_pv_literal(SH.name, s.title)
+                 prop_pv_literal(SH.description, s.description)
+                 # minCount
+@@ -220,6 +218,11 @@ class ShaclGenerator(Generator):
+                 default_value = ifabsent_processor.process_slot(s, c)
+                 if default_value:
+                     prop_pv(SH.defaultValue, default_value)
++                
++                # sh:order may already have been added to the graph via annotations
++                if not (pnode, SH.order, None) in g:
++                    prop_pv_literal(SH.order, order)
++                    order += 1
+ 
+         return g
+ 
