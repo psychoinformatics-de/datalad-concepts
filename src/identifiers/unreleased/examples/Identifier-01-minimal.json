@@ -1,5 +1,6 @@
 {
   "notation": "0000-0001-6398-6370",
-  "schema_agency": "https://orcid.org",
+  "creator": "https://orcid.org",
+  "schema_agency": "ORCID",
   "@type": "Identifier"
 }
