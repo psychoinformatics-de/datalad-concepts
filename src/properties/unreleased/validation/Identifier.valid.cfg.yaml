@@ -1,0 +1,9 @@
+schema: src/properties/unreleased.yaml
+target_class: Identifier
+data_sources:
+  - src/properties/unreleased/examples/Identifier-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

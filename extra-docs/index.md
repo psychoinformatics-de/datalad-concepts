@@ -1,6 +1,7 @@
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Thing schema](s/thing/unreleased/index.md)
+- [Properties schema](s/properties/unreleased/index.md)
 - [Provenance schema](s/prov/unreleased/index.md)
 - [Data distribution schema](s/distribution/unreleased/index.md)
 - [DataLad dataset schema](s/datalad-dataset/unreleased/index.md)
