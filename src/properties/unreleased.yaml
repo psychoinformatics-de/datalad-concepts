@@ -1,5 +1,5 @@
 id: https://concepts.datalad.org/s/properties/unreleased
-name: properties
+name: properties-schema
 version: UNRELEASED
 status: bibo:status/draft
 title: Collection of common properties for use in schemas
@@ -31,7 +31,6 @@ comments:
 license: MIT
 
 prefixes:
-  ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
@@ -42,7 +41,6 @@ prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
-  skos: http://www.w3.org/2004/02/skos/core#
 
 default_prefix: dlprops
 
@@ -67,18 +65,6 @@ slots:
       - dcterms:description
       - rdfs:comment
     range: string
-
-  identifiers:
-    slot_uri: dlprops:identifier
-    description: An unambiguous reference to the subject within a given context.
-    exact_mappings:
-      - dcterms:identifier
-      - schema:identifier
-      - ADMS:identifier
-    range: Identifier
-    inlined: true
-    inlined_as_list: true
-    multivalued: true
 
   is_about:
     slot_uri: dlprops:is_about
@@ -106,15 +92,6 @@ slots:
       - dlprops:title
     range: string
 
-  notation:
-    slot_uri: dlprops:notation
-    description: >-
-      String of characters such as "T58:5" or "30:4833" used to uniquely
-      identify a concept within the scope of a given concept scheme.
-    range: string
-    exact_mappings:
-      - skos:notation
-
   same_as:
     slot_uri: dlprops:same_as
     description: >-
@@ -128,14 +105,6 @@ slots:
     close_mappings:
       - schema:sameAs
 
-  schema_agency:
-    slot_uri: dlprops:schema_agency
-    description: >-
-      Name of the agency that issued an identifier.
-    range: uriorcurie
-    exact_mappings:
-      - ADMS:schemaAgency
-
   title:
     slot_uri: dlprops:title
     description: >-
@@ -148,25 +117,3 @@ slots:
     related_mappings:
       - schema:name
     range: string
-
-
-classes:
-  Identifier:
-    class_uri: dlprops:Identifier
-    description: >-
-      An identifier is a label that uniquely identifies an item in a
-      particular context. Some identifiers are globally unique. All
-      identifiers are unique within the scope of their issuing
-      agency.
-    slots:
-      - notation
-      - schema_agency
-    slot_usage:
-      notation:
-        required: true
-      schema_agency:
-        required: true
-    exact_mappings:
-      - ADMS:Identifier
-    see_also:
-      - https://semiceu.github.io/ADMS/releases/2.00/#Identifier

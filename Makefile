@@ -17,6 +17,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/thing/unreleased \
 	build/linkml-docs/s/prov/unreleased \
+	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
 	build/linkml-docs/s/datalad-dataset/unreleased \
 	build/linkml-docs/s/sdd/unreleased
@@ -55,6 +56,7 @@ check-models: \
 	checkmodel/properties/unreleased \
 	checkmodel/thing/unreleased \
 	checkmodel/prov/unreleased \
+	checkmodel/identifiers/unreleased \
 	checkmodel/distribution/unreleased \
 	checkmodel/datalad-dataset/unreleased \
 	checkmodel/sdd/unreleased
@@ -85,10 +87,12 @@ checkmodel/%: src/%.yaml
 # respective validation targets, because some tests rely on these
 # converted formats
 check-validation: \
-	convertexamples/properties/unreleased \
+	convertexamples/thing/unreleased \
 	checkvalidation/thing/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
+	convertexamples/identifiers/unreleased \
+	checkvalidation/identifiers/unreleased \
 	convertexamples/distribution/unreleased \
 	checkvalidation/distribution/unreleased \
 	convertexamples/datalad-dataset/unreleased \
@@ -109,9 +113,9 @@ checkinvalid/%: src/%/validation src/%.yaml
 	done
 
 convert-examples: \
-	convertexamples/properties/unreleased \
 	convertexamples/thing/unreleased \
 	convertexamples/prov/unreleased \
+	convertexamples/identifiers/unreleased \
 	convertexamples/distribution/unreleased \
 	convertexamples/datalad-dataset/unreleased \
 	convertexamples/sdd/unreleased
