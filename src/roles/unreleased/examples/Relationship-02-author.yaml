@@ -1,0 +1,7 @@
+# Declare a person identified by an ORCID to have had the
+# roles of an author and of a scientific advisor regarding
+# the subject
+object: https://orcid.org/0000-0001-6398-6370
+had_roles:
+  - marcrel:aut
+  - marcrel:sad

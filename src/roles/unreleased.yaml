@@ -1,0 +1,112 @@
+id: https://concepts.datalad.org/s/roles/unreleased
+name: roles-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for characterizing relationships with roles
+description: |
+  This schema provides the most basic classes and slots to qualify
+  relationships between two things. The connection to the
+  [thing-schema](../../thing) is the [`qualified_relations`](qualified_relations)
+  slot, which can be used to qualify relations between things via any number
+  of [`Relationship`](Relationship) declarations.
+
+  Each `Relationship` links one object (`Thing`) to a subject (`Thing`) and
+  associates one or more roles ([`Role`](Role)) with this relationship via the
+  [`had_roles`](had_roles) slot.
+
+  A `Role` is itself a `Thing`, and can be annotated with (inline)
+  attributes as needed. However, typically it should be sufficient
+  to reference a role by a URI.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  marcrel: http://id.loc.gov/vocabulary/relators/
+
+default_prefix: dlroles
+
+emit_prefixes:
+  # emit this one as a rich resource for predefined roles
+  - marcrel
+  - prov
+
+imports:
+  - ../thing/unreleased
+
+
+slots:
+  had_roles:
+    slot_uri: dlroles:had_role
+    description: >-
+      The function of an entity or agent with respect to another entity or
+      resource.
+    range: Role
+    multivalued: true
+    inlined: false
+    exact_mappings:
+      - prov:hadRole
+      - dcat:had_role
+    comments:
+      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
+      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
+
+  qualified_relations:
+    slot_uri: dlroles:qualified_relation
+    description: >-
+      Characterizes the relationship or role of an entity with respect to the subject entity.
+    domain: Thing
+    range: Relationship
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+    exact_mappings:
+      - dcat:qualifiedRelation
+
+
+classes:
+  Role:
+    class_uri: dlroles:Role
+    is_a: Thing
+    description: >-
+      A role is the function of a resource or agent with respect to
+      another resource, in the context of resource attribution or
+      resource relationships.
+    exact_mappings:
+      - prov:Role
+      - dcat:Role
+
+  Relationship:
+    class_uri: dlroles:Relationship
+    description: >-
+      An association class for characterizing the relation between two things with
+      the role(s) the object had with respect to the subject. A relationship is
+      always between two things only, but can be annotated with multiple roles
+      (for example, a person having both an author role with respect to a dataset,
+      and also being the person who is legally responsible contact for it).
+    slots:
+      - object
+      - had_roles
+    slot_usage:
+      had_roles:
+        required: true
+      object:
+        required: true
+    close_mappings:
+      - prov:Influence
+      - dcat:Relationship

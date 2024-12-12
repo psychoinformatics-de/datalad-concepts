@@ -255,14 +255,14 @@ was_attributed_to:
   - https://ror.org/03dsk4d59
 
 # entity roles
-qualified_relation:
+qualified_relations:
   # publication place: journal scientific data
-  - entity:
+  - object:
       - https://portal.issn.org/resource/issn/2052-4463
     had_role:
       - http://id.loc.gov/vocabulary/relators/prp
   # grants that funded the work
-  - entity:
+  - object:
       - exthisds:#grant_bmbf01GQ1905
       - exthisds:#grant_bmbf01GQ1411
       - exthisds:#grant_nsc

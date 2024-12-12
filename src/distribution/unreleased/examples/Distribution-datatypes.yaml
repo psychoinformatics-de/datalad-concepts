@@ -1,11 +1,10 @@
 id: exthisdsver:./file.jpeg
 # two approaches:
 # first using the common qualified-relation pattern.
-qualified_relation:
-  - entity:
-      # encapsulated image data
-      - obo:NCIT_C95650
-    had_role:
+qualified_relations:
+  # encapsulated image data
+  - object: obo:NCIT_C95650
+    had_roles:
       # data type
       - obo:NCIT_C42645
 # when standardized terms for identifying data types are not available,

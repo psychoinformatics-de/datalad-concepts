@@ -28,7 +28,7 @@
       "qualified_part": [
         {
           "name": "file.txt",
-          "entity": "exthisdsver:./archive.zip/subdir/file.txt"
+          "object": "exthisdsver:./archive.zip/subdir/file.txt"
         }
       ]
     }
@@ -36,7 +36,7 @@
   "qualified_part": [
     {
       "name": "subdir",
-      "entity": "exthisdsver:./archive.zip/subdir"
+      "object": "exthisdsver:./archive.zip/subdir"
     }
   ],
   "@type": "Distribution"

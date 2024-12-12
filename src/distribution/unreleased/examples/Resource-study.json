@@ -82,18 +82,18 @@
       "type": "obo:NCIT_C71104",
       "qualified_association": [
         {
-          "had_role": [
+          "object": "exthisds:#s001",
+          "had_roles": [
             "obo:NCIT_C142710",
             "obo:NCIT_C94342"
-          ],
-          "agent": "exthisds:#s001"
+          ]
         },
         {
-          "had_role": [
+          "object": "exthisds:#s002",
+          "had_roles": [
             "obo:NCIT_C142710",
             "obo:NCIT_C173188"
-          ],
-          "agent": "exthisds:#s002"
+          ]
         }
       ]
     }

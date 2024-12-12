@@ -7,13 +7,11 @@
     }
   ],
   "schema_type": "dldist:Distribution",
-  "qualified_relation": [
+  "qualified_relations": [
     {
-      "had_role": [
+      "object": "obo:NCIT_C95650",
+      "had_roles": [
         "obo:NCIT_C42645"
-      ],
-      "entity": [
-        "obo:NCIT_C95650"
       ],
       "schema_type": "dlprov:EntityInfluence"
     }

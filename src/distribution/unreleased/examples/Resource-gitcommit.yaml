@@ -26,16 +26,14 @@ has_attributes:
 version: 8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
 qualified_derivation:
   # parent commit(s)
-  - entity:
-      # in a derivation any number of entities can play a role
-      - https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054
+  - object: https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054
     # "change", ie. unknown what was done
     # there are plenty of terms to drill down on the nature
     # of the derivation
     # - obo:NCIT_C64266: merge
     # - obo:NCIT_C64911: add
     had_activity: obo:NCIT_C25446
-    had_role:
+    had_roles:
       - owl:priorVersion
 relations:
   # author activity
@@ -49,8 +47,8 @@ relations:
     ended_at: "2001-02-28T18:27:04+02:00"
     qualified_association:
       # author of the commit
-      - agent: exthisds:#gituser_doe@example.com
-        had_role:
+      - object: exthisds:#gituser_doe@example.com
+        had_roles:
           - marcrel:aut
   # commit activity
   - id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
@@ -61,8 +59,8 @@ relations:
     ended_at: "2002-05-30T09:30:10+06:00"
     qualified_association:
       # creator of the commit
-      - agent: exthisds:#gituser_doe@example.com
-        had_role:
+      - object: exthisds:#gituser_doe@example.com
+        had_roles:
           - marcrel:cre
     was_informed_by:
       - https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring

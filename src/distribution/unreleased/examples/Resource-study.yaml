@@ -47,14 +47,14 @@ relations:
     # registered clinical trial
     type: obo:NCIT_C71104
     qualified_association:
-      - agent: exthisds:#s001
-        had_role:
+      - object: exthisds:#s001
+        had_roles:
           # study participant
           - obo:NCIT_C142710
           # healthy control
           - obo:NCIT_C94342
-      - agent: exthisds:#s002
-        had_role:
+      - object: exthisds:#s002
+        had_roles:
           - obo:NCIT_C142710
           # subject Assigned to Protocol Treatment Arm
           - obo:NCIT_C173188

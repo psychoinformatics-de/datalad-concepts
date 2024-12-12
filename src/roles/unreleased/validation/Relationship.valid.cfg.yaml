@@ -1,0 +1,10 @@
+schema: src/roles/unreleased.yaml
+target_class: Relationship
+data_sources:
+  - src/roles/unreleased/examples/Relationship-01-topic.yaml
+  - src/roles/unreleased/examples/Relationship-02-author.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
