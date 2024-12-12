@@ -1,7 +1,7 @@
-schema: src/properties/unreleased.yaml
+schema: src/identifiers/unreleased.yaml
 target_class: Identifier
 data_sources:
-  - src/properties/unreleased/examples/Identifier-01-minimal.yaml
+  - src/identifiers/unreleased/examples/Identifier-01-minimal.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
