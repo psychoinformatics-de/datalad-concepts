@@ -16,6 +16,7 @@ all: build/mkdocs-site
 build/linkml-docs: \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/thing/unreleased \
+	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
@@ -55,6 +56,7 @@ check: check-models check-validation
 check-models: \
 	checkmodel/properties/unreleased \
 	checkmodel/thing/unreleased \
+	checkmodel/roles/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/distribution/unreleased \
@@ -89,6 +91,8 @@ checkmodel/%: src/%.yaml
 check-validation: \
 	convertexamples/thing/unreleased \
 	checkvalidation/thing/unreleased \
+	convertexamples/roles/unreleased \
+	checkvalidation/roles/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
 	convertexamples/identifiers/unreleased \
@@ -114,6 +118,7 @@ checkinvalid/%: src/%/validation src/%.yaml
 
 convert-examples: \
 	convertexamples/thing/unreleased \
+	convertexamples/roles/unreleased \
 	convertexamples/prov/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/distribution/unreleased \

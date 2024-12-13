@@ -7,10 +7,10 @@
       "type": "obo:NCIT_C25625",
       "qualified_association": [
         {
-          "had_role": [
+          "object": "exthisds:#gituser_doe@example.com",
+          "had_roles": [
             "marcrel:aut"
-          ],
-          "agent": "exthisds:#gituser_doe@example.com"
+          ]
         }
       ],
       "ended_at": "2001-02-28T18:27:04+02:00"
@@ -21,10 +21,10 @@
       "type": "obo:NCIT_C42882",
       "qualified_association": [
         {
-          "had_role": [
+          "object": "exthisds:#gituser_doe@example.com",
+          "had_roles": [
             "marcrel:cre"
-          ],
-          "agent": "exthisds:#gituser_doe@example.com"
+          ]
         }
       ],
       "was_informed_by": [
@@ -67,11 +67,9 @@
   "schema_type": "dldist:Resource",
   "qualified_derivation": [
     {
-      "had_role": [
+      "object": "https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054",
+      "had_roles": [
         "owl:priorVersion"
-      ],
-      "entity": [
-        "https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054"
       ],
       "schema_type": "dlprov:Derivation",
       "had_activity": "obo:NCIT_C25446"

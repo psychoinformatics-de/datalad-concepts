@@ -40,4 +40,4 @@ has_part:
     - https://github.com/datalad-datasets/machinelearning-books.git
 qualified_part:
   name: README.md
-  entity: gitsha:f776e30f386b83e13196eab6445f30d3ab54c155
+  object: gitsha:f776e30f386b83e13196eab6445f30d3ab54c155

@@ -5,11 +5,11 @@
   "qualified_part": [
     {
       "name": "table.csv",
-      "entity": "https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv"
+      "object": "https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv"
     },
     {
       "name": "index.html",
-      "entity": "https://concepts.datalad.org/ns/gitsha/e12e9505cff5417f594d719b99720b4c39d86434"
+      "object": "https://concepts.datalad.org/ns/gitsha/e12e9505cff5417f594d719b99720b4c39d86434"
     }
   ],
   "@type": "Distribution"

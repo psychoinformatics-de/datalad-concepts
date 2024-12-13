@@ -1,5 +1,0 @@
-# Declare (any number of) topics for any number of entities
-entity: 
-  - https://en.wikipedia.org/wiki/Vulcan_(Star_Trek)#Mind_melds
-had_role:
-  - dlprov:is_about

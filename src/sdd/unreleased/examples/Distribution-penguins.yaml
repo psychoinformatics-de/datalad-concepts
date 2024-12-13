@@ -33,11 +33,11 @@ has_part:
     media_type: text/csv
 qualified_part:
   - name: adelie.csv
-    entity: exthisdsver:./adelie.csv
+    object: exthisdsver:./adelie.csv
   - name: gentoo.csv
-    entity: exthisdsver:./gentoo.csv
+    object: exthisdsver:./gentoo.csv
   - name: chinstrap.csv
-    entity: exthisdsver:./chinstrap.csv
+    object: exthisdsver:./chinstrap.csv
 #
 # relation to contextual entities
 is_distribution_of: exthisdsver:#
@@ -88,17 +88,17 @@ relation:
       - agent: https://ror.org/01j7nq853
         had_role:
           - marcrel:sht
-    qualified_relation:
+    qualified_relations:
       - had_role:
           - schema:funding
-        entity:
+        object:
           - exthisds:#nsf0217282
           - exthisds:#nsf0823101
           - exthisds:#nsf0741351
       - had_role:
           - CiTO:citesAsAuthority
           - CiTO:isCitedAsDataSourceBy
-        entity: 
+        object: 
           - exthisds:#gormanetal
     same_as:
       - https://doi.org/10.5281/zenodo.3960218

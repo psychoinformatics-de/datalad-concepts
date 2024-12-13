@@ -1,7 +1,7 @@
-schema: src/prov/unreleased.yaml
-target_class: EntityInfluence
+schema: src/roles/unreleased.yaml
+target_class: Role
 data_sources:
-  - src/prov/unreleased/examples/EntityInfluence-std.yaml
+  - src/roles/unreleased/examples/Role-01-minimal.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -7,9 +7,8 @@ relation:
   - id:  https://ror.org/018mejw64
     schema_type: dldist:Organization
     name: Deutsche Forschungsgemeinschaft
-qualified_relation:
-  - entity:
-      - https://gepris.dfg.de/gepris/projekt/431549029
+qualified_relations:
+  - object: https://gepris.dfg.de/gepris/projekt/431549029
     had_role:
       - schema:funding
 was_attributed_to:
