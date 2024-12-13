@@ -2,17 +2,47 @@ id: https://concepts.datalad.org/s/prov/unreleased
 name: prov-schema
 version: UNRELEASED
 status: bibo:status/draft
-title: Schema for a generic data provenance annotation
+title: Schema for a generic (data) provenance annotation
 description: |
-  This schema builds on the [Thing schema](https://concepts.datalad.org/s/thing), and diversifies it to capture the key provenance concepts `Agent`, `Activity`, `Entity` and their relationships.
-  It does that by drawing on (a subset) of the PROV data model [PROV-DM](https://www.w3.org/TR/prov-dm).
+  This schema builds on the [Thing
+  schema](https://concepts.datalad.org/s/thing), and diversifies it to capture
+  the key provenance concepts [`Agent`](Agent), [`Activity`](Activity),
+  [`Entity`](Entity), and their relationships.  It does that by drawing on (a
+  subset) of the PROV data model [PROV-DM](https://www.w3.org/TR/prov-dm).
 
-  Central paradigm of the schema is the [qualified relation pattern](https://patterns.dataincubator.org/book/qualified-relation.html).
-  The three `Thing` derived key concepts `Agent`, `Activity`, and `Entity` build on the `Thing` slot `relation` (symmetric property) for **inline declaration** of related things, and extend the basic means of qualifying a relationship via `is_characterized_by` with provenance specific slots and corresponding association classes. For example:
+  Central paradigm of the schema is the [qualified relation
+  pattern](https://patterns.dataincubator.org/book/qualified-relation.html).
+  The three [`Thing`](Thing) derived key concepts `Agent`, `Activity`, and
+  `Entity` build on the `Thing` slot `relations` (symmetric property) for
+  **inline declaration** of related things, and extend the basic means of
+  qualifying a relationship via [`is_characterized_by`](is_characterized_by)
+  and with provenance specific slots, and
+  [`qualified_relations`](qualified_relations) for declaring the roles of
+  related things.
  
-  - `qualified_relations`: for an `EntityInfluence` on an `Entity`
-  - `qualified_association`: for an `AgentInfluence` on an `Activity`
-  - `qualified_attribution`: for an `AgentInfluence` on an `Entity`
+  Specifically the latter approach takes the place of all of the various
+  `qualified*` properties defined in `PROV`. Rather than supporting association
+  classes like `prov:Derivation` or `prov:Generation`, such relationships are
+  annotated by linking to things via slots like
+  [`was_derived_from`](was_derived_from) or
+  [`was_generated_by`](was_generated_by), and characterizing the relationship
+  via [`qualified_relations`](qualified_relations), and a (custom)
+  [`Role`](Role) declaration.
+ 
+  The schema is entity-centric, meaning that entity properties are preferred
+  over activity properties expressing the same (inverse) relationship. For
+  example, an entity's [`was_generated_by`](was_generated_by) is implemented,
+  but not an activity's `generated`.
+
+  With [`Person`](Person), [`Organization`](Organization), and
+  [`SoftwareAgent`](SoftwareAgent), the three essential [`Agent`](Agent) types
+  included in `PROV` are supported. However, these classes provide no
+  additional slots over their base class. Their purpose is only semantic
+  differentiation.
+
+  A custom CURIE prefix `email:` is defined and emitted to allow for using
+  emails as suitable schema identifiers for an email address (e.g.,
+  `email:me@example.com`).
 
   The schema definition is available as
 
@@ -27,141 +57,47 @@ license: MIT
 
 prefixes:
   bibo: http://purl.org/ontology/bibo/
-  CiTO: http://purl.org/spar/cito/
-  dcat: http://www.w3.org/ns/dcat#
-  dcterms: http://purl.org/dc/terms/
-  dctypes: http://purl.org/dc/dcmitype/
-  dlco: https://concepts.datalad.org/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlthing: https://concepts.datalad.org/s/thing/unreleased/
-  dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
-  gitsha: https://concepts.datalad.org/ns/gitsha/
   linkml: https://w3id.org/linkml/
-  obo: http://purl.obolibrary.org/obo/
-  owl: http://www.w3.org/2002/07/owl#
-  pav: http://purl.org/pav/
   prov: http://www.w3.org/ns/prov#
-  schema: http://schema.org/
-  skos: http://www.w3.org/2004/02/skos/core#
-  sio: http://semanticscience.org/resource/
-  spdx: http://spdx.org/rdf/terms#
-  licenses: http://spdx.org/licenses/
-  marcrel: http://id.loc.gov/vocabulary/relators/
-  # example convenience namespaces that make it possible to not think about
-  # a dedicated distribution/dataset/dataset-version-unqiue namespace.
-  # the prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
-  #
-  # the three following prefixes are examples. a use case specific derived
-  # schema needs to define its own, differently named and defined namespaces.
-  #
-  # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
-  # to keep vocabulary and entities local to this scope
-  exthisns: https://example.org/ns/
-  # a custom namespace that is unique to a particular dataset, but common
-  # across all versions of it. It could be nested inside the `thisns` namespace
-  exthisds: https://example.org/ns/dataset/
-  # a custom namespace that is unique to a particular version of a single
-  # dataset. It could be nested inside the `thisds` namespace
-  exthisdsver: https://example.org/ns/datasetversion/
+  # declare a namespace for emails, such that they can be defined as a curie
+  # e.g.: email:me@example.com
+  # -> https://concepts.datalad.org/ns/email/me@example.com
+  email: https://concepts.datalad.org/ns/email/
 
 default_prefix: dlprov
 
 emit_prefixes:
-  - CiTO
-  - dcat
   - dlprov
-  - licenses
-  - marcrel
-  - obo
   - prov
 
 imports:
   - ../thing/unreleased
+  - ../identifiers/unreleased
   - ../roles/unreleased
-
-types:
-  W3CISO8601:
-    uri: https://www.w3.org/TR/NOTE-datetime
-    description:
-      W3C variant/subset of IS08601 for specifying date(times).
-      Supported are
-      - YYYY (eg 1997)
-      - YYYY-MM (eg 1997-07)
-      - YYYY-MM-DD (eg 1997-07-16)
-      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
-      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
-      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
-      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
-    typeof: string
-    pattern: '^(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
-    see_also:
-      - https://www.w3.org/TR/NOTE-datetime
+  - ../spatial/unreleased
+  - ../temporal/unreleased
 
 
 slots:
-  ended_at:
-    slot_uri: dlprov:ended_at
+  acted_on_behalf_of:
+    slot_uri: dlprov:acted_on_behalf_of
     description: >-
-      End is when an activity is deemed to have been ended by an entity,
-      known as trigger. The activity no longer exists after its end.
-      Any usage, generation, or invalidation involving an activity
-      precedes the activity's end.
-    domain: Activity
-    range: W3CISO8601
+      Assign the authority and responsibility for carrying out a specific
+      activity of the subject agent to another agent.
+    domain: Agent
+    range: Agent
+    inlined: false
+    multivalued: true
     exact_mappings:
-      - prov:endedAtTime
-
-  had_activity:
-    slot_uri: dlprov:had_activity
-    description: >-
-      The function of an entity or agent with respect to another entity or
-      resource.
-    range: Activity
-    exact_mappings:
-      - prov:hadActivity
-
-  qualified_association:
-    slot_uri: dlprov:qualified_association
-    description: >-
-      Assignment of responsibility to an agent for an activity, indicating
-      that the agent had a role in the activity.
-    exact_mappings:
-      - prov:qualifiedAssociation
-    range: AgentInfluence
-
-  qualified_attribution:
-    slot_uri: dlprov:qualified_attribution
-    description: >-
-      Attribution is the ascribing of an entity to an agent.
-    exact_mappings:
-      - prov:qualifiedAttribution
-    range: Attribution
-
-  qualified_derivation:
-    slot_uri: dlprov:qualified_derivation
-    description: >-
-      A transformation of an entity into another, an update of an entity
-      resulting in a new one, or the construction of a new entity based
-      on a pre-existing entity.
-    exact_mappings:
-      - prov:qualifiedDerivation
-    range: Derivation
-
-  was_influenced_by:
-    slot_uri: dlprov:was_influenced_by
-    description: >-
-      The object had an effect on the character, development, or behavior of
-      the subject.
-    domain: Thing
-    range: Thing
-    exact_mappings:
-      - prov:wasInfluencedBy
+      - prov:actedOnBehalfOf
 
   was_associated_with:
     slot_uri: dlprov:was_associated_with
-    is_a: was_influenced_by
     description: >-
       An activity association is an assignment of responsibility to an agent
       for an activity, indicating that the agent had a role in the activity.
@@ -169,59 +105,87 @@ slots:
       by the agent to achieve some goals in the context of this activity.
     domain: Activity
     range: Agent
+    inlined: false
+    multivalued: true
     exact_mappings:
       - prov:wasAssociatedWith
 
   was_attributed_to:
     slot_uri: dlprov:was_attributed_to
-    is_a: was_influenced_by
     description: >-
       Attribution is the ascribing of an entity to an agent.
     domain: Entity
     range: Agent
+    inlined: false
+    multivalued: true
     exact_mappings:
       - prov:wasAttributedTo
 
   was_derived_from:
     slot_uri: dlprov:was_derived_from
-    is_a: was_influenced_by
     description: >-
       Derivation is a transformation of an entity into another,
       an update of an entity resulting in a new one, or the
       construction of a new entity based on a pre-existing entity.
     domain: Entity
     range: Entity
+    inlined: false
+    multivalued: true
     exact_mappings:
       - prov:wasDerivedFrom
 
   was_generated_by:
     slot_uri: dlprov:was_generated_by
-    is_a: was_influenced_by
     description: >-
       Generation is the completion of production of a new entity by an activity.
       This entity did not exist before generation and becomes available for usage
       after this generation.
     domain: Entity
     range: Activity
+    inlined: false
+    multivalued: true
     exact_mappings:
       - prov:wasAttributedTo
 
   was_informed_by:
     slot_uri: dlprov:was_informed_by
-    is_a: was_influenced_by
     description: >-
       Communication is the exchange of an entity by two activities, one activity
       using the entity generated by the other.
     domain: Activity
     range: Activity
+    inlined: false
+    multivalued: true
     exact_mappings:
       - prov:wasInformedBy
 
 
 classes:
-  #
-  # activities
-  #
+  Agent:
+    class_uri: dlprov:Agent
+    is_a: Thing
+    description: >-
+      Something that bears some form of responsibility for an activity
+      taking place, for the existence of an entity, or for another
+      agent's activity.
+    slots:
+      - acted_on_behalf_of
+      - at_location
+      - identifiers
+      - qualified_relations
+    exact_mappings:
+      - foaf:Agent
+      - prov:Agent
+    comments:
+      - >-
+        This class does not support even a basic `name` slot, because
+        depending on the context, there may not be a suitable name,
+        or one name would not be enough. If no specialized derived
+        class is available in a context where a `name` or similar
+        attribute is desired, it can be expressed via the
+        `has_attributes` slot.
+
+
   Activity:
     class_uri: dlprov:Activity
     is_a: Thing
@@ -230,47 +194,25 @@ classes:
       upon or with entities; it may include consuming, processing,
       transforming, modifying, relocating, using, or generating entities.
     slots:
-      - qualified_association
+      - at_location
+      - ended_at
+      - identifiers
+      - qualified_relations
+      - started_at
       - was_associated_with
       - was_informed_by
-      #  - at_location
-      #  - started_at
-      - ended_at
-    slot_usage:
-      was_associated_with:
-        multivalued: true
-        inlined: false
-        range: Agent
-      was_informed_by:
-        multivalued: true
-        inlined: false
-        range: Activity
-      qualified_association:
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        range: AgentInfluence
     exact_mappings:
       - prov:Activity
+    comments:
+      - >-
+        This class does not support even a basic `name` slot, because
+        depending on the context, there may not be a suitable name,
+        or one name would not be enough. If no specialized derived
+        class is available in a context where a `name` or similar
+        attribute is desired, it can be expressed via the
+        `has_attributes` slot.
 
 
-  #
-  # agents
-  #
-  Agent:
-    class_uri: dlprov:Agent
-    is_a: Thing
-    description: >-
-      Something that bears some form of responsibility for an activity
-      taking place, for the existence of an entity, or for another
-      agent's activity.
-    exact_mappings:
-      - foaf:Agent
-      - prov:Agent
-
-  #
-  # entities
-  #
   Entity:
     class_uri: dlprov:Entity
     is_a: Thing
@@ -278,94 +220,51 @@ classes:
       A physical, digital, conceptual, or other kind of thing with some
       fixed aspects; entities may be real or imaginary.
     slots:
-      - qualified_attribution
-      - qualified_derivation
+      - identifiers
       - qualified_relations
       - was_attributed_to
       - was_derived_from
       - was_generated_by
-    slot_usage:
-      qualified_attribution:
-        range: Attribution
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-      qualified_derivation:
-        range: Derivation
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-      qualified_relations:
-        range: EntityInfluence
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-      was_attributed_to:
-        multivalued: true
-        inlined: false
-        range: Agent
-      was_derived_from:
-        range: Entity
-        multivalued: true
-        inlined: false
-      was_generated_by:
-        multivalued: true
-        inlined: false
-        range: Activity
     exact_mappings:
       - prov:Entity
 
-  #
-  # basic relations
-  #
-  AgentInfluence:
-    class_uri: dlprov:AgentInfluence
-    is_a: Relationship
+  Person:
+    class_uri: dlprov:Person
+    is_a: Agent
     description: >-
-      Capacity of an agent to have an effect on the character, development,
-      or behavior of another Entity, Agent, or Activity
-    slot_usage:
-      object:
-        range: Agent
+      Person agents are people, alive, dead, or fictional.
     exact_mappings:
-      - prov:AgentInfluence
+      - foaf:Person
+      - prov:Person
+    comments:
+      - This class does not offer common slots like "affiliation" or "email".
+        Instead, this information should be expressed as `qualified_relations`
+        to other things with a role characterization. An affiliation can be
+        expressed as a relation to an organization, and the role that the
+        organization has for the person (e.g., "employer").
 
-  Attribution:
-    class_uri: dlprov:Attribution
-    is_a: AgentInfluence
+  Organization:
+    class_uri: dlprov:Organization
+    is_a: Agent
     description: >-
-      Attribution is the ascribing of an entity to an agent.
+      A social or legal instititution such as a company, a society,
+      or a university.
     exact_mappings:
-      - prov:Attribution
-    broad_mappings:
-      - prov:AgentInfluence
-      - prov:Influence
+      - foaf:Organization
+      - prov:Organization
+    comments:
+      - This class does not offer common slots like "address" or "contact".
+        Instead, this information should be expressed as `qualified_relations`
+        to other things with a role-characterization. An address can be
+        expressed as a relation to a location, and the role this location
+        has for the organization (e.g., "main office"). Likewise, a contact
+        can be describe as a relation to a person, and the role that this
+        person fulfills for the organization (e.g., "spokesperson").
 
-  EntityInfluence:
-    class_uri: dlprov:EntityInfluence
-    is_a: Relationship
+  SoftwareAgent:
+    class_uri: dlprov:SoftwareAgent
+    is_a: Agent
     description: >-
-      Capacity of an entity to have an effect on the character, development,
-      or behavior of another.
-    slots:
-      # TODO why do we need that? I doubt this makes sense
-      - schema_type
-    slot_usage:
-      object:
-        range: Entity
+      Running software.
     exact_mappings:
-      - prov:EntityInfluence
-    broad_mappings:
-      - prov:Influence
-
-  Derivation:
-    class_uri: dlprov:Derivation
-    is_a: EntityInfluence
-    description: >-
-      Transformation of an entity into another, an update of an entity
-      resulting in a new one, or the construction of a new entity based
-      on a pre-existing entity.
-    slots:
-      - had_activity
-    exact_mappings:
-      - prov:Derivation
+      - prov:SoftwareAgent
