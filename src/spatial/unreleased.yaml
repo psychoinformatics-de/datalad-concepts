@@ -35,9 +35,9 @@ emit_prefixes:
 default_prefix: dlspatial
 
 imports:
-  - ../identifiers/unreleased
-  - ../thing/unreleased
-  - ../roles/unreleased
+  - dlschemas:identifiers/unreleased
+  - dlschemas:thing/unreleased
+  - dlschemas:roles/unreleased
 
 
 slots:

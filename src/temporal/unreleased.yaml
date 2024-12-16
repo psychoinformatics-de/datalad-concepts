@@ -31,9 +31,9 @@ default_prefix: dltemporal
 
 imports:
   - linkml:types
-  - ../thing/unreleased
-  - ../identifiers/unreleased
-  - ../roles/unreleased
+  - dlschemas:thing/unreleased
+  - dlschemas:identifiers/unreleased
+  - dlschemas:roles/unreleased
 
 types:
   W3CISO8601:
