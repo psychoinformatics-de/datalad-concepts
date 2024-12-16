@@ -33,7 +33,7 @@ license: MIT
 prefixes:
   bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org
+  dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
   foaf: http://xmlns.com/foaf/0.1/
