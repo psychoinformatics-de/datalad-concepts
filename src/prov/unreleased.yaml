@@ -81,11 +81,11 @@ emit_prefixes:
   - prov
 
 imports:
-  - ../thing/unreleased
-  - ../identifiers/unreleased
-  - ../roles/unreleased
-  - ../spatial/unreleased
-  - ../temporal/unreleased
+  - dlschemas:thing/unreleased
+  - dlschemas:identifiers/unreleased
+  - dlschemas:roles/unreleased
+  - dlschemas:spatial/unreleased
+  - dlschemas:temporal/unreleased
 
 
 slots:
