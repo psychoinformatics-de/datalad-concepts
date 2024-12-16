@@ -1,0 +1,6 @@
+{
+  "id": "https://example.com/triassic",
+  "schema_type": "dltemporal:InstanteneousEvent",
+  "at_time": "-201000000",
+  "@type": "InstanteneousEvent"
+}
