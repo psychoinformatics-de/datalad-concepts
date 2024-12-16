@@ -27,7 +27,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlidentifiers: https://concepts/datalad.org/s/identifiers/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
 

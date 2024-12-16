@@ -58,9 +58,9 @@ prefixes:
   dctypes: http://purl.org/dc/dcmitype/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dldist: https://concepts/datalad.org/s/distribution/unreleased/
-  dlprov: https://concepts/datalad.org/s/prov/unreleased/
-  dlthing: https://concepts/datalad.org/s/thing/unreleased/
+  dldist: https://concepts.datalad.org/s/distribution/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
   # custom prefix to use Git's SHA identifiers as schema identifiers

@@ -40,7 +40,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlthing: https://concepts/datalad.org/s/thing/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
