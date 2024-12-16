@@ -25,7 +25,9 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
-  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlco: https://concepts.datalad.org/
+  dlschemas: https://concepts.datalad.org/s/
+  dlidentifiers: https://concepts/datalad.org/s/identifiers/unreleased/
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
 

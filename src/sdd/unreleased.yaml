@@ -20,18 +20,19 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
-  annex-uuid: https://concepts.datalad.org/ns/annex-uuid/
-  annex-key: https://concepts.datalad.org/ns/annex-key/
+  annex-uuid: dlco:ns/annex-uuid/
+  annex-key: dlco:ns/annex-key/
   bibo: http://purl.org/ontology/bibo/
   CiTO: http://purl.org/spar/cito/
   dcat: http://www.w3.org/ns/dcat#
-  datalad-ds: https://concepts.datalad.org/ns/dataset-uuid/
+  datalad-ds: dlco:ns/dataset-uuid/
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
-  dlthing: https://concepts.datalad.org/s/thing/unreleased/
-  dldist: https://concepts.datalad.org/s/distribution/unreleased/
-  dlprov: https://concepts.datalad.org/s/prov/unreleased/
-  dlsdd: https://concepts.datalad.org/s/sdd/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthing: https://concepts/datalad.org/s/thing/unreleased/
+  dldist: https://concepts/datalad.org/s/distribution/unreleased/
+  dlprov: https://concepts/datalad.org/s/prov/unreleased/
+  dlsdd: https://concepts/datalad.org/s/sdd/unreleased/
   dex: https://example.org/ns/ex/terms/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
