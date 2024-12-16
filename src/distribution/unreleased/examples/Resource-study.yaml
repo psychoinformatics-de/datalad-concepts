@@ -46,7 +46,7 @@ relations:
             value: https://eudract.ema.europa.eu
     # registered clinical trial
     type: obo:NCIT_C71104
-    qualified_association:
+    qualified_relations:
       - object: exthisds:#s001
         had_roles:
           # study participant

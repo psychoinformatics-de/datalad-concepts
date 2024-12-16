@@ -1,0 +1,12 @@
+# The Person class does not define even basic attribute slots.
+# But common and exotic ones can be expressed nevertheless
+id: https://orcid.org/0000-0001-6398-6370
+acted_on_behalf_of:
+  - https://ror.org/02nv7yv05
+has_attributes:
+  - predicate: foaf:name
+    value: Michael Hanke
+  # has biosafety level
+  # "minimal potential hazard to laboratory personnel and the environment"
+  - predicate: http://www.bioassayontology.org/bao#BAO_0002826
+    value: "1"

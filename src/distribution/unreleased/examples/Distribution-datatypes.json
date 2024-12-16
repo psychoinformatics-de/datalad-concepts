@@ -12,8 +12,7 @@
       "object": "obo:NCIT_C95650",
       "had_roles": [
         "obo:NCIT_C42645"
-      ],
-      "schema_type": "dlprov:EntityInfluence"
+      ]
     }
   ],
   "@type": "Distribution"

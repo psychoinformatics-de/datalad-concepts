@@ -1,9 +1,0 @@
-schema: src/prov/unreleased.yaml
-target_class: AgentInfluence
-data_sources:
-  - src/prov/unreleased/examples/AgentInfluence-std.yaml
-plugins:
-  JsonschemaValidationPlugin:
-    closed: true
-    include_range_class_descendants: false
-  RecommendedSlotsPlugin:

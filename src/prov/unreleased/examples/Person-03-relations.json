@@ -1,0 +1,19 @@
+{
+  "id": "https://example.com/ns/people/jane",
+  "schema_type": "dlprov:Person",
+  "qualified_relations": [
+    {
+      "object": "email:jane@example.com",
+      "had_roles": [
+        "http://schema.org/email"
+      ]
+    },
+    {
+      "object": "geo:-19.738897,63.453072?z=19",
+      "had_roles": [
+        "obo:NCIT_C17556"
+      ]
+    }
+  ],
+  "@type": "Person"
+}

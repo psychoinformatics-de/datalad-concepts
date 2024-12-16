@@ -1,25 +1,26 @@
 {
-  "id": "https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
+  "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
   "relations": [
     {
-      "id": "https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
+      "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
       "schema_type": "dlprov:Activity",
       "type": "obo:NCIT_C25625",
-      "qualified_association": [
+      "ended_at": "2001-02-28T18:27:04+02:00",
+      "qualified_relations": [
         {
           "object": "exthisds:#gituser_doe@example.com",
           "had_roles": [
             "marcrel:aut"
           ]
         }
-      ],
-      "ended_at": "2001-02-28T18:27:04+02:00"
+      ]
     },
     {
-      "id": "https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
+      "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
       "schema_type": "dlprov:Activity",
       "type": "obo:NCIT_C42882",
-      "qualified_association": [
+      "ended_at": "2002-05-30T09:30:10+06:00",
+      "qualified_relations": [
         {
           "object": "exthisds:#gituser_doe@example.com",
           "had_roles": [
@@ -28,9 +29,8 @@
         }
       ],
       "was_informed_by": [
-        "https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring"
-      ],
-      "ended_at": "2002-05-30T09:30:10+06:00"
+        "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring"
+      ]
     }
   ],
   "has_attributes": [
@@ -65,18 +65,19 @@
     }
   ],
   "schema_type": "dldist:Resource",
-  "qualified_derivation": [
+  "qualified_relations": [
     {
-      "object": "https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054",
+      "object": "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054",
       "had_roles": [
         "owl:priorVersion"
-      ],
-      "schema_type": "dlprov:Derivation",
-      "had_activity": "obo:NCIT_C25446"
+      ]
     }
   ],
+  "was_derived_from": [
+    "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"
+  ],
   "was_generated_by": [
-    "https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing"
+    "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing"
   ],
   "is_version_of": "https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854",
   "version": "8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",

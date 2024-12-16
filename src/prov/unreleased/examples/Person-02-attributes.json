@@ -1,0 +1,20 @@
+{
+  "id": "https://orcid.org/0000-0001-6398-6370",
+  "has_attributes": [
+    {
+      "predicate": "foaf:name",
+      "schema_type": "dlthing:AttributeSpecification",
+      "value": "Michael Hanke"
+    },
+    {
+      "predicate": "http://www.bioassayontology.org/bao#BAO_0002826",
+      "schema_type": "dlthing:AttributeSpecification",
+      "value": "1"
+    }
+  ],
+  "schema_type": "dlprov:Person",
+  "acted_on_behalf_of": [
+    "https://ror.org/02nv7yv05"
+  ],
+  "@type": "Person"
+}

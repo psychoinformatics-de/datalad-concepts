@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
+id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
 # link to datalad dataset
 is_version_of: https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854
 has_attributes:
@@ -24,15 +24,11 @@ has_attributes:
 # this only *single* version label we can have without making additional
 # assumptions is the commit gitsha
 version: 8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
-qualified_derivation:
+was_derived_from:
+  - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
+qualified_relations:
   # parent commit(s)
-  - object: https://concepts.datalad.org/ns/gitsha/a52963ce19a3e3628e9976555ffc8c422b29f054
-    # "change", ie. unknown what was done
-    # there are plenty of terms to drill down on the nature
-    # of the derivation
-    # - obo:NCIT_C64266: merge
-    # - obo:NCIT_C64911: add
-    had_activity: obo:NCIT_C25446
+  - object: gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
     had_roles:
       - owl:priorVersion
 relations:
@@ -40,29 +36,29 @@ relations:
   # this is modeled as a dedicated action so that the
   # author time can be captured as an independent property.
   # otherwise the author role could be added above
-  - id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
     schema_type: dlprov:Activity
     # "preparation"
     type: obo:NCIT_C25625
     ended_at: "2001-02-28T18:27:04+02:00"
-    qualified_association:
+    qualified_relations:
       # author of the commit
       - object: exthisds:#gituser_doe@example.com
         had_roles:
           - marcrel:aut
   # commit activity
-  - id: https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
     schema_type: dlprov:Activity
     # go for activity type: "release", but could also be
     # "label as such" (obo:NCIT_C64662)
     type: obo:NCIT_C42882
     ended_at: "2002-05-30T09:30:10+06:00"
-    qualified_association:
+    qualified_relations:
       # creator of the commit
       - object: exthisds:#gituser_doe@example.com
         had_roles:
           - marcrel:cre
     was_informed_by:
-      - https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+      - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
 was_generated_by:
-  - https://concepts.datalad.org/ns/gitsha/8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+  - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing

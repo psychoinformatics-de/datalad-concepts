@@ -62,6 +62,8 @@ prefixes:
   dlthing: https://concepts.datalad.org/s/thing/unreleased/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
+  # custom prefix to use Git's SHA identifiers as schema identifiers
+  gitsha: https://concepts.datalad.org/ns/gitsha/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
@@ -97,6 +99,7 @@ emit_prefixes:
   - CiTO
   - dcat
   - dldist
+  - gitsha
   - licenses
   - marcrel
   - obo
@@ -442,37 +445,6 @@ slots:
 
 
 classes:
-  #
-  # agents
-  #
-  Person:
-    class_uri: dldist:Person
-    is_a: Agent
-    description: >-
-      Person agents are people.
-    slots:
-      - address
-      - affiliation
-      - email
-    slot_usage:
-      affiliation:
-        multivalued: true
-    exact_mappings:
-      - foaf:Person
-      - prov:Person
-
-  Organization:
-    class_uri: dldist:Organization
-    is_a: Agent
-    description: >-
-      A social or legal instititution such as a company, a society,
-      or a university.
-    slots:
-      - address
-    exact_mappings:
-      - foaf:Organization
-      - prov:Organization
-
   #
   # entities
   #
