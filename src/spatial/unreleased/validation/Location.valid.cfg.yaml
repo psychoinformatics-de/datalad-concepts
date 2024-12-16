@@ -1,0 +1,9 @@
+schema: src/spatial/unreleased.yaml
+target_class: Location
+data_sources:
+  - src/spatial/unreleased/examples/Location-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

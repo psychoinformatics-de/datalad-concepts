@@ -1,0 +1,67 @@
+id: https://concepts.datalad.org/s/spatial/unreleased
+name: spatial-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for characterizing spatial concepts
+description: |
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+  # disambiguate a GEO URI from a curie prefix
+  geo: "geo:"
+
+emit_prefixes:
+  - geo
+
+default_prefix: dlspatial
+
+imports:
+  - ../identifiers/unreleased
+  - ../thing/unreleased
+  - ../roles/unreleased
+
+
+slots:
+  at_location:
+    slot_uri: dlspatial:at_location
+    description: >-
+      Associate the subject with a location. This can be a geographic place,
+      or a place in a directory, or table.
+    range: Location
+    inlined: False
+    multivalued: False
+    exact_mappings:
+      - prov:atLocation
+
+
+classes:
+  Location:
+    class_uri: dlspatial:Location
+    is_a: Thing
+    description: >-
+      A location can be an identifiable geographic place (ISO 19112), but it
+      can also be a non-geographic place such as a directory, row, or column.
+      As such, there are numerous ways in which location can be expressed, such
+      as by a coordinate, address, landmark, and so forth.
+    slots:
+      - identifiers
+      - qualified_relations
+    exact_mappings:
+      - prov:Location

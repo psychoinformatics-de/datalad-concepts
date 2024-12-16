@@ -1,0 +1,5 @@
+{
+  "id": "http://dbpedia.org/resource/Madrid",
+  "schema_type": "dlspatial:Location",
+  "@type": "Location"
+}

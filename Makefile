@@ -17,6 +17,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/thing/unreleased \
 	build/linkml-docs/s/roles/unreleased \
+	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
@@ -57,6 +58,7 @@ check-models: \
 	checkmodel/properties/unreleased \
 	checkmodel/thing/unreleased \
 	checkmodel/roles/unreleased \
+	checkmodel/spatial/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/distribution/unreleased \
@@ -93,6 +95,8 @@ check-validation: \
 	checkvalidation/thing/unreleased \
 	convertexamples/roles/unreleased \
 	checkvalidation/roles/unreleased \
+	convertexamples/spatial/unreleased \
+	checkvalidation/spatial/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
 	convertexamples/identifiers/unreleased \
@@ -119,6 +123,7 @@ checkinvalid/%: src/%/validation src/%.yaml
 convert-examples: \
 	convertexamples/thing/unreleased \
 	convertexamples/roles/unreleased \
+	convertexamples/spatial/unreleased \
 	convertexamples/prov/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/distribution/unreleased \
