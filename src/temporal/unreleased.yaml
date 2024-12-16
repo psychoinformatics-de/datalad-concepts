@@ -1,0 +1,97 @@
+id: https://concepts.datalad.org/s/temporal/unreleased
+name: temporal-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for characterizing temporal concepts
+description: |
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  linkml: https://w3id.org/linkml/
+  prov: http://www.w3.org/ns/prov#
+
+default_prefix: dltemporal
+
+imports:
+  - linkml:types
+  - ../thing/unreleased
+  - ../identifiers/unreleased
+  - ../roles/unreleased
+
+types:
+  W3CISO8601:
+    uri: https://www.w3.org/TR/NOTE-datetime
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
+    typeof: string
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
+    see_also:
+      - https://www.w3.org/TR/NOTE-datetime
+
+
+slots:
+  at_time:
+    slot_uri: dltemporal:at_time
+    description: >-
+      Time at which an instanteneous event takes place or took place.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:atTime
+
+  started_at:
+    slot_uri: dltemporal:started_at
+    description: >-
+      Start is when an activity is deemed to have been started by some trigger.
+      The activity did not exist before its start. Any usage,
+      generation, or invalidation involving an activity follows the activity's
+      start.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:startedAtTime
+
+  ended_at:
+    slot_uri: dltemporal:ended_at
+    description: >-
+      End is when an activity is deemed to have been ended by some trigger.
+      The activity no longer exists after its end.
+      Any usage, generation, or invalidation involving an activity
+      precedes the activity's end.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:endedAtTime
+
+
+classes:
+  InstanteneousEvent:
+    is_a: Thing
+    description: >-
+      A moment of a transition from one particular state of the world to another.
+    slots:
+      - at_time
+      - identifiers
+      - qualified_relations
+    exact_mappings:
+      - prov:InstanteneousEvent

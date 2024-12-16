@@ -1,0 +1,6 @@
+{
+  "id": "https://example.com/min",
+  "schema_type": "dltemporal:InstanteneousEvent",
+  "at_time": "1984-05-14T15:32",
+  "@type": "InstanteneousEvent"
+}

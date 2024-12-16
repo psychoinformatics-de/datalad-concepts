@@ -1,0 +1,16 @@
+schema: src/temporal/unreleased.yaml
+target_class: InstanteneousEvent
+data_sources:
+  - src/temporal/unreleased/examples/InstanteneousEvent-01-minimal.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-02-year.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-03-month.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-04-day.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-05-min.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-06-sec.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-07-subsec.yaml
+  - src/temporal/unreleased/examples/InstanteneousEvent-08-BCyear.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

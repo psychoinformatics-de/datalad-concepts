@@ -9,6 +9,7 @@ nav:
     - Identifiers (unreleased): s/identifiers/unreleased/index.md
     - Roles (unreleased): s/roles/unreleased/index.md
     - Spatial (unreleased): s/spatial/unreleased/index.md
+    - Temporal (unreleased): s/temporal/unreleased/index.md
     - Provenance (unreleased): s/prov/unreleased/index.md
     - Distribution (unreleased): s/distribution/unreleased/index.md
     - DataLad dataset (unreleased): s/datalad-dataset/unreleased/index.md
@@ -23,6 +24,7 @@ plugins:
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/roles/index.md': 's/roles/unreleased/index.md'
           's/spatial/index.md': 's/spatial/unreleased/index.md'
+          's/temporal/index.md': 's/temporal/unreleased/index.md'
           's/prov/index.md': 's/prov/unreleased/index.md'
           's/distribution/index.md': 's/distribution/unreleased/index.md'
           's/datalad-dataset/index.md': 's/datalad-dataset/unreleased/index.md'
