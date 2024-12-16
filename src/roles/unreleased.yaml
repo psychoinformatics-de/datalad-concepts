@@ -35,7 +35,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlroles: https://concepts/datalad.org/s/roles/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   marcrel: http://id.loc.gov/vocabulary/relators/

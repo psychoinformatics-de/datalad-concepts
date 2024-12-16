@@ -20,10 +20,10 @@ prefixes:
   bibo: http://purl.org/ontology/bibo/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatial: https://concepts/datalad.org/s/agents/unreleased/
-  dlidentifiers: https://concepts/datalad.org/s/identifiers/unreleased/
-  dlroles: https://concepts/datalad.org/s/roles/unreleased/
-  dlthing: https://concepts/datalad.org/s/thing/unreleased/
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   # disambiguate a GEO URI from a curie prefix

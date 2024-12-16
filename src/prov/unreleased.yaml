@@ -59,10 +59,10 @@ prefixes:
   bibo: http://purl.org/ontology/bibo/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlprov: https://concepts/datalad.org/s/prov/unreleased/
-  dlidentifiers: https://concepts/datalad.org/s/identifiers/unreleased/
-  dlroles: https://concepts/datalad.org/s/roles/unreleased/
-  dlthing: https://concepts/datalad.org/s/thing/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlthing: https://concepts.datalad.org/s/thing/unreleased/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/

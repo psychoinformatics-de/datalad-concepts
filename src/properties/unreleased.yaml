@@ -35,7 +35,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org
   dlschemas: https://concepts.datalad.org/s/
-  dlprops: https://concepts/datalad.org/s/properties/unreleased/
+  dlprops: https://concepts.datalad.org/s/properties/unreleased/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
