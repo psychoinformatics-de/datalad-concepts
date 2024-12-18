@@ -1,0 +1,103 @@
+id: https://concepts.datalad.org/s/shacl-propgroups/unreleased
+name: shacl-propgroups-schema
+version: UNRELEASED
+status: bibo:status/draft
+title: Schema for `PropertyGroup`s used in UI annotations of schemas
+description: |
+  This schema provides the structure of a SHACL `PropertyGroup` that can be
+  specified as the value for `sh:group` in UI annotations of slots in a LinkML
+  schema. The aim is to create a conceptual group of slots that belong together
+  in a `sh:PropertyGroup` for the purposes of user interface representation, such
+  as displaying the slots together spatially.
+
+  For more context, see: https://datashapes.org/forms.html#property-groups
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dlco: https://concepts.datalad.org/
+  dlshpg: https://concepts.datalad.org/s/shacl-propgroups/unreleased
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  linkml: https://w3id.org/linkml/
+
+emit_prefixes:
+  - dlco
+
+imports:
+  - linkml:types
+
+slots:
+  id:
+    identifier: true
+    description: >-
+      The name of the property group that should be unique within the
+      context of a given graph.
+    range: string
+  label:
+    slot_uri: rdfs:label
+    description: >-
+      The label of the property group that will be displayed as the
+      heading of a section for this property group in the user interface
+    range: string
+  order:
+    slot_uri: sh:order
+    description: >-
+      The order that a 
+    range: decimal
+  description:
+    slot_uri: rdfs:comment
+    description: >-
+      A description of the 
+    range: string
+
+classes:
+  PropertyGroup:
+    class_uri: sh:PropertyGroup
+    description: >-
+      A property group will be used by nodes in a graph (i.e. fields) via
+      `sh:group` in order to group these nodes together under a relevant category.
+      All nodes that belong to a specific property group will be rendered together
+      in the resulting UI.
+    slots:
+      - id
+      - label
+      - order
+      - description
+    slot_usage:
+      id:
+        required: true
+      label:
+        required: true
+      order:
+        required: true
+      description:
+        required: true
+    see_also:
+      - https://www.w3.org/TR/shacl/#group
+      - https://datashapes.org/forms.html#property-groups
+  Container:
+    class_uri: dlshpg:Container
+    tree_root: true
+    description: >-
+      A container class to help specify that supplied data
+      should be validated according to provided constraints
+    attributes:
+      property_groups:
+        slot_uri: dlshpg:property_groups
+        description: >-
+          The property groups supplied as a list
+        multivalued: true
+        inlined_as_list: true
+        range: PropertyGroup

@@ -1,0 +1,16 @@
+property_groups:
+  - id: dlco:ThingMixinGroup
+    label: Thing Mixin
+    order: 1
+    description: >-
+      Basic properties from the ThingMixin class
+  - id: dlco:ThingBasicGroup
+    label: Thing Basic
+    order: 0
+    description: >-
+      Basic properties from the Thing class
+  - id: dlco:ValueSpecificationMixinGroup
+    label: Value Specification Mixin
+    order: 2
+    description: >-
+      Properties from the ValueSpecificationMixin class

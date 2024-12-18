@@ -1,0 +1,9 @@
+schema: src/shacl-propgroups/unreleased.yaml
+target_class: Container
+data_sources:
+  - src/shacl-propgroups/unreleased/examples/PropertyGroups.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
