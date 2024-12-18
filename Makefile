@@ -23,6 +23,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
 	build/linkml-docs/s/datalad-dataset/unreleased \
+	build/linkml-docs/s/shacl-propgroups/unreleased \
 	build/linkml-docs/s/sdd/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	gen-doc \
@@ -65,6 +66,7 @@ check-models: \
 	checkmodel/identifiers/unreleased \
 	checkmodel/distribution/unreleased \
 	checkmodel/datalad-dataset/unreleased \
+	checkmodel/shacl-propgroups/unreleased \
 	checkmodel/sdd/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
@@ -108,7 +110,9 @@ check-validation: \
 	convertexamples/distribution/unreleased \
 	checkvalidation/distribution/unreleased \
 	convertexamples/datalad-dataset/unreleased \
-	checkvalidation/datalad-dataset/unreleased
+	checkvalidation/datalad-dataset/unreleased \
+	convertexamples/shacl-propgroups/unreleased \
+	checkvalidation/shacl-propgroups/unreleased
 #	convertexamples/sdd/unreleased \
 #	checkvalidation/sdd/unreleased
 checkvalidation/%:
@@ -133,6 +137,7 @@ convert-examples: \
 	convertexamples/identifiers/unreleased \
 	convertexamples/distribution/unreleased \
 	convertexamples/datalad-dataset/unreleased \
+	convertexamples/shacl-propgroups/unreleased \
 	convertexamples/sdd/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
