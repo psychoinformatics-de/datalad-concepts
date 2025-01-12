@@ -157,9 +157,16 @@ convertexamples/%: src/%.yaml src/%/examples
 		exit 22 ; \
 	fi
 
+imports-local:
+	@echo "Switch to local imports"
+	@sed -i -e 's,- dlschemas:\(.*/.*\)$$,- ../../src/\1,' src/*/*.yaml
+
+imports-remote:
+	@echo "Switch to remote imports"
+	@sed -i -e 's,- \.\./\.\./src/\(.*/.*\)$$,- dlschemas:\1,' src/*/*.yaml
 
 clean:
 	rm -rf build
 	rm -f *-stamp
 
-.PHONY: clean check check-models check-validation convert-examples
+.PHONY: clean check check-models check-validation convert-examples localrefs remoterefs
