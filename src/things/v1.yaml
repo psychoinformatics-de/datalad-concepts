@@ -9,10 +9,17 @@ description: |
   This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
-  - must be given a unique identifier ([`id`](id))
-  - can be further described by attributes ([`has_attributes`](has_attributes)) and   qualified relations to other things ([`is_characterized_by`](is_characterized_by)), without prescribing a particular vocabulary
-  - can be associated with a specialized schema class for enabling detailed validation and precise data transformations ([`schema_type`](schema_type)) without limiting the general expressiveness to a fixed set of classes available in any given (derived) schema.
+  - has a unique identifier ([`id`](id))
+  - can be further described by attributes ([`has_attributes`](has_attributes))
+    and qualified relations to other "things"
+    ([`is_characterized_by`](is_characterized_by)),
+    without prescribing a particular vocabulary
+  - can be associated with a specialized schema class for enabling detailed
+    validation and precise data transformations ([`schema_type`](schema_type))
+    without limiting the general expressiveness to a fixed set of classes
+    available in any given (derived) schema.
 
+  More information on this schema is available on a [dedicated page](about).
   Each class comes with dedicated examples that exemplify its use. A good
   starting point are the [examples of the `Thing`](Thing#examples) class.
 
