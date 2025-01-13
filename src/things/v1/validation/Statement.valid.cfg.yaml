@@ -1,0 +1,9 @@
+schema: src/things/v1.yaml
+target_class: Statement
+data_sources:
+  - src/things/v1/examples/Statement-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

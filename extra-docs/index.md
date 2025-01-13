@@ -1,3 +1,9 @@
+## Latest schema versions
+
+- [Things schema (v1)](s/things/v1/index.md)
+
+## Schema development
+
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Thing schema](s/thing/unreleased/index.md)
