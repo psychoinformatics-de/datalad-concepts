@@ -4,22 +4,22 @@ nav:
   - Home: index.md
   - About: about.md
   - Schemas:
-    - Thing (unreleased): s/thing/unreleased/index.md
-    - Properties (unreleased): s/properties/unreleased/index.md
-    - Identifiers (unreleased): s/identifiers/unreleased/index.md
-    - Roles (unreleased): s/roles/unreleased/index.md
-    - Spatial (unreleased): s/spatial/unreleased/index.md
-    - Temporal (unreleased): s/temporal/unreleased/index.md
-    - Provenance (unreleased): s/prov/unreleased/index.md
-    - Distribution (unreleased): s/distribution/unreleased/index.md
-    - DataLad dataset (unreleased): s/datalad-dataset/unreleased/index.md
-    - Scientific data distribution (unreleased): s/sdd/unreleased/index.md
+    - Things: s/things/v1/index.md
+    - Properties (dev): s/properties/unreleased/index.md
+    - Identifiers (dev): s/identifiers/unreleased/index.md
+    - Roles (dev): s/roles/unreleased/index.md
+    - Spatial (dev): s/spatial/unreleased/index.md
+    - Temporal (dev): s/temporal/unreleased/index.md
+    - Provenance (dev): s/prov/unreleased/index.md
+    - Distribution (dev): s/distribution/unreleased/index.md
+    - DataLad dataset (dev): s/datalad-dataset/unreleased/index.md
+    - Scientific data distribution (dev): s/sdd/unreleased/index.md
 plugins:
   - mermaid2
   - redirects:
       redirect_maps:
           # map unversioned URLs to the latest version
-          's/thing/index.md': 's/thing/unreleased/index.md'
+          's/things/index.md': 's/things/v1/index.md'
           's/properties/index.md': 's/properties/unreleased/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/roles/index.md': 's/roles/unreleased/index.md'

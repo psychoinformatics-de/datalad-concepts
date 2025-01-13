@@ -31,6 +31,9 @@ description: |
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
 
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../thing/unreleased).
+
 license: MIT
 
 prefixes:
