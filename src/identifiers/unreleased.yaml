@@ -103,17 +103,19 @@ classes:
       DOI Foundation, where individual identifiers are issued by one of several registration
       agencies.
     slot_usage:
-      creator:
-        ifabsent: string(https://doi.org)
-        description: By default, the creator is identified as "https://doi.org".
+      # we cannot have this, because `gen-shacl` does not have support for
+      # ifabsent implemented
+      #creator:
+      #  ifabsent: string(https://doi.org)
+      #  description: By default, the creator is identified as "https://doi.org".
       notation:
         description: >-
           The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
-      schema_agency:
-        ifabsent: string(DOI Foundation)
-        description: By default, the schema agency is identified as `DOI Foundation`.
-    defining_slots:
-      - creator
+      # we cannot have this, because `gen-shacl` does not have support for
+      # ifabsent implemented
+      #schema_agency:
+      #  ifabsent: string(DOI Foundation)
+      #  description: By default, the schema agency is identified as `DOI Foundation`.
     unique_keys:
       value:
         description: The DOI notation is globally unique within the scope of DOIs
