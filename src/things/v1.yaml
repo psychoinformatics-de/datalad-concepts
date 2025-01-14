@@ -1,11 +1,13 @@
 id: https://concepts.datalad.org/s/thing/v1
 name: thing-schema
 # only the major version is reflected in the identifier, but this is the full version
-version: 1.0.0
+version: 1.0.0-prerelease
 # TODO: this needs a proper URI, even the linkml example bibo:draft is not valid
 status: bibo:status/draft
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
+  STILL A DRAFT!!
+
   This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
