@@ -1,0 +1,5 @@
+{
+  "id": "exthisns:mything",
+  "schema_type": "dlthing:Thing",
+  "@type": "Thing"
+}

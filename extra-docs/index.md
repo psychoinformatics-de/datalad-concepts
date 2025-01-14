@@ -1,3 +1,29 @@
+
+# "Low-tech" metadata schemas
+
+For many use cases metadata concepts are complex. Producing and consuming
+such metadata involves sophisticated tooling, which implies a considerable
+technical threshold for adopting metadata-focused workflows.
+
+The schemas provided here aim to lower this threshold with an approach to
+expressing rich and semantically precise metadata in relatively simple data
+structures -- data structures that can be reasonably read from files and
+processed in scripts with loops and conditionals, rather than requiring databases
+and specific query languages implemented in targeted libraries.
+
+All schemas are implemented in [LinkML](https://linkml.io), connecting to a
+rich ecosystem for data modeling, validation, and transformation. LinkML
+[bridges](https://linkml.io/linkml/intro/overview.html#a-bridge-between-frameworks)
+between the worlds of structured data in plain text files, relational
+databases and knowledge graphs if and when needed, so metadata workflows can
+stay as simple as possible.
+
+## Latest schema releases
+
+- [Things (v1)](s/things/v1/index.md): foundational schema to describe any "thing"
+
+## Schema development
+
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Thing schema](s/thing/unreleased/index.md)
