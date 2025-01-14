@@ -39,3 +39,9 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 
 See sources on [GitHub](https://github.com/psychoinformatics-de/datalad-concepts)
+
+
+# Knowledge base/graph dump specification
+
+This [specification ](/dump-things) is a companion of the [Things](s/things) schema and its derivatives and extensions.
+It defines a data structure for dumping arbitrarily complex information, expressed in these data models, in a version-controllable fashion directly on a filesystem.
