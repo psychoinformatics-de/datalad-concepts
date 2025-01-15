@@ -24,7 +24,7 @@ prefixes:
   dltemporal: https://concepts.datalad.org/s/agents/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
-  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 
@@ -32,9 +32,9 @@ default_prefix: dltemporal
 
 imports:
   - linkml:types
-  - dlschemas:thing/unreleased
-  - dlschemas:identifiers/unreleased
-  - dlschemas:roles/unreleased
+  - ../../src/things/v1
+  - ../../src/identifiers/unreleased
+  - ../../src/roles/unreleased
 
 types:
   W3CISO8601:

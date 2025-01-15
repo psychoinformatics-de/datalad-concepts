@@ -28,4 +28,6 @@ jobs:
 
       - name: Validate
         run: |
+          # make the checks self-contained re what is in the repo now
+          make imports-local
           make check-validation

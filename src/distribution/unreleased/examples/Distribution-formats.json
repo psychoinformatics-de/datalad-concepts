@@ -3,7 +3,7 @@
   "has_attributes": [
     {
       "predicate": "dcterms:conformsTo",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "range": "uri",
       "value": "https://bids-specification.readthedocs.io/en/v1.4.0"
     }

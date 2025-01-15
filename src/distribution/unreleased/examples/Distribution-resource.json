@@ -1,42 +1,42 @@
 {
   "id": "exthisdsver:./some/path.ext",
-  "relations": [
-    {
+  "relations": {
+    "exthisdsver:#some/path": {
       "id": "exthisdsver:#some/path",
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Some tabular data"
         }
       ],
       "schema_type": "dldist:Resource",
       "is_part_of": "exthisdsver:#"
     },
-    {
+    "exthisdsver:#": {
       "id": "exthisdsver:#",
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "A version of a collection of some data\""
         }
       ],
       "schema_type": "dldist:Resource",
       "is_version_of": "exthisds:#"
     },
-    {
+    "exthisds:#": {
       "id": "exthisds:#",
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "A collection of some data"
         }
       ],
       "schema_type": "dldist:Resource"
     }
-  ],
+  },
   "schema_type": "dldist:Distribution",
   "is_distribution_of": "exthisdsver:#some/path",
   "@type": "Distribution"

@@ -19,7 +19,7 @@ access_service:
 # than inlined in a specific distribution record (done here for demonstration
 # purposes).
 relations:
-  - id: https://coscine.example.com
+  https://coscine.example.com:
     schema_type: dldist:DataService
     # (ab)using the URL of the upstream instance as a type identifier
     type: https://coscine.rwth-aachen.de

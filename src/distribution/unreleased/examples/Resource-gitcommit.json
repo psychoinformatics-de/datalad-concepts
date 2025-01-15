@@ -1,7 +1,7 @@
 {
   "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
-  "relations": [
-    {
+  "relations": {
+    "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring": {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
       "schema_type": "dlprov:Activity",
       "type": "obo:NCIT_C25625",
@@ -15,7 +15,7 @@
         }
       ]
     },
-    {
+    "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing": {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
       "schema_type": "dlprov:Activity",
       "type": "obo:NCIT_C42882",
@@ -32,18 +32,18 @@
         "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring"
       ]
     }
-  ],
+  },
   "has_attributes": [
     {
       "predicate": "dcterms:identifier",
       "has_attributes": [
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "exthisds:#"
         }
       ],
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "final2"
     },
     {
@@ -51,16 +51,16 @@
       "has_attributes": [
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "exthisds:#"
         }
       ],
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "latest"
     },
     {
       "predicate": "dcterms:description",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "This message describes the changes done for this particular Dataset version.\n"
     }
   ],

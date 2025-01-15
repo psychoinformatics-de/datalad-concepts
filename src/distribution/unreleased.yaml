@@ -9,7 +9,7 @@ description: |
   of files, or a directory of files.
 
   The schema builds on the elements and principles of the
-  [Thing](https://concepts.datalad.org/s/thing) and
+  [Thing](https://concepts.datalad.org/s/things) and
   [Provenance](https://concepts.datalad.org/s/prov) schemas, and extends them
   with elements from [DCAT vocabulary](https://www.w3.org/TR/vocab-dcat-3).
 
@@ -61,7 +61,7 @@ prefixes:
   dlschemas: https://concepts.datalad.org/s/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
-  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
   dpv: https://w3id.org/dpv#
   foaf: http://xmlns.com/foaf/0.1/
   # custom prefix to use Git's SHA identifiers as schema identifiers
@@ -412,7 +412,7 @@ slots:
       - dcat:mediaType
 
   name:
-    slot_uri: dlthing:name
+    slot_uri: dldist:name
     description: Name of a thing.
     exact_mappings:
       - rdfs:label

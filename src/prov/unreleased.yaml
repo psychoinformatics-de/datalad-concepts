@@ -5,7 +5,7 @@ status: bibo:status/draft
 title: Schema for a generic (data) provenance annotation
 description: |
   This schema builds on the [Thing
-  schema](https://concepts.datalad.org/s/thing), and diversifies it to capture
+  schema](https://concepts.datalad.org/s/things), and diversifies it to capture
   the key provenance concepts [`Agent`](Agent), [`Activity`](Activity),
   [`Entity`](Entity), and their relationships.  It does that by drawing on (a
   subset) of the PROV data model [PROV-DM](https://www.w3.org/TR/prov-dm).
@@ -63,7 +63,7 @@ prefixes:
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
-  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
@@ -82,11 +82,11 @@ emit_prefixes:
   - prov
 
 imports:
-  - dlschemas:thing/unreleased
-  - dlschemas:identifiers/unreleased
-  - dlschemas:roles/unreleased
-  - dlschemas:spatial/unreleased
-  - dlschemas:temporal/unreleased
+  - ../../src/things/v1
+  - ../../src/identifiers/unreleased
+  - ../../src/roles/unreleased
+  - ../../src/spatial/unreleased
+  - ../../src/temporal/unreleased
 
 
 slots:

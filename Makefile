@@ -26,6 +26,11 @@ build/linkml-docs: \
 	build/linkml-docs/s/datalad-dataset/unreleased \
 	build/linkml-docs/s/sdd/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
+	$(MAKE) imports-remote
+	# take the YAML schema verbatim
+	mkdir -p $(dir $@)
+	cp $< $@.yaml
+	$(MAKE) imports-local
 	gen-doc \
 		--hierarchical-class-view \
 		--include-top-level-diagram \
@@ -35,8 +40,7 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		--example-directory src/$*/examples/ \
 		-d $@ \
 		$< \
-	&& (cp -r src/$*/extra-docs/*.md $@ || true) \
-	&& cp $< $@.yaml
+	&& (cp -r src/$*/extra-docs/*.md $@ || true)
 	# try to inject any extra-docs (if any exist)
 	# generate OWL
 	gen-owl \
@@ -159,8 +163,8 @@ convertexamples/%: src/%.yaml src/%/examples
 			mv $${ex%.yaml}.$${outf}.tmp $${ex%.yaml}.$${outf} ; \
 		done \
 	done
-	@git --no-pager diff -- $^
-	@if [ -n "$$(git diff -- $^)" ]; then \
+	@git --no-pager diff -- $(filter-out $<,$^)
+	@if [ -n "$$(git diff -- $(filter-out $<,$^))" ]; then \
 		echo -n 'ERROR: Unexpected modification of example output. ' ; \
    		echo 'Inspect and commit changes shown above!' ; \
 		exit 22 ; \
