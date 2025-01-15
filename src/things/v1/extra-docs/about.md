@@ -57,7 +57,7 @@ A dedicated `AttributeSpecification` class defines how attributes are expressed.
 The `relations` slot for inlining `Thing` records has a range of `Thing` (expects records of type `Thing`).
 This implies a limitation on the validation of such records.
 For example, a `Thing` may actually be a `InventoryItem`, using a data model defined in a derived schema.
-Such an `InventoryItem` may define additional slots with there own constraints, and it should be possible to perform a targeted validation of such records.
+Such an `InventoryItem` may define additional slots with their own constraints, and it should be possible to perform a targeted validation of such records.
 
 For this purpose, `Thing` provides a `schema_type` slot.
 This slots takes an identifier of a schema class (including classes in derived schemas), which provide the effective data model for validation.
