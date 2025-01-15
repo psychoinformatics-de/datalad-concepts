@@ -174,7 +174,7 @@ slots:
       declared directly using the `is_characterized_by` slot.
     domain: Thing
     inlined: true
-    inlined_as_list: true
+    inlined_as_list: false
     multivalued: true
     range: Thing
     relational_role: OBJECT

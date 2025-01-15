@@ -1,7 +1,7 @@
 {
   "id": "https://doi.org/10.1038/s41597-022-01163-2",
-  "relations": [
-    {
+  "relations": {
+    "https://portal.issn.org/resource/issn/2052-4463": {
       "id": "https://portal.issn.org/resource/issn/2052-4463",
       "has_attributes": [
         {
@@ -13,7 +13,7 @@
       "schema_type": "dlthing:Thing",
       "type": "bibo:Journal"
     }
-  ],
+  },
   "has_attributes": [
     {
       "predicate": "dcterms:title",

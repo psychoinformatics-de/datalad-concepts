@@ -1,0 +1,22 @@
+{
+  "id": "https://doi.org/10.21105/joss.03262",
+  "relations": {
+    "https://portal.issn.org/resource/issn/2475-9066": {
+      "id": "https://portal.issn.org/resource/issn/2475-9066",
+      "has_attributes": [
+        {
+          "predicate": "dcterms:title",
+          "schema_type": "dlthing:AttributeSpecification",
+          "value": "Journal of Open Source Software"
+        }
+      ],
+      "schema_type": "dlthing:Thing"
+    },
+    "https://www.scicrunch.org/resolver/SCR_003931": {
+      "id": "https://www.scicrunch.org/resolver/SCR_003931",
+      "schema_type": "dlthing:Thing"
+    }
+  },
+  "schema_type": "dlthing:Thing",
+  "@type": "Thing"
+}
