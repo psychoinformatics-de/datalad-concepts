@@ -9,4 +9,4 @@ patch -d $(python -c 'import os; import linkml.generators.jsonschemagen as m; pr
 #patch -d $(python -c 'import os; import linkml.validators.jsonschemavalidator as m; print(os.path.dirname(m.__file__))') < patches/jsonschemavalidator_plainyaml.diff
 #patch -d $(python -c 'import os; import linkml_runtime.dumpers as m; print(os.path.dirname(m.__file__))') < patches/rdflib_dumper_canonical.diff
 # Create correct 'order' properties when generating SHACL
-patch -d $(python -c 'import os; import linkml.generators.shaclgen as m; print(os.path.dirname(m.__file__))') < patches/shaclgen_order.diff
+patch -d $(python -c 'import os; import linkml.generators.shaclgen as m; print(os.path.dirname(m.__file__))') < patches/shaclgen_annotations.diff

@@ -1,0 +1,36 @@
+This patches shaclgen.py to allow improved handling of slot annotations.
+Firstly, it prevents creation of faulty sh:order lists by prioritizing sh:order provided
+via annotation, since sh:order should just be a single numerical value.
+See for context: https://github.com/linkml/linkml/pull/2111#issuecomment-2116208229
+Secondly, and for a similar reason, it only sets sh:path automatically if the
+value has not already been set via annotation.
+--- shaclgen.py
++++ shaclgen.py
+@@ -111,9 +111,7 @@ class ShaclGenerator(Generator):
+                     if v is not None:
+                         g.add((pnode, p, Literal(v)))
+
+-                prop_pv(SH.path, slot_uri)
+-                prop_pv_literal(SH.order, order)
+-                order += 1
++                # prop_pv(SH.path, slot_uri)
+                 prop_pv_literal(SH.name, s.title)
+                 prop_pv_literal(SH.description, s.description)
+                 # minCount
+@@ -221,6 +219,16 @@ class ShaclGenerator(Generator):
+                 default_value = ifabsent_processor.process_slot(s, c)
+                 if default_value:
+                     prop_pv(SH.defaultValue, default_value)
++
++                # sh:order may already have been added to the graph via annotations
++                if not (pnode, SH.order, None) in g:
++                    prop_pv_literal(SH.order, order)
++                    order += 1
++
++                # sh:path may already have been added to the graph via annotations
++                if not (pnode, SH.path, None) in g:
++                    prop_pv(SH.path, slot_uri)
++
+
+         return g
+ 
