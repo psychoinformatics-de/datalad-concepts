@@ -49,7 +49,7 @@ emit_prefixes:
   - prov
 
 imports:
-  - dlschemas:thing/unreleased
+  - dlschemas:things/v1
 
 
 slots:
