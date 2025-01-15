@@ -32,9 +32,9 @@ default_prefix: dltemporal
 
 imports:
   - linkml:types
-  - ../../src/things/v1
-  - ../../src/identifiers/unreleased
-  - ../../src/roles/unreleased
+  - dlschemas:things/v1
+  - dlschemas:identifiers/unreleased
+  - dlschemas:roles/unreleased
 
 types:
   W3CISO8601:
