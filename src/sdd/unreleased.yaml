@@ -30,7 +30,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlthing: https://concepts.datalad.org/s/thing/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlsdd: https://concepts.datalad.org/s/sdd/unreleased/

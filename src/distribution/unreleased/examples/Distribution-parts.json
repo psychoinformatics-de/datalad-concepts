@@ -7,7 +7,7 @@
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "A subdirectory"
         }
       ],
@@ -18,7 +18,7 @@
           "has_attributes": [
             {
               "predicate": "dcterms:description",
-              "schema_type": "dlthing:AttributeSpecification",
+              "schema_type": "dlthings:AttributeSpecification",
               "value": "A file"
             }
           ],

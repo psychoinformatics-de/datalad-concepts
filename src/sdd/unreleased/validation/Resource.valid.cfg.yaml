@@ -1,7 +1,7 @@
 schema: src/sdd/unreleased.yaml
 target_class: Resource
 data_sources:
-  - src/thing/unreleased/examples/Thing-customproperty.yaml
+  - src/things/v1/examples/Thing-customproperty.yaml
   - src/sdd/unreleased/examples/Resource-funding.yaml
   - src/distribution/unreleased/examples/Resource-study.yaml
   - src/distribution/unreleased/examples/Resource-gitcommit.yaml

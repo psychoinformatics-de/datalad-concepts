@@ -3,12 +3,12 @@
   "has_attributes": [
     {
       "predicate": "foaf:name",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "Michael Hanke"
     },
     {
       "predicate": "http://www.bioassayontology.org/bao#BAO_0002826",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "1"
     }
   ],

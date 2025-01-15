@@ -36,7 +36,7 @@ relations:
   # this is modeled as a dedicated action so that the
   # author time can be captured as an independent property.
   # otherwise the author role could be added above
-  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
+  gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring:
     schema_type: dlprov:Activity
     # "preparation"
     type: obo:NCIT_C25625
@@ -47,7 +47,7 @@ relations:
         had_roles:
           - marcrel:aut
   # commit activity
-  - id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
+  gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing:
     schema_type: dlprov:Activity
     # go for activity type: "release", but could also be
     # "label as such" (obo:NCIT_C64662)

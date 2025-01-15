@@ -1,12 +1,12 @@
 {
   "id": "exthisdsver:./some/path.ext",
-  "relations": [
-    {
+  "relations": {
+    "https://coscine.example.com": {
       "id": "https://coscine.example.com",
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Central RDM service at example.com"
         }
       ],
@@ -17,7 +17,7 @@
       "endpoint_description": "https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json",
       "endpoint_url": "https://coscine.example.com/coscine"
     }
-  ],
+  },
   "schema_type": "dldist:Distribution",
   "access_service": [
     "https://coscine.example.com"

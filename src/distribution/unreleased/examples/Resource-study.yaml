@@ -1,7 +1,7 @@
 id: exthisdsver:#
 relations:
   # study participants (role assigned below)
-  - id: exthisds:#s001
+  exthisds:#s001:
     schema_type: dlprov:Agent
     has_attributes:
       - predicate: foaf:name
@@ -11,7 +11,7 @@ relations:
       - predicate: obo:PATO_0002201
         # ambidextrous
         object: obo:PATO_0002204
-  - id: exthisds:#s002
+  exthisds:#s002:
     schema_type: dlprov:Agent
     is_characterized_by:
       # biological sex
@@ -33,7 +33,7 @@ relations:
           - predicate: obo:UO_0000000
             object: obo:UO_0000036
   # study activity
-  - id: exthisds:#study_2005-004406-93
+  exthisds:#study_2005-004406-93:
     schema_type: dlprov:Activity
     has_attributes:
       - predicate: dcterms:title

@@ -3,7 +3,7 @@
   "has_attributes": [
     {
       "predicate": "foaf:name",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "box.com"
     },
     {
@@ -11,16 +11,16 @@
       "has_attributes": [
         {
           "predicate": "skos:notation",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "0a8713ca-ef42-11ee-a805-d3e9a774e795"
         },
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "https://git-annex.branchable.com"
         }
       ],
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "type": "ADMS:Identifier"
     }
   ],

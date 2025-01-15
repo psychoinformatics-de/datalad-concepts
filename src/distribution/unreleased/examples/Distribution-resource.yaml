@@ -10,19 +10,19 @@
 id: exthisdsver:./some/path.ext
 is_distribution_of: exthisdsver:#some/path
 relations:
-  - id: exthisdsver:#some/path
+  exthisdsver:#some/path:
     schema_type: dldist:Resource
     has_attributes:
       - predicate: dcterms:description
         value: "Some tabular data"
     is_part_of: exthisdsver:#
-  - id: exthisdsver:#
+  exthisdsver:#:
     schema_type: dldist:Resource
     has_attributes:
       - predicate: dcterms:description
         value: A version of a collection of some data"
     is_version_of: exthisds:#
-  - id: exthisds:#
+  exthisds:#:
     schema_type: dldist:Resource
     has_attributes:
       - predicate: dcterms:description

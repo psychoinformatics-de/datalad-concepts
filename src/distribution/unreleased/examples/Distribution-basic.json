@@ -3,7 +3,7 @@
   "has_attributes": [
     {
       "predicate": "foaf:name",
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "name.ext"
     }
   ],

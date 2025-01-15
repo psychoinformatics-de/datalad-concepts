@@ -1,24 +1,24 @@
 {
   "id": "gitsha:eb4d2457a1165519c61859152fe0e3394200d75d",
-  "relations": [
-    {
+  "relations": {
+    "https://github.com/datalad-datasets/machinelearning-books.git": {
       "id": "https://github.com/datalad-datasets/machinelearning-books.git",
       "schema_type": "dldist:DataService",
       "type": "http://usefulinc.com/ns/doap#GitRepository",
       "endpoint_url": "https://github.com/datalad-datasets/machinelearning-books.git"
     }
-  ],
+  },
   "has_attributes": [
     {
       "predicate": "ADMS:identifier",
       "has_attributes": [
         {
           "predicate": "ADMS:SchemaAgency",
-          "schema_type": "dlthing:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "https://git-scm.com"
         }
       ],
-      "schema_type": "dlthing:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "eb4d2457a1165519c61859152fe0e3394200d75d"
     }
   ],
