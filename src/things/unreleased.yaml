@@ -23,7 +23,7 @@ description: |
 
   More information on this schema is available on a [dedicated page](about).
   Each class comes with dedicated examples that exemplify its use. A good
-  starting point are the [examples of the `Thing`](Thing#examples) class.
+  starting point are the [examples of the `Thing` class](Thing#examples).
 
   Although this generic schema could be used directly, it is meant to be used
   as a foundational building block for more targeted schemas. Therefore, the
@@ -61,7 +61,7 @@ prefixes:
   # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
   # The prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
+  # linkml-convert -s ... -t rdf -P exthisns=http://example.com/ --infer ...
   #
   # The following prefix is an example, a use case specific derived
   # schema needs to define its own, differently named and defined namespace(s).
@@ -122,7 +122,7 @@ slots:
     slot_uri: dlthings:is_characterized_by
     description: >-
       Qualifies relationships between a subject `Thing` and an object `Thing`
-      with a `Statement` declaration a `predicate` on the nature of the
+      with a `Statement` declaring a `predicate` on the nature of the
       relationship.
     range: Statement
     inlined: true
