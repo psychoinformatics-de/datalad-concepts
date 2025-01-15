@@ -15,7 +15,7 @@ all: build/mkdocs-site
 
 build/linkml-docs: \
 	build/linkml-docs/s/properties/unreleased \
-	build/linkml-docs/s/thing/unreleased \
+	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
@@ -66,7 +66,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	checkmodel/properties/unreleased \
-	checkmodel/thing/unreleased \
+	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/roles/unreleased \
 	checkmodel/spatial/unreleased \
@@ -103,9 +103,9 @@ checkmodel/%: src/%.yaml
 # respective validation targets, because some tests rely on these
 # converted formats
 check-validation: \
-	convertexamples/thing/unreleased \
+	convertexamples/things/unreleased \
 	convertexamples/things/v1 \
-	checkvalidation/thing/unreleased \
+	checkvalidation/things/unreleased \
 	checkvalidation/things/v1 \
 	convertexamples/roles/unreleased \
 	checkvalidation/roles/unreleased \
@@ -137,7 +137,7 @@ checkinvalid/%: src/%/validation src/%.yaml
 	done
 
 convert-examples: \
-	convertexamples/thing/unreleased \
+	convertexamples/things/unreleased \
 	convertexamples/things/v1 \
 	convertexamples/roles/unreleased \
 	convertexamples/spatial/unreleased \

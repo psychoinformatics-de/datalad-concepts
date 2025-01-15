@@ -1,0 +1,13 @@
+schema: src/things/unreleased.yaml
+target_class: Thing
+data_sources:
+  - src/things/unreleased/examples/Thing-01-minimal.yaml
+  - src/things/unreleased/examples/Thing-02-identifiers.yaml
+  - src/things/unreleased/examples/Thing-03-topic.yaml
+  - src/things/unreleased/examples/Thing-04-relations.yaml
+  - src/things/unreleased/examples/Thing-05-publication.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

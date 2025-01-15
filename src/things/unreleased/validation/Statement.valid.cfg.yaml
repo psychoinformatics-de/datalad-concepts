@@ -1,7 +1,7 @@
-schema: src/thing/unreleased.yaml
+schema: src/things/unreleased.yaml
 target_class: Statement
 data_sources:
-  - src/thing/unreleased/examples/Statement-01-minimal.yaml
+  - src/things/unreleased/examples/Statement-01-minimal.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -6,7 +6,7 @@ id: https://doi.org/10.1038/s41597-022-01163-2
 type: bibo:AcademicArticle
 relations:
   # the containing journal with some information on it
-  - id: https://portal.issn.org/resource/issn/2052-4463
+  https://portal.issn.org/resource/issn/2052-4463:
     type: bibo:Journal
     has_attributes:
       - predicate: dcterms:title

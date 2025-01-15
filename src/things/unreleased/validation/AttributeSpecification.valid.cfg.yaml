@@ -1,0 +1,10 @@
+schema: src/things/unreleased.yaml
+target_class: AttributeSpecification
+data_sources:
+  - src/things/unreleased/examples/AttributeSpecification-01-minimal.yaml
+  - src/things/unreleased/examples/AttributeSpecification-02-with-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

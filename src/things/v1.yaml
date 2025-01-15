@@ -41,7 +41,7 @@ description: |
   - [SHACL TTL](../v1.shacl.ttl)
 
   Upcoming changes to this schema may be available in an [(unreleased)
-  development version](../../thing/unreleased).
+  development version](../../things/unreleased).
 
 license: MIT
 
