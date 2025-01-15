@@ -6,6 +6,6 @@
       "predicate": "schema:about"
     }
   ],
-  "schema_type": "dlthing:Thing",
+  "schema_type": "dlthings:Thing",
   "@type": "Thing"
 }
