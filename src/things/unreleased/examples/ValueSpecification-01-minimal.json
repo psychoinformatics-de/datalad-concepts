@@ -1,6 +1,6 @@
 {
   "id": "exthisns:measurement853",
-  "schema_type": "dlthing:ValueSpecification",
+  "schema_type": "dlthings:ValueSpecification",
   "value": "special",
   "@type": "ValueSpecification"
 }
