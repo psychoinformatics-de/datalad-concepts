@@ -14,6 +14,7 @@ nav:
     - Distribution (dev): s/distribution/unreleased/index.md
     - DataLad dataset (dev): s/datalad-dataset/unreleased/index.md
     - Scientific data distribution (dev): s/sdd/unreleased/index.md
+  - Dump-Things: dump-things.md
 plugins:
   - mermaid2
   - redirects:
