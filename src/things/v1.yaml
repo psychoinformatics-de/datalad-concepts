@@ -52,7 +52,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
-  dlthing: https://concepts.datalad.org/s/thing/v1/
+  dlthings: https://concepts.datalad.org/s/thing/v1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
@@ -73,13 +73,13 @@ prefixes:
   # to keep vocabulary and entities local to this scope
   exthisns: https://example.org/ns/
 
-default_prefix: dlthing
+default_prefix: dlthings
 
 # list of Curie prefixes that are used in the representation of instances of
 # the model. All prefixes in this list are added to the prefix sections of
 # the target models.
 emit_prefixes:
-  - dlthing
+  - dlthings
   # single prefix that enables a huge range of ontologies ready-to-use for
   # descriptions -- seems worth emitting
   - obo
@@ -89,7 +89,7 @@ imports:
 
 slots:
   has_attributes:
-    slot_uri: dlthing:has_attributes
+    slot_uri: dlthings:has_attributes
     description: >-
       Declares a relation that associates a `Thing` (or another attribute)
       with an attribute, where an attribute is an intrinsic characteristic,
@@ -111,7 +111,7 @@ slots:
       - sio:SIO_000008
 
   id:
-    slot_uri: dlthing:id
+    slot_uri: dlthings:id
     identifier: true
     description: >-
       Globally unique identifier of a metadata object, such as a `Thing`.
@@ -122,7 +122,7 @@ slots:
       - ADMS:identifier
 
   is_characterized_by:
-    slot_uri: dlthing:is_characterized_by
+    slot_uri: dlthings:is_characterized_by
     description: >-
       Qualifies relationships between a subject `Thing` and an object `Thing`
       with a `Statement` declaration a `predicate` on the nature of the
@@ -166,7 +166,7 @@ slots:
       - rdfs:range
 
   relations:
-    slot_uri: dlthing:relation
+    slot_uri: dlthings:relation
     description: >-
       Declares an unqualified relation of the subject `Thing` to another
       `Thing`. This schema slot is used to define related things inline.
@@ -255,10 +255,10 @@ classes:
     exact_mappings:
       - sio:SIO_000614
     close_mappings:
-      - dlthing:Thing
+      - dlthings:Thing
 
   Property:
-    class_uri: dlthing:Property
+    class_uri: dlthings:Property
     is_a: Thing
     description: >-
       An RDF property, a `Thing` used to define a `predicate`, for example
@@ -267,7 +267,7 @@ classes:
       - rdf:Property
 
   Statement:
-    class_uri: dlthing:Statement
+    class_uri: dlthings:Statement
     description: >-
       An RDF statement that links a `predicate` (a `Property`) with an
       `object` (a `Thing`) to the subject to form a triple.
@@ -287,7 +287,7 @@ classes:
       - rdf:Statement
 
   Thing:
-    class_uri: dlthing:Thing
+    class_uri: dlthings:Thing
     mixins:
       - ThingMixin
     description: >-
