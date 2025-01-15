@@ -49,7 +49,7 @@ emit_prefixes:
   - prov
 
 imports:
-  - ../../src/things/v1
+  - dlschemas:things/v1
 
 
 slots:
