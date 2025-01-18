@@ -1,5 +1,5 @@
 {
   "object": "https://helmholtz.de",
-  "predicate": "schema:about",
+  "predicate": "dcterms:subject",
   "@type": "Statement"
 }
