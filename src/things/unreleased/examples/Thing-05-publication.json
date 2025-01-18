@@ -116,19 +116,19 @@
     },
     {
       "object": "https://www.nature.com/subjects/data-processing",
-      "predicate": "schema:about"
+      "predicate": "dcterms:subject"
     },
     {
       "object": "https://www.nature.com/subjects/data-publication-and-archiving",
-      "predicate": "schema:about"
+      "predicate": "dcterms:subject"
     },
     {
       "object": "https://www.nature.com/subjects/software",
-      "predicate": "schema:about"
+      "predicate": "dcterms:subject"
     },
     {
       "object": "https://www.nature.com/articles/s41597-022-01163-2",
-      "predicate": "schema:sameAs"
+      "predicate": "owl:sameAs"
     },
     {
       "object": "https://spdx.org/licenses/CC-BY-4.0",

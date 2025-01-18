@@ -59,14 +59,14 @@ is_characterized_by:
   - predicate: dcterms:isPartOf
     object: https://portal.issn.org/resource/issn/2052-4463
   # related topics
-  - predicate: schema:about
+  - predicate: dcterms:subject
     object: https://www.nature.com/subjects/data-processing
-  - predicate: schema:about
+  - predicate: dcterms:subject
     object: https://www.nature.com/subjects/data-publication-and-archiving
-  - predicate: schema:about
+  - predicate: dcterms:subject
     object: https://www.nature.com/subjects/software
   # publisher landing page
-  - predicate: schema:sameAs
+  - predicate: owl:sameAs
     object: https://www.nature.com/articles/s41597-022-01163-2
   - predicate: dcterms:license
     object: https://spdx.org/licenses/CC-BY-4.0

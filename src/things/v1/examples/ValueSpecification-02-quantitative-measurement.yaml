@@ -4,10 +4,10 @@ has_attributes:
     value: "measured mass (kg)"
 is_characterized_by:
   # measurement datum
-  - predicate: schema:about
+  - predicate: dcterms:subject
     object: obo:IAO_0000109
   # mass
-  - predicate: schema:about
+  - predicate: dcterms:subject
     object: obo:PATO_0000125
   # unit: kilogram
   - predicate: obo:UO_0000000
