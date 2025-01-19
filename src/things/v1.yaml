@@ -12,14 +12,17 @@ description: |
   Key concepts of this schema are that any `Thing`
  
   - has a unique identifier ([`id`](id))
+  - can be mapped to arbitrary external schemas and terminologies to maximize
+    semantic alignment with existing metadata ecosystems
+    (see [`mappings`](mappings))
   - can be further described by attributes ([`has_attributes`](has_attributes))
     and qualified relations to other "things"
     ([`is_characterized_by`](is_characterized_by)),
     without prescribing a particular vocabulary
   - can be associated with a specialized schema class for enabling detailed
-    validation and precise data transformations ([`schema_type`](schema_type))
+    validation and precise data transformations ([`type`](type))
     without limiting the general expressiveness to a fixed set of classes
-    available in any given (derived) schema.
+    available this foundational schema.
 
   More information on this schema is available on a [dedicated page](about).
   Each class comes with dedicated examples that exemplify its use. A good
@@ -279,13 +282,14 @@ classes:
     mixin: true
     description: >-
       Mix-in with the common interface of `Thing` and `AttributeSpecification`.
-      This interface enables `type` specifications (`rdf:type`) for things
-      and attributes. This is complemented by the `schema_type` slot
-      (also `rdf:type`) that serves as a type designator for specialized
-      schema classes, to enable targeted validation and data transformation.
+      This interface enables type specifications (`rdf:type`) for things
+      and attributes via a `type` designator slot to indicate specialized
+      schema classes for validation where a slot's `range` is too generic.
       A thing or attribute can be further describe with statements on
       qualified relations to other things (`is_characterized_by`), or
       inline attributes (`has_attributes`).
+      A set of `mappings` slots enables the alignment for arbitrary external
+      schemas and terminologies.
     slots:
       - broad_mappings
       - close_mappings
