@@ -3,21 +3,21 @@
   "has_attributes": [
     {
       "predicate": "dcterms:conformsTo",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "range": "uri",
       "value": "https://bids-specification.readthedocs.io/en/v1.4.0"
     }
   ],
-  "schema_type": "dldist:Distribution",
+  "type": "dldist:Distribution",
   "has_part": [
     {
       "id": "exthisdsver:./dataset_description.json",
-      "schema_type": "dldist:Distribution",
+      "type": "dldist:Distribution",
       "media_type": "application/json"
     },
     {
       "id": "exthisdsver:./participants.tsv",
-      "schema_type": "dldist:Distribution",
+      "type": "dldist:Distribution",
       "format": "http://edamontology.org/format_3475"
     }
   ],

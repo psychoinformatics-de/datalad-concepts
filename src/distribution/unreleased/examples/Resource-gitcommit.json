@@ -3,8 +3,10 @@
   "relations": {
     "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring": {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
-      "schema_type": "dlprov:Activity",
-      "type": "obo:NCIT_C25625",
+      "exact_mappings": [
+        "obo:NCIT_C25625"
+      ],
+      "type": "dlprov:Activity",
       "ended_at": "2001-02-28T18:27:04+02:00",
       "qualified_relations": [
         {
@@ -17,8 +19,10 @@
     },
     "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing": {
       "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
-      "schema_type": "dlprov:Activity",
-      "type": "obo:NCIT_C42882",
+      "exact_mappings": [
+        "obo:NCIT_C42882"
+      ],
+      "type": "dlprov:Activity",
       "ended_at": "2002-05-30T09:30:10+06:00",
       "qualified_relations": [
         {
@@ -39,11 +43,11 @@
       "has_attributes": [
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "exthisds:#"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "final2"
     },
     {
@@ -51,20 +55,20 @@
       "has_attributes": [
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "exthisds:#"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "latest"
     },
     {
       "predicate": "dcterms:description",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "This message describes the changes done for this particular Dataset version.\n"
     }
   ],
-  "schema_type": "dldist:Resource",
+  "type": "dldist:Resource",
   "qualified_relations": [
     {
       "object": "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054",

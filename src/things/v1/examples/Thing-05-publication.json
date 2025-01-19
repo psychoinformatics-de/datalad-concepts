@@ -3,48 +3,55 @@
   "relations": {
     "https://portal.issn.org/resource/issn/2052-4463": {
       "id": "https://portal.issn.org/resource/issn/2052-4463",
+      "exact_mappings": [
+        "bibo:Journal"
+      ],
       "has_attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "Scientific Data"
         }
       ],
-      "schema_type": "dlthings:Thing",
-      "type": "bibo:Journal"
+      "type": "dlthings:Thing"
     }
   },
+  "exact_mappings": [
+    "bibo:AcademicArticle"
+  ],
   "has_attributes": [
     {
       "predicate": "dcterms:title",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "FAIRly big: A framework for computationally reproducible processing of large-scale data"
     },
     {
       "predicate": "dcterms:description",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset)."
     },
     {
       "predicate": "dcterms:identifier",
+      "exact_mappings": [
+        "ADMS:Identifier"
+      ],
       "has_attributes": [
         {
           "predicate": "skos:notation",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "10.1038/s41597-022-01163-2"
         },
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "https://doi.org"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
-      "type": "ADMS:Identifier"
+      "type": "dlthings:AttributeSpecification"
     },
     {
       "predicate": "dcterms:bibliographicCitation",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
     },
     {
@@ -52,11 +59,11 @@
       "has_attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "DOI"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "https://doi.org/10.1038/s41597-022-01163-2"
     },
     {
@@ -64,11 +71,11 @@
       "has_attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "Volume"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "9"
     },
     {
@@ -76,11 +83,11 @@
       "has_attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "Document number"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "80"
     },
     {
@@ -88,23 +95,23 @@
       "has_attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "Number of pages"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "range": "xsd:nonNegativeInteger",
       "value": "17"
     },
     {
       "predicate": "dcterms:modified",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "range": "xsd:date",
       "value": "2022-02-11"
     },
     {
       "predicate": "dcterms:date",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "range": "xsd:date",
       "value": "2022-03-11"
     }
@@ -135,7 +142,6 @@
       "predicate": "dcterms:license"
     }
   ],
-  "schema_type": "dlthings:Thing",
-  "type": "bibo:AcademicArticle",
+  "type": "dlthings:Thing",
   "@type": "Thing"
 }

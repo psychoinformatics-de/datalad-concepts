@@ -3,11 +3,11 @@
   "has_attributes": [
     {
       "predicate": "foaf:name",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "name.ext"
     }
   ],
-  "schema_type": "dldist:Distribution",
+  "type": "dldist:Distribution",
   "byte_size": 123456789,
   "checksum": [
     {

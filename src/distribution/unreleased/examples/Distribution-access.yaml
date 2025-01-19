@@ -20,9 +20,10 @@ access_service:
 # purposes).
 relations:
   https://coscine.example.com:
-    schema_type: dldist:DataService
+    type: dldist:DataService
     # (ab)using the URL of the upstream instance as a type identifier
-    type: https://coscine.rwth-aachen.de
+    exact_mappings:
+      - https://coscine.rwth-aachen.de
     # identify a person/organization to contact for any inquiries about the data service.
     # value is identifier of an agent record
     contact_point: exthisns:coscine-admin
@@ -43,15 +44,18 @@ relations:
     #  - name: projectId
     #    description: Coscine project identifier
     #    # project identifier
-    #    type: obo:NCIT_C165055
+    #    exact_mappings:
+    #      - obo:NCIT_C165055
     #  - name: resourceId
     #    description: Coscine resource identifier
     #    # resource identifier
-    #    type: obo:NCIT_C165071
+    #    exact_mappings:
+    #      - obo:NCIT_C165071
     #  - name: key
     #    description: Coscine blob identifier
     #    # content identifier
-    #    type: obo:NCIT_C99023
+    #    exact_mappings:
+    #      - obo:NCIT_C99023
     # specify how download URLs can be determined from a template and
     # content-specific parameters.
     # this is optional, but enables generic, dataservice-unspecific download

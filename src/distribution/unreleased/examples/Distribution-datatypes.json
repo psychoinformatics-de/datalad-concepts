@@ -6,7 +6,7 @@
       "predicate": "obo:NCIT_C42645"
     }
   ],
-  "schema_type": "dldist:Distribution",
+  "type": "dldist:Distribution",
   "qualified_relations": [
     {
       "object": "obo:NCIT_C95650",

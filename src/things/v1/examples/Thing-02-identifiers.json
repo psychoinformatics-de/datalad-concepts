@@ -6,30 +6,32 @@
       "has_attributes": [
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "range": "uri",
           "value": "https://ror.org"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "02nv7yv05"
     },
     {
       "predicate": "dcterms:identifier",
+      "exact_mappings": [
+        "ADMS:Identifier"
+      ],
       "has_attributes": [
         {
           "predicate": "skos:notation",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "5008462-8"
         },
         {
           "predicate": "ADMS:schemaAgency",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "https://d-nb.info"
         }
       ],
-      "schema_type": "dlthings:AttributeSpecification",
-      "type": "ADMS:Identifier"
+      "type": "dlthings:AttributeSpecification"
     }
   ],
   "is_characterized_by": [
@@ -42,6 +44,6 @@
       "predicate": "owl:sameAs"
     }
   ],
-  "schema_type": "dlthings:Thing",
+  "type": "dlthings:Thing",
   "@type": "Thing"
 }
