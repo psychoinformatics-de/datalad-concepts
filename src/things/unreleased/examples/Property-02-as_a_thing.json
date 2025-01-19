@@ -3,15 +3,15 @@
   "has_attributes": [
     {
       "predicate": "dcterms:title",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "modified"
     },
     {
       "predicate": "dcterms:description",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "Date on which the resource was changed."
     }
   ],
-  "schema_type": "dlthings:Property",
+  "type": "dlthings:Property",
   "@type": "Property"
 }

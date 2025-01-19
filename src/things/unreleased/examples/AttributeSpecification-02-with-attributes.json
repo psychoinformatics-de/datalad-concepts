@@ -1,18 +1,20 @@
 {
   "predicate": "dcterms:identifier",
+  "exact_mappings": [
+    "ADMS:Identifier"
+  ],
   "has_attributes": [
     {
       "predicate": "skos:notation",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "5008462-8"
     },
     {
       "predicate": "ADMS:schemaAgency",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "https://d-nb.info"
     }
   ],
-  "schema_type": "dlthings:AttributeSpecification",
-  "type": "ADMS:Identifier",
+  "type": "dlthings:AttributeSpecification",
   "@type": "AttributeSpecification"
 }

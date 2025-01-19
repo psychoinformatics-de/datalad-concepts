@@ -1,7 +1,8 @@
 # An attribute without a singular value, but attributes of it
 # own instead.
 predicate: dcterms:identifier
-type: ADMS:Identifier
+exact_mappings:
+  - ADMS:Identifier
 has_attributes:
   - predicate: skos:notation
     value: 5008462-8

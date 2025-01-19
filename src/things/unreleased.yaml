@@ -12,14 +12,17 @@ description: |
   Key concepts of this schema are that any `Thing`
  
   - has a unique identifier ([`id`](id))
+  - can be mapped to arbitrary external schemas and terminologies to maximize
+    semantic alignment with existing metadata ecosystems
+    (see [`mappings`](mappings))
   - can be further described by attributes ([`has_attributes`](has_attributes))
     and qualified relations to other "things"
     ([`is_characterized_by`](is_characterized_by)),
     without prescribing a particular vocabulary
   - can be associated with a specialized schema class for enabling detailed
-    validation and precise data transformations ([`schema_type`](schema_type))
+    validation and precise data transformations ([`type`](type))
     without limiting the general expressiveness to a fixed set of classes
-    available in any given (derived) schema.
+    available this foundational schema.
 
   More information on this schema is available on a [dedicated page](about).
   Each class comes with dedicated examples that exemplify its use. A good
@@ -55,6 +58,7 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
@@ -84,7 +88,44 @@ emit_prefixes:
 imports:
   - linkml:types
 
+types:
+  NodeUriOrCurie:
+    typeof: uriorcurie
+    description: >-
+      A type referencing an graph node. This is like `uriorcurie`, but in
+      an RDF export leads to the desirable `rdf.type` declaration, rather
+      then an `rdf.literal` of the corresponding URI.
+    base: str
+    uri: rdfs:Resource
+
 slots:
+  broad_mappings:
+    slot_uri: skos:broadMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      broader meaning.
+    range: uriorcurie
+    multivalued: true
+
+  close_mappings:
+    slot_uri: skos:closeMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      close meaning.
+    range: uriorcurie
+    multivalued: true
+
+  exact_mappings:
+    slot_uri: skos:exactMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      identical meaning.
+    range: uriorcurie
+    multivalued: true
+
   has_attributes:
     slot_uri: dlthings:has_attributes
     description: >-
@@ -131,6 +172,25 @@ slots:
     exact_mappings:
       - obo:RO_0000053
 
+  mappings:
+    slot_uri: skos:mappingRelation
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      comparable meaning. These may include terms that are precisely
+      equivalent, broader or narrower in meaning, or otherwise semantically
+      related but not equivalent from a strict ontological perspective.
+    range: uriorcurie
+    multivalued: true
+
+  narrow_mappings:
+    slot_uri: skos:narrowMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      narrower meaning.
+    range: uriorcurie
+    multivalued: true
+
   object:
     slot_uri: rdf:object
     description: >-
@@ -162,6 +222,15 @@ slots:
     exact_mappings:
       - rdfs:range
 
+  related_mappings:
+    slot_uri: skos:relatedMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      related meaning.
+    range: uriorcurie
+    multivalued: true
+
   relations:
     slot_uri: dlthings:relation
     description: >-
@@ -180,22 +249,18 @@ slots:
       - dcat:relation
       - dcterms:relation
 
-  schema_type:
+  type:
     slot_uri: rdf:type
     designates_type: true
     description: >-
-      Type designator of a schema element for validation and schema structure
-      handling purposes. This is used to indicate specialized schema classes
-      for properties that accept a hierarchy of classes as their range.
-    range: uriorcurie
-    exact_mappings:
-      - dcterms:type
-
-  type:
-    slot_uri: rdf:type
-    description: >-
       State that the subject is an instance of a particular RDF class.
-    range: uriorcurie
+      Typically, no explicit value needs to be assigned to this slot,
+      because it matches the class type of a particular record.
+      However, this slots can be used as a type designator of a schema
+      element for validation and schema structure handling purposes.
+      This is used to indicate specialized schema classes for properties
+      that accept a hierarchy of classes as their range.
+    range: NodeUriOrCurie
     exact_mappings:
       - dcterms:type
 
@@ -214,17 +279,22 @@ classes:
     mixin: true
     description: >-
       Mix-in with the common interface of `Thing` and `AttributeSpecification`.
-      This interface enables `type` specifications (`rdf:type`) for things
-      and attributes. This is complemented by the `schema_type` slot
-      (also `rdf:type`) that serves as a type designator for specialized
-      schema classes, to enable targeted validation and data transformation.
+      This interface enables type specifications (`rdf:type`) for things
+      and attributes via a `type` designator slot to indicate specialized
+      schema classes for validation where a slot's `range` is too generic.
       A thing or attribute can be further describe with statements on
       qualified relations to other things (`is_characterized_by`), or
       inline attributes (`has_attributes`).
+      A set of `mappings` slots enables the alignment for arbitrary external
+      schemas and terminologies.
     slots:
+      - broad_mappings
+      - close_mappings
+      - exact_mappings
       - has_attributes
       - is_characterized_by
-      - schema_type
+      - narrow_mappings
+      - related_mappings
       - type
 
   ValueSpecificationMixin:
