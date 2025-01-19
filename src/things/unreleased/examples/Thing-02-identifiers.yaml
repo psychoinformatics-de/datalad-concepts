@@ -18,7 +18,8 @@ has_attributes:
   # (here not using the direct value specification, but defining
   #  a proper identifier with a `notation`)
   - predicate: dcterms:identifier
-    type: ADMS:Identifier
+    exact_mappings:
+      - ADMS:Identifier
     has_attributes:
       - predicate: skos:notation
         value: 5008462-8

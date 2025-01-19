@@ -3,7 +3,7 @@
   "has_attributes": [
     {
       "predicate": "dcterms:title",
-      "schema_type": "dlthings:AttributeSpecification",
+      "type": "dlthings:AttributeSpecification",
       "value": "measured mass (kg)"
     }
   ],
@@ -21,7 +21,7 @@
       "predicate": "obo:UO_0000000"
     }
   ],
-  "schema_type": "dlthings:ValueSpecification",
+  "type": "dlthings:ValueSpecification",
   "value": "145.3",
   "range": "xsd:decimal",
   "@type": "ValueSpecification"

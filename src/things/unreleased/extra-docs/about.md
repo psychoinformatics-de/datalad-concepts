@@ -36,7 +36,7 @@ However, this approach also requires to establish a process that guarantees that
 The one-identifier-and-one-identifier-only requirement only applies to the mechanics of the `things` schema and the `id` slot of the `Thing` class in particular.
 Beyond that, there is no constraint on the nature and number of identifiers associated with a `Thing`.
 Such identifiers are attributes of a `Thing` and can be expressed as such.
-The schema documentation contains [an example](/s/things/unreleased/Thing#example-thing-02-identifiers) showing how this can be done via the `has_attributes` slot of a `Thing`. For schema development, the [identifiers extension schema](/s/identifiers) is worth a look.
+The schema documentation contains [an example](/s/things/v1/Thing#example-thing-02-identifiers) showing how this can be done via the `has_attributes` slot of a `Thing`. For schema development, the [identifiers extension schema](/s/identifiers) is worth a look.
 It provides a dedicated slot and class for representing identifiers.
 
 
@@ -59,12 +59,14 @@ This implies a limitation on the validation of such records.
 For example, a `Thing` may actually be a `InventoryItem`, using a data model defined in a derived schema.
 Such an `InventoryItem` may define additional slots with their own constraints, and it should be possible to perform a targeted validation of such records.
 
-For this purpose, `Thing` provides a `schema_type` slot.
+For this purpose, `Thing` provides a `type` slot.
 This slots takes an identifier of a schema class (including classes in derived schemas), which provide the effective data model for validation.
+
+Moreover, a set of `mappings` slots can be used to map a(n implicit) type of a data record to external schemas and terminologies, without requiring any and all concepts to be represented by a dedicated schema class.
 
 ## Qualified relationships
 
 [Qualified relation](https://patterns.dataincubator.org/book/qualified-relation.html) is an essential pattern used by the `things` schema, and also its derivatives and extensions.
 Within the `things` schema it is used by the `is_characterized_by` slot (and to some degree also for `has_attributes`) for characterizing the relationship between things.
 The relationship between two things is qualified via an inline `Statement` that assigns a predicate to the relationship between a subject-thing, and a related object-thing.
-See the [example for a topic annotation](/s/things/unreleased/Thing#example-thing-03-topic) for a concrete demo.
+See the [example for a topic annotation](/s/things/v1/Thing#example-thing-03-topic) for a concrete demo.
