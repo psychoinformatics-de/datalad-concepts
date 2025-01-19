@@ -2,7 +2,8 @@
 id: gitsha:eb4d2457a1165519c61859152fe0e3394200d75d
 # abusing the documentation as a type definition URL of a Git commit
 # TODO define term in `datalad-dataset` schema
-type: https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects
+exact_mappings:
+  - https://git-scm.com/book/en/v2/Git-Internals-Git-Objects#_git_commit_objects
 has_attributes:
   - predicate: ADMS:identifier
     # a Git SHA
@@ -25,11 +26,12 @@ relations:
     # identify as a dataservice -- not strictly needed for an implementation
     # that wants to obtain the commit, because we have the id from `access_service`
     # to match against
-    schema_type: dldist:DataService
+    type: dldist:DataService
     # we use the DOAP (description of a project) term to identify this dataservice
     # as a Git repository.
     # TODO define term in `datalad-dataset` schema
-    type: http://usefulinc.com/ns/doap#GitRepository
+    exact_mappings:
+      - http://usefulinc.com/ns/doap#GitRepository
     # endpoint URL is the cloneable URL
     endpoint_url: https://github.com/datalad-datasets/machinelearning-books.git
 has_part:

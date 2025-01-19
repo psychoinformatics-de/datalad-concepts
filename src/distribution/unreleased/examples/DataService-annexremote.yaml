@@ -1,13 +1,15 @@
 # specification of a git-annex special remote as a DataService
 id: https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
-schema_type: dldist:DataService
+type: dldist:DataService
 # TODO have a definition of a generic annex remote
-type: https://git-annex.branchable.com/special_remotes
+exact_mappings:
+  - https://git-annex.branchable.com/special_remotes
 has_attributes:
   - predicate: foaf:name
     value: box.com
   - predicate: dcterms:identifier
-    type: ADMS:Identifier
+    exact_mappings:
+      - ADMS:Identifier
     has_attributes:
       - predicate: skos:notation
         value: 0a8713ca-ef42-11ee-a805-d3e9a774e795
@@ -30,7 +32,8 @@ endpoint_description: https://git-annex.branchable.com/special_remotes/webdav/
 #    value: webdav
 #  - name: url
 #    value: https://dav.box.com/dav/git-annex
-#    type: dcat:endpointURL
+#    exact_mappings:
+#      - dcat:endpointURL
 #  - name: chunk
 #    value: 10mb
 #  - name: keyid
@@ -44,6 +47,7 @@ endpoint_description: https://git-annex.branchable.com/special_remotes/webdav/
 #  - name: key
 #    description: git-annex key
 #    # content identifier
-#    type: obo:NCIT_C99023
+#    exact_mappings:
+#      - obo:NCIT_C99023
 #    # (ab)use design document on annex keys as range identifier
 #    range: https://git-annex.branchable.com/internals/key_format

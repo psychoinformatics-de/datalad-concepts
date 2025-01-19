@@ -6,6 +6,6 @@
       "predicate": "dcterms:subject"
     }
   ],
-  "schema_type": "dlthings:Thing",
+  "type": "dlthings:Thing",
   "@type": "Thing"
 }

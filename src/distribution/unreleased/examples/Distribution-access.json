@@ -3,22 +3,24 @@
   "relations": {
     "https://coscine.example.com": {
       "id": "https://coscine.example.com",
+      "exact_mappings": [
+        "https://coscine.rwth-aachen.de"
+      ],
       "has_attributes": [
         {
           "predicate": "dcterms:description",
-          "schema_type": "dlthings:AttributeSpecification",
+          "type": "dlthings:AttributeSpecification",
           "value": "Central RDM service at example.com"
         }
       ],
-      "schema_type": "dldist:DataService",
-      "type": "https://coscine.rwth-aachen.de",
+      "type": "dldist:DataService",
       "contact_point": "exthisns:coscine-admin",
       "download_url_template": "https://coscine.example.com/coscine/api/v2/projects/{projectId}/resources/{resourceId}/blobs/{key}",
       "endpoint_description": "https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json",
       "endpoint_url": "https://coscine.example.com/coscine"
     }
   },
-  "schema_type": "dldist:Distribution",
+  "type": "dldist:Distribution",
   "access_service": [
     "https://coscine.example.com"
   ],

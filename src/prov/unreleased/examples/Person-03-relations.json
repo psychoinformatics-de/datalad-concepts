@@ -1,6 +1,6 @@
 {
   "id": "https://example.com/ns/people/jane",
-  "schema_type": "dlprov:Person",
+  "type": "dlprov:Person",
   "qualified_relations": [
     {
       "object": "email:jane@example.com",

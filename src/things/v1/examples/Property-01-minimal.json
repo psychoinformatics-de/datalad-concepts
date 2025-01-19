@@ -1,5 +1,5 @@
 {
   "id": "dcterms:title",
-  "schema_type": "dlthings:Property",
+  "type": "dlthings:Property",
   "@type": "Property"
 }

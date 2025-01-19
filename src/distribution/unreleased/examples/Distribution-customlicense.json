@@ -3,11 +3,11 @@
   "relations": {
     "exthisds:#customlicense": {
       "id": "exthisds:#customlicense",
-      "schema_type": "dldist:LicenseDocument",
+      "type": "dldist:LicenseDocument",
       "license_text": "Highly custom terms, never seen before."
     }
   },
-  "schema_type": "dldist:Distribution",
+  "type": "dldist:Distribution",
   "license": "exthisds:#customlicense",
   "@type": "Distribution"
 }
