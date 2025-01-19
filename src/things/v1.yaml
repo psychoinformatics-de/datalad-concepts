@@ -99,6 +99,33 @@ types:
     uri: rdfs:Resource
 
 slots:
+  broad_mappings:
+    slot_uri: skos:broadMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      broader meaning.
+    range: uriorcurie
+    multivalued: true
+
+  close_mappings:
+    slot_uri: skos:closeMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      close meaning.
+    range: uriorcurie
+    multivalued: true
+
+  exact_mappings:
+    slot_uri: skos:exactMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      identical meaning.
+    range: uriorcurie
+    multivalued: true
+
   has_attributes:
     slot_uri: dlthings:has_attributes
     description: >-
@@ -145,6 +172,25 @@ slots:
     exact_mappings:
       - obo:RO_0000053
 
+  mappings:
+    slot_uri: skos:mappingRelation
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      comparable meaning. These may include terms that are precisely
+      equivalent, broader or narrower in meaning, or otherwise semantically
+      related but not equivalent from a strict ontological perspective.
+    range: uriorcurie
+    multivalued: true
+
+  narrow_mappings:
+    slot_uri: skos:narrowMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      narrower meaning.
+    range: uriorcurie
+    multivalued: true
+
   object:
     slot_uri: rdf:object
     description: >-
@@ -175,6 +221,15 @@ slots:
     range: uriorcurie
     exact_mappings:
       - rdfs:range
+
+  related_mappings:
+    slot_uri: skos:relatedMatch
+    is_a: mappings
+    description: >-
+      A list of terms from different schemas or terminology systems that have
+      related meaning.
+    range: uriorcurie
+    multivalued: true
 
   relations:
     slot_uri: dlthings:relation
@@ -238,9 +293,13 @@ classes:
       qualified relations to other things (`is_characterized_by`), or
       inline attributes (`has_attributes`).
     slots:
+      - broad_mappings
+      - close_mappings
+      - exact_mappings
       - has_attributes
       - is_characterized_by
-      - schema_type
+      - narrow_mappings
+      - related_mappings
       - type
 
   ValueSpecificationMixin:
