@@ -59,8 +59,10 @@ This implies a limitation on the validation of such records.
 For example, a `Thing` may actually be a `InventoryItem`, using a data model defined in a derived schema.
 Such an `InventoryItem` may define additional slots with their own constraints, and it should be possible to perform a targeted validation of such records.
 
-For this purpose, `Thing` provides a `schema_type` slot.
+For this purpose, `Thing` provides a `type` slot.
 This slots takes an identifier of a schema class (including classes in derived schemas), which provide the effective data model for validation.
+
+Moreover, a set of `mappings` slots can be used to map a(n implicit) type of a data record to external schemas and terminologies, without requiring any and all concepts to be represented by a dedicated schema class.
 
 ## Qualified relationships
 
