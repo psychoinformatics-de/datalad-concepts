@@ -249,24 +249,18 @@ slots:
       - dcat:relation
       - dcterms:relation
 
-  schema_type:
+  type:
     slot_uri: rdf:type
     designates_type: true
     description: >-
-      Type designator of a schema element for validation and schema structure
-      handling purposes. This is used to indicate specialized schema classes
-      for properties that accept a hierarchy of classes as their range.
-    range: NodeUriOrCurie
-    exact_mappings:
-      - dcterms:type
-    annotations:
-      sh:path: dlthings:schema_type
-
-  type:
-    slot_uri: rdf:type
-    description: >-
       State that the subject is an instance of a particular RDF class.
-    range: uriorcurie
+      Typically, no explicit value needs to be assigned to this slot,
+      because it matches the class type of a particular record.
+      However, this slots can be used as a type designator of a schema
+      element for validation and schema structure handling purposes.
+      This is used to indicate specialized schema classes for properties
+      that accept a hierarchy of classes as their range.
+    range: NodeUriOrCurie
     exact_mappings:
       - dcterms:type
 
