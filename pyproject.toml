@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "datalad-concepts"
+version = "0.0.1"
+description = 'Low-tech, open-world metadata schemas'
+readme = "README.md"
+requires-python = ">=3.8"
+license = "MIT"
+keywords = [
+  "schema",
+  "linked data",
+  "data modeling",
+  "rdf",
+  "datalad",
+]
+authors = [
+  { name = "Michael Hanke", email = "michael.hanke@gmail.com" },
+  { name = "Stephan Heunis", email = "jsheunis@gmail.com" },
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: Implementation :: CPython",
+  "Programming Language :: Python :: Implementation :: PyPy",
+]
+dependencies = [
+  "linkml",
+]
+
+[project.urls]
+Documentation = "https://concepts.datalad.org"
+Issues = "https://github.com/psychoinformatics-de/datalad-concepts/issues"
+Source = "https://github.com/psychoinformatics-de/datalad-concepts"
+
+[tool.hatch.build.targets.sdist]
+only-include = ["src"]
+
+# we do not need any traditional building
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.hatch.envs.default]
+post-install-commands = [
+  "{root}/tools/patch_linkml",
+]
+
+[tool.hatch.envs.docs]
+description = "build mkdocs-based documentation and website"
+extra-dependencies = [
+  "mkdocs",
+  "mkdocs-mermaid2-plugin",
+  "mkdocs-redirects",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "make clean build/mkdocs-site"
+serve = "make clean build/mkdocs-site && mkdocs serve"
