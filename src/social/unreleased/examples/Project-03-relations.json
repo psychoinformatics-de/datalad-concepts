@@ -1,0 +1,22 @@
+{
+  "id": "https://example.com/projects/p1a",
+  "is_characterized_by": [
+    {
+      "object": "https://example.com/projects/grand-plan",
+      "predicate": "dcterms:isPartOf"
+    }
+  ],
+  "type": "dlsocial:Project",
+  "qualified_relations": [
+    {
+      "object": "http://orcid.org/0000-0001-6398-6370",
+      "had_roles": [
+        "marcrel:ctb"
+      ]
+    }
+  ],
+  "was_associated_with": [
+    "http://orcid.org/0000-0001-6398-6370"
+  ],
+  "@type": "Project"
+}

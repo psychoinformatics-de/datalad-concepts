@@ -1,0 +1,11 @@
+schema: src/social/unreleased.yaml
+target_class: Project
+data_sources:
+  - src/social/unreleased/examples/Project-01-minimal.yaml
+  - src/social/unreleased/examples/Project-02-attributes.yaml
+  - src/social/unreleased/examples/Project-03-relations.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
