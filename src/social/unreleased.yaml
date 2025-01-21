@@ -35,6 +35,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
+  vcard: http://www.w3.org/2006/vcard/ns#
   # declare a namespace for emails, such that they can be defined as a curie
   # e.g.: email:me@example.com
   # -> https://concepts.datalad.org/ns/email/me@example.com
@@ -44,10 +45,70 @@ default_prefix: dlsocial
 
 imports:
   - dlschemas:prov/unreleased
+  - dlschemas:properties/unreleased
 
 
 slots:
+  family_name:
+    slot_uri: dlsocial:family_name
+    is_a: name
+    description: >-
+      The (inherited) family name of the subject. In many Western languages this is the
+      "last name".
+    range: string
+    exact_mappings:
+      - foaf:familyName
+      - vcard:family-name
 
+  formatted_name:
+    slot_uri: dlsocial:formatted_name
+    is_a: name
+    description: >-
+      A formatted text corresponding to the name of the subject.
+    range: string
+    exact_mappings:
+      - vcard:fn
+
+  honorific_name_prefix:
+    slot_uri: dlsocial:honorific_name_prefix
+    is_a: name
+    description: >-
+      The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
+      like "Mrs", or "Dr", "Dame".
+    range: string
+    exact_mappings:
+      - vcard:honorific-suffix
+
+  honorific_name_suffix:
+    slot_uri: dlsocial:honorific_name_suffix
+    is_a: name
+    description: >-
+      The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
+      or indicators of an academic degree, a profession, or a position ("MD", "BA").
+    range: string
+    exact_mappings:
+      - vcard:honorific-suffix
+
+  given_name:
+    slot_uri: dlsocial:given_name
+    is_a: name
+    description: >-
+      The given (non-inherited) name of the subject.
+    range: string
+    exact_mappings:
+      - foaf:familyName
+      - vcard:given-name
+
+  additional_names:
+    slot_uri: dlsocial:additional_names
+    is_a: name
+    description: >-
+      Additional name(s) associated with the subject, such as one or more
+      middle names, or a nick name.
+    range: string
+    exact_mappings:
+      - vcard:additional_name
+    multivalued: true
 
 classes:
   Person:
@@ -58,6 +119,13 @@ classes:
     exact_mappings:
       - foaf:Person
       - prov:Person
+    slots:
+      - additional_names
+      - family_name
+      - given_name
+      - honorific_name_prefix
+      - honorific_name_suffix
+      - formatted_name
     comments:
       - This class does not offer common slots like "affiliation" or "email".
         Instead, this information should be expressed as `qualified_relations`

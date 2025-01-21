@@ -1,0 +1,13 @@
+{
+  "id": "https://example.com/ns/zorro",
+  "type": "dlsocial:Person",
+  "additional_names": [
+    "Zorro"
+  ],
+  "family_name": "de la Vega",
+  "given_name": "Diego",
+  "honorific_name_prefix": "Don",
+  "honorific_name_suffix": "III",
+  "formatted_name": "Don Diego Zorro de la Vega III",
+  "@type": "Person"
+}
