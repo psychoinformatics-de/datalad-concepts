@@ -1,0 +1,9 @@
+#  
+id: https://example.com/ns/zorro
+family_name: de la Vega
+given_name: Diego
+additional_names:
+  - Zorro
+honorific_name_prefix: Don
+honorific_name_suffix: III
+formatted_name: Don Diego Zorro de la Vega III

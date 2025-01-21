@@ -4,6 +4,7 @@ data_sources:
   - src/social/unreleased/examples/Person-01-minimal.yaml
   - src/social/unreleased/examples/Person-02-attributes.yaml
   - src/social/unreleased/examples/Person-03-relations.yaml
+  - src/social/unreleased/examples/Person-04-names.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
