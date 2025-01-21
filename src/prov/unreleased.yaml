@@ -34,16 +34,6 @@ description: |
   example, an entity's [`was_generated_by`](was_generated_by) is implemented,
   but not an activity's `generated`.
 
-  With [`Person`](Person), [`Organization`](Organization), and
-  [`SoftwareAgent`](SoftwareAgent), the three essential [`Agent`](Agent) types
-  included in `PROV` are supported. However, these classes provide no
-  additional slots over their base class. Their purpose is only semantic
-  differentiation.
-
-  A custom CURIE prefix `email:` is defined and emitted to allow for using
-  emails as suitable schema identifiers for an email address (e.g.,
-  `email:me@example.com`).
-
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)
@@ -65,14 +55,12 @@ prefixes:
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   eunal: http://publications.europa.eu/resource/authority/
+  # here for alignment of `Agent`
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
+  # foundational
   prov: http://www.w3.org/ns/prov#
-  # declare a namespace for emails, such that they can be defined as a curie
-  # e.g.: email:me@example.com
-  # -> https://concepts.datalad.org/ns/email/me@example.com
-  email: https://concepts.datalad.org/ns/email/
   # disambiguate a GEO URI from a curie prefix
   geo: "geo:"
 
@@ -234,39 +222,6 @@ classes:
       - was_generated_by
     exact_mappings:
       - prov:Entity
-
-  Person:
-    class_uri: dlprov:Person
-    is_a: Agent
-    description: >-
-      Person agents are people, alive, dead, or fictional.
-    exact_mappings:
-      - foaf:Person
-      - prov:Person
-    comments:
-      - This class does not offer common slots like "affiliation" or "email".
-        Instead, this information should be expressed as `qualified_relations`
-        to other things with a role characterization. An affiliation can be
-        expressed as a relation to an organization, and the role that the
-        organization has for the person (e.g., "employer").
-
-  Organization:
-    class_uri: dlprov:Organization
-    is_a: Agent
-    description: >-
-      A social or legal instititution such as a company, a society,
-      or a university.
-    exact_mappings:
-      - foaf:Organization
-      - prov:Organization
-    comments:
-      - This class does not offer common slots like "address" or "contact".
-        Instead, this information should be expressed as `qualified_relations`
-        to other things with a role-characterization. An address can be
-        expressed as a relation to a location, and the role this location
-        has for the organization (e.g., "main office"). Likewise, a contact
-        can be describe as a relation to a person, and the role that this
-        person fulfills for the organization (e.g., "spokesperson").
 
   SoftwareAgent:
     class_uri: dlprov:SoftwareAgent

@@ -1,0 +1,11 @@
+schema: src/prov/unreleased.yaml
+target_class: Agent
+data_sources:
+  - src/prov/unreleased/examples/Agent-01-minimal.yaml
+  - src/prov/unreleased/examples/Agent-02-attributes.yaml
+  - src/prov/unreleased/examples/Agent-03-relations.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

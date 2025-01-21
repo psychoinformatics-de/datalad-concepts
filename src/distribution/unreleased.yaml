@@ -109,7 +109,9 @@ emit_prefixes:
   - prov
 
 imports:
+  - ../properties/unreleased
   - ../prov/unreleased
+  - ../social/unreleased
 
 types:
   EmailAddress:
@@ -411,15 +413,6 @@ slots:
       - https://www.iana.org/assignments/media-types
     exact_mappings:
       - dcat:mediaType
-
-  name:
-    slot_uri: dldist:name
-    description: Name of a thing.
-    exact_mappings:
-      - rdfs:label
-      - schema:name
-      - foaf:name
-    range: string
 
   qualified_access:
     slot_uri: dlco:qualified_access

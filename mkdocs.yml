@@ -11,6 +11,7 @@ nav:
     - Spatial (dev): s/spatial/unreleased/index.md
     - Temporal (dev): s/temporal/unreleased/index.md
     - Provenance (dev): s/prov/unreleased/index.md
+    - Social (dev): s/social/unreleased/index.md
     - Distribution (dev): s/distribution/unreleased/index.md
     - DataLad dataset (dev): s/datalad-dataset/unreleased/index.md
     - Scientific data distribution (dev): s/sdd/unreleased/index.md
@@ -27,6 +28,7 @@ plugins:
           's/spatial/index.md': 's/spatial/unreleased/index.md'
           's/temporal/index.md': 's/temporal/unreleased/index.md'
           's/prov/index.md': 's/prov/unreleased/index.md'
+          's/social/index.md': 's/social/unreleased/index.md'
           's/distribution/index.md': 's/distribution/unreleased/index.md'
           's/datalad-dataset/index.md': 's/datalad-dataset/unreleased/index.md'
           's/sdd/index.md': 's/sdd/unreleased/index.md'
