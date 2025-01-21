@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/prov/unreleased
 name: prov-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Schema for a generic (data) provenance annotation
 description: |
   This schema builds on the [Thing
@@ -64,6 +64,7 @@ prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/

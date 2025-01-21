@@ -2,8 +2,7 @@ id: https://concepts.datalad.org/s/things/v1
 name: things-schema
 # only the major version is reflected in the identifier, but this is the full version
 version: 1.0.0-prerelease
-# TODO: this needs a proper URI, even the linkml example bibo:draft is not valid
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
   STILL A DRAFT!!
@@ -56,6 +55,7 @@ prefixes:
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#

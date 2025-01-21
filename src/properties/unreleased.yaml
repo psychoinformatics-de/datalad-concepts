@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/properties/unreleased
 name: properties-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Collection of common properties for use in schemas
 description: |
   This schema provides a collection of common properties for use in other
@@ -37,6 +37,7 @@ prefixes:
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/

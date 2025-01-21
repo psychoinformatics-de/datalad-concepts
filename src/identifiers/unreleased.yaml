@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/identifiers/unreleased
 name: identifiers-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Schema components to express identifiers of things
 description: |
   This schema implements some aspects of the [identifier
@@ -29,6 +29,7 @@ prefixes:
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
 
