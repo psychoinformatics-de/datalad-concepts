@@ -12,7 +12,7 @@
       "value": "1"
     }
   ],
-  "type": "dlprov:Person",
+  "type": "dlsocial:Person",
   "acted_on_behalf_of": [
     "https://ror.org/02nv7yv05"
   ],

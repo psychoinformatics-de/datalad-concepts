@@ -1,13 +1,7 @@
 {
   "id": "https://example.com/ns/people/jane",
-  "type": "dlprov:Person",
+  "type": "dlprov:Agent",
   "qualified_relations": [
-    {
-      "object": "email:jane@example.com",
-      "had_roles": [
-        "http://schema.org/email"
-      ]
-    },
     {
       "object": "geo:-19.738897,63.453072?z=19",
       "had_roles": [
@@ -15,5 +9,5 @@
       ]
     }
   ],
-  "@type": "Person"
+  "@type": "Agent"
 }

@@ -1,5 +1,5 @@
 {
   "id": "http://orcid.org/0000-0001-7628-0801",
-  "type": "dlprov:Person",
+  "type": "dlsocial:Person",
   "@type": "Person"
 }
