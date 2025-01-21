@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/distribution/unreleased
 name: distribution-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Schema for a generic data distribution record
 description: |
   This schema is centered on the [`Distribution`](Distribution) class for
@@ -63,6 +63,7 @@ prefixes:
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   # custom prefix to use Git's SHA identifiers as schema identifiers
   gitsha: https://concepts.datalad.org/ns/gitsha/

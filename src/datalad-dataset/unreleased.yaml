@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/datalad-dataset/unreleased
 name: datalad-dataset-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Base schema used by the DataLad dataset (de)serializer
 description: |
   At the moment, this is largely identical to the [distribution](https://concepts.datalad.org/s/distribution) schema.
@@ -37,6 +37,7 @@ prefixes:
   dlschemas: https://concepts.datalad.org/s/
   dldist: https://concepts.datalad.org/s/distribution/unreleased/
   dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   gitsha: https://concepts.datalad.org/ns/gitsha/
   linkml: https://w3id.org/linkml/

@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/temporal/unreleased
 name: temporal-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Schema for characterizing temporal concepts
 description: |
 
@@ -25,6 +25,7 @@ prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
 

@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/roles/unreleased
 name: roles-schema
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Schema for characterizing relationships with roles
 description: |
   This schema provides the most basic classes and slots to qualify
@@ -37,6 +37,7 @@ prefixes:
   dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
   marcrel: http://id.loc.gov/vocabulary/relators/

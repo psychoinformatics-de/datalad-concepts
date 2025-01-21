@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/sdd/unreleased
 name: sdd
 version: UNRELEASED
-status: bibo:status/draft
+status: eunal:concept-status/DRAFT
 title: Scientific data distribution
 description: |
   At the moment, this is no more than a place for moving existing concepts too
@@ -36,6 +36,7 @@ prefixes:
   dlsdd: https://concepts.datalad.org/s/sdd/unreleased/
   dex: https://example.org/ns/ex/terms/
   dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   gitsha: https://concepts.datalad.org/ns/gitsha/
   linkml: https://w3id.org/linkml/
