@@ -1,0 +1,10 @@
+# annotating a project with predefined and custom attributes
+id: https://example.com/projects/p1a
+title: Impactful entry
+description: >-
+  A project about approaching a new field, and not looking entirely
+  incompetent after some time.
+has_attributes:
+  - predicate: https://example.com/ns/psych/self-esteem-boost-potential
+    value: "100"
+    range: linkml:int

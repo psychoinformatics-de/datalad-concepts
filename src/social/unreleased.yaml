@@ -136,7 +136,6 @@ classes:
         expressed at either end (at an organizations potential `members` slot,
         but also (symmetrically) as a persons potential `member_of` slot).
 
-
   Organization:
     class_uri: dlsocial:Organization
     is_a: Agent
@@ -154,3 +153,21 @@ classes:
         has for the organization (e.g., "main office"). Likewise, a contact
         can be describe as a relation to a person, and the role that this
         person fulfills for the organization (e.g., "spokesperson").
+
+  Project:
+    class_uri: dlsocial:Project
+    is_a: Activity
+    description: >-
+      A collective endeavour of some kind. Typically it is a planned
+      process that is undertaken or attempted to meet some requirement,
+      or to achieve a particular goal.
+    exact_mappings:
+      - foaf:Project
+    close_mappings:
+      - obo:NCIT_C47885
+    broad_mappings:
+      # process
+      - obo:BFO_0000015
+    slots:
+      - title
+      - description
