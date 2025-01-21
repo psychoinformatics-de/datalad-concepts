@@ -48,21 +48,29 @@ description: |
 license: MIT
 
 prefixes:
+  # here for alignment of `id`
   ADMS: http://www.w3.org/ns/adms#
-  bibo: http://purl.org/ontology/bibo/
+  # here for alignment of `relations`
   dcat: http://www.w3.org/ns/dcat#
+  # foundational
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org/
+  # self-reference
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  # here is a large, versatile source of controlled vocabularies/codes
   eunal: http://publications.europa.eu/resource/authority/
+  # here as a technical necessity
   linkml: https://w3id.org/linkml/
+  # here as a large ecosystem for alignment and annotation
   obo: http://purl.obolibrary.org/obo/
+  # foundational
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   sh: http://www.w3.org/ns/shacl#
+  # here for alignment of `has_attributes`
   sio: http://semanticscience.org/resource/
+  # foundational
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
   # Example convenience namespace that makes it possible to not think about
