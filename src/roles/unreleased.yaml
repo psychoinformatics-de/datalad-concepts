@@ -55,10 +55,9 @@ imports:
 
 slots:
   had_roles:
-    slot_uri: dlroles:had_role
+    slot_uri: dlroles:had_roles
     description: >-
-      The function of an entity or agent with respect to another entity or
-      resource.
+      The function of an entity or agent with respect to the subject.
     range: Role
     multivalued: true
     inlined: false
@@ -70,9 +69,9 @@ slots:
       - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
 
   qualified_relations:
-    slot_uri: dlroles:qualified_relation
+    slot_uri: dlroles:qualified_relations
     description: >-
-      Characterizes the relationship or role of an entity with respect to the subject entity.
+      Characterizes the relationship or role of an entity with respect to the subject.
     domain: Thing
     range: Relationship
     inlined: true
@@ -87,9 +86,8 @@ classes:
     class_uri: dlroles:Role
     is_a: Thing
     description: >-
-      A role is the function of a resource or agent with respect to
-      another resource, in the context of resource attribution or
-      resource relationships.
+      A role is the function of a resource or agent with respect to a subject,
+      in the context of resource attribution or relationships.
     exact_mappings:
       - prov:Role
       - dcat:Role
