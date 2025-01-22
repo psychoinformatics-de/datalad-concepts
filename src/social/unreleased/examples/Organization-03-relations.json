@@ -1,0 +1,13 @@
+{
+  "id": "https://trr379.de",
+  "type": "dlsocial:Organization",
+  "qualified_relations": [
+    {
+      "object": "https://ror.org/018mejw64",
+      "had_roles": [
+        "marcrel:fnd"
+      ]
+    }
+  ],
+  "@type": "Organization"
+}
