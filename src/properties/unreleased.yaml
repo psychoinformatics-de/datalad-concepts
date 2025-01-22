@@ -42,6 +42,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
+  pq: http://www.wikidata.org/prop/qualifier/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
@@ -108,6 +109,16 @@ slots:
       - owl:sameAs
     close_mappings:
       - schema:sameAs
+
+  short_name:
+    slot_uri: dlprops:short_name
+    is_a: name
+    description: >-
+      A shortened name for the subject. For example, an acronym, initialism,
+      nickname, or other abbreviation of the `name`.
+    exact_mappings:
+      - pq:P1813
+    range: string
 
   title:
     slot_uri: dlprops:title
