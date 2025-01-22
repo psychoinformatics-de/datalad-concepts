@@ -1,0 +1,18 @@
+{
+  "id": "https://ror.org/018mejw64",
+  "type": "dlsocial:Organization",
+  "at_location": "https://geonames.org/2946447",
+  "identifiers": [
+    {
+      "notation": "Q707283",
+      "creator": "https://wikidata.org"
+    },
+    {
+      "notation": "501100001659",
+      "creator": "https://crossref.org"
+    }
+  ],
+  "name": "Deutsche Forschungsgemeinschaft",
+  "short_name": "DFG",
+  "@type": "Organization"
+}
