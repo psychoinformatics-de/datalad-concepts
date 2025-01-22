@@ -145,6 +145,9 @@ classes:
     exact_mappings:
       - foaf:Organization
       - prov:Organization
+    slots:
+      - name
+      - short_name
     comments:
       - This class does not offer common slots like "address" or "contact".
         Instead, this information should be expressed as `qualified_relations`
@@ -169,5 +172,6 @@ classes:
       # process
       - obo:BFO_0000015
     slots:
-      - title
       - description
+      - short_name
+      - title

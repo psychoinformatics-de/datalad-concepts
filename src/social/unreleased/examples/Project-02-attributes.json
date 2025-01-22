@@ -9,7 +9,8 @@
     }
   ],
   "type": "dlsocial:Project",
-  "title": "Impactful entry",
   "description": "A project about approaching a new field, and not looking entirely incompetent after some time.",
+  "short_name": "BANG!",
+  "title": "Impactful entry",
   "@type": "Project"
 }
