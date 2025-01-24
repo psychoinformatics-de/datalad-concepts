@@ -1,3 +1,33 @@
+## Schema development
+
+### Composition
+
+The aim of this development is to provide a collection of "narrowly" scoped schemas with a minimal number of elements, and a clearly defined purpose.
+Individual schemas should be re-useable in a focused manner, rather than needlessly imposing the complexity of the entire collection on a given use-case.
+Schemas may build on other schemas (imports) to maximize homogeneity of data models across all covered use cases, thereby facilitating accessibility and interoperability.
+
+### Versioning
+
+Schemas are versioned to maximize longevity of availability and utility for historic data.
+
+Whenever a schema or a dependency of a schema undergoes a breaking change, the version of the schema is bumped.
+All previous versions of a schema remain available, and an effort is made to maintain technical compatibility with the underlying software tooling.
+However, continued (even non-breaking) schema improvements may be limited to current versions.
+
+A breaking change is:
+
+- the removal of a schema element (class, slot, ...)
+- a change in the schema element URI
+- a change that impacts the structure of schema-compliant data records
+
+Due to the particular nature of [LinkML](https://linkml.io/linkml) the following changes are also breaking:
+
+- addition of a top-level schema element (class, slot, type, etc.)
+- moving a schema element from a downstream schema to an upstream schema
+
+This is implied by any schema sharing a single, non-scoped namespace with any and all of its imported schemas (upstream schemas).
+
+
 ## Acknowledgements
 
 This work was funded, in part, by
