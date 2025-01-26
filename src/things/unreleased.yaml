@@ -86,17 +86,8 @@ emit_prefixes:
   - obo
 
 imports:
+  - dlschemas:types/unreleased
   - linkml:types
-
-types:
-  NodeUriOrCurie:
-    typeof: uriorcurie
-    description: >-
-      A type referencing an graph node. This is like `uriorcurie`, but in
-      an RDF export leads to the desirable `rdf.type` declaration, rather
-      then an `rdf.literal` of the corresponding URI.
-    base: str
-    uri: rdfs:Resource
 
 slots:
   broad_mappings:
@@ -248,21 +239,6 @@ slots:
     exact_mappings:
       - dcat:relation
       - dcterms:relation
-
-  type:
-    slot_uri: rdf:type
-    designates_type: true
-    description: >-
-      State that the subject is an instance of a particular RDF class.
-      Typically, no explicit value needs to be assigned to this slot,
-      because it matches the class type of a particular record.
-      However, this slots can be used as a type designator of a schema
-      element for validation and schema structure handling purposes.
-      This is used to indicate specialized schema classes for properties
-      that accept a hierarchy of classes as their range.
-    range: NodeUriOrCurie
-    exact_mappings:
-      - dcterms:type
 
   value:
     slot_uri: rdfs:value
