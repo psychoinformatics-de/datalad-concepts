@@ -1,0 +1,67 @@
+id: https://concepts.datalad.org/s/types/unreleased
+name: types-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of common types for use in schemas
+description: |
+  This schema provides a collection of common types for use in other
+  schemas. It can be imported directly into other linkml schemas, or
+  any of its individual property definitions can be used by their
+  URI as vocabulary components or definitions (e.g., `dltypes:type`
+  identified by this [URI](`type`)).
+
+  Class definitions are only included insofar as they define ranges
+  for particular property slots.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+
+default_prefix: dltypes
+
+imports:
+  - linkml:types
+
+types:
+  NodeUriOrCurie:
+    typeof: uriorcurie
+    description: >-
+      A type referencing an graph node. This is like `uriorcurie`, but in
+      an RDF export leads to the desirable `rdf.type` declaration, rather
+      then an `rdf.literal` of the corresponding URI.
+    base: str
+    uri: rdfs:Resource
+
+slots:
+  type:
+    slot_uri: rdf:type
+    designates_type: true
+    description: >-
+      State that the subject is an instance of a particular RDF class.
+      Typically, no explicit value needs to be assigned to this slot,
+      because it matches the class type of a particular record.
+      However, this slots can be used as a type designator of a schema
+      element for validation and schema structure handling purposes.
+      This is used to indicate specialized schema classes for properties
+      that accept a hierarchy of classes as their range.
+    range: NodeUriOrCurie
+    exact_mappings:
+      - dcterms:type
+
