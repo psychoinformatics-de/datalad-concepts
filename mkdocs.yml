@@ -5,6 +5,7 @@ nav:
   - About: about.md
   - Schemas:
     - Things: s/things/v1/index.md
+    - Types (dev): s/types/unreleased/index.md
     - Properties (dev): s/properties/unreleased/index.md
     - Identifiers (dev): s/identifiers/unreleased/index.md
     - Roles (dev): s/roles/unreleased/index.md
@@ -22,6 +23,7 @@ plugins:
       redirect_maps:
           # map unversioned URLs to the latest version
           's/things/index.md': 's/things/v1/index.md'
+          's/types/index.md': 's/types/unreleased/index.md'
           's/properties/index.md': 's/properties/unreleased/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/roles/index.md': 's/roles/unreleased/index.md'

@@ -27,6 +27,7 @@ stay as simple as possible.
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Things schema](s/things/unreleased/index.md)
+- [Types schema](s/types/unreleased/index.md)
 - [Properties schema](s/properties/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Roles schema](s/roles/unreleased/index.md)
