@@ -1,8 +1,8 @@
 schema: src/identifiers/unreleased.yaml
-target_class: Identifier
+target_class: IssuedIdentifier
 data_sources:
-  - src/identifiers/unreleased/examples/Identifier-01-minimal.yaml
-  - src/identifiers/unreleased/examples/Identifier-02-full.yaml
+  - src/identifiers/unreleased/examples/IssuedIdentifier-01-minimal.yaml
+  - src/identifiers/unreleased/examples/IssuedIdentifier-02-full.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -4,8 +4,9 @@
   "byte_size": 63165,
   "checksum": [
     {
-      "algorithm": "spdx:checksumAlgorithm_sha1",
-      "digest": "0410b851ebd2282ac37558885db16782f31626db"
+      "notation": "0410b851ebd2282ac37558885db16782f31626db",
+      "creator": "spdx:checksumAlgorithm_sha1",
+      "type": "dlidentifiers:Checksum"
     }
   ],
   "media_type": "text/html",

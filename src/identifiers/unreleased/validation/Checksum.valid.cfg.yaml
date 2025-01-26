@@ -1,8 +1,7 @@
 schema: src/identifiers/unreleased.yaml
-target_class: Identifier
+target_class: Checksum
 data_sources:
-  - src/identifiers/unreleased/examples/Identifier-01-minimal.yaml
-  - src/identifiers/unreleased/examples/Identifier-02-full.yaml
+  - src/identifiers/unreleased/examples/Checksum-01-minimal.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
