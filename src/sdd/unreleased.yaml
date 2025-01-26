@@ -81,30 +81,8 @@ slots:
     exact_mappings:
       - CiTO:citesAsAuthority
 
-  sponsor:
-    slot_uri: dlsdd:sponsor
-    description: >-
-      A person or organization that supports a thing through a pledge,
-      promise, or financial contribution
-    range: Agent
-    exact_mappings:
-      - schema:sponsor
-
 
 classes:
-  Grant:
-    class_uri: dlsdd:Grant
-    is_a: Entity
-    description: >-
-      A grant, typically financial or otherwise quantifiable, of resources.
-    slots:
-      - sponsor
-      - cites_as_authority
-    exact_mappings:
-      - schema:Grant
-    todos:
-      - We might also want to support `notation` here to support funder-recommended or funder-required citation forms.
-
   Publication:
     class_uri: dlsdd:Publication
     is_a: Entity

@@ -34,6 +34,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Spatial schema](s/spatial/unreleased/index.md)
 - [Temporal schema](s/itemporal/unreleased/index.md)
 - [Provenance schema](s/prov/unreleased/index.md)
+- [Resources schema](s/resources/unreleased/index.md)
 - [Social schema](s/social/unreleased/index.md)
 - [Data distribution schema](s/distribution/unreleased/index.md)
 - [DataLad dataset schema](s/datalad-dataset/unreleased/index.md)
