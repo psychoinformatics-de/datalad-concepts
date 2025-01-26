@@ -4,8 +4,9 @@
   "byte_size": 3214,
   "checksum": [
     {
-      "algorithm": "spdx:checksumAlgorithm_md5",
-      "digest": "ba1f2511fc30423bdbb183fe33f3dd0f"
+      "notation": "ba1f2511fc30423bdbb183fe33f3dd0f",
+      "creator": "spdx:checksumAlgorithm_md5",
+      "type": "dlidentifiers:Checksum"
     }
   ],
   "media_type": "text/csv",

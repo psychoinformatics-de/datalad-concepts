@@ -40,6 +40,13 @@ imports:
   - linkml:types
 
 types:
+  HexBinary:
+    uri: xsd:hexBinary
+    base: str
+    pattern: "^[a-fA-F0-9]+$"
+    description: >-
+      hex-encoded binary data.
+
   NodeUriOrCurie:
     typeof: uriorcurie
     description: >-

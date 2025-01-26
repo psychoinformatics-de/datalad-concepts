@@ -15,7 +15,7 @@ has_attributes:
 # Checksum information is inlined, because additional linkage
 # to a unique content checksum value is an unlikely use case
 checksum:
-  - algorithm: spdx:checksumAlgorithm_md5
-    digest: 32a617360d10e3dcbfdd0885e8d64ab8
-  - algorithm: spdx:checksumAlgorithm_sha1
-    digest: c7dbac946b9860cf05a7d696b9e9591c60083859
+  - creator: spdx:checksumAlgorithm_md5
+    notation: 32a617360d10e3dcbfdd0885e8d64ab8
+  - creator: spdx:checksumAlgorithm_sha1
+    notation: c7dbac946b9860cf05a7d696b9e9591c60083859

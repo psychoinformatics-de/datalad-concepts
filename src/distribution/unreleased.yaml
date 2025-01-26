@@ -123,13 +123,6 @@ types:
       - The validation regex is taken from https://stackoverflow.com/a/201378
       - The regex is single-quoted for YAML encoding, hence all inner "'" have been doubled
 
-  HexBinary:
-    uri: xsd:hexBinary
-    base: str
-    pattern: "^[a-fA-F0-9]+$"
-    description: >-
-      hex-encoded binary data.
-
   NonNegativeInteger:
     uri: xsd:nonNegativeInteger
     base: int
@@ -186,16 +179,6 @@ slots:
     exact_mappings:
       - schema:affiliation
 
-  algorithm:
-    description: >-
-      The algorithm or rules to follow to compute a score, an effective method
-      expressed as a finite list of well-defined instructions for calculating
-      a function.
-    range: uriorcurie
-    exact_mappings:
-      - schema:algorithm
-      - obo:IAO_0000064
-
   byte_size:
     slot_uri: dldist:byte_size
     description: >-
@@ -242,15 +225,6 @@ slots:
     notes:
       - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
       - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
-
-  digest:
-    slot_uri: dldist:digest
-    description: >-
-      Lower case hexadecimal encoded checksum digest value produced using a
-      specific algorithm.
-    range: HexBinary
-    exact_mappings:
-      - spdx:checksumValue
 
   distribution:
     slot_uri: dldist:distribution
@@ -558,27 +532,6 @@ classes:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
         tree in multiple contexts, such as different versions of a dataset).
-
-  #
-  # utilities
-  #
-  Checksum:
-    class_uri: dldist:Checksum
-    description: >-
-      A Checksum is a value that allows to check the integrity of the contents
-      of a file. Even small changes to the content of the file will change its
-      checksum. This class allows the results of a variety of checksum and
-      cryptographic message digest algorithms to be represented.
-    slots:
-      - algorithm
-      - digest
-    slot_usage:
-      algorithm:
-        slot_uri: spdx:algorithm
-        description: >-
-          Identifies the algorithm used to produce the subject `Checksum`.
-    exact_mappings:
-      - spdx:Checksum
 
   #
   # data access

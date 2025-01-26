@@ -1,6 +1,7 @@
 {
   "notation": "10.2760/271009",
   "creator": "https://op.europa.eu",
+  "type": "dlidentifiers:DOI",
   "schema_agency": "Publications Office of the European Union",
   "@type": "DOI"
 }

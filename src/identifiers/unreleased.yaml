@@ -10,6 +10,10 @@ description: |
   (ADMS). The provided [`identifiers` slot](identifiers) can be used to annotate
   entities with identifiers with arbitrary scopes and issued by arbitrary agencies.
 
+  The schema also covered "content identifier" that are directly derived from
+  an entity ([`ComputedIdentifier`](ComputedIdentifier)), and a
+  [`Checksum`](Checksum) in particular.
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)
@@ -24,18 +28,18 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
-  bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org/
   dlschemas: https://concepts.datalad.org/s/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
 
 default_prefix: dlidentifiers
 
 imports:
+  - dlschemas:types/unreleased
   - linkml:types
 
 slots:
@@ -83,23 +87,69 @@ classes:
     description: >-
       An identifier is a label that uniquely identifies an item in a
       particular context. Some identifiers are globally unique. All
-      identifiers are unique within the scope of their issuing
-      agency.
+      identifiers are unique within their individual scope.
     slots:
       - creator
       - notation
-      - schema_agency
+      - type
     slot_usage:
       notation:
         required: true
+    close_mappings:
+      - ADMS:Identifier
+
+  IssuedIdentifier:
+    class_uri: dlidentifiers:IssuedIdentifier
+    is_a: Identifier
+    description: >-
+      An identifier that was issued by a particular agent with a notation
+      that has no (or an undefined) relation to the nature of the identified
+      entity.
+    slots:
+      - schema_agency
     exact_mappings:
       - ADMS:Identifier
     see_also:
       - https://semiceu.github.io/ADMS/releases/2.00/#Identifier
 
+  ComputedIdentifier:
+    class_uri: dlidentifiers:ComputedIdentifier
+    is_a: Identifier
+    description: >-
+      An identifier that has been derived from information on the identified
+      entity.
+    narrow_mappings:
+      - spdx:Checksum
+
+  Checksum:
+    class_uri: dlidentifiers:Checksum
+    is_a: ComputedIdentifier
+    description: >-
+      A Checksum is a value that allows to check the integrity of the contents
+      of a file. Even small changes to the content of the file will change its
+      checksum. This class allows the results of a variety of checksum and
+      cryptographic message digest algorithms to be represented.
+    exact_mappings:
+      - spdx:Checksum
+    slot_usage:
+      creator:
+        description: >-
+          Identifies the software agent (algorithm) used to produce the subject
+          `Checksum`.
+        required: true
+        exact_mappings:
+          - spdx:algorithm
+      notation:
+        description: >-
+          Lower case hexadecimal encoded checksum digest value.
+        range: HexBinary
+        required: true
+        exact_mappings:
+          - spdx:checksumValue
+
   DOI:
     class_uri: dlidentifiers:DOI
-    is_a: Identifier
+    is_a: IssuedIdentifier
     description: >-
       Digital Object Identifier (DOI; ISO 26324), an identifier system governed by the
       DOI Foundation, where individual identifiers are issued by one of several registration

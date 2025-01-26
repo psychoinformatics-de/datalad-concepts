@@ -11,12 +11,14 @@
   "byte_size": 123456789,
   "checksum": [
     {
-      "algorithm": "spdx:checksumAlgorithm_md5",
-      "digest": "32a617360d10e3dcbfdd0885e8d64ab8"
+      "notation": "32a617360d10e3dcbfdd0885e8d64ab8",
+      "creator": "spdx:checksumAlgorithm_md5",
+      "type": "dlidentifiers:Checksum"
     },
     {
-      "algorithm": "spdx:checksumAlgorithm_sha1",
-      "digest": "c7dbac946b9860cf05a7d696b9e9591c60083859"
+      "notation": "c7dbac946b9860cf05a7d696b9e9591c60083859",
+      "creator": "spdx:checksumAlgorithm_sha1",
+      "type": "dlidentifiers:Checksum"
     }
   ],
   "date_modified": "2024-03-21",

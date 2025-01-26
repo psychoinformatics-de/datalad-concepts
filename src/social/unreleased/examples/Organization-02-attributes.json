@@ -5,11 +5,13 @@
   "identifiers": [
     {
       "notation": "Q707283",
-      "creator": "https://wikidata.org"
+      "creator": "https://wikidata.org",
+      "type": "dlidentifiers:Identifier"
     },
     {
       "notation": "501100001659",
-      "creator": "https://crossref.org"
+      "creator": "https://crossref.org",
+      "type": "dlidentifiers:Identifier"
     }
   ],
   "name": "Deutsche Forschungsgemeinschaft",

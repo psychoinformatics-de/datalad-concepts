@@ -1,6 +1,7 @@
 {
   "notation": "10.1038/s41597-022-01163-2",
   "creator": "https://doi.org",
+  "type": "dlidentifiers:DOI",
   "schema_agency": "DOI Foundation",
   "@type": "DOI"
 }
