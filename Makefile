@@ -22,6 +22,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov/unreleased \
+	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/distribution/unreleased \
@@ -75,6 +76,7 @@ check-models: \
 	checkmodel/spatial/unreleased \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov/unreleased \
+	checkmodel/resources/unreleased \
 	checkmodel/social/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/distribution/unreleased \
@@ -119,6 +121,8 @@ check-validation: \
 	checkvalidation/temporal/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
+	convertexamples/resources/unreleased \
+	checkvalidation/resources/unreleased \
 	convertexamples/social/unreleased \
 	checkvalidation/social/unreleased \
 	convertexamples/identifiers/unreleased \
@@ -149,6 +153,7 @@ convert-examples: \
 	convertexamples/spatial/unreleased \
 	convertexamples/temporal/unreleased \
 	convertexamples/prov/unreleased \
+	convertexamples/resources/unreleased \
 	convertexamples/social/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/distribution/unreleased \

@@ -1,0 +1,10 @@
+schema: src/resources/unreleased.yaml
+target_class: Grant
+data_sources:
+  - src/resources/unreleased/examples/Grant-01-minimal.yaml
+  - src/resources/unreleased/examples/Grant-02-sponsor.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

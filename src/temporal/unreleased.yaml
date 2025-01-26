@@ -65,6 +65,17 @@ slots:
     exact_mappings:
       - prov:atTime
 
+  date_modified:
+    slot_uri: dltemporal:date_modified
+    description: >-
+      Timepoint at which the subject was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
   started_at:
     slot_uri: dltemporal:started_at
     description: >-
