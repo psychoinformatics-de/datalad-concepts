@@ -77,6 +77,7 @@ slots:
       A relation of an information artifact to the subject, such as
       a URL identifying the topic of a document.
     range: uriorcurie
+    multivalued: true
     exact_mappings:
       - schema:about
       - obo:IAO_0000136

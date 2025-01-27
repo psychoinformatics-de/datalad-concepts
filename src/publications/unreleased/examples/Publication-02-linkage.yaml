@@ -1,0 +1,53 @@
+id: https://doi.org/10.1038/s41597-022-01163-2
+identifiers:
+  - type: dlidentifiers:DOI
+    notation: 10.1038/s41597-022-01163-2
+qualified_relations:
+  # entiry roles
+  # scientific data
+  - object: https://portal.issn.org/resource/issn/2052-4463
+    had_roles:
+      # publication venue
+      - marcrel:pup
+  # agent roles
+  # adina
+  - object: http://orcid.org/0000-0003-2917-3450
+    had_roles:
+      # author
+      - marcrel:aut
+      # contact person
+      - obo:NCIT_C25461
+      # first author
+      - obo:MS_1002034
+  # laura
+  - object: http://orcid.org/0000-0003-2213-7465
+    had_roles:
+      - marcrel:aut
+      - obo:MS_1002034
+  # małgorzata
+  - object: http://orcid.org/0000-0003-0820-2662
+    had_roles:
+      - marcrel:aut
+      - obo:MS_1002034
+  # felix
+  - object: http://orcid.org/0000-0001-7163-3110
+    had_roles:
+      - marcrel:aut
+  # alex
+  - object: http://orcid.org/0000-0002-8402-6173
+    had_roles:
+      - marcrel:aut
+  # benjamin
+  - object: http://orcid.org/0000-0001-7628-0801
+    had_roles:
+      - marcrel:aut
+  # simon
+  - object: https://orcid.org/0000-0001-6363-2759
+    had_roles:
+      - marcrel:aut
+  # michael
+  - object: http://orcid.org/0000-0001-6398-6370
+    had_roles:
+      - marcrel:aut
+      # senior author
+      - obo:MS_1002035

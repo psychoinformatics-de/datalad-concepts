@@ -1,0 +1,74 @@
+{
+  "id": "https://doi.org/10.1038/s41597-022-01163-2",
+  "type": "dlpubs:Publication",
+  "identifiers": [
+    {
+      "notation": "10.1038/s41597-022-01163-2",
+      "creator": "https://doi.org",
+      "type": "dlidentifiers:DOI",
+      "schema_agency": "DOI Foundation"
+    }
+  ],
+  "qualified_relations": [
+    {
+      "object": "https://portal.issn.org/resource/issn/2052-4463",
+      "had_roles": [
+        "marcrel:pup"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0003-2917-3450",
+      "had_roles": [
+        "marcrel:aut",
+        "obo:NCIT_C25461",
+        "obo:MS_1002034"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0003-2213-7465",
+      "had_roles": [
+        "marcrel:aut",
+        "obo:MS_1002034"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0003-0820-2662",
+      "had_roles": [
+        "marcrel:aut",
+        "obo:MS_1002034"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0001-7163-3110",
+      "had_roles": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0002-8402-6173",
+      "had_roles": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0001-7628-0801",
+      "had_roles": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "object": "https://orcid.org/0000-0001-6363-2759",
+      "had_roles": [
+        "marcrel:aut"
+      ]
+    },
+    {
+      "object": "http://orcid.org/0000-0001-6398-6370",
+      "had_roles": [
+        "marcrel:aut",
+        "obo:MS_1002035"
+      ]
+    }
+  ],
+  "@type": "Publication"
+}

@@ -76,6 +76,14 @@ slots:
       - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
       - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
 
+  date_published:
+    slot_uri: dltemporal:date_published
+    description: >-
+      Timepoint at which the subject was (last) published.
+    range: W3CISO8601
+    exact_mappings:
+      - schema:datePublished
+
   started_at:
     slot_uri: dltemporal:started_at
     description: >-
