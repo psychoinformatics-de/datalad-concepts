@@ -1,0 +1,55 @@
+id: https://concepts.datalad.org/s/publications/unreleased
+name: publications-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Schema for a describing publications
+description: |
+
+  The schema is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dlschemas: https://concepts.datalad.org/s/
+  dlpubs: https://concepts.datalad.org/s/publications/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  sio: http://semanticscience.org/resource/
+
+default_prefix: dlpubs
+
+imports:
+  - dlschemas:identifiers/unreleased
+  - dlschemas:properties/unreleased
+  - dlschemas:temporal/unreleased
+  - dlschemas:prov/unreleased
+
+classes:
+  Publication:
+    class_uri: dlpubs:Publication
+    is_a: Entity
+    description: >-
+      A document that is the output of a publishing process.
+      This can printed or electronic work offered for distribution,
+      and may have been made available by a publisher.
+    exact_mappings:
+      - obo:IAO_0000311
+      - obo:NCIT_C48471
+    close_mappings:
+      - sio:SIO_000087
+    slots:
+      - date_modified
+      - date_published
+      - description
+      - is_about
+      - same_as
+      - title

@@ -1,0 +1,11 @@
+schema: src/publications/unreleased.yaml
+target_class: Publication
+data_sources:
+  - src/publications/unreleased/examples/Publication-01-minimal.yaml
+  - src/publications/unreleased/examples/Publication-02-linkage.yaml
+  - src/publications/unreleased/examples/Publication-03-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
