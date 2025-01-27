@@ -17,7 +17,6 @@ nav:
     - Social (dev): s/social/unreleased/index.md
     - Distribution (dev): s/distribution/unreleased/index.md
     - DataLad dataset (dev): s/datalad-dataset/unreleased/index.md
-    - Scientific data distribution (dev): s/sdd/unreleased/index.md
   - Dump-Things: dump-things.md
 plugins:
   - mermaid2
@@ -37,7 +36,6 @@ plugins:
           's/publications/index.md': 's/publications/unreleased/index.md'
           's/distribution/index.md': 's/distribution/unreleased/index.md'
           's/datalad-dataset/index.md': 's/datalad-dataset/unreleased/index.md'
-          's/sdd/index.md': 's/sdd/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:
