@@ -16,7 +16,7 @@ description: |
     (see [`mappings`](mappings))
   - can be further described by attributes ([`attributes`](attributes))
     and qualified relations to other "things"
-    ([`is_characterized_by`](is_characterized_by)),
+    ([`characterized_by`](characterized_by)),
     without prescribing a particular vocabulary
   - can be associated with a specialized schema class for enabling detailed
     validation and precise data transformations ([`type`](type))
@@ -148,7 +148,7 @@ slots:
       are declared inline, because they do not have a unique identifier.
       If an identifier is available, a `Thing` declaration (see `relation`),
       and a qualification of that relationship via a `Statement` (see
-      `is_characterized_by`) should be preferred.
+      `characterized_by`) should be preferred.
     range: AttributeSpecification
     inlined: true
     inlined_as_list: true
@@ -167,8 +167,8 @@ slots:
       - schema:identifier
       - ADMS:identifier
 
-  is_characterized_by:
-    slot_uri: dlthings:is_characterized_by
+  characterized_by:
+    slot_uri: dlthings:characterized_by
     description: >-
       Qualifies relationships between a subject `Thing` and an object `Thing`
       with a `Statement` declaring a `predicate` on the nature of the
@@ -245,7 +245,7 @@ slots:
       Declares an unqualified relation of the subject `Thing` to another
       `Thing`. This schema slot is used to define related things inline.
       If such a definition is not needed. A qualified relationship can be
-      declared directly using the `is_characterized_by` slot.
+      declared directly using the `characterized_by` slot.
     domain: Thing
     inlined: true
     inlined_as_list: false
@@ -276,7 +276,7 @@ classes:
       and attributes via a `type` designator slot to indicate specialized
       schema classes for validation where a slot's `range` is too generic.
       A thing or attribute can be further describe with statements on
-      qualified relations to other things (`is_characterized_by`), or
+      qualified relations to other things (`characterized_by`), or
       inline attributes (`attributes`).
       A set of `mappings` slots enables the alignment for arbitrary external
       schemas and terminologies.
@@ -285,7 +285,7 @@ classes:
       - close_mappings
       - exact_mappings
       - attributes
-      - is_characterized_by
+      - characterized_by
       - narrow_mappings
       - related_mappings
       - type
@@ -357,7 +357,7 @@ classes:
       slot takes the required identifier for a `Thing`. The `relation`
       slot allows for the inline specification of other `Thing` instances.
       Such a relation is unqualified (and symmetric), and should be
-      further characterized via a `Statement` (see `is_characterized_by`).
+      further characterized via a `Statement` (see `characterized_by`).
       From a schema perspective, the `relation` slots allows for building
       self-contained, structured documents (e.g., a JSON object) with
       arbitrarily complex information on a `Thing`.

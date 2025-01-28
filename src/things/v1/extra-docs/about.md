@@ -67,6 +67,6 @@ Moreover, a set of `mappings` slots can be used to map a(n implicit) type of a d
 ## Qualified relationships
 
 [Qualified relation](https://patterns.dataincubator.org/book/qualified-relation.html) is an essential pattern used by the `things` schema, and also its derivatives and extensions.
-Within the `things` schema it is used by the `is_characterized_by` slot (and to some degree also for `has_attributes`) for characterizing the relationship between things.
+Within the `things` schema it is used by the `characterized_by` slot (and to some degree also for `has_attributes`) for characterizing the relationship between things.
 The relationship between two things is qualified via an inline `Statement` that assigns a predicate to the relationship between a subject-thing, and a related object-thing.
 See the [example for a topic annotation](/s/things/v1/Thing#example-thing-03-topic) for a concrete demo.

@@ -2,7 +2,7 @@ id: exthisns:measurement853
 attributes:
   - predicate: dcterms:title
     value: "measured mass (kg)"
-is_characterized_by:
+characterized_by:
   # measurement datum
   - predicate: dcterms:subject
     object: obo:IAO_0000109

@@ -7,7 +7,7 @@
       "value": "measured mass (kg)"
     }
   ],
-  "is_characterized_by": [
+  "characterized_by": [
     {
       "object": "obo:IAO_0000109",
       "predicate": "dcterms:subject"

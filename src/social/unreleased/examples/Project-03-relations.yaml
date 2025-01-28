@@ -1,7 +1,7 @@
 # a project is an activity, hence can use any of its means to
 # declare relationships to other things
 id: https://example.com/projects/p1a
-is_characterized_by:
+characterized_by:
   - object: https://example.com/projects/grand-plan
     predicate: dcterms:isPartOf
 was_associated_with:

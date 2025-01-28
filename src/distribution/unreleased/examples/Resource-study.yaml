@@ -6,14 +6,14 @@ relations:
     attributes:
       - predicate: foaf:name
         value: s001
-    is_characterized_by:
+    characterized_by:
       # handedness
       - predicate: obo:PATO_0002201
         # ambidextrous
         object: obo:PATO_0002204
   exthisds:#s002:
     type: dlprov:Agent
-    is_characterized_by:
+    characterized_by:
       # biological sex
       - predicate: obo:PATO_0000047
         # male
@@ -28,7 +28,7 @@ relations:
         attributes:
           - predicate: foaf:name
             value: "age (years)"
-        is_characterized_by:
+        characterized_by:
           # unit
           - predicate: obo:UO_0000000
             object: obo:UO_0000036

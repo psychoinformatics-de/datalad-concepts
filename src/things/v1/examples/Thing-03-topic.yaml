@@ -1,6 +1,6 @@
 # Relate a thing to topic/subjects
 id: https://doi.org/10.21105/joss.03262
-is_characterized_by:
+characterized_by:
   # DataLad software
   - object: https://www.scicrunch.org/resolver/SCR_003931
     predicate: dcterms:subject

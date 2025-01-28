@@ -1,6 +1,6 @@
 {
   "id": "exthisdsver:./file.jpeg",
-  "is_characterized_by": [
+  "characterized_by": [
     {
       "object": "obo:NCIT_C95650",
       "predicate": "obo:NCIT_C42645"

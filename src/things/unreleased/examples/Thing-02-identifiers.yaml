@@ -25,7 +25,7 @@ attributes:
         value: 5008462-8
       - predicate: ADMS:schemaAgency
         value: https://d-nb.info
-is_characterized_by:
+characterized_by:
   # Use `sameAs` to point to other sources talking about the same thing
   - object: https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich
     predicate: owl:sameAs

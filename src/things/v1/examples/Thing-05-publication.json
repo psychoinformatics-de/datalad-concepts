@@ -116,7 +116,7 @@
       "value": "2022-03-11"
     }
   ],
-  "is_characterized_by": [
+  "characterized_by": [
     {
       "object": "https://portal.issn.org/resource/issn/2052-4463",
       "predicate": "dcterms:isPartOf"
