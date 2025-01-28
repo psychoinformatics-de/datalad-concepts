@@ -18,6 +18,10 @@ description: |
   attributes as needed. However, typically it should be sufficient
   to reference a role by a URI.
 
+  This schema also incorporates the schemas
+
+  - [`things`](https://concepts.datalad.org/s/things/v1)
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)

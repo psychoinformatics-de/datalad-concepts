@@ -5,6 +5,12 @@ status: eunal:concept-status/DRAFT
 title: Schema for characterizing spatial concepts
 description: |
 
+  This schema also incorporates the schemas
+
+  - [`identifiers`](https://concepts.datalad.org/s/identifiers/unreleased)
+  - [`things`](https://concepts.datalad.org/s/things/v1)
+  - [`roles`](https://concepts.datalad.org/s/roles/unreleased)
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)

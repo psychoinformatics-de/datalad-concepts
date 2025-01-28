@@ -34,6 +34,14 @@ description: |
   example, an entity's [`was_generated_by`](was_generated_by) is implemented,
   but not an activity's `generated`.
 
+  This schema also incorporates the schemas
+
+  - [`identifiers`](https://concepts.datalad.org/s/identifiers/unreleased)
+  - [`things`](https://concepts.datalad.org/s/things/v1)
+  - [`roles`](https://concepts.datalad.org/s/roles/unreleased)
+  - [`spatial`](https://concepts.datalad.org/s/spatial/unreleased)
+  - [`temporal`](https://concepts.datalad.org/s/temporal/unreleased)
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)

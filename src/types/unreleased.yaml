@@ -2,7 +2,7 @@ id: https://concepts.datalad.org/s/types/unreleased
 name: types-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
-title: Collection of common types for use in schemas
+title: Collection of common types
 description: |
   This schema provides a collection of common types for use in other
   schemas. It can be imported directly into other linkml schemas, or
@@ -12,6 +12,10 @@ description: |
 
   Class definitions are only included insofar as they define ranges
   for particular property slots.
+
+  This schema also incorporates the schema(s)
+
+  - [`types`](https://concepts.datalad.org/s/types/unreleased)
 
   The schema definition is available as
 
