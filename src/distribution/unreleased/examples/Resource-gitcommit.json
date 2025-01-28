@@ -37,10 +37,10 @@
       ]
     }
   },
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:identifier",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
           "type": "dlthings:AttributeSpecification",
@@ -52,7 +52,7 @@
     },
     {
       "predicate": "dcterms:identifier",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
           "type": "dlthings:AttributeSpecification",

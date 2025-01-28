@@ -28,7 +28,7 @@ relations:
     # value is identifier of an agent record
     contact_point: exthisns:coscine-admin
     # any general (human-readable) description of the dataservice
-    has_attributes:
+    attributes:
       - predicate: dcterms:description
         value: "Central RDM service at example.com"
     # API description

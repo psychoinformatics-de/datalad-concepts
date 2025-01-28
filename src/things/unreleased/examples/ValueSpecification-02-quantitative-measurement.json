@@ -1,6 +1,6 @@
 {
   "id": "exthisns:measurement853",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:title",
       "type": "dlthings:AttributeSpecification",

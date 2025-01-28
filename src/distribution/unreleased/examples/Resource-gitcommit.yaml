@@ -1,19 +1,19 @@
 id: gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
 # link to datalad dataset
 is_version_of: https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854
-has_attributes:
+attributes:
   # two git-tags associated with the commit
   # they must be unique across all commits in the repo, hence we
   # use the context entity for the version-less dataset as the
   # agency/scope
   - predicate: dcterms:identifier
     value: final2
-    has_attributes:
+    attributes:
       - predicate: ADMS:schemaAgency
         value: exthisds:#
   - predicate: dcterms:identifier
     value: latest
-    has_attributes:
+    attributes:
       - predicate: ADMS:schemaAgency
         value: exthisds:#
   # commit message

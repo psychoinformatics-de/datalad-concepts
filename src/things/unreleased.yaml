@@ -14,7 +14,7 @@ description: |
   - can be mapped to arbitrary external schemas and terminologies to maximize
     semantic alignment with existing metadata ecosystems
     (see [`mappings`](mappings))
-  - can be further described by attributes ([`has_attributes`](has_attributes))
+  - can be further described by attributes ([`attributes`](attributes))
     and qualified relations to other "things"
     ([`is_characterized_by`](is_characterized_by)),
     without prescribing a particular vocabulary
@@ -115,8 +115,8 @@ slots:
     range: uriorcurie
     multivalued: true
 
-  has_attributes:
-    slot_uri: dlthings:has_attributes
+  attributes:
+    slot_uri: dlthings:attributes
     description: >-
       Declares a relation that associates a `Thing` (or another attribute)
       with an attribute, where an attribute is an intrinsic characteristic,
@@ -258,14 +258,14 @@ classes:
       schema classes for validation where a slot's `range` is too generic.
       A thing or attribute can be further describe with statements on
       qualified relations to other things (`is_characterized_by`), or
-      inline attributes (`has_attributes`).
+      inline attributes (`attributes`).
       A set of `mappings` slots enables the alignment for arbitrary external
       schemas and terminologies.
     slots:
       - broad_mappings
       - close_mappings
       - exact_mappings
-      - has_attributes
+      - attributes
       - is_characterized_by
       - narrow_mappings
       - related_mappings
@@ -291,7 +291,7 @@ classes:
     description: >-
       An attribute is conceptually a thing, but it requires no dedicated
       identifier (`id`). Instead, it is linked to a `Thing` via its
-      `has_attributes` slot and declares a `predicate` on the nature of
+      `attributes` slot and declares a `predicate` on the nature of
       the relationship.
     exact_mappings:
       - sio:SIO_000614
@@ -358,7 +358,7 @@ classes:
       or other qualitative or quantitative information with an associated
       identifier. If no identifier is available, an `AttributeSpecification`
       can be used within the context of an associated `Thing`
-      (`has_attributes`).
+      (`attributes`).
     slot_usage:
       value:
         required: true

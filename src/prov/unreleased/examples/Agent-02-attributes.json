@@ -1,6 +1,6 @@
 {
   "id": "https://orcid.org/0000-0001-6398-6370",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "foaf:name",
       "type": "dlthings:AttributeSpecification",

@@ -4,7 +4,7 @@
 # for concrete technical applications, it can be useful to be
 # able to specify key attributes of properties inline.
 id: dcterms:modified
-has_attributes:
+attributes:
   - predicate: dcterms:title
     value: "modified"
   - predicate: dcterms:description

@@ -1,6 +1,6 @@
 {
   "id": "dcterms:modified",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:title",
       "type": "dlthings:AttributeSpecification",

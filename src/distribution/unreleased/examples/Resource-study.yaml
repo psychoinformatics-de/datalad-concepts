@@ -3,7 +3,7 @@ relations:
   # study participants (role assigned below)
   exthisds:#s001:
     type: dlprov:Agent
-    has_attributes:
+    attributes:
       - predicate: foaf:name
         value: s001
     is_characterized_by:
@@ -18,14 +18,14 @@ relations:
       - predicate: obo:PATO_0000047
         # male
         object: obo:PATO_0000384
-    has_attributes:
+    attributes:
       - predicate: foaf:name
         value: s002
       # age in years
       # length of a person's life, stated in years since birth
       - predicate: obo:NCIT_C37908
         value: "36"
-        has_attributes:
+        attributes:
           - predicate: foaf:name
             value: "age (years)"
         is_characterized_by:
@@ -35,11 +35,11 @@ relations:
   # study activity
   exthisds:#study_2005-004406-93:
     type: dlprov:Activity
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: "Study about the effectiveness of a disease treatment"
       - predicate: ADMS:identifier
-        has_attributes:
+        attributes:
           - predicate: skos:notation
             value: 2005-004406-93
           - predicate: ADMS:schema_agency

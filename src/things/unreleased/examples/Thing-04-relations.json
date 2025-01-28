@@ -3,7 +3,7 @@
   "relations": {
     "https://portal.issn.org/resource/issn/2475-9066": {
       "id": "https://portal.issn.org/resource/issn/2475-9066",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",

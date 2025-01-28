@@ -1,6 +1,6 @@
 {
   "id": "https://example.com/projects/p1a",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "https://example.com/ns/psych/self-esteem-boost-potential",
       "type": "dlthings:AttributeSpecification",

@@ -3,7 +3,7 @@
 predicate: dcterms:identifier
 exact_mappings:
   - ADMS:Identifier
-has_attributes:
+attributes:
   - predicate: skos:notation
     value: 5008462-8
   - predicate: ADMS:schemaAgency

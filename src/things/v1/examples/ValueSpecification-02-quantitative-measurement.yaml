@@ -1,5 +1,5 @@
 id: exthisns:measurement853
-has_attributes:
+attributes:
   - predicate: dcterms:title
     value: "measured mass (kg)"
 is_characterized_by:

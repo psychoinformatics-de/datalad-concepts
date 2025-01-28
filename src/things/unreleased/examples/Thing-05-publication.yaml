@@ -10,10 +10,10 @@ relations:
   https://portal.issn.org/resource/issn/2052-4463:
     exact_mappings:
       - bibo:Journal
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: "Scientific Data"
-has_attributes:
+attributes:
   - predicate: dcterms:title
     value: "FAIRly big: A framework for computationally reproducible processing of large-scale data"
   - predicate: dcterms:description
@@ -22,7 +22,7 @@ has_attributes:
   - predicate: dcterms:identifier
     exact_mappings:
       - ADMS:Identifier
-    has_attributes:
+    attributes:
       - predicate: skos:notation
         value: 10.1038/s41597-022-01163-2
       - predicate: ADMS:schemaAgency
@@ -31,22 +31,22 @@ has_attributes:
   - predicate: dcterms:bibliographicCitation
     value: "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
   - predicate: bibo:doi
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: DOI
     value: https://doi.org/10.1038/s41597-022-01163-2
   - predicate: bibo:volume
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: Volume
     value: "9"
   - predicate: bibo:number
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: Document number
     value: "80"
   - predicate: bibo:numPages
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: Number of pages
     value: "17"
