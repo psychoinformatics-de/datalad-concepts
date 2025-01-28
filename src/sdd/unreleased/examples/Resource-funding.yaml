@@ -11,5 +11,5 @@ qualified_relations:
   - object: https://gepris.dfg.de/gepris/projekt/431549029
     had_role:
       - schema:funding
-was_attributed_to:
+attributed_to:
   - https://ror.org/018mejw64

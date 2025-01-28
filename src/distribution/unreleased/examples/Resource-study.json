@@ -101,7 +101,7 @@
     }
   },
   "type": "dldist:Resource",
-  "was_generated_by": [
+  "generated_by": [
     "exthisds:#study_2005-004406-93"
   ],
   "@type": "Resource"

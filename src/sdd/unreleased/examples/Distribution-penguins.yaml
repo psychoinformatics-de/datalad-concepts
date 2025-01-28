@@ -208,7 +208,7 @@ relation:
         schema_agency: https://ror.org
     same_as:
       - https://www.nsf.org
-was_attributed_to:
+attributed_to:
   - exthisds:#ahorst
   - exthisds:#ahill
   - exthisds:#kgorman

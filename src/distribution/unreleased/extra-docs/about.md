@@ -25,14 +25,14 @@ Here, the object (entity) is related to the subject (entity) via a declaration o
 Roles can be any kind of (external) identifier, thereby enabling arbitrary precision and fit to specialized use cases, without a need to inflate the number of properties in the schema.
 
 Relationships between other combinations of the three foundational classes can also be specified.
-For example influences of agents on an entity via `was_attributed_to` and `qualified_attribution`, using the same pattern.
+For example influences of agents on an entity via `attributed_to` and `qualified_attribution`, using the same pattern.
 
 TODO: how to declare relationships when no dedicated support for a particular type combination exists.
 
 ### Types
 
 Properties that are used as containers to define related objects support the declaration of specific subtypes of the respective range-defining class.
-For example, `was_attributed_to` accepts any `Agent`, but specialized classes maybe be more suitable in particular contexts.
+For example, `attributed_to` accepts any `Agent`, but specialized classes maybe be more suitable in particular contexts.
 Such a derived class can be indicated via the `schema_type` property.
 If declared, it is then used for data structure definition and validation for this particular record.
 
