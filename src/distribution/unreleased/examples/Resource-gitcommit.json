@@ -32,7 +32,7 @@
           ]
         }
       ],
-      "was_informed_by": [
+      "informed_by": [
         "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring"
       ]
     }
@@ -77,10 +77,10 @@
       ]
     }
   ],
-  "was_derived_from": [
+  "derived_from": [
     "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054"
   ],
-  "was_generated_by": [
+  "generated_by": [
     "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing"
   ],
   "is_version_of": "https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854",

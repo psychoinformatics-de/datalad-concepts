@@ -4,7 +4,7 @@ id: https://example.com/projects/p1a
 characterized_by:
   - object: https://example.com/projects/grand-plan
     predicate: dcterms:isPartOf
-was_associated_with:
+associated_with:
   - http://orcid.org/0000-0001-6398-6370
 qualified_relations:
   - object: http://orcid.org/0000-0001-6398-6370

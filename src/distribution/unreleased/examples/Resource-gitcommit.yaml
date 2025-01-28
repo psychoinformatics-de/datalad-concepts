@@ -24,7 +24,7 @@ attributes:
 # this only *single* version label we can have without making additional
 # assumptions is the commit gitsha
 version: 8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f
-was_derived_from:
+derived_from:
   - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
 qualified_relations:
   # parent commit(s)
@@ -60,7 +60,7 @@ relations:
       - object: exthisds:#gituser_doe@example.com
         had_roles:
           - marcrel:cre
-    was_informed_by:
+    informed_by:
       - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
-was_generated_by:
+generated_by:
   - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing
