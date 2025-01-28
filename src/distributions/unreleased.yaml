@@ -1,0 +1,125 @@
+id: https://concepts.datalad.org/s/distributions/unreleased
+name: distributions-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Schema for a describing distributions
+description: |
+
+  The schema is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dctypes: http://purl.org/dc/dcmitype/
+  dlschemas: https://concepts.datalad.org/s/
+  dldist: https://concepts.datalad.org/s/distributions/unreleased/
+  dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  # custom prefix to use Git's SHA identifiers as schema identifiers
+  gitsha: https://concepts.datalad.org/ns/gitsha/
+  spdx: http://spdx.org/rdf/terms#
+  w3ctr: https://www.w3.org/TR/
+
+default_prefix: dldist
+
+imports:
+  - dlschemas:types/unreleased
+  - dlschemas:properties/unreleased
+  - dlschemas:prov/unreleased
+  - dlschemas:resources/unreleased
+
+slots:
+  byte_size:
+    slot_uri: dldist:byte_size
+    description: >-
+      The size of a distribution in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
+  checksums:
+    slot_uri: dldist:checksum
+    description: >-
+      The checksum property provides a mechanism that can be used to verify
+      that the contents of a file or package have not changed.
+    range: Checksum
+    multivalued: true
+    inlined: true
+    # this could be false, if Checksum had a `key`, but it is unclear
+    # what that would be. In the context of a single content object
+    # `creator` is a key, but in a container that lists "valid/ok'ed"
+    # checksum `creator` is not a key
+    inlined_as_list: true
+    exact_mappings:
+      - spdx:checksum
+
+  format:
+    slot_uri: dldist:format
+    description: >-
+      The file format of a distribution.
+    domain: Distribution
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  media_type:
+    slot_uri: dldist:media_type
+    is_a: format
+    description: >-
+      The media type of a distribution as defined by IANA
+    domain: Distribution
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
+classes:
+  Distribution:
+    class_uri: dldist:Distribution
+    is_a: Dataset
+    description: >-
+      A specific representation of data, which may come in the form of
+      a single file, or an archive or directory of many files, may be
+      standalone or part of a larger collection.
+    notes:
+      - A `Distribution` is derived from `Dataset`, following the logic
+        that it is a materialized/specialized variant of a particular
+        dataset. It therefore should inherit all its slots. This is
+        in contrast to DCAT, where `Distribution` is not a subclass.
+        However, in DCAT a `Distribution` also does not have a version.
+        Here we do want that, for example, to express an update
+        of a format conversion, where no data change, only the layout.
+    comments:
+      - If a distribution is accessible only through a landing page, then the landing page URL associated with respective resource SHOULD be duplicated as `access_url` on a distribution.
+    slots:
+      - byte_size
+      - checksums
+      - format
+      # TODO make a qualified_relation
+      #- is_distribution_of
+      - media_type
+    exact_mappings:
+      - dcat:Distribution

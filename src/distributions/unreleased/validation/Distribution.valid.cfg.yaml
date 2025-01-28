@@ -1,0 +1,12 @@
+schema: src/distributions/unreleased.yaml
+target_class: Distribution
+data_sources:
+  - src/distributions/unreleased/examples/Distribution-01-minimal.yaml
+  - src/distributions/unreleased/examples/Distribution-02-props.yaml
+  - src/distributions/unreleased/examples/Distribution-03-parts.yaml
+  - src/distributions/unreleased/examples/Distribution-04-partrole.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
