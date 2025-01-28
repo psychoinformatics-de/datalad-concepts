@@ -1,6 +1,0 @@
-{
-  "id": "https://example.com/min",
-  "type": "dltemporal:InstantaneousEvent",
-  "at_time": "1984-05-14T15:32",
-  "@type": "InstantaneousEvent"
-}

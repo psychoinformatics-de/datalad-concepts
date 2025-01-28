@@ -57,7 +57,7 @@ attributes:
   - predicate: dcterms:date
     range: xsd:date
     value: "2022-03-11"
-is_characterized_by:
+characterized_by:
   # containing journal
   - predicate: dcterms:isPartOf
     object: https://portal.issn.org/resource/issn/2052-4463

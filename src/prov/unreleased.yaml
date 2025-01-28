@@ -15,7 +15,7 @@ description: |
   The three [`Thing`](Thing) derived key concepts `Agent`, `Activity`, and
   `Entity` build on the `Thing` slot `relations` (symmetric property) for
   **inline declaration** of related things, and extend the basic means of
-  qualifying a relationship via [`is_characterized_by`](is_characterized_by)
+  qualifying a relationship via [`characterized_by`](characterized_by)
   and with provenance specific slots, and
   [`qualified_relations`](qualified_relations) for declaring the roles of
   related things.

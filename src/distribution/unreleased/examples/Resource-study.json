@@ -10,7 +10,7 @@
           "value": "s001"
         }
       ],
-      "is_characterized_by": [
+      "characterized_by": [
         {
           "object": "obo:PATO_0002204",
           "predicate": "obo:PATO_0002201"
@@ -35,7 +35,7 @@
               "value": "age (years)"
             }
           ],
-          "is_characterized_by": [
+          "characterized_by": [
             {
               "object": "obo:UO_0000036",
               "predicate": "obo:UO_0000000"
@@ -45,7 +45,7 @@
           "value": "36"
         }
       ],
-      "is_characterized_by": [
+      "characterized_by": [
         {
           "object": "obo:PATO_0000384",
           "predicate": "obo:PATO_0000047"
