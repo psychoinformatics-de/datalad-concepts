@@ -47,27 +47,47 @@ comments:
 license: MIT
 
 prefixes:
-  bibo: http://purl.org/ontology/bibo/
-  dlco: https://concepts.datalad.org/
-  dlschemas: https://concepts.datalad.org/s/
-  dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
+  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   # here for alignment of `Agent`
   foaf: http://xmlns.com/foaf/0.1/
+  # disambiguate a GEO URI from a curie prefix
+  geo: "geo:"
   linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
   obo: http://purl.obolibrary.org/obo/
   # foundational
   prov: http://www.w3.org/ns/prov#
-  # disambiguate a GEO URI from a curie prefix
-  geo: "geo:"
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlprov
 
 emit_prefixes:
+  - dlidentifiers
   - dlprov
+  - dlroles
+  - dlspatial
+  - dltemporal
+  - dlthings
+  - dltypes
+  - geo
+  - marcrel
+  - rdf
+  - rdfs
+  - skos
+  - w3ctr
+  - xsd
 
 imports:
   - dlschemas:things/v1

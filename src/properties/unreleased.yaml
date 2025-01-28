@@ -32,18 +32,15 @@ comments:
 license: MIT
 
 prefixes:
-  bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
-  dlco: https://concepts.datalad.org/
-  dlschemas: https://concepts.datalad.org/s/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
   pq: http://www.wikidata.org/prop/qualifier/
-  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
 
