@@ -18,17 +18,45 @@ comments:
 license: MIT
 
 prefixes:
-  dlschemas: https://concepts.datalad.org/s/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlpubs: https://concepts.datalad.org/s/publications/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
+  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
+  geo: "geo:"
   linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
   obo: http://purl.obolibrary.org/obo/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
   sio: http://semanticscience.org/resource/
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlpubs
 
 emit_prefixes:
+  - dlidentifiers
+  - dlprov
   - dlpubs
+  - dlroles
+  - dlspatial
+  - dltemporal
+  - dlthings
+  - dltypes
+  - geo
+  - marcrel
+  - rdf
+  - rdfs
+  - skos
+  - w3ctr
+  - xsd
 
 imports:
   - dlschemas:identifiers/unreleased

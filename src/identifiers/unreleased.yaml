@@ -29,10 +29,13 @@ license: MIT
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
   dcterms: http://purl.org/dc/terms/
-  dlschemas: https://concepts.datalad.org/s/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
   spdx: http://spdx.org/rdf/terms#
 
@@ -40,6 +43,10 @@ default_prefix: dlidentifiers
 
 emit_prefixes:
   - dlidentifiers
+  - dltypes
+  - rdf
+  - rdfs
+  - xsd
 
 imports:
   - dlschemas:types/unreleased

@@ -28,23 +28,54 @@ comments:
 license: MIT
 
 prefixes:
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocial: https://concepts.datalad.org/s/social/unreleased/
-  eunal: http://publications.europa.eu/resource/authority/
-  foaf: http://xmlns.com/foaf/0.1/
-  linkml: https://w3id.org/linkml/
-  obo: http://purl.obolibrary.org/obo/
-  prov: http://www.w3.org/ns/prov#
-  vcard: http://www.w3.org/2006/vcard/ns#
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
+  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   # declare a namespace for emails, such that they can be defined as a curie
   # e.g.: email:me@example.com
   # -> https://concepts.datalad.org/ns/email/me@example.com
   email: https://concepts.datalad.org/ns/email/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  geo: "geo:"
+  linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  obo: http://purl.obolibrary.org/obo/
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlsocial
 
 emit_prefixes:
+  - dlidentifiers
+  - dlprops
+  - dlprov
+  - dlroles
   - dlsocial
+  - dlspatial
+  - dltemporal
+  - dlthings
+  - dltypes
+  - email
+  - geo
+  - marcrel
+  - rdf
+  - rdfs
+  - skos
+  - w3ctr
+  - xsd
 
 imports:
   - dlschemas:prov/unreleased

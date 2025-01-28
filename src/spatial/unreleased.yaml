@@ -18,21 +18,34 @@ comments:
 license: MIT
 
 prefixes:
-  bibo: http://purl.org/ontology/bibo/
-  dlco: https://concepts.datalad.org/
-  dlschemas: https://concepts.datalad.org/s/
-  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
-  linkml: https://w3id.org/linkml/
-  prov: http://www.w3.org/ns/prov#
   # disambiguate a GEO URI from a curie prefix
   geo: "geo:"
+  linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 emit_prefixes:
+  - dlidentifiers
+  - dlroles
   - dlspatial
+  - dlthings
+  - dltypes
+  - marcrel
+  - rdf
+  - rdfs
+  - skos
+  - xsd
 
 default_prefix: dlspatial
 
