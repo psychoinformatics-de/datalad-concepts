@@ -71,8 +71,8 @@ slots:
       - rdfs:comment
     range: string
 
-  is_about:
-    slot_uri: dlprops:is_about
+  about:
+    slot_uri: dlprops:about
     description: >-
       A relation of an information artifact to the subject, such as
       a URL identifying the topic of a document.
