@@ -46,6 +46,7 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
+  bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlschemas: https://concepts.datalad.org/s/
