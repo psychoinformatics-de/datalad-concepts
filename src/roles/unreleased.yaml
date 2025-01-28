@@ -45,9 +45,7 @@ prefixes:
 default_prefix: dlroles
 
 emit_prefixes:
-  # emit this one as a rich resource for predefined roles
-  - marcrel
-  - prov
+  - dlroles
 
 imports:
   - dlschemas:things/v1

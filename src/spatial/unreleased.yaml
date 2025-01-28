@@ -32,7 +32,7 @@ prefixes:
   geo: "geo:"
 
 emit_prefixes:
-  - geo
+  - dlspatial
 
 default_prefix: dlspatial
 

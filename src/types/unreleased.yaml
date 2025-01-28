@@ -36,6 +36,12 @@ prefixes:
 
 default_prefix: dltypes
 
+emit_prefixes:
+  - dltypes
+  - rdf
+  - rdfs
+  - xsd
+
 imports:
   - linkml:types
 

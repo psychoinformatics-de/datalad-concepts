@@ -38,6 +38,9 @@ prefixes:
 
 default_prefix: dlidentifiers
 
+emit_prefixes:
+  - dlidentifiers
+
 imports:
   - dlschemas:types/unreleased
   - linkml:types

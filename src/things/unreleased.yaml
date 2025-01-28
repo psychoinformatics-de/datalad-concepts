@@ -81,9 +81,9 @@ default_prefix: dlthings
 # the target models.
 emit_prefixes:
   - dlthings
-  # single prefix that enables a huge range of ontologies ready-to-use for
-  # descriptions -- seems worth emitting
-  - obo
+  - rdf
+  - rdfs
+  - skos
 
 imports:
   - dlschemas:types/unreleased
