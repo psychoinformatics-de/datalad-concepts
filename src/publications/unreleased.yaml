@@ -88,6 +88,6 @@ classes:
       - date_modified
       - date_published
       - description
-      - is_about
+      - about
       - same_as
       - title
