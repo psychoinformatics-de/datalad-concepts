@@ -35,6 +35,10 @@ description: |
   it and built targeted derivatives of `Thing` and other classes provided here.
   See the [PROV schema](/s/prov) for an example that is built on this schema.
 
+  This schema also incorporates the schema(s)
+
+  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+
   The schema definition is available as
 
   - [JSON-LD context](../v1.jsonld)

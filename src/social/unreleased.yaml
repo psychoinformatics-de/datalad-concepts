@@ -15,6 +15,11 @@ description: |
   emails as suitable schema identifiers for an email address (e.g.,
   `email:me@example.com`).
 
+  This schema also incorporates the schemas
+
+  - [`properties`](https://concepts.datalad.org/s/properties/unreleased)
+  - [`prov`](https://concepts.datalad.org/s/prov/unreleased)
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)

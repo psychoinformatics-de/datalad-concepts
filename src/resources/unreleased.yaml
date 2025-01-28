@@ -5,6 +5,11 @@ status: eunal:concept-status/DRAFT
 title: Schema for a describing resources
 description: |
 
+  This schema also incorporates the schemas
+
+  - [`properties`](https://concepts.datalad.org/s/properties/unreleased)
+  - [`prov`](https://concepts.datalad.org/s/prov/unreleased)
+
   The schema is available as
 
   - [JSON-LD context](../unreleased.jsonld)
