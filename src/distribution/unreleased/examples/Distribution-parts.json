@@ -4,7 +4,7 @@
   "has_part": [
     {
       "id": "exthisdsver:./archive.zip/subdir",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:description",
           "type": "dlthings:AttributeSpecification",
@@ -15,7 +15,7 @@
       "has_part": [
         {
           "id": "exthisdsver:./archive.zip/subdir/file.txt",
-          "has_attributes": [
+          "attributes": [
             {
               "predicate": "dcterms:description",
               "type": "dlthings:AttributeSpecification",

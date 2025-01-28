@@ -6,7 +6,7 @@
       "exact_mappings": [
         "bibo:Journal"
       ],
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",
@@ -19,7 +19,7 @@
   "exact_mappings": [
     "bibo:AcademicArticle"
   ],
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:title",
       "type": "dlthings:AttributeSpecification",
@@ -35,7 +35,7 @@
       "exact_mappings": [
         "ADMS:Identifier"
       ],
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "skos:notation",
           "type": "dlthings:AttributeSpecification",
@@ -56,7 +56,7 @@
     },
     {
       "predicate": "bibo:doi",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",
@@ -68,7 +68,7 @@
     },
     {
       "predicate": "bibo:volume",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",
@@ -80,7 +80,7 @@
     },
     {
       "predicate": "bibo:number",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",
@@ -92,7 +92,7 @@
     },
     {
       "predicate": "bibo:numPages",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:title",
           "type": "dlthings:AttributeSpecification",

@@ -6,11 +6,11 @@
 # aggregation for individual things. Arbitrary other identifiers
 # can be recorded in addition.
 id: https://ror.org/02nv7yv05
-has_attributes:
+attributes:
   # Research Organization Registry
   - predicate: dcterms:identifier
     value: 02nv7yv05
-    has_attributes:
+    attributes:
       - predicate: ADMS:schemaAgency
         value: https://ror.org
         range: uri
@@ -20,7 +20,7 @@ has_attributes:
   - predicate: dcterms:identifier
     exact_mappings:
       - ADMS:Identifier
-    has_attributes:
+    attributes:
       - predicate: skos:notation
         value: 5008462-8
       - predicate: ADMS:schemaAgency

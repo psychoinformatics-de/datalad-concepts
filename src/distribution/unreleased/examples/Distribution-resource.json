@@ -3,7 +3,7 @@
   "relations": {
     "exthisdsver:#some/path": {
       "id": "exthisdsver:#some/path",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:description",
           "type": "dlthings:AttributeSpecification",
@@ -15,7 +15,7 @@
     },
     "exthisdsver:#": {
       "id": "exthisdsver:#",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:description",
           "type": "dlthings:AttributeSpecification",
@@ -27,7 +27,7 @@
     },
     "exthisds:#": {
       "id": "exthisds:#",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:description",
           "type": "dlthings:AttributeSpecification",

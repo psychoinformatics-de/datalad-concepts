@@ -6,7 +6,7 @@ relations:
   # the containing journal
   https://portal.issn.org/resource/issn/2475-9066:
     # inlined information
-    has_attributes:
+    attributes:
       - predicate: dcterms:title
         value: "Journal of Open Source Software"
   # the datalad software (no information beyond the `id` is inlined)

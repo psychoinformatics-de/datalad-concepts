@@ -4,13 +4,13 @@ type: dldist:DataService
 # TODO have a definition of a generic annex remote
 exact_mappings:
   - https://git-annex.branchable.com/special_remotes
-has_attributes:
+attributes:
   - predicate: foaf:name
     value: box.com
   - predicate: dcterms:identifier
     exact_mappings:
       - ADMS:Identifier
-    has_attributes:
+    attributes:
       - predicate: skos:notation
         value: 0a8713ca-ef42-11ee-a805-d3e9a774e795
       - predicate: ADMS:schemaAgency

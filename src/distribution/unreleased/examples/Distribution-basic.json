@@ -1,6 +1,6 @@
 {
   "id": "exthisdsver:./some/name.ext",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "foaf:name",
       "type": "dlthings:AttributeSpecification",

@@ -3,7 +3,7 @@
   "exact_mappings": [
     "ADMS:Identifier"
   ],
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "skos:notation",
       "type": "dlthings:AttributeSpecification",

@@ -3,7 +3,7 @@
   "exact_mappings": [
     "https://git-annex.branchable.com/special_remotes"
   ],
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "foaf:name",
       "type": "dlthings:AttributeSpecification",
@@ -14,7 +14,7 @@
       "exact_mappings": [
         "ADMS:Identifier"
       ],
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "skos:notation",
           "type": "dlthings:AttributeSpecification",

@@ -1,6 +1,6 @@
 {
   "id": "exthisdsver:.",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:conformsTo",
       "type": "dlthings:AttributeSpecification",

@@ -6,7 +6,7 @@
       "exact_mappings": [
         "https://coscine.rwth-aachen.de"
       ],
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "dcterms:description",
           "type": "dlthings:AttributeSpecification",

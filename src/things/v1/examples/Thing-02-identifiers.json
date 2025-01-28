@@ -1,9 +1,9 @@
 {
   "id": "https://ror.org/02nv7yv05",
-  "has_attributes": [
+  "attributes": [
     {
       "predicate": "dcterms:identifier",
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
           "type": "dlthings:AttributeSpecification",
@@ -19,7 +19,7 @@
       "exact_mappings": [
         "ADMS:Identifier"
       ],
-      "has_attributes": [
+      "attributes": [
         {
           "predicate": "skos:notation",
           "type": "dlthings:AttributeSpecification",

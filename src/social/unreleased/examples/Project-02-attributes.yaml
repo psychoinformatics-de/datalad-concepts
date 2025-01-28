@@ -5,7 +5,7 @@ short_name: BANG!
 description: >-
   A project about approaching a new field, and not looking entirely
   incompetent after some time.
-has_attributes:
+attributes:
   - predicate: https://example.com/ns/psych/self-esteem-boost-potential
     value: "100"
     range: linkml:int
