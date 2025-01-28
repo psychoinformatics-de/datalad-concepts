@@ -26,8 +26,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
-	build/linkml-docs/s/distribution/unreleased \
-	build/linkml-docs/s/datalad-dataset/unreleased
+	build/linkml-docs/s/distribution/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
 	# take the YAML schema verbatim
@@ -80,8 +79,7 @@ check-models: \
 	checkmodel/resources/unreleased \
 	checkmodel/social/unreleased \
 	checkmodel/identifiers/unreleased \
-	checkmodel/distribution/unreleased \
-	checkmodel/datalad-dataset/unreleased
+	checkmodel/distribution/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -130,9 +128,7 @@ check-validation: \
 	convertexamples/identifiers/unreleased \
 	checkvalidation/identifiers/unreleased \
 	convertexamples/distribution/unreleased \
-	checkvalidation/distribution/unreleased \
-	convertexamples/datalad-dataset/unreleased \
-	checkvalidation/datalad-dataset/unreleased
+	checkvalidation/distribution/unreleased
 checkvalidation/%:
 	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
@@ -157,8 +153,7 @@ convert-examples: \
 	convertexamples/resources/unreleased \
 	convertexamples/social/unreleased \
 	convertexamples/identifiers/unreleased \
-	convertexamples/distribution/unreleased \
-	convertexamples/datalad-dataset/unreleased
+	convertexamples/distribution/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \
