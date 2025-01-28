@@ -49,6 +49,9 @@ prefixes:
 
 default_prefix: dlprops
 
+emit_prefixes:
+  - dlprops
+
 imports:
   - linkml:types
 

@@ -43,6 +43,9 @@ prefixes:
 
 default_prefix: dlsocial
 
+emit_prefixes:
+  - dlsocial
+
 imports:
   - dlschemas:prov/unreleased
   - dlschemas:properties/unreleased

@@ -27,6 +27,9 @@ prefixes:
 
 default_prefix: dlpubs
 
+emit_prefixes:
+  - dlpubs
+
 imports:
   - dlschemas:identifiers/unreleased
   - dlschemas:properties/unreleased

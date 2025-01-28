@@ -30,6 +30,9 @@ prefixes:
 
 default_prefix: dlres
 
+emit_prefixes:
+  - dlres
+
 imports:
   - dlschemas:properties/unreleased
   - dlschemas:prov/unreleased

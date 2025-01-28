@@ -68,7 +68,6 @@ default_prefix: dlprov
 
 emit_prefixes:
   - dlprov
-  - prov
 
 imports:
   - dlschemas:things/v1

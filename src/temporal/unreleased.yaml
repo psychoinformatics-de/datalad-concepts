@@ -28,8 +28,13 @@ prefixes:
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  w3ctr: https://www.w3.org/TR/
 
 default_prefix: dltemporal
+
+emit_prefixes:
+  - dltemporal
+  - w3ctr
 
 imports:
   - linkml:types
@@ -39,7 +44,7 @@ imports:
 
 types:
   W3CISO8601:
-    uri: https://www.w3.org/TR/NOTE-datetime
+    uri: w3ctr:NOTE-datetime
     description:
       W3C variant/subset of IS08601 for specifying date(times).
       Supported are
