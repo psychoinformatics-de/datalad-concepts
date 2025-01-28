@@ -132,7 +132,7 @@ slots:
 
 
 classes:
-  InstanteneousEvent:
+  InstantaneousEvent:
     is_a: Thing
     description: >-
       A moment of a transition from one particular state of the world to another.
@@ -141,4 +141,4 @@ classes:
       - identifiers
       - qualified_relations
     exact_mappings:
-      - prov:InstanteneousEvent
+      - prov:InstantaneousEvent
