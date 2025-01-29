@@ -2,7 +2,7 @@
   "id": "https://ror.org/02nv7yv05",
   "attributes": [
     {
-      "predicate": "dcterms:identifier",
+      "predicate": "ex:identifier",
       "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
@@ -15,7 +15,7 @@
       "value": "02nv7yv05"
     },
     {
-      "predicate": "dcterms:identifier",
+      "predicate": "ex:identifier",
       "exact_mappings": [
         "ADMS:Identifier"
       ],

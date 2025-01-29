@@ -3,7 +3,7 @@
 id: ex:projects/p1a
 characterized_by:
   - object: ex:projects/grand-plan
-    predicate: dcterms:isPartOf
+    predicate: ex:isPartOf
 associated_with:
   - http://orcid.org/0000-0001-6398-6370
 qualified_relations:

@@ -3,9 +3,9 @@
 # better referenced from well-defined vocabularies. However,
 # for concrete technical applications, it can be useful to be
 # able to specify key attributes of properties inline.
-id: dcterms:modified
+id: ex:modified
 attributes:
-  - predicate: dcterms:title
+  - predicate: ex:title
     value: "modified"
-  - predicate: dcterms:description
+  - predicate: ex:description
     value: "Date on which the resource was changed."

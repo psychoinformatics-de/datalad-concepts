@@ -36,7 +36,7 @@ relations:
   exthisds:#study_2005-004406-93:
     type: dlprov:Activity
     attributes:
-      - predicate: dcterms:title
+      - predicate: ex:title
         value: "Study about the effectiveness of a disease treatment"
       - predicate: ADMS:identifier
         attributes:

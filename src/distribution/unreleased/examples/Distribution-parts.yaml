@@ -10,12 +10,12 @@ has_part:
   # a part of a Distribution is also a Distribution
   - id: exthisdsver:./archive.zip/subdir
     attributes:
-      - predicate: dcterms:description
+      - predicate: ex:description
         value: "A subdirectory"
     has_part:
       - id: exthisdsver:./archive.zip/subdir/file.txt
         attributes:
-          - predicate: dcterms:description
+          - predicate: ex:description
             value: "A file"
     qualified_part:
       - name: file.txt

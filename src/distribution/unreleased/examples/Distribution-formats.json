@@ -2,7 +2,7 @@
   "id": "exthisdsver:.",
   "attributes": [
     {
-      "predicate": "dcterms:conformsTo",
+      "predicate": "ex:conformsTo",
       "type": "dlthings:AttributeSpecification",
       "range": "uri",
       "value": "https://bids-specification.readthedocs.io/en/v1.4.0"

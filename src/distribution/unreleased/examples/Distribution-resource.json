@@ -5,7 +5,7 @@
       "id": "exthisdsver:#some/path",
       "attributes": [
         {
-          "predicate": "dcterms:description",
+          "predicate": "ex:description",
           "type": "dlthings:AttributeSpecification",
           "value": "Some tabular data"
         }
@@ -17,7 +17,7 @@
       "id": "exthisdsver:#",
       "attributes": [
         {
-          "predicate": "dcterms:description",
+          "predicate": "ex:description",
           "type": "dlthings:AttributeSpecification",
           "value": "A version of a collection of some data\""
         }
@@ -29,7 +29,7 @@
       "id": "exthisds:#",
       "attributes": [
         {
-          "predicate": "dcterms:description",
+          "predicate": "ex:description",
           "type": "dlthings:AttributeSpecification",
           "value": "A collection of some data"
         }

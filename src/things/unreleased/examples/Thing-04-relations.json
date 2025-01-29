@@ -5,7 +5,7 @@
       "id": "https://portal.issn.org/resource/issn/2475-9066",
       "attributes": [
         {
-          "predicate": "dcterms:title",
+          "predicate": "ex:title",
           "type": "dlthings:AttributeSpecification",
           "value": "Journal of Open Source Software"
         }

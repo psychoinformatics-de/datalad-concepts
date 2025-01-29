@@ -3,7 +3,7 @@
   "characterized_by": [
     {
       "object": "https://www.scicrunch.org/resolver/SCR_003931",
-      "predicate": "dcterms:subject"
+      "predicate": "ex:subject"
     }
   ],
   "type": "dlthings:Thing",

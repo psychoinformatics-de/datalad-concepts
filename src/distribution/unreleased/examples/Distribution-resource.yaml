@@ -13,17 +13,17 @@ relations:
   exthisdsver:#some/path:
     type: dldist:Resource
     attributes:
-      - predicate: dcterms:description
+      - predicate: ex:description
         value: "Some tabular data"
     is_part_of: exthisdsver:#
   exthisdsver:#:
     type: dldist:Resource
     attributes:
-      - predicate: dcterms:description
+      - predicate: ex:description
         value: A version of a collection of some data"
     is_version_of: exthisds:#
   exthisds:#:
     type: dldist:Resource
     attributes:
-      - predicate: dcterms:description
+      - predicate: ex:description
         value: "A collection of some data"

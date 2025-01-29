@@ -2,7 +2,7 @@ id: https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d
 # we need a definition for a DataLad dataset
 #type: ...
 attributes:
-  - predicate: dcterms:identifier
+  - predicate: ex:identifier
     exact_mappings:
       - ADMS:Identifier
     attributes:

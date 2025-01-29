@@ -6,7 +6,7 @@
       "id": "exthisdsver:./archive.zip/subdir",
       "attributes": [
         {
-          "predicate": "dcterms:description",
+          "predicate": "ex:description",
           "type": "dlthings:AttributeSpecification",
           "value": "A subdirectory"
         }
@@ -17,7 +17,7 @@
           "id": "exthisdsver:./archive.zip/subdir/file.txt",
           "attributes": [
             {
-              "predicate": "dcterms:description",
+              "predicate": "ex:description",
               "type": "dlthings:AttributeSpecification",
               "value": "A file"
             }

@@ -3,7 +3,7 @@
   "characterized_by": [
     {
       "object": "ex:projects/grand-plan",
-      "predicate": "dcterms:isPartOf"
+      "predicate": "ex:isPartOf"
     }
   ],
   "type": "dlsocial:Project",

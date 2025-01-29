@@ -60,7 +60,7 @@
       ],
       "attributes": [
         {
-          "predicate": "dcterms:title",
+          "predicate": "ex:title",
           "type": "dlthings:AttributeSpecification",
           "value": "Study about the effectiveness of a disease treatment"
         },

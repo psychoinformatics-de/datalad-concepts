@@ -1,5 +1,5 @@
 {
-  "id": "dcterms:title",
+  "id": "ex:title",
   "type": "dlthings:Property",
   "@type": "Property"
 }

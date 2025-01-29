@@ -3,7 +3,7 @@ id: exthisdsver:.
 # identify a particular version of BIDS as the organization standard
 # used for the distribution
 attributes:
-  - predicate: dcterms:conformsTo
+  - predicate: ex:conformsTo
     value: https://bids-specification.readthedocs.io/en/v1.4.0
     range: uri
 has_part:
