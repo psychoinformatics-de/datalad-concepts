@@ -28,7 +28,7 @@ derived_from:
   - gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
 qualified_relations:
   # parent commit(s)
-  - object: gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054
+  gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054:
     had_roles:
       - owl:priorVersion
 relations:
@@ -44,7 +44,7 @@ relations:
     ended_at: "2001-02-28T18:27:04+02:00"
     qualified_relations:
       # author of the commit
-      - object: exthisds:#gituser_doe@example.com
+      exthisds:#gituser_doe@example.com:
         had_roles:
           - marcrel:aut
   # commit activity
@@ -57,7 +57,7 @@ relations:
     ended_at: "2002-05-30T09:30:10+06:00"
     qualified_relations:
       # creator of the commit
-      - object: exthisds:#gituser_doe@example.com
+      exthisds:#gituser_doe@example.com:
         had_roles:
           - marcrel:cre
     informed_by:

@@ -7,14 +7,14 @@
     }
   ],
   "type": "dlsocial:Project",
-  "qualified_relations": [
-    {
+  "qualified_relations": {
+    "http://orcid.org/0000-0001-6398-6370": {
       "object": "http://orcid.org/0000-0001-6398-6370",
       "had_roles": [
         "marcrel:ctb"
       ]
     }
-  ],
+  },
   "associated_with": [
     "http://orcid.org/0000-0001-6398-6370"
   ],

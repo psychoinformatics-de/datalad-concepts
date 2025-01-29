@@ -48,13 +48,13 @@ relations:
     exact_mappings:
       - obo:NCIT_C71104
     qualified_relations:
-      - object: exthisds:#s001
+      exthisds:#s001:
         had_roles:
           # study participant
           - obo:NCIT_C142710
           # healthy control
           - obo:NCIT_C94342
-      - object: exthisds:#s002
+      exthisds:#s002:
         had_roles:
           - obo:NCIT_C142710
           # subject Assigned to Protocol Treatment Arm

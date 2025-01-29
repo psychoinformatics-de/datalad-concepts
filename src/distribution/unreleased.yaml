@@ -484,8 +484,6 @@ classes:
       name:
         description: >-
           The name of the part within the containing entity.
-      object:
-        range: Entity
     comments:
       - This class is a key element of the data model. It enables referencing
         a particular resource (e.g., a file's content, or versioned directory
