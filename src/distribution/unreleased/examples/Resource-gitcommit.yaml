@@ -6,18 +6,18 @@ attributes:
   # they must be unique across all commits in the repo, hence we
   # use the context entity for the version-less dataset as the
   # agency/scope
-  - predicate: dcterms:identifier
+  - predicate: ex:identifier
     value: final2
     attributes:
       - predicate: ADMS:schemaAgency
         value: exthisds:#
-  - predicate: dcterms:identifier
+  - predicate: ex:identifier
     value: latest
     attributes:
       - predicate: ADMS:schemaAgency
         value: exthisds:#
   # commit message
-  - predicate: dcterms:description
+  - predicate: ex:description
     value: >
       This message describes the changes done for this particular
       Dataset version.

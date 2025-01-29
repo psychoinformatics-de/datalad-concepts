@@ -7,7 +7,7 @@ relations:
   https://portal.issn.org/resource/issn/2475-9066:
     # inlined information
     attributes:
-      - predicate: dcterms:title
+      - predicate: ex:title
         value: "Journal of Open Source Software"
   # the datalad software (no information beyond the `id` is inlined)
   https://www.scicrunch.org/resolver/SCR_003931:

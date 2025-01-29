@@ -1,6 +1,6 @@
 # An attribute without a singular value, but attributes of it
 # own instead.
-predicate: dcterms:identifier
+predicate: ex:identifier
 exact_mappings:
   - ADMS:Identifier
 attributes:

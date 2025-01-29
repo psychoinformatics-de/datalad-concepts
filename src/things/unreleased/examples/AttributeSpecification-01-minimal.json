@@ -1,5 +1,5 @@
 {
-  "predicate": "dcterms:title",
+  "predicate": "ex:title",
   "type": "dlthings:AttributeSpecification",
   "value": "My attribute",
   "@type": "AttributeSpecification"

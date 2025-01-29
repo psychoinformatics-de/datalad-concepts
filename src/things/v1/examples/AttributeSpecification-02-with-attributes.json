@@ -1,5 +1,5 @@
 {
-  "predicate": "dcterms:identifier",
+  "predicate": "ex:identifier",
   "exact_mappings": [
     "ADMS:Identifier"
   ],

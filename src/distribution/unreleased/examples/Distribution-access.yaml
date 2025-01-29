@@ -29,7 +29,7 @@ relations:
     contact_point: exthisns:coscine-admin
     # any general (human-readable) description of the dataservice
     attributes:
-      - predicate: dcterms:description
+      - predicate: ex:description
         value: "Central RDM service at example.org"
     # API description
     endpoint_description: https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json

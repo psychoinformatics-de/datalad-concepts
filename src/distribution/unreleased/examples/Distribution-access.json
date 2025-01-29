@@ -8,7 +8,7 @@
       ],
       "attributes": [
         {
-          "predicate": "dcterms:description",
+          "predicate": "ex:description",
           "type": "dlthings:AttributeSpecification",
           "value": "Central RDM service at example.org"
         }

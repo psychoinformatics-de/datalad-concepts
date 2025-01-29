@@ -1,5 +1,5 @@
 {
   "object": "https://helmholtz.de",
-  "predicate": "dcterms:subject",
+  "predicate": "ex:subject",
   "@type": "Statement"
 }

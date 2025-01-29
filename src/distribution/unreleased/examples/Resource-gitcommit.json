@@ -39,7 +39,7 @@
   },
   "attributes": [
     {
-      "predicate": "dcterms:identifier",
+      "predicate": "ex:identifier",
       "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
@@ -51,7 +51,7 @@
       "value": "final2"
     },
     {
-      "predicate": "dcterms:identifier",
+      "predicate": "ex:identifier",
       "attributes": [
         {
           "predicate": "ADMS:schemaAgency",
@@ -63,7 +63,7 @@
       "value": "latest"
     },
     {
-      "predicate": "dcterms:description",
+      "predicate": "ex:description",
       "type": "dlthings:AttributeSpecification",
       "value": "This message describes the changes done for this particular Dataset version.\n"
     }

@@ -2,7 +2,7 @@
   "id": "exthisns:measurement853",
   "attributes": [
     {
-      "predicate": "dcterms:title",
+      "predicate": "ex:title",
       "type": "dlthings:AttributeSpecification",
       "value": "measured mass (kg)"
     }
@@ -10,11 +10,11 @@
   "characterized_by": [
     {
       "object": "obo:IAO_0000109",
-      "predicate": "dcterms:subject"
+      "predicate": "ex:subject"
     },
     {
       "object": "obo:PATO_0000125",
-      "predicate": "dcterms:subject"
+      "predicate": "ex:subject"
     },
     {
       "object": "obo:UO_0000009",
