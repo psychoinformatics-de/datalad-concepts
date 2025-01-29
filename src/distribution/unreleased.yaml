@@ -89,13 +89,13 @@ prefixes:
   #
   # a custom umbrella namespace (e.g. for a project, a consortium, a domain)
   # to keep vocabulary and entities local to this scope
-  exthisns: http://example.org/ns/
+  exthisns: https://example.org/ns/
   # a custom namespace that is unique to a particular dataset, but common
   # across all versions of it. It could be nested inside the `thisns` namespace
-  exthisds: http://example.org/ns/dataset/
+  exthisds: https://example.org/ns/dataset/
   # a custom namespace that is unique to a particular version of a single
   # dataset. It could be nested inside the `thisds` namespace
-  exthisdsver: http://example.org/ns/datasetversion/
+  exthisdsver: https://example.org/ns/datasetversion/
 
 default_prefix: dldist
 
