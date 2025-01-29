@@ -4,7 +4,7 @@
   "qualified_relations": {
     "https://ror.org/018mejw64": {
       "object": "https://ror.org/018mejw64",
-      "had_roles": [
+      "roles": [
         "marcrel:fnd"
       ]
     }

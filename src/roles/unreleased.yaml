@@ -12,7 +12,7 @@ description: |
 
   Each `Relationship` links one object (`Thing`) to a subject (`Thing`) and
   associates one or more roles ([`Role`](Role)) with this relationship via the
-  [`had_roles`](had_roles) slot.
+  [`roles`](roles) slot.
 
   A `Role` is itself a `Thing`, and can be annotated with (inline)
   attributes as needed. However, typically it should be sufficient
@@ -64,8 +64,8 @@ imports:
 
 
 slots:
-  had_roles:
-    slot_uri: dlroles:had_roles
+  roles:
+    slot_uri: dlroles:roles
     description: >-
       Describes the function of an entity or agent (object) within the scope of
       a `Relationship` with the subject.
@@ -109,9 +109,9 @@ classes:
       and also being the person who is legally responsible contact for it).
     slots:
       - object
-      - had_roles
+      - roles
     slot_usage:
-      had_roles:
+      roles:
         required: true
       object:
         required: true

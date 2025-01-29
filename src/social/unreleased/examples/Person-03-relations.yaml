@@ -5,10 +5,10 @@
 id: https://example.com/ns/people/jane
 qualified_relations:
   email:jane@example.com:
-    had_roles:
+    roles:
       - http://schema.org/email
   # using a GEO URI as a location identifier
   geo:-19.738897,63.453072?z=19:
-    had_roles:
+    roles:
       # worksite
       - obo:NCIT_C17556

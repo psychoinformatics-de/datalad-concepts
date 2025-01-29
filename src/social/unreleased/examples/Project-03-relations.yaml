@@ -8,6 +8,6 @@ associated_with:
   - http://orcid.org/0000-0001-6398-6370
 qualified_relations:
   http://orcid.org/0000-0001-6398-6370:
-    had_roles:
+    roles:
       # contributor
       - marcrel:ctb
