@@ -1,8 +1,8 @@
 {
-  "id": "https://example.org/projects/p1a",
+  "id": "ex:projects/p1a",
   "characterized_by": [
     {
-      "object": "https://example.org/projects/grand-plan",
+      "object": "ex:projects/grand-plan",
       "predicate": "dcterms:isPartOf"
     }
   ],
