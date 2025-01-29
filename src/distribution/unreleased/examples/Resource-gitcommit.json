@@ -9,8 +9,8 @@
       "type": "dlprov:Activity",
       "ended_at": "2001-02-28T18:27:04+02:00",
       "qualified_relations": {
-        "exthisds:#gituser_doe@example.com": {
-          "object": "exthisds:#gituser_doe@example.com",
+        "exthisds:#gituser_doe@example.org": {
+          "object": "exthisds:#gituser_doe@example.org",
           "roles": [
             "marcrel:aut"
           ]
@@ -25,8 +25,8 @@
       "type": "dlprov:Activity",
       "ended_at": "2002-05-30T09:30:10+06:00",
       "qualified_relations": {
-        "exthisds:#gituser_doe@example.com": {
-          "object": "exthisds:#gituser_doe@example.com",
+        "exthisds:#gituser_doe@example.org": {
+          "object": "exthisds:#gituser_doe@example.org",
           "roles": [
             "marcrel:cre"
           ]

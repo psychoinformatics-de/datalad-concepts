@@ -44,7 +44,7 @@ relations:
     ended_at: "2001-02-28T18:27:04+02:00"
     qualified_relations:
       # author of the commit
-      exthisds:#gituser_doe@example.com:
+      exthisds:#gituser_doe@example.org:
         roles:
           - marcrel:aut
   # commit activity
@@ -57,7 +57,7 @@ relations:
     ended_at: "2002-05-30T09:30:10+06:00"
     qualified_relations:
       # creator of the commit
-      exthisds:#gituser_doe@example.com:
+      exthisds:#gituser_doe@example.org:
         roles:
           - marcrel:cre
     informed_by:

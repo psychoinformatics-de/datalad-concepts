@@ -1,5 +1,5 @@
 {
-  "id": "https://example.com/ns/zorro",
+  "id": "https://example.org/ns/zorro",
   "type": "dlsocial:Person",
   "additional_names": [
     "Zorro"

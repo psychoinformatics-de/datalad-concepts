@@ -2,9 +2,9 @@
 # The schema defines a custom namespace prefix to use emails as
 # identifiers for emails (not persons!). The schema also enables the
 # use of GEO URIs as identifiers for locations
-id: https://example.com/ns/people/jane
+id: https://example.org/ns/people/jane
 qualified_relations:
-  email:jane@example.com:
+  email:jane@example.org:
     roles:
       - http://schema.org/email
   # using a GEO URI as a location identifier

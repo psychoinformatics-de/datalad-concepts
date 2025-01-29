@@ -13,7 +13,7 @@ description: |
 
   A custom CURIE prefix `email:` is defined and emitted to allow for using
   emails as suitable schema identifiers for an email address (e.g.,
-  `email:me@example.com`).
+  `email:me@example.org`).
 
   This schema also incorporates the schemas
 
@@ -44,8 +44,8 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   # declare a namespace for emails, such that they can be defined as a curie
-  # e.g.: email:me@example.com
-  # -> https://concepts.datalad.org/ns/email/me@example.com
+  # e.g.: email:me@example.org
+  # -> https://concepts.datalad.org/ns/email/me@example.org
   email: https://concepts.datalad.org/ns/email/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/

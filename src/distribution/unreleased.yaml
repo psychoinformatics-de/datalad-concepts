@@ -82,7 +82,7 @@ prefixes:
   # example convenience namespaces that make it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
   # the prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P exthisds=http://example.com/ --infer ...
+  # linkml-convert -s ... -t rdf -P exthisds=http://example.org/ --infer ...
   #
   # the three following prefixes are examples. a use case specific derived
   # schema needs to define its own, differently named and defined namespaces.

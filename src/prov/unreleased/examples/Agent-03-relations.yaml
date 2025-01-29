@@ -1,6 +1,6 @@
 # Using "unconventional" object identifiers to qualify relationships.
 # The schema also enables the use of GEO URIs as identifiers for locations
-id: https://example.com/ns/people/jane
+id: https://example.org/ns/people/jane
 qualified_relations:
   # using a GEO URI as a location identifier
   geo:-19.738897,63.453072?z=19:
