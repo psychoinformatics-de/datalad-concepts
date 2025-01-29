@@ -3,7 +3,7 @@ id: exthisdsver:./file.jpeg
 # first using the common qualified-relation pattern.
 qualified_relations:
   # encapsulated image data
-  - object: obo:NCIT_C95650
+  obo:NCIT_C95650:
     had_roles:
       # data type
       - obo:NCIT_C42645

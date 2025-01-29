@@ -7,13 +7,13 @@
     }
   ],
   "type": "dldist:Distribution",
-  "qualified_relations": [
-    {
+  "qualified_relations": {
+    "obo:NCIT_C95650": {
       "object": "obo:NCIT_C95650",
       "had_roles": [
         "obo:NCIT_C42645"
       ]
     }
-  ],
+  },
   "@type": "Distribution"
 }

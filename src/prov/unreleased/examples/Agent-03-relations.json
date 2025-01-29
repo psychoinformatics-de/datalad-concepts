@@ -1,13 +1,13 @@
 {
   "id": "https://example.com/ns/people/jane",
   "type": "dlprov:Agent",
-  "qualified_relations": [
-    {
+  "qualified_relations": {
+    "geo:-19.738897,63.453072?z=19": {
       "object": "geo:-19.738897,63.453072?z=19",
       "had_roles": [
         "obo:NCIT_C17556"
       ]
     }
-  ],
+  },
   "@type": "Agent"
 }

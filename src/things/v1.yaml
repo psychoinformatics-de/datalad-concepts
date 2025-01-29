@@ -203,7 +203,7 @@ slots:
     slot_uri: rdf:object
     description: >-
       Reference to a `Thing` within a `Statement`.
-    range: Thing
+    range: uriorcurie
     inlined: false
     multivalued: false
     relational_role: OBJECT

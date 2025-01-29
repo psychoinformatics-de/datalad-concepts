@@ -1,19 +1,19 @@
 {
   "id": "https://example.com/ns/people/jane",
   "type": "dlsocial:Person",
-  "qualified_relations": [
-    {
+  "qualified_relations": {
+    "email:jane@example.com": {
       "object": "email:jane@example.com",
       "had_roles": [
         "http://schema.org/email"
       ]
     },
-    {
+    "geo:-19.738897,63.453072?z=19": {
       "object": "geo:-19.738897,63.453072?z=19",
       "had_roles": [
         "obo:NCIT_C17556"
       ]
     }
-  ],
+  },
   "@type": "Person"
 }

@@ -67,16 +67,14 @@ slots:
   had_roles:
     slot_uri: dlroles:had_roles
     description: >-
-      The function of an entity or agent with respect to the subject.
+      Describes the function of an entity or agent (object) within the scope of
+      a `Relationship` with the subject.
     range: Role
     multivalued: true
     inlined: false
     exact_mappings:
       - prov:hadRole
       - dcat:had_role
-    comments:
-      - May be used in a qualified-attribution to specify the role of an Agent with respect to an Entity.
-      - May be used in a qualified-relation to specify the role of an Entity with respect to another Entity.
 
   qualified_relations:
     slot_uri: dlroles:qualified_relations
@@ -85,7 +83,6 @@ slots:
     domain: Thing
     range: Relationship
     inlined: true
-    inlined_as_list: true
     multivalued: true
     exact_mappings:
       - dcat:qualifiedRelation
@@ -118,6 +115,8 @@ classes:
         required: true
       object:
         required: true
+        key: true
+        range: uriorcurie
     close_mappings:
       - prov:Influence
       - dcat:Relationship
