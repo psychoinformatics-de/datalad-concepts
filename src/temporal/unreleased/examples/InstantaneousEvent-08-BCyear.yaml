@@ -1,5 +1,5 @@
 # When prefixed with `-` or `+` we allows for year specification
 # outside the 0000-9999 range defined in ISO8601.
 # Here the end of the triassic era (roughly)
-id: https://example.org/triassic
+id: ex:triassic
 at_time: "-201000000"
