@@ -170,7 +170,7 @@
       "affiliation": [
         "exthisds:#UCSB"
       ],
-      "email": "ahorst@example.com"
+      "email": "ahorst@example.org"
     },
     {
       "id": "exthisds:#ahill",
@@ -185,7 +185,7 @@
       "affiliation": [
         "exthisds:#Rstudio"
       ],
-      "email": "ahill@example.com"
+      "email": "ahill@example.org"
     },
     {
       "id": "exthisds:#kgorman",
@@ -200,7 +200,7 @@
       "affiliation": [
         "https://ror.org/01j7nq853"
       ],
-      "email": "kgorman@example.com"
+      "email": "kgorman@example.org"
     },
     {
       "id": "exthisds:#UCSB",

@@ -1,9 +1,9 @@
 {
-  "id": "https://example.com/ns/people/jane",
+  "id": "https://example.org/ns/people/jane",
   "type": "dlsocial:Person",
   "qualified_relations": {
-    "email:jane@example.com": {
-      "object": "email:jane@example.com",
+    "email:jane@example.org": {
+      "object": "email:jane@example.org",
       "roles": [
         "http://schema.org/email"
       ]

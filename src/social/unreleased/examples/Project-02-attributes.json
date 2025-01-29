@@ -1,8 +1,8 @@
 {
-  "id": "https://example.com/projects/p1a",
+  "id": "https://example.org/projects/p1a",
   "attributes": [
     {
-      "predicate": "https://example.com/ns/psych/self-esteem-boost-potential",
+      "predicate": "https://example.org/ns/psych/self-esteem-boost-potential",
       "type": "dlthings:AttributeSpecification",
       "range": "linkml:int",
       "value": "100"

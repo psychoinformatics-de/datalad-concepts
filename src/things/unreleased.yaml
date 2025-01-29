@@ -64,7 +64,7 @@ prefixes:
   # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
   # The prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P exthisns=http://example.com/ --infer ...
+  # linkml-convert -s ... -t rdf -P exthisns=http://example.org/ --infer ...
   #
   # The following prefix is an example, a use case specific derived
   # schema needs to define its own, differently named and defined namespace(s).

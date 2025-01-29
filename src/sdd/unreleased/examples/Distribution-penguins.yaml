@@ -156,7 +156,7 @@ relation:
   - id: exthisds:#ahorst
     type: dldist:Person
     name: Allison Horst
-    email: ahorst@example.com
+    email: ahorst@example.org
     identifier:
       - notation: 0000-0002-6047-5564
         schema_agency: https://orcid.org
@@ -169,7 +169,7 @@ relation:
   - id: exthisds:#ahill
     type: dldist:Person
     name: Allison Hill
-    email: ahill@example.com
+    email: ahill@example.org
     identifier:
       - notation: 0000-0002-8082-1890
         schema_agency: https://orcid.org
@@ -178,7 +178,7 @@ relation:
   - id: exthisds:#kgorman
     type: dldist:Person
     name: Kirsten Gorman
-    email: kgorman@example.com
+    email: kgorman@example.org
     identifier:
       - notation: 0000-0002-0258-9264
         schema_agency: https://orcid.org
