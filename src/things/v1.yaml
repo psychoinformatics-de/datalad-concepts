@@ -66,6 +66,7 @@ prefixes:
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   # here is a large, versatile source of controlled vocabularies/codes
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   # here as a technical necessity
   linkml: https://w3id.org/linkml/
   # here as a large ecosystem for alignment and annotation

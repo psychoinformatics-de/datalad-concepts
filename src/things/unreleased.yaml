@@ -53,6 +53,7 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/unreleased/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#

@@ -37,6 +37,7 @@ prefixes:
   dlschemas: https://concepts.datalad.org/s/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   linkml: https://w3id.org/linkml/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
