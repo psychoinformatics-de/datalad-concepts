@@ -4,7 +4,7 @@ id: exthisdsver:./file.jpeg
 qualified_relations:
   # encapsulated image data
   obo:NCIT_C95650:
-    had_roles:
+    roles:
       # data type
       - obo:NCIT_C42645
 # when standardized terms for identifying data types are not available,

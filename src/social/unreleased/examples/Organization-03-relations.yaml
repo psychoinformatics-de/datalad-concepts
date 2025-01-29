@@ -2,5 +2,5 @@ id: https://trr379.de
 qualified_relations:
   # DFG is a funder
   https://ror.org/018mejw64:
-    had_roles:
+    roles:
       - marcrel:fnd

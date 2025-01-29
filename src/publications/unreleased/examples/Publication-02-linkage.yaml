@@ -6,13 +6,13 @@ qualified_relations:
   # entiry roles
   # scientific data
   https://portal.issn.org/resource/issn/2052-4463:
-    had_roles:
+    roles:
       # publication venue
       - marcrel:pup
   # agent roles
   # adina
   https://orcid.org/0000-0003-2917-3450:
-    had_roles:
+    roles:
       # author
       - marcrel:aut
       # contact person
@@ -21,33 +21,33 @@ qualified_relations:
       - obo:MS_1002034
   # laura
   https://orcid.org/0000-0003-2213-7465:
-    had_roles:
+    roles:
       - marcrel:aut
       - obo:MS_1002034
   # małgorzata
   https://orcid.org/0000-0003-0820-2662:
-    had_roles:
+    roles:
       - marcrel:aut
       - obo:MS_1002034
   # felix
   https://orcid.org/0000-0001-7163-3110:
-    had_roles:
+    roles:
       - marcrel:aut
   # alex
   https://orcid.org/0000-0002-8402-6173:
-    had_roles:
+    roles:
       - marcrel:aut
   # benjamin
   https://orcid.org/0000-0001-7628-0801:
-    had_roles:
+    roles:
       - marcrel:aut
   # simon
   https://orcid.org/0000-0001-6363-2759:
-    had_roles:
+    roles:
       - marcrel:aut
   # michael
   https://orcid.org/0000-0001-6398-6370:
-    had_roles:
+    roles:
       - marcrel:aut
       # senior author
       - obo:MS_1002035

@@ -1,6 +1,6 @@
 {
   "object": "https://orcid.org/0000-0001-6398-6370",
-  "had_roles": [
+  "roles": [
     "marcrel:aut",
     "marcrel:sad"
   ],

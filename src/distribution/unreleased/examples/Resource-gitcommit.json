@@ -11,7 +11,7 @@
       "qualified_relations": {
         "exthisds:#gituser_doe@example.com": {
           "object": "exthisds:#gituser_doe@example.com",
-          "had_roles": [
+          "roles": [
             "marcrel:aut"
           ]
         }
@@ -27,7 +27,7 @@
       "qualified_relations": {
         "exthisds:#gituser_doe@example.com": {
           "object": "exthisds:#gituser_doe@example.com",
-          "had_roles": [
+          "roles": [
             "marcrel:cre"
           ]
         }
@@ -72,7 +72,7 @@
   "qualified_relations": {
     "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054": {
       "object": "gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054",
-      "had_roles": [
+      "roles": [
         "owl:priorVersion"
       ]
     }

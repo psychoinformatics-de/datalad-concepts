@@ -85,14 +85,14 @@
       "qualified_relations": {
         "exthisds:#s001": {
           "object": "exthisds:#s001",
-          "had_roles": [
+          "roles": [
             "obo:NCIT_C142710",
             "obo:NCIT_C94342"
           ]
         },
         "exthisds:#s002": {
           "object": "exthisds:#s002",
-          "had_roles": [
+          "roles": [
             "obo:NCIT_C142710",
             "obo:NCIT_C173188"
           ]

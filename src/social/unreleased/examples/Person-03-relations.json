@@ -4,13 +4,13 @@
   "qualified_relations": {
     "email:jane@example.com": {
       "object": "email:jane@example.com",
-      "had_roles": [
+      "roles": [
         "http://schema.org/email"
       ]
     },
     "geo:-19.738897,63.453072?z=19": {
       "object": "geo:-19.738897,63.453072?z=19",
-      "had_roles": [
+      "roles": [
         "obo:NCIT_C17556"
       ]
     }

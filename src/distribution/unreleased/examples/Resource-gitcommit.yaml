@@ -29,7 +29,7 @@ derived_from:
 qualified_relations:
   # parent commit(s)
   gitsha:a52963ce19a3e3628e9976555ffc8c422b29f054:
-    had_roles:
+    roles:
       - owl:priorVersion
 relations:
   # author activity
@@ -45,7 +45,7 @@ relations:
     qualified_relations:
       # author of the commit
       exthisds:#gituser_doe@example.com:
-        had_roles:
+        roles:
           - marcrel:aut
   # commit activity
   gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing:
@@ -58,7 +58,7 @@ relations:
     qualified_relations:
       # creator of the commit
       exthisds:#gituser_doe@example.com:
-        had_roles:
+        roles:
           - marcrel:cre
     informed_by:
       - gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring
