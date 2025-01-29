@@ -48,6 +48,7 @@ prefixes:
   # -> https://concepts.datalad.org/ns/email/me@example.com
   email: https://concepts.datalad.org/ns/email/
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   foaf: http://xmlns.com/foaf/0.1/
   geo: "geo:"
   linkml: https://w3id.org/linkml/

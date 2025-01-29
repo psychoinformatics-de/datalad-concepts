@@ -35,6 +35,7 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/v1/
   geo: "geo:"
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   linkml: https://w3id.org/linkml/
   marcrel: http://id.loc.gov/vocabulary/relators/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#

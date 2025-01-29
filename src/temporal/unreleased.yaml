@@ -31,6 +31,7 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   linkml: https://w3id.org/linkml/
   marcrel: http://id.loc.gov/vocabulary/relators/
   prov: http://www.w3.org/ns/prov#

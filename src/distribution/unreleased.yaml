@@ -64,6 +64,7 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/v1/
   dpv: https://w3id.org/dpv#
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   foaf: http://xmlns.com/foaf/0.1/
   # custom prefix to use Git's SHA identifiers as schema identifiers
   gitsha: https://concepts.datalad.org/ns/gitsha/
