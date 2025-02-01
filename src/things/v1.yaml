@@ -156,6 +156,10 @@ slots:
     multivalued: true
     exact_mappings:
       - sio:SIO_000008
+    annotations:
+      sh:name: Attributes
+      sh:group: dlthings:BasicPropertyGroup
+      sh:order: 3
 
   id:
     slot_uri: dlthings:id
@@ -167,6 +171,10 @@ slots:
       - dcterms:identifier
       - schema:identifier
       - ADMS:identifier
+    annotations:
+      sh:name: Globally unique identifier
+      sh:group: dlthings:BasicPropertyGroup
+      sh:order: 1
 
   characterized_by:
     slot_uri: dlthings:characterized_by
@@ -180,6 +188,10 @@ slots:
     multivalued: true
     exact_mappings:
       - obo:RO_0000053
+    annotations:
+      sh:name: Is characterized by
+      sh:group: dlthings:BasicPropertyGroup
+      sh:order: 2
 
   mappings:
     slot_uri: skos:mappingRelation
