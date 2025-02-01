@@ -35,6 +35,10 @@ description: |
   it and built targeted derivatives of `Thing` and other classes provided here.
   See the [PROV schema](/s/prov) for an example that is built on this schema.
 
+  This schema also incorporates the schema(s)
+
+  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.jsonld)
@@ -45,21 +49,32 @@ description: |
 license: MIT
 
 prefixes:
+  # here for alignment of `id`
   ADMS: http://www.w3.org/ns/adms#
+  # primarily for the examples, but also a foundational vocab
   bibo: http://purl.org/ontology/bibo/
+  # here for alignment of `relations`
   dcat: http://www.w3.org/ns/dcat#
+  # foundational
   dcterms: http://purl.org/dc/terms/
+  # self-reference
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/unreleased/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
+  # here is a large, versatile source of controlled vocabularies/codes
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
+  # here as a technical necessity
   linkml: https://w3id.org/linkml/
+  # here as a large ecosystem for alignment and annotation
   obo: http://purl.obolibrary.org/obo/
+  # foundational
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  # here for alignment of `attributes`
   sio: http://semanticscience.org/resource/
+  # foundational
   skos: http://www.w3.org/2004/02/skos/core#
   # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
@@ -186,7 +201,7 @@ slots:
     slot_uri: rdf:object
     description: >-
       Reference to a `Thing` within a `Statement`.
-    range: Thing
+    range: uriorcurie
     inlined: false
     multivalued: false
     relational_role: OBJECT
