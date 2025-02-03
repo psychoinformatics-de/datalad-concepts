@@ -1,6 +1,6 @@
 {
   "id": "ex:ns/people/jane",
-  "type": "dlprov:Agent",
+  "schema_type": "dlprov:Agent",
   "qualified_relations": {
     "geo:-19.738897,63.453072?z=19": {
       "object": "geo:-19.738897,63.453072?z=19",

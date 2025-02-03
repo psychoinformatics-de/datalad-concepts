@@ -1,6 +1,6 @@
 {
   "id": "ex:ns/zorro",
-  "type": "dlsocial:Person",
+  "schema_type": "dlsocial:Person",
   "additional_names": [
     "Zorro"
   ],

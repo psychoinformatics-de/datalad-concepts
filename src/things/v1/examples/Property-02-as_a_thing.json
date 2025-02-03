@@ -3,15 +3,15 @@
   "attributes": [
     {
       "predicate": "ex:title",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "modified"
     },
     {
       "predicate": "ex:description",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "Date on which the resource was changed."
     }
   ],
-  "type": "dlthings:Property",
+  "schema_type": "dlthings:Property",
   "@type": "Property"
 }

@@ -1,5 +1,5 @@
 {
   "id": "https://gepris.dfg.de/gepris/projekt/546006540",
-  "type": "dlres:Grant",
+  "schema_type": "dlres:Grant",
   "@type": "Grant"
 }

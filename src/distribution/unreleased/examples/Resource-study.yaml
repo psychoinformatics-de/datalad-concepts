@@ -2,7 +2,7 @@ id: exthisdsver:#
 relations:
   # study participants (role assigned below)
   exthisds:#s001:
-    type: dlprov:Agent
+    schema_type: dlprov:Agent
     attributes:
       - predicate: foaf:name
         value: s001
@@ -12,7 +12,7 @@ relations:
         # ambidextrous
         object: obo:PATO_0002204
   exthisds:#s002:
-    type: dlprov:Agent
+    schema_type: dlprov:Agent
     characterized_by:
       # biological sex
       - predicate: obo:PATO_0000047
@@ -34,7 +34,7 @@ relations:
             object: obo:UO_0000036
   # study activity
   exthisds:#study_2005-004406-93:
-    type: dlprov:Activity
+    schema_type: dlprov:Activity
     attributes:
       - predicate: ex:title
         value: "Study about the effectiveness of a disease treatment"

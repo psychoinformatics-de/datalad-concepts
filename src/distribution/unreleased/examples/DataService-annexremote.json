@@ -6,7 +6,7 @@
   "attributes": [
     {
       "predicate": "foaf:name",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "box.com"
     },
     {
@@ -17,19 +17,19 @@
       "attributes": [
         {
           "predicate": "skos:notation",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "0a8713ca-ef42-11ee-a805-d3e9a774e795"
         },
         {
           "predicate": "ADMS:schemaAgency",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "https://git-annex.branchable.com"
         }
       ],
-      "type": "dlthings:AttributeSpecification"
+      "schema_type": "dlthings:AttributeSpecification"
     }
   ],
-  "type": "dldist:DataService",
+  "schema_type": "dldist:DataService",
   "endpoint_description": "https://git-annex.branchable.com/special_remotes/webdav/",
   "endpoint_url": "https://dav.box.com/dav/git-annex",
   "@type": "DataService"

@@ -6,7 +6,7 @@
       "predicate": "ex:isPartOf"
     }
   ],
-  "type": "dlsocial:Project",
+  "schema_type": "dlsocial:Project",
   "qualified_relations": {
     "http://orcid.org/0000-0001-6398-6370": {
       "object": "http://orcid.org/0000-0001-6398-6370",

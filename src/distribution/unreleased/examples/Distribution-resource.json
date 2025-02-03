@@ -6,11 +6,11 @@
       "attributes": [
         {
           "predicate": "ex:description",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Some tabular data"
         }
       ],
-      "type": "dldist:Resource",
+      "schema_type": "dldist:Resource",
       "is_part_of": "exthisdsver:#"
     },
     "exthisdsver:#": {
@@ -18,11 +18,11 @@
       "attributes": [
         {
           "predicate": "ex:description",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "A version of a collection of some data\""
         }
       ],
-      "type": "dldist:Resource",
+      "schema_type": "dldist:Resource",
       "is_version_of": "exthisds:#"
     },
     "exthisds:#": {
@@ -30,14 +30,14 @@
       "attributes": [
         {
           "predicate": "ex:description",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "A collection of some data"
         }
       ],
-      "type": "dldist:Resource"
+      "schema_type": "dldist:Resource"
     }
   },
-  "type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "is_distribution_of": "exthisdsver:#some/path",
   "@type": "Distribution"
 }

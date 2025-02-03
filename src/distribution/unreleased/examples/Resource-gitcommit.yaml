@@ -37,7 +37,7 @@ relations:
   # author time can be captured as an independent property.
   # otherwise the author role could be added above
   gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring:
-    type: dlprov:Activity
+    schema_type: dlprov:Activity
     # "preparation"
     exact_mappings:
       - obo:NCIT_C25625
@@ -49,7 +49,7 @@ relations:
           - marcrel:aut
   # commit activity
   gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing:
-    type: dlprov:Activity
+    schema_type: dlprov:Activity
     # go for activity type: "release", but could also be
     # "label as such" (obo:NCIT_C64662)
     exact_mappings:

@@ -3,12 +3,12 @@
   "attributes": [
     {
       "predicate": "ex:ns/psych/self-esteem-boost-potential",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "range": "linkml:int",
       "value": "100"
     }
   ],
-  "type": "dlsocial:Project",
+  "schema_type": "dlsocial:Project",
   "description": "A project about approaching a new field, and not looking entirely incompetent after some time.",
   "short_name": "BANG!",
   "title": "Impactful entry",

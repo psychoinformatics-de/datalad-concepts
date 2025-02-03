@@ -9,18 +9,18 @@
       "attributes": [
         {
           "predicate": "skos:notation",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "cec1da92-0dbd-4df3-8602-7c72b2d12854"
         },
         {
           "predicate": "ADMS:schemaAgency",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "https://datalad.org"
         }
       ],
-      "type": "dlthings:AttributeSpecification"
+      "schema_type": "dlthings:AttributeSpecification"
     }
   ],
-  "type": "dldist:Resource",
+  "schema_type": "dldist:Resource",
   "@type": "Resource"
 }

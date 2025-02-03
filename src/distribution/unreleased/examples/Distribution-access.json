@@ -9,18 +9,18 @@
       "attributes": [
         {
           "predicate": "ex:description",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Central RDM service at example.org"
         }
       ],
-      "type": "dldist:DataService",
+      "schema_type": "dldist:DataService",
       "contact_point": "exthisns:coscine-admin",
       "download_url_template": "https://coscine.example.org/coscine/api/v2/projects/{projectId}/resources/{resourceId}/blobs/{key}",
       "endpoint_description": "https://coscine.rwth-aachen.de/coscine/api/swagger/v2/swagger.json",
       "endpoint_url": "https://coscine.example.org/coscine"
     }
   },
-  "type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "access_service": [
     "https://coscine.example.org"
   ],

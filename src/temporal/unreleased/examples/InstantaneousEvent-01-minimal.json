@@ -1,5 +1,5 @@
 {
   "id": "https://en.wikipedia.org/wiki/Death_of_Freddie_Mercury",
-  "type": "dltemporal:InstantaneousEvent",
+  "schema_type": "dltemporal:InstantaneousEvent",
   "@type": "InstantaneousEvent"
 }

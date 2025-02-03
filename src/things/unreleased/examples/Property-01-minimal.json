@@ -1,5 +1,5 @@
 {
   "id": "ex:title",
-  "type": "dlthings:Property",
+  "schema_type": "dlthings:Property",
   "@type": "Property"
 }

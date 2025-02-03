@@ -1,12 +1,12 @@
 {
   "id": "gitsha:e12e9505cff5417f594d719b99720b4c39d86434",
-  "type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "byte_size": 63165,
   "checksum": [
     {
       "notation": "0410b851ebd2282ac37558885db16782f31626db",
       "creator": "spdx:checksumAlgorithm_sha1",
-      "type": "dlidentifiers:Checksum"
+      "schema_type": "dlidentifiers:Checksum"
     }
   ],
   "media_type": "text/html",

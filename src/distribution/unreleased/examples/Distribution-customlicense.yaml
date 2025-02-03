@@ -1,7 +1,7 @@
 id: exthisdsver:./some/path.ext
 relations:
   exthisds:#customlicense:
-    type: dldist:LicenseDocument
+    schema_type: dldist:LicenseDocument
     license_text: >-
       Highly custom terms, never seen before.
 license: exthisds:#customlicense

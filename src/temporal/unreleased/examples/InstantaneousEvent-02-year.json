@@ -1,6 +1,6 @@
 {
   "id": "ex:year",
-  "type": "dltemporal:InstantaneousEvent",
+  "schema_type": "dltemporal:InstantaneousEvent",
   "at_time": "1532",
   "@type": "InstantaneousEvent"
 }

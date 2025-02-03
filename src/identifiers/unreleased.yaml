@@ -106,7 +106,7 @@ classes:
     slots:
       - creator
       - notation
-      - type
+      - schema_type
     slot_usage:
       notation:
         required: true
