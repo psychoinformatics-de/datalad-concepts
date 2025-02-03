@@ -1,6 +1,6 @@
 {
   "id": "https://trr379.de",
-  "type": "dlsocial:Organization",
+  "schema_type": "dlsocial:Organization",
   "qualified_relations": {
     "https://ror.org/018mejw64": {
       "object": "https://ror.org/018mejw64",

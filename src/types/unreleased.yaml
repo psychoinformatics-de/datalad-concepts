@@ -89,11 +89,11 @@ types:
 
 
 slots:
-  type:
+  schema_type:
     slot_uri: rdf:type
     designates_type: true
     description: >-
-      State that the subject is an instance of a particular RDF class.
+      State that the subject is an instance of a particular schema class.
       Typically, no explicit value needs to be assigned to this slot,
       because it matches the class type of a particular record.
       However, this slots can be used as a type designator of a schema

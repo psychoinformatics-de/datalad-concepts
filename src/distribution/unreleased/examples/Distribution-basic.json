@@ -3,22 +3,22 @@
   "attributes": [
     {
       "predicate": "foaf:name",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "name.ext"
     }
   ],
-  "type": "dldist:Distribution",
+  "schema_type": "dldist:Distribution",
   "byte_size": 123456789,
   "checksum": [
     {
       "notation": "32a617360d10e3dcbfdd0885e8d64ab8",
       "creator": "spdx:checksumAlgorithm_md5",
-      "type": "dlidentifiers:Checksum"
+      "schema_type": "dlidentifiers:Checksum"
     },
     {
       "notation": "c7dbac946b9860cf05a7d696b9e9591c60083859",
       "creator": "spdx:checksumAlgorithm_sha1",
-      "type": "dlidentifiers:Checksum"
+      "schema_type": "dlidentifiers:Checksum"
     }
   ],
   "date_modified": "2024-03-21",

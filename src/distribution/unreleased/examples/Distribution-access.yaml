@@ -20,7 +20,7 @@ access_service:
 # purposes).
 relations:
   https://coscine.example.org:
-    type: dldist:DataService
+    schema_type: dldist:DataService
     # (ab)using the URL of the upstream instance as a type identifier
     exact_mappings:
       - https://coscine.rwth-aachen.de

@@ -6,7 +6,7 @@
       "attributes": [
         {
           "predicate": "foaf:name",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "s001"
         }
       ],
@@ -16,14 +16,14 @@
           "predicate": "obo:PATO_0002201"
         }
       ],
-      "type": "dlprov:Agent"
+      "schema_type": "dlprov:Agent"
     },
     "exthisds:#s002": {
       "id": "exthisds:#s002",
       "attributes": [
         {
           "predicate": "foaf:name",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "s002"
         },
         {
@@ -31,7 +31,7 @@
           "attributes": [
             {
               "predicate": "foaf:name",
-              "type": "dlthings:AttributeSpecification",
+              "schema_type": "dlthings:AttributeSpecification",
               "value": "age (years)"
             }
           ],
@@ -41,7 +41,7 @@
               "predicate": "obo:UO_0000000"
             }
           ],
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "36"
         }
       ],
@@ -51,7 +51,7 @@
           "predicate": "obo:PATO_0000047"
         }
       ],
-      "type": "dlprov:Agent"
+      "schema_type": "dlprov:Agent"
     },
     "exthisds:#study_2005-004406-93": {
       "id": "exthisds:#study_2005-004406-93",
@@ -61,7 +61,7 @@
       "attributes": [
         {
           "predicate": "ex:title",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Study about the effectiveness of a disease treatment"
         },
         {
@@ -69,19 +69,19 @@
           "attributes": [
             {
               "predicate": "skos:notation",
-              "type": "dlthings:AttributeSpecification",
+              "schema_type": "dlthings:AttributeSpecification",
               "value": "2005-004406-93"
             },
             {
               "predicate": "ADMS:schema_agency",
-              "type": "dlthings:AttributeSpecification",
+              "schema_type": "dlthings:AttributeSpecification",
               "value": "https://eudract.ema.europa.eu"
             }
           ],
-          "type": "dlthings:AttributeSpecification"
+          "schema_type": "dlthings:AttributeSpecification"
         }
       ],
-      "type": "dlprov:Activity",
+      "schema_type": "dlprov:Activity",
       "qualified_relations": {
         "exthisds:#s001": {
           "object": "exthisds:#s001",
@@ -100,7 +100,7 @@
       }
     }
   },
-  "type": "dldist:Resource",
+  "schema_type": "dldist:Resource",
   "generated_by": [
     "exthisds:#study_2005-004406-93"
   ],

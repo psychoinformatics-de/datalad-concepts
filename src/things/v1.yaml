@@ -303,7 +303,7 @@ classes:
       - characterized_by
       - narrow_mappings
       - related_mappings
-      - type
+      - schema_type
 
   ValueSpecificationMixin:
     description: >-

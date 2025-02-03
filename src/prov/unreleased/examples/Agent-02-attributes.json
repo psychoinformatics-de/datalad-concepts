@@ -3,16 +3,16 @@
   "attributes": [
     {
       "predicate": "foaf:name",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "Michael Hanke"
     },
     {
       "predicate": "http://www.bioassayontology.org/bao#BAO_0002826",
-      "type": "dlthings:AttributeSpecification",
+      "schema_type": "dlthings:AttributeSpecification",
       "value": "1"
     }
   ],
-  "type": "dlprov:Agent",
+  "schema_type": "dlprov:Agent",
   "acted_on_behalf_of": [
     "https://ror.org/02nv7yv05"
   ],

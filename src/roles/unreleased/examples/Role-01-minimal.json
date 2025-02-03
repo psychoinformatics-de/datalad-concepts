@@ -1,5 +1,5 @@
 {
   "id": "marcrel:this",
-  "type": "dlroles:Role",
+  "schema_type": "dlroles:Role",
   "@type": "Role"
 }

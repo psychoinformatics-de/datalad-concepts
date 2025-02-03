@@ -6,6 +6,6 @@
       "predicate": "ex:subject"
     }
   ],
-  "type": "dlthings:Thing",
+  "schema_type": "dlthings:Thing",
   "@type": "Thing"
 }

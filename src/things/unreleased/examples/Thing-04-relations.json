@@ -6,17 +6,17 @@
       "attributes": [
         {
           "predicate": "ex:title",
-          "type": "dlthings:AttributeSpecification",
+          "schema_type": "dlthings:AttributeSpecification",
           "value": "Journal of Open Source Software"
         }
       ],
-      "type": "dlthings:Thing"
+      "schema_type": "dlthings:Thing"
     },
     "https://www.scicrunch.org/resolver/SCR_003931": {
       "id": "https://www.scicrunch.org/resolver/SCR_003931",
-      "type": "dlthings:Thing"
+      "schema_type": "dlthings:Thing"
     }
   },
-  "type": "dlthings:Thing",
+  "schema_type": "dlthings:Thing",
   "@type": "Thing"
 }
