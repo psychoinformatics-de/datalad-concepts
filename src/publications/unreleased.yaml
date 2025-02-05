@@ -53,6 +53,7 @@ emit_prefixes:
   - dlidentifiers
   - dlprov
   - dlpubs
+  - dlres
   - dlroles
   - dlspatial
   - dltemporal
@@ -67,15 +68,14 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:identifiers/unreleased
   - dlschemas:properties/unreleased
   - dlschemas:temporal/unreleased
-  - dlschemas:prov/unreleased
+  - dlschemas:resources/unreleased
 
 classes:
   Publication:
     class_uri: dlpubs:Publication
-    is_a: Entity
+    is_a: Resource
     description: >-
       A document that is the output of a publishing process.
       This can printed or electronic work offered for distribution,

@@ -1,0 +1,11 @@
+schema: src/resources/unreleased.yaml
+target_class: Resource
+data_sources:
+  - src/resources/unreleased/examples/Resource-01-minimal.yaml
+  - src/resources/unreleased/examples/Resource-02-parts.yaml
+  - src/resources/unreleased/examples/Resource-03-partof.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

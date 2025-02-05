@@ -1,0 +1,15 @@
+{
+  "id": "ex:directory1",
+  "schema_type": "dlres:Resource",
+  "indexed_parts": {
+    "file1.txt": {
+      "locator": "file1.txt",
+      "resource": "ex:file1"
+    },
+    "subdirectory": {
+      "locator": "subdirectory",
+      "resource": "ex:directory2"
+    }
+  },
+  "@type": "Resource"
+}

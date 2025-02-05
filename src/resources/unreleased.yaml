@@ -7,7 +7,6 @@ description: |
 
   This schema also incorporates the schemas
 
-  - [`properties`](https://concepts.datalad.org/s/properties/unreleased)
   - [`prov`](https://concepts.datalad.org/s/prov/unreleased)
 
   The schema is available as
@@ -23,6 +22,7 @@ comments:
 license: MIT
 
 prefixes:
+  bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
@@ -48,7 +48,6 @@ default_prefix: dlres
 
 emit_prefixes:
   - dlidentifiers
-  - dlprops
   - dlprov
   - dlres
   - dlroles
@@ -65,10 +64,52 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:properties/unreleased
   - dlschemas:prov/unreleased
 
 slots:
+  indexed_parts:
+    slot_uri: dlres:indexed_parts
+    description: >-
+      A qualified relation that assigns an index `locator` to a resource within the
+      context of a `hasPart` relationship with a subject (the containing
+      resource).
+    range: IndexedResourcePart
+    multivalued: true
+    inlined: true
+    broad_mappings:
+      - dcat:qualifiedRelation
+
+  indexed_part_of:
+    slot_uri: dlres:indexed_part_of
+    description: >-
+      A qualified relation that assigns an index `locator` to a resource within the
+      context of an `isPartOf` relationship with a subject (the contained
+      resource).
+    range: IndexedResourcePartOf
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    broad_mappings:
+      - dcat:qualifiedRelation
+
+  locator:
+    slot_uri: dlres:locator
+    description: >-
+      A descriptive identifier that locates a resource within a containing resource.
+      This can be a unique name, a numerical key, or another notation that uniquely
+      identifies the subject within the containing resource.
+    range: string
+    exact_mappings:
+      - bibo:locator
+
+  resource:
+    slot_uri: dlres:resource
+    description: >-
+      Property referencing a resource within an indexed-part or indexed-part-of
+      qualified relationship.
+    range: Resource
+    inlined: false
+
   sponsor:
     slot_uri: dlres:sponsor
     description: >-
@@ -84,8 +125,11 @@ classes:
     class_uri: dlres:Resource
     is_a: Entity
     description: >-
-      A consumable, often quantifiable entity.
-    #slots:
+      A consumable, often quantifiable entity, typically made available by a
+      single agent.
+    slots:
+      - indexed_parts
+      - indexed_part_of
     #  - contact_point
     narrow_mappings:
       - dcat:Resource
@@ -111,3 +155,29 @@ classes:
       - dcat:Dataset
     #slots:
     #  - date_modified
+
+  IndexedResourceRelationship:
+    description: >-
+      An association class for attaching a `name` as additional information to a
+      `hasPart` relationship.
+    slots:
+      - locator
+      - resource
+      - roles
+
+  IndexedResourcePart:
+    is_a: IndexedResourceRelationship
+    description: >-
+      An association class for attaching an index `locator` as additional information to a
+      `hasPart` relationship.
+    slot_usage:
+      locator:
+        key: true
+      resource:
+        required: true
+
+  IndexedResourcePartOf:
+    is_a: IndexedResourceRelationship
+    description: >-
+      An association class for attaching an index `locator` as additional information to a
+      `isPartOf` relationship.
