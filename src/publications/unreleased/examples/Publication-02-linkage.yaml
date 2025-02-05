@@ -2,13 +2,14 @@ id: https://doi.org/10.1038/s41597-022-01163-2
 identifiers:
   - schema_type: dlidentifiers:DOI
     notation: 10.1038/s41597-022-01163-2
-qualified_relations:
-  # entiry roles
+indexed_part_of:
   # scientific data
-  https://portal.issn.org/resource/issn/2052-4463:
+  - resource: https://issn.org/resource/issn/2052-4463
+    locator: "9, 80"
     roles:
-      # publication venue
+      # publication place
       - marcrel:pup
+qualified_relations:
   # agent roles
   # adina
   https://orcid.org/0000-0003-2917-3450:

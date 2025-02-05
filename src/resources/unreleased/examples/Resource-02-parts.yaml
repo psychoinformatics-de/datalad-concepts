@@ -1,0 +1,7 @@
+# a resource can have parts with associated identifiers
+# that can be used to locate the part within the containing
+# resource
+id: ex:directory1
+indexed_parts:
+  file1.txt: ex:file1
+  subdirectory: ex:directory2
