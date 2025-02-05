@@ -1,5 +1,6 @@
 {
   "id": "ex:projects/p1a",
+  "description": "A project about approaching a new field, and not looking entirely incompetent after some time.",
   "attributes": [
     {
       "predicate": "ex:ns/psych/self-esteem-boost-potential",
@@ -9,7 +10,6 @@
     }
   ],
   "schema_type": "dlsocial:Project",
-  "description": "A project about approaching a new field, and not looking entirely incompetent after some time.",
   "short_name": "BANG!",
   "title": "Impactful entry",
   "@type": "Project"

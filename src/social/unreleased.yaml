@@ -212,6 +212,5 @@ classes:
       # process
       - obo:BFO_0000015
     slots:
-      - description
       - short_name
       - title

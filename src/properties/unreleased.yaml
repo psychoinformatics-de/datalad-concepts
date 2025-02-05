@@ -64,14 +64,6 @@ slots:
     exact_mappings:
       - dcterms:conformsTo
 
-  description:
-    slot_uri: dlprops:description
-    description: A free-text account of the subject.
-    exact_mappings:
-      - dcterms:description
-      - rdfs:comment
-    range: string
-
   about:
     slot_uri: dlprops:about
     description: >-

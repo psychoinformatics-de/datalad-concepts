@@ -123,6 +123,18 @@ slots:
     range: uriorcurie
     multivalued: true
 
+  description:
+    slot_uri: dlthings:description
+    description: A free-text account of the subject.
+    exact_mappings:
+      - dcterms:description
+      - rdfs:comment
+    range: string
+    annotations:
+      sh:name: Description
+      sh:group: dlthings:BasicPropertyGroup
+      sh:order: 4
+
   exact_mappings:
     slot_uri: skos:exactMatch
     is_a: mappings
@@ -281,6 +293,7 @@ classes:
     slots:
       - broad_mappings
       - close_mappings
+      - description
       - exact_mappings
       - attributes
       - characterized_by
