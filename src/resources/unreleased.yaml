@@ -11,7 +11,7 @@ description: |
 
   The schema is available as
 
-  - [JSON-LD context](../unreleased.jsonld)
+  - [JSON-LD context](../unreleased.context.jsonld)
   - [LinkML YAML](../unreleased.yaml)
   - [OWL TTL](../unreleased.owl.ttl)
   - [SHACL TTL](../unreleased.shacl.ttl)
