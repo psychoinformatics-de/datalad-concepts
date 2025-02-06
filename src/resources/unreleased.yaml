@@ -38,6 +38,7 @@ prefixes:
   ex: http://example.org/
   linkml: https://w3id.org/linkml/
   marcrel: http://id.loc.gov/vocabulary/relators/
+  obo: http://purl.obolibrary.org/obo/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
@@ -48,6 +49,7 @@ default_prefix: dlres
 
 emit_prefixes:
   - dlidentifiers
+  - dlprops
   - dlprov
   - dlres
   - dlroles
@@ -64,6 +66,7 @@ emit_prefixes:
   - xsd
 
 imports:
+  - dlschemas:properties/unreleased
   - dlschemas:prov/unreleased
 
 slots:
@@ -128,9 +131,14 @@ classes:
       A consumable, often quantifiable entity, typically made available by a
       single agent.
     slots:
+      - about
       - indexed_parts
       - indexed_part_of
-    #  - contact_point
+      - same_as
+      - short_name
+      - title
+      # TODO add example on how to annotate the relation to a contact point
+      # - contact_point
     narrow_mappings:
       - dcat:Resource
 
@@ -141,6 +149,9 @@ classes:
       A grant, typically financial or otherwise quantifiable, of resources.
     slots:
       - sponsor
+    disjoint_with:
+      - Dataset
+      - Grant
     exact_mappings:
       - schema:Grant
 
@@ -151,6 +162,9 @@ classes:
       A collection of data, published or curated by a single agent. This is a
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and serializations.
+    disjoint_with:
+      - Grant
+      - Instrument
     exact_mappings:
       - dcat:Dataset
     #slots:
@@ -181,3 +195,19 @@ classes:
     description: >-
       An association class for attaching an index `locator` as additional information to a
       `isPartOf` relationship.
+
+  Instrument:
+    class_uri: dlres:Instrument
+    is_a: Resource
+    description: >-
+      A thing that enables an agent to perform an action. This is typically a device
+      (e.g., a machine to perform a particular type of measurement), but it can also be
+      a questionnaire that is used to perform a particular kind of assessment.
+      An instrument is typically not a "reagent".
+    disjoint_with:
+      - Dataset
+      - Grant
+    related_mappings:
+      - schema:instrument
+    narrow_mappings:
+      - obo:NCIT_C62103

@@ -1,0 +1,11 @@
+schema: src/resources/unreleased.yaml
+target_class: Instrument
+data_sources:
+  #- src/resources/unreleased/examples/Instrument-01-minimal.yaml
+  #- src/resources/unreleased/examples/Instrument-02-.yaml
+  - src/resources/unreleased/examples/Instrument-03-rich.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
