@@ -52,7 +52,7 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	# jsonld context
 	gen-jsonld-context \
 		--mergeimports \
-		$< > $@.jsonld
+		$< > $@.context.jsonld
 	# SHACL with annotation needed to build UI specs
 	gen-shacl \
 		--include-annotations \
