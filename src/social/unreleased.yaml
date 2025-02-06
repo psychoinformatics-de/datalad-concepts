@@ -39,8 +39,8 @@ prefixes:
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocial: https://concepts.datalad.org/s/social/unreleased/
-  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
-  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
+  dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   # declare a namespace for emails, such that they can be defined as a curie

@@ -30,8 +30,8 @@ prefixes:
   dlres: https://concepts.datalad.org/s/resources/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
-  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
+  dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   geo: "geo:"
   eunal: http://publications.europa.eu/resource/authority/
