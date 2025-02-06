@@ -59,8 +59,8 @@ prefixes:
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatial: https://concepts.datalad.org/s/agents/unreleased/
-  dltemporal: https://concepts.datalad.org/s/agents/unreleased/
+  dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
+  dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
