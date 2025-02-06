@@ -26,6 +26,7 @@ license: MIT
 
 prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprops: https://concepts.datalad.org/s/properties/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlpubs: https://concepts.datalad.org/s/publications/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
@@ -51,6 +52,7 @@ default_prefix: dlpubs
 
 emit_prefixes:
   - dlidentifiers
+  - dlprops
   - dlprov
   - dlpubs
   - dlres
@@ -68,7 +70,6 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:properties/unreleased
   - dlschemas:temporal/unreleased
   - dlschemas:resources/unreleased
 
@@ -88,6 +89,3 @@ classes:
     slots:
       - date_modified
       - date_published
-      - about
-      - same_as
-      - title

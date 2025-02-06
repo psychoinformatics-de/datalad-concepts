@@ -1,0 +1,18 @@
+{
+  "id": "https://www.cognitiveatlas.org/task/id/trm_55a6a8e81b7f4",
+  "description": "A widely used measure of impulsiveness. It includes 30 items that are scored to yield six first-order factors (attention, motor, self-control, cognitive complexity, perseverance, and cognitive instability impulsiveness) and three second-order factors (attentional, motor, and non-planning impulsiveness).",
+  "characterized_by": [
+    {
+      "object": "https://doi.org/10.1016/j.paid.2009.04.008",
+      "predicate": "http://purl.org/spar/cito/citesAsAuthority"
+    }
+  ],
+  "schema_type": "dlres:Instrument",
+  "about": [
+    "https://en.wikipedia.org/wiki/Impulsivity"
+  ],
+  "same_as": "https://en.wikipedia.org/wiki/Barratt_Impulsiveness_Scale",
+  "short_name": "BIS",
+  "title": "Barratt Impulsiveness Scale",
+  "@type": "Instrument"
+}
