@@ -248,6 +248,16 @@ slots:
     exact_mappings:
       - rdf:predicate
 
+  preferred_label:
+    slot_uri: skos:prefLabel
+    description: >-
+      The preferred label for a subject. This information is specifically
+      about the presentation of a `Thing` instance. For general naming
+      purposes, a class should provides slots like `name`, `title`, or
+      similar.
+    range: string
+    multivalued: false
+
   range:
     slot_uri: rdfs:range
     description: >-
@@ -316,6 +326,7 @@ classes:
       - characterized_by
       - narrow_mappings
       - related_mappings
+      - preferred_label
       - schema_type
 
   ValueSpecificationMixin:
