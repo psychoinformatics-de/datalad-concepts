@@ -217,6 +217,25 @@ slots:
     range: uriorcurie
     multivalued: true
 
+  annotations:
+    slot_uri: dlthings:annotations
+    description: >-
+      A record of properties of the metadata record on a subject, a collection
+      of tag/text tuples with the semantics of OWL Annotation.
+    range: Annotation
+    inlined: true
+    multivalued: true
+    annotations:
+      sh:name: Annotations
+
+  annotation_tag:
+    description: A tag identifying an annotation.
+    range: uriorcurie
+
+  annotation_value:
+    description: The actual annotation.
+    range: string
+
   narrow_mappings:
     slot_uri: skos:narrowMatch
     is_a: mappings
@@ -308,6 +327,7 @@ classes:
       A set of `mappings` slots enables the alignment for arbitrary external
       schemas and terminologies.
     slots:
+      - annotations
       - broad_mappings
       - close_mappings
       - description
@@ -416,3 +436,16 @@ classes:
             an error.
     exact_mappings:
       - obo:OBI_0001933
+
+  Annotation:
+    description: >-
+      A tag/value pair with the semantics of OWL Annotation.
+    slots:
+      - annotation_tag
+      - annotation_value
+    slot_usage:
+      annotation_tag:
+        key: true
+        required: true
+      annotation_value:
+        required: true

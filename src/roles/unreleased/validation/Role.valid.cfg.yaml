@@ -2,6 +2,7 @@ schema: src/roles/unreleased.yaml
 target_class: Role
 data_sources:
   - src/roles/unreleased/examples/Role-01-minimal.yaml
+  - src/roles/unreleased/examples/Role-02-explained.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
