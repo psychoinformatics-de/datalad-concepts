@@ -12,3 +12,5 @@ patch -d $(python -c 'import os; import linkml.generators.jsonschemagen as m; pr
 patch -d $(python -c 'import os; import linkml.generators.shaclgen as m; print(os.path.dirname(m.__file__))') < patches/shaclgen_annotations.diff
 # Allow ifabsent handling of uriorcurie type during SHACL generation
 patch -d $(python -c 'import os; import linkml.generators.shacl.shacl_ifabsent_processor as m; print(os.path.dirname(m.__file__))') < patches/shacl_ifabsent.diff
+# Honor type-designator slots when loading graphs
+patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.path.dirname(m.__file__))') < patches/rdflib_loader_typedesignator.diff
