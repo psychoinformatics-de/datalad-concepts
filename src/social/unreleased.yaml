@@ -99,6 +99,8 @@ slots:
     exact_mappings:
       - foaf:familyName
       - vcard:family-name
+    annotations:
+      sh:name: Family name
 
   formatted_name:
     slot_uri: dlsocial:formatted_name
@@ -118,6 +120,8 @@ slots:
     range: string
     exact_mappings:
       - vcard:honorific-suffix
+    annotations:
+      sh:name: Title or prefix
 
   honorific_name_suffix:
     slot_uri: dlsocial:honorific_name_suffix
@@ -128,6 +132,8 @@ slots:
     range: string
     exact_mappings:
       - vcard:honorific-suffix
+    annotations:
+      sh:name: Suffix
 
   given_name:
     slot_uri: dlsocial:given_name
@@ -138,6 +144,8 @@ slots:
     exact_mappings:
       - foaf:familyName
       - vcard:given-name
+    annotations:
+      sh:name: Given name
 
   additional_names:
     slot_uri: dlsocial:additional_names
@@ -149,6 +157,8 @@ slots:
     exact_mappings:
       - vcard:additional_name
     multivalued: true
+    annotations:
+      sh:name: Additional names
 
 classes:
   Person:
