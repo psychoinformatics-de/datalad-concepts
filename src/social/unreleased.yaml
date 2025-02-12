@@ -99,8 +99,6 @@ slots:
     exact_mappings:
       - foaf:familyName
       - vcard:family-name
-    annotations:
-      sh:name: Family name
 
   formatted_name:
     slot_uri: dlsocial:formatted_name
@@ -120,8 +118,6 @@ slots:
     range: string
     exact_mappings:
       - vcard:honorific-suffix
-    annotations:
-      sh:name: Title or prefix
 
   honorific_name_suffix:
     slot_uri: dlsocial:honorific_name_suffix
@@ -132,8 +128,6 @@ slots:
     range: string
     exact_mappings:
       - vcard:honorific-suffix
-    annotations:
-      sh:name: Suffix
 
   given_name:
     slot_uri: dlsocial:given_name
@@ -144,8 +138,6 @@ slots:
     exact_mappings:
       - foaf:familyName
       - vcard:given-name
-    annotations:
-      sh:name: Given name
 
   additional_names:
     slot_uri: dlsocial:additional_names
@@ -157,8 +149,6 @@ slots:
     exact_mappings:
       - vcard:additional_name
     multivalued: true
-    annotations:
-      sh:name: Additional names
 
 classes:
   Person:
@@ -176,6 +166,32 @@ classes:
       - honorific_name_prefix
       - honorific_name_suffix
       - formatted_name
+    slot_usage:
+      family_name:
+        annotations:
+          sh:name: Family name
+          sh:group: dlsocial:PersonPropertyGroup
+          sh:order: 1
+      given_name:
+        annotations:
+          sh:name: Given name
+          sh:group: dlsocial:PersonPropertyGroup
+          sh:order: 2
+      additional_names:
+        annotations:
+          sh:name: Additional names
+          sh:group: dlsocial:PersonPropertyGroup
+          sh:order: 3
+      honorific_name_prefix:
+        annotations:
+          sh:name: Title or prefix
+          sh:group: dlsocial:PersonPropertyGroup
+          sh:order: 4
+      honorific_name_suffix:
+        annotations:
+          sh:name: Suffix
+          sh:group: dlsocial:PersonPropertyGroup
+          sh:order: 5
     comments:
       - This class does not offer common slots like "affiliation" or "email".
         Instead, this information should be expressed as `qualified_relations`
