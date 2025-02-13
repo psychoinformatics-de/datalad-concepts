@@ -3,6 +3,12 @@
   "relations": {
     "exthisds:#s001": {
       "id": "exthisds:#s001",
+      "characterized_by": [
+        {
+          "object": "obo:PATO_0002204",
+          "predicate": "obo:PATO_0002201"
+        }
+      ],
       "attributes": [
         {
           "predicate": "foaf:name",
@@ -10,16 +16,16 @@
           "value": "s001"
         }
       ],
-      "characterized_by": [
-        {
-          "object": "obo:PATO_0002204",
-          "predicate": "obo:PATO_0002201"
-        }
-      ],
       "schema_type": "dlprov:Agent"
     },
     "exthisds:#s002": {
       "id": "exthisds:#s002",
+      "characterized_by": [
+        {
+          "object": "obo:PATO_0000384",
+          "predicate": "obo:PATO_0000047"
+        }
+      ],
       "attributes": [
         {
           "predicate": "foaf:name",
@@ -45,19 +51,10 @@
           "value": "36"
         }
       ],
-      "characterized_by": [
-        {
-          "object": "obo:PATO_0000384",
-          "predicate": "obo:PATO_0000047"
-        }
-      ],
       "schema_type": "dlprov:Agent"
     },
     "exthisds:#study_2005-004406-93": {
       "id": "exthisds:#study_2005-004406-93",
-      "exact_mappings": [
-        "obo:NCIT_C71104"
-      ],
       "attributes": [
         {
           "predicate": "ex:title",
@@ -80,6 +77,9 @@
           ],
           "schema_type": "dlthings:AttributeSpecification"
         }
+      ],
+      "exact_mappings": [
+        "obo:NCIT_C71104"
       ],
       "schema_type": "dlprov:Activity",
       "qualified_relations": {
