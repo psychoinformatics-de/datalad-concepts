@@ -1,8 +1,5 @@
 {
   "id": "https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795",
-  "exact_mappings": [
-    "https://git-annex.branchable.com/special_remotes"
-  ],
   "attributes": [
     {
       "predicate": "foaf:name",
@@ -28,6 +25,9 @@
       ],
       "schema_type": "dlthings:AttributeSpecification"
     }
+  ],
+  "exact_mappings": [
+    "https://git-annex.branchable.com/special_remotes"
   ],
   "schema_type": "dldist:DataService",
   "endpoint_description": "https://git-annex.branchable.com/special_remotes/webdav/",

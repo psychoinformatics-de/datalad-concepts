@@ -3,15 +3,15 @@
   "relations": {
     "https://coscine.example.org": {
       "id": "https://coscine.example.org",
-      "exact_mappings": [
-        "https://coscine.rwth-aachen.de"
-      ],
       "attributes": [
         {
           "predicate": "ex:description",
           "schema_type": "dlthings:AttributeSpecification",
           "value": "Central RDM service at example.org"
         }
+      ],
+      "exact_mappings": [
+        "https://coscine.rwth-aachen.de"
       ],
       "schema_type": "dldist:DataService",
       "contact_point": "exthisns:coscine-admin",
