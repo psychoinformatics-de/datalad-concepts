@@ -104,3 +104,9 @@ slots:
     exact_mappings:
       - dcterms:type
 
+
+classes:
+  Any:
+    description: >-
+      Use this type to state that the value of a slot can by any type.
+    class_uri: linkml:Any

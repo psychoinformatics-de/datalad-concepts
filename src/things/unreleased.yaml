@@ -260,7 +260,10 @@ slots:
     inlined: true
     inlined_as_list: false
     multivalued: true
-    range: Thing
+    range: Any
+    any_of:
+      - range: Thing
+      - range: string
     relational_role: OBJECT
     symmetric: true
     exact_mappings:
