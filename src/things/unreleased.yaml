@@ -101,6 +101,11 @@ emit_prefixes:
   - skos
 
 imports:
+  - ../types/unreleased
+  - ../agents/unreleased
+  - ../roles/unreleased
+  - ../persons/unreleased
+  - ..
   - dlschemas:types/unreleased
   - linkml:types
 
@@ -262,8 +267,21 @@ slots:
     multivalued: true
     range: Any
     any_of:
-      - range: Thing
       - range: string
+      - range: Thing
+      - range: Person
+      - range: Agent
+      - range: InstantaneousEvent
+      - range: Activity
+      - range: ValueSpecification
+      - range: Role
+      - range: Location
+      - range: SoftwareAgent
+      - range: Entity
+      - range: Organization
+      - range: Project
+      - range: Author
+      - range: Interviewer
     relational_role: OBJECT
     symmetric: true
     exact_mappings:
@@ -281,6 +299,11 @@ slots:
 
 
 classes:
+  Any:
+    description: >-
+      Use this type to state that the value of a slot can by any type.
+    class_uri: linkml:Any
+
   ThingMixin:
     mixin: true
     description: >-

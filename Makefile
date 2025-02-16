@@ -98,8 +98,8 @@ checkmodel/%: src/%.yaml
 		$< > /dev/null
 	@echo Generate JSON schema
 	@${FAILIF_STDERR} gen-json-schema $< > /dev/null
-	@echo Generate OWL
-	@${FAILIF_STDERR} gen-owl $< > /dev/null
+	#@echo Generate OWL
+	#@${FAILIF_STDERR} gen-owl $< > /dev/null
 	@echo Generate Python classes
 	@${FAILIF_STDERR} gen-python $< | python
 

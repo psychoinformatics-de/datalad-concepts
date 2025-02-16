@@ -1,0 +1,8 @@
+id: exthisns:mything
+relations:
+  "exthisns:sub_1":
+    id: exthisns:sub_1
+    given_name: "sub_1"
+  "exthisns:sub_2":
+    id: exthisns:sub_2
+    given_name: "sub_2"
