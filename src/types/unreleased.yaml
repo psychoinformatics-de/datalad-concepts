@@ -103,4 +103,3 @@ slots:
     range: NodeUriOrCurie
     exact_mappings:
       - dcterms:type
-
