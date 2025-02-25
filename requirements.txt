@@ -1,4 +1,5 @@
 linkml
 mkdocs
 mkdocs-mermaid2-plugin
+mkdocs-panzoom-plugin
 mkdocs-redirects

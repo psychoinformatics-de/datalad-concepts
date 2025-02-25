@@ -19,6 +19,8 @@ nav:
   - Dump-Things: dump-things.md
 plugins:
   - mermaid2
+  - panzoom:
+      full_screen: True # default False
   - redirects:
       redirect_maps:
           # map unversioned URLs to the latest version
