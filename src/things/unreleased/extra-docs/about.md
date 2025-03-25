@@ -13,7 +13,7 @@ Each of these aspects is detailed in the following sections.
 
 ## Every `thing` must have an identifier
 
-The `Thing` class, the main class of the schema, has an `id` slot, which takes a URI or CURIE.
+The `Thing` class, the main class of the schema, has an `pid` slot, which takes a URI or CURIE.
 This slot is required, hence any instance of such a class must have a URI or CURIE identifier specified to be valid.
 This is a strong requirement, and an essential pillar for the schema, which will become clear in the following sections.
 
@@ -33,7 +33,7 @@ However, this approach also requires to establish a process that guarantees that
 
 ### What if there is more than one identifier?
 
-The one-identifier-and-one-identifier-only requirement only applies to the mechanics of the `things` schema and the `id` slot of the `Thing` class in particular.
+The one-identifier-and-one-identifier-only requirement only applies to the mechanics of the `things` schema and the `pid` slot of the `Thing` class in particular.
 Beyond that, there is no constraint on the nature and number of identifiers associated with a `Thing`.
 Such identifiers are attributes of a `Thing` and can be expressed as such.
 The schema documentation contains [an example](/s/things/v1/Thing#example-thing-02-identifiers) showing how this can be done via the `has_attributes` slot of a `Thing`. For schema development, the [identifiers extension schema](/s/identifiers) is worth a look.
@@ -43,7 +43,7 @@ It provides a dedicated slot and class for representing identifiers.
 ## Linking, not nesting
 
 In order to keep the structure of data records reasonably shallow, relationships between things are declared by referencing another thing's identifier, rather than by inlining a `Thing` record.
-Making this possible is the reason for having a required `id` slot in the `Thing` class.
+Making this possible is the reason for having a required `pid` slot in the `Thing` class.
 
 There is only one exception to this rule: the `relations` slot. Here, other `Thing` records can be inlined. The purpose of this slot is to largely avoid the need for a top-level, array-like data structure that can hold any number of data records. Using the `relations` slot, it is possible to represent arbitrarily rich information in a monolithic data structure.
 

@@ -1,5 +1,5 @@
 {
-  "id": "ex:projects/p1a",
+  "pid": "ex:projects/p1a",
   "characterized_by": [
     {
       "object": "ex:projects/grand-plan",

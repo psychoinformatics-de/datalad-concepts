@@ -1,5 +1,5 @@
 {
-  "id": "ex:projects/p1a",
+  "pid": "ex:projects/p1a",
   "attributes": [
     {
       "predicate": "ex:ns/psych/self-esteem-boost-potential",

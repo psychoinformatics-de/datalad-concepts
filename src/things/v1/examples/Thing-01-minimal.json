@@ -1,5 +1,5 @@
 {
-  "id": "exthisns:mything",
+  "pid": "exthisns:mything",
   "schema_type": "dlthings:Thing",
   "@type": "Thing"
 }

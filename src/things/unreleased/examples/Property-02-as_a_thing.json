@@ -1,5 +1,5 @@
 {
-  "id": "ex:modified",
+  "pid": "ex:modified",
   "description": "Date on which the resource was changed.",
   "attributes": [
     {

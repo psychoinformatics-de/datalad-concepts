@@ -1,5 +1,5 @@
 # annotating a project with predefined and custom attributes
-id: ex:projects/p1a
+pid: ex:projects/p1a
 title: Impactful entry
 short_name: BANG!
 description: >-

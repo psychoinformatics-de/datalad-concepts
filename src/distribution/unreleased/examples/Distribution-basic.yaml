@@ -4,7 +4,7 @@
 # specific namespace. However, it is nevertheless arbitrary and
 # could also be something else entirely, e.g., a Git blob SHA
 # or another checksum (with an appropriate namespace prefix).
-id: exthisdsver:./some/name.ext
+pid: exthisdsver:./some/name.ext
 byte_size: 123456789
 license: licenses:CC0-1.0
 date_modified: "2024-03-21"

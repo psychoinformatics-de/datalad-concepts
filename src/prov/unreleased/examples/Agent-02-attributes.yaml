@@ -1,6 +1,6 @@
 # The Agent class does not define even basic attribute slots.
 # But common and exotic ones can be expressed nevertheless
-id: https://orcid.org/0000-0001-6398-6370
+pid: https://orcid.org/0000-0001-6398-6370
 acted_on_behalf_of:
   - https://ror.org/02nv7yv05
 attributes:

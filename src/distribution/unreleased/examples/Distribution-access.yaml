@@ -1,4 +1,4 @@
-id: exthisdsver:./some/path.ext
+pid: exthisdsver:./some/path.ext
 # if a distribution is accessible directly (e.g. HTTP GET)
 # any number of download URLs can be recorded
 download_url: 

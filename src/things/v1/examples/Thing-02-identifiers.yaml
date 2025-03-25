@@ -1,11 +1,11 @@
 # Identification options for a thing.
 #
-# `id` is the identifier of the metadata record. In practice it can
+# `pid` is the identifier of the metadata record. In practice it can
 # by any of the identifiers below. In a particular context, it is often
 # useful to agree on a particular type of identifier to simplify knowledge
 # aggregation for individual things. Arbitrary other identifiers
 # can be recorded in addition.
-id: https://ror.org/02nv7yv05
+pid: https://ror.org/02nv7yv05
 attributes:
   # Research Organization Registry
   - predicate: ex:identifier

@@ -1,5 +1,5 @@
 {
-  "id": "ex:ns/people/jane",
+  "pid": "ex:ns/people/jane",
   "schema_type": "dlprov:Agent",
   "qualified_relations": {
     "geo:-19.738897,63.453072?z=19": {

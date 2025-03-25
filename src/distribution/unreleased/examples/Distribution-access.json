@@ -1,8 +1,8 @@
 {
-  "id": "exthisdsver:./some/path.ext",
+  "pid": "exthisdsver:./some/path.ext",
   "relations": {
     "https://coscine.example.org": {
-      "id": "https://coscine.example.org",
+      "pid": "https://coscine.example.org",
       "attributes": [
         {
           "predicate": "ex:description",

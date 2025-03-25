@@ -1,5 +1,4 @@
-
-id: exthisdsver:.
+pid: exthisdsver:.
 # identify a particular version of BIDS as the organization standard
 # used for the distribution
 attributes:
@@ -7,10 +6,10 @@ attributes:
     value: https://bids-specification.readthedocs.io/en/v1.4.0
     range: uri
 has_part:
-  - id: exthisdsver:./dataset_description.json
+  - pid: exthisdsver:./dataset_description.json
     # file format specification as IANA media type
     media_type: application/json
-  - id: exthisdsver:./participants.tsv
+  - pid: exthisdsver:./participants.tsv
     # file format specification via custom definition IRI
     # (here effectively also pointing to IANA)
     format: http://edamontology.org/format_3475

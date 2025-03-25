@@ -1,4 +1,4 @@
-id: exthisdsver:./file.jpeg
+pid: exthisdsver:./file.jpeg
 # two approaches:
 # first using the common qualified-relation pattern.
 qualified_relations:
@@ -10,7 +10,7 @@ qualified_relations:
 # when standardized terms for identifying data types are not available,
 # the can be defined in a custom entity.
 #relation:
-#  - id: exthisds:#dtype_funky
+#  - pid: exthisds:#dtype_funky
 #    ...
 
 # this is an alternative approach

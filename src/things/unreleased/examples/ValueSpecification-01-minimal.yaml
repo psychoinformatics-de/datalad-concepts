@@ -5,5 +5,5 @@
 # Such a plain value specification should only be used when
 # additional essential properties can be aggregated via the
 # identifier.
-id: exthisns:measurement853
+pid: exthisns:measurement853
 value: "special"

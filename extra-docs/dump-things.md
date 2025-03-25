@@ -94,7 +94,7 @@ A relative path **must not** point outside the collection directory (i.e., **mus
 The configuration **must** declare the file `format` of all record files.
 The format label can be arbitrary (i.e., there is no official list), but it **must** match the file name extension of all record files.
 
-The configuration **must** declare an mapping function that is used to compute file path and file name from a record's identifier (`id`).
+The configuration **must** declare an mapping function that is used to compute file path and file name from a record's identifier (`pid`).
 The mapping function label **must** match one of the methods listed under [ID mapping methods](#record-id-mapping-methods).
 
 Here is an example of a complete and valid configuration:
@@ -109,7 +109,7 @@ idfx: digest-md5
 
 ## Record ID mapping methods
 
-A record ID mapping method is an algorithm that takes the identifier (`id`) of a data record on a `Thing`, and produces a file name (with a potential path-prefix) for the record to be stored at (or where it can be read from).
+A record ID mapping method is an algorithm that takes the identifier (`pid`) of a data record on a `Thing`, and produces a file name (with a potential path-prefix) for the record to be stored at (or where it can be read from).
 
 Record IDs are processed in their literal form, with no implied preprocessing or resolution before they are passed to a transformation method.
 
@@ -149,4 +149,4 @@ This method does not safeguard against non-portable filenames, nor does it guara
 The `things` schema supports inlining other `Thing` records in a `Thing`'s `relations` slot.
 
 Any "write" IO implementation for this dump format **should** extract such inlined records, and store them into dedicated files -- one for each individual record.
-Previously inlined records would then be referenced by their `id` only.
+Previously inlined records would then be referenced by their `pid` only.

@@ -1,5 +1,5 @@
 {
-  "id": "ex:triassic",
+  "pid": "ex:triassic",
   "schema_type": "dltemporal:InstantaneousEvent",
   "at_time": "-201000000",
   "@type": "InstantaneousEvent"

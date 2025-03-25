@@ -1,9 +1,9 @@
 {
-  "id": "exthisdsver:.",
+  "pid": "exthisdsver:.",
   "schema_type": "dldist:Distribution",
   "relation": [
     {
-      "id": "exthisdsver:#",
+      "pid": "exthisdsver:#",
       "description": "The goal of palmerpenguins is to provide a great dataset for data exploration and visualization, as an alternative to iris. Data were collected and made available by Dr. Kristen Gorman and the Palmer Station, Antarctica LTER, a member of the Long Term Ecological Research Network.",
       "identifier": [
         {
@@ -96,7 +96,7 @@
       "version": "0.1.0"
     },
     {
-      "id": "exthisds:#nsf0217282",
+      "pid": "exthisds:#nsf0217282",
       "identifier": [
         {
           "notation": "0217282",
@@ -109,7 +109,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282"
     },
     {
-      "id": "exthisds:#nsf0823101",
+      "pid": "exthisds:#nsf0823101",
       "identifier": [
         {
           "notation": "0823101",
@@ -122,7 +122,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101"
     },
     {
-      "id": "exthisds:#nsf0741351",
+      "pid": "exthisds:#nsf0741351",
       "identifier": [
         {
           "notation": "0741351",
@@ -135,7 +135,7 @@
       "cites_as_authority": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351"
     },
     {
-      "id": "exthisds:#gormanetal",
+      "pid": "exthisds:#gormanetal",
       "identifier": [
         {
           "notation": "10.1371/journal.pone.0090081",
@@ -155,7 +155,7 @@
       "notation": "'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis). PLoS ONE 9(3): e90081.'"
     },
     {
-      "id": "exthisds:#ahorst",
+      "pid": "exthisds:#ahorst",
       "identifier": [
         {
           "notation": "0000-0002-6047-5564",
@@ -173,7 +173,7 @@
       "email": "ahorst@example.org"
     },
     {
-      "id": "exthisds:#ahill",
+      "pid": "exthisds:#ahill",
       "identifier": [
         {
           "notation": "0000-0002-8082-1890",
@@ -188,7 +188,7 @@
       "email": "ahill@example.org"
     },
     {
-      "id": "exthisds:#kgorman",
+      "pid": "exthisds:#kgorman",
       "identifier": [
         {
           "notation": "0000-0002-0258-9264",
@@ -203,17 +203,17 @@
       "email": "kgorman@example.org"
     },
     {
-      "id": "exthisds:#UCSB",
+      "pid": "exthisds:#UCSB",
       "schema_type": "dldist:Organization",
       "name": "UC Santa Barbara: Santa Barbara, CA, US"
     },
     {
-      "id": "exthisds:#RStudio",
+      "pid": "exthisds:#RStudio",
       "schema_type": "dldist:Organization",
       "name": "RStudio: Boston, MA, US"
     },
     {
-      "id": "https://ror.org/01j7nq853",
+      "pid": "https://ror.org/01j7nq853",
       "identifier": [
         {
           "notation": "01j7nq853",
@@ -224,7 +224,7 @@
       "name": "University of Alaska Fairbanks: Fairbanks, AK, US"
     },
     {
-      "id": "https://ror.org/05nwjp114",
+      "pid": "https://ror.org/05nwjp114",
       "identifier": [
         {
           "notation": "05nwjp114",
@@ -235,7 +235,7 @@
       "name": "NSF Office of Polar Programs"
     },
     {
-      "id": "https://ror.org/021nxhr62",
+      "pid": "https://ror.org/021nxhr62",
       "identifier": [
         {
           "notation": "021nxhr62",
@@ -261,7 +261,7 @@
   ],
   "has_part": [
     {
-      "id": "exthisdsver:./adelie.csv",
+      "pid": "exthisdsver:./adelie.csv",
       "schema_type": "dldist:Distribution",
       "byte_size": 23755,
       "checksum": [
@@ -276,7 +276,7 @@
       "media_type": "text/csv"
     },
     {
-      "id": "exthisdsver:./gentoo.csv",
+      "pid": "exthisdsver:./gentoo.csv",
       "schema_type": "dldist:Distribution",
       "byte_size": 11263,
       "checksum": [
@@ -291,7 +291,7 @@
       "media_type": "text/csv"
     },
     {
-      "id": "exthisdsver:./chinstrap.csv",
+      "pid": "exthisdsver:./chinstrap.csv",
       "schema_type": "dldist:Distribution",
       "byte_size": 18872,
       "checksum": [

@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/ns/gitsha/9a48c2bf7e97a081f2b1ab68eb909bbfc86267be
+pid: https://concepts.datalad.org/ns/gitsha/9a48c2bf7e97a081f2b1ab68eb909bbfc86267be
 # when the parts are defined elsewhere (e.g., in a joint collection
 # of metadata records on dataset aspects) there is no need to
 # reiterate any information here: just link content under a name

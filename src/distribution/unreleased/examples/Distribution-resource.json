@@ -1,8 +1,8 @@
 {
-  "id": "exthisdsver:./some/path.ext",
+  "pid": "exthisdsver:./some/path.ext",
   "relations": {
     "exthisdsver:#some/path": {
-      "id": "exthisdsver:#some/path",
+      "pid": "exthisdsver:#some/path",
       "attributes": [
         {
           "predicate": "ex:description",
@@ -14,7 +14,7 @@
       "is_part_of": "exthisdsver:#"
     },
     "exthisdsver:#": {
-      "id": "exthisdsver:#",
+      "pid": "exthisdsver:#",
       "attributes": [
         {
           "predicate": "ex:description",
@@ -26,7 +26,7 @@
       "is_version_of": "exthisds:#"
     },
     "exthisds:#": {
-      "id": "exthisds:#",
+      "pid": "exthisds:#",
       "attributes": [
         {
           "predicate": "ex:description",

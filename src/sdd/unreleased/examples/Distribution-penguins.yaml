@@ -1,13 +1,13 @@
 # we identify the dataset distribution (incl. its parts) as the main data entity
 # of this dataset version. However, this is arbitrary. It could also be an
 # archive or directory in a larger distribution context.
-id: exthisdsver:.
+pid: exthisdsver:.
 license: licenses:CC0-1.0
 # we describe the full penguin dataset distribution here. However, this is an
 # arbitrary choice. We could also have a near-identical record that is focused
 # on a single file in the dataset -- while also contextual relationships
 has_part:
-  - id: exthisdsver:./adelie.csv
+  - pid: exthisdsver:./adelie.csv
     byte_size: 23755
     checksum:
       - creator: spdx:checksumAlgorithm_md5
@@ -15,7 +15,7 @@ has_part:
     download_url:
       - https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.219.3&entityid=002f3893385f710df69eeebe893144ff
     media_type: text/csv
-  - id: exthisdsver:./gentoo.csv
+  - pid: exthisdsver:./gentoo.csv
     byte_size: 11263
     checksum:
       - creator: spdx:checksumAlgorithm_md5
@@ -23,7 +23,7 @@ has_part:
     download_url:
       - https://portal.edirepository.org/nis/dataviewer?packageid=knb-lter-pal.220.3&entityid=e03b43c924f226486f2f0ab6709d2381
     media_type: text/csv
-  - id: exthisdsver:./chinstrap.csv
+  - pid: exthisdsver:./chinstrap.csv
     byte_size: 18872
     checksum:
       - creator: spdx:checksumAlgorithm_md5
@@ -42,7 +42,7 @@ qualified_part:
 # relation to contextual entities
 is_distribution_of: exthisdsver:#
 relation:
-  - id: exthisdsver:#
+  - pid: exthisdsver:#
     schema_type: dldist:Resource
     date_modified: "2020-07-16"
     description: >-
@@ -105,7 +105,7 @@ relation:
     title: Palmer Penguins
     version: "0.1.0"
 
-  - id: exthisds:#nsf0217282
+  - pid: exthisds:#nsf0217282
     schema_type: dlsdd:Grant
     name: "LTER: PALMER, ANTARCTICA LTER: Climate Change, Ecosystem Migration and Teleconnections in an Ice-Dominated Environment"
     identifier:
@@ -113,7 +113,7 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0217282
-  - id: exthisds:#nsf0823101
+  - pid: exthisds:#nsf0823101
     schema_type: dlsdd:Grant
     name: Palmer, Antarctica Long Term Ecological Research Project
     identifier:
@@ -121,7 +121,7 @@ relation:
         schema_agency: https://ror.org/021nxhr62
     sponsor: https://ror.org/05nwjp114
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0823101
-  - id: exthisds:#nsf0741351
+  - pid: exthisds:#nsf0741351
     schema_type: dlsdd:Grant
     name: "Collaborative Research: Possible Climate-induced Change in the Distribution of Pleuragramma Antarcticum on the Western Antarctic Peninsula Shelf"
     identifier:
@@ -131,7 +131,7 @@ relation:
     cites_as_authority: https://www.nsf.gov/awardsearch/showAward?AWD_ID=0741351
   # the following publication ID could also be the DOI, but having a global ID is not
   # a requirement (although almost unconditionally advantageous)
-  - id: exthisds:#gormanetal
+  - pid: exthisds:#gormanetal
     schema_type: dlsdd:Publication
     notation: >-
       'Gorman KB, Williams TD, Fraser WR (2014) Ecological Sexual Dimorphism
@@ -153,7 +153,7 @@ relation:
   # the exact same identifier would be available elsewhere).
   # We use the `thisds` prefix based on the assumption that no
   # namespace conflict would ever happen across dataset versions.
-  - id: exthisds:#ahorst
+  - pid: exthisds:#ahorst
     schema_type: dldist:Person
     name: Allison Horst
     email: ahorst@example.org
@@ -166,7 +166,7 @@ relation:
     # to link to
     same_as:
       - https://orcid.org/0000-0002-6047-5564
-  - id: exthisds:#ahill
+  - pid: exthisds:#ahill
     schema_type: dldist:Person
     name: Allison Hill
     email: ahill@example.org
@@ -175,7 +175,7 @@ relation:
         schema_agency: https://orcid.org
     affiliation:
       - exthisds:#Rstudio
-  - id: exthisds:#kgorman
+  - pid: exthisds:#kgorman
     schema_type: dldist:Person
     name: Kirsten Gorman
     email: kgorman@example.org
@@ -184,24 +184,24 @@ relation:
         schema_agency: https://orcid.org
     affiliation:
       - https://ror.org/01j7nq853
-  - id: exthisds:#UCSB
+  - pid: exthisds:#UCSB
     schema_type: dldist:Organization
     name: 'UC Santa Barbara: Santa Barbara, CA, US'
-  - id: exthisds:#RStudio
+  - pid: exthisds:#RStudio
     schema_type: dldist:Organization
     name: 'RStudio: Boston, MA, US'
-  - id: https://ror.org/01j7nq853
+  - pid: https://ror.org/01j7nq853
     schema_type: dldist:Organization
     name: 'University of Alaska Fairbanks: Fairbanks, AK, US'
     identifier:
       - notation: 01j7nq853
         schema_agency: https://ror.org
-  - id: https://ror.org/05nwjp114
+  - pid: https://ror.org/05nwjp114
     name: NSF Office of Polar Programs
     identifier:
       - notation: 05nwjp114
         schema_agency: https://ror.org
-  - id: https://ror.org/021nxhr62
+  - pid: https://ror.org/021nxhr62
     name: US National Science Foundation
     identifier:
       - notation: 021nxhr62

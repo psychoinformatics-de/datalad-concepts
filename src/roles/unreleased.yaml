@@ -61,7 +61,7 @@ emit_prefixes:
   - skos
 
 imports:
-  - dlschemas:things/v1
+  - ../../src/things/v1
 
 
 slots:

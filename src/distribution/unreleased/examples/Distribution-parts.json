@@ -1,9 +1,9 @@
 {
-  "id": "exthisdsver:./archive.zip",
+  "pid": "exthisdsver:./archive.zip",
   "schema_type": "dldist:Distribution",
   "has_part": [
     {
-      "id": "exthisdsver:./archive.zip/subdir",
+      "pid": "exthisdsver:./archive.zip/subdir",
       "attributes": [
         {
           "predicate": "ex:description",
@@ -14,7 +14,7 @@
       "schema_type": "dldist:Distribution",
       "has_part": [
         {
-          "id": "exthisdsver:./archive.zip/subdir/file.txt",
+          "pid": "exthisdsver:./archive.zip/subdir/file.txt",
           "attributes": [
             {
               "predicate": "ex:description",

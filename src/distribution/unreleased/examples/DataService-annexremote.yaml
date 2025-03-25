@@ -1,5 +1,5 @@
 # specification of a git-annex special remote as a DataService
-id: https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
+pid: https://concepts.datalad.org/ns/annex-uuid/0a8713ca-ef42-11ee-a805-d3e9a774e795
 # TODO have a definition of a generic annex remote
 exact_mappings:
   - https://git-annex.branchable.com/special_remotes

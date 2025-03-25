@@ -7,7 +7,7 @@
 # because this avoids duplication in cases where multiple distributions
 # of the same resource exist. The resource object only has to be
 # defined once in a `relation` property
-id: exthisdsver:./some/path.ext
+pid: exthisdsver:./some/path.ext
 is_distribution_of: exthisdsver:#some/path
 relations:
   exthisdsver:#some/path:
