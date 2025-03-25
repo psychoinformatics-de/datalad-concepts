@@ -5,15 +5,15 @@
 # Enable lean documents, because parts can be referenced
 # across different locations and versions after a single
 # inline definition.
-id: exthisdsver:./archive.zip
+pid: exthisdsver:./archive.zip
 has_part:
   # a part of a Distribution is also a Distribution
-  - id: exthisdsver:./archive.zip/subdir
+  - pid: exthisdsver:./archive.zip/subdir
     attributes:
       - predicate: ex:description
         value: "A subdirectory"
     has_part:
-      - id: exthisdsver:./archive.zip/subdir/file.txt
+      - pid: exthisdsver:./archive.zip/subdir/file.txt
         attributes:
           - predicate: ex:description
             value: "A file"

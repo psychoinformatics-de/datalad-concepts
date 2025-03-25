@@ -1,5 +1,5 @@
 # specification of a distribution access via a git-annex special remote
-id: https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
+pid: https://concepts.datalad.org/ns/annex-key/MD5E-s3214--ba1f2511fc30423bdbb183fe33f3dd0f.csv
 qualified_access:
   - access_service:
       # see example DataService-annexremote for a matching specification

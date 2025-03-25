@@ -10,7 +10,7 @@ description: |
   This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
-  - has a unique identifier ([`id`](id))
+  - has a unique identifier ([`pid`](pid))
   - can be mapped to arbitrary external schemas and terminologies to maximize
     semantic alignment with existing metadata ecosystems
     (see [`mappings`](mappings))
@@ -49,7 +49,7 @@ description: |
 license: MIT
 
 prefixes:
-  # here for alignment of `id`
+  # here for alignment of `pid`
   ADMS: http://www.w3.org/ns/adms#
   # primarily for the examples, but also a foundational vocab
   bibo: http://purl.org/ontology/bibo/
@@ -101,7 +101,7 @@ emit_prefixes:
   - skos
 
 imports:
-  - dlschemas:types/unreleased
+  - ../../src/types/unreleased
   - linkml:types
 
 slots:
@@ -166,8 +166,8 @@ slots:
     exact_mappings:
       - sio:SIO_000008
 
-  id:
-    slot_uri: dlthings:id
+  pid:
+    slot_uri: dlthings:pid
     identifier: true
     description: >-
       Globally unique identifier of a metadata object, such as a `Thing`.
@@ -320,7 +320,7 @@ classes:
         required: true
     description: >-
       An attribute is conceptually a thing, but it requires no dedicated
-      identifier (`id`). Instead, it is linked to a `Thing` via its
+      identifier (`pid`). Instead, it is linked to a `Thing` via its
       `attributes` slot and declares a `predicate` on the nature of
       the relationship.
     exact_mappings:
@@ -364,7 +364,7 @@ classes:
     description: >-
       The most basic, identifiable item. In addition to the slots
       that are common between a `Thing` and an `AttributeSpecification`
-      (see `ThingMixin`), two additional slots are provided. The `id`
+      (see `ThingMixin`), two additional slots are provided. The `pid`
       slot takes the required identifier for a `Thing`. The `relation`
       slot allows for the inline specification of other `Thing` instances.
       Such a relation is unqualified (and symmetric), and should be
@@ -373,7 +373,7 @@ classes:
       self-contained, structured documents (e.g., a JSON object) with
       arbitrarily complex information on a `Thing`.
     slots:
-      - id
+      - pid
       - relations
     exact_mappings:
       - schema:Thing

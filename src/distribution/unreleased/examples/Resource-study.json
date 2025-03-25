@@ -1,8 +1,8 @@
 {
-  "id": "exthisdsver:#",
+  "pid": "exthisdsver:#",
   "relations": {
     "exthisds:#s001": {
-      "id": "exthisds:#s001",
+      "pid": "exthisds:#s001",
       "characterized_by": [
         {
           "object": "obo:PATO_0002204",
@@ -19,7 +19,7 @@
       "schema_type": "dlprov:Agent"
     },
     "exthisds:#s002": {
-      "id": "exthisds:#s002",
+      "pid": "exthisds:#s002",
       "characterized_by": [
         {
           "object": "obo:PATO_0000384",
@@ -54,7 +54,7 @@
       "schema_type": "dlprov:Agent"
     },
     "exthisds:#study_2005-004406-93": {
-      "id": "exthisds:#study_2005-004406-93",
+      "pid": "exthisds:#study_2005-004406-93",
       "attributes": [
         {
           "predicate": "ex:title",

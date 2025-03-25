@@ -1,5 +1,5 @@
 {
-  "id": "ex:ns/people/jane",
+  "pid": "ex:ns/people/jane",
   "schema_type": "dlsocial:Person",
   "qualified_relations": {
     "email:jane@example.org": {

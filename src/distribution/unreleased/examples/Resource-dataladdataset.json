@@ -1,5 +1,5 @@
 {
-  "id": "https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854",
+  "pid": "https://concepts.datalad.org/ns/dataset-uuid/cec1da92-0dbd-4df3-8602-7c72b2d12854",
   "attributes": [
     {
       "predicate": "ex:identifier",

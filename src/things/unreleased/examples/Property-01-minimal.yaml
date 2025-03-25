@@ -1,4 +1,4 @@
 # A property is required to have an identifier, because it makes
 # little sense to work with property definitions that cannot be
 # referenced/resolved.
-id: ex:title
+pid: ex:title

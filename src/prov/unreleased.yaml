@@ -99,11 +99,11 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:things/v1
-  - dlschemas:identifiers/unreleased
-  - dlschemas:roles/unreleased
-  - dlschemas:spatial/unreleased
-  - dlschemas:temporal/unreleased
+  - ../../src/things/v1
+  - ../../src/identifiers/unreleased
+  - ../../src/roles/unreleased
+  - ../../src/spatial/unreleased
+  - ../../src/temporal/unreleased
 
 
 slots:

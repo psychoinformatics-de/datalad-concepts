@@ -1,5 +1,5 @@
 {
-  "id": "ex:year",
+  "pid": "ex:year",
   "schema_type": "dltemporal:InstantaneousEvent",
   "at_time": "1532",
   "@type": "InstantaneousEvent"

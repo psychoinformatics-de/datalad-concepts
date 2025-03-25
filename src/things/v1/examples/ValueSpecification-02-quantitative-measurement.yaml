@@ -1,4 +1,4 @@
-id: exthisns:measurement853
+pid: exthisns:measurement853
 attributes:
   - predicate: ex:title
     value: "measured mass (kg)"

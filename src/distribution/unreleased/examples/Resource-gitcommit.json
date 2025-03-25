@@ -1,8 +1,8 @@
 {
-  "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
+  "pid": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f",
   "relations": {
     "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring": {
-      "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
+      "pid": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#authoring",
       "exact_mappings": [
         "obo:NCIT_C25625"
       ],
@@ -18,7 +18,7 @@
       }
     },
     "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing": {
-      "id": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
+      "pid": "gitsha:8d6f033bb2a6109b2c4d64d6f27b0feb181e4d0f#committing",
       "exact_mappings": [
         "obo:NCIT_C42882"
       ],

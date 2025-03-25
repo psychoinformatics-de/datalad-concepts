@@ -3,7 +3,7 @@
 # better referenced from well-defined vocabularies. However,
 # for concrete technical applications, it can be useful to be
 # able to specify key attributes of properties inline.
-id: ex:modified
+pid: ex:modified
 description: "Date on which the resource was changed."
 attributes:
   - predicate: ex:title

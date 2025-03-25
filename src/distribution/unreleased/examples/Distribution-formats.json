@@ -1,5 +1,5 @@
 {
-  "id": "exthisdsver:.",
+  "pid": "exthisdsver:.",
   "attributes": [
     {
       "predicate": "ex:conformsTo",
@@ -11,12 +11,12 @@
   "schema_type": "dldist:Distribution",
   "has_part": [
     {
-      "id": "exthisdsver:./dataset_description.json",
+      "pid": "exthisdsver:./dataset_description.json",
       "schema_type": "dldist:Distribution",
       "media_type": "application/json"
     },
     {
-      "id": "exthisdsver:./participants.tsv",
+      "pid": "exthisdsver:./participants.tsv",
       "schema_type": "dldist:Distribution",
       "format": "http://edamontology.org/format_3475"
     }

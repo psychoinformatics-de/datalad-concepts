@@ -1,5 +1,5 @@
 {
-  "id": "exthisdsver:./some/name.ext",
+  "pid": "exthisdsver:./some/name.ext",
   "attributes": [
     {
       "predicate": "foaf:name",

@@ -1,5 +1,5 @@
 {
-  "id": "https://trr379.de",
+  "pid": "https://trr379.de",
   "schema_type": "dlsocial:Organization",
   "qualified_relations": {
     "https://ror.org/018mejw64": {

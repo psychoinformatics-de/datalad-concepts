@@ -1,5 +1,5 @@
 {
-  "id": "ex:directory1",
+  "pid": "ex:directory1",
   "schema_type": "dlres:Resource",
   "indexed_parts": {
     "file1.txt": {

@@ -1,4 +1,4 @@
-id: exthisdsver:./some/path.ext
+pid: exthisdsver:./some/path.ext
 relations:
   exthisds:#customlicense:
     schema_type: dldist:LicenseDocument
