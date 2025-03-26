@@ -52,11 +52,20 @@ post-install-commands = [
   "{root}/tools/patch_linkml",
 ]
 
+[tool.hatch.envs.check]
+description = "test models and examples"
+
+[tool.hatch.envs.check.scripts]
+models = "make imports-local && make check-models"
+examples = "make imports-local && make check-validation"
+
 [tool.hatch.envs.docs]
 description = "build mkdocs-based documentation and website"
 extra-dependencies = [
   "mkdocs",
+  "mkdocs-material",
   "mkdocs-mermaid2-plugin",
+  "mkdocs-panzoom-plugin",
   "mkdocs-redirects",
 ]
 

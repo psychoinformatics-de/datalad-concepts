@@ -45,5 +45,5 @@ site_url: !ENV [SITEURL, 'https://concepts.datalad.org']
 # false, because we have many doc files that are not mentioned in "nav"
 strict: false
 theme:
-  name: mkdocs
+  name: material
   locale: en
