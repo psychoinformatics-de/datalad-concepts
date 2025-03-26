@@ -84,8 +84,8 @@ emit_prefixes:
   - xsd
 
 imports:
-  - ../../src/prov/unreleased
-  - ../../src/properties/unreleased
+  - dlschemas:prov/unreleased
+  - dlschemas:properties/unreleased
 
 
 slots:

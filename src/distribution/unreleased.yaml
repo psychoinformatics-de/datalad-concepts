@@ -110,7 +110,7 @@ emit_prefixes:
   - prov
 
 imports:
-  - ../../src/types/unreleased
+  - dlschemas:types/unreleased
   - ../properties/unreleased
   - ../prov/unreleased
   - ../social/unreleased

@@ -66,8 +66,8 @@ emit_prefixes:
   - xsd
 
 imports:
-  - ../../src/properties/unreleased
-  - ../../src/prov/unreleased
+  - dlschemas:properties/unreleased
+  - dlschemas:prov/unreleased
 
 slots:
   indexed_parts:
