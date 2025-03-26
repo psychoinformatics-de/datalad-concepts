@@ -54,7 +54,7 @@ emit_prefixes:
   - xsd
 
 imports:
-  - ../../src/types/unreleased
+  - dlschemas:types/unreleased
   - linkml:types
 
 slots:

@@ -106,7 +106,7 @@ emit_prefixes:
   - skos
 
 imports:
-  - ../../src/types/unreleased
+  - dlschemas:types/unreleased
   - linkml:types
 
 slots:

@@ -70,8 +70,8 @@ emit_prefixes:
   - xsd
 
 imports:
-  - ../../src/temporal/unreleased
-  - ../../src/resources/unreleased
+  - dlschemas:temporal/unreleased
+  - dlschemas:resources/unreleased
 
 classes:
   Publication:
