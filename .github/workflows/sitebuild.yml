@@ -30,28 +30,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-
-      - name: Patch linkml
-        run: |
-          tools/patch_linkml
+      - name: Install hatch
+        run: python -m pip install hatch
 
       - name: Build
         # this is building a branch specific site
         # when multiple branches/versions are maintained concurrently
         # we likely need to build all of them and do a joint upload
         run: |
-          #mkdir -p ./build/upload
-          #export "SITEDIR=./build/upload/$(git branch --show-current)"
-          #export "SITEURL=https://concepts.datalad.org/$(git branch --show-current)"
-          make build/mkdocs-site
-          #make build/context.jsonld
-          #mv ./build/mkdocs-site $SITEDIR
+          hatch run docs:build
           mv ./build/mkdocs-site ./build/upload
-          #mv ./build/context.jsonld ./build/upload/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
