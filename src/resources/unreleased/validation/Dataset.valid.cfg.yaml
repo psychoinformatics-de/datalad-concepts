@@ -1,0 +1,9 @@
+schema: src/resources/unreleased.yaml
+target_class: Dataset
+data_sources:
+  - src/resources/unreleased/examples/Dataset-02-props.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
