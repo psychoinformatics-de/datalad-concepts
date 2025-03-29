@@ -160,23 +160,6 @@ slots:
     exact_mappings:
       - schema:affiliation
 
-  byte_size:
-    slot_uri: dldist:byte_size
-    description: >-
-      The size of a distribution in bytes.
-    range: NonNegativeInteger
-    exact_mappings:
-      - dcat:byteSize
-
-  checksum:
-    slot_uri: dldist:checksum
-    description: >-
-      The checksum property provides a mechanism that can be used to verify
-      that the contents of a file or package have not changed.
-    range: Checksum
-    exact_mappings:
-      - spdx:checksum
-
   contact_point:
     slot_uri: dldist:contact_point
     description: >-
@@ -249,25 +232,6 @@ slots:
       - dcat:downloadURL
       - dldist:endpoint_description
 
-  format:
-    slot_uri: dldist:format
-    description: >-
-      The file format of a distribution.
-    domain: Distribution
-    range: uriorcurie
-    exact_mappings:
-      - dcterms:format
-    notes:
-      - When type of the distribution is defined by IANA, `media_type` should be used.
-
-  has_part:
-    slot_uri: dldist:has_part
-    description: >-
-      A related resource that is included either physically
-      or logically in the described resource.
-    exact_mappings:
-      - dcterms:hasPart
-
   is_distribution_of:
     slot_uri: dldist:is_distribution_of
     description: >-
@@ -332,20 +296,6 @@ slots:
     range: string
     exact_mappings:
       - spdx:extractedText
-
-  media_type:
-    slot_uri: dldist:media_type
-    is_a: format
-    description: >-
-      The media type of a distribution as defined by IANA
-    domain: Distribution
-    range: string
-    examples:
-      - value: text/csv
-    see_also:
-      - https://www.iana.org/assignments/media-types
-    exact_mappings:
-      - dcat:mediaType
 
   qualified_access:
     slot_uri: dlco:qualified_access
@@ -467,28 +417,6 @@ classes:
       - spdx:License
     todos:
       - spdx vocab has a needed pieces to express a any custom license
-
-  #
-  # basic relations
-  #
-  DistributionPart:
-    class_uri: dldist:DistributionPart
-    description: >-
-      An association class for attaching additional information to a
-      hasPart relationship.
-    broad_mappings:
-      - dcat:Relationship
-    slots:
-      - name
-      - object
-    slot_usage:
-      name:
-        description: >-
-          The name of the part within the containing entity.
-    comments:
-      - This class is a key element of the data model. It enables referencing
-        a particular resource (e.g., a file's content, or versioned directory
-        tree in multiple contexts, such as different versions of a dataset).
 
   #
   # data access
