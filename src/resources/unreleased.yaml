@@ -68,6 +68,7 @@ emit_prefixes:
 imports:
   - dlschemas:properties/unreleased
   - dlschemas:prov/unreleased
+  - dlschemas:temporal/unreleased
 
 slots:
   indexed_parts:
@@ -167,8 +168,9 @@ classes:
       - Instrument
     exact_mappings:
       - dcat:Dataset
-    #slots:
-    #  - date_modified
+    slots:
+      - date_modified
+      - date_published
 
   IndexedResourceRelationship:
     description: >-

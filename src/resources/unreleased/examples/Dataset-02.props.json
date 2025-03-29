@@ -1,0 +1,7 @@
+{
+  "pid": "https://example.com/mydataset",
+  "schema_type": "dlres:Dataset",
+  "date_modified": "2024-04-13T12:19:00+00:00",
+  "date_published": "2025-01-29T11:21:51+00:00",
+  "@type": "Dataset"
+}
