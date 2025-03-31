@@ -4,6 +4,7 @@ data_sources:
   - src/resources/unreleased/examples/Resource-01-minimal.yaml
   - src/resources/unreleased/examples/Resource-02-parts.yaml
   - src/resources/unreleased/examples/Resource-03-partof.yaml
+  - src/resources/unreleased/examples/Resource-04-version.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

@@ -1,0 +1,6 @@
+pid: https://pypi.org/project/datalad/1.1.5
+previous_version: https://pypi.org/project/datalad/1.1.4
+version_label: 1.1.5
+version_notes:
+  - When it came out, it was the best we had.
+  - If all goes well, it will be followed by another version eventually.
