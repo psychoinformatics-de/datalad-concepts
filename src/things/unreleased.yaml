@@ -234,6 +234,10 @@ slots:
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
+    notes:
+      - The `range` is `uriorcurie` here (and not `Thing`), because
+        we have an undetermined issue with linkml not accepting such
+        a range.
 
   predicate:
     slot_uri: rdf:predicate

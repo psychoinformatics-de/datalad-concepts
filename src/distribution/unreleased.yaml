@@ -254,7 +254,7 @@ slots:
     description: >-
       The file format of a distribution.
     domain: Distribution
-    range: uriorcurie
+    range: Thing
     exact_mappings:
       - dcterms:format
     notes:
@@ -288,7 +288,7 @@ slots:
     slot_uri: dldist:is_version_of
     description: >-
       A related resource of which the described resource is a version.
-    range: uriorcurie
+    range: Thing
     exact_mappings:
       - dcat:isVersionOf
 
