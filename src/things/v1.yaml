@@ -212,7 +212,7 @@ slots:
 
   annotation_tag:
     description: A tag identifying an annotation.
-    range: uriorcurie
+    range: Thing
 
   annotation_value:
     description: The actual annotation.
@@ -237,6 +237,10 @@ slots:
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
+    notes:
+      - The `range` is `uriorcurie` here (and not `Thing`), because
+        we have an undetermined issue with linkml not accepting such
+        a range.
 
   predicate:
     slot_uri: rdf:predicate

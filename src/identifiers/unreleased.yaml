@@ -65,6 +65,10 @@ slots:
     range: uriorcurie
     exact_mappings:
       - dcterms:creator
+    notes:
+      - The `range` is only `uriorcurie` here (and not `Thing`), because
+        we have an `ifabsent` declaration for DOIs that only work with this
+        type. And even for that it needs a patch.
 
   identifiers:
     slot_uri: dlidentifiers:identifier
