@@ -22,6 +22,7 @@ comments:
 license: MIT
 
 prefixes:
+  ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
@@ -39,6 +40,7 @@ prefixes:
   linkml: https://w3id.org/linkml/
   marcrel: http://id.loc.gov/vocabulary/relators/
   obo: http://purl.obolibrary.org/obo/
+  pav: http://purl.org/pav/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
@@ -106,6 +108,14 @@ slots:
     exact_mappings:
       - bibo:locator
 
+  previous_version:
+    slot_uri: dlres:previous_version
+    description: >-
+      The previous version of the subject in a lineage.
+    exact_mappings:
+      - dcat:previousVersion
+      - pav:previousVersion
+
   resource:
     slot_uri: dlres:resource
     description: >-
@@ -123,6 +133,25 @@ slots:
     exact_mappings:
       - schema:sponsor
 
+  version_label:
+    slot_uri: dlres:version_label
+    description: >-
+      Version indicator (name or identifier) of the subject.
+    range: string
+    exact_mappings:
+      - dcat:version
+      - pav:version
+
+  version_notes:
+    slot_uri: dlres:version_notes
+    description: >-
+      A description of changes between this version and the previous version
+      of the subject.
+    range: string
+    multivalued: true
+    exact_mappings:
+      - ADMS:versionNotes
+
 
 classes:
   Resource:
@@ -135,11 +164,17 @@ classes:
       - about
       - indexed_parts
       - indexed_part_of
+      - previous_version
       - same_as
       - short_name
       - title
+      - version_label
+      - version_notes
       # TODO add example on how to annotate the relation to a contact point
       # - contact_point
+    slot_usage:
+      previous_version:
+        range: Resource
     narrow_mappings:
       - dcat:Resource
 
