@@ -73,6 +73,29 @@ imports:
   - dlschemas:temporal/unreleased
 
 slots:
+  distributions:
+    slot_uri: dlres:distributions
+    description: >-
+      Available distributions of the resource.
+    multivalued: true
+    range: Distribution
+    domain: Resource
+    exact_mappings:
+      - dcat:distribution
+    broad_mappings:
+      - sio:SIO_000341
+    inverse: distribution_of
+
+  distribution_of:
+    slot_uri: dlres:distribution_of
+    description: >-
+      The resource that the subject is a distribution of.
+    range: Resource
+    domain: Distribution
+    broad_mappings:
+      - sio:SIO_000426
+    inverse: distributions
+
   indexed_parts:
     slot_uri: dlres:indexed_parts
     description: >-
@@ -196,7 +219,30 @@ classes:
     exact_mappings:
       - dcat:Dataset
     slots:
+      - distributions
 
+  Distribution:
+    class_uri: dlres:Distribution
+    is_a: Resource
+    description: >-
+      A specific representation of a resource, which may come in the form of
+      a physical object, or an electronic file, or an archive or directory
+      of many files, may be standalone or part of a larger collection.
+    notes:
+      - A `Distribution` is derived from `Resource`, following the logic
+        that it is a materialized/specialized variant of a particular
+        resource. It therefore should inherit all its slots. This is
+        in contrast to DCAT, where `Distribution` is not a subclass.
+        However, in DCAT a `Distribution` also does not have a version.
+        Here we do want that, for example, to express an update
+        of a format conversion, where no data change, only the layout.
+    slots:
+      - distribution_of
+    slot_usage:
+      previous_version:
+        range: Distribution
+    narrow_mappings:
+      - dcat:Distribution
 
   Document:
     class_uri: dlres:Document
