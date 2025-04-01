@@ -181,19 +181,6 @@ classes:
     narrow_mappings:
       - dcat:Resource
 
-  Grant:
-    class_uri: dlres:Grant
-    is_a: Resource
-    description: >-
-      A grant, typically financial or otherwise quantifiable, of resources.
-    slots:
-      - sponsor
-    disjoint_with:
-      - Dataset
-      - Grant
-    exact_mappings:
-      - schema:Grant
-
   Dataset:
     class_uri: dlres:Dataset
     is_a: Resource
@@ -202,11 +189,49 @@ classes:
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and serializations.
     disjoint_with:
+      - Document
       - Grant
       - Instrument
     exact_mappings:
       - dcat:Dataset
     slots:
+
+
+  Document:
+    class_uri: dlres:Document
+    is_a: Resource
+    description: >-
+      A conceptual entity representing things which a, broadly conceived,
+      "documents. This includes non-textual things like images.
+      A conceputal document is to be distinguished from its physical,
+      or electronic distributions.
+    slots:
+      - distributions
+    disjoint_with:
+      - Dataset
+      - Grant
+      - Instrument
+    notes:
+      - The key difference between a dataset and a document is the collection-nature of the dataset (multiple items of a kind in a collection), whereas a document is "one of its kind". A dataset could comprise multiple documents.
+    exact_mappings:
+      - foaf:Document
+
+  Grant:
+    class_uri: dlres:Grant
+    is_a: Resource
+    description: >-
+      A grant, typically financial or otherwise quantifiable, resources.
+    slots:
+      - sponsor
+    disjoint_with:
+      - Dataset
+      - Document
+      - Instrument
+    notes:
+      - A grant is not a document. The associated document would be the
+        grant agreement.
+    exact_mappings:
+      - schema:Grant
 
   IndexedResourceRelationship:
     description: >-
@@ -244,6 +269,7 @@ classes:
       An instrument is typically not a "reagent".
     disjoint_with:
       - Dataset
+      - Document
       - Grant
     related_mappings:
       - schema:instrument
