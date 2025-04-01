@@ -1,0 +1,20 @@
+{
+  "pid": "https://example.org/mydataset",
+  "relations": {
+    "https://spdx.org/licenses/CC-BY-4.0": {
+      "pid": "https://spdx.org/licenses/CC-BY-4.0",
+      "schema_type": "dlres:Document",
+      "short_name": "CC-BY-4.0"
+    }
+  },
+  "schema_type": "dlres:Dataset",
+  "qualified_relations": {
+    "https://spdx.org/licenses/CC-BY-4.0": {
+      "object": "https://spdx.org/licenses/CC-BY-4.0",
+      "roles": [
+        "dcterms:LicenseDocument"
+      ]
+    }
+  },
+  "@type": "Dataset"
+}
