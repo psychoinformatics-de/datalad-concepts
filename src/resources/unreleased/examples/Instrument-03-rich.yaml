@@ -13,3 +13,8 @@ about:
 characterized_by:
   - predicate: http://purl.org/spar/cito/citesAsAuthority
     object: https://doi.org/10.1016/j.paid.2009.04.008
+keywords:
+  - personality test
+  - attention
+  - self-control
+  - motor
