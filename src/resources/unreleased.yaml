@@ -162,6 +162,8 @@ classes:
       single agent.
     slots:
       - about
+      - date_modified
+      - date_published
       - indexed_parts
       - indexed_part_of
       - keywords
@@ -205,8 +207,6 @@ classes:
     exact_mappings:
       - dcat:Dataset
     slots:
-      - date_modified
-      - date_published
 
   IndexedResourceRelationship:
     description: >-
