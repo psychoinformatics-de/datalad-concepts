@@ -11,6 +11,12 @@
   "about": [
     "https://en.wikipedia.org/wiki/Impulsivity"
   ],
+  "keywords": [
+    "personality test",
+    "attention",
+    "self-control",
+    "motor"
+  ],
   "same_as": "https://en.wikipedia.org/wiki/Barratt_Impulsiveness_Scale",
   "short_name": "BIS",
   "title": "Barratt Impulsiveness Scale",

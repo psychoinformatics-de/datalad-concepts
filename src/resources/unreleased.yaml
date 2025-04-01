@@ -164,6 +164,7 @@ classes:
       - about
       - indexed_parts
       - indexed_part_of
+      - keywords
       - previous_version
       - same_as
       - short_name
