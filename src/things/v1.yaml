@@ -131,10 +131,12 @@ slots:
   description:
     slot_uri: dlthings:description
     description: A free-text account of the subject.
+    range: string
     exact_mappings:
       - dcterms:description
       - rdfs:comment
-    range: string
+    broad_mappings:
+      - obo:IAO_0000300
 
   exact_mappings:
     slot_uri: skos:exactMatch
@@ -209,6 +211,9 @@ slots:
     range: Annotation
     inlined: true
     multivalued: true
+    exact_mappings:
+      - obo:NCIT_C44272
+
 
   annotation_tag:
     description: A tag identifying an annotation.

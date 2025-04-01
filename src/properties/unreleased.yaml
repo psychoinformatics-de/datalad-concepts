@@ -85,6 +85,7 @@ slots:
     exact_mappings:
       - dcat:keyword
       - schema:keywords
+      - obo:IAO_0000629
 
   name:
     slot_uri: dlprops:name
@@ -100,6 +101,7 @@ slots:
       - foaf:name
     close_mappings:
       - dlprops:title
+      - obo:IAO_0000590
     range: string
 
   same_as:

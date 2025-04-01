@@ -226,6 +226,7 @@ classes:
       - informed_by
     exact_mappings:
       - prov:Activity
+      - obo:BFO_0000015
     comments:
       - >-
         This class does not support even a basic `name` slot, because
