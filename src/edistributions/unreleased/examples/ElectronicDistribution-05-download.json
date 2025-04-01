@@ -1,0 +1,22 @@
+{
+  "pid": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
+  "schema_type": "dledist:ElectronicDistribution",
+  "access_methods": [
+    {
+      "schema_type": "dledist:DirectDownload",
+      "download_urls": [
+        "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98?download"
+      ]
+    },
+    {
+      "schema_type": "dledist:DataServiceAccess",
+      "data_service": "https://example.org/supersecretservice",
+      "locator": "i123"
+    },
+    {
+      "schema_type": "dledist:AccessThroughLandingPage",
+      "landing_page": "https://example.org/getaccess"
+    }
+  ],
+  "@type": "ElectronicDistribution"
+}

@@ -37,7 +37,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Resources schema](s/resources/unreleased/index.md)
 - [Publications schema](s/publications/unreleased/index.md)
 - [Social schema](s/social/unreleased/index.md)
-- [Data distribution schema](s/distribution/unreleased/index.md)
+- [Electronic distributions schema](s/edistributions/unreleased/index.md)
 
 
 See sources on [GitHub](https://github.com/psychoinformatics-de/datalad-concepts)

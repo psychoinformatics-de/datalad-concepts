@@ -1,0 +1,14 @@
+# One and the same Distribution can have different roles as a part
+# of another Distribution.
+# In this example, one and the same shell script content is used
+# for two different distribution parts (i.e. files in a directory).
+# One is a plain script, and the other an executable file.
+pid: https://example.org/20b330286682a772021c75f59fdbde07155773bb
+indexed_parts:
+  # a directory
+  run-me.sh: https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98
+  run-me:
+    resource: https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98
+    roles:
+      # executable file
+      - obo:ONTOAVIDA_00000002

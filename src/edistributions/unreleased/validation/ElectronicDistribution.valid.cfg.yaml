@@ -1,0 +1,13 @@
+schema: src/edistributions/unreleased.yaml
+target_class: ElectronicDistribution
+data_sources:
+  - src/edistributions/unreleased/examples/ElectronicDistribution-01-minimal.yaml
+  - src/edistributions/unreleased/examples/ElectronicDistribution-02-props.yaml
+  - src/edistributions/unreleased/examples/ElectronicDistribution-03-parts.yaml
+  - src/edistributions/unreleased/examples/ElectronicDistribution-04-partrole.yaml
+  - src/edistributions/unreleased/examples/ElectronicDistribution-05-download.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

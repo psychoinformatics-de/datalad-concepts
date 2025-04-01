@@ -1,0 +1,199 @@
+id: https://concepts.datalad.org/s/edistributions/unreleased
+name: edistributions-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Schema for a describing electronic distributions
+description: |
+
+  The schema is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dctypes: http://purl.org/dc/dcmitype/
+  dlschemas: https://concepts.datalad.org/s/
+  dledist: https://concepts.datalad.org/s/edistributions/unreleased/
+  dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  # custom prefix to use Git's SHA identifiers as schema identifiers
+  w3ctr: https://www.w3.org/TR/
+
+default_prefix: dledist
+
+imports:
+  - dlschemas:types/unreleased
+  - dlschemas:resources/unreleased
+
+slots:
+  data_service:
+    slot_uri: dledist:data_service
+    description: >-
+      A data service that gives access to the distribution of a dataset.
+    range: DataService
+
+  byte_size:
+    slot_uri: dledist:byte_size
+    description: >-
+      The size of the subject in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
+  checksums:
+    slot_uri: dledist:checksum
+    description: >-
+      The checksum property provides a mechanism that can be used to verify
+      that the contents of a file or package have not changed.
+    range: Checksum
+    multivalued: true
+    inlined: true
+    # this could be false, if Checksum had a `key`, but it is unclear
+    # what that would be. In the context of a single content object
+    # `creator` is a key, but in a container that lists "valid/ok'ed"
+    # checksum `creator` is not a key
+    inlined_as_list: true
+    exact_mappings:
+      - spdx:checksum
+
+  compression_format:
+    slot_uri: dledist:compression_format
+    description: >-
+      The compression format of the distribution in which the data is
+      contained in a compressed form, e.g., to reduce the size of the
+      downloadable file.
+    range: Thing
+    exact_mappings:
+      - dcat:compressFormat
+
+  download_urls:
+    slot_uri: dledist:download_url
+    description: >-
+      URL that gives direct access to the subject in the form of a downloadable file in a given format.
+    range: uri
+    multivalued: true
+    exact_mappings:
+      - dcat:downloadURL
+    related_mappings:
+      - dcat:accessURL
+      - dcat:landingPage
+
+  format:
+    slot_uri: dledist:format
+    description: >-
+      The file format of a distribution.
+    range: Thing
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  landing_page:
+    slot_uri: dledist:landing_page
+    description: >-
+      A Web page that can be navigated to in a Web browser to gain access
+      to a resource.
+    range: uri
+    exact_mappings:
+      - dcat:landingPage
+      - foaf:page
+
+  media_type:
+    slot_uri: dledist:media_type
+    is_a: format
+    description: >-
+      The media type of a distribution as defined by IANA
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
+  packaging_format:
+    slot_uri: dledist:packaging_format
+    description: >-
+      The package format of the distribution in which one or more
+      data files are grouped together, e.g., to enable a set of
+      related files to be downloaded together.
+    range: Thing
+    exact_mappings:
+      - dcat:packageFormat
+
+classes:
+  ElectronicDistribution:
+    class_uri: dledist:ElectronicDistribution
+    is_a: Distribution
+    description: >-
+      A specific representation of data, which may come in the form of
+      a single file, or an archive or directory of many files, may be
+      standalone or part of a larger collection.
+    slots:
+      - byte_size
+      - checksums
+      - format
+      - media_type
+    slot_usage:
+      previous_version:
+        range: ElectronicDistribution
+    exact_mappings:
+      - dcat:Distribution
+
+  DataService:
+    class_uri: dledist:DataService
+    is_a: Resource
+    description: >-
+      A collection of operations that provides access to one or more
+      dataset distributions or data processing functions.
+    exact_mappings:
+      - dcat:DataService
+
+  DataServiceAccess:
+    class_uri: dledist:DataServiceAccess
+    is_a: AccessMethod
+    description: >-
+      Access through a data service where the subject is available via
+      a particular locator.
+    slots:
+      - data_service
+      - locator
+    slot_usage:
+      data_service:
+        required: true
+      locator:
+        required: true
+
+  DirectDownload:
+    class_uri: dledist:DirectDownload
+    is_a: AccessMethod
+    description: >-
+      Direct access to the subject is possible via a download URL.
+    slots:
+      - download_urls
+
+  AccessThroughLandingPage:
+    class_uri: dledist:AccessThroughLandingPage
+    is_a: AccessMethod
+    description: >-
+      Access to the subject through a web page, or information on a
+      web page, that can be navigated to in a Web browser.
+    slots:
+      - landing_page
