@@ -162,6 +162,7 @@ classes:
       single agent.
     slots:
       - about
+      - conforms_to
       - date_modified
       - date_published
       - indexed_parts
