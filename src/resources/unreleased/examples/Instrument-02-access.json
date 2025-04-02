@@ -1,0 +1,12 @@
+{
+  "pid": "https://example.com/mop",
+  "schema_type": "dlres:Instrument",
+  "access_methods": [
+    {
+      "schema_type": "dlres:PersonalRequest",
+      "description": "Call the janitor and ask for a pick-up location"
+    }
+  ],
+  "title": "The mop",
+  "@type": "Instrument"
+}

@@ -73,6 +73,15 @@ imports:
   - dlschemas:temporal/unreleased
 
 slots:
+  access_methods:
+    slot_uri: dlres:access_method
+    description: >-
+      (Alternative) means to gain access to the subject.
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    range: AccessMethod
+
   distributions:
     slot_uri: dlres:distributions
     description: >-
@@ -185,6 +194,7 @@ classes:
       single agent.
     slots:
       - about
+      - access_methods
       - conforms_to
       - date_modified
       - date_published
@@ -204,6 +214,15 @@ classes:
         range: Resource
     narrow_mappings:
       - dcat:Resource
+
+  AccessMethod:
+    class_uri: dlres:AccessMethod
+    description: >-
+      An approach or procedure to gain access to the subject.
+    comments:
+      - This is merely a base class for range declaration. It does not define any slots other than a type designator, because little or no commonalities of properties across access methods are to be expected.
+    slots:
+      - schema_type
 
   Dataset:
     class_uri: dlres:Dataset
@@ -322,3 +341,12 @@ classes:
       - schema:instrument
     narrow_mappings:
       - obo:NCIT_C62103
+
+  PersonalRequest:
+    class_uri: dlres:PersonalRequest
+    is_a: AccessMethod
+    description: >-
+      The act of personally making a request to get access to the subject
+      by following some described procedure.
+    slots:
+      - description
