@@ -484,6 +484,3 @@ classes:
     slot_usage:
       annotation_tag:
         key: true
-        required: true
-      annotation_value:
-        required: true
