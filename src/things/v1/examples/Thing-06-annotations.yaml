@@ -1,0 +1,4 @@
+pid: https://example.org/thething
+annotations:
+  # approved by
+  obo:NCIT_C42615: https://www.trr379.de/contributors/michael-hanke
