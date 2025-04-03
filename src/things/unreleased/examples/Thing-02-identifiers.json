@@ -1,5 +1,15 @@
 {
   "pid": "https://ror.org/02nv7yv05",
+  "characterized_by": [
+    {
+      "object": "https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich",
+      "predicate": "owl:sameAs"
+    },
+    {
+      "object": "https://www.wikidata.org/wiki/Q697111",
+      "predicate": "owl:sameAs"
+    }
+  ],
   "attributes": [
     {
       "predicate": "ex:identifier",
@@ -32,16 +42,6 @@
         }
       ],
       "schema_type": "dlthings:AttributeSpecification"
-    }
-  ],
-  "characterized_by": [
-    {
-      "object": "https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich",
-      "predicate": "owl:sameAs"
-    },
-    {
-      "object": "https://www.wikidata.org/wiki/Q697111",
-      "predicate": "owl:sameAs"
     }
   ],
   "schema_type": "dlthings:Thing",

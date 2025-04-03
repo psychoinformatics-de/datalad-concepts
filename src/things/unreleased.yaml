@@ -72,6 +72,8 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  # form annotations
+  sh: http://www.w3.org/ns/shacl#
   # here for alignment of `attributes`
   sio: http://semanticscience.org/resource/
   # foundational
@@ -130,10 +132,6 @@ slots:
       - dcterms:description
       - rdfs:comment
     range: string
-    annotations:
-      sh:name: Description
-      sh:group: dlthings:BasicPropertyGroup
-      sh:order: 4
 
   exact_mappings:
     slot_uri: skos:exactMatch
@@ -170,7 +168,7 @@ slots:
     slot_uri: dlthings:pid
     identifier: true
     description: >-
-      Globally unique identifier of a metadata object, such as a `Thing`.
+      Persistent and globally unique identifier of a `Thing`.
     range: uriorcurie
     exact_mappings:
       - dcterms:identifier
@@ -199,6 +197,23 @@ slots:
       related but not equivalent from a strict ontological perspective.
     range: uriorcurie
     multivalued: true
+
+  annotations:
+    slot_uri: dlthings:annotations
+    description: >-
+      A record of properties of the metadata record on a subject, a collection
+      of tag/text tuples with the semantics of OWL Annotation.
+    range: Annotation
+    inlined: true
+    multivalued: true
+
+  annotation_tag:
+    description: A tag identifying an annotation.
+    range: uriorcurie
+
+  annotation_value:
+    description: The actual annotation.
+    range: string
 
   narrow_mappings:
     slot_uri: skos:narrowMatch
@@ -291,6 +306,7 @@ classes:
       A set of `mappings` slots enables the alignment for arbitrary external
       schemas and terminologies.
     slots:
+      - annotations
       - broad_mappings
       - close_mappings
       - description
@@ -375,6 +391,62 @@ classes:
     slots:
       - pid
       - relations
+    slot_usage:
+      pid:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Persistent identifier
+          sh:order: 1
+      characterized_by:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Is characterized by
+          sh:order: 2
+      attributes:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Attributes
+          sh:order: 3
+      description:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Description
+          sh:order: 4
+      annotations:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Annotations
+          sh:order: 5
+      relations:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Relations
+          sh:order: 6
+      exact_mappings:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Exact mappings
+          sh:order: 7
+      close_mappings:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Close mappings
+          sh:order: 8
+      broad_mappings:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Broad mappings
+          sh:order: 9
+      narrow_mappings:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Narrow mappings
+          sh:order: 10
+      related_mappings:
+        annotations:
+          sh:group: ThingsPropertyGroup
+          sh:name: Related mappings
+          sh:order: 11
     exact_mappings:
       - schema:Thing
 
@@ -399,3 +471,16 @@ classes:
             an error.
     exact_mappings:
       - obo:OBI_0001933
+
+  Annotation:
+    description: >-
+      A tag/value pair with the semantics of OWL Annotation.
+    slots:
+      - annotation_tag
+      - annotation_value
+    slot_usage:
+      annotation_tag:
+        key: true
+        required: true
+      annotation_value:
+        required: true
