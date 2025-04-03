@@ -1,12 +1,5 @@
 {
   "pid": "exthisns:measurement853",
-  "attributes": [
-    {
-      "predicate": "ex:title",
-      "schema_type": "dlthings:AttributeSpecification",
-      "value": "measured mass (kg)"
-    }
-  ],
   "characterized_by": [
     {
       "object": "obo:IAO_0000109",
@@ -19,6 +12,13 @@
     {
       "object": "obo:UO_0000009",
       "predicate": "obo:UO_0000000"
+    }
+  ],
+  "attributes": [
+    {
+      "predicate": "ex:title",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "measured mass (kg)"
     }
   ],
   "schema_type": "dlthings:ValueSpecification",
