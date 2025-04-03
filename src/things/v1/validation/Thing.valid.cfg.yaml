@@ -6,6 +6,7 @@ data_sources:
   - src/things/v1/examples/Thing-03-topic.yaml
   - src/things/v1/examples/Thing-04-relations.yaml
   - src/things/v1/examples/Thing-05-publication.yaml
+  - src/things/v1/examples/Thing-06-annotations.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
