@@ -1,0 +1,9 @@
+schema: src/social/unreleased.yaml
+target_class: Group
+data_sources:
+  - src/social/unreleased/examples/Group-03-members.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

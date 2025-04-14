@@ -202,6 +202,15 @@ classes:
         expressed at either end (at an organizations potential `members` slot,
         but also (symmetrically) as a persons potential `member_of` slot).
 
+  Group:
+    class_uri: dlsocial:Group
+    is_a: Agent
+    description: >-
+      A collection of individual agents. A group may itself play the role of an
+      agent.
+    exact_mappings:
+      - foaf:Group
+
   Organization:
     class_uri: dlsocial:Organization
     is_a: Agent
