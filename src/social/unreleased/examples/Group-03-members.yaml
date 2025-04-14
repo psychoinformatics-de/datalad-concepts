@@ -1,0 +1,7 @@
+pid: https://example.com/vips
+qualified_relations:
+  # Stephen Hawkin
+  https://orcid.org/0000-0002-9079-593X:
+    roles:
+      # member
+      - obo:NCIT_C25368
