@@ -1,0 +1,88 @@
+id: https://concepts.datalad.org/s/investigation/unreleased
+name: investigation-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Schema for a describing an Investigation
+description: |
+
+  The schema is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  # Copied from eDistribution
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dctypes: http://purl.org/dc/dcmitype/
+  dlschemas: https://concepts.datalad.org/s/
+  dlinvestigation: https://concepts.datalad.org/s/investigation/unreleased/
+  dpv: https://w3id.org/dpv#
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  sio: http://semanticscience.org/resource/
+  # custom prefix for Ontology for BioMedical Investigations
+  # is .owl okay ?
+  obi: http://purl.obolibrary.org/obo/obi.owl
+
+default_prefix: dlinvestigation
+
+imports:
+  - dlschemas:types/unreleased
+  - dlschemas:resources/unreleased
+
+Classes:
+  Investigation:
+    is_a: Activity
+    description: >- 
+      A Planned process undertaking a research study.
+    slots:
+      - study_design
+      - groups #check
+      - study_participants
+      - group_assignment
+      - visits
+      - data_captures # idea is to tie the resulting data into the investigation
+slots:
+  study_design:
+    description: The design of the investigation.
+    range: StudyDesign
+
+  groups:
+    description: # ?
+    range: Group
+    # multivalued: true
+
+  participants:
+    description: Subjects taking part in the study.
+    range: Agent  # e.g., Person or StudyParticipant
+    multivalued: true
+
+  group_assignments:
+    description: Records of assignment of participants to the defined groups of the study.
+    range: GroupAssignment
+    multivalued: true
+
+
+  visits:
+    description: Planned study visits(modeled as Activities) for Specimen collection.
+    range: Visit
+    multivalued: true
+
+  data_captures:
+    description: Data capture activities (measurements or experimental procedures) conducted in the study.
+    range: DataCapture
+    multivalued: true

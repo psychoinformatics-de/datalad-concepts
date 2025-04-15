@@ -1,0 +1,10 @@
+schema: src/investigation/unreleased.yaml
+target_class: Investigation
+data_sources:
+  - src/investigation/unreleased/examples/Investigation-01-minimal.yaml
+  - src/investigation/unreleased/examples/Investigation-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
