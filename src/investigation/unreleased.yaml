@@ -46,32 +46,60 @@ imports:
 
 Classes:
   Investigation:
-    is_a: Activity
+    is_a: Activity # inherits temporal properties
     description: >- 
       A Planned process undertaking a research study.
+    exact_mappings: obo:OBI_0000066
     slots:
+      - pid
+      - title #dcterms:title
+      - study_type
+      - status # Looking at https://hub.psychoinformatics.de/inm7/inm7-concepts/issues/7 , may be status can be inferred using time
+      - creator #agent , may be we need a slot for PI too
+      - started_at  #prov:Activity
+      - ended_at #prov:Activity
       - study_design
       - groups #check
       - study_participants
       - group_assignment
       - visits
       - data_captures # idea is to tie the resulting data into the investigation
+      - location
 slots:
   study_design:
     description: The design of the investigation.
     range: StudyDesign
+    exact_mappings:
+      - obo:OBI_0500000
 
   groups:
-    description: # ?
-    range: Group
+    description: Set of Agents/ Study Participants
+    range: Agent #dlschemas
+    broad_mappings:
+      - obo:OBI_0000174 # this is the study group role, May be use COhort role: OBI_0000252
     # multivalued: true
+  creator: # not sure about this
+    description: Agent creating the study
+    range: Agent #dlschemas
+    exact_mappings:
+      - dcterms:creator
 
   participants:
     description: Subjects taking part in the study.
     range: Agent  # e.g., Person or StudyParticipant
     multivalued: true
 
-  group_assignments:
+  status: #can be derived from prov:startedAt, prov:endedAt
+    description: >-
+      The current status of the Investigation, e.g., Planning, Ongoing, Completed.
+    range: xsd:string
+
+  study_type:
+    description: >-
+      The type of study, e.g., observational, interventional, longitudinal, cross-sectional.
+    range: xsd:string #may be an enum ?
+
+  group_assignments: # not sure.
     description: Records of assignment of participants to the defined groups of the study.
     range: GroupAssignment
     multivalued: true
@@ -79,10 +107,26 @@ slots:
 
   visits:
     description: Planned study visits(modeled as Activities) for Specimen collection.
-    range: Visit
+    range: Visit #visit as an activity class should be separately done.
     multivalued: true
+
+  keywords:
+    description: A set of keywords or tags describing the Investigation.
+    range: xsd:string
+    multivalued: true
+
+  Sponsor:
+    description: One or more sponsors / Grants/ Funding Agencies.
+    range: Grants #dlschema
+    multivalues: True
+
 
   data_captures:
     description: Data capture activities (measurements or experimental procedures) conducted in the study.
     range: DataCapture
     multivalued: true
+
+  location:
+    description: Place in which the Investigation is taking place.
+    range: Location #dlschema
+    multivalues: true
