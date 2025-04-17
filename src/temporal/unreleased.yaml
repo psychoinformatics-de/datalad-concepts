@@ -136,6 +136,7 @@ slots:
 
 classes:
   InstantaneousEvent:
+    class_uri: dltemporal:InstantaneousEvent
     is_a: Thing
     description: >-
       A moment of a transition from one particular state of the world to another.
@@ -145,3 +146,12 @@ classes:
       - qualified_relations
     exact_mappings:
       - prov:InstantaneousEvent
+
+  TransientRelationship:
+    class_uri: dltemporal:TransientRelationship
+    is_a: Relationship
+    description: >-
+      A relationship that is valid or remains in place for a limited time.
+    slots:
+      - started_at
+      - ended_at

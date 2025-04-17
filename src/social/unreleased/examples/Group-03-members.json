@@ -1,13 +1,22 @@
 {
   "pid": "https://example.com/vips",
   "schema_type": "dlsocial:Group",
-  "qualified_relations": {
-    "https://orcid.org/0000-0002-9079-593X": {
+  "qualified_relations": [
+    {
       "object": "https://orcid.org/0000-0002-9079-593X",
       "roles": [
         "obo:NCIT_C25368"
-      ]
+      ],
+      "schema_type": "dlroles:Relationship"
+    },
+    {
+      "object": "https://scholar.google.com/citations?user=8qD8mxQAAAAJ",
+      "roles": [
+        "obo:NCIT_C25368"
+      ],
+      "schema_type": "dltemporal:TransientRelationship",
+      "ended_at": "20220414"
     }
-  },
+  ],
   "@type": "Group"
 }

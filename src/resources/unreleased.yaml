@@ -105,31 +105,6 @@ slots:
       - sio:SIO_000426
     inverse: distributions
 
-  indexed_parts:
-    slot_uri: dlres:indexed_parts
-    description: >-
-      A qualified relation that assigns an index `locator` to a resource within the
-      context of a `hasPart` relationship with a subject (the containing
-      resource).
-    range: IndexedResourcePart
-    multivalued: true
-    inlined: true
-    broad_mappings:
-      - dcat:qualifiedRelation
-
-  indexed_part_of:
-    slot_uri: dlres:indexed_part_of
-    description: >-
-      A qualified relation that assigns an index `locator` to a resource within the
-      context of an `isPartOf` relationship with a subject (the contained
-      resource).
-    range: IndexedResourcePartOf
-    multivalued: true
-    inlined: true
-    inlined_as_list: true
-    broad_mappings:
-      - dcat:qualifiedRelation
-
   locator:
     slot_uri: dlres:locator
     description: >-
@@ -147,14 +122,6 @@ slots:
     exact_mappings:
       - dcat:previousVersion
       - pav:previousVersion
-
-  resource:
-    slot_uri: dlres:resource
-    description: >-
-      Property referencing a resource within an indexed-part or indexed-part-of
-      qualified relationship.
-    range: Resource
-    inlined: false
 
   sponsor:
     slot_uri: dlres:sponsor
@@ -198,8 +165,6 @@ classes:
       - conforms_to
       - date_modified
       - date_published
-      - indexed_parts
-      - indexed_part_of
       - keywords
       - previous_version
       - same_as
@@ -300,24 +265,24 @@ classes:
       - schema:Grant
 
   IndexedResourceRelationship:
+    is_a: Relationship
     description: >-
-      An association class for attaching a `name` as additional information to a
+      An association class for attaching a `locator` as additional information to a
       `hasPart` relationship.
     slots:
       - locator
-      - resource
-      - roles
+    slot_usage:
+      locator:
+        key: true
+      object:
+        required: true
+        range: Resource
 
   IndexedResourcePart:
     is_a: IndexedResourceRelationship
     description: >-
       An association class for attaching an index `locator` as additional information to a
       `hasPart` relationship.
-    slot_usage:
-      locator:
-        key: true
-      resource:
-        required: true
 
   IndexedResourcePartOf:
     is_a: IndexedResourceRelationship

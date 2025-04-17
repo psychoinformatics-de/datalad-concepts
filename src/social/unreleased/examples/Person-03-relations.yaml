@@ -4,11 +4,11 @@
 # use of GEO URIs as identifiers for locations
 pid: ex:ns/people/jane
 qualified_relations:
-  email:jane@example.org:
+  - object: email:jane@example.org
     roles:
       - http://schema.org/email
   # using a GEO URI as a location identifier
-  geo:-19.738897,63.453072?z=19:
+  - object: geo:-19.738897,63.453072?z=19
     roles:
       # worksite
       - obo:NCIT_C17556

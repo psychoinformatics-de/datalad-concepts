@@ -128,10 +128,12 @@ slots:
   description:
     slot_uri: dlthings:description
     description: A free-text account of the subject.
+    range: string
     exact_mappings:
       - dcterms:description
       - rdfs:comment
-    range: string
+    broad_mappings:
+      - obo:IAO_0000300
 
   exact_mappings:
     slot_uri: skos:exactMatch
@@ -206,10 +208,13 @@ slots:
     range: Annotation
     inlined: true
     multivalued: true
+    exact_mappings:
+      - obo:NCIT_C44272
+
 
   annotation_tag:
     description: A tag identifying an annotation.
-    range: uriorcurie
+    range: Thing
 
   annotation_value:
     description: The actual annotation.
@@ -228,16 +233,15 @@ slots:
     slot_uri: rdf:object
     description: >-
       Reference to a `Thing` within a `Statement`.
-    range: uriorcurie
     inlined: false
     multivalued: false
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
     notes:
-      - The `range` is `uriorcurie` here (and not `Thing`), because
-        we have an undetermined issue with linkml not accepting such
-        a range.
+      - We do not declare a range here to be able to tighten the range in
+        subclasses of class that need a particular range. This appears to
+        be working around a linkml limitation.
 
   predicate:
     slot_uri: rdf:predicate
@@ -372,6 +376,7 @@ classes:
     slot_usage:
       object:
         required: true
+        range: Thing
       predicate:
         required: true
     exact_mappings:

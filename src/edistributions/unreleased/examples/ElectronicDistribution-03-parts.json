@@ -4,20 +4,22 @@
     "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98": {
       "pid": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
       "schema_type": "dledist:ElectronicDistribution",
-      "indexed_parts": {
-        "README.md": {
-          "locator": "README.md",
-          "resource": "https://example.org/b339e2493957d7c15add64243572205185c951fb"
+      "qualified_relations": [
+        {
+          "object": "https://example.org/b339e2493957d7c15add64243572205185c951fb",
+          "schema_type": "dlres:IndexedResourcePart",
+          "locator": "README.md"
         }
-      }
+      ]
     }
   },
   "schema_type": "dledist:ElectronicDistribution",
-  "indexed_parts": {
-    "code": {
-      "locator": "code",
-      "resource": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98"
+  "qualified_relations": [
+    {
+      "object": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
+      "schema_type": "dlres:IndexedResourcePart",
+      "locator": "code"
     }
-  },
+  ],
   "@type": "ElectronicDistribution"
 }

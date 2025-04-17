@@ -1,18 +1,20 @@
 {
   "pid": "https://example.org/20b330286682a772021c75f59fdbde07155773bb",
   "schema_type": "dledist:ElectronicDistribution",
-  "indexed_parts": {
-    "run-me.sh": {
-      "locator": "run-me.sh",
-      "resource": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98"
+  "qualified_relations": [
+    {
+      "object": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
+      "schema_type": "dlres:IndexedResourcePart",
+      "locator": "run-me.sh"
     },
-    "run-me": {
-      "locator": "run-me",
-      "resource": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
+    {
+      "object": "https://example.org/133a6ad2ca7ba8adb54b95ba204f20cfabfcba98",
       "roles": [
         "obo:ONTOAVIDA_00000002"
-      ]
+      ],
+      "schema_type": "dlres:IndexedResourcePart",
+      "locator": "run-me"
     }
-  },
+  ],
   "@type": "ElectronicDistribution"
 }

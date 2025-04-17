@@ -4,5 +4,6 @@
     "marcrel:aut",
     "marcrel:sad"
   ],
+  "schema_type": "dlroles:Relationship",
   "@type": "Relationship"
 }

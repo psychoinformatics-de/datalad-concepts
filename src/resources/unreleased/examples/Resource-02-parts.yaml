@@ -2,6 +2,10 @@
 # that can be used to locate the part within the containing
 # resource
 pid: ex:directory1
-indexed_parts:
-  file1.txt: ex:file1
-  subdirectory: ex:directory2
+qualified_relations:
+  - schema_type: dlres:IndexedResourcePart
+    locator: file1.txt
+    object: ex:file1
+  - schema_type: dlres:IndexedResourcePart
+    locator: subdirectory
+    object: ex:directory2

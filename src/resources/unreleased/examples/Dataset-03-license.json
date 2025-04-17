@@ -8,13 +8,14 @@
     }
   },
   "schema_type": "dlres:Dataset",
-  "qualified_relations": {
-    "https://spdx.org/licenses/CC-BY-4.0": {
+  "qualified_relations": [
+    {
       "object": "https://spdx.org/licenses/CC-BY-4.0",
       "roles": [
         "dcterms:LicenseDocument"
-      ]
+      ],
+      "schema_type": "dlroles:Relationship"
     }
-  },
+  ],
   "@type": "Dataset"
 }

@@ -84,6 +84,7 @@ slots:
     domain: Thing
     range: Relationship
     inlined: true
+    inlined_as_list: true
     multivalued: true
     exact_mappings:
       - dcat:qualifiedRelation
@@ -111,13 +112,11 @@ classes:
     slots:
       - object
       - roles
+      - schema_type
     slot_usage:
-      roles:
-        required: true
       object:
         required: true
-        key: true
-        range: uriorcurie
+        range: Thing
     close_mappings:
       - prov:Influence
       - dcat:Relationship

@@ -1,15 +1,17 @@
 {
   "pid": "ex:directory1",
   "schema_type": "dlres:Resource",
-  "indexed_parts": {
-    "file1.txt": {
-      "locator": "file1.txt",
-      "resource": "ex:file1"
+  "qualified_relations": [
+    {
+      "object": "ex:file1",
+      "schema_type": "dlres:IndexedResourcePart",
+      "locator": "file1.txt"
     },
-    "subdirectory": {
-      "locator": "subdirectory",
-      "resource": "ex:directory2"
+    {
+      "object": "ex:directory2",
+      "schema_type": "dlres:IndexedResourcePart",
+      "locator": "subdirectory"
     }
-  },
+  ],
   "@type": "Resource"
 }
