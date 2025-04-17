@@ -236,16 +236,15 @@ slots:
     slot_uri: rdf:object
     description: >-
       Reference to a `Thing` within a `Statement`.
-    range: uriorcurie
     inlined: false
     multivalued: false
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
     notes:
-      - The `range` is `uriorcurie` here (and not `Thing`), because
-        we have an undetermined issue with linkml not accepting such
-        a range.
+      - We do not declare a range here to be able to tighten the range in
+        subclasses of class that need a particular range. This appears to
+        be working around a linkml limitation.
 
   predicate:
     slot_uri: rdf:predicate
@@ -380,6 +379,7 @@ classes:
     slot_usage:
       object:
         required: true
+        range: Thing
       predicate:
         required: true
     exact_mappings:

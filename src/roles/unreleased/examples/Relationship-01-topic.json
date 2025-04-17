@@ -3,5 +3,6 @@
   "roles": [
     "http://purl.obolibrary.org/obo/topic_0003"
   ],
+  "schema_type": "dlroles:Relationship",
   "@type": "Relationship"
 }

@@ -1,19 +1,21 @@
 {
   "pid": "ex:ns/people/jane",
   "schema_type": "dlsocial:Person",
-  "qualified_relations": {
-    "email:jane@example.org": {
+  "qualified_relations": [
+    {
       "object": "email:jane@example.org",
       "roles": [
         "http://schema.org/email"
-      ]
+      ],
+      "schema_type": "dlroles:Relationship"
     },
-    "geo:-19.738897,63.453072?z=19": {
+    {
       "object": "geo:-19.738897,63.453072?z=19",
       "roles": [
         "obo:NCIT_C17556"
-      ]
+      ],
+      "schema_type": "dlroles:Relationship"
     }
-  },
+  ],
   "@type": "Person"
 }

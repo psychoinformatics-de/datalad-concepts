@@ -3,7 +3,7 @@
 pid: ex:ns/people/jane
 qualified_relations:
   # using a GEO URI as a location identifier
-  geo:-19.738897,63.453072?z=19:
+  - object: geo:-19.738897,63.453072?z=19
     roles:
       # worksite
       - obo:NCIT_C17556

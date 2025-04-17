@@ -1,6 +1,6 @@
 pid: https://trr379.de
 qualified_relations:
   # DFG is a funder
-  https://ror.org/018mejw64:
+  - object: https://ror.org/018mejw64
     roles:
       - marcrel:fnd
