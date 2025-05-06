@@ -1,3 +1,7 @@
+# Below schema can be visualised through below link
+# https://www.mermaidchart.com/app/projects/5086e8da-91bb-4771-8f23-f4a91bb3d0e2/diagrams/c4743dae-e079-4745-922b-f297f5d6f9c4/version/v0.1/edit
+
+
 id: http://example.org/ci
 name: investigation-schema  #may be clinical-investigation-schema
 version: UNRELEASED
