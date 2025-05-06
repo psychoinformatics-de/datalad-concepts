@@ -1,132 +1,769 @@
-id: https://concepts.datalad.org/s/investigation/unreleased
-name: investigation-schema
+id: http://example.org/ci
+name: investigation-schema  #may be clinical-investigation-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
-title: Schema for a describing an Investigation
-description: |
-
-  The schema is available as
-
-  - [JSON-LD context](../unreleased.jsonld)
-  - [LinkML YAML](../unreleased.yaml)
-  - [OWL TTL](../unreleased.owl.ttl)
-  - [SHACL TTL](../unreleased.shacl.ttl)
-
-comments:
-  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
-
-license: MIT
-
+title: Clinical Investigation Data Model
+description: >-
+  This schema models clinical investigations including studies, study designs,
+  participants, visits, specimens, assays, instruments, and associated datasets
+  using LinkML conventions.
+license: CC-BY-4.0
 prefixes:
-  # Copied from eDistribution
-  dcat: http://www.w3.org/ns/dcat#
+  ci: http://example.org/ci/
   dcterms: http://purl.org/dc/terms/
-  dctypes: http://purl.org/dc/dcmitype/
-  dlschemas: https://concepts.datalad.org/s/
-  dlinvestigation: https://concepts.datalad.org/s/investigation/unreleased/
-  dpv: https://w3id.org/dpv#
-  eunal: http://publications.europa.eu/resource/authority/
-  linkml: https://w3id.org/linkml/
-  obo: http://purl.obolibrary.org/obo/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   owl: http://www.w3.org/2002/07/owl#
-  pav: http://purl.org/pav/
-  prov: http://www.w3.org/ns/prov#
-  schema: http://schema.org/
-  skos: http://www.w3.org/2004/02/skos/core#
-  sio: http://semanticscience.org/resource/
-  # custom prefix for Ontology for BioMedical Investigations
-  # is .owl okay ?
-  obi: http://purl.obolibrary.org/obo/obi.owl
+default_prefix: ci
 
-default_prefix: dlinvestigation
+enums:
+  StudyType:
+    # reference : https://guides.himmelfarb.gwu.edu/studydesign101/case-report
+    description: Type or design of the study.
+    permissible_values:
+      case_report:
+        description: >
+          A detailed report of the symptoms, diagnosis, treatment, and follow-up
+          of an individual patient or small group of patients.
+      cross_sectional_study:
+        description: >
+          An observational study that analyzes data from a population at a
+          single point in time.
+      longitudinal_study:
+        description: >
+          A study that follows the same subjects over time, collecting data
+          at multiple intervals to detect changes and developments.
+      meta_analysis:
+        description: >
+          A statistical technique for combining the results of multiple
+          studies addressing the same question to derive a pooled estimate.
+      phase_clinical_trials:
+        description: >
+          Interventional trials conducted in sequential phases (I–IV) to
+          evaluate safety, dosing, efficacy, and post-marketing surveillance.
+      pragmatic_clinical_trial:
+        description: >
+          A trial designed to determine the effectiveness of an intervention
+          in real-world routine practice conditions.
+      registry_study:
+        description: >
+          An observational study using a registry to collect uniform data on
+          patients with a particular condition or exposure.
+      systematic_review:
+        description: >
+          A structured, comprehensive review of the literature on a clearly
+          formulated question, using systematic and reproducible methods.
+      custom:
+        description: >
+          A user-defined or atypical study type not covered by the above categories.
 
-imports:
-  - dlschemas:types/unreleased
-  - dlschemas:resources/unreleased
+  StudyStatus:
+    description: Current status of the study.
+    permissible_values:
+      planned:
+        description: Study is planned but not yet started.
+      recruiting:
+        description: Study is actively recruiting participants.
+      active:
+        description: Study is active/ongoing.
+      completed:
+        description: Study has been completed successfully.
+      terminated:
+        description: Study was terminated early.
+      withdrawn:
+        description: Study was withdrawn before start.
+      stopped:
+        description: study has been put on hold.
 
-Classes:
-  Investigation:
-    is_a: Activity # inherits temporal properties
-    description: >- 
-      A Planned process undertaking a research study.
-    exact_mappings: obo:OBI_0000066
-    slots:
-      - pid
-      - title #dcterms:title
-      - study_type
-      - status # Looking at https://hub.psychoinformatics.de/inm7/inm7-concepts/issues/7 , may be status can be inferred using time
-      - creator #agent , may be we need a slot for PI too
-      - started_at  #prov:Activity
-      - ended_at #prov:Activity
-      - study_design
-      - groups #check
-      - study_participants
-      - group_assignment
-      - visits
-      - data_captures # idea is to tie the resulting data into the investigation
-      - location
+  ConsentStatus:
+    description: Status of participant consent.
+    permissible_values:
+      not_requested:
+        description: Consent has not been requested yet.
+      requested:
+        description: Consent has been requested from the participant.
+      obtained:
+        description: Consent has been obtained from the participant.
+      declined:
+        description: Participant declined to give consent.
+      withdrawn:
+        description: Consent was withdrawn by the participant.
+  Allocation:
+    description: Method of allocation of participants to study arms or groups.
+    permissible_values:
+      randomized:
+        description: Participants are randomly allocated.
+      non_randomized:
+        description: Participants are not randomly allocated.
+      other:
+        description: Other or unspecified allocation method.
+
+# copied: https://hub.psychoinformatics.de/inm7/inm7-concepts/src/branch/main/src/simpleinput/unreleased.yaml
+types:
+  W3CISO8601:
+    uri: w3ctr:NOTE-datetime
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
+    typeof: string
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
+    see_also:
+      - https://www.w3.org/TR/NOTE-datetime
+
 slots:
-  study_design:
-    description: The design of the investigation.
-    range: StudyDesign
-    exact_mappings:
-      - obo:OBI_0500000
-
-  groups:
-    description: Set of Agents/ Study Participants
-    range: Agent #dlschemas
-    broad_mappings:
-      - obo:OBI_0000174 # this is the study group role, May be use COhort role: OBI_0000252
-    # multivalued: true
-  creator: # not sure about this
-    description: Agent creating the study
-    range: Agent #dlschemas
-    exact_mappings:
-      - dcterms:creator
-
-  participants:
-    description: Subjects taking part in the study.
-    range: Agent  # e.g., Person or StudyParticipant
-    multivalued: true
-
-  status: #can be derived from prov:startedAt, prov:endedAt
-    description: >-
-      The current status of the Investigation, e.g., Planning, Ongoing, Completed.
-    range: xsd:string
-
+  title:
+    description: Title or name.
+    range: string
+  short_name:
+    description: Abbreviated or short name.
+    range: string
+  description:
+    description: Description.
+    range: string
+  start_date:
+    description: Start date.
+    range: date
+  end_date:
+    description: End date.
+    range: date
+  date:
+    description: General date.
+    range: date
+  visit_date:
+    description: Date of visit.
+    range: date
+  collected_date:
+    description: Specimen collection date.
+    range: date
+  performed_date:
+    description: Date assay was performed.
+    range: date
+  calibration_date:
+    description: Instrument calibration date.
+    range: date
+  creation_date:
+    description: Creation or generation date.
+    range: date
+  first_name:
+    description: First (given) name of a person/Participant.
+    range: string
+  last_name:
+    description: Last (family) name of a person/Participant.
+    range: string
+  date_of_birth:
+    description: Date of birth of the participant/Participant.
+    range: date
+  gender:
+    description: Gender of a person/Participant.
+    range: string
+  consent_status:
+    description: Participant's consent status.
+    range: ConsentStatus
+  enrolled_date:
+    description: Date the participant was enrolled.
+    range: date
+  withdrawn_date:
+    description: Date the participant withdrew from study.
+    range: date
   study_type:
-    description: >-
-      The type of study, e.g., observational, interventional, longitudinal, cross-sectional.
-    range: xsd:string #may be an enum ?
+    description: Type of the study.
+    range: StudyType
+  study_status:
+    description: Current status of the study.
+    range: StudyStatus
+  allocation:
+    description: Allocation method for participant groups.
+    range: Allocation
+  status:
+    description: Status (generic).
+    range: string
 
-  group_assignments: # not sure.
-    description: Records of assignment of participants to the defined groups of the study.
-    range: GroupAssignment
-    multivalued: true
+  site:
+    description: Study site or location.
+    range: string
+  principal_investigator:
+    description: Lead investigator of the study.
+    range: string
+  lead_investigator:
+    description: Principal investigator of the investigation.
+    range: string
+  institution:
+    description: Institution or organization of the investigator.
+    range: Organisation
 
-
-  visits:
-    description: Planned study visits(modeled as Activities) for Specimen collection.
-    range: Visit #visit as an activity class should be separately done.
-    multivalued: true
-
-  keywords:
-    description: A set of keywords or tags describing the Investigation.
-    range: xsd:string
-    multivalued: true
-
-  Sponsor:
-    description: One or more sponsors / Grants/ Funding Agencies.
-    range: Grants #dlschema
-    multivalues: True
-
-
-  data_captures:
-    description: Data capture activities (measurements or experimental procedures) conducted in the study.
-    range: DataCapture
-    multivalued: true
-
-  location:
-    description: Place in which the Investigation is taking place.
-    range: Location #dlschema
-    multivalues: true
+  funding_source:
+    description: Source of funding for the investigation.
+    range: Grant
+  objective:
+    description: Objective or purpose.
+    range: string
+  outcomes:
+    description: Outcome measures or results reference.
+    range: string
+  inclusion_criteria:
+    description: Inclusion criteria for participants.
+    range: string
+  exclusion_criteria:
+    description: Exclusion criteria for participants.
+    range: string
+  assay_type:
+    description: Type of assay or test.
+    range: string
+  specimen_type:
+    description: Type of specimen or sample.
+    range: string
+  condition:
+    description: Condition or preservative of the specimen.
+    range: string
+  device_type:
+    description: Type or category of device.
+    range: string
+  model:
+    description: Instrument model or type.
+    range: string
+  manufacturer:
+    description: Manufacturer of the device or instrument.
+    range: string
+  serial_number:
+    description: Serial number of the device or instrument.
+    range: string
+  version:
+    description: Version identifier (e.g. of a form or protocol).
+    range: string
+  format:
+    description: Data or file format.
+    range: string
+  criteria:
+    description: Group selection or inclusion criteria.
+    range: string
+  target_enrollment:
+    description: Target number of participants.
+    range: integer
+  actual_enrollment:
+    description: Actual number of participants enrolled.
+    range: integer
+  investigation:
+    description: Parent investigation reference.
+    range: Investigation
+  study_design:
+    description: Related study design reference.
+    range: StudyDesign
+  visit:
+    description: Reference to a visit or encounter.
+    range: Visit
+  participant:
+    description: Reference to a study participant.
+    range: StudyParticipant
+  instrument:
+    description: Reference to an instrument used.
+    range: Instrument
+  specimen:
+    description: Reference to a specimen sample.
+    range: Specimen
+  result:
+    description: Result of assay or data reference.
+    range: string
+  group:
+    description: Reference to a participant group.
+    range: Group
+  study:
+    description: Reference to a study.
+    range: Study
+  name:
+    description: Name of the entity.
+    range: string
+classes:
+  MaterialEntity:
+    class_uri: ci:MaterialEntity
+    is_a: Thing
+    description: A physical object or material (e.g., specimen).
+    slots:
+      - title
+      - description
+    slot_usage:
+      title:
+        annotations:
+          sh:name: Name
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+  InformationContentEntity:
+    class_uri: ci:InformationContentEntity
+    is_a: Thing
+    description: A class of information content (e.g., data or documents).
+    slots:
+      - title
+      - description
+    slot_usage:
+      title:
+        annotations:
+          sh:name: Title
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+  Activity:
+    class_uri: ci:Activity
+    is_a: Thing
+    description: A general activity.
+    slots:
+      - title
+      - description
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Title
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+  PlannedProcess:
+    class_uri: ci:PlannedProcess
+    is_a: Activity
+    description: A process that is planned in advance (e.g., study or visit).
+    slots:
+      - title
+      - description
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Title
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+  PlanSpecification:
+    class_uri: ci:PlanSpecification
+    is_a: InformationContentEntity
+    description: A specification of a plan or protocol (e.g., study design).
+    slots:
+      - objective
+      - description
+    slot_usage:
+      objective:
+        annotations:
+          sh:name: Objective
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+  Investigation:
+    class_uri: ci:Investigation
+    is_a: PlannedProcess
+    description: An overall clinical investigation or study project.
+    slots:
+      - title
+      - description
+      - lead_investigator
+      - institution
+      - funding_source
+      - start_date
+      - end_date
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Title
+          sh:order: 1
+      lead_investigator:
+        annotations:
+          sh:name: Lead Investigator
+          sh:order: 2
+      institution:
+        annotations:
+          sh:name: Institution
+          sh:order: 3
+      start_date:
+        annotations:
+          sh:name: Start Date
+          sh:order: 4
+      end_date:
+        annotations:
+          sh:name: End Date
+          sh:order: 5
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 6
+      funding_source:
+        annotations:
+          sh:name: Funding Source
+          sh:order: 7
+  Study:
+    class_uri: ci:Study
+    is_a: PlannedProcess
+    description: A specific study (execution of a study design) within an investigation.
+    slots:
+      - title
+      - description
+      - study_type
+      - study_status
+      - start_date
+      - end_date
+      - principal_investigator
+      - site  # Location
+      - target_enrollment
+      - actual_enrollment
+      - investigation
+      - study_design
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Study Title
+          sh:order: 1
+      study_type:
+        annotations:
+          sh:name: Type
+          sh:order: 2
+      study_status:
+        annotations:
+          sh:name: Status
+          sh:order: 3
+      start_date:
+        annotations:
+          sh:name: Start Date
+          sh:order: 4
+      end_date:
+        annotations:
+          sh:name: End Date
+          sh:order: 5
+      principal_investigator:
+        annotations:
+          sh:name: Principal Investigator
+          sh:order: 6
+      site:
+        annotations:
+          sh:name: Site
+          sh:order: 7
+      target_enrollment:
+        annotations:
+          sh:name: Target Enrollment
+          sh:order: 8
+      actual_enrollment:
+        annotations:
+          sh:name: Actual Enrollment
+          sh:order: 9
+      investigation:
+        annotations:
+          sh:name: Investigation
+          sh:order: 10
+      study_design:
+        annotations:
+          sh:name: Study Design
+          sh:order: 11
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 12
+  StudyDesign:
+    class_uri: ci:StudyDesign
+    is_a: PlanSpecification
+    description: The design or protocol specification of a study.
+    slots:
+      - title
+      - objective
+      - inclusion_criteria
+      - exclusion_criteria
+      - description
+    slot_usage:
+      title:
+        annotations:
+          sh:name: Design Title
+          sh:order: 1
+      objective:
+        annotations:
+          sh:name: Objective
+          sh:order: 2
+      inclusion_criteria:
+        annotations:
+          sh:name: Inclusion Criteria
+          sh:order: 3
+      exclusion_criteria:
+        annotations:
+          sh:name: Exclusion Criteria
+          sh:order: 4
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 5
+  StudyParticipant:
+    class_uri: ci:StudyParticipant
+    is_a: Person
+    description: A participant or subject in the study.
+    slots:
+      - first_name
+      - last_name
+      - date_of_birth
+      - gender
+      - consent_status
+      - enrolled_date
+      - withdrawn_date
+      - group
+      - study
+    slot_usage:
+      first_name:
+        required: true
+        annotations:
+          sh:name: First Name
+          sh:order: 1
+      last_name:
+        required: true
+        annotations:
+          sh:name: Last Name
+          sh:order: 2
+      date_of_birth:
+        annotations:
+          sh:name: Date of Birth
+          sh:order: 3
+      gender:
+        annotations:
+          sh:name: Gender
+          sh:order: 4
+      consent_status:
+        annotations:
+          sh:name: Consent Status
+          sh:order: 5
+      enrolled_date:
+        annotations:
+          sh:name: Enrolled Date
+          sh:order: 6
+      withdrawn_date:
+        annotations:
+          sh:name: Withdrawn Date
+          sh:order: 7
+      study:
+        annotations:
+          sh:name: Study
+          sh:order: 8
+      group:
+        annotations:
+          sh:name: Group
+          sh:order: 9
+  Visit:
+    class_uri: ci:Visit
+    is_a: PlannedProcess
+    description: A scheduled or conducted visit/event for a participant in the study.
+    slots:
+      - visit_date
+      - status
+      - participant
+      - study
+      - location
+    slot_usage:
+      visit_date:
+        annotations:
+          sh:name: Visit Date
+          sh:order: 1
+      status:
+        annotations:
+          sh:name: Visit Status
+          sh:order: 2
+      participant:
+        annotations:
+          sh:name: Participant
+          sh:order: 3
+      study:
+        annotations:
+          sh:name: Study
+          sh:order: 4
+      location:
+        annotations:
+          sh:name: Location
+          sh:order: 5
+  Specimen:
+    class_uri: ci:Specimen
+    is_a: MaterialEntity
+    description: A biological sample collected during a visit.
+    slots:
+      - specimen_type
+      - collected_date
+      - condition
+      - visit
+    slot_usage:
+      specimen_type:
+        annotations:
+          sh:name: Specimen Type
+          sh:order: 1
+      collected_date:
+        annotations:
+          sh:name: Collection Date
+          sh:order: 2
+      condition:
+        annotations:
+          sh:name: Condition
+          sh:order: 3
+      visit:
+        annotations:
+          sh:name: Visit
+          sh:order: 4
+  Assay:
+    class_uri: ci:Assay
+    is_a: PlannedProcess
+    description: An assay or test performed on a specimen.
+    slots:
+      - assay_type
+      - performed_date
+      - instrument
+      - specimen
+      - result
+    slot_usage:
+      assay_type:
+        annotations:
+          sh:name: Assay Type
+          sh:order: 1
+      performed_date:
+        annotations:
+          sh:name: Performed Date
+          sh:order: 2
+      instrument:
+        annotations:
+          sh:name: Instrument
+          sh:order: 3
+      specimen:
+        annotations:
+          sh:name: Specimen
+          sh:order: 4
+      result:
+        annotations:
+          sh:name: Result
+          sh:order: 5
+  Device:
+    class_uri: ci:Device
+    is_a: MaterialEntity
+    description: A device or equipment used in the study (e.g., measurement device).
+    slots:
+      - device_type
+      - model
+      - manufacturer
+      - serial_number
+    slot_usage:
+      device_type:
+        annotations:
+          sh:name: Device Type
+          sh:order: 1
+      model:
+        annotations:
+          sh:name: Model
+          sh:order: 2
+      manufacturer:
+        annotations:
+          sh:name: Manufacturer
+          sh:order: 3
+      serial_number:
+        annotations:
+          sh:name: Serial Number
+          sh:order: 4
+  Instrument:
+    class_uri: ci:Instrument
+    is_a: Device
+    description: A specific instrument (a type of device) used in assays or measurements.
+    slots:
+      - calibration_date
+    slot_usage:
+      calibration_date:
+        annotations:
+          sh:name: Calibration Date
+          sh:order: 1
+  CaseReportForm:
+    class_uri: ci:CaseReportForm
+    is_a: InformationContentEntity
+    description: A case report form or questionnaire used to collect study data.
+    slots:
+      - title
+      - version
+      - creation_date
+      - study
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Form Title
+          sh:order: 1
+      version:
+        annotations:
+          sh:name: Version
+          sh:order: 2
+      creation_date:
+        annotations:
+          sh:name: Creation Date
+          sh:order: 3
+      study:
+        annotations:
+          sh:name: Study
+          sh:order: 4
+  Dataset:
+    class_uri: ci:Dataset
+    is_a: InformationContentEntity
+    description: A dataset generated or used by the study.
+    slots:
+      - title
+      - description
+      - creation_date
+      - format
+      - study
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:name: Dataset Title
+          sh:order: 1
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 2
+      creation_date:
+        annotations:
+          sh:name: Creation Date
+          sh:order: 3
+      format:
+        annotations:
+          sh:name: Format
+          sh:order: 4
+      study:
+        annotations:
+          sh:name: Study
+          sh:order: 5
+  Group:
+    class_uri: ci:Group
+    is_a: MaterialEntity
+    description: A group or cohort of participants within the study (e.g., treatment arm).
+    slots:
+      - name
+      - description
+      - criteria
+      - study
+    slot_usage:
+      name:
+        required: true
+        annotations:
+          sh:name: Group Name
+          sh:order: 1
+      criteria:
+        annotations:
+          sh:name: Criteria
+          sh:order: 2
+      description:
+        annotations:
+          sh:name: Description
+          sh:order: 3
+      study:
+        annotations:
+          sh:name: Study
+          sh:order: 4
