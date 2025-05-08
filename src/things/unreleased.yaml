@@ -407,57 +407,46 @@ classes:
     slot_usage:
       pid:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Persistent identifier
           sh:order: 1
       characterized_by:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Is characterized by
           sh:order: 2
       attributes:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Attributes
           sh:order: 3
       description:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Description
           sh:order: 4
       annotations:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Annotations
           sh:order: 5
       relations:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Relations
           sh:order: 6
       exact_mappings:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Exact mappings
           sh:order: 7
       close_mappings:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Close mappings
           sh:order: 8
       broad_mappings:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Broad mappings
           sh:order: 9
       narrow_mappings:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Narrow mappings
           sh:order: 10
       related_mappings:
         annotations:
-          sh:group: ThingsPropertyGroup
           sh:name: Related mappings
           sh:order: 11
     exact_mappings:

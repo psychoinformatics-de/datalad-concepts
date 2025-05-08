@@ -170,27 +170,22 @@ classes:
       family_name:
         annotations:
           sh:name: Family name
-          sh:group: dlsocial:PersonPropertyGroup
           sh:order: 1
       given_name:
         annotations:
           sh:name: Given name
-          sh:group: dlsocial:PersonPropertyGroup
           sh:order: 2
       additional_names:
         annotations:
           sh:name: Additional names
-          sh:group: dlsocial:PersonPropertyGroup
           sh:order: 3
       honorific_name_prefix:
         annotations:
           sh:name: Title or prefix
-          sh:group: dlsocial:PersonPropertyGroup
           sh:order: 4
       honorific_name_suffix:
         annotations:
           sh:name: Suffix
-          sh:group: dlsocial:PersonPropertyGroup
           sh:order: 5
     comments:
       - This class does not offer common slots like "affiliation" or "email".
