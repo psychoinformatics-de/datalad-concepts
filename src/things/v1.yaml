@@ -54,6 +54,8 @@ license: MIT
 prefixes:
   # here for alignment of `pid`
   ADMS: http://www.w3.org/ns/adms#
+  # SHACL annotations
+  dash: http://datashapes.org/dash#
   # primarily for the examples, but also a foundational vocab
   bibo: http://purl.org/ontology/bibo/
   # here for alignment of `relations`
@@ -137,6 +139,8 @@ slots:
       - rdfs:comment
     broad_mappings:
       - obo:IAO_0000300
+    annotations:
+      dash:singleLine: false
 
   exact_mappings:
     slot_uri: skos:exactMatch
