@@ -115,6 +115,7 @@ slots:
   broad_mappings:
     slot_uri: skos:broadMatch
     is_a: mappings
+    title: Broad mappings
     description: >-
       A list of terms from different schemas or terminology systems that have
       broader meaning.
@@ -124,6 +125,7 @@ slots:
   close_mappings:
     slot_uri: skos:closeMatch
     is_a: mappings
+    title: Close mappings
     description: >-
       A list of terms from different schemas or terminology systems that have
       close meaning.
@@ -132,6 +134,7 @@ slots:
 
   description:
     slot_uri: dlthings:description
+    title: Description
     description: A free-text account of the subject.
     range: string
     exact_mappings:
@@ -145,6 +148,7 @@ slots:
   exact_mappings:
     slot_uri: skos:exactMatch
     is_a: mappings
+    title: Exact mappings
     description: >-
       A list of terms from different schemas or terminology systems that have
       identical meaning.
@@ -153,6 +157,7 @@ slots:
 
   attributes:
     slot_uri: dlthings:attributes
+    title: Attributes
     description: >-
       Declares a relation that associates a `Thing` (or another attribute)
       with an attribute, where an attribute is an intrinsic characteristic,
@@ -176,6 +181,7 @@ slots:
   pid:
     slot_uri: dlthings:pid
     identifier: true
+    title: Persistent identifier
     description: >-
       Persistent and globally unique identifier of a `Thing`.
     range: uriorcurie
@@ -186,6 +192,7 @@ slots:
 
   characterized_by:
     slot_uri: dlthings:characterized_by
+    title: Is characterized by
     description: >-
       Qualifies relationships between a subject `Thing` and an object `Thing`
       with a `Statement` declaring a `predicate` on the nature of the
@@ -209,6 +216,7 @@ slots:
 
   annotations:
     slot_uri: dlthings:annotations
+    title: Annotations
     description: >-
       A record of properties of the metadata record on a subject, a collection
       of tag/text tuples with the semantics of OWL Annotation.
@@ -230,6 +238,7 @@ slots:
   narrow_mappings:
     slot_uri: skos:narrowMatch
     is_a: mappings
+    title: Narrow mappings
     description: >-
       A list of terms from different schemas or terminology systems that have
       narrower meaning.
@@ -273,6 +282,7 @@ slots:
   related_mappings:
     slot_uri: skos:relatedMatch
     is_a: mappings
+    title: Related mappings
     description: >-
       A list of terms from different schemas or terminology systems that have
       related meaning.
@@ -281,6 +291,7 @@ slots:
 
   relations:
     slot_uri: dlthings:relation
+    title: Relations
     description: >-
       Declares an unqualified relation of the subject `Thing` to another
       `Thing`. This schema slot is used to define related things inline.
@@ -410,47 +421,36 @@ classes:
     slot_usage:
       pid:
         annotations:
-          sh:name: Persistent identifier
           sh:order: 1
       characterized_by:
         annotations:
-          sh:name: Is characterized by
           sh:order: 2
       attributes:
         annotations:
-          sh:name: Attributes
           sh:order: 3
       description:
         annotations:
-          sh:name: Description
           sh:order: 4
       annotations:
         annotations:
-          sh:name: Annotations
           sh:order: 5
       relations:
         annotations:
-          sh:name: Relations
           sh:order: 6
       exact_mappings:
         annotations:
-          sh:name: Exact mappings
           sh:order: 7
       close_mappings:
         annotations:
-          sh:name: Close mappings
           sh:order: 8
       broad_mappings:
         annotations:
-          sh:name: Broad mappings
           sh:order: 9
       narrow_mappings:
         annotations:
-          sh:name: Narrow mappings
           sh:order: 10
       related_mappings:
         annotations:
-          sh:name: Related mappings
           sh:order: 11
     exact_mappings:
       - schema:Thing

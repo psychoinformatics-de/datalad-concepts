@@ -92,6 +92,7 @@ slots:
   family_name:
     slot_uri: dlsocial:family_name
     is_a: name
+    title: Family name
     description: >-
       The (inherited) family name of the subject. In many Western languages this is the
       "last name".
@@ -112,6 +113,7 @@ slots:
   honorific_name_prefix:
     slot_uri: dlsocial:honorific_name_prefix
     is_a: name
+    title: Title or prefix
     description: >-
       The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
       like "Mrs", or "Dr", "Dame".
@@ -122,6 +124,7 @@ slots:
   honorific_name_suffix:
     slot_uri: dlsocial:honorific_name_suffix
     is_a: name
+    title: Suffix
     description: >-
       The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
       or indicators of an academic degree, a profession, or a position ("MD", "BA").
@@ -132,6 +135,7 @@ slots:
   given_name:
     slot_uri: dlsocial:given_name
     is_a: name
+    title: Given name
     description: >-
       The given (non-inherited) name of the subject.
     range: string
@@ -142,6 +146,7 @@ slots:
   additional_names:
     slot_uri: dlsocial:additional_names
     is_a: name
+    title: Additional names
     description: >-
       Additional name(s) associated with the subject, such as one or more
       middle names, or a nick name.
@@ -169,23 +174,18 @@ classes:
     slot_usage:
       family_name:
         annotations:
-          sh:name: Family name
           sh:order: 1
       given_name:
         annotations:
-          sh:name: Given name
           sh:order: 2
       additional_names:
         annotations:
-          sh:name: Additional names
           sh:order: 3
       honorific_name_prefix:
         annotations:
-          sh:name: Title or prefix
           sh:order: 4
       honorific_name_suffix:
         annotations:
-          sh:name: Suffix
           sh:order: 5
     comments:
       - This class does not offer common slots like "affiliation" or "email".
