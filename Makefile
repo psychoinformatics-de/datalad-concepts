@@ -54,8 +54,10 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		--mergeimports \
 		$< > $@.context.jsonld
 	# SHACL with annotation needed to build UI specs
+	# and excluding automatic addition of sh:order
 	gen-shacl \
 		--include-annotations \
+		--exclude-order \
 		$< > $@.shacl.ttl
 
 build/mkdocs-site: build/linkml-docs extra-docs/*.md
