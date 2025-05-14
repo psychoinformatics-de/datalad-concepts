@@ -1,6 +1,8 @@
 #mermaid Link: https://www.mermaidchart.com/app/projects/5086e8da-91bb-4771-8f23-f4a91bb3d0e2/diagrams/0b4ae839-705f-4633-9f02-3c74e2b52249/version/v0.1/edit
 
-
+# Few doubts( which needs to be further modelled.
+# Group is assigned/ created using a study design but group belongs to a study
+# Similarly, session/ acquisition is defined/carried out based on study design but session belongs to study
 
 id: CI
 name: Investigation Schema
@@ -44,7 +46,7 @@ enums:
 classes:
   Investigation:
     class_uri: OBI:0000066
-    is_a: OBI:0000011  # planned_process
+    is_a: OBI:0000011  # planned_process or #dlschema:Activity
     description: 'A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).'
     slots:
       id:
