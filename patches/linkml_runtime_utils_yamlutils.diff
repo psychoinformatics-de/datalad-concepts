@@ -1,0 +1,29 @@
+This patch has been proposed for inclusion in linkml-runtime
+in https://github.com/linkml/linkml-runtime/pull/392
+
+
+fix type instantiation in _normalize_inlined
+    
+This commit fixes a problem that was discovered while
+converting between TTL and JSON using the schema
+https://concepts.inm7.de/s/simpleinput/unreleased.yaml
+    
+The original code used a dictionary as argument to
+the constructor of a pydantic-class, when it should
+have used the **-operator to cnvert the dictionary
+into keyword arguments.
+
+diff --git a/linkml_runtime/utils/yamlutils.py b/linkml_runtime/utils/yamlutils.py
+index 8ca8b30..d309091 100644
+--- a/linkml_runtime/utils/yamlutils.py
++++ b/linkml_runtime/utils/yamlutils.py
+@@ -169,7 +169,7 @@ class YAMLRoot(JsonObj):
+                         for lek, lev in items(list_entry):
+                             if lek == key_name and not isinstance(lev, (list, dict, JsonObj)):
+                                 # key_name:value
+-                                order_up(list_entry[lek], slot_type(list_entry))
++                                order_up(list_entry[lek], slot_type(**list_entry))
+                                 break   # Not strictly necessary, but
+                             elif not isinstance(lev, (list, dict, JsonObj)):
+                                 # key: value --> slot_type(key, value)
+

@@ -14,3 +14,5 @@ patch -d $(python -c 'import os; import linkml.generators.shaclgen as m; print(o
 patch -d $(python -c 'import os; import linkml.generators.shacl.shacl_ifabsent_processor as m; print(os.path.dirname(m.__file__))') < patches/shacl_ifabsent.diff
 # Honor type-designator slots when loading graphs
 patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.path.dirname(m.__file__))') < patches/rdflib_loader_typedesignator.diff
+# Use correct constructor arguments when normalizing inlined objects
+patch -d $(python -c 'import os; import linkml_runtime.utils.yamlutils as m; print(os.path.dirname(m.__file__))') < patches/linkml_runtime_utils_yamlutils.diff
