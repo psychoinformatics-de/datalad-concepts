@@ -428,6 +428,9 @@ classes:
       description:
         annotations:
           sh:order: 4
+          # reannotate to work around linkml issue
+          # https://hub.psychoinformatics.de/inm7/annotate.inm7.de-data/issues/2#issuecomment-4113
+          dash:singleLine: false
       annotations:
         annotations:
           sh:order: 5
