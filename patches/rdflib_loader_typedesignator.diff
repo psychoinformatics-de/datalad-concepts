@@ -17,11 +17,12 @@
 #
 --- rdflib_loader.py      2025-02-10 01:09:21.627350190 +0100
 +++ rdflib_loader.py      2025-02-10 01:10:15.593488451 +0100
-@@ -106,6 +106,7 @@
+@@ -106,6 +106,8 @@
                          raise ValueError(f'Ambiguous types for {subject} == {type_classes}')
                      logger.info(f'Replacing {subject_class} with {type_classes}')
                      subject_class = type_classes[0].name
-+                    dict_obj[type_designator_slot.name] = type_classes[0].class_uri
++                    if type_classes[0].class_uri is not None:
++                       dict_obj[type_designator_slot.name] = type_classes[0].class_uri
              # process all triples for this node
              for (_, p, o) in graph.triples((subject, None, None)):
                  processed_triples.add((subject,p,o))
