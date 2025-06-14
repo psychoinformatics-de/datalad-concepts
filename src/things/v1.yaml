@@ -344,6 +344,7 @@ classes:
       - schema_type
 
   ValueSpecificationMixin:
+    mixin: true
     description: >-
       Mix-in for a (structured) value specification. Two slots are provided
       to define a (literal) value (`value`) and its type (`range`).
