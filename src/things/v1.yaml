@@ -106,6 +106,7 @@ emit_prefixes:
   - rdf
   - rdfs
   - skos
+  - xsd
 
 imports:
   - dlschemas:types/unreleased
