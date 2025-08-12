@@ -1,0 +1,64 @@
+id: https://concepts.datalad.org/s/properties-mixin/unreleased
+name: properties-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of common properties for use in schemas
+description: |
+  This schema mixin provides a collection of common properties for use in other
+  schemas. It can be imported directly into other linkml schemas, or any of its
+  individual property definitions can be used by their URI as vocabulary
+  components or definitions (e.g., `dlprops-mixin:name` identified by this
+  [URI](`name`)).
+
+  Slot names use the plural form whenever they are directly declared as
+  "multivalued" in this schema, otherwise the singular form is used for
+  the slot name. The `slot_uri` always uses the singular form.
+
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+
+default_prefix: dlpropsmx
+
+emit_prefixes:
+  - dlpropsmx
+
+imports:
+  - linkml:types
+
+slots:
+  name:
+    description: >-
+      Name of the subject. A name is closely related to a `title`, but often
+      more compact and identifier-like, but without the implication of
+      uniqueness of an identifier. A name is often used by technical systems
+      to display an item in an organizational structure, such as a file
+      in a directory hierarchy.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
+      - foaf:name
+    close_mappings:
+      - dcterms:title
+      - obo:IAO_0000590
+    range: string

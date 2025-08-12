@@ -1,0 +1,102 @@
+id: https://concepts.datalad.org/s/social-mixin/unreleased
+name: social-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Schema mixin for social concepts
+description: |
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlsocialmx
+
+emit_prefixes:
+  - dlpropsmx
+  - dlsocialmx
+  - rdf
+  - rdfs
+  - xsd
+
+imports:
+  - dlschemas:properties-mixin/unreleased
+
+slots:
+  family_name:
+    is_a: name
+    title: Family name
+    description: >-
+      The (inherited) family name of the subject. In many Western languages this is the
+      "last name".
+    range: string
+    exact_mappings:
+      - foaf:familyName
+      - vcard:family-name
+
+  formatted_name:
+    is_a: name
+    description: >-
+      A formatted text corresponding to the name of the subject.
+    range: string
+    exact_mappings:
+      - vcard:fn
+
+  honorific_name_prefix:
+    is_a: name
+    title: Title or prefix
+    description: >-
+      The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
+      like "Mrs", or "Dr", "Dame".
+    range: string
+    exact_mappings:
+      - vcard:honorific-suffix
+
+  honorific_name_suffix:
+    is_a: name
+    title: Suffix
+    description: >-
+      The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
+      or indicators of an academic degree, a profession, or a position ("MD", "BA").
+    range: string
+    exact_mappings:
+      - vcard:honorific-suffix
+
+  given_name:
+    is_a: name
+    title: Given name
+    description: >-
+      The given (non-inherited) name of the subject.
+    range: string
+    exact_mappings:
+      - foaf:familyName
+      - vcard:given-name
+
+  additional_names:
+    is_a: name
+    title: Additional names
+    description: >-
+      Additional name(s) associated with the subject, such as one or more
+      middle names, or a nick name.
+    range: string
+    exact_mappings:
+      - vcard:additional_name
+    multivalued: true

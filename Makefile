@@ -15,6 +15,7 @@ all: build/mkdocs-site
 
 build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
+	build/linkml-docs/s/properties-mixin/unreleased \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
@@ -25,6 +26,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/publications/unreleased \
 	build/linkml-docs/s/resources/unreleased \
+	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
@@ -71,6 +73,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	checkmodel/types/unreleased \
+	checkmodel/properties-mixin/unreleased \
 	checkmodel/properties/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
@@ -81,6 +84,7 @@ check-models: \
 	checkmodel/prov/unreleased \
 	checkmodel/publications/unreleased \
 	checkmodel/resources/unreleased \
+	checkmodel/social-mixin/unreleased \
 	checkmodel/social/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/edistributions/unreleased
@@ -105,7 +109,7 @@ checkmodel/%: src/%.yaml
 	@echo Generate OWL
 	@${FAILIF_STDERR} gen-owl $< > /dev/null
 	@echo Generate Python classes
-	@${FAILIF_STDERR} gen-python $< | python
+	@${FAILIF_STDERR} grep -q '^classes:' $< && ( gen-python $< | python ) || true
 
 # within check-validation, conversion targets must come before the
 # respective validation targets, because some tests rely on these
