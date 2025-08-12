@@ -20,6 +20,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
+	build/linkml-docs/s/flat-social/unreleased \
 	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
@@ -29,6 +30,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
+	build/linkml-docs/s/distribution/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
