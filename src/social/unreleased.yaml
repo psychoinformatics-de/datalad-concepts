@@ -39,6 +39,7 @@ prefixes:
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocial: https://concepts.datalad.org/s/social/unreleased/
+  dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
   dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
@@ -86,74 +87,8 @@ emit_prefixes:
 imports:
   - dlschemas:prov/unreleased
   - dlschemas:properties/unreleased
+  - dlschemas:social-mixin/unreleased
 
-
-slots:
-  family_name:
-    slot_uri: dlsocial:family_name
-    is_a: name
-    title: Family name
-    description: >-
-      The (inherited) family name of the subject. In many Western languages this is the
-      "last name".
-    range: string
-    exact_mappings:
-      - foaf:familyName
-      - vcard:family-name
-
-  formatted_name:
-    slot_uri: dlsocial:formatted_name
-    is_a: name
-    description: >-
-      A formatted text corresponding to the name of the subject.
-    range: string
-    exact_mappings:
-      - vcard:fn
-
-  honorific_name_prefix:
-    slot_uri: dlsocial:honorific_name_prefix
-    is_a: name
-    title: Title or prefix
-    description: >-
-      The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
-      like "Mrs", or "Dr", "Dame".
-    range: string
-    exact_mappings:
-      - vcard:honorific-suffix
-
-  honorific_name_suffix:
-    slot_uri: dlsocial:honorific_name_suffix
-    is_a: name
-    title: Suffix
-    description: >-
-      The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
-      or indicators of an academic degree, a profession, or a position ("MD", "BA").
-    range: string
-    exact_mappings:
-      - vcard:honorific-suffix
-
-  given_name:
-    slot_uri: dlsocial:given_name
-    is_a: name
-    title: Given name
-    description: >-
-      The given (non-inherited) name of the subject.
-    range: string
-    exact_mappings:
-      - foaf:familyName
-      - vcard:given-name
-
-  additional_names:
-    slot_uri: dlsocial:additional_names
-    is_a: name
-    title: Additional names
-    description: >-
-      Additional name(s) associated with the subject, such as one or more
-      middle names, or a nick name.
-    range: string
-    exact_mappings:
-      - vcard:additional_name
-    multivalued: true
 
 classes:
   Person:
