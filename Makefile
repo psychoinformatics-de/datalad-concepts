@@ -184,7 +184,7 @@ convertexamples/%: src/%.yaml src/%/examples
 	@git --no-pager diff -- $(filter-out $<,$^)
 	@if [ -n "$$(git diff -- $(filter-out $<,$^))" ]; then \
 		echo -n 'ERROR: Unexpected modification of example output. ' ; \
-   		echo 'Inspect and commit changes shown above!' ; \
+		echo 'Inspect and commit changes shown above!' ; \
 		exit 22 ; \
 	fi
 
