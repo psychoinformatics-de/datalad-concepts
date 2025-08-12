@@ -1,0 +1,5 @@
+{
+  "pid": "https://example.org/mything",
+  "schema_type": "dlflat:FlatThing",
+  "@type": "FlatThing"
+}

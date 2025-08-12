@@ -1,0 +1,104 @@
+id: https://concepts.datalad.org/s/flat
+name: flat-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Base for FLAT schemas
+description: |
+  FLAT stands for Flexbile Low-complexity Annotation Technique.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlflat
+
+emit_prefixes:
+  - dlflat
+  - dlidentifiers
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
+  - dlschemas:identifiers/unreleased
+
+slots:
+  display_label:
+    title: Record display label
+    slot_uri: skos:prefLabel
+    description: >-
+      Label that can be shown when the metadata record is displayed as an item.
+    range: string
+
+  display_note:
+    title: Record display note
+    slot_uri: skos:note
+    description: >-
+      Note that can be shown when the record is displayed as an item.
+      This is typically longer than a label.
+    range: string
+    annotations:
+      dash:singleLine: false
+
+  editorial_note:
+    slot_uri: skos:editorialNote
+    title: Editorial note
+    description: >-
+      A comment about a metadata record either providing additional information for
+      a record curation, or leaving a comment after curation occurred. This can be
+      used to include information that is deemed relevant, but could not be expressed
+      in the provided fields.
+    range: string
+    multivalued: true
+    annotations:
+      dash:singleLine: false
+
+classes:
+  FlatThing:
+    is_a: Thing
+    description: >-
+      `Thing` variant that provides a basis for the annotation and curation of more specialized
+      concepts.
+
+      It equips `Thing` with additional slots to annotate labels and notes that aid
+      information entry and curation in workflows and user interfaces. Moreover,
+      the `identifiers` slot enables the specification is any number of identifiers
+      (issued or computed) associated with a `Thing`.
+    slots:
+      - display_label
+      - display_note
+      - editorial_note
+      - identifiers

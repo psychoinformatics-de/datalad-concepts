@@ -1,0 +1,10 @@
+schema: src/flat/unreleased.yaml
+target_class: FlatThing
+data_sources:
+  - src/flat/unreleased/examples/FlatThing-01-minimal.yaml
+  - src/flat/unreleased/examples/FlatThing-02-aid.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
