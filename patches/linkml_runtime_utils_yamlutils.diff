@@ -17,13 +17,12 @@ diff --git a/linkml_runtime/utils/yamlutils.py b/linkml_runtime/utils/yamlutils.
 index 8ca8b30..d309091 100644
 --- a/linkml_runtime/utils/yamlutils.py
 +++ b/linkml_runtime/utils/yamlutils.py
-@@ -169,7 +169,7 @@ class YAMLRoot(JsonObj):
+@@ -175,7 +175,7 @@
                          for lek, lev in items(list_entry):
                              if lek == key_name and not isinstance(lev, (list, dict, JsonObj)):
                                  # key_name:value
 -                                order_up(list_entry[lek], slot_type(list_entry))
 +                                order_up(list_entry[lek], slot_type(**list_entry))
-                                 break   # Not strictly necessary, but
+                                 break  # Not strictly necessary, but
                              elif not isinstance(lev, (list, dict, JsonObj)):
                                  # key: value --> slot_type(key, value)
-
