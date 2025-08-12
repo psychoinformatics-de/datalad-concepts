@@ -1,0 +1,18 @@
+{
+  "pid": "https://example.org/mything",
+  "schema_type": "dlflat:FlatThing",
+  "display_label": "My Thing",
+  "display_note": "In case someone is wondering what that thing of mine is, they could read further here...",
+  "editorial_note": [
+    "The only reason this record exists, is to function as an example in the documentation of `FlatThing`. Remove whenever there is no longer a need for that.",
+    "And also: this is lame!"
+  ],
+  "identifiers": [
+    {
+      "notation": "meh",
+      "schema_type": "dlidentifiers:IssuedIdentifier",
+      "schema_agency": "her majesty the house goat"
+    }
+  ],
+  "@type": "FlatThing"
+}
