@@ -60,6 +60,7 @@ prefixes:
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
@@ -87,6 +88,7 @@ emit_prefixes:
   - dlprov
   - dlroles
   - dlspatial
+  - dlspatialmx
   - dltemporal
   - dlthings
   - dltypes
@@ -102,6 +104,7 @@ imports:
   - dlschemas:things/v1
   - dlschemas:identifiers/unreleased
   - dlschemas:roles/unreleased
+  - dlschemas:spatial-mixin/unreleased
   - dlschemas:spatial/unreleased
   - dlschemas:temporal/unreleased
 
@@ -196,6 +199,11 @@ classes:
       - at_location
       - identifiers
       - qualified_relations
+    slot_usage:
+      at_location:
+        range: Location
+        inlined: False
+        multivalued: False
     exact_mappings:
       - foaf:Agent
       - prov:Agent
@@ -224,6 +232,11 @@ classes:
       - started_at
       - associated_with
       - informed_by
+    slot_usage:
+      at_location:
+        range: Location
+        inlined: False
+        multivalued: False
     exact_mappings:
       - prov:Activity
       - obo:BFO_0000015
