@@ -17,7 +17,7 @@ comments:
 license: MIT
 
 prefixes:
-  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
@@ -31,14 +31,14 @@ prefixes:
 default_prefix: dlsocialmx
 
 emit_prefixes:
-  - dlpropsmx
+  - dlcommonmx
   - dlsocialmx
   - rdf
   - rdfs
   - xsd
 
 imports:
-  - dlschemas:properties-mixin/unreleased
+  - dlschemas:common-mixin/unreleased
 
 slots:
   family_name:
