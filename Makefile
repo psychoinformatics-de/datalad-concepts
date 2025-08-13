@@ -15,18 +15,20 @@ all: build/mkdocs-site
 
 build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
-	build/linkml-docs/s/properties-mixin/unreleased \
+	build/linkml-docs/s/common-mixin/unreleased \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
 	build/linkml-docs/s/roles/unreleased \
+	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/publications/unreleased \
 	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/social-mixin/unreleased \
+	build/linkml-docs/s/flat-social/unreleased \
 	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
@@ -47,21 +49,19 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		$< \
 	&& (cp -r src/$*/extra-docs/*.md $@ || true)
 	# try to inject any extra-docs (if any exist)
-	# generate OWL
-	gen-owl \
-		-f owl \
-		--mergeimports \
-		$< > $@.owl.ttl
-	# jsonld context
-	gen-jsonld-context \
-		--mergeimports \
-		$< > $@.context.jsonld
-	# SHACL with annotation needed to build UI specs
-	# and excluding automatic addition of sh:order
-	gen-shacl \
-		--include-annotations \
-		--exclude-order \
-		$< > $@.shacl.ttl
+	schema="$<"; if [ "$${schema##*-mixin}" = "$<" ]; then \
+		gen-owl \
+			-f owl \
+			--mergeimports \
+			$< > $@.owl.ttl && \
+		gen-jsonld-context \
+			--mergeimports \
+			$< > $@.context.jsonld && \
+		gen-shacl \
+			--include-annotations \
+			--exclude-order \
+			$< > $@.shacl.ttl ; \
+	fi
 
 build/mkdocs-site: build/linkml-docs extra-docs/*.md
 	# top-level content
@@ -73,18 +73,20 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	checkmodel/types/unreleased \
-	checkmodel/properties-mixin/unreleased \
+	checkmodel/common-mixin/unreleased \
 	checkmodel/properties/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/flat/unreleased \
 	checkmodel/roles/unreleased \
+	checkmodel/spatial-mixin/unreleased \
 	checkmodel/spatial/unreleased \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/publications/unreleased \
 	checkmodel/resources/unreleased \
 	checkmodel/social-mixin/unreleased \
+	checkmodel/flat-social/unreleased \
 	checkmodel/social/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/edistributions/unreleased
@@ -96,6 +98,9 @@ checkmodel/%: src/%.yaml
 		--max-warnings 0 \
 		--validate \
 		$<
+	schema="$<"; if [ "$${schema##*-mixin}" = "$<" ]; then $(MAKE) checkmodel-outputs/$*; else echo "Skipping mixin output tests"; fi
+
+checkmodel-outputs/%: src/%.yaml
 # generate various output formats, they all have the potential to
 # reveal "hidden" issues
 	@echo Generate a JSON-LD context
@@ -133,6 +138,8 @@ check-validation: \
 	checkvalidation/publications/unreleased \
 	convertexamples/resources/unreleased \
 	checkvalidation/resources/unreleased \
+	convertexamples/flat-social/unreleased \
+	checkvalidation/flat-social/unreleased \
 	convertexamples/social/unreleased \
 	checkvalidation/social/unreleased \
 	convertexamples/identifiers/unreleased \
@@ -162,6 +169,7 @@ convert-examples: \
 	convertexamples/prov/unreleased \
 	convertexamples/publications/unreleased \
 	convertexamples/resources/unreleased \
+	convertexamples/flat-social/unreleased \
 	convertexamples/social/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/edistributions/unreleased
@@ -184,7 +192,7 @@ convertexamples/%: src/%.yaml src/%/examples
 	@git --no-pager diff -- $(filter-out $<,$^)
 	@if [ -n "$$(git diff -- $(filter-out $<,$^))" ]; then \
 		echo -n 'ERROR: Unexpected modification of example output. ' ; \
-   		echo 'Inspect and commit changes shown above!' ; \
+		echo 'Inspect and commit changes shown above!' ; \
 		exit 22 ; \
 	fi
 

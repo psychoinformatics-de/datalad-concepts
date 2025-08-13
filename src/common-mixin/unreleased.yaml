@@ -1,5 +1,5 @@
-id: https://concepts.datalad.org/s/properties-mixin/unreleased
-name: properties-mixin-schema
+id: https://concepts.datalad.org/s/common-mixin/unreleased
+name: common-mixin-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Collection of common properties for use in schemas
@@ -18,10 +18,7 @@ description: |
 
   The schema definition is available as
 
-  - [JSON-LD context](../unreleased.context.jsonld)
   - [LinkML YAML](../unreleased.yaml)
-  - [OWL TTL](../unreleased.owl.ttl)
-  - [SHACL TTL](../unreleased.shacl.ttl)
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
@@ -30,18 +27,19 @@ license: MIT
 
 prefixes:
   dcterms: http://purl.org/dc/terms/
-  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
+  pq: http://www.wikidata.org/prop/qualifier/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
 
-default_prefix: dlpropsmx
+default_prefix: dlcommonmx
 
 emit_prefixes:
-  - dlpropsmx
+  - dlcommonmx
 
 imports:
   - linkml:types
@@ -61,4 +59,15 @@ slots:
     close_mappings:
       - dcterms:title
       - obo:IAO_0000590
+    range: string
+
+  short_name:
+    is_a: name
+    description: >-
+      A shortened name for the subject. For example, an acronym, initialism,
+      nickname, or other abbreviation of the `name`.
+    exact_mappings:
+      - pq:P1813
+    broad_mappings:
+      - obo:NCIT_C42610
     range: string

@@ -34,7 +34,7 @@ license: MIT
 prefixes:
   dcterms: http://purl.org/dc/terms/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
-  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
@@ -42,7 +42,6 @@ prefixes:
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
-  pq: http://www.wikidata.org/prop/qualifier/
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   sio: http://semanticscience.org/resource/
 
@@ -54,7 +53,7 @@ emit_prefixes:
 imports:
   - linkml:types
   - dlschemas:things/v1
-  - dlschemas:properties-mixin/unreleased
+  - dlschemas:common-mixin/unreleased
 
 slots:
   conforms_to:
@@ -101,16 +100,6 @@ slots:
       - owl:sameAs
     close_mappings:
       - schema:sameAs
-
-  short_name:
-    slot_uri: dlprops:short_name
-    is_a: name
-    description: >-
-      A shortened name for the subject. For example, an acronym, initialism,
-      nickname, or other abbreviation of the `name`.
-    exact_mappings:
-      - pq:P1813
-    range: string
 
   title:
     slot_uri: dlprops:title

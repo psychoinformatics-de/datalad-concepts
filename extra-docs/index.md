@@ -18,11 +18,15 @@ between the worlds of structured data in plain text files, relational
 databases and knowledge graphs if and when needed, so metadata workflows can
 stay as simple as possible.
 
-## Latest schema releases
+## Foundational schema components
+
+The sources for all schemas are on [GitHub](https://github.com/psychoinformatics-de/datalad-concepts).
+
+### Latest releases
 
 - [Things (v1)](s/things/v1/index.md): foundational schema to describe any "thing"
 
-## Schema development
+### Development
 
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
@@ -30,6 +34,15 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Types schema](s/types/unreleased/index.md)
 - [Properties schema](s/properties/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
+- [Common properties mixin](s/common-mixin/unreleased/index.md)
+- [Social mixin](s/social-mixin/unreleased/index.md)
+
+## Graph-oriented schema components
+
+### Development
+
+ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
 - [Roles schema](s/roles/unreleased/index.md)
 - [Spatial schema](s/spatial/unreleased/index.md)
 - [Temporal schema](s/itemporal/unreleased/index.md)
@@ -39,11 +52,14 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Social schema](s/social/unreleased/index.md)
 - [Electronic distributions schema](s/edistributions/unreleased/index.md)
 
+## Flexbile Low-complexity Annotation Technique (FLAT) schema components
 
-See sources on [GitHub](https://github.com/psychoinformatics-de/datalad-concepts)
+- [FLAT base schema](s/flat/unreleased/index.md)
+- [Social schema](s/flat-social/unreleased/index.md)
 
+## Related tools and specifications
 
-# Knowledge base/graph dump specification
+### Knowledge base/graph dump specification
 
 This [specification ](/dump-things) is a companion of the [Things](s/things) schema and its derivatives and extensions.
 It defines a data structure for dumping arbitrarily complex information, expressed in these data models, in a version-controllable fashion directly on a filesystem.

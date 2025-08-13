@@ -27,7 +27,7 @@ prefixes:
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
   dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
@@ -51,7 +51,7 @@ emit_prefixes:
   - dlflat
   - dlflatsocial
   - dlidentifiers
-  - dlpropsmx
+  - dlcommonmx
   - dlsocialmx
   - dlthings
   - dltypes
@@ -63,8 +63,34 @@ emit_prefixes:
 imports:
   - dlschemas:flat/unreleased
   - dlschemas:social-mixin/unreleased
+  - dlschemas:spatial-mixin/unreleased
 
 classes:
+  Organization:
+    is_a: FlatThing
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+    slots:
+      - name
+      - short_name
+      - at_location
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      at_location:
+        range: Thing
+        comments:
+          - Derived classes can spezialize the range to the desired type.
+        annotations:
+          sh:order: 3
+    exact_mappings:
+      - prov:Organization
+
+
   Person:
     is_a: FlatThing
     description: >-

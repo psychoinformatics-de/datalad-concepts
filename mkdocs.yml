@@ -4,19 +4,26 @@ nav:
   - Home: index.md
   - About: about.md
   - Schemas:
-    - Things: s/things/v1/index.md
-    - Types (dev): s/types/unreleased/index.md
-    - Properties (dev): s/properties/unreleased/index.md
-    - Identifiers (dev): s/identifiers/unreleased/index.md
-    - Roles (dev): s/roles/unreleased/index.md
-    - Spatial (dev): s/spatial/unreleased/index.md
-    - Temporal (dev): s/temporal/unreleased/index.md
-    - Provenance (dev): s/prov/unreleased/index.md
-    - Resources (dev): s/resources/unreleased/index.md
-    - Publications (dev): s/publications/unreleased/index.md
-    - Social (dev): s/social/unreleased/index.md
-    - Electronic distributions (dev): s/edistributions/unreleased/index.md
-  - Dump-Things: dump-things.md
+    - Foundational:
+      - Things: s/things/v1/index.md
+      - Types (dev): s/types/unreleased/index.md
+      - Properties (dev): s/properties/unreleased/index.md
+      - Identifiers (dev): s/identifiers/unreleased/index.md
+      - Common mixin (dev): s/common-mixin/unreleased/index.md
+      - Social mixin (dev): s/social-mixin/unreleased/index.md
+    - Graph-oriented:
+      - Roles (dev): s/roles/unreleased/index.md
+      - Spatial (dev): s/spatial/unreleased/index.md
+      - Temporal (dev): s/temporal/unreleased/index.md
+      - Provenance (dev): s/prov/unreleased/index.md
+      - Resources (dev): s/resources/unreleased/index.md
+      - Publications (dev): s/publications/unreleased/index.md
+      - Social (dev): s/social/unreleased/index.md
+      - Electronic distributions (dev): s/edistributions/unreleased/index.md
+    - FLAT:
+      - FLAT (dev): s/flat/unreleased/index.md
+      - FLAT social (dev): s/flat-social/unreleased/index.md
+  - Dump-Things storage: dump-things.md
 plugins:
   - mermaid2
   - panzoom:
@@ -36,6 +43,10 @@ plugins:
           's/resources/index.md': 's/resources/unreleased/index.md'
           's/publications/index.md': 's/publications/unreleased/index.md'
           's/edistributions/index.md': 's/edistributions/unreleased/index.md'
+          's/flat/index.md': 's/flat/unreleased/index.md'
+          's/flat-social/index.md': 's/flat-social/unreleased/index.md'
+          's/social-mixin/index.md': 's/social-mixin/unreleased/index.md'
+          's/common-mixin/index.md': 's/common-mixin/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:
