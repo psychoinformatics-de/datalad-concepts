@@ -1,0 +1,8 @@
+{
+  "pid": "https://ror.org/02nv7yv05",
+  "schema_type": "dlflatsocial:Organization",
+  "name": "Forschungszentrum Jülich",
+  "short_name": "FZJ",
+  "at_location": "https://sws.geonames.org/6557321",
+  "@type": "Organization"
+}
