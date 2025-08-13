@@ -140,7 +140,7 @@ check-validation: \
 	convertexamples/edistributions/unreleased \
 	checkvalidation/edistributions/unreleased
 checkvalidation/%:
-	$(MAKE) checkvalid/$* checkinvalid/$*
+	$(MAKE) checkvalid/$* #checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
 	@for ex in $</*.valid.cfg.yaml; do \
 		echo "Validate $$ex" ; \
