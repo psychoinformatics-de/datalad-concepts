@@ -1,5 +1,5 @@
-id: https://concepts.datalad.org/s/properties-mixin/unreleased
-name: properties-mixin-schema
+id: https://concepts.datalad.org/s/common-mixin/unreleased
+name: common-mixin-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Collection of common properties for use in schemas
@@ -30,7 +30,7 @@ license: MIT
 
 prefixes:
   dcterms: http://purl.org/dc/terms/
-  dlpropsmx: https://concepts.datalad.org/s/properties-mixin/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
@@ -38,10 +38,10 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
 
-default_prefix: dlpropsmx
+default_prefix: dlcommonmx
 
 emit_prefixes:
-  - dlpropsmx
+  - dlcommonmx
 
 imports:
   - linkml:types

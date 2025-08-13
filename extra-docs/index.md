@@ -34,7 +34,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Types schema](s/types/unreleased/index.md)
 - [Properties schema](s/properties/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
-- [Common properties mixin](s/properties-mixin/unreleased/index.md)
+- [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Social mixin](s/social-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
