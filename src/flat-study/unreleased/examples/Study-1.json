@@ -1,0 +1,7 @@
+{
+  "pid": "https://doi.org/1234/demo",
+  "description": "very important science",
+  "schema_type": "dlflatstudy:Study",
+  "name": "Demo",
+  "@type": "Study"
+}

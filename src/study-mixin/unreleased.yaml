@@ -1,0 +1,89 @@
+id: https://concepts.datalad.org/s/study-mixin/unreleased
+name: study-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of study properties for use in schemas
+description: |
+  This schema mixin provides a collection of study properties for use in other
+  schemas. It can be imported directly into other linkml schemas, or any of its
+  individual property definitions can be used by their URI as vocabulary
+  components or definitions (e.g., `dlprops-mixin:name` identified by this
+  [URI](`name`)).
+
+  Slot names use the plural form whenever they are directly declared as
+  "multivalued" in this schema, otherwise the singular form is used for
+  the slot name. The `slot_uri` always uses the singular form.
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+
+default_prefix: dlstudymx
+
+emit_prefixes:
+  - dlstudymx
+
+imports:
+  - linkml:types
+
+slots:
+  derived_from:
+    title: Derived from
+    description: >-
+      A entity from which the subject was created through some kind of process.
+
+  dimensions:
+    title: Outcomes variables
+    description: >-
+      Associated outcome variables.
+    multivalued: true
+
+  factors:
+    title: Influencing factors
+    description: >-
+      Factors that influence the subject matter.
+    multivalued: true
+
+  factor_level_of:
+    title: Level of
+    description: >-
+      A factor the subject is a (sub)level of.
+
+  instruments:
+    title: Used instruments
+    description: >-
+      Instruments employed in a study activity. This could be physical
+      devices, but also software tools.
+    multivalued: true
+
+  study:
+    title: Study context
+    description: >-
+      The study in which the subject took place or existed.
+
+  subject_type:
+    title: Type
+    description: >-
+      A classifier that identifies the nature/type of a subject.
+      For specimen (a subject derived/taken from another subject),
+      this classifier should be more precise than the classifier
+      of the source subject.
