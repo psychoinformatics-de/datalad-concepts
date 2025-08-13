@@ -48,21 +48,19 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		$< \
 	&& (cp -r src/$*/extra-docs/*.md $@ || true)
 	# try to inject any extra-docs (if any exist)
-	# generate OWL
-	gen-owl \
-		-f owl \
-		--mergeimports \
-		$< > $@.owl.ttl
-	# jsonld context
-	gen-jsonld-context \
-		--mergeimports \
-		$< > $@.context.jsonld
-	# SHACL with annotation needed to build UI specs
-	# and excluding automatic addition of sh:order
-	gen-shacl \
-		--include-annotations \
-		--exclude-order \
-		$< > $@.shacl.ttl
+	schema="$<"; if [ "$${schema##*-mixin}" = "$<" ]; then \
+		gen-owl \
+			-f owl \
+			--mergeimports \
+			$< > $@.owl.ttl && \
+		gen-jsonld-context \
+			--mergeimports \
+			$< > $@.context.jsonld && \
+		gen-shacl \
+			--include-annotations \
+			--exclude-order \
+			$< > $@.shacl.ttl ; \
+	fi
 
 build/mkdocs-site: build/linkml-docs extra-docs/*.md
 	# top-level content
@@ -98,6 +96,9 @@ checkmodel/%: src/%.yaml
 		--max-warnings 0 \
 		--validate \
 		$<
+	schema="$<"; if [ "$${schema##*-mixin}" = "$<" ]; then $(MAKE) checkmodel-outputs/$*; else echo "Skipping mixin output tests"; fi
+
+checkmodel-outputs/%: src/%.yaml
 # generate various output formats, they all have the potential to
 # reveal "hidden" issues
 	@echo Generate a JSON-LD context
