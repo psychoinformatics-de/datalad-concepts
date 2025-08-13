@@ -100,16 +100,3 @@ slots:
       - owl:sameAs
     close_mappings:
       - schema:sameAs
-
-  title:
-    slot_uri: dlprops:title
-    description: >-
-      A summarily description of the subject. It is closely related to
-      a `name`, but often less compact and more descriptive. Typically used for
-      documents.
-    exact_mappings:
-      - dcterms:title
-      - sio:SIO_000185
-    related_mappings:
-      - schema:name
-    range: string
