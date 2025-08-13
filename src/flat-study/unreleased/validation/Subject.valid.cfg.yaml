@@ -1,0 +1,9 @@
+schema: src/flat-study/unreleased.yaml
+target_class: Subject
+data_sources:
+  - src/flat-study/unreleased/examples/Subject-1.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

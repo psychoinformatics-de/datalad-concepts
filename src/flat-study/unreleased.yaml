@@ -1,0 +1,204 @@
+id: https://concepts.datalad.org/s/flat-study
+name: flat-study-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: FLAT study schema
+description: |
+  FLAT stands for Flexbile Low-complexity Annotation Technique.
+  The FLAT-study schema contains classes to describe scientific studies.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlflatstudy
+
+emit_prefixes:
+  - dlflat
+  - dlflatstudy
+  - dlidentifiers
+  - dlcommonmx
+  - dlstudymx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:flat/unreleased
+  - dlschemas:common-mixin/unreleased
+  - dlschemas:study-mixin/unreleased
+
+classes:
+  Dimension:
+    is_a: FlatThing
+    description: >-
+      A dependent or outcome variable.
+    slots:
+      - name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      description:
+        annotations:
+          sh:order: 2
+          dash:singleLine: false
+
+  Factor:
+    is_a: FlatThing
+    description: >-
+      A tag associated with a categorical, independent variable in a study
+      design. Factors can have an investigative role (e.g., treatments), or
+      have an organizational nature (e.g., site labels).
+    slots:
+      - name
+      - factor_level_of
+    comments:
+      - The relationship of a factor "level" with the broader factor can be
+        described via `broader_mappings`.
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      factor_level_of:
+        range: Thing
+        comments:
+          - Derived classes can specialize the range to the desired type.
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+
+  Study:
+    is_a: FlatThing
+    description: >-
+      A planned process that consists of parts: planning, study design
+      execution, documentation and which produce conclusion(s).
+    exact_mappings:
+      - obo:OBI_0000066
+      - sio:SIO_001066
+    narrow_mappings:
+      - sio:SIO_000994
+      - obo:NCIT_C15206
+    slots:
+      - dimensions
+      - factors
+      - instruments
+      - name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      factors:
+        recommended: true
+        range: Factor
+        annotations:
+          sh:order: 2
+      instruments:
+        range: Thing
+        annotations:
+          sh:order: 3
+      dimensions:
+        range: Dimension
+        comments:
+          - Derived classes can specialize the range to the desired type.
+        recommended: true
+        annotations:
+          sh:order: 4
+      description:
+        annotations:
+          sh:order: 5
+          dash:singleLine: false
+
+  Subject:
+    is_a: FlatThing
+    description: >-
+      A subject is an entity being investigated in a study. This is a
+      contextual entity. One and the same entity can be different
+      subjects in two different studies.
+    slots:
+      - name
+      - study
+      - subject_type
+      - derived_from
+    slot_usage:
+      study:
+        required: true
+        range: Study
+        annotations:
+          sh:order: 1
+      name:
+        recommended: true
+        annotations:
+          sh:order: 2
+      subject_type:
+        recommended: true
+        range: SubjectType
+        annotations:
+          sh:order: 3
+      description:
+        annotations:
+          sh:order: 4
+          dash:singleLine: false
+      derived_from:
+        range: Subject
+        annotations:
+          sh:order: 5
+
+  SubjectType:
+    is_a: FlatThing
+    description: >-
+      Classifier for the nature of a subject.
+    slots:
+      - name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      description:
+        annotations:
+          sh:order: 2
+          dash:singleLine: false
