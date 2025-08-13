@@ -1,0 +1,40 @@
+id: https://concepts.datalad.org/s/spatial-mixin/unreleased
+name: spatial-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of spatial properties for use in schemas
+description: |
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+
+default_prefix: dlspatialmx
+
+emit_prefixes:
+  - dlspatialmx
+
+slots:
+  at_location:
+    description: >-
+      Associate the subject with a location. This can be a geographic place,
+      or a place in a directory, or table.
+    exact_mappings:
+      - prov:atLocation
+      - schema:location
+    comments:
+      - Does not define a range, because the desired type is highly use case specific.

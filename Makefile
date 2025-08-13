@@ -21,6 +21,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
 	build/linkml-docs/s/roles/unreleased \
+	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov/unreleased \
@@ -78,6 +79,7 @@ check-models: \
 	checkmodel/things/v1 \
 	checkmodel/flat/unreleased \
 	checkmodel/roles/unreleased \
+	checkmodel/spatial-mixin/unreleased \
 	checkmodel/spatial/unreleased \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov/unreleased \
