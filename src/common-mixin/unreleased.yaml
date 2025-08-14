@@ -71,3 +71,14 @@ slots:
     broad_mappings:
       - obo:NCIT_C42610
     range: string
+
+  title:
+    description: >-
+      A summarily description of the subject. It is closely related to
+      a `name`, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+    related_mappings:
+      - schema:name
+    range: string

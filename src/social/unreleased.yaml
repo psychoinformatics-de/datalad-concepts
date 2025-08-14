@@ -35,6 +35,7 @@ license: MIT
 prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
@@ -68,6 +69,7 @@ default_prefix: dlsocial
 emit_prefixes:
   - dlidentifiers
   - dlprops
+  - dlcommonmx
   - dlprov
   - dlroles
   - dlsocial

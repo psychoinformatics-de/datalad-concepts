@@ -27,6 +27,7 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlres: https://concepts.datalad.org/s/resources/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
@@ -52,6 +53,7 @@ default_prefix: dlres
 emit_prefixes:
   - dlidentifiers
   - dlprops
+  - dlcommonmx
   - dlprov
   - dlres
   - dlroles
@@ -69,6 +71,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:properties/unreleased
+  - dlschemas:common-mixin/unreleased
   - dlschemas:prov/unreleased
   - dlschemas:temporal/unreleased
 

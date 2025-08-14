@@ -62,6 +62,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:flat/unreleased
+  - dlschemas:common-mixin/unreleased
   - dlschemas:social-mixin/unreleased
   - dlschemas:spatial-mixin/unreleased
 
@@ -89,7 +90,6 @@ classes:
           sh:order: 3
     exact_mappings:
       - prov:Organization
-
 
   Person:
     is_a: FlatThing
@@ -121,3 +121,27 @@ classes:
       honorific_name_suffix:
         annotations:
           sh:order: 5
+
+  Project:
+    is_a: FlatThing
+    description: >-
+      A collective endeavour of some kind. Typically it is a planned
+      process that is undertaken or attempted to meet some requirement,
+      or to achieve a particular goal.
+    exact_mappings:
+      - foaf:Project
+    close_mappings:
+      - obo:NCIT_C47885
+    broad_mappings:
+      # process
+      - obo:BFO_0000015
+    slots:
+      - short_name
+      - title
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
