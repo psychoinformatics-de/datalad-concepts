@@ -30,6 +30,7 @@ prefixes:
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
@@ -53,6 +54,7 @@ emit_prefixes:
   - dlidentifiers
   - dlcommonmx
   - dlsocialmx
+  - dlspatialmx
   - dlthings
   - dltypes
   - rdf
