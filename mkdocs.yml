@@ -11,6 +11,7 @@ nav:
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
       - Social mixin (dev): s/social-mixin/unreleased/index.md
+      - Resources mixin (dev): s/resources-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md
@@ -47,6 +48,7 @@ plugins:
           's/flat-social/index.md': 's/flat-social/unreleased/index.md'
           's/social-mixin/index.md': 's/social-mixin/unreleased/index.md'
           's/common-mixin/index.md': 's/common-mixin/unreleased/index.md'
+          's/resources-mixin/index.md': 's/resources-mixin/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:

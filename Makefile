@@ -26,6 +26,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/publications/unreleased \
+	build/linkml-docs/s/resources-mixin/unreleased \
 	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/flat-social/unreleased \
@@ -84,6 +85,7 @@ check-models: \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/publications/unreleased \
+	checkmodel/resources-mixin/unreleased \
 	checkmodel/resources/unreleased \
 	checkmodel/social-mixin/unreleased \
 	checkmodel/flat-social/unreleased \

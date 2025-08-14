@@ -25,11 +25,12 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprops: https://concepts.datalad.org/s/properties/unreleased/
-  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlres: https://concepts.datalad.org/s/resources/unreleased/
+  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
@@ -56,6 +57,7 @@ emit_prefixes:
   - dlcommonmx
   - dlprov
   - dlres
+  - dlresmx
   - dlroles
   - dlspatial
   - dltemporal
@@ -72,6 +74,7 @@ emit_prefixes:
 imports:
   - dlschemas:properties/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:resources-mixin/unreleased
   - dlschemas:prov/unreleased
   - dlschemas:temporal/unreleased
 
@@ -125,15 +128,6 @@ slots:
     exact_mappings:
       - dcat:previousVersion
       - pav:previousVersion
-
-  sponsor:
-    slot_uri: dlres:sponsor
-    description: >-
-      An agent that supports a thing through a pledge, promise,
-      or financial contribution.
-    range: Agent
-    exact_mappings:
-      - schema:sponsor
 
   version_label:
     slot_uri: dlres:version_label
