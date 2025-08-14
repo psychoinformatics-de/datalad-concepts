@@ -147,14 +147,14 @@ check-validation: \
 	convertexamples/edistributions/unreleased \
 	checkvalidation/edistributions/unreleased
 checkvalidation/%:
-	$(MAKE) checkvalid/$* #checkinvalid/$*
+	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
-	@for ex in $</*.valid.cfg.yaml; do \
+	@for ex in $(wildcard $</*.valid.cfg.yaml); do \
 		echo "Validate $$ex" ; \
 		linkml-validate --config "$$ex" || exit 5 ; \
 	done
 checkinvalid/%: src/%/validation src/%.yaml
-	@for ex in $</*.invalid.cfg.yaml; do \
+	@for ex in $(wildcard $</*.invalid.cfg.yaml); do \
 		echo "(In)validate $$ex" ; \
 		linkml-validate --config "$$ex" && exit 5 || true; \
 	done
