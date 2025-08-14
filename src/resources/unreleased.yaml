@@ -200,6 +200,7 @@ classes:
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and serializations.
     disjoint_with:
+      - Distribution
       - Document
       - Grant
       - Instrument
@@ -215,6 +216,11 @@ classes:
       A specific representation of a resource, which may come in the form of
       a physical object, or an electronic file, or an archive or directory
       of many files, may be standalone or part of a larger collection.
+    disjoint_with:
+      - Dataset
+      - Document
+      - Grant
+      - Instrument
     notes:
       - A `Distribution` is derived from `Resource`, following the logic
         that it is a materialized/specialized variant of a particular
@@ -243,6 +249,7 @@ classes:
       - distributions
     disjoint_with:
       - Dataset
+      - Distribution
       - Grant
       - Instrument
     notes:
@@ -259,6 +266,7 @@ classes:
       - sponsor
     disjoint_with:
       - Dataset
+      - Distribution
       - Document
       - Instrument
     notes:
@@ -303,6 +311,7 @@ classes:
       An instrument is typically not a "reagent".
     disjoint_with:
       - Dataset
+      - Distribution
       - Document
       - Grant
     related_mappings:
