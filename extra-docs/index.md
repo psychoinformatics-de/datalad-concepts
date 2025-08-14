@@ -36,6 +36,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Social mixin](s/social-mixin/unreleased/index.md)
+- [Resources mixin](s/resources-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
@@ -53,6 +54,13 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Electronic distributions schema](s/edistributions/unreleased/index.md)
 
 ## Flexbile Low-complexity Annotation Technique (FLAT) schema components
+
+While these schemas typically provide the same concepts as their graph-oriented counterparts, they nevertheless differ substantially.
+Where the graph-oriented schemas aim for maximum expressiveness, these FLAT schemas aim for being maximally lean and orthogonal with respect to other FLAT schema components.
+This is achieved by reducing the included slots to bare necessities, and by avoiding class inheritance from other (even closely related) concepts.
+As a result, the FLAT schemas are most suitable for mix-and-match composition of schemas geared towards (meta)data submission systems and form generation.
+They minimizes the required cognitive complexity for providing complete records in a particular context, by avoiding the forced inclusion of meaningful, but undesired concepts and relationships.
+This simplification typically comes with the need to further subclass and extend these base concepts for any given application context.
 
 - [FLAT base schema](s/flat/unreleased/index.md)
 - [Social schema](s/flat-social/unreleased/index.md)
