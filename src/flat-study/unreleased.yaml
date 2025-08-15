@@ -76,7 +76,6 @@ classes:
       - name
     slot_usage:
       name:
-        recommended: true
         annotations:
           sh:order: 1
       description:
@@ -98,7 +97,6 @@ classes:
         described via `broader_mappings`.
     slot_usage:
       name:
-        recommended: true
         annotations:
           sh:order: 1
       part_of:
@@ -127,11 +125,9 @@ classes:
       - name
     slot_usage:
       name:
-        recommended: true
         annotations:
           sh:order: 1
       factors:
-        recommended: true
         range: Factor
         annotations:
           sh:order: 2
@@ -143,7 +139,6 @@ classes:
         range: Dimension
         comments:
           - Derived classes can specialize the range to the desired type.
-        recommended: true
         annotations:
           sh:order: 4
       description:
@@ -164,12 +159,10 @@ classes:
       - study
     slot_usage:
       study:
-        required: true
         range: Study
         annotations:
           sh:order: 1
       name:
-        recommended: true
         annotations:
           sh:order: 2
       is_a:
@@ -179,7 +172,6 @@ classes:
           For specimen (a subject derived/taken from another subject),
           this classifier should be more precise than the classifier
           of the source subject.
-        recommended: true
         annotations:
           sh:order: 3
       description:

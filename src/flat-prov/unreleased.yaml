@@ -78,7 +78,6 @@ classes:
       - obo:OBI_0000272
     slot_usage:
       name:
-        recommended: true
         annotations:
           sh:order: 1
       short_name:
