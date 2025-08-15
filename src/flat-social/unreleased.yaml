@@ -85,9 +85,6 @@ classes:
         annotations:
           sh:order: 2
       at_location:
-        range: Thing
-        comments:
-          - Derived classes can spezialize the range to the desired type.
         annotations:
           sh:order: 3
     exact_mappings:

@@ -23,7 +23,6 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
-  bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
@@ -113,15 +112,6 @@ slots:
       - sio:SIO_000426
     inverse: distributions
 
-  locator:
-    slot_uri: dlres:locator
-    description: >-
-      A descriptive identifier that locates a resource within a containing resource.
-      This can be a unique name, a numerical key, or another notation that uniquely
-      identifies the subject within the containing resource.
-    range: string
-    exact_mappings:
-      - bibo:locator
 
 classes:
   Resource:

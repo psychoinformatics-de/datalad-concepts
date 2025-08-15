@@ -14,29 +14,57 @@ comments:
 license: MIT
 
 prefixes:
+  bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
   dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlspatialmx
 
 emit_prefixes:
   - dlspatialmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
 
 slots:
   at_location:
     description: >-
       Associate the subject with a location. This can be a geographic place,
-      or a unique name, a numerical key, or another notation that uniquely
-      identifies the subject within a given context, such as a directory,
-      or a table, or the planet earth.
+      or another uniquely identified object.
+    range: Thing
+    notes:
+      - For specifying a context-specific location see `locator`.
     exact_mappings:
       - prov:atLocation
       - schema:location
     comments:
       - Does not define a range, because the desired type is highly use case specific.
+
+  locator:
+    description: >-
+      A descriptive identifier that locates a resource within a containing resource.
+      This can be a unique name, a numerical key, or another notation that uniquely
+      identifies the subject within the containing resource.
+    range: string
+    notes:
+      - For specifying a location via a globally unique identifier see `at_location`.
+    exact_mappings:
+      - bibo:locator
