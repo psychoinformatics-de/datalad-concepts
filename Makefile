@@ -16,6 +16,7 @@ all: build/mkdocs-site
 build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
 	build/linkml-docs/s/common-mixin/unreleased \
+	build/linkml-docs/s/relations-mixin/unreleased \
 	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
@@ -77,6 +78,7 @@ check: check-models check-validation
 check-models: \
 	checkmodel/types/unreleased \
 	checkmodel/common-mixin/unreleased \
+	checkmodel/relations-mixin/unreleased \
 	checkmodel/properties/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \

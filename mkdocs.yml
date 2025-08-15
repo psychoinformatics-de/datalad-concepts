@@ -10,6 +10,7 @@ nav:
       - Properties (dev): s/properties/unreleased/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
+      - Relations mixin (dev): s/relations-mixin/unreleased/index.md
       - Social mixin (dev): s/social-mixin/unreleased/index.md
       - Resources mixin (dev): s/resources-mixin/unreleased/index.md
       - Provenance mixin (dev): s/prov-mixin/unreleased/index.md
@@ -51,6 +52,7 @@ plugins:
           's/flat-prov/index.md': 's/flat-prov/unreleased/index.md'
           's/social-mixin/index.md': 's/social-mixin/unreleased/index.md'
           's/common-mixin/index.md': 's/common-mixin/unreleased/index.md'
+          's/relations-mixin/index.md': 's/relations-mixin/unreleased/index.md'
           's/resources-mixin/index.md': 's/resources-mixin/unreleased/index.md'
           's/prov-mixin/index.md': 's/prov-mixin/unreleased/index.md'
   - search
