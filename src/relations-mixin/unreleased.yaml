@@ -74,7 +74,7 @@ slots:
     exact_mappings:
       - dcterms:conformsTo
 
-  is_a:
+  kind:
     description: >-
       The nature of the subject.
     range: Thing
