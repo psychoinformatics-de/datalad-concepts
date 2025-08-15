@@ -1,0 +1,97 @@
+id: https://concepts.datalad.org/s/relations-mixin/unreleased
+name: relations-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of relations for use in schemas
+description: |
+  This schema mixin provides a collection of relations for use in other
+  schemas. It can be imported directly into other linkml schemas, or any of its
+  individual property definitions can be used by their URI as vocabulary
+  components or definitions (e.g., `dlprops-mixin:name` identified by this
+  [URI](`name`)).
+
+  Slot names use the plural form whenever they are directly declared as
+  "multivalued" in this schema, otherwise the singular form is used for
+  the slot name. The `slot_uri` always uses the singular form.
+
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlrelationsmx
+
+emit_prefixes:
+  - dlrelationsmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
+
+slots:
+  about:
+    description: >-
+      A relation of an information artifact to the subject, such as
+      a URL identifying the topic of a document.
+    range: Thing
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
+  conforms_to:
+    description: >-
+      An established standard to which the subject conforms.
+    range: Thing
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
+  part_of:
+    description: >-
+      The entity that the subject is a part of. A core relation that
+      holds between a part and its whole.
+    exact_mappings:
+      - obo:BFO_0000050
+      - dcterms:isPartOf
+      - schema:isPartOf
+    range: Thing
+
+  same_as:
+    description: >-
+      Declares that the subject and an object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subject's identity. For example, the URL of the subject's
+      Wikipedia page, Wikidata entry, or official website.
+    range: Thing
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs

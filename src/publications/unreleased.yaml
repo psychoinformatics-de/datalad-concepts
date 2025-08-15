@@ -8,7 +8,6 @@ description: |
   This schema also incorporates the schemas
 
   - [`identifiers`](https://concepts.datalad.org/s/identifiers/unreleased)
-  - [`properties`](https://concepts.datalad.org/s/properties/unreleased)
   - [`temporal`](https://concepts.datalad.org/s/temporal/unreleased)
   - [`prov`](https://concepts.datalad.org/s/prov/unreleased)
 
@@ -26,7 +25,6 @@ license: MIT
 
 prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlprops: https://concepts.datalad.org/s/properties/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
   dlpubs: https://concepts.datalad.org/s/publications/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
@@ -52,7 +50,6 @@ default_prefix: dlpubs
 
 emit_prefixes:
   - dlidentifiers
-  - dlprops
   - dlprov
   - dlpubs
   - dlres

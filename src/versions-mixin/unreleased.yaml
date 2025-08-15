@@ -1,0 +1,76 @@
+id: https://concepts.datalad.org/s/versions-mixin/unreleased
+name: versions-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of versioning-related properties
+description: |
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcat: http://www.w3.org/ns/dcat#
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dlversionsmx: https://concepts.datalad.org/s/versions-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  pav: http://purl.org/pav/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlversionsmx
+
+emit_prefixes:
+  - dlthings
+  - dltypes
+  - dlversionsmx
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
+
+slots:
+  previous_version:
+    description: >-
+      The previous version of the subject in a lineage.
+    range: Thing
+    exact_mappings:
+      - dcat:previousVersion
+      - pav:previousVersion
+
+  version_label:
+    description: >-
+      Version indicator (name or identifier) of the subject.
+    range: string
+    exact_mappings:
+      - dcat:version
+      - pav:version
+    close_mappings:
+      - schema:version
+
+  version_notes:
+    description: >-
+      A description of changes between this version and the previous version
+      of the subject.
+    range: string
+    multivalued: true
+    exact_mappings:
+      - ADMS:versionNotes
+    close_mappings:
+      - schema:releaseNotes

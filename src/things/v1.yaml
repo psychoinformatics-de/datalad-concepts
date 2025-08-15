@@ -83,6 +83,7 @@ prefixes:
   sio: http://semanticscience.org/resource/
   # foundational
   skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
   # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
   # The prefix can be materialized ala

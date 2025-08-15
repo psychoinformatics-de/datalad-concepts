@@ -16,7 +16,7 @@ all: build/mkdocs-site
 build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
 	build/linkml-docs/s/common-mixin/unreleased \
-	build/linkml-docs/s/properties/unreleased \
+	build/linkml-docs/s/relations-mixin/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
@@ -24,9 +24,13 @@ build/linkml-docs: \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
+	build/linkml-docs/s/prov-mixin/unreleased \
 	build/linkml-docs/s/prov/unreleased \
+	build/linkml-docs/s/flat-prov/unreleased \
 	build/linkml-docs/s/publications/unreleased \
+	build/linkml-docs/s/resources-mixin/unreleased \
 	build/linkml-docs/s/resources/unreleased \
+	build/linkml-docs/s/flat-resources/unreleased \
 	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/flat-social/unreleased \
 	build/linkml-docs/s/social/unreleased \
@@ -74,7 +78,7 @@ check: check-models check-validation
 check-models: \
 	checkmodel/types/unreleased \
 	checkmodel/common-mixin/unreleased \
-	checkmodel/properties/unreleased \
+	checkmodel/relations-mixin/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/flat/unreleased \
@@ -82,9 +86,13 @@ check-models: \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/spatial/unreleased \
 	checkmodel/temporal/unreleased \
+	checkmodel/prov-mixin/unreleased \
 	checkmodel/prov/unreleased \
+	checkmodel/flat-prov/unreleased \
 	checkmodel/publications/unreleased \
+	checkmodel/resources-mixin/unreleased \
 	checkmodel/resources/unreleased \
+	checkmodel/flat-resources/unreleased \
 	checkmodel/social-mixin/unreleased \
 	checkmodel/flat-social/unreleased \
 	checkmodel/social/unreleased \
@@ -134,10 +142,14 @@ check-validation: \
 	checkvalidation/temporal/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
+	convertexamples/flat-prov/unreleased \
+	checkvalidation/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
 	checkvalidation/publications/unreleased \
 	convertexamples/resources/unreleased \
 	checkvalidation/resources/unreleased \
+	convertexamples/flat-resources/unreleased \
+	checkvalidation/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
 	checkvalidation/flat-social/unreleased \
 	convertexamples/social/unreleased \
@@ -147,14 +159,14 @@ check-validation: \
 	convertexamples/edistributions/unreleased \
 	checkvalidation/edistributions/unreleased
 checkvalidation/%:
-	$(MAKE) checkvalid/$* #checkinvalid/$*
+	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
-	@for ex in $</*.valid.cfg.yaml; do \
+	@for ex in $(wildcard $</*.valid.cfg.yaml); do \
 		echo "Validate $$ex" ; \
 		linkml-validate --config "$$ex" || exit 5 ; \
 	done
 checkinvalid/%: src/%/validation src/%.yaml
-	@for ex in $</*.invalid.cfg.yaml; do \
+	@for ex in $(wildcard $</*.invalid.cfg.yaml); do \
 		echo "(In)validate $$ex" ; \
 		linkml-validate --config "$$ex" && exit 5 || true; \
 	done
@@ -167,8 +179,10 @@ convert-examples: \
 	convertexamples/spatial/unreleased \
 	convertexamples/temporal/unreleased \
 	convertexamples/prov/unreleased \
+	convertexamples/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
 	convertexamples/resources/unreleased \
+	convertexamples/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
 	convertexamples/social/unreleased \
 	convertexamples/identifiers/unreleased \

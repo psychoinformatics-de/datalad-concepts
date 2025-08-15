@@ -25,11 +25,12 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   bibo: http://purl.org/ontology/bibo/
   dcat: http://www.w3.org/ns/dcat#
-  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlprops: https://concepts.datalad.org/s/properties/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlres: https://concepts.datalad.org/s/resources/unreleased/
+  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
@@ -52,15 +53,17 @@ default_prefix: dlres
 
 emit_prefixes:
   - dlidentifiers
-  - dlprops
   - dlcommonmx
   - dlprov
+  - dlrelationsmx
   - dlres
+  - dlresmx
   - dlroles
   - dlspatial
   - dltemporal
   - dlthings
   - dltypes
+  - dlversionsmx
   - geo
   - marcrel
   - rdf
@@ -70,8 +73,10 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:properties/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
+  - dlschemas:resources-mixin/unreleased
+  - dlschemas:versions-mixin/unreleased
   - dlschemas:prov/unreleased
   - dlschemas:temporal/unreleased
 
@@ -118,43 +123,6 @@ slots:
     exact_mappings:
       - bibo:locator
 
-  previous_version:
-    slot_uri: dlres:previous_version
-    description: >-
-      The previous version of the subject in a lineage.
-    exact_mappings:
-      - dcat:previousVersion
-      - pav:previousVersion
-
-  sponsor:
-    slot_uri: dlres:sponsor
-    description: >-
-      An agent that supports a thing through a pledge, promise,
-      or financial contribution.
-    range: Agent
-    exact_mappings:
-      - schema:sponsor
-
-  version_label:
-    slot_uri: dlres:version_label
-    description: >-
-      Version indicator (name or identifier) of the subject.
-    range: string
-    exact_mappings:
-      - dcat:version
-      - pav:version
-
-  version_notes:
-    slot_uri: dlres:version_notes
-    description: >-
-      A description of changes between this version and the previous version
-      of the subject.
-    range: string
-    multivalued: true
-    exact_mappings:
-      - ADMS:versionNotes
-
-
 classes:
   Resource:
     class_uri: dlres:Resource
@@ -178,6 +146,8 @@ classes:
       # TODO add example on how to annotate the relation to a contact point
       # - contact_point
     slot_usage:
+      about:
+        multivalued: true
       previous_version:
         range: Resource
     narrow_mappings:
@@ -200,6 +170,7 @@ classes:
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and serializations.
     disjoint_with:
+      - Distribution
       - Document
       - Grant
       - Instrument
@@ -215,6 +186,11 @@ classes:
       A specific representation of a resource, which may come in the form of
       a physical object, or an electronic file, or an archive or directory
       of many files, may be standalone or part of a larger collection.
+    disjoint_with:
+      - Dataset
+      - Document
+      - Grant
+      - Instrument
     notes:
       - A `Distribution` is derived from `Resource`, following the logic
         that it is a materialized/specialized variant of a particular
@@ -243,6 +219,7 @@ classes:
       - distributions
     disjoint_with:
       - Dataset
+      - Distribution
       - Grant
       - Instrument
     notes:
@@ -259,6 +236,7 @@ classes:
       - sponsor
     disjoint_with:
       - Dataset
+      - Distribution
       - Document
       - Instrument
     notes:
@@ -303,6 +281,7 @@ classes:
       An instrument is typically not a "reagent".
     disjoint_with:
       - Dataset
+      - Distribution
       - Document
       - Grant
     related_mappings:
