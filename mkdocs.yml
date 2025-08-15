@@ -16,6 +16,7 @@ nav:
       - Versions mixin (dev): s/versions-mixin/unreleased/index.md
       - Study mixin (dev): s/study-mixin/unreleased/index.md
       - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
+      - Files mixin (dev): s/files-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md
@@ -31,6 +32,7 @@ nav:
       - FLAT provenance (dev): s/flat-prov/unreleased/index.md
       - FLAT resources (dev): s/flat-resources/unreleased/index.md
       - FLAT study (dev): s/flat-study/unreleased/index.md
+      - FLAT files (dev): s/flat-files/unreleased/index.md
   - Dump-Things storage: dump-things.md
 plugins:
   - mermaid2
@@ -63,6 +65,8 @@ plugins:
           's/study-mixin/index.md': 's/study-mixin/unreleased/index.md'
           's/flat-study/index.md': 's/flat-study/unreleased/index.md'
           's/quantities-mixin/index.md': 's/quantities-mixin/unreleased/index.md'
+          's/files-mixin/index.md': 's/files-mixin/unreleased/index.md'
+          's/flat-files/index.md': 's/flat-files/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:

@@ -1,0 +1,85 @@
+id: https://concepts.datalad.org/s/files-mixin/unreleased
+name: files-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of file-related properties
+description: |
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlfilesmx
+
+emit_prefixes:
+  - dlfilesmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
+
+slots:
+  byte_size:
+    description: >-
+      The size of the subject in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
+  distribution_of:
+    description: >-
+      The resource that the subject is a distribution of.
+    range: Thing
+    broad_mappings:
+      - sio:SIO_000426
+
+  format:
+    description: >-
+      The file format of a distribution.
+    range: Thing
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  media_type:
+    description: >-
+      The media type of a distribution as defined by IANA
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
