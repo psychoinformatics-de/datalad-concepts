@@ -38,6 +38,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Social mixin](s/social-mixin/unreleased/index.md)
 - [Resources mixin](s/resources-mixin/unreleased/index.md)
 - [Provenance mixin](s/prov-mixin/unreleased/index.md)
+- [Versions mixin](s/versions-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
