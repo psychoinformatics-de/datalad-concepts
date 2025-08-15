@@ -40,6 +40,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Provenance mixin](s/prov-mixin/unreleased/index.md)
 - [Versions mixin](s/versions-mixin/unreleased/index.md)
 - [Study mixin](s/study-mixin/unreleased/index.md)
+- [Quantities mixin](s/quantities-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
