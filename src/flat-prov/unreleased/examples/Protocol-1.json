@@ -1,0 +1,7 @@
+{
+  "pid": "http://purl.obolibrary.org/obo/MAXO_0000925",
+  "schema_type": "dlflatprov:Protocol",
+  "name": "activity (tone), pulse, grimace, appearance, respiration",
+  "short_name": "APGAR",
+  "@type": "Protocol"
+}

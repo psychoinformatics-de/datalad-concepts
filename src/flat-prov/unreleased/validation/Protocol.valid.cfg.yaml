@@ -1,0 +1,9 @@
+schema: src/flat-prov/unreleased.yaml
+target_class: Protocol
+data_sources:
+  - src/flat-prov/unreleased/examples/Protocol-1.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
