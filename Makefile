@@ -23,6 +23,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
+	build/linkml-docs/s/temporal-mixin/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov-mixin/unreleased \
 	build/linkml-docs/s/prov/unreleased \
@@ -88,6 +89,7 @@ check-models: \
 	checkmodel/roles/unreleased \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/spatial/unreleased \
+	checkmodel/temporal-mixin/unreleased \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov-mixin/unreleased \
 	checkmodel/prov/unreleased \

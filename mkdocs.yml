@@ -17,6 +17,7 @@ nav:
       - Study mixin (dev): s/study-mixin/unreleased/index.md
       - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
       - Files mixin (dev): s/files-mixin/unreleased/index.md
+      - Temporal mixin (dev): s/temporal-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md
@@ -47,6 +48,7 @@ plugins:
           's/roles/index.md': 's/roles/unreleased/index.md'
           's/spatial/index.md': 's/spatial/unreleased/index.md'
           's/temporal/index.md': 's/temporal/unreleased/index.md'
+          's/temporal-mixin/index.md': 's/temporal-mixin/unreleased/index.md'
           's/prov/index.md': 's/prov/unreleased/index.md'
           's/social/index.md': 's/social/unreleased/index.md'
           's/resources/index.md': 's/resources/unreleased/index.md'
