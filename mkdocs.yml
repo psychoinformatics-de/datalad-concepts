@@ -18,6 +18,7 @@ nav:
       - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
       - Files mixin (dev): s/files-mixin/unreleased/index.md
       - Temporal mixin (dev): s/temporal-mixin/unreleased/index.md
+      - Publications mixin (dev): s/publications-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md
@@ -34,6 +35,7 @@ nav:
       - FLAT resources (dev): s/flat-resources/unreleased/index.md
       - FLAT study (dev): s/flat-study/unreleased/index.md
       - FLAT files (dev): s/flat-files/unreleased/index.md
+      - FLAT publications (dev): s/flat-publications/unreleased/index.md
   - Dump-Things storage: dump-things.md
 plugins:
   - mermaid2
@@ -53,7 +55,9 @@ plugins:
           's/social/index.md': 's/social/unreleased/index.md'
           's/resources/index.md': 's/resources/unreleased/index.md'
           's/flat-resources/index.md': 's/flat-resources/unreleased/index.md'
+          's/publications-mixin/index.md': 's/publications-mixin/unreleased/index.md'
           's/publications/index.md': 's/publications/unreleased/index.md'
+          's/flat-publications/index.md': 's/flat-publications/unreleased/index.md'
           's/edistributions/index.md': 's/edistributions/unreleased/index.md'
           's/flat/index.md': 's/flat/unreleased/index.md'
           's/flat-social/index.md': 's/flat-social/unreleased/index.md'

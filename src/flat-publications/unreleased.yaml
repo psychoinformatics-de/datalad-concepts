@@ -1,0 +1,113 @@
+id: https://concepts.datalad.org/s/flat-publications
+name: flat-publications-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: FLAT publicationsenance schema
+description: |
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatpublications: https://concepts.datalad.org/s/flat-publications/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlpublicationsmx: https://concepts.datalad.org/s/publications-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlflatpublications
+
+emit_prefixes:
+  - dlflat
+  - dlflatpublications
+  - dlidentifiers
+  - dlcommonmx
+  - dlpublicationsmx
+  - dlspatialmx
+  - dltemporalmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:flat/unreleased
+  - dlschemas:common-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
+  - dlschemas:temporal-mixin/unreleased
+  - dlschemas:spatial-mixin/unreleased
+  - dlschemas:publications-mixin/unreleased
+
+classes:
+  Publication:
+    is_a: FlatThing
+    description: >-
+      A resource that is the output of a publishing process.
+    slots:
+      - about
+      - authors
+      - date_published
+      - kind
+      - locator
+      - title
+      - published_at
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:order: 1
+      authors:
+        annotations:
+          sh:order: 2
+      published_at:
+        annotations:
+          sh:order: 3
+      locator:
+        description: >-
+          A descriptive identifier that locates the publication within
+          the publication venue. This can be a unique name,
+          a numerical key, or another notation that uniquely
+          identifies the subject within that context.
+        annotations:
+          sh:order: 4
+      kind:
+        annotations:
+          sh:order: 5
+      about:
+        multivalued: true
+        annotations:
+          sh:order: 6
+      date_published:
+        annotations:
+          sh:order: 7
+    exact_mappings:
+      - obo:IAO_0000311
