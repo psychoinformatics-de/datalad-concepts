@@ -41,6 +41,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/flat-study/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/quantities-mixin/unreleased \
+	build/linkml-docs/s/versions-mixin/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
@@ -109,6 +110,7 @@ check-models: \
 	checkmodel/flat-study/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/quantities-mixin/unreleased \
+	checkmodel/versions-mixin/unreleased \
 	checkmodel/edistributions/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
