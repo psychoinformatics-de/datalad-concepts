@@ -58,11 +58,6 @@ slots:
       Factors that influence the subject matter.
     multivalued: true
 
-  factor_level_of:
-    title: Level of
-    description: >-
-      A factor the subject is a (sub)level of.
-
   instruments:
     title: Used instruments
     description: >-
