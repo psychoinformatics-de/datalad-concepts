@@ -79,7 +79,7 @@ classes:
     slots:
       - derived_from
       - generated_by
-      - is_a
+      - kind
       - part_of
       - quantity_unit
       - quantity_value
@@ -111,7 +111,7 @@ classes:
       quantity_unit:
         annotations:
           sh:order: 6
-      is_a:
+      kind:
         annotations:
           sh:order: 7
     exact_mappings:
@@ -223,7 +223,7 @@ classes:
       subjects in two different studies.
     slots:
       - derived_from
-      - is_a
+      - kind
       - name
       - study
     slot_usage:
@@ -234,7 +234,7 @@ classes:
       name:
         annotations:
           sh:order: 2
-      is_a:
+      kind:
         title: Type
         description: >-
           A classifier that identifies the nature/type of a subject.
