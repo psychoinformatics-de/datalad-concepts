@@ -61,6 +61,15 @@ slots:
       - obo:IAO_0000590
     range: string
 
+  part_of:
+    description: >-
+      The entity that the subject is a part of. A core relation that
+      holds between a part and its whole.
+    exact_mappings:
+      - obo:BFO_0000050
+      - dcterms:isPartOf
+    range: Thing
+
   short_name:
     is_a: name
     description: >-
