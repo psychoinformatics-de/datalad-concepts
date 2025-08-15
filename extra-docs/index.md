@@ -67,6 +67,7 @@ This simplification typically comes with the need to further subclass and extend
 - [FLAT base schema](s/flat/unreleased/index.md)
 - [Social schema](s/flat-social/unreleased/index.md)
 - [Provenance schema](s/flat-prov/unreleased/index.md)
+- [Resources schema](s/flat-resources/unreleased/index.md)
 
 ## Related tools and specifications
 

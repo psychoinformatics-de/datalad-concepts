@@ -1,0 +1,10 @@
+schema: src/flat-social/unreleased.yaml
+target_class: Person
+data_sources:
+  - src/flat-social/unreleased/examples/Person-01-minimal.yaml
+  - src/flat-social/unreleased/examples/Person-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

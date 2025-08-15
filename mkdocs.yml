@@ -27,6 +27,7 @@ nav:
       - FLAT (dev): s/flat/unreleased/index.md
       - FLAT social (dev): s/flat-social/unreleased/index.md
       - FLAT provenance (dev): s/flat-prov/unreleased/index.md
+      - FLAT resources (dev): s/flat-resources/unreleased/index.md
   - Dump-Things storage: dump-things.md
 plugins:
   - mermaid2
@@ -45,6 +46,7 @@ plugins:
           's/prov/index.md': 's/prov/unreleased/index.md'
           's/social/index.md': 's/social/unreleased/index.md'
           's/resources/index.md': 's/resources/unreleased/index.md'
+          's/flat-resources/index.md': 's/flat-resources/unreleased/index.md'
           's/publications/index.md': 's/publications/unreleased/index.md'
           's/edistributions/index.md': 's/edistributions/unreleased/index.md'
           's/flat/index.md': 's/flat/unreleased/index.md'
