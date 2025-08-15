@@ -1,0 +1,275 @@
+id: https://concepts.datalad.org/s/neurobagel/unreleased
+name: neurobagel-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Implementation of the NeuroBagel graph data schema
+description: |
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
+  linkml: https://w3id.org/linkml/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  # from neurobagel
+  cogatlas: https://www.cognitiveatlas.org/task/id/
+  nb: http://neurobagel.org/vocab/
+  ncit: http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#
+  nidm: http://purl.org/nidash/nidm#
+  snomed: http://purl.bioontology.org/ontology/SNOMEDCT/
+  np: https://github.com/nipoppy/pipeline-catalog/tree/main/processing/
+
+
+default_prefix: nb
+
+imports:
+  - linkml:types
+
+types:
+
+
+slots:
+  identifier:
+    description: >-
+      TODO
+    range: uriorcurie
+    identifier: true
+
+  schemaKey: 
+    description: >-
+      TODO
+    designates_type: true
+    range: string
+
+  hasContrastType:
+    description: >-
+      TODO
+    range: Image
+    inlined: true
+
+  hasPipelineVersion:
+    description: >-
+      TODO
+    range: string
+
+  hasPipelineName:
+    description: >-
+      TODO
+    range: Pipeline
+    inlined: true
+
+  hasLabel:
+    description: >-
+      TODO
+    range: string
+
+  hasAge:
+    description: >-
+      TODO
+    range: float
+
+  hasSex:
+    description: >-
+      TODO
+    range: Sex
+    inlined: true
+
+  isSubjectGroup:
+    description: >-
+      TODO
+    range: SubjectGroup
+    inlined: true
+
+  hasDiagnosis:
+    description: >-
+      TODO
+    range: Diagnosis
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  hasAssessment:
+    description: >-
+      TODO
+    range: Assessment
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  hasFilePath:
+    description: >-
+      TODO
+    range: string
+
+  hasAcquisition:
+    description: >-
+      TODO
+    range: Acquisition
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  hasCompletedPipeline:
+    description: >-
+      TODO
+    range: CompletedPipeline
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  hasSession:
+    description: >-
+      TODO
+    range: Session
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+  hasPortalURI:
+    description: >-
+      TODO
+    range: uri
+
+  hasSamples:
+    description: >-
+      TODO
+    range: Subject
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+
+
+classes:
+  Bagel:
+    description: >-
+      TODO
+    slots:
+      - identifier
+      - schemaKey
+
+  ControlledTerm:
+    is_a: Bagel
+    description: >-
+      TODO
+
+  Sex:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  Diagnosis:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  SubjectGroup:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  Assessment:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  Image:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  Acquisition:
+    is_a: Bagel
+    description: >-
+      TODO
+    slots:
+      - hasContrastType
+    slot_usage:
+      hasContrastType:
+        required: true
+
+  Pipeline:
+    is_a: ControlledTerm
+    description: >-
+      TODO
+
+  CompletedPipeline:
+    is_a: Bagel
+    description: >-
+      TODO
+    slots:
+      - hasPipelineVersion
+      - hasPipelineName
+    slot_usage:
+      hasPipelineVersion:
+        required: true
+      hasPipelineName:
+        required: true
+
+  Session:
+    is_a: Bagel
+    description: >-
+      TODO
+    slots:
+      - hasLabel
+    slot_usage:
+      hasLabel:
+        required: true
+
+  PhenotypicSession:
+    is_a: Session
+    description: >-
+      TODO
+    slots:
+      - hasAge
+      - hasSex
+      - isSubjectGroup
+      - hasDiagnosis
+      - hasAssessment
+
+  ImagingSession:
+    is_a: Session
+    description: >-
+      TODO
+    slots:
+      - hasFilePath
+      - hasAcquisition
+      - hasCompletedPipeline
+
+  Subject:
+    is_a: Bagel
+    description: >-
+      TODO
+    slots:
+      - hasLabel
+      - hasSession
+    slot_usage:
+      hasLabel:
+        required: true
+
+  Dataset:
+    is_a: Bagel
+    description: >-
+      TODO
+    slots:
+      - hasLabel
+      - hasPortalURI
+      - hasSamples
+    slot_usage:
+      hasLabel:
+        required: true
+      hasSamples:
+        required: true
