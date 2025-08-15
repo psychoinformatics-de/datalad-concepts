@@ -77,17 +77,6 @@ slots:
       - schema:about
       - obo:IAO_0000136
 
-  keywords:
-    slot_uri: dlprops:keyword
-    description: >-
-      One or more keywords or tags describing the subject.
-    range: string
-    multivalued: true
-    exact_mappings:
-      - dcat:keyword
-      - schema:keywords
-      - obo:IAO_0000629
-
   same_as:
     slot_uri: dlprops:same_as
     description: >-
