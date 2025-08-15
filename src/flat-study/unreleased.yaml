@@ -74,13 +74,18 @@ classes:
       A dependent or outcome variable.
     slots:
       - name
+      - part_of
     slot_usage:
       name:
         annotations:
           sh:order: 1
-      description:
+      part_of:
+        range: Dimension
         annotations:
           sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
           dash:singleLine: false
 
   Factor:
