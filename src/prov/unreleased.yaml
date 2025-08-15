@@ -57,6 +57,7 @@ license: MIT
 prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
@@ -86,6 +87,7 @@ default_prefix: dlprov
 emit_prefixes:
   - dlidentifiers
   - dlprov
+  - dlprovmx
   - dlroles
   - dlspatial
   - dlspatialmx
@@ -103,6 +105,7 @@ emit_prefixes:
 imports:
   - dlschemas:things/v1
   - dlschemas:identifiers/unreleased
+  - dlschemas:prov-mixin/unreleased
   - dlschemas:roles/unreleased
   - dlschemas:spatial-mixin/unreleased
   - dlschemas:spatial/unreleased
@@ -142,32 +145,6 @@ slots:
       Attribution is the ascribing of an entity to an agent.
     domain: Entity
     range: Agent
-    inlined: false
-    multivalued: true
-    exact_mappings:
-      - prov:wasAttributedTo
-
-  derived_from:
-    slot_uri: dlprov:derived_from
-    description: >-
-      Derivation is a transformation of an entity into another,
-      an update of an entity resulting in a new one, or the
-      construction of a new entity based on a pre-existing entity.
-    domain: Entity
-    range: Entity
-    inlined: false
-    multivalued: true
-    exact_mappings:
-      - prov:wasDerivedFrom
-
-  generated_by:
-    slot_uri: dlprov:generated_by
-    description: >-
-      Generation is the completion of production of a new entity by an activity.
-      This entity did not exist before generation and becomes available for usage
-      after this generation.
-    domain: Entity
-    range: Activity
     inlined: false
     multivalued: true
     exact_mappings:
@@ -262,6 +239,15 @@ classes:
       - attributed_to
       - derived_from
       - generated_by
+    slot_usage:
+      derived_from:
+        range: Entity
+        inlined: false
+        multivalued: true
+      generated_by:
+        range: Activity
+        inlined: false
+        multivalued: true
     exact_mappings:
       - prov:Entity
 
