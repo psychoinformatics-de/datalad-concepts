@@ -46,8 +46,14 @@ imports:
   - dlschemas:things/v1
 
 slots:
-  unit:
+  quantity_unit:
     title: Unit
     description: >-
       Unit of the quantitative value associated with the subject.
     range: Thing
+
+  quantity_value:
+    title: Value
+    description: >-
+      Quantitative value associated with the subject.
+    range: float
