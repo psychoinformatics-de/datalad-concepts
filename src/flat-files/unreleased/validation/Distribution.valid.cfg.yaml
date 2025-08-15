@@ -1,0 +1,9 @@
+schema: src/flat-files/unreleased.yaml
+target_class: Distribution
+data_sources:
+  - src/flat-files/unreleased/examples/Distribution-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
