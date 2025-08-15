@@ -27,8 +27,8 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlprops: https://concepts.datalad.org/s/properties/unreleased/
   dlprov: https://concepts.datalad.org/s/prov/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlres: https://concepts.datalad.org/s/resources/unreleased/
   dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
@@ -53,9 +53,9 @@ default_prefix: dlres
 
 emit_prefixes:
   - dlidentifiers
-  - dlprops
   - dlcommonmx
   - dlprov
+  - dlrelationsmx
   - dlres
   - dlresmx
   - dlroles
@@ -72,8 +72,8 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:properties/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
   - dlschemas:resources-mixin/unreleased
   - dlschemas:prov/unreleased
   - dlschemas:temporal/unreleased
@@ -172,6 +172,8 @@ classes:
       # TODO add example on how to annotate the relation to a contact point
       # - contact_point
     slot_usage:
+      about:
+        multivalued: true
       previous_version:
         range: Resource
     narrow_mappings:

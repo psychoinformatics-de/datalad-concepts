@@ -17,7 +17,6 @@ build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
 	build/linkml-docs/s/common-mixin/unreleased \
 	build/linkml-docs/s/relations-mixin/unreleased \
-	build/linkml-docs/s/properties/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
@@ -80,7 +79,6 @@ check-models: \
 	checkmodel/types/unreleased \
 	checkmodel/common-mixin/unreleased \
 	checkmodel/relations-mixin/unreleased \
-	checkmodel/properties/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/flat/unreleased \
