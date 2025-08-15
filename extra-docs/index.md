@@ -39,6 +39,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Resources mixin](s/resources-mixin/unreleased/index.md)
 - [Provenance mixin](s/prov-mixin/unreleased/index.md)
 - [Versions mixin](s/versions-mixin/unreleased/index.md)
+- [Study mixin](s/study-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
@@ -68,6 +69,7 @@ This simplification typically comes with the need to further subclass and extend
 - [Social schema](s/flat-social/unreleased/index.md)
 - [Provenance schema](s/flat-prov/unreleased/index.md)
 - [Resources schema](s/flat-resources/unreleased/index.md)
+- [Study schema](s/flat-study/unreleased/index.md)
 
 ## Related tools and specifications
 

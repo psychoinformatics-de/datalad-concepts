@@ -34,6 +34,8 @@ build/linkml-docs: \
 	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/flat-social/unreleased \
 	build/linkml-docs/s/social/unreleased \
+	build/linkml-docs/s/study-mixin/unreleased \
+	build/linkml-docs/s/flat-study/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
@@ -96,6 +98,8 @@ check-models: \
 	checkmodel/social-mixin/unreleased \
 	checkmodel/flat-social/unreleased \
 	checkmodel/social/unreleased \
+	checkmodel/study-mixin/unreleased \
+	checkmodel/flat-study/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/edistributions/unreleased
 checkmodel/%: src/%.yaml
@@ -154,6 +158,8 @@ check-validation: \
 	checkvalidation/flat-social/unreleased \
 	convertexamples/social/unreleased \
 	checkvalidation/social/unreleased \
+	convertexamples/flat-study/unreleased \
+	checkvalidation/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
 	checkvalidation/identifiers/unreleased \
 	convertexamples/edistributions/unreleased \
@@ -185,6 +191,7 @@ convert-examples: \
 	convertexamples/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
 	convertexamples/social/unreleased \
+	convertexamples/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/edistributions/unreleased
 convertexamples/%: src/%.yaml src/%/examples
