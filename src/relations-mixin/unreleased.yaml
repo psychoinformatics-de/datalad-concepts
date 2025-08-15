@@ -74,6 +74,13 @@ slots:
     exact_mappings:
       - dcterms:conformsTo
 
+  is_a:
+    description: >-
+      The nature of the subject.
+    range: Thing
+    exact_mappings:
+      - dcterms:type
+
   part_of:
     description: >-
       The entity that the subject is a part of. A core relation that

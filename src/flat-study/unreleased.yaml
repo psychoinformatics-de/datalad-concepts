@@ -158,10 +158,10 @@ classes:
       contextual entity. One and the same entity can be different
       subjects in two different studies.
     slots:
+      - derived_from
+      - is_a
       - name
       - study
-      - subject_type
-      - derived_from
     slot_usage:
       study:
         required: true
@@ -172,9 +172,14 @@ classes:
         recommended: true
         annotations:
           sh:order: 2
-      subject_type:
+      is_a:
+        title: Type
+        description: >-
+          A classifier that identifies the nature/type of a subject.
+          For specimen (a subject derived/taken from another subject),
+          this classifier should be more precise than the classifier
+          of the source subject.
         recommended: true
-        range: SubjectType
         annotations:
           sh:order: 3
       description:
@@ -185,19 +190,3 @@ classes:
         range: Subject
         annotations:
           sh:order: 5
-
-  SubjectType:
-    is_a: FlatThing
-    description: >-
-      Classifier for the nature of a subject.
-    slots:
-      - name
-    slot_usage:
-      name:
-        recommended: true
-        annotations:
-          sh:order: 1
-      description:
-        annotations:
-          sh:order: 2
-          dash:singleLine: false

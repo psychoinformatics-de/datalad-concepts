@@ -69,11 +69,3 @@ slots:
     title: Study context
     description: >-
       The study in which the subject took place or existed.
-
-  subject_type:
-    title: Type
-    description: >-
-      A classifier that identifies the nature/type of a subject.
-      For specimen (a subject derived/taken from another subject),
-      this classifier should be more precise than the classifier
-      of the source subject.
