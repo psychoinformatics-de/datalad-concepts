@@ -7,7 +7,6 @@ nav:
     - Foundational:
       - Things: s/things/v1/index.md
       - Types (dev): s/types/unreleased/index.md
-      - Properties (dev): s/properties/unreleased/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
       - Relations mixin (dev): s/relations-mixin/unreleased/index.md
@@ -38,7 +37,6 @@ plugins:
           # map unversioned URLs to the latest version
           's/things/index.md': 's/things/v1/index.md'
           's/types/index.md': 's/types/unreleased/index.md'
-          's/properties/index.md': 's/properties/unreleased/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/roles/index.md': 's/roles/unreleased/index.md'
           's/spatial/index.md': 's/spatial/unreleased/index.md'

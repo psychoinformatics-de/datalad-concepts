@@ -34,6 +34,7 @@ prefixes:
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
@@ -55,6 +56,24 @@ imports:
   - dlschemas:things/v1
 
 slots:
+  about:
+    description: >-
+      A relation of an information artifact to the subject, such as
+      a URL identifying the topic of a document.
+    range: Thing
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
+  conforms_to:
+    description: >-
+      An established standard to which the subject conforms.
+    range: Thing
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
   part_of:
     description: >-
       The entity that the subject is a part of. A core relation that
@@ -64,3 +83,15 @@ slots:
       - dcterms:isPartOf
       - schema:isPartOf
     range: Thing
+
+  same_as:
+    description: >-
+      Declares that the subject and an object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subject's identity. For example, the URL of the subject's
+      Wikipedia page, Wikidata entry, or official website.
+    range: Thing
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs

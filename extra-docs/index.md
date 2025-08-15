@@ -32,7 +32,6 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Things schema](s/things/unreleased/index.md)
 - [Types schema](s/types/unreleased/index.md)
-- [Properties schema](s/properties/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Relations mixin](s/relations-mixin/unreleased/index.md)
