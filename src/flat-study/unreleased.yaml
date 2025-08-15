@@ -66,8 +66,65 @@ imports:
   - dlschemas:study-mixin/unreleased
   - dlschemas:prov-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
+  - dlschemas:quantities-mixin/unreleased
 
 classes:
+  Assessment:
+    is_a: FlatThing
+    description: >-
+      The final result of a determination of the value of something.
+      This is a conceptual entity. A assessment outcome might be
+      available in more than one representation, with differing
+      formats, and serializations.
+    slots:
+      - derived_from
+      - generated_by
+      - is_a
+      - part_of
+      - quantity_unit
+      - quantity_value
+      - same_as
+    slot_usage:
+      part_of:
+        range: Thing
+        annotations:
+          sh:order: 1
+      generated_by:
+        annotations:
+          sh:order: 2
+      derived_from:
+        range: Subject
+        annotations:
+          sh:order: 3
+      same_as:
+        title: Qualitative value
+        description: >-
+          The value of a qualitative assessment.
+        annotations:
+          sh:order: 4
+      quantity_value:
+        title: Quantitative value
+        description: >-
+          The value of a quantitative assessment.
+        annotations:
+          sh:order: 5
+      quantity_unit:
+        annotations:
+          sh:order: 6
+      is_a:
+        annotations:
+          sh:order: 7
+    exact_mappings:
+      - obo:NCIT_C25217
+    comments:
+      - The class enables the expressing quantitative and qualitative
+        assessments. For a quantitative value, the numerical value,
+        and a possible unit is given. For a qualitative value, `same_as`
+        is used to identify the quality of the assessment from a
+        controlled vocabulary or standard term. Both approaches can be
+        combined, for example when classifying numerical values into
+        qualitative/ordinal categories.
+
   Dimension:
     is_a: FlatThing
     description: >-

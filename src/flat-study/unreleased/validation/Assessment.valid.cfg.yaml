@@ -1,0 +1,9 @@
+schema: src/flat-study/unreleased.yaml
+target_class: Assessment
+data_sources:
+  - src/flat-study/unreleased/examples/Assessment-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
