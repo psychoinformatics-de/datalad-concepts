@@ -1,0 +1,168 @@
+id: https://concepts.datalad.org/s/flat-resources
+name: flat-resources-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: FLAT resources schema
+description: |
+  FLAT stands for Flexbile Low-complexity Annotation Technique.
+  The FLAT-resources schema contains classes to describe resources things.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatres: https://concepts.datalad.org/s/flat-resources/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlflatres
+
+emit_prefixes:
+  - dlflat
+  - dlflatres
+  - dlidentifiers
+  - dlcommonmx
+  - dlresmx
+  - dlspatialmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:flat/unreleased
+  - dlschemas:common-mixin/unreleased
+  - dlschemas:resources-mixin/unreleased
+
+classes:
+  Dataset:
+    is_a: FlatThing
+    description: >-
+      A collection of data, published or curated by a single agent. This is a
+      conceptual entity. A single dataset might be available in more than
+      one representation, with differing schematic layouts, formats, and
+      serializations.
+    slots:
+      - title
+      - short_name
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+    exact_mappings:
+      - dcat:Dataset
+
+  Document:
+    is_a: FlatThing
+    description: >-
+      A conceptual entity representing things which a, broadly conceived,
+      "documents. This includes non-textual things like images.
+      A conceputal document is to be distinguished from its physical,
+      or electronic distributions.
+    slots:
+      - title
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      description:
+        annotations:
+          sh:order: 2
+    notes:
+      - The key difference between a dataset and a document is the
+        collection-nature of the dataset (multiple items of a kind in
+        a collection), whereas a document is "one of its kind". A
+        dataset could comprise multiple documents.
+      - A document typically has at least one author. However, there are
+        also generated documents (e.g., a birth certificate) for which this is
+        irrelevant. And there are more roles that could be relevant for a
+        document's provenance. Rather than adding them all, none is provided.
+    exact_mappings:
+      - foaf:Document
+
+  Grant:
+    is_a: FlatThing
+    description: >-
+      A grant, typically financial or otherwise quantifiable,
+      resources.
+    slots:
+      - sponsor
+    slot_usage:
+      sponsor:
+        range: Thing
+        comments:
+          - In a particular context, a sponsor might always be an organization,
+            but in others it could be one or more individuals. Leaving it
+            open here.
+        annotations:
+          sh:order: 1
+      description:
+        annotations:
+          sh:order: 2
+    exact_mappings:
+      - obo:NCIT_C16644
+      - schema:Grant
+    notes:
+      - A grant is not a document. The associated document would be the
+        grant agreement.
+      - Not all grants have titles, hence there is no such slot defined here.
+
+  Instrument:
+    is_a: FlatThing
+    description: >-
+      A thing that enables an agent to perform an action. This is typically a device
+      (e.g., a machine to perform a particular type of measurement), but it can also be
+      a questionnaire that is used to perform a particular kind of assessment.
+      An instrument is typically not a "reagent".
+    related_mappings:
+      - schema:instrument
+    narrow_mappings:
+      - obo:NCIT_C62103
+    notes:
+      - It is unclear whether an instrument `name` would provide meaningful
+        and precise information (vs a description or an identifier).
+        There is `display_label`, if the need for a name is just for display
+        purposes (e.g., to say something generic like 'thermometer').
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1
