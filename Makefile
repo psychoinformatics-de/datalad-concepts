@@ -26,6 +26,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov-mixin/unreleased \
 	build/linkml-docs/s/prov/unreleased \
+	build/linkml-docs/s/flat-prov/unreleased \
 	build/linkml-docs/s/publications/unreleased \
 	build/linkml-docs/s/resources-mixin/unreleased \
 	build/linkml-docs/s/resources/unreleased \
@@ -86,6 +87,7 @@ check-models: \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov-mixin/unreleased \
 	checkmodel/prov/unreleased \
+	checkmodel/flat-prov/unreleased \
 	checkmodel/publications/unreleased \
 	checkmodel/resources-mixin/unreleased \
 	checkmodel/resources/unreleased \
@@ -138,6 +140,8 @@ check-validation: \
 	checkvalidation/temporal/unreleased \
 	convertexamples/prov/unreleased \
 	checkvalidation/prov/unreleased \
+	convertexamples/flat-prov/unreleased \
+	checkvalidation/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
 	checkvalidation/publications/unreleased \
 	convertexamples/resources/unreleased \
@@ -171,6 +175,7 @@ convert-examples: \
 	convertexamples/spatial/unreleased \
 	convertexamples/temporal/unreleased \
 	convertexamples/prov/unreleased \
+	convertexamples/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
 	convertexamples/resources/unreleased \
 	convertexamples/flat-social/unreleased \

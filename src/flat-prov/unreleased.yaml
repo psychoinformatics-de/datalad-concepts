@@ -1,0 +1,90 @@
+id: https://concepts.datalad.org/s/flat-prov
+name: flat-prov-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: FLAT provenance schema
+description: |
+  FLAT stands for Flexbile Low-complexity Annotation Technique.
+  The FLAT-provenance schema is used to describe provenance.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatprov: https://concepts.datalad.org/s/flat-provenance/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlflatprov
+
+emit_prefixes:
+  - dlflat
+  - dlflatprov
+  - dlidentifiers
+  - dlcommonmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:flat/unreleased
+  - dlschemas:common-mixin/unreleased
+
+classes:
+  Protocol:
+    is_a: FlatThing
+    description: >-
+      A plan specification which has sufficient level of detail and
+      quantitative information to communicate it between investigation
+      agents, so that different investigation agents will reliably be
+      able to independently reproduce the process.
+    slots:
+      - name
+      - short_name
+    exact_mappings:
+      - obo:OBI_0000272
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
