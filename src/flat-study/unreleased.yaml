@@ -65,6 +65,7 @@ imports:
   - dlschemas:common-mixin/unreleased
   - dlschemas:study-mixin/unreleased
   - dlschemas:prov-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
 
 classes:
   Dimension:
@@ -91,7 +92,7 @@ classes:
       have an organizational nature (e.g., site labels).
     slots:
       - name
-      - factor_level_of
+      - part_of
     comments:
       - The relationship of a factor "level" with the broader factor can be
         described via `broader_mappings`.
@@ -100,10 +101,7 @@ classes:
         recommended: true
         annotations:
           sh:order: 1
-      factor_level_of:
-        range: Thing
-        comments:
-          - Derived classes can specialize the range to the desired type.
+      part_of:
         annotations:
           sh:order: 2
       description:
