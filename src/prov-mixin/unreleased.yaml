@@ -28,14 +28,27 @@ license: MIT
 
 prefixes:
   dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlprovmx
 
 emit_prefixes:
   - dlprovmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
 
 imports:
   - dlschemas:things/v1
