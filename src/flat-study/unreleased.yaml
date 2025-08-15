@@ -64,6 +64,7 @@ imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
   - dlschemas:study-mixin/unreleased
+  - dlschemas:prov-mixin/unreleased
 
 classes:
   Dimension:

@@ -46,11 +46,6 @@ imports:
   - linkml:types
 
 slots:
-  derived_from:
-    title: Derived from
-    description: >-
-      A entity from which the subject was created through some kind of process.
-
   dimensions:
     title: Outcomes variables
     description: >-
