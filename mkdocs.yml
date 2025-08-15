@@ -13,6 +13,7 @@ nav:
       - Social mixin (dev): s/social-mixin/unreleased/index.md
       - Resources mixin (dev): s/resources-mixin/unreleased/index.md
       - Provenance mixin (dev): s/prov-mixin/unreleased/index.md
+      - Versions mixin (dev): s/versions-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md
@@ -55,6 +56,7 @@ plugins:
           's/relations-mixin/index.md': 's/relations-mixin/unreleased/index.md'
           's/resources-mixin/index.md': 's/resources-mixin/unreleased/index.md'
           's/prov-mixin/index.md': 's/prov-mixin/unreleased/index.md'
+          's/versions-mixin/index.md': 's/versions-mixin/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:

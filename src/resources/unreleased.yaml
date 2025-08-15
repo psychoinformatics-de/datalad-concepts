@@ -63,6 +63,7 @@ emit_prefixes:
   - dltemporal
   - dlthings
   - dltypes
+  - dlversionsmx
   - geo
   - marcrel
   - rdf
@@ -75,6 +76,7 @@ imports:
   - dlschemas:common-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
   - dlschemas:resources-mixin/unreleased
+  - dlschemas:versions-mixin/unreleased
   - dlschemas:prov/unreleased
   - dlschemas:temporal/unreleased
 
@@ -120,34 +122,6 @@ slots:
     range: string
     exact_mappings:
       - bibo:locator
-
-  previous_version:
-    slot_uri: dlres:previous_version
-    description: >-
-      The previous version of the subject in a lineage.
-    exact_mappings:
-      - dcat:previousVersion
-      - pav:previousVersion
-
-  version_label:
-    slot_uri: dlres:version_label
-    description: >-
-      Version indicator (name or identifier) of the subject.
-    range: string
-    exact_mappings:
-      - dcat:version
-      - pav:version
-
-  version_notes:
-    slot_uri: dlres:version_notes
-    description: >-
-      A description of changes between this version and the previous version
-      of the subject.
-    range: string
-    multivalued: true
-    exact_mappings:
-      - ADMS:versionNotes
-
 
 classes:
   Resource:
