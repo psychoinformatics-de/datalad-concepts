@@ -48,6 +48,11 @@ imports:
   - dlschemas:things/v1
 
 slots:
+  howto_acknowledge:
+    description: >-
+      A description of how the subject should be acknowledged.
+    range: string
+
   funding:
     description: >-
       Source of funding for the subject, such as a specific grant.
