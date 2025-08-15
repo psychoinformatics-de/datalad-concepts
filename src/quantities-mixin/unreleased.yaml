@@ -1,0 +1,53 @@
+id: https://concepts.datalad.org/s/quantities-mixin/unreleased
+name: quantities-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of quantity-related properties
+description: |
+  Every property declared here is mapped to standard/established vocabularies.
+
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlquantmx
+
+emit_prefixes:
+  - dlquantmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things/v1
+
+slots:
+  unit:
+    title: Unit
+    description: >-
+      Unit of the quantitative value associated with the subject.
+    range: Thing
