@@ -1,8 +1,8 @@
-# Dump-Things
+# Dump-Things storage specification
 
 ---
 
-version: unreleased
+version: v0
 
 ---
 

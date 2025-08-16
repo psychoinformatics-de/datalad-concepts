@@ -36,7 +36,7 @@ nav:
       - FLAT study (dev): s/flat-study/unreleased/index.md
       - FLAT files (dev): s/flat-files/unreleased/index.md
       - FLAT publications (dev): s/flat-publications/unreleased/index.md
-  - Dump-Things storage: dump-things.md
+  - Dump-things storage: dump-things-storage-v0.md
 plugins:
   - mermaid2
   - panzoom:
@@ -44,6 +44,7 @@ plugins:
   - redirects:
       redirect_maps:
           # map unversioned URLs to the latest version
+          'dump-things-storage.md': 'dump-things-storage-v0.md'
           's/things/index.md': 's/things/v1/index.md'
           's/types/index.md': 's/types/unreleased/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
