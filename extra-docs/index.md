@@ -80,5 +80,5 @@ This simplification typically comes with the need to further subclass and extend
 
 ### Knowledge base/graph dump specification
 
-This [specification ](/dump-things) is a companion of the [Things](s/things) schema and its derivatives and extensions.
+This [specification ](/dump-things-storage) is a companion of the [Things](s/things) schema and its derivatives and extensions.
 It defines a data structure for dumping arbitrarily complex information, expressed in these data models, in a version-controllable fashion directly on a filesystem.
