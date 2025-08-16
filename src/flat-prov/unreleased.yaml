@@ -25,7 +25,7 @@ prefixes:
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
-  dlflatprov: https://concepts.datalad.org/s/flat-provenance/unreleased/
+  dlflatprov: https://concepts.datalad.org/s/flat-prov/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
