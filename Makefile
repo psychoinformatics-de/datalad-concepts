@@ -42,6 +42,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/quantities-mixin/unreleased \
 	build/linkml-docs/s/versions-mixin/unreleased \
+	build/linkml-docs/s/files-mixin/unreleased \
 	build/linkml-docs/s/flat-files/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
@@ -112,6 +113,7 @@ check-models: \
 	checkmodel/identifiers/unreleased \
 	checkmodel/quantities-mixin/unreleased \
 	checkmodel/versions-mixin/unreleased \
+	checkmodel/files-mixin/unreleased \
 	checkmodel/flat-files/unreleased \
 	checkmodel/edistributions/unreleased
 checkmodel/%: src/%.yaml
