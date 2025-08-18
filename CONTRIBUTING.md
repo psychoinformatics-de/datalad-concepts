@@ -25,8 +25,8 @@ hatch shell
 Presently, this work require a patched linkml installation.
 The patch(es) are listed in `patches/`.
 The script `tools/patch_linkml` documents how they need to be applied.
-This script can be used to patch a local installation, and is also executed in the actions that validate the included data models.
-In order to apply the patch, run
+``hatch`` automatically applies the patch post installation, and as long as you're using a hatch environment or hatch based check/script, there is nothing you need to do.
+However, if you need to do it outside of `hatch`, run the following command to patch manually:
 
 ```
 bash tools/patch_linkml
