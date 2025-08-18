@@ -125,6 +125,7 @@ classes:
       A grant, typically financial or otherwise quantifiable,
       resources.
     slots:
+      - howto_acknowledge
       - sponsor
     slot_usage:
       sponsor:
@@ -135,9 +136,13 @@ classes:
             open here.
         annotations:
           sh:order: 1
-      description:
+      howto_acknowledge:
         annotations:
           sh:order: 2
+          dash:singleLine: false
+      description:
+        annotations:
+          sh:order: 3
     exact_mappings:
       - obo:NCIT_C16644
       - schema:Grant

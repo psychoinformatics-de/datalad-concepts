@@ -42,6 +42,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Study mixin](s/study-mixin/unreleased/index.md)
 - [Quantities mixin](s/quantities-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
+- [Publications mixin](s/publications-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
@@ -73,10 +74,27 @@ This simplification typically comes with the need to further subclass and extend
 - [Resources schema](s/flat-resources/unreleased/index.md)
 - [Study schema](s/flat-study/unreleased/index.md)
 - [Files schema](s/flat-files/unreleased/index.md)
+- [Publications schema](s/flat-publications/unreleased/index.md)
 
 ## Related tools and specifications
 
 ### Knowledge base/graph dump specification
 
-This [specification ](/dump-things) is a companion of the [Things](s/things) schema and its derivatives and extensions.
-It defines a data structure for dumping arbitrarily complex information, expressed in these data models, in a version-controllable fashion directly on a filesystem.
+This [specification ](/dump-things-storage) is a companion of the [Things](s/things) schema and its derivatives and extensions.
+It defines a data structure for dumping arbitrarily complex information, expressed in these data models, in a version-controllable fashion directly on a file-system.
+
+### Storage API implementation: dump-things-service
+
+https://pypi.org/project/dump-things-service/
+
+This Python software package provides an HTTP-based API to store and retrieve metadata records.
+It supports authenticated access to multi-schema, multi-collection API endpoints with built-in validation.
+The API is fully auto-generated based on a schema built from the schema components available on this site
+Among the support storage back-ends is plain file-system storage compliant with the [dump-things specification ](/dump-things-storage).
+
+### SHACL-based form generation and metadata editing
+
+https://psychoinformatics-de.github.io/shacl-vue/docs/
+
+This is a [VueJS](https://vuejs.org)-based browser tool that enabled client-side retrieval, editing, and submitting of metadata records.
+It auto-builds a customizable UI from [SHACL](https://www.w3.org/TR/shacl) and [OWL](https://www.w3.org/TR/owl-ref) specifications, such as those provided for the schemas available on this site. Records are consumed and submitted in [Terse RDF Triple Language (Turtle)](https://en.wikipedia.org/wiki/Turtle_(syntax) (supported by, for example, [dump-things-service](https://pypi.org/project/dump-things-service) API endpoint).

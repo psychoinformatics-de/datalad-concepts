@@ -23,11 +23,14 @@ build/linkml-docs: \
 	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/spatial/unreleased \
+	build/linkml-docs/s/temporal-mixin/unreleased \
 	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov-mixin/unreleased \
 	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/flat-prov/unreleased \
+	build/linkml-docs/s/publications-mixin/unreleased \
 	build/linkml-docs/s/publications/unreleased \
+	build/linkml-docs/s/flat-publications/unreleased \
 	build/linkml-docs/s/resources-mixin/unreleased \
 	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/flat-resources/unreleased \
@@ -38,6 +41,9 @@ build/linkml-docs: \
 	build/linkml-docs/s/flat-study/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
 	build/linkml-docs/s/quantities-mixin/unreleased \
+	build/linkml-docs/s/versions-mixin/unreleased \
+	build/linkml-docs/s/files-mixin/unreleased \
+	build/linkml-docs/s/flat-files/unreleased \
 	build/linkml-docs/s/edistributions/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
@@ -88,11 +94,14 @@ check-models: \
 	checkmodel/roles/unreleased \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/spatial/unreleased \
+	checkmodel/temporal-mixin/unreleased \
 	checkmodel/temporal/unreleased \
 	checkmodel/prov-mixin/unreleased \
 	checkmodel/prov/unreleased \
 	checkmodel/flat-prov/unreleased \
+	checkmodel/publications-mixin/unreleased \
 	checkmodel/publications/unreleased \
+	checkmodel/flat-publications/unreleased \
 	checkmodel/resources-mixin/unreleased \
 	checkmodel/resources/unreleased \
 	checkmodel/flat-resources/unreleased \
@@ -103,6 +112,9 @@ check-models: \
 	checkmodel/flat-study/unreleased \
 	checkmodel/identifiers/unreleased \
 	checkmodel/quantities-mixin/unreleased \
+	checkmodel/versions-mixin/unreleased \
+	checkmodel/files-mixin/unreleased \
+	checkmodel/flat-files/unreleased \
 	checkmodel/edistributions/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
@@ -152,6 +164,8 @@ check-validation: \
 	checkvalidation/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
 	checkvalidation/publications/unreleased \
+	convertexamples/flat-publications/unreleased \
+	checkvalidation/flat-publications/unreleased \
 	convertexamples/resources/unreleased \
 	checkvalidation/resources/unreleased \
 	convertexamples/flat-resources/unreleased \
@@ -164,6 +178,8 @@ check-validation: \
 	checkvalidation/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
 	checkvalidation/identifiers/unreleased \
+	convertexamples/flat-files/unreleased \
+	checkvalidation/flat-files/unreleased \
 	convertexamples/edistributions/unreleased \
 	checkvalidation/edistributions/unreleased
 checkvalidation/%:
@@ -189,12 +205,14 @@ convert-examples: \
 	convertexamples/prov/unreleased \
 	convertexamples/flat-prov/unreleased \
 	convertexamples/publications/unreleased \
+	convertexamples/flat-publications/unreleased \
 	convertexamples/resources/unreleased \
 	convertexamples/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
 	convertexamples/social/unreleased \
 	convertexamples/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
+	convertexamples/flat-files/unreleased \
 	convertexamples/edistributions/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself

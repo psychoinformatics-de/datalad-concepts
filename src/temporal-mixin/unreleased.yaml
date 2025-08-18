@@ -1,0 +1,97 @@
+id: https://concepts.datalad.org/s/temporal-mixin/unreleased
+name: temporal-mixin-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of temporal properties for use in schemas
+description: |
+  The schema definition is available as
+
+  - [LinkML YAML](../unreleased.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+
+default_prefix: dltemporalmx
+
+emit_prefixes:
+  - dltemporalmx
+
+imports:
+  - linkml:types
+
+types:
+  W3CISO8601:
+    uri: w3ctr:NOTE-datetime
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
+    typeof: string
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
+    see_also:
+      - https://www.w3.org/TR/NOTE-datetime
+
+slots:
+  at_time:
+    description: >-
+      Time at which an instanteneous event takes place or took place.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:atTime
+
+  date_modified:
+    description: >-
+      Timepoint at which the subject was (last) changed, updated or modified.
+    range: W3CISO8601
+    exact_mappings:
+      - dcterms:modified
+    notes:
+      - successful validation with `datetime` as a range and linkml-jsonschema-validate` depends on a patched linkml, see https://github.com/linkml/linkml/issues/1806
+      - a related problem also exists for `linkml-validate`, we cannot have a more specific range right now
+
+  date_published:
+    description: >-
+      Timepoint at which the subject was (last) published.
+    range: W3CISO8601
+    exact_mappings:
+      - schema:datePublished
+      - dcterms:issued
+
+  started_at:
+    description: >-
+      Start is when an activity is deemed to have been started by some trigger.
+      The activity did not exist before its start. Any usage,
+      generation, or invalidation involving an activity follows the activity's
+      start.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:startedAtTime
+
+  ended_at:
+    description: >-
+      End is when an activity is deemed to have been ended by some trigger.
+      The activity no longer exists after its end.
+      Any usage, generation, or invalidation involving an activity
+      precedes the activity's end.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:endedAtTime
