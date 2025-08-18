@@ -122,7 +122,7 @@ linkml convert -o ds.ttl -s src/flat-data/unreleased.yaml --target-class-from-pa
 
 ## Useful hints for a contribution workflow
 
-* Patches get regularly updated, and they are not applied automatically in your hatch environments. If in doubt, wipe the environment and re-create it, for example using ``hatch env prune``.
+* Patches get regularly updated, and they are not re-applied automatically in an existing hatch environments. If in doubt, wipe the environment and re-create it, for example using ``hatch env prune``.
 
 * Because LinkML allows imports from other schemas, there may be more to the classes or slots you see defined in any given file.
 In order to figure out easily which slots are available or even required, we recommend that you **render the documentation locally**, as this allows you to browse through the classes and discover also information that comes from other schemas. 
