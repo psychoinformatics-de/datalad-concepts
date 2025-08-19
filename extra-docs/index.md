@@ -59,7 +59,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Social schema](s/social/unreleased/index.md)
 - [Electronic distributions schema](s/edistributions/unreleased/index.md)
 
-## Flexbile Low-complexity Annotation Technique (FLAT) schema components
+## Flexible Low-complexity Annotation Technique (FLAT) schema components
 
 While these schemas typically provide the same concepts as their graph-oriented counterparts, they nevertheless differ substantially.
 Where the graph-oriented schemas aim for maximum expressiveness, these FLAT schemas aim for being maximally lean and orthogonal with respect to other FLAT schema components.
@@ -85,16 +85,16 @@ It defines a data structure for dumping arbitrarily complex information, express
 
 ### Storage API implementation: dump-things-service
 
-https://pypi.org/project/dump-things-service/
-
 This Python software package provides an HTTP-based API to store and retrieve metadata records.
 It supports authenticated access to multi-schema, multi-collection API endpoints with built-in validation.
 The API is fully auto-generated based on a schema built from the schema components available on this site
 Among the support storage back-ends is plain file-system storage compliant with the [dump-things specification ](/dump-things-storage).
 
-### SHACL-based form generation and metadata editing
+Check out [dump-things-service on PyPI](https://pypi.org/project/dump-things-service)
 
-https://psychoinformatics-de.github.io/shacl-vue/docs/
+### SHACL-based form generation and metadata editing
 
 This is a [VueJS](https://vuejs.org)-based browser tool that enabled client-side retrieval, editing, and submitting of metadata records.
 It auto-builds a customizable UI from [SHACL](https://www.w3.org/TR/shacl) and [OWL](https://www.w3.org/TR/owl-ref) specifications, such as those provided for the schemas available on this site. Records are consumed and submitted in [Terse RDF Triple Language (Turtle)](https://en.wikipedia.org/wiki/Turtle_(syntax) (supported by, for example, [dump-things-service](https://pypi.org/project/dump-things-service) API endpoint).
+
+Check out [shacl-vue on GitHub](https://psychoinformatics-de.github.io/shacl-vue/docs)
