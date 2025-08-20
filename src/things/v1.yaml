@@ -1,12 +1,10 @@
 id: https://concepts.datalad.org/s/things/v1
 name: things-schema
 # only the major version is reflected in the identifier, but this is the full version
-version: 1.0.0-prerelease
+version: 1.0.0
 status: eunal:concept-status/CURRENT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
-  STILL A DRAFT!!
-
   This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
@@ -19,7 +17,7 @@ description: |
     ([`characterized_by`](characterized_by)),
     without prescribing a particular vocabulary
   - can be associated with a specialized schema class for enabling detailed
-    validation and precise data transformations ([`type`](type))
+    validation and precise data transformations ([`schema_type`](schema_type))
     without limiting the general expressiveness to a fixed set of classes
     available this foundational schema.
 

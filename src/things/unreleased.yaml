@@ -1,7 +1,6 @@
 id: https://concepts.datalad.org/s/things/unreleased
 name: things-schema
-# only the major version is reflected in the identifier, but this is the full version
-version: 1.0.0-prerelease
+version: unreleased
 status: eunal:concept-status/DRAFT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
@@ -19,7 +18,7 @@ description: |
     ([`characterized_by`](characterized_by)),
     without prescribing a particular vocabulary
   - can be associated with a specialized schema class for enabling detailed
-    validation and precise data transformations ([`type`](type))
+    validation and precise data transformations ([`schema_type`](schema_type))
     without limiting the general expressiveness to a fixed set of classes
     available this foundational schema.
 
@@ -80,6 +79,7 @@ prefixes:
   sio: http://semanticscience.org/resource/
   # foundational
   skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
   # Example convenience namespace that makes it possible to not think about
   # a dedicated distribution/dataset/dataset-version-unqiue namespace.
   # The prefix can be materialized ala
@@ -341,6 +341,7 @@ classes:
       - schema_type
 
   ValueSpecificationMixin:
+    mixin: true
     description: >-
       Mix-in for a (structured) value specification. Two slots are provided
       to define a (literal) value (`value`) and its type (`range`).

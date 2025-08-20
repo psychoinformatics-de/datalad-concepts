@@ -1,10 +1,10 @@
 # About the `things` schema
 
 This schema aims to define a lean data structure that can express arbitrarily
-detailed information in a relatively flat structure. It achieves this by
+detailed information in a relatively shallow structure. It achieves this by
 following a few basic principles:
 
-- every "thing" is required to have *one* unique identifier
+- every "thing" is required to have (at least) *one* unique identifier
 - linking instead of nesting
 - schema class type designator
 - qualified relationships
@@ -36,8 +36,8 @@ However, this approach also requires to establish a process that guarantees that
 The one-identifier-and-one-identifier-only requirement only applies to the mechanics of the `things` schema and the `pid` slot of the `Thing` class in particular.
 Beyond that, there is no constraint on the nature and number of identifiers associated with a `Thing`.
 Such identifiers are attributes of a `Thing` and can be expressed as such.
-The schema documentation contains [an example](/s/things/v1/Thing#example-thing-02-identifiers) showing how this can be done via the `has_attributes` slot of a `Thing`. For schema development, the [identifiers extension schema](/s/identifiers) is worth a look.
-It provides a dedicated slot and class for representing identifiers.
+The schema documentation contains [an example](/s/things/v1/Thing#example-thing-02-identifiers) showing how this can be done via the `attributes` slot of a `Thing`. For schema development, the [identifiers extension schema](/s/identifiers) is worth a look.
+It provides a dedicated slot and classes for representing identifiers.
 
 
 ## Linking, not nesting
@@ -47,7 +47,7 @@ Making this possible is the reason for having a required `pid` slot in the `Thin
 
 There is only one exception to this rule: the `relations` slot. Here, other `Thing` records can be inlined. The purpose of this slot is to largely avoid the need for a top-level, array-like data structure that can hold any number of data records. Using the `relations` slot, it is possible to represent arbitrarily rich information in a monolithic data structure.
 
-There is one other case of record-inlining in the `things` schema (besides few association helper classes): attributes.
+There is one other case of record-inlining in the `things` schema (besides few association helper classes): `attributes`.
 Attributes are information that are not things (which would have an identifier), but nevertheless describe a `Thing`.
 An example of such an attribute is the mass of a physical object.
 A dedicated `AttributeSpecification` class defines how attributes are expressed.
@@ -59,14 +59,14 @@ This implies a limitation on the validation of such records.
 For example, a `Thing` may actually be a `InventoryItem`, using a data model defined in a derived schema.
 Such an `InventoryItem` may define additional slots with their own constraints, and it should be possible to perform a targeted validation of such records.
 
-For this purpose, `Thing` provides a `type` slot.
-This slots takes an identifier of a schema class (including classes in derived schemas), which provide the effective data model for validation.
+For this purpose, `Thing` provides a `schema_type` slot.
+This slots takes an identifier (CURIE) of a schema class (including classes in derived schemas), which provide the effective data model for validation.
 
 Moreover, a set of `mappings` slots can be used to map a(n implicit) type of a data record to external schemas and terminologies, without requiring any and all concepts to be represented by a dedicated schema class.
 
 ## Qualified relationships
 
 [Qualified relation](https://patterns.dataincubator.org/book/qualified-relation.html) is an essential pattern used by the `things` schema, and also its derivatives and extensions.
-Within the `things` schema it is used by the `characterized_by` slot (and to some degree also for `has_attributes`) for characterizing the relationship between things.
+Within the `things` schema it is used by the `characterized_by` slot (and to some degree also for `attributes`) for characterizing the relationship between things.
 The relationship between two things is qualified via an inline `Statement` that assigns a predicate to the relationship between a subject-thing, and a related object-thing.
 See the [example for a topic annotation](/s/things/v1/Thing#example-thing-03-topic) for a concrete demo.
