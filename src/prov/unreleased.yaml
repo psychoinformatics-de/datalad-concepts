@@ -64,7 +64,7 @@ prefixes:
   dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
   # here for alignment of `Agent`

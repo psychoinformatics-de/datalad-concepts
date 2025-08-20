@@ -25,6 +25,7 @@ The sources for all schemas are on [GitHub](https://github.com/psychoinformatics
 ### Latest releases
 
 - [Things (v1)](s/things/v1/index.md): foundational schema to describe any "thing"
+- [Types (v1)](s/types/v1/index.md): basic types and schema building blocks
 
 ### Development
 
@@ -67,6 +68,8 @@ This is achieved by reducing the included slots to bare necessities, and by avoi
 As a result, the FLAT schemas are most suitable for mix-and-match composition of schemas geared towards (meta)data submission systems and form generation.
 They minimizes the required cognitive complexity for providing complete records in a particular context, by avoiding the forced inclusion of meaningful, but undesired concepts and relationships.
 This simplification typically comes with the need to further subclass and extend these base concepts for any given application context.
+
+ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [FLAT base schema](s/flat/unreleased/index.md)
 - [Social schema](s/flat-social/unreleased/index.md)

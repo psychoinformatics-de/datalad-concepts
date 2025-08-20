@@ -30,7 +30,7 @@ prefixes:
   dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#

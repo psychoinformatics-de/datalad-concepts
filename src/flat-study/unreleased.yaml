@@ -31,7 +31,7 @@ prefixes:
   dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/

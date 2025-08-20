@@ -39,7 +39,7 @@ prefixes:
 default_prefix: dledist
 
 imports:
-  - dlschemas:types/unreleased
+  - dlschemas:types/v1
   - dlschemas:resources/unreleased
 
 slots:
