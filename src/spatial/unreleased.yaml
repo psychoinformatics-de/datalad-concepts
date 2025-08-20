@@ -29,7 +29,7 @@ prefixes:
   dlschemas: https://concepts.datalad.org/s/
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
   # disambiguate a GEO URI from a curie prefix

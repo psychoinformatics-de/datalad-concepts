@@ -15,6 +15,7 @@ all: build/mkdocs-site
 
 build/linkml-docs: \
 	build/linkml-docs/s/types/unreleased \
+	build/linkml-docs/s/types/v1 \
 	build/linkml-docs/s/common-mixin/unreleased \
 	build/linkml-docs/s/relations-mixin/unreleased \
 	build/linkml-docs/s/things/unreleased \
@@ -86,6 +87,7 @@ check: check-models check-validation
 # add additional schemas to lint here
 check-models: \
 	checkmodel/types/unreleased \
+	checkmodel/types/v1 \
 	checkmodel/common-mixin/unreleased \
 	checkmodel/relations-mixin/unreleased \
 	checkmodel/things/unreleased \

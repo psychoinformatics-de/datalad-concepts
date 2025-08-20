@@ -16,7 +16,7 @@ description: |
 
   This schema also incorporates the schema(s)
 
-  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+  - [`types`](https://concepts.datalad.org/s/types/v1)
 
   The schema definition is available as
 
@@ -35,7 +35,7 @@ prefixes:
   dcterms: http://purl.org/dc/terms/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
   linkml: https://w3id.org/linkml/
@@ -54,7 +54,7 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:types/unreleased
+  - dlschemas:types/v1
   - linkml:types
 
 slots:

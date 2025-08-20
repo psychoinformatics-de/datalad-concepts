@@ -20,7 +20,7 @@ prefixes:
   dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/

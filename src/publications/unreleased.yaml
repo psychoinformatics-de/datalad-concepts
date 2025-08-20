@@ -32,7 +32,7 @@ prefixes:
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
   dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
   geo: "geo:"

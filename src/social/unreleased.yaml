@@ -43,7 +43,7 @@ prefixes:
   dlspatial: https://concepts.datalad.org/s/spatial/unreleased/
   dltemporal: https://concepts.datalad.org/s/temporal/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   # declare a namespace for emails, such that they can be defined as a curie
   # e.g.: email:me@example.org
   # -> https://concepts.datalad.org/ns/email/me@example.org

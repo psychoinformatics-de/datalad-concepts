@@ -2,7 +2,7 @@ id: https://concepts.datalad.org/s/things/v1
 name: things-schema
 # only the major version is reflected in the identifier, but this is the full version
 version: 1.0.0-prerelease
-status: eunal:concept-status/DRAFT
+status: eunal:concept-status/CURRENT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
   STILL A DRAFT!!
@@ -37,7 +37,7 @@ description: |
 
   This schema also incorporates the schema(s)
 
-  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+  - [`types`](https://concepts.datalad.org/s/types/v1)
 
   The schema definition is available as
 
@@ -65,7 +65,7 @@ prefixes:
   # self-reference
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
+  dltypes: https://concepts.datalad.org/s/types/v1/
   # here is a large, versatile source of controlled vocabularies/codes
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
@@ -110,7 +110,7 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:types/unreleased
+  - dlschemas:types/v1
   - linkml:types
 
 slots:
