@@ -2,20 +2,20 @@ id: https://concepts.datalad.org/s/types/unreleased
 name: types-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
-title: Collection of common types
+title: Collection of common types and a type-designator
 description: |
   This schema provides a collection of common types for use in other
   schemas. It can be imported directly into other linkml schemas, or
   any of its individual property definitions can be used by their
-  URI as vocabulary components or definitions (e.g., `dltypes:type`
-  identified by this [URI](`type`)).
+  URI as vocabulary components or definitions (e.g., `dltypes:EmailAddress`
+  identified by this [URI](EmailAddress)).
 
-  Class definitions are only included insofar as they define ranges
-  for particular property slots.
-
-  This schema also incorporates the schema(s)
-
-  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+  With the [`schema_type`](schema_type) slot and its `range` type
+  [`NodeUriOrCurie`](NodeUriOrCurie), this schema provides an essential
+  building block for other schemas. This slot can be used as a
+  [type designator](https://linkml.io/linkml/schemas/type-designators.html),
+  to enable precise validation of sub-types, with an adequate
+  representation in an RDF data export.
 
   The schema definition is available as
 
@@ -34,10 +34,11 @@ prefixes:
   dlschemas: https://concepts.datalad.org/s/
   dltypes: https://concepts.datalad.org/s/types/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
-  ex: http://example.org/
   linkml: https://w3id.org/linkml/
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dltypes
 
@@ -103,4 +104,3 @@ slots:
     range: NodeUriOrCurie
     exact_mappings:
       - dcterms:type
-
