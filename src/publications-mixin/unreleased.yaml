@@ -53,6 +53,7 @@ slots:
     multivalued: true
 
   doi:
+    title: DOI
     description: >-
       Associated Digital Object Identifier (DOI; ISO 26324; see
       https://doi.org).  The value must be just the DOI without the URL
@@ -61,6 +62,7 @@ slots:
     range: string
 
   issn:
+    title: ISSN
     description: >-
       Associated International Standard Serial Number (ISSN) identifier (see https://www.issn.org).
     range: string
