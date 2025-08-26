@@ -1,8 +1,7 @@
-schema: src/flat-social/unreleased.yaml
-target_class: Person
+schema: src/flat-resources/unreleased.yaml
+target_class: Document
 data_sources:
-  - src/flat-social/unreleased/examples/Person-01-minimal.yaml
-  - src/flat-social/unreleased/examples/Person-02-attributes.yaml
+  - src/flat-resources/unreleased/examples/Document-02-attributes.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
