@@ -28,6 +28,7 @@ prefixes:
   dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
   dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
@@ -53,6 +54,7 @@ emit_prefixes:
   - dlflatsocial
   - dlidentifiers
   - dlcommonmx
+  - dlrelationsmx
   - dlsocialmx
   - dlspatialmx
   - dlthings
@@ -65,6 +67,7 @@ emit_prefixes:
 imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
   - dlschemas:social-mixin/unreleased
   - dlschemas:spatial-mixin/unreleased
 
@@ -77,6 +80,7 @@ classes:
       - name
       - short_name
       - at_location
+      - part_of
     slot_usage:
       name:
         annotations:
@@ -87,6 +91,12 @@ classes:
       at_location:
         annotations:
           sh:order: 3
+      part_of:
+        description: >-
+          An organization that the subject is part of.
+        range: Organization
+        annotations:
+          sh:order: 4
     exact_mappings:
       - prov:Organization
 
@@ -137,6 +147,7 @@ classes:
     slots:
       - short_name
       - title
+      - part_of
     slot_usage:
       title:
         annotations:
