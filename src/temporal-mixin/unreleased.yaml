@@ -35,6 +35,8 @@ imports:
 types:
   W3CISO8601:
     uri: w3ctr:NOTE-datetime
+    base: str
+    typeof: string
     description:
       W3C variant/subset of IS08601 for specifying date(times).
       Supported are
@@ -45,7 +47,6 @@ types:
       - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
       - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
       where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
-    typeof: string
     pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
     see_also:
       - https://www.w3.org/TR/NOTE-datetime
