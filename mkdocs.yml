@@ -9,16 +9,17 @@ nav:
       - Types: s/types/v1/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
-      - Relations mixin (dev): s/relations-mixin/unreleased/index.md
-      - Social mixin (dev): s/social-mixin/unreleased/index.md
-      - Resources mixin (dev): s/resources-mixin/unreleased/index.md
-      - Provenance mixin (dev): s/prov-mixin/unreleased/index.md
-      - Versions mixin (dev): s/versions-mixin/unreleased/index.md
-      - Study mixin (dev): s/study-mixin/unreleased/index.md
-      - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
       - Files mixin (dev): s/files-mixin/unreleased/index.md
-      - Temporal mixin (dev): s/temporal-mixin/unreleased/index.md
+      - Provenance mixin (dev): s/prov-mixin/unreleased/index.md
       - Publications mixin (dev): s/publications-mixin/unreleased/index.md
+      - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
+      - Relations mixin (dev): s/relations-mixin/unreleased/index.md
+      - Resources mixin (dev): s/resources-mixin/unreleased/index.md
+      - Social mixin (dev): s/social-mixin/unreleased/index.md
+      - Spatial mixin (dev): s/spatial-mixin/unreleased/index.md
+      - Study mixin (dev): s/study-mixin/unreleased/index.md
+      - Temporal mixin (dev): s/temporal-mixin/unreleased/index.md
+      - Versions mixin (dev): s/versions-mixin/unreleased/index.md
     - Graph-oriented:
       - Roles (dev): s/roles/unreleased/index.md
       - Spatial (dev): s/spatial/unreleased/index.md

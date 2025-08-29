@@ -33,17 +33,17 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
-- [Relations mixin](s/relations-mixin/unreleased/index.md)
-- [Social mixin](s/social-mixin/unreleased/index.md)
-- [Resources mixin](s/resources-mixin/unreleased/index.md)
-- [Provenance mixin](s/prov-mixin/unreleased/index.md)
-- [Versions mixin](s/versions-mixin/unreleased/index.md)
-- [Study mixin](s/study-mixin/unreleased/index.md)
-- [Quantities mixin](s/quantities-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
+- [Provenance mixin](s/prov-mixin/unreleased/index.md)
 - [Publications mixin](s/publications-mixin/unreleased/index.md)
+- [Quantities mixin](s/quantities-mixin/unreleased/index.md)
+- [Relations mixin](s/relations-mixin/unreleased/index.md)
+- [Resources mixin](s/resources-mixin/unreleased/index.md)
+- [Social mixin](s/social-mixin/unreleased/index.md)
 - [Spatial properties mixin](s/spatial-mixin/unreleased/index.md)
+- [Study mixin](s/study-mixin/unreleased/index.md)
 - [Temporal properties mixin](s/temporal-mixin/unreleased/index.md)
+- [Versions mixin](s/versions-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
