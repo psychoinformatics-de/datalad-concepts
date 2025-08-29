@@ -42,6 +42,8 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Quantities mixin](s/quantities-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
 - [Publications mixin](s/publications-mixin/unreleased/index.md)
+- [Spatial properties mixin](s/spatial-mixin/unreleased/index.md)
+- [Temporal properties mixin](s/temporal-mixin/unreleased/index.md)
 
 ## Graph-oriented schema components
 
