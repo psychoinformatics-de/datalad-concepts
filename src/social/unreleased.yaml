@@ -71,6 +71,7 @@ emit_prefixes:
   - dlprov
   - dlroles
   - dlsocial
+  - dlsocialmx
   - dlspatial
   - dltemporal
   - dlthings
