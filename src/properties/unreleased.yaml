@@ -23,6 +23,7 @@ description: |
 
   - [JSON-LD context](../unreleased.context.jsonld)
   - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
   - [OWL TTL](../unreleased.owl.ttl)
   - [SHACL TTL](../unreleased.shacl.ttl)
 

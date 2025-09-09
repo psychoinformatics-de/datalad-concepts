@@ -41,6 +41,7 @@ description: |
 
   - [JSON-LD context](../v1.context.jsonld)
   - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
 
