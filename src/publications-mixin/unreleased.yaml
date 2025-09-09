@@ -9,6 +9,7 @@ description: |
   The schema definition is available as
 
   - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

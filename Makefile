@@ -75,6 +75,8 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 			--include-annotations \
 			--exclude-order \
 			$< > $@.shacl.ttl ; \
+		gen-yaml \
+			$< > $@.static.yaml ; \
 	fi
 
 build/mkdocs-site: build/linkml-docs extra-docs/*.md
