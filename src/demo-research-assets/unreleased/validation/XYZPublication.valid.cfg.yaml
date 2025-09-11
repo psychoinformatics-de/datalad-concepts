@@ -1,0 +1,9 @@
+schema: src/demo-research-assets/unreleased.yaml
+target_class: XYZPublication
+data_sources:
+  - src/demo-research-assets/unreleased/examples/XYZPublication-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
