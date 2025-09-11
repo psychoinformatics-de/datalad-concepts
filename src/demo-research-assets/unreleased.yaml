@@ -1,0 +1,366 @@
+id: https://concepts.datalad.org/s/demo-research-assets
+name: demo-research-assets-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Data models for an organization's research assets
+description: |
+  This schema is using the FLAT approach (Flexbile Low-complexity
+  Annotation Technique) and is geared toward metadata entry and
+  submission for pooling information across consortium sites and
+  partners.
+
+  It is to be taken as a demonstrator rather than a schema
+  building block.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  bibo: http://purl.org/ontology/bibo/
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
+  dlflatprov: https://concepts.datalad.org/s/flat-prov/unreleased/
+  dlflatpublications: https://concepts.datalad.org/s/flat-publications/unreleased/
+  dlflatres: https://concepts.datalad.org/s/flat-resources/unreleased/
+  dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
+  dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlpublicationsmx: https://concepts.datalad.org/s/publications-mixin/unreleased/
+  dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
+  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
+  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  geodata: http://sws.geonames.org/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  orcid: https://orcid.org/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  xyzra: https://concepts.datalad.org/s/demo-research-assets/unreleased/
+
+default_prefix: xyzra
+
+emit_prefixes:
+  - dlcommonmx
+  - dlflat
+  - dlflatfiles
+  - dlflatres
+  - dlflatprov
+  - dlflatpublications
+  - dlflatsocial
+  - dlflatstudy
+  - dlidentifiers
+  - dlprovmx
+  - dlpublicationsmx
+  - dlquantmx
+  - dlrelationsmx
+  - dlresmx
+  - dlspatialmx
+  - dlsocialmx
+  - dlstudymx
+  - dltemporalmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - w3ctr
+  - xsd
+
+imports:
+  - dlschemas:flat-files/unreleased
+  - dlschemas:flat-prov/unreleased
+  - dlschemas:flat-publications/unreleased
+  - dlschemas:flat-resources/unreleased
+  - dlschemas:flat-social/unreleased
+  - dlschemas:flat-study/unreleased
+
+
+types:
+  flexdate:
+    # gen-shacl doesn't work without this
+    uri: xyzra:flexdate
+    base: str
+    typeof: string
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)$'
+
+
+enums:
+  YesNoUnknownClassifcation:
+    description: >-
+      Boolean classification with a third option indicating that
+      the true value is not known.
+    permissible_values:
+      "yes":
+        description: >-
+          Consent given
+      "no":
+        description: >-
+          No consent given
+      "unknown":
+        description:
+          The true value is not known (yet)
+
+
+slots:
+  orcid:
+    title: ORCID
+    description: >-
+      ORCID identifier of a person (see https://orcid.org).
+    range: string
+    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+
+  confirmed_funding_acknowledgement:
+    title: Funding acknowledgement confirmed
+    description: >-
+      Specify whether the subject appropriately acknowledges the
+      XYZ funding.
+    range: YesNoUnknownClassifcation
+
+
+classes:
+  XYZAssessment:
+    is_a: Assessment
+    title: Assessment
+    description: >-
+      The final result of a determination of the value of something.
+      This is a conceptual entity. A assessment outcome might be
+      available in more than one representation, with differing formats,
+      and serializations.
+
+  XYZDataset:
+    is_a: Dataset
+    title: Dataset
+    description: >-
+      A collection of data, published or curated by a single agent. This is a conceptual entity. A single dataset might be available in more than one representation, with differing schematic layouts, formats, and serializations.
+
+  XYZDimension:
+    is_a: Dimension
+    title: Dimension
+    description: >-
+      A dependent or outcome variable.
+
+  XYZDistribution:
+    is_a: Distribution
+    title: Distribution
+    description: >-
+      A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files, may be standalone or part of a larger collection.
+
+  XYZDocument:
+    is_a: Document
+    title: Document
+    description: >-
+      A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
+
+  XYZFactor:
+    is_a: Factor
+    title: Factor
+    description: >-
+      A tag associated with a categorical, independent variable in a study design. Factors can have an investigative role (e.g., treatments), or have an organizational nature (e.g., site labels).
+
+  XYZGrant:
+    is_a: Grant
+    title: Grant
+    description: >-
+      A grant, typically financial or otherwise quantifiable, resources.
+
+  XYZInstrument:
+    is_a: Instrument
+    title: Instrument
+    description: >-
+      A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
+
+  XYZOrganization:
+    is_a: Organization
+    title: Organization
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+
+  XYZPerson:
+    is_a: Person
+    title: Person
+    description: >-
+      Person agents are people, alive, dead, or fictional.
+
+  XYZProject:
+    is_a: Project
+    title: Project
+    description: >-
+      A collective endeavour of some kind. Typically it is a planned process that is undertaken or attempted to meet some requirement, or to achieve a particular goal.
+    slots:
+      - part_of
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 4
+
+  XYZProtocol:
+    is_a: Protocol
+    title: Protocol
+    description: >-
+      A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.
+
+  XYZPublication:
+    is_a: Publication
+    title: Publication
+    description: >-
+      A resource that is the output of a publishing process.
+    slots:
+      - derived_from
+      - doi
+      - generated_by
+      - confirmed_funding_acknowledgement
+    slot_usage:
+      doi:
+        recommended: true
+        title: DOI
+        annotations:
+          sh:order: 1
+      title:
+        description: >-
+          The full title of the publication.
+        required: false
+        annotations:
+          sh:order: 2
+      authors:
+        description: >-
+          Authors of the publication who are anyhow contributors to XYZ.
+        required: true
+        annotations:
+          sh:order: 3
+      published_at:
+        range: XYZPublicationVenue
+        annotations:
+          sh:order: 4
+      locator:
+        title: Location within publication venue
+        description: >-
+          A descriptive identifier that the publication within the
+          venue it was published at. For a journal article, this would
+          be a volume and/or page range. Format according to the conventions
+          of the publication venue.
+        annotations:
+          sh:order: 5
+      kind:
+        title: Publication type
+        description: >-
+          The type of this publication, e.g. journal article, book, webpage
+        range: XYZPublicationType
+        annotations:
+          sh:order: 6
+      about:
+        required: true
+        title: Topic(s)
+        description: >-
+          Topics covered by this publication.
+        range: XYZTopic
+        multivalued: true
+        annotations:
+          sh:order: 7
+      date_published:
+        range: flexdate
+        description: >-
+          The date when a publication became available at the publication venue.
+        annotations:
+          sh:order: 8
+      generated_by:
+        required: true
+        title: Contributing project(s)
+        description: >-
+          Any project that contributed to the outcomes described in the publication.
+        range: XYZProject
+        multivalued: true
+        annotations:
+          sh:order: 9
+      derived_from:
+        recommended: true
+        title: Associated dataset(s)
+        description: >-
+          Any dataset that informed the outcomes described in the publication.
+        range: XYZDataset
+        multivalued: true
+        annotations:
+          sh:order: 10
+      confirmed_funding_acknowledgement:
+        required: true
+        annotations:
+          sh:order: 11
+
+  XYZPublicationType:
+    is_a: FlatThing
+    title: Publication type
+    description: >-
+      Type of a publication, e.g., journal article, book, or webpage.
+
+  XYZPublicationVenue:
+    is_a: FlatThing
+    title: Publication venue
+    description: >-
+      "Place" of a publication, e.g., a journal, a website, an edited collection.
+
+  XYZStudy:
+    is_a: Study
+    title: Study
+    description: >-
+      A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).
+
+  XYZSubject:
+    is_a: Subject
+    title: Subject
+    description: >-
+      A subject is an entity being investigated in a study. This is a contextual entity. One and the same entity can be different subjects in two different studies.
+
+  XYZTopic:
+    is_a: FlatThing
+    title: Topic
+    description: >-
+      Topic a subject is about, e.g., a particular research question or domain
