@@ -33,6 +33,7 @@ prefixes:
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
   dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
   dlflatprov: https://concepts.datalad.org/s/flat-prov/unreleased/
@@ -75,6 +76,7 @@ default_prefix: xyzra
 
 emit_prefixes:
   - dlcommonmx
+  - dlfilesmx
   - dlflat
   - dlflatfiles
   - dlflatres
