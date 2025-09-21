@@ -7,10 +7,10 @@ description: |
   Demo schema for a generic data annotation use case. This schema
   is deliberately not using the many schema building block available
   for building submission-focused (FLAT) schemas. Instead it shows
-  who to build something custom solely based on the fundational
-  `flat` schema.
+  how to build something custom solely based on the fundational
+  [`flat`](https://concepts.datalad.org/s/flat/schema).
 
-  All class names are prefixed with `XYZ` to label this as use-case
+  All class names are prefixed with `XYZ` to label them as use-case
   specific.
 
   More information may be available on the schema's [about page](about).
