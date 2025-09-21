@@ -1,0 +1,25 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/sact/DeterminingTheSexOFadelie_N98A1duringPAL0910",
+  "description": "Molecular sexing from blood smears",
+  "schema_type": "dldemoed:XYZStudyActivity",
+  "display_label": "DeterminingTheSexOFadelie_N98A1duringPAL0910",
+  "study": "https://example.org/ns/demo/penguins/study/penguins",
+  "factors": [
+    "https://example.org/ns/demo/penguins/fact/anvers",
+    "https://example.org/ns/demo/penguins/fact/dream"
+  ],
+  "instruments": [
+    "https://example.org/ns/demo/penguins/inst/sterile_syringe",
+    "https://example.org/ns/demo/penguins/inst/heparinized_infusion_needle",
+    "https://example.org/ns/demo/penguins/inst/micro_centrifuge_tube"
+  ],
+  "implements": [
+    "https://example.org/ns/demo/penguins/prot/penguin_blood_sample_collection",
+    "https://example.org/ns/demo/penguins/prot/calculating_penguin_sex_from_blood_smears"
+  ],
+  "part_of": "https://example.org/ns/demo/penguins/sact/PAL0910",
+  "subjects": [
+    "https://example.org/ns/demo/penguins/subj/adelie_N98A1"
+  ],
+  "@type": "XYZStudyActivity"
+}

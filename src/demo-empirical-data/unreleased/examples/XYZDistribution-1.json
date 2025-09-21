@@ -1,0 +1,7 @@
+{
+  "pid": "https://example.org/ns/data/2366efa2-9e6d-40a7-9ea7-06edb166bd88",
+  "schema_type": "dldemoed:XYZDistribution",
+  "display_label": "Test Distro 1 (Dataset)",
+  "distribution_of": "https://example.org/ns/demo/penguins/ds/adelie",
+  "@type": "XYZDistribution"
+}

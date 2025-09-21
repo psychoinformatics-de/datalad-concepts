@@ -1,0 +1,7 @@
+description: a thousandth of one meter, the SI unit of length
+exact_mappings:
+- http://purl.obolibrary.org/obo/NCIT_C28251
+pid: https://example.org/ns/demo/penguins/unit/millimeter
+display_label: millimeter
+name: millimeter
+short_name: mm

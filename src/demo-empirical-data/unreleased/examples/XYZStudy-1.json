@@ -1,0 +1,29 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/study/penguins",
+  "description": "Ecological Sexual Dimorphism and Environmental Variability within a Community of Antarctic Penguins (Genus Pygoscelis)",
+  "schema_type": "dldemoed:XYZStudy",
+  "display_label": "Penguin Study",
+  "dimensions": [
+    "https://example.org/ns/demo/penguins/dim/culmen_length",
+    "https://example.org/ns/demo/penguins/dim/body_mass",
+    "https://example.org/ns/demo/penguins/dim/sex"
+  ],
+  "factors": [
+    "https://example.org/ns/demo/penguins/fact/anvers",
+    "https://example.org/ns/demo/penguins/fact/dream",
+    "https://example.org/ns/demo/penguins/fact/biscoe",
+    "https://example.org/ns/demo/penguins/fact/torgersen"
+  ],
+  "instruments": [
+    "https://example.org/ns/demo/penguins/inst/micro_centrifuge_tube",
+    "https://example.org/ns/demo/penguins/inst/ruler"
+  ],
+  "implements": [
+    "https://example.org/ns/demo/penguins/prot/penguin_monitoring_and_selection",
+    "https://example.org/ns/demo/penguins/prot/penguin_structural_size_and_mass_measurement",
+    "https://example.org/ns/demo/penguins/prot/penguin_blood_sample_collection"
+  ],
+  "name": "Penguin Study",
+  "short_name": "Penguin Study",
+  "@type": "XYZStudy"
+}

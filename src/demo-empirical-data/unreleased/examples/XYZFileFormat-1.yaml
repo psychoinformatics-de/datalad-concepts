@@ -1,0 +1,8 @@
+description: A text file format that uses commas to separate values and newlines to
+  separate records
+exact_mappings:
+- http://purl.obolibrary.org/obo/NCIT_C182456
+pid: https://example.org/ns/demo/penguins/fformat/csv
+display_label: CSV
+name: Comma-separated values
+short_name: CSV

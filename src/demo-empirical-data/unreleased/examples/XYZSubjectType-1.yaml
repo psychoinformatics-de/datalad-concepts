@@ -1,0 +1,6 @@
+description: Pygoscelis adeliae
+exact_mappings:
+- http://purl.obolibrary.org/obo/NCBITaxon_9238
+pid: https://example.org/ns/demo/penguins/stype/adelie
+display_label: Adélie Penguin
+name: Adélie Penguin

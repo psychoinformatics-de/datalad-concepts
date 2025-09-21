@@ -1,0 +1,898 @@
+id: https://concepts.datalad.org/s/demo-empirical-data
+name: demo-empirical-data-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Data models for generic empirical data
+description: |
+  Demo schema for a generic data annotation use case. This schema
+  is deliberately not using the many schema building block available
+  for building submission-focused (FLAT) schemas. Instead it shows
+  who to build something custom solely based on the fundational
+  `flat` schema.
+
+  All class names are prefixed with `XYZ` to label this as use-case
+  specific.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dldemoed: https://concepts.datalad.org/s/demo-empirical-data/unreleased/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  linkml: https://w3id.org/linkml/
+  orcid: https://orcid.org/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dldemoed
+
+emit_prefixes:
+  - dlflat
+  - dlidentifiers
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:flat/unreleased
+
+
+enums:
+  XYZOrganizationType:
+    description: >-
+      Classification of organizations.
+    permissible_values:
+      team:
+        description: Smallest unit of an organized group.
+      group:
+        description: A group may consist of more than one team.
+      division:
+        description: A unit within a parent organization that comprises multiple groups.
+      institute:
+        description: A topical unit comprising multiple divisions or groups.
+      researchcenter:
+        description: An institute primarily focused on research (as opposed to education).
+      researchorganization:
+        description: An organization primarily focused on research (as opposed to education), possibly comprising multiple research centers.
+      faculty:
+        description: A division of a university or college
+      college:
+        description: An institution with a primary focus on undergraduate education.
+      university:
+        description: An institution with a focus on both undergraduate and graduate education.
+      nonprofit:
+        description: A private entity operated for a collective, public or social benefit.
+      business:
+        description: A company aiming to generate profit.
+
+
+slots:
+  additional_names:
+    title: Additional names
+    description: >-
+      Additional name(s) associated with the subject, such as one or more
+      middle names, or a nick name.
+    range: string
+    multivalued: true
+
+  curation_comments:
+    title: Comments
+    description: >-
+      A comment about a metadata record either providing additional information for
+      a record curation, or leaving a comment after curation occurred. This can be
+      used to include information that is deemed relevant, but could not be expressed
+      in the provided fields.
+    range: string
+    multivalued: true
+    annotations:
+      dash:singleLine: false
+
+  emails:
+    title: Email(s)
+    description: >-
+      Associated email address.
+    range: EmailAddress
+    multivalued: true
+
+  family_name:
+    title: Family name
+    description: >-
+      The (inherited) family name of the subject. In many Western languages this is the
+      "last name".
+    range: string
+
+  given_name:
+    title: Given name
+    description: >-
+      The given (non-inherited) name of the subject.
+    range: string
+
+  honorific_name_prefix:
+    title: Title or prefix
+    description: >-
+      The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
+      like "Mrs", or "Dr", "Dame".
+    range: string
+
+  honorific_name_suffix:
+    title: Suffix
+    description: >-
+      The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
+      or indicators of an academic degree, a profession, or a position ("MD", "BA").
+    range: string
+
+  leaders:
+    title: Leader(s)
+    description: >-
+      Person(s) that are formal or informal leaders of the subject.
+    range: XYZPerson
+    multivalued: true
+
+  member_of:
+    title: Member of
+    description: >-
+      The subject is a member of an organization.
+    range: XYZOrganization
+    multivalued: true
+
+  name:
+    title: Name
+    description: >-
+      Name of the subject.
+    range: string
+
+  orcid:
+    title: ORCID
+    description: >-
+      Associated ORCID identifier (see https://orcid.org).
+    range: string
+    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+
+  organization_type:
+    title: Organization type
+    description: >-
+      Type of an organization.
+    range: XYZOrganizationType
+
+  parent_organization:
+    title: Parent organization
+    description: >-
+      An organization the subject is a part of.
+    range: XYZOrganization
+
+  record_contact:
+    title: Record contact
+    description: >-
+      Person to contact regarding questions about information in this
+      metadata record.
+    range: XYZPerson
+
+  short_name:
+    title: Short name
+    description: >-
+      A shortened name for the subject. For example, an acronym, initialism,
+      nickname, or other abbreviation of the name or title.
+    range: string
+
+  byte_size:
+    description: >-
+      The size of the subject in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
+  checksums:
+    description: >-
+      The checksum property provides a mechanism that can be used to verify
+      that the contents of a file or package have not changed.
+    range: Checksum
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    exact_mappings:
+      - spdx:checksum
+
+  derived_from:
+    title: Derived from
+    description: >-
+      A entity from which the subject was created through some kind of process.
+    exact_mappings:
+      - prov:wasDerivedFrom
+
+  dimensions:
+    title: Outcomes variables
+    description: >-
+      Associated outcome variables.
+    range: XYZDimension
+    multivalued: true
+
+  distribution_of:
+    description: >-
+      The resource that the subject is a distribution of.
+    range: XYZDataItem
+    broad_mappings:
+      - sio:SIO_000426
+
+  factors:
+    title: Influencing factors
+    description: >-
+      Factors that influence the subject matter.
+    range: XYZFactor
+    multivalued: true
+
+  factor_level_of:
+    title: Level of
+    description: >-
+      A factor the subject is a (sub)level of.
+    range: XYZFactor
+
+  format:
+    description: >-
+      The file format of a distribution.
+    range: XYZFileFormat
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  generated_by:
+    title: Generated by
+    description: >-
+      Identification of the process that led to the production of the subject entity.
+    range: XYZStudyActivity
+    exact_mappings:
+      - prov:wasGeneratedBy
+
+  implements:
+    title: Implemented protocols
+    description: >-
+      Protocols or standards that are relevant for the subject.
+      For example particular standard operating procedures,
+      data acquisition techniques, or organization standards.
+    range: XYZProtocol
+    multivalued: true
+    broad_mappings:
+      - dcterms:conformsTo
+
+  instruments:
+    title: Used instruments
+    description: >-
+      Instruments employed in a study activity. This could be physical
+      devices, but also software tools.
+    range: XYZInstrument
+    multivalued: true
+
+  media_type:
+    description: >-
+      The media type of a distribution as defined by IANA
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
+  part_of:
+    description: >-
+      The entity that the subject is a part of. A core relation that
+      holds between a part and its whole.
+    exact_mappings:
+      - obo:BFO_0000050
+      - dcterms:isPartOf
+
+  subject_type:
+    title: Type
+    description: >-
+      A classifier that identifies the nature/type of a subject.
+      For specimen (a subject derived/taken from another subject),
+      this classifier should be more precise than the classifier
+      of the source subject.
+    range: XYZSubjectType
+
+  study:
+    title: Study context
+    description: >-
+      The study in which the subject took place or existed.
+    range: XYZStudy
+
+  subjects:
+    title: Studied subjects
+    description: >-
+      Studied subjects.
+    range: XYZSubject
+    multivalued: true
+
+  unit:
+    title: Unit
+    description: >-
+      Unit of the quantitative value associated with the subject entity.
+    range: XYZUnit
+
+
+classes:
+  XYZPerson:
+    is_a: FlatThing
+    title: Person
+    description: >-
+      A person.
+    slots:
+      - additional_names
+      - family_name
+      - given_name
+      - honorific_name_prefix
+      - honorific_name_suffix
+      - emails
+      - member_of
+      - orcid
+    slot_usage:
+      family_name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      given_name:
+        recommended: true
+        annotations:
+          sh:order: 2
+      additional_names:
+        annotations:
+          sh:order: 3
+      honorific_name_prefix:
+        annotations:
+          sh:order: 4
+      honorific_name_suffix:
+        annotations:
+          sh:order: 5
+      emails:
+        recommended: true
+        annotations:
+          sh:order: 6
+      orcid:
+        recommended: true
+        annotations:
+          sh:order: 7
+      member_of:
+        annotations:
+          sh:order: 8
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 9
+
+  XYZOrganization:
+    is_a: FlatThing
+    title: Organization
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+    slots:
+      - name
+      - short_name
+      - parent_organization
+      - organization_type
+      - leaders
+    slot_usage:
+      name:
+        required: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      organization_type:
+        annotations:
+          sh:order: 3
+      leaders:
+        annotations:
+          sh:order: 4
+      parent_organization:
+        annotations:
+          sh:order: 5
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 6
+
+  XYZDataset:
+    is_a: FlatThing
+    title: Dataset
+    description: >-
+      A collection of data, published or curated by a single agent. This is a
+      conceptual entity. A single dataset might be available in more than
+      one representation, with differing schematic layouts, formats, and
+      serializations.
+    slots:
+      - dimensions
+      - generated_by
+      - name
+      - part_of
+      - short_name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      part_of:
+        range: XYZDataset
+        annotations:
+          sh:order: 3
+      dimensions:
+        recommended: true
+        annotations:
+          sh:order: 4
+      description:
+        annotations:
+          sh:order: 5
+          dash:singleLine: false
+      generated_by:
+        annotations:
+          sh:order: 6
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 7
+
+  XYZDataItem:
+    is_a: FlatThing
+    title: DataItem
+    description: >-
+      A single data item, the building block of Datasets. This is a
+      conceptual entity. A DataItem might be available in more than
+      one representation, with differing formats, and serializations.
+    slots:
+      - derived_from
+      - dimensions
+      - generated_by
+      - part_of
+      - unit
+      - value
+    slot_usage:
+      part_of:
+        required: true
+        range: XYZDataset
+        annotations:
+          sh:order: 1
+      generated_by:
+        required: true
+        annotations:
+          sh:order: 2
+      derived_from:
+        range: XYZSubject
+        annotations:
+          sh:order: 3
+      value:
+        annotations:
+          sh:order: 4
+      unit:
+        annotations:
+          sh:order: 5
+      dimensions:
+        recommended: true
+        annotations:
+          sh:order: 6
+      description:
+        annotations:
+          sh:order: 7
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 8
+
+  XYZDistribution:
+    is_a: FlatThing
+    title: Distribution
+    description: >-
+      A specific representation of a data item, which may come in the form of
+      an electronic file, or an archive or directory of many files, may be
+      standalone or part of a larger collection.
+    slots:
+      - byte_size
+      - checksums
+      - distribution_of
+      - format
+      - media_type
+      - name
+      - part_of
+    slot_usage:
+      distribution_of:
+        required: true
+        any_of:
+          - range: XYZDataset
+          - range: XYZDataItem
+        annotations:
+          sh:order: 1
+      name:
+        recommended: true
+        description: >-
+          (File) name of the distribution. If the distribution is part of
+          another distribution, the name is interpreted as a relative path
+          within the parent distribution. This relative path may contain
+          intermediate directories, and must be encoded using POSIX
+          conventions.
+        annotations:
+          sh:order: 2
+      part_of:
+        range: XYZDistribution
+        annotations:
+          sh:order: 3
+      byte_size:
+        recommended: true
+        annotations:
+          sh:order: 4
+      format:
+        annotations:
+          sh:order: 5
+      media_type:
+        annotations:
+          sh:order: 6
+      checksums:
+        annotations:
+          sh:order: 7
+
+  XYZDimension:
+    is_a: FlatThing
+    title: Dimension
+    description: >-
+      A dependent or outcome variable.
+    slots:
+      - name
+      - short_name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 4
+
+  XYZFactor:
+    is_a: FlatThing
+    title: Factor
+    description: >-
+      A tag associated with a categorical, independent variable in a study
+      design. Factors can have an investigative role (e.g., treatments), or
+      have an organizational nature (e.g., site labels).
+    slots:
+      - name
+      - factor_level_of
+      - short_name
+    comments:
+      - The relationship of a factor "level" with the broader factor can be
+        described via `broader_mappings`.
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      factor_level_of:
+        annotations:
+          sh:order: 3
+      description:
+        annotations:
+          sh:order: 4
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 5
+
+  XYZFileFormat:
+    is_a: FlatThing
+    title: FileFormat
+    description: >-
+      The file format of a distribution.
+    slots:
+      - name
+      - short_name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 4
+
+  XYZInstrument:
+    is_a: FlatThing
+    title: Instrument
+    description: >-
+      A material entity that is designed to perform a function in a scientific
+      investigation, but is not a reagent.
+    slots:
+      - name
+      - short_name
+    exact_mappings:
+      - obo:OBI_0000968
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 4
+
+  XYZProtocol:
+    is_a: FlatThing
+    title: Protocol
+    description: >-
+      A plan specification which has sufficient level of detail and
+      quantitative information to communicate it between investigation
+      agents, so that different investigation agents will reliably be
+      able to independently reproduce the process.
+    slots:
+      - name
+      - short_name
+    exact_mappings:
+      - obo:OBI_0000272
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 4
+
+  XYZStudy:
+    is_a: FlatThing
+    title: Study
+    description: >-
+      A planned process that consists of parts: planning, study design
+      execution, documentation and which produce conclusion(s).
+    exact_mappings:
+      - obo:OBI_0000066
+      - sio:SIO_001066
+    narrow_mappings:
+      - sio:SIO_000994
+      - obo:NCIT_C15206
+    slots:
+      # focus on "design" aspects.
+      # leave out incremental items, such as a growing list of
+      # subjects or procedures. These are move efficiently
+      # reported by submitting new records that reference
+      # a study, vs updating a study record multiple times.
+      - dimensions
+      - factors
+      - instruments
+      - implements
+      - name
+      - short_name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      implements:
+        recommended: true
+        annotations:
+          sh:order: 3
+      factors:
+        recommended: true
+        annotations:
+          sh:order: 4
+      instruments:
+        annotations:
+          sh:order: 5
+      dimensions:
+        recommended: true
+        annotations:
+          sh:order: 6
+      description:
+        annotations:
+          sh:order: 7
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 8
+
+  XYZStudyActivity:
+    is_a: FlatThing
+    title: StudyActivity
+    description: >-
+      An activity in the context of a study, where one or more subjects
+      are studied under the influence of certain factors, with one or
+      more instruments, following a set of protocols 
+    slots:
+      - factors
+      - instruments
+      - implements
+      - part_of
+      - study
+      - subjects
+    slot_usage:
+      study:
+        required: true
+        annotations:
+          sh:order: 1
+      subjects:
+        recommended: true
+        annotations:
+          sh:order: 2
+      implements:
+        recommended: true
+        annotations:
+          sh:order: 3
+      factors:
+        recommended: true
+        annotations:
+          sh:order: 4
+      instruments:
+        annotations:
+          sh:order: 5
+      part_of:
+        range: XYZStudyActivity
+        annotations:
+          sh:order: 6
+      description:
+        annotations:
+          sh:order: 7
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 8
+
+  XYZSubject:
+    is_a: FlatThing
+    title: Subject
+    description: >-
+      A subject is an entity being investigated in a study. This is a
+      contextual entity. One and the same entity can be different
+      subjects in two different studies.
+    slots:
+      - derived_from
+      - name
+      - study
+      - subject_type
+    slot_usage:
+      study:
+        required: true
+        annotations:
+          sh:order: 1
+      name:
+        recommended: true
+        annotations:
+          sh:order: 2
+      subject_type:
+        recommended: true
+        annotations:
+          sh:order: 3
+      derived_from:
+        range: XYZSubject
+        title: Specimen of
+        description: >-
+          Source subject.
+        annotations:
+          sh:order: 4
+      description:
+        annotations:
+          sh:order: 5
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 6
+
+  XYZSubjectType:
+    is_a: FlatThing
+    title: SubjectType
+    description: >-
+      Classifier for the nature of a subject.
+    slots:
+      - name
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      description:
+        annotations:
+          sh:order: 2
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 3
+
+  XYZUnit:
+    is_a: FlatThing
+    title: Unit
+    description: >-
+      Standardized quantity of a physical quality.
+    slots:
+      - name
+      - short_name
+    exact_mappings:
+      - obo:UO_0000000
+    slot_usage:
+      name:
+        recommended: true
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+          dash:singleLine: false
+      display_label:
+        recommended: true
+        annotations:
+          sh:order: 4

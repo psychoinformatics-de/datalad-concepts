@@ -1,0 +1,9 @@
+schema: src/demo-empirical-data/unreleased.yaml
+target_class: XYZDimension
+data_sources:
+  - src/demo-empirical-data/unreleased/examples/XYZDimension-1.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
