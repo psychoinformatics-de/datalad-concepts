@@ -1,0 +1,11 @@
+description: 'At the time of capture, each adult penguin was quickly blood sampled
+  (~1 ml) from the brachial vein using a sterile 3 ml syringe and heparinized infusion
+  needle.
+
+  Collected blood was stored in 1.5 ml micro-centrifuge tubes that were kept cool.
+
+  In the field, a small amount of whole blood was smeared on clean filter paper stored
+  in a 1.5 ml micro-centrifuge tube for molecular sexing.'
+pid: https://example.org/ns/demo/penguins/prot/penguin_blood_sample_collection
+display_label: Penguin blood sample collection
+name: Penguin blood sample collection

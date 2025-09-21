@@ -1,0 +1,12 @@
+{
+  "pid": "https://example.org/ns/data/eb2a269a-ca99-4fdf-b1e7-2fb6ac226ad5",
+  "description": "Factor for studies that gather data at multiple sites.",
+  "exact_mappings": [
+    "http://purl.obolibrary.org/obo/BFO_0000029"
+  ],
+  "schema_type": "dldemoed:XYZFactor",
+  "display_label": "Site",
+  "name": "Site",
+  "short_name": "Site",
+  "@type": "XYZFactor"
+}

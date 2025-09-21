@@ -1,0 +1,4 @@
+description: length of the dorsal ridge of a bird's bill
+pid: https://example.org/ns/demo/penguins/dim/culmen_length
+display_label: Culmen Length (mm)
+name: Culmen Length (mm)

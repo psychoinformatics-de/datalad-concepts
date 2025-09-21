@@ -1,0 +1,9 @@
+pid: https://example.org/ns/demo/penguins/person/kbgorman
+display_label: Gorman, Kristen
+additional_names:
+- B
+family_name: Gorman
+given_name: Kristen
+member_of:
+ - https://example.org/ns/demo/penguins/org/uni_alaska_fairbanks
+orcid: 0000-0002-0258-9264

@@ -1,0 +1,9 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/subj/adelie_N61A2",
+  "schema_type": "dldemoed:XYZSubject",
+  "display_label": "Penguin N61A2 (Adélie)",
+  "study": "https://example.org/ns/demo/penguins/study/penguins",
+  "name": "N61A2",
+  "subject_type": "https://example.org/ns/demo/penguins/stype/adelie",
+  "@type": "XYZSubject"
+}

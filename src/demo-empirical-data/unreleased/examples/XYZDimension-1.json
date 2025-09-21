@@ -1,0 +1,8 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/dim/culmen_length",
+  "description": "length of the dorsal ridge of a bird's bill",
+  "schema_type": "dldemoed:XYZDimension",
+  "display_label": "Culmen Length (mm)",
+  "name": "Culmen Length (mm)",
+  "@type": "XYZDimension"
+}

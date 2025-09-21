@@ -1,0 +1,9 @@
+schema: src/demo-empirical-data/unreleased.yaml
+target_class: XYZStudy
+data_sources:
+  - src/demo-empirical-data/unreleased/examples/XYZStudy-1.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

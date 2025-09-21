@@ -1,0 +1,13 @@
+description: Structural size measurements and isotopic signatures of foraging among
+  adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer
+  Archipelago near Palmer Station, 2007-2009
+pid: https://example.org/ns/demo/penguins/ds/adelie
+display_label: Adélie Penguins
+dimensions:
+- https://example.org/ns/demo/penguins/dim/culmen_length
+- https://example.org/ns/demo/penguins/dim/body_mass
+- https://example.org/ns/demo/penguins/dim/sex
+name: Adélie Penguin Dataset
+part_of: https://concepts.datalad.org/ns/dataset-uuid/fd3b41bb-5d75-4cee-b41c-aac0e0cae7f1
+generated_by: https://example.org/ns/demo/penguins/study/penguins
+short_name: Adélie Penguins

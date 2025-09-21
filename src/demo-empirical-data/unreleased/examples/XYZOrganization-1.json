@@ -1,0 +1,11 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/org/uni_alaska_fairbanks",
+  "schema_type": "dldemoed:XYZOrganization",
+  "display_label": "University of Alaska Fairbanks",
+  "editorial_note": [
+    "https://www.uaf.edu/uaf/"
+  ],
+  "name": "University of Alaska Fairbanks",
+  "organization_type": "university",
+  "@type": "XYZOrganization"
+}

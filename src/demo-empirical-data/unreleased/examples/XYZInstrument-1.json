@@ -1,0 +1,7 @@
+{
+  "pid": "https://example.org/ns/demo/penguins/inst/micro_centrifuge_tube",
+  "schema_type": "dldemoed:XYZInstrument",
+  "display_label": "1.5 ml micro-centrifuge tube",
+  "name": "1.5 ml micro-centrifuge tube",
+  "@type": "XYZInstrument"
+}

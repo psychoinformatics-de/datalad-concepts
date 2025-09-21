@@ -46,6 +46,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/files-mixin/unreleased \
 	build/linkml-docs/s/flat-files/unreleased \
 	build/linkml-docs/s/edistributions/unreleased \
+	build/linkml-docs/s/demo-empirical-data/unreleased \
 	build/linkml-docs/s/demo-research-assets/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
@@ -121,6 +122,7 @@ check-models: \
 	checkmodel/files-mixin/unreleased \
 	checkmodel/flat-files/unreleased \
 	checkmodel/edistributions/unreleased \
+	checkmodel/demo-empirical-data/unreleased \
 	checkmodel/demo-research-assets/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
@@ -188,6 +190,8 @@ check-validation: \
 	checkvalidation/flat-files/unreleased \
 	convertexamples/edistributions/unreleased \
 	checkvalidation/edistributions/unreleased \
+	convertexamples/demo-empirical-data/unreleased \
+	checkvalidation/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
 	checkvalidation/demo-research-assets/unreleased
 checkvalidation/%:
@@ -222,6 +226,7 @@ convert-examples: \
 	convertexamples/identifiers/unreleased \
 	convertexamples/flat-files/unreleased \
 	convertexamples/edistributions/unreleased \
+	convertexamples/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
