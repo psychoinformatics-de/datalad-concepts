@@ -312,7 +312,7 @@ classes:
         title: Publication type
         description: >-
           The type of this publication, e.g. journal article, book, webpage
-        range: XYZPublicationType
+        range: XYZBibliographicType
         annotations:
           sh:order: 6.0
       about:
@@ -353,11 +353,11 @@ classes:
         annotations:
           sh:order: 11.0
 
-  XYZPublicationType:
+  XYZBibliographicType:
     is_a: FlatThing
-    title: Publication type
+    title: Bibliographic type
     description: >-
-      Type of a publication, e.g., journal article, book, or webpage.
+      Type of a publication or document, e.g., journal article, book, or webpage.
 
   XYZPublicationVenue:
     is_a: FlatThing
