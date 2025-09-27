@@ -74,6 +74,7 @@ prefixes:
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
   xyzra: https://concepts.datalad.org/s/demo-research-assets/unreleased/
+  xyzrans: https://concepts.datalad.org/s/demo-research-assets/ns/
 
 default_prefix: xyzra
 
