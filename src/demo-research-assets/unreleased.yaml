@@ -155,13 +155,6 @@ slots:
     range: string
     pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
-  confirmed_funding_acknowledgement:
-    title: Funding acknowledgement confirmed
-    description: >-
-      Specify whether the subject appropriately acknowledges the
-      XYZ funding.
-    range: YesNoUnknownClassifcation
-
 
 classes:
   XYZAssessment:
@@ -308,7 +301,6 @@ classes:
       - derived_from
       - doi
       - generated_by
-      - confirmed_funding_acknowledgement
     slot_usage:
       doi:
         recommended: true
@@ -348,7 +340,7 @@ classes:
         annotations:
           sh:order: 6.0
       about:
-        required: true
+        recommended: true
         title: Topic(s)
         description: >-
           Topics covered by this publication.
@@ -363,7 +355,7 @@ classes:
         annotations:
           sh:order: 8.0
       generated_by:
-        required: true
+        recommended: true
         title: Contributing project(s)
         description: >-
           Any project that contributed to the outcomes described in the publication.
@@ -380,10 +372,6 @@ classes:
         multivalued: true
         annotations:
           sh:order: 10.0
-      confirmed_funding_acknowledgement:
-        required: true
-        annotations:
-          sh:order: 11.0
 
   XYZBibliographicType:
     is_a: FlatThing
