@@ -29,6 +29,7 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
+  ISSN: http://identifiers.org/issn/
   bibo: http://purl.org/ontology/bibo/
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
