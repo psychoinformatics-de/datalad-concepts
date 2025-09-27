@@ -24,6 +24,5 @@
   "generated_by": [
     "https://example.org/ns/project-1"
   ],
-  "confirmed_funding_acknowledgement": "yes",
   "@type": "XYZPublication"
 }
