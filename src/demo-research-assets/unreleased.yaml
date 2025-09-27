@@ -222,6 +222,22 @@ classes:
     title: Person
     description: >-
       Person agents are people, alive, dead, or fictional.
+    slot_usage:
+      family_name:
+        annotations:
+          sh:order: 1.0
+      given_name:
+        annotations:
+          sh:order: 2.0
+      additional_names:
+        annotations:
+          sh:order: 3.0
+      honorific_name_prefix:
+        annotations:
+          sh:order: 4.0
+      honorific_name_suffix:
+        annotations:
+          sh:order: 5.0
 
   XYZProject:
     is_a: Project
@@ -233,17 +249,17 @@ classes:
     slot_usage:
       title:
         annotations:
-          sh:order: 1
+          sh:order: 1.0
       short_name:
         annotations:
-          sh:order: 2
+          sh:order: 2.0
       description:
         annotations:
-          sh:order: 3
+          sh:order: 3.0
       part_of:
         range: XYZProject
         annotations:
-          sh:order: 4
+          sh:order: 4.0
 
   XYZProtocol:
     is_a: Protocol
@@ -266,23 +282,23 @@ classes:
         recommended: true
         title: DOI
         annotations:
-          sh:order: 1
+          sh:order: 1.0
       title:
         description: >-
           The full title of the publication.
         required: false
         annotations:
-          sh:order: 2
+          sh:order: 2.0
       authors:
         description: >-
           Authors of the publication who are anyhow contributors to XYZ.
         required: true
         annotations:
-          sh:order: 3
+          sh:order: 3.0
       published_at:
         range: XYZPublicationVenue
         annotations:
-          sh:order: 4
+          sh:order: 4.0
       locator:
         title: Location within publication venue
         description: >-
@@ -291,14 +307,14 @@ classes:
           be a volume and/or page range. Format according to the conventions
           of the publication venue.
         annotations:
-          sh:order: 5
+          sh:order: 5.0
       kind:
         title: Publication type
         description: >-
           The type of this publication, e.g. journal article, book, webpage
         range: XYZPublicationType
         annotations:
-          sh:order: 6
+          sh:order: 6.0
       about:
         required: true
         title: Topic(s)
@@ -307,13 +323,13 @@ classes:
         range: XYZTopic
         multivalued: true
         annotations:
-          sh:order: 7
+          sh:order: 7.0
       date_published:
         range: flexdate
         description: >-
           The date when a publication became available at the publication venue.
         annotations:
-          sh:order: 8
+          sh:order: 8.0
       generated_by:
         required: true
         title: Contributing project(s)
@@ -322,7 +338,7 @@ classes:
         range: XYZProject
         multivalued: true
         annotations:
-          sh:order: 9
+          sh:order: 9.0
       derived_from:
         recommended: true
         title: Associated dataset(s)
@@ -331,11 +347,11 @@ classes:
         range: XYZDataset
         multivalued: true
         annotations:
-          sh:order: 10
+          sh:order: 10.0
       confirmed_funding_acknowledgement:
         required: true
         annotations:
-          sh:order: 11
+          sh:order: 11.0
 
   XYZPublicationType:
     is_a: FlatThing
