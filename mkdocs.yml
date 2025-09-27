@@ -30,13 +30,16 @@ nav:
       - Social (dev): s/social/unreleased/index.md
       - Electronic distributions (dev): s/edistributions/unreleased/index.md
     - FLAT:
-      - FLAT (dev): s/flat/unreleased/index.md
-      - FLAT social (dev): s/flat-social/unreleased/index.md
-      - FLAT provenance (dev): s/flat-prov/unreleased/index.md
-      - FLAT resources (dev): s/flat-resources/unreleased/index.md
-      - FLAT study (dev): s/flat-study/unreleased/index.md
-      - FLAT files (dev): s/flat-files/unreleased/index.md
-      - FLAT publications (dev): s/flat-publications/unreleased/index.md
+      - Base (dev): s/flat/unreleased/index.md
+      - Social (dev): s/flat-social/unreleased/index.md
+      - Provenance (dev): s/flat-prov/unreleased/index.md
+      - Resources (dev): s/flat-resources/unreleased/index.md
+      - Study (dev): s/flat-study/unreleased/index.md
+      - Files (dev): s/flat-files/unreleased/index.md
+      - Publications (dev): s/flat-publications/unreleased/index.md
+    - Demonstrators:
+      - Empirical data: s/demo-empirical-data/unreleased/index.md
+      - Research assests: s/demo-research-assets/unreleased/index.md
   - Dump-things storage: dump-things-storage-v0.md
 plugins:
   - mermaid2
@@ -75,6 +78,8 @@ plugins:
           's/quantities-mixin/index.md': 's/quantities-mixin/unreleased/index.md'
           's/files-mixin/index.md': 's/files-mixin/unreleased/index.md'
           's/flat-files/index.md': 's/flat-files/unreleased/index.md'
+          's/demo-empirical-data/index.md': 's/demo-empirical-data/unreleased/index.md'
+          's/demo-research-assets/index.md': 's/demo-research-assets/unreleased/index.md'
   - search
 site_author: DataLad Team
 site_description:

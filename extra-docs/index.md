@@ -79,6 +79,17 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Files schema](s/flat-files/unreleased/index.md)
 - [Publications schema](s/flat-publications/unreleased/index.md)
 
+
+## Application schema demonstrators
+
+The following examples document how the provided schema components can be
+combined in to complete schemes for particular purposes. These demonstrators
+are **not** intended to be reusable as building blocks for derived schemas.
+
+- [Empirical data](s/demo-empirical-data/unreleased/index.md)
+- [Research assets](s/demo-research-assets/unreleased/index.md)
+
+
 ## Related tools and specifications
 
 ### Knowledge base/graph dump specification
