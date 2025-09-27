@@ -55,6 +55,7 @@ prefixes:
   dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/
+  doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
   geodata: http://sws.geonames.org/
   linkml: https://w3id.org/linkml/
