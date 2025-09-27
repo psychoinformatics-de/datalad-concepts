@@ -388,6 +388,12 @@ classes:
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
 
+  XYZInstrumentType:
+    is_a: FlatThing
+    title: Instrument type
+    description: >-
+      Type of an instrument.
+
   XYZPublicationVenue:
     is_a: FlatThing
     title: Publication venue
