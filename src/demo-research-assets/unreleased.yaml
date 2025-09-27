@@ -400,6 +400,23 @@ classes:
     title: Publication venue
     description: >-
       "Place" of a publication, e.g., a journal, a website, an edited collection.
+    slots:
+      - title
+      - kind
+    slot_usage:
+      title:
+        description: >-
+          The full title of the publication.
+        required: false
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Publication venue type
+        description: >-
+          The type of this publication venue, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 2.0
 
   XYZStudy:
     is_a: Study
