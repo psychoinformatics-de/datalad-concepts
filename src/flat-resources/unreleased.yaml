@@ -30,6 +30,7 @@ prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
   dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
@@ -54,6 +55,7 @@ emit_prefixes:
   - dlflatres
   - dlidentifiers
   - dlcommonmx
+  - dlrelationsmx
   - dlresmx
   - dlspatialmx
   - dlthings
@@ -66,6 +68,7 @@ emit_prefixes:
 imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:relations-mixin/unreleased
   - dlschemas:resources-mixin/unreleased
 
 classes:
@@ -100,14 +103,18 @@ classes:
       A conceputal document is to be distinguished from its physical,
       or electronic distributions.
     slots:
+      - kind
       - title
     slot_usage:
       title:
         annotations:
           sh:order: 1
-      description:
+      kind:
         annotations:
           sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
     notes:
       - The key difference between a dataset and a document is the
         collection-nature of the dataset (multiple items of a kind in
@@ -168,7 +175,18 @@ classes:
         and precise information (vs a description or an identifier).
         There is `display_label`, if the need for a name is just for display
         purposes (e.g., to say something generic like 'thermometer').
+      - Slot `name` is added to avoid `display_label` having to carry unique
+        information.
+    slots:
+      - name
+      - kind
     slot_usage:
-      description:
+      name:
         annotations:
           sh:order: 1
+      kind:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
