@@ -117,7 +117,7 @@ emit_prefixes:
   - orcid
   - ror
   - rrid
-  - xyzra
+  - xyzrans
 
 
 imports:
