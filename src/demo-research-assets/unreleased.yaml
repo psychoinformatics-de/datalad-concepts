@@ -65,6 +65,7 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
+  ror: https://ror.org/
   rrid: "https://scicrunch.org/resolver/RRID:"
   sh: http://www.w3.org/ns/shacl#
   sio: http://semanticscience.org/resource/
@@ -105,6 +106,19 @@ emit_prefixes:
   - skos
   - w3ctr
   - xsd
+  # a bunch more that are not needed for the structural aspects
+  # of the schema, but for records using the schema
+  - ISSN
+  - bibo
+  - dcterms
+  - doi
+  - geodata
+  - obo
+  - orcid
+  - ror
+  - rrid
+  - xyzra
+
 
 imports:
   - dlschemas:flat-files/unreleased
