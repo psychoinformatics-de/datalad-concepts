@@ -135,7 +135,15 @@ classes:
     slots:
       - howto_acknowledge
       - sponsor
+      - title
+      - short_name
     slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
       sponsor:
         range: Thing
         comments:
@@ -143,14 +151,14 @@ classes:
             but in others it could be one or more individuals. Leaving it
             open here.
         annotations:
-          sh:order: 1
+          sh:order: 3
       howto_acknowledge:
         annotations:
-          sh:order: 2
+          sh:order: 4
           dash:singleLine: false
       description:
         annotations:
-          sh:order: 3
+          sh:order: 5
     exact_mappings:
       - obo:NCIT_C16644
       - schema:Grant
