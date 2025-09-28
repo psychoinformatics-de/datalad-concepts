@@ -229,6 +229,23 @@ classes:
     title: Grant
     description: >-
       A grant, typically financial or otherwise quantifiable, resources.
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      sponsor:
+        range: XYZOrganization
+        annotations:
+          sh:order: 3.0
+      howto_acknowledge:
+        annotations:
+          sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
 
   XYZInstrument:
     is_a: Instrument
