@@ -1,25 +1,40 @@
-This patches shaclgen.py to allow improved handling of slot annotations and sh:order.
-Firstly, it introduces the --exclude-order flag that allows to completely disable the
-automatic assignment of the sh:order field to exported property shapes. See:
+This patches shaclgen.py to allow improved handling of slot annotations, sh:order, and
+prefixes. Firstly, it introduces the --exclude-order flag that allows to completely
+disable the automatic assignment of the sh:order field to exported property shapes. See:
 https://github.com/psychoinformatics-de/shacl-vue/issues/107#issuecomment-2866073117
 Secondly, if the --exclude-order flag is not used, the patch prevents creation of faulty
 sh:order lists by prioritizing sh:order provided via annotation, since sh:order should
 just be a single numerical value. See for context:
 https://github.com/linkml/linkml/pull/2111#issuecomment-2116208229
-Lastlt, and for a similar reason as before, it only sets sh:path automatically if the
-value has not already been set via annotation.
+Then, for a similar reason as before, it only sets sh:path automatically if the value
+has not already been set via annotation.
+Lastly, it introduces the --include-stripped-prefixes flag which allows inclusion of
+prefixes that are unused and hence stripped during rdflib serialization. This makes it
+possible to specify namespaces in the prefixes section of a schema that should propagate
+to the exported SHACL for downstream use.
 --- shaclgen.py
 +++ shaclgen.py
-@@ -30,6 +30,8 @@ class ShaclGenerator(Generator):
+@@ -30,6 +30,10 @@ class ShaclGenerator(Generator):
      """parameterized suffix to be appended. No suffix per default."""
      include_annotations: bool = False
      """True means include all class / slot / type annotations in generated Node or Property shapes"""
 +    exclude_order: bool = False
 +    """True means exclude the automatic addition of sh:order to Property shapes"""
++    include_stripped_prefixes: bool = False
++    """True means include the unused prefixes that are typically stripped during rdflib graph serialization"""
      exclude_imports: bool = False
      """If True, elements from imported ontologies won't be included in the generator's output"""
      generatorname = os.path.basename(__file__)
-@@ -114,8 +116,6 @@ class ShaclGenerator(Generator):
+@@ -53,6 +57,8 @@ class ShaclGenerator(Generator):
+     def serialize(self, **args) -> str:
+         g = self.as_graph()
+         data = g.serialize(format="turtle" if self.format in ["owl", "ttl"] else self.format)
++        if self.include_stripped_prefixes:
++            data = self._add_stripped_prefixes(data)
+         return data
+ 
+     def as_graph(self) -> Graph:
+@@ -114,8 +120,6 @@ class ShaclGenerator(Generator):
                          g.add((pnode, p, Literal(v)))
  
                  prop_pv(SH.path, slot_uri)
@@ -28,7 +43,7 @@ value has not already been set via annotation.
                  prop_pv_literal(SH.name, s.title)
                  prop_pv_literal(SH.description, s.description)
                  # minCount
-@@ -223,6 +223,18 @@ class ShaclGenerator(Generator):
+@@ -223,6 +227,18 @@ class ShaclGenerator(Generator):
                  default_value = ifabsent_processor.process_slot(s, c)
                  if default_value:
                      prop_pv(SH.defaultValue, default_value)
@@ -47,7 +62,25 @@ value has not already been set via annotation.
  
          return g
  
-@@ -366,6 +378,13 @@ def add_simple_data_type(func: Callable, r: ElementName) -> None:
+@@ -337,6 +353,17 @@ class ShaclGenerator(Generator):
+         Collection(g, list_node, list(ignored_properties))
+ 
+         return list_node
++    
++    def _add_stripped_prefixes(self, data):
++        # First remove all prefix lines from data string
++        lines = [ln for ln in data.splitlines() if not ln.strip().startswith("@prefix")]
++        # Now generate alphabetized lines from all prefixes:
++        prefix_lines = [
++            f"@prefix {str(pfx.prefix_prefix)}: <{pfx.prefix_reference}> ."
++            for pfx in sorted(self.schema.prefixes.values(), key=lambda p: str(p.prefix_prefix).lower())
++        ]
++        # return the new prefix lines joined with prefix-stripped data
++        return "\n".join(prefix_lines + [""] + lines)
+ 
+ 
+ def add_simple_data_type(func: Callable, r: ElementName) -> None:
+@@ -366,6 +393,19 @@ def add_simple_data_type(func: Callable, r: ElementName) -> None:
      show_default=True,
      help="Use --include-annotations to include annotations of slots, types, and classes in the generated SHACL shapes.",
  )
@@ -57,6 +90,12 @@ value has not already been set via annotation.
 +    show_default=True,
 +    help="Use --exclude-order to exclude sh:order from being added automatically to generated SHACL property shapes. "
 +    "Default behavior adds order. This flag has no influence on sh:order being added via annotations.",
++)
++@click.option(
++    "--include-stripped-prefixes/--exclude-stripped-prefixes",
++    default=False,
++    show_default=True,
++    help="Use --include-stripped-prefixes to include prefixes that are unused and hence stripped during rdflib serialization.",
 +)
  @click.option(
      "--exclude-imports/--include-imports",
