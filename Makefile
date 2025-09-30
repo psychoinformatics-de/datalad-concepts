@@ -75,6 +75,7 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 			$< > $@.context.jsonld && \
 		gen-shacl \
 			--include-annotations \
+			--include-stripped-prefixes \
 			--exclude-order \
 			$< > $@.shacl.ttl ; \
 		gen-yaml \
