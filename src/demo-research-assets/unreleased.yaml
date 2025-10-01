@@ -206,17 +206,17 @@ classes:
     slot_usage:
       title:
         annotations:
-          sh:order: 1
+          sh:order: 1.0
       kind:
         title: Document type
         description: >-
           The type of this document, e.g. journal article, book, webpage
         range: XYZBibliographicType
         annotations:
-          sh:order: 1.0
+          sh:order: 2.0
       description:
         annotations:
-          sh:order: 3
+          sh:order: 3.0
 
   XYZFactor:
     is_a: Factor
