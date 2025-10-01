@@ -1,0 +1,17 @@
+{
+  "pid": "https://concepts.datalad.org/ns/gitsha/9a7e16b80140183c9495d549ce117af4eff9de3e",
+  "schema_type": "xyzra:XYZDistribution",
+  "distribution_of": "https://concepts.datalad.org/ns/dataset-uuid/fd3b41bb-5d75-4cee-b41c-aac0e0cae7f1",
+  "kind": "https://example.org/ns/git-commit",
+  "parts": {
+    "table_221.csv": {
+      "locator": "table_221.csv",
+      "object": "https://concepts.datalad.org/ns/annex-key/MD5E-s11263--1549566fb97afa879dc9446edcf2015f.csv"
+    },
+    "table_220.csv": {
+      "locator": "table_220.csv",
+      "object": "https://concepts.datalad.org/ns/annex-key/MD5E-s18872--e4b0710c69297031d63866ce8b888f25.csv"
+    }
+  },
+  "@type": "XYZDistribution"
+}
