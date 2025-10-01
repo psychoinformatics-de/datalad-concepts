@@ -28,6 +28,7 @@ prefixes:
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
@@ -49,6 +50,7 @@ emit_prefixes:
   - dlflatfiles
   - dlidentifiers
   - dlcommonmx
+  - dlspatialmx
   - dlthings
   - dltypes
   - rdf
@@ -60,6 +62,7 @@ imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
+  - dlschemas:spatial-mixin/unreleased
   - dlschemas:files-mixin/unreleased
 
 slots:
@@ -86,14 +89,14 @@ classes:
       - checksums
       - distribution_of
       - format
+      - kind
       - media_type
-      - part_of
+      - parts
     slot_usage:
-      distribution_of:
+      kind:
         annotations:
           sh:order: 1
-      part_of:
-        range: Distribution
+      distribution_of:
         annotations:
           sh:order: 2
       byte_size:
@@ -108,6 +111,11 @@ classes:
       checksums:
         annotations:
           sh:order: 6
+      parts:
+        range: NamedDistributionPart
+        inlined: true
+        annotations:
+          sh:order: 7
     comments:
       - There is no `name` property or similar, because the focus is on the
         identity of the distribution content, not how it might be named
@@ -115,4 +123,24 @@ classes:
         might be names "20250825_102385.jpg" on a camera and
         "me_at_the_party.jpg" elsewhere, but it would be the exact same
         image. Expressing naming in some context should be done within
-        the scope of the containing entity.
+        the scope of the containing entity (see `named_parts`).
+
+  NamedDistributionPart:
+    description: >-
+      An association class for attaching a `locator` as additional information to a
+      `hasPart` relationship.
+    slots:
+      - locator
+      # TODO we will need this to say things like "executable"
+      #- roles
+      - object
+    slot_usage:
+      locator:
+        description: A relative path in POSIX notation.
+        # TODO declare pattern that ensures no leading slash
+        key: true
+      object:
+        # we cannot make this required, if we want to support
+        # only providing a content listing
+        #required: true
+        range: Distribution

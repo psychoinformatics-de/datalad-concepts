@@ -1,0 +1,18 @@
+{
+  "pid": "https://example.com/a_file.zip",
+  "schema_type": "dlflatfiles:Distribution",
+  "parts": {
+    "file1.txt": {
+      "locator": "file1.txt",
+      "object": "https://example.com/a_file.json"
+    },
+    "file2.txt": {
+      "locator": "file2.txt"
+    },
+    "dir1/file1.txt": {
+      "locator": "dir1/file1.txt",
+      "object": "https://example.com/a_file.json"
+    }
+  },
+  "@type": "Distribution"
+}

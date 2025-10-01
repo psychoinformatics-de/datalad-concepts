@@ -2,6 +2,7 @@ schema: src/flat-files/unreleased.yaml
 target_class: Distribution
 data_sources:
   - src/flat-files/unreleased/examples/Distribution-02-attributes.yaml
+  - src/flat-files/unreleased/examples/Distribution-03-parts.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true
