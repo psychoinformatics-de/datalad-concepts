@@ -31,9 +31,13 @@ prefixes:
   ADMS: http://www.w3.org/ns/adms#
   ISSN: http://identifiers.org/issn/
   bibo: http://purl.org/ontology/bibo/
+  # TODO preliminary definition, pointing to a future resolver
+  datalad: https://pid.datalad.org/datasets/
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  # TODO preliminary definition, pointing to a future resolver
+  dldi: https://pid.datalad.org/distributions/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
   dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
@@ -110,7 +114,9 @@ emit_prefixes:
   # of the schema, but for records using the schema
   - ISSN
   - bibo
+  - datalad
   - dcterms
+  - dldi
   - doi
   - geodata
   - obo
