@@ -1,0 +1,6 @@
+pid: https://example.com/a_file.zip
+parts:
+  file1.txt: https://example.com/a_file.json
+  # a file where the content/distribution is unknown
+  file2.txt:
+  dir1/file1.txt: https://example.com/a_file.json

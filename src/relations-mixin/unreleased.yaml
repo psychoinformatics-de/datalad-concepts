@@ -92,6 +92,16 @@ slots:
       - schema:isPartOf
     range: Thing
 
+  parts:
+    description: >-
+      A related resource that is included either physically or logically
+      in the described resource.
+    exact_mappings:
+      - dcterms:hasPart
+      - schema:hasPart
+    range: Thing
+    multivalued: true
+
   same_as:
     description: >-
       Declares that the subject and an object are equal.
