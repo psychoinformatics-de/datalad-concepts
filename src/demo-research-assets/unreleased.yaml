@@ -38,6 +38,8 @@ prefixes:
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
+  # TODO preliminary definition, just to have something short
+  dlcdi: https://concepts.datalad.org/ns/content-defined-identifiers/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
   dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
@@ -63,6 +65,7 @@ prefixes:
   eunal: http://publications.europa.eu/resource/authority/
   geodata: http://sws.geonames.org/
   linkml: https://w3id.org/linkml/
+  nfo: http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#
   obo: http://purl.obolibrary.org/obo/
   orcid: https://orcid.org/
   owl: http://www.w3.org/2002/07/owl#
