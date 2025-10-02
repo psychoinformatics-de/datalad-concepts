@@ -37,6 +37,7 @@ license: MIT
 
 prefixes:
   dcat: http://www.w3.org/ns/dcat#
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlroles: https://concepts.datalad.org/s/roles/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
@@ -53,6 +54,7 @@ prefixes:
 default_prefix: dlroles
 
 emit_prefixes:
+  - dlrelationsmx
   - dlroles
   - dlthings
   - dltypes
@@ -63,21 +65,10 @@ emit_prefixes:
 
 imports:
   - dlschemas:things/v1
+  - dlschemas:relations-mixin/unreleased
 
 
 slots:
-  roles:
-    slot_uri: dlroles:roles
-    description: >-
-      Describes the function of an entity or agent (object) within the scope of
-      a `Relationship` with the subject.
-    range: Role
-    multivalued: true
-    inlined: false
-    exact_mappings:
-      - prov:hadRole
-      - dcat:had_role
-
   qualified_relations:
     slot_uri: dlroles:qualified_relations
     description: >-
@@ -118,6 +109,8 @@ classes:
       object:
         required: true
         range: Thing
+      roles:
+        range: Role
     close_mappings:
       - prov:Influence
       - dcat:Relationship
