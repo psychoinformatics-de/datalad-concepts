@@ -27,6 +27,7 @@ prefixes:
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
@@ -50,6 +51,7 @@ emit_prefixes:
   - dlflatfiles
   - dlidentifiers
   - dlcommonmx
+  - dlrelationsmx
   - dlspatialmx
   - dlthings
   - dltypes
@@ -131,8 +133,7 @@ classes:
       `hasPart` relationship.
     slots:
       - locator
-      # TODO we will need this to say things like "executable"
-      #- roles
+      - roles
       - object
     slot_usage:
       locator:

@@ -227,16 +227,33 @@ classes:
         annotations:
           sh:order: 6.0
       parts:
-        range: NamedDistributionPart
+        range: XYZNamedDistributionPart
         inlined: true
         annotations:
           sh:order: 7.0
+
+  XYZNamedDistributionPart:
+    is_a: NamedDistributionPart
+    description: >-
+      An association class for attaching a `locator` as additional information to a
+      `hasPart` relationship.
+    slot_usage:
+      roles:
+        range: XYZDistributionPartType
 
   XYZDistributionType:
     is_a: FlatThing
     title: Distribution type
     description: >-
       Type of a distribution.
+
+  XYZDistributionPartType:
+    is_a: FlatThing
+    title: Distribution part type/role
+    description: >-
+      Type or role of a part of a distribution.
+      For example, a part could be an item in an archive,
+      or a file that is an executable.
 
   XYZDocument:
     is_a: Document
