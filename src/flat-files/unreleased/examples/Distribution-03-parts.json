@@ -7,7 +7,8 @@
       "object": "https://example.com/a_file.json"
     },
     "file2.txt": {
-      "locator": "file2.txt"
+      "locator": "file2.txt",
+      "object": "https://example.com/b_file.json"
     },
     "dir1/file1.txt": {
       "locator": "dir1/file1.txt",
