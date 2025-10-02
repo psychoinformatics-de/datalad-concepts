@@ -138,10 +138,13 @@ classes:
     slot_usage:
       locator:
         description: A relative path in POSIX notation.
-        # TODO declare pattern that ensures no leading slash
         key: true
+        # ensure no leading slash
+        pattern: '^[^/]+.*$'
       object:
-        # we cannot make this required, if we want to support
-        # only providing a content listing
-        #required: true
+        # this must be required, if we want to support key-based
+        # access to the named distribution parts. this also
+        # implies that we cannot support listings without content
+        # identifiers
+        required: true
         range: Distribution
