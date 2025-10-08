@@ -2,6 +2,9 @@
   "pid": "https://doi.org/1234/demo",
   "description": "very important science",
   "schema_type": "dlflatstudy:Study",
+  "associated_with": [
+    "https://en.wikipedia.org/wiki/Marie_Curie"
+  ],
   "name": "Demo",
   "@type": "Study"
 }

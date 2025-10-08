@@ -2,3 +2,5 @@ pid: https://doi.org/1234/demo
 name: Demo
 description: >-
   very important science
+associated_with:
+  - https://en.wikipedia.org/wiki/Marie_Curie

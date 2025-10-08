@@ -505,6 +505,7 @@ classes:
     title: Study
     description: >-
       A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).
+    # TODO redefine associated_with to be multivalued
 
   XYZSubject:
     is_a: Subject

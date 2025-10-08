@@ -192,6 +192,7 @@ classes:
       - prov:Activity
       - obo:BFO_0000015
     slots:
+      - associated_with
       - dimensions
       - factors
       - instruments
@@ -217,9 +218,13 @@ classes:
         range: Study
         annotations:
           sh:order: 5
-      description:
+      associated_with:
+        multivalued: true
         annotations:
           sh:order: 6
+      description:
+        annotations:
+          sh:order: 7
           dash:singleLine: false
 
   Subject:

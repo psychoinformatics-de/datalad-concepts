@@ -126,20 +126,6 @@ slots:
     exact_mappings:
       - prov:actedOnBehalfOf
 
-  associated_with:
-    slot_uri: dlprov:associated_with
-    description: >-
-      An activity association is an assignment of responsibility to an agent
-      for an activity, indicating that the agent had a role in the activity.
-      It further allows for a plan to be specified, which is the plan intended
-      by the agent to achieve some goals in the context of this activity.
-    domain: Activity
-    range: Agent
-    inlined: false
-    multivalued: true
-    exact_mappings:
-      - prov:wasAssociatedWith
-
   attributed_to:
     slot_uri: dlprov:attributed_to
     description: >-
@@ -211,6 +197,10 @@ classes:
       - associated_with
       - informed_by
     slot_usage:
+      associated_with:
+        range: Agent
+        inlined: false
+        multivalued: true
       at_location:
         range: Location
         inlined: False
