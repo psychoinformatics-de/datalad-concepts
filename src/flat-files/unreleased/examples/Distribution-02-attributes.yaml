@@ -9,3 +9,5 @@ media_type: application/json
 # file format specification via custom definition IRI
 # (here effectively also pointing to IANA)
 format: http://edamontology.org/format_3475
+distribution_of:
+  - https://example.com/a_file

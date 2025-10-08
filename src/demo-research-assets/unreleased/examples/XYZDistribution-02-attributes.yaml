@@ -1,5 +1,6 @@
 pid: https://concepts.datalad.org/ns/gitsha/9a7e16b80140183c9495d549ce117af4eff9de3e
-distribution_of: https://concepts.datalad.org/ns/dataset-uuid/fd3b41bb-5d75-4cee-b41c-aac0e0cae7f1
+distribution_of:
+  - https://concepts.datalad.org/ns/dataset-uuid/fd3b41bb-5d75-4cee-b41c-aac0e0cae7f1
 kind: https://example.org/ns/git-commit
 parts:
   table_221.csv: https://concepts.datalad.org/ns/annex-key/MD5E-s11263--1549566fb97afa879dc9446edcf2015f.csv
