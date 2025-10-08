@@ -212,6 +212,10 @@ classes:
         annotations:
           sh:order: 1.0
       distribution_of:
+        # XXX this should be a superfluous reannotation of the `Distribution.distribution_of`
+        # slot as being multivalued (which it is in `Distribution`). But with linkml 1.9.4
+        # this information is not inherited
+        multivalued: true
         annotations:
           sh:order: 2.0
       byte_size:

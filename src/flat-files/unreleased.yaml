@@ -99,6 +99,7 @@ classes:
         annotations:
           sh:order: 1
       distribution_of:
+        multivalued: true
         annotations:
           sh:order: 2
       byte_size:
