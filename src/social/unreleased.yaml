@@ -180,3 +180,7 @@ classes:
     slots:
       - short_name
       - title
+    slot_usage:
+      associated_with:
+        range: Agent
+        multivalued: true
