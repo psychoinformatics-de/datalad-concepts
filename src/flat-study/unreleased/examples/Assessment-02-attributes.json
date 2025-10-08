@@ -3,8 +3,8 @@
   "schema_type": "dlflatstudy:Assessment",
   "kind": "http://purl.obolibrary.org/obo/ENVO_01001362",
   "part_of": "https://example.org/dataset/windy",
-  "quantity_unit": "http://purl.obolibrary.org/obo/UO_0000094",
-  "quantity_value": 22.0,
+  "quantitative_unit": "http://purl.obolibrary.org/obo/UO_0000094",
+  "quantitative_value": 22.0,
   "same_as": "http://semanticscience.org/resource/SIO_001215",
   "@type": "Assessment"
 }

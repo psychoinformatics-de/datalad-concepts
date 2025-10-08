@@ -88,8 +88,8 @@ classes:
       - generated_by
       - kind
       - part_of
-      - quantity_unit
-      - quantity_value
+      - quantitative_unit
+      - quantitative_value
       - same_as
     slot_usage:
       part_of:
@@ -109,13 +109,13 @@ classes:
           The value of a qualitative assessment.
         annotations:
           sh:order: 4
-      quantity_value:
+      quantitative_value:
         title: Quantitative value
         description: >-
           The value of a quantitative assessment.
         annotations:
           sh:order: 5
-      quantity_unit:
+      quantitative_unit:
         annotations:
           sh:order: 6
       kind:
