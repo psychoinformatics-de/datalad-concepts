@@ -409,6 +409,7 @@ classes:
         description: >-
           Authors of the publication who are anyhow contributors to XYZ.
         required: true
+        range: XYZPerson
         annotations:
           sh:order: 3.0
       published_at:
