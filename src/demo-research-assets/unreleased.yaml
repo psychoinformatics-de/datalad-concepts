@@ -304,9 +304,11 @@ classes:
       howto_acknowledge:
         annotations:
           sh:order: 4.0
+          dash:singleLine: false
       description:
         annotations:
           sh:order: 5.0
+          dash:singleLine: false
 
   XYZInstrument:
     is_a: Instrument
