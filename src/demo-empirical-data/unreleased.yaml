@@ -1,4 +1,4 @@
-id: https://concepts.datalad.org/s/demo-empirical-data
+id: https://concepts.datalad.org/s/demo-empirical-data/unreleased
 name: demo-empirical-data-schema
 version: UNRELEASED
 status: eunal:concept-status/DRAFT
@@ -767,7 +767,7 @@ classes:
     description: >-
       An activity in the context of a study, where one or more subjects
       are studied under the influence of certain factors, with one or
-      more instruments, following a set of protocols 
+      more instruments, following a set of protocols
     slots:
       - factors
       - instruments
