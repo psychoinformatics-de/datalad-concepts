@@ -78,7 +78,7 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 			--include-stripped-prefixes \
 			--exclude-order \
 			$< > $@.shacl.ttl ; \
-		gen-yaml \
+		dump-things-create-merged-schema \
 			$< > $@.static.yaml ; \
 	fi
 
