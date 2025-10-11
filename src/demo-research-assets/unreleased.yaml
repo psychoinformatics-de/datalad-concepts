@@ -385,6 +385,29 @@ classes:
     title: Protocol
     description: >-
       A plan specification which has sufficient level of detail and quantitative information to communicate it between investigation agents, so that different investigation agents will reliably be able to independently reproduce the process.
+    slots:
+      - enabled_by
+      - version_of
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      enabled_by:
+        range: XYZInstrument
+        multivalued: true
+        annotations:
+          sh:order: 3.0
+      version_of:
+        range: XYZProtocol
+        annotations:
+          sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
+          dash:singleLine: false
 
   XYZPublication:
     is_a: Publication

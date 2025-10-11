@@ -52,6 +52,7 @@ slots:
       The previous version of the subject in a lineage.
     range: Thing
     exact_mappings:
+      - obo:BFO_0000062
       - dcat:previousVersion
       - pav:previousVersion
 
