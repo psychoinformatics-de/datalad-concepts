@@ -125,3 +125,10 @@ slots:
       - owl:sameAs
     close_mappings:
       - schema:sameAs
+
+  version_of:
+    description: >-
+      A related resource of which the described resource is a version, edition, or adaptation.
+    range: Thing
+    exact_mappings:
+      - dcterms:isVersionOf
