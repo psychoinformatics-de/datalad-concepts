@@ -1,0 +1,12 @@
+{
+  "pid": "https://example.org/proto/q01-v1",
+  "description": "This is the agreed upon protocol for X in context Y.",
+  "schema_type": "xyzra:XYZProtocol",
+  "name": "Q01 MRI standard operations procedure",
+  "short_name": "Q01-SOP-MRI",
+  "enabled_by": [
+    "obo:OBI_0000566"
+  ],
+  "version_of": "https://example.org/proto/q01",
+  "@type": "XYZProtocol"
+}

@@ -77,6 +77,7 @@ classes:
       - short_name
     exact_mappings:
       - obo:OBI_0000272
+      - prov:Plan
     slot_usage:
       name:
         annotations:
