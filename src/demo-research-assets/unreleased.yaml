@@ -189,6 +189,17 @@ classes:
       available in more than one representation, with differing formats,
       and serializations.
 
+  XYZAssessmentType:
+    is_a: FlatThing
+    title: Assessment type
+    description: >-
+      Type of an assessment.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
   XYZDataset:
     is_a: Dataset
     title: Dataset
@@ -200,6 +211,11 @@ classes:
     title: Dimension
     description: >-
       A dependent or outcome variable.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZDistribution:
     is_a: Distribution
@@ -250,6 +266,11 @@ classes:
     title: Distribution type
     description: >-
       Type of a distribution.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZDistributionPartType:
     is_a: FlatThing
@@ -258,6 +279,11 @@ classes:
       Type or role of a part of a distribution.
       For example, a part could be an item in an archive,
       or a file that is an executable.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZDocument:
     is_a: Document
@@ -284,6 +310,11 @@ classes:
     title: Factor
     description: >-
       A tag associated with a categorical, independent variable in a study design. Factors can have an investigative role (e.g., treatments), or have an organizational nature (e.g., site labels).
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZGrant:
     is_a: Grant
@@ -496,12 +527,22 @@ classes:
     title: Bibliographic type
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZInstrumentType:
     is_a: FlatThing
     title: Instrument type
     description: >-
       Type of an instrument.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZPublicationVenue:
     is_a: FlatThing
@@ -571,8 +612,24 @@ classes:
     description: >-
       A subject is an entity being investigated in a study. This is a contextual entity. One and the same entity can be different subjects in two different studies.
 
+  XYZSubjectType:
+    is_a: FlatThing
+    title: Subject type
+    description: >-
+      Type of a subject.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
   XYZTopic:
     is_a: FlatThing
     title: Topic
     description: >-
       Topic a subject is about, e.g., a particular research question or domain
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
