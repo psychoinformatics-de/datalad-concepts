@@ -531,7 +531,39 @@ classes:
     title: Study
     description: >-
       A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).
-    # TODO redefine associated_with to be multivalued
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      factors:
+        multivalued: true
+        range: XYZFactor
+        annotations:
+          sh:order: 2.0
+      instruments:
+        multivalued: true
+        range: XYZInstrument
+        annotations:
+          sh:order: 3.0
+      dimensions:
+        multivalued: true
+        range: XYZDimension
+        annotations:
+          sh:order: 4.0
+      part_of:
+        range: XYZStudy
+        annotations:
+          sh:order: 5.0
+      associated_with:
+        range: XYZProject
+        multivalued: true
+        annotations:
+          sh:order: 6.0
+      description:
+        annotations:
+          sh:order: 7.0
+          dash:singleLine: false
+
 
   XYZSubject:
     is_a: Subject
