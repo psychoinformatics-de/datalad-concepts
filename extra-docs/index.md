@@ -112,3 +112,11 @@ This is a [VueJS](https://vuejs.org)-based browser tool that enabled client-side
 It auto-builds a customizable UI from [SHACL](https://www.w3.org/TR/shacl) and [OWL](https://www.w3.org/TR/owl-ref) specifications, such as those provided for the schemas available on this site. Records are consumed and submitted in [Terse RDF Triple Language (Turtle)](https://en.wikipedia.org/wiki/Turtle_(syntax) (supported by, for example, [dump-things-service](https://pypi.org/project/dump-things-service) API endpoint).
 
 Check out [shacl-vue on GitHub](https://psychoinformatics-de.github.io/shacl-vue/docs)
+
+## Acknowledgements
+
+This work was funded, in part, by
+
+- Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under grant TRR 379 ([546006540](https://gepris.dfg.de/gepris/projekt/546006540), Q02 project)
+- Deutsche Forschungsgemeinschaft (DFG, German Research Foundation) under grant SFB 1451 ([431549029](https://gepris.dfg.de/gepris/projekt/431549029), INF project)
+- [MKW-NRW: Ministerium für Kultur und Wissenschaft des Landes Nordrhein-Westfalen](https://www.mkw.nrw) under the Kooperationsplattformen 2022 program, grant number: KP22-106A
