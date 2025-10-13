@@ -41,6 +41,7 @@ nav:
       - Empirical data: s/demo-empirical-data/unreleased/index.md
       - Research assests: s/demo-research-assets/unreleased/index.md
   - Dump-things storage: dump-things-storage-v0.md
+  - Usage considerations: usage-considerations.md
 plugins:
   - mermaid2
   - panzoom:
