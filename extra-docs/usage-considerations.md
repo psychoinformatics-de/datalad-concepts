@@ -152,3 +152,95 @@ possible rules for PID generations, such as using particular PID systems for cer
 types of records (e.g., DOIs for publications, ORCID for researchers, ROR IDs for
 organizations, RRIDs for resources, etc). This task could be left to professional
 curators.
+
+## DataLad datasets as a PID provider
+
+PIDs play an essential role for the schemas provider here. Quoting
+[Wikipedia](https://en.wikipedia.org/wiki/Persistent_identifier):
+
+> An important aspect of persistent identifiers is that "persistence is purely
+> a matter of service". That means that persistent identifiers are only
+> persistent to the degree that someone commits to resolving them for users. No
+> identifier can be inherently persistent, however many persistent identifiers
+> are created within institutionally administered systems with the aim to
+> maximise longevity.
+
+In order to address this, PIDs often need to be minted upon request by a dedicated
+service, which is then maintaining an index that supports this PID resolution.
+
+DataLad offers a different approach. A DataLad dataset offers two types of PIDs
+that are built into any dataset -- and are therefore readily available without
+requiring a dedicated PID issuing service to be established (or maintained).
+
+1. globally unique random identifiers, persistent by convention
+2. content-defined unique identifiers, persistent by definition
+
+Type (1) is used to identify datasets and dataset content locations. Every
+DataLad dataset carries a
+[UUID-4](https://en.wikipedia.org/wiki/Universally_unique_identifier#Version_4_(random))
+identifier that is persistent across dataset versions. In addition, each
+configured git-annex accessible location within the network of dataset clones
+is also identified with a UUID.
+
+Type (2) is used to identify dataset content (files), and dataset versions
+(commits). In general, these identifiers are deterministically defined by the
+dataset content the refer to (checksums).
+
+Based on the unconditional availability of these identifiers, services can be
+built and operated that make them actionable, and resolve to locations or
+descriptions as desired. Importantly, given the decentralized approach of data
+management taken by DataLad (git-annex and Git), this approach avoid issues
+of PID ownership, or even the requirement of canonical locations for some
+information. One example service that implements this is the [DataLad dataset
+registry](https://registry.datalad.org) which indexes 15k+ unique datasets,
+with 400M+ files of ~2PB total size.
+
+### Using DataLad PIDs for non-DataLad entities
+
+Not all entities relevant in the context of a DataLad dataset are immediately
+covered by the two identifier types described above. An artist of some songs
+in a music collection, or a subject in a study that yielded a respective dataset
+are not represented explicitly in a DataLad dataset.
+
+However, type (1) and type (2) PIDs can be used as a "root" of an ad-hoc
+namespace that enables a dataset curator to "mint" globally unique PIDs as
+necessary. Importantly, when combined with a deterministic convention for
+generating sub-identifiers in this namespace, PIDs can be (re-)generated
+deterministically in a future process, or by other agents.
+
+*An example:* Let `datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528` be the PID of a
+particular DataLad dataset. It refers to a Dataset in the
+[DCAT](https://www.w3.org/TR/vocab-dcat-3/#Class:Dataset) sense: "A collection
+of data, published or curated by a single agent, and available for access or
+download in one or more representations.".  It is a version-less, conceptual
+entity. The `datalad` prefix can point to a respective resolver service.
+
+By convention, `datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/ns/` can be
+a dataset-local namespace root. Furthermore, also by convention,
+`datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/ns/subjects/001` may be used
+as a PID for a particular subject entity relevant in that dataset's context.
+
+Likewise by convention, `datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/path/`
+could be the root of another namespace for the dataset-internal organization by
+means of directories and file names. The PID
+`datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/path/sub-001/data.json` could be
+used to annotate a particular (conceptual) location with structural metadata,
+for example that `data.json` is associated with a "subject 001"
+(`.../ns/subject/001`).
+
+Such conventions may be adopted more broadly by a community. For example, for
+dataset using the [BIDS standard](https://bids.neuroimaging.io), it may be
+useful to claim a namespace for [its
+entities](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html),
+and have `datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/bids/sub-001` be a
+dataset-specific subject identifier, and
+`datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/bids/space-unheardof` be the PID
+of a dataset-specific image coordinate space.
+
+Lastly, for scenarios where conceptual reorganizations or redefinitions are
+possible, the PID generation scheme should including a version identifier
+component, for example,
+`datalad:09ca86c1-a8e4-11f0-a779-dc97ba1c2528/v2/path/`. Alternatively, a
+convention could be to generate a new UUID root identifier, and declare the
+previous one as a [previous
+version](https://www.w3.org/TR/vocab-dcat-3/#Property:resource_previous_version).
