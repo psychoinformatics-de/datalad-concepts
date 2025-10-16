@@ -180,6 +180,33 @@ slots:
 
 
 classes:
+  XYZAccolade:
+    is_a: FlatThing
+    title: Accolade
+    description: >-
+      An award, prize, or other honor received in recognition of an achievement.
+    slots:
+      - title
+      - at_time
+      - received_by
+    slot_usage:
+      title:
+        required: true
+        annotations:
+          sh:order: 1.0
+      received_by:
+        required: true
+        multivalued: true
+        range: XYZPerson
+        annotations:
+          sh:order: 2.0
+      at_time:
+        title: Received on
+        annotations:
+          sh:order: 3.0
+        close_mappings:
+          - schema:dateReceived
+
   XYZAssessment:
     is_a: Assessment
     title: Assessment

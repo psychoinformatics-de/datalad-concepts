@@ -1,0 +1,5 @@
+pid: https://example.org/awards/major1
+title: The greatest award of all times
+at_time: "2025-01-01"
+received_by:
+  - https://example.org/people/famous1

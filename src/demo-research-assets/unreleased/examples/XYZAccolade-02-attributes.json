@@ -1,0 +1,10 @@
+{
+  "pid": "https://example.org/awards/major1",
+  "schema_type": "xyzra:XYZAccolade",
+  "title": "The greatest award of all times",
+  "received_by": [
+    "https://example.org/people/famous1"
+  ],
+  "at_time": "2025-01-01",
+  "@type": "XYZAccolade"
+}
