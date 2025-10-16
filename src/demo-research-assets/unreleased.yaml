@@ -332,13 +332,20 @@ classes:
         range: XYZOrganization
         annotations:
           sh:order: 3.0
-      howto_acknowledge:
+      received_by:
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
+        multivalued: true
         annotations:
           sh:order: 4.0
+      howto_acknowledge:
+        annotations:
+          sh:order: 5.0
           dash:singleLine: false
       description:
         annotations:
-          sh:order: 5.0
+          sh:order: 6.0
           dash:singleLine: false
 
   XYZInstrument:

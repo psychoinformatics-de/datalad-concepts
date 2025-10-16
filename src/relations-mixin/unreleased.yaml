@@ -104,6 +104,13 @@ slots:
     range: Thing
     multivalued: true
 
+  received_by:
+    description: >-
+      Indicates the person or authoritative body who has received something.
+    range: Thing
+    exact_mappings:
+      - obo:NCIT_C45265
+
   roles:
     description: >-
       Describes the function of an entity or agent (object) within the scope of

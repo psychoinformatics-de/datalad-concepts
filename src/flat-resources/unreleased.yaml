@@ -136,6 +136,7 @@ classes:
       - howto_acknowledge
       - sponsor
       - title
+      - received_by
       - short_name
     slot_usage:
       title:
@@ -152,13 +153,17 @@ classes:
             open here.
         annotations:
           sh:order: 3
-      howto_acknowledge:
+      received_by:
+        multivalued: true
         annotations:
           sh:order: 4
+      howto_acknowledge:
+        annotations:
+          sh:order: 5
           dash:singleLine: false
       description:
         annotations:
-          sh:order: 5
+          sh:order: 6
     exact_mappings:
       - obo:NCIT_C16644
       - schema:Grant
