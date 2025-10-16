@@ -645,6 +645,25 @@ classes:
     title: Subject
     description: >-
       A subject is an entity being investigated in a study. This is a contextual entity. One and the same entity can be different subjects in two different studies.
+    slot_usage:
+      study:
+        range: XYZStudy
+        annotations:
+          sh:order: 1.0
+      name:
+        annotations:
+          sh:order: 2.0
+      kind:
+        annotations:
+          sh:order: 3.0
+      description:
+        annotations:
+          sh:order: 4.0
+          dash:singleLine: false
+      derived_from:
+        range: XYZSubject
+        annotations:
+          sh:order: 5.0
 
   XYZSubjectType:
     is_a: FlatThing
