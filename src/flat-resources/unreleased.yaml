@@ -72,6 +72,33 @@ imports:
   - dlschemas:resources-mixin/unreleased
 
 classes:
+  Convention:
+    is_a: FlatThing
+    description: >-
+      A set of agreed, stipulated, or generally accepted standards, norms,
+      social norms, or criteria, often taking the form of a custom.
+    slots:
+      - title
+      - short_name
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1
+      short_name:
+        annotations:
+          sh:order: 2
+      description:
+        annotations:
+          sh:order: 3
+    exact_mappings:
+      # normative example
+      - obo:NCIT_C61300
+      - obo:GSSO_010111
+    narrow_mappings:
+      # standard
+      - obo:MS_1000898
+      - obo:T4FS_0000381
+
   Dataset:
     is_a: FlatThing
     description: >-
