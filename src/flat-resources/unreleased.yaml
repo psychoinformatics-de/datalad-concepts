@@ -90,6 +90,7 @@ classes:
       description:
         annotations:
           sh:order: 3
+          dash:singleLine: false
     exact_mappings:
       # normative example
       - obo:NCIT_C61300
