@@ -1,0 +1,9 @@
+schema: src/flat-resources/unreleased.yaml
+target_class: Convention
+data_sources:
+  - src/flat-resources/unreleased/examples/Convention-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
