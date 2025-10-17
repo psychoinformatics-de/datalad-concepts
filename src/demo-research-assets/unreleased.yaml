@@ -362,6 +362,28 @@ classes:
           sh:order: 1.0
           dash:singleLine: false
 
+  XYZGenesis:
+    is_a: FlatThing
+    title: Genesis
+    description: >-
+      A process in which an entity comes into being as a result of the process.
+    slots:
+      - name
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+    broad_mappings:
+      - obo:BFO_0000015
+      - prov:Activity
+    exact_mappings:
+      - obo:NCIT_C48151
+      - obo:IDO_0000607
+
   XYZGrant:
     is_a: Grant
     title: Grant
