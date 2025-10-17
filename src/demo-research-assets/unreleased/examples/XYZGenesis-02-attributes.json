@@ -1,0 +1,6 @@
+{
+  "pid": "obo:MAXO_0000494",
+  "schema_type": "xyzra:XYZGenesis",
+  "name": "blood pressure measurement",
+  "@type": "XYZGenesis"
+}
