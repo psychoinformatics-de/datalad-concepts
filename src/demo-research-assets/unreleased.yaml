@@ -228,6 +228,24 @@ classes:
           sh:order: 1.0
           dash:singleLine: false
 
+  XYZConvention:
+    is_a: Convention
+    title: Convention
+    description: >-
+      A set of agreed, stipulated, or generally accepted standards, norms,
+      social norms, or criteria, often taking the form of a custom.
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+
   XYZDataset:
     is_a: Dataset
     title: Dataset
