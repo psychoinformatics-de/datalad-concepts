@@ -80,7 +80,7 @@ classes:
     is_a: FlatThing
     description: >-
       The final result of a determination of the value of something.
-      This is a conceptual entity. A assessment outcome might be
+      This is a conceptual entity. An assessment outcome might be
       available in more than one representation, with differing
       formats, and serializations.
     slots:
