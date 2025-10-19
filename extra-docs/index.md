@@ -73,7 +73,6 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [FLAT base schema](s/flat/unreleased/index.md)
 - [Social schema](s/flat-social/unreleased/index.md)
-- [Provenance schema](s/flat-prov/unreleased/index.md)
 - [Resources schema](s/flat-resources/unreleased/index.md)
 - [Study schema](s/flat-study/unreleased/index.md)
 - [Files schema](s/flat-files/unreleased/index.md)

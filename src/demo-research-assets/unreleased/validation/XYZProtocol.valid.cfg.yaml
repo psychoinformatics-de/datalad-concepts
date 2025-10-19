@@ -1,9 +1,0 @@
-schema: src/demo-research-assets/unreleased.yaml
-target_class: XYZProtocol
-data_sources:
-  - src/demo-research-assets/unreleased/examples/XYZProtocol-02-attributes.yaml
-plugins:
-  JsonschemaValidationPlugin:
-    closed: true
-    include_range_class_descendants: false
-  RecommendedSlotsPlugin:
