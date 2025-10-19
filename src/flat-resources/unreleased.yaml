@@ -170,6 +170,7 @@ classes:
     slots:
       - title
       - short_name
+      - part_of
     slot_usage:
       title:
         annotations:
@@ -180,6 +181,10 @@ classes:
       description:
         annotations:
           sh:order: 3
+      part_of:
+        range: Dataset
+        annotations:
+          sh:order: 4
     exact_mappings:
       - dcat:Dataset
 
@@ -193,6 +198,7 @@ classes:
     slots:
       - kind
       - title
+      - part_of
     slot_usage:
       title:
         annotations:
@@ -201,6 +207,10 @@ classes:
         annotations:
           sh:order: 2
       description:
+        annotations:
+          sh:order: 3
+      part_of:
+        range: Document
         annotations:
           sh:order: 3
     notes:
@@ -226,6 +236,7 @@ classes:
       - title
       - received_by
       - short_name
+      - part_of
     slot_usage:
       title:
         annotations:
@@ -252,6 +263,10 @@ classes:
       description:
         annotations:
           sh:order: 6
+      part_of:
+        range: Grant
+        annotations:
+          sh:order: 7
     exact_mappings:
       - obo:NCIT_C16644
       - schema:Grant

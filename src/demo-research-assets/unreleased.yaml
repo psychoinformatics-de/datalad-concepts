@@ -293,10 +293,16 @@ classes:
     description: >-
       A dependent or outcome variable.
     slot_usage:
-      description:
+      name:
         annotations:
           sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
           dash:singleLine: false
+      part_of:
+        annotations:
+          sh:order: 3.0
 
   XYZDistribution:
     is_a: Distribution
@@ -385,6 +391,9 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      part_of:
+        annotations:
+          sh:order: 4.0
 
   XYZFactor:
     is_a: Factor
@@ -392,10 +401,16 @@ classes:
     description: >-
       A tag associated with a categorical, independent variable in a study design. Factors can have an investigative role (e.g., treatments), or have an organizational nature (e.g., site labels).
     slot_usage:
-      description:
+      name:
         annotations:
           sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
           dash:singleLine: false
+      part_of:
+        annotations:
+          sh:order: 3.0
 
   XYZGenesis:
     is_a: FlatThing
@@ -405,6 +420,7 @@ classes:
     slots:
       - conforms_to
       - name
+      - part_of
       - used
     slot_usage:
       name:
@@ -427,6 +443,12 @@ classes:
           - range: XYZInstrument
         annotations:
           sh:order: 4.0
+      part_of:
+        any_of:
+          - range: XYZStudy
+          - range: XYZGenesis
+        annotations:
+          sh:order: 5.0
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
@@ -469,6 +491,10 @@ classes:
         annotations:
           sh:order: 6.0
           dash:singleLine: false
+      part_of:
+        range: XYZGrant
+        annotations:
+          sh:order: 7.0
 
   XYZInstrument:
     is_a: Instrument
@@ -501,6 +527,8 @@ classes:
     title: Person
     description: >-
       Person agents are people, alive, dead, or fictional.
+    slots:
+      - part_of
     slot_usage:
       family_name:
         annotations:
@@ -517,6 +545,12 @@ classes:
       honorific_name_suffix:
         annotations:
           sh:order: 5.0
+      part_of:
+        title: Member of
+        range: XYZOrganization
+        multivalued: true
+        annotations:
+          sh:order: 6.0
 
   XYZProject:
     is_a: Project
@@ -747,8 +781,14 @@ classes:
     title: Topic
     description: >-
       Topic a subject is about, e.g., a particular research question or domain
+    slots:
+      - part_of
     slot_usage:
       description:
         annotations:
           sh:order: 1.0
           dash:singleLine: false
+      part_of:
+        range: XYZTopic
+        annotations:
+          sh:order: 2.0
