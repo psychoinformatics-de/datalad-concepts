@@ -1,10 +1,10 @@
 {
   "pid": "https://example.org/wind-strength-on-20250815",
-  "schema_type": "dlflatstudy:Assessment",
+  "schema_type": "dlflatres:DataItem",
   "kind": "http://purl.obolibrary.org/obo/ENVO_01001362",
   "part_of": "https://example.org/dataset/windy",
   "quantitative_unit": "http://purl.obolibrary.org/obo/UO_0000094",
   "quantitative_value": 22.0,
   "same_as": "http://semanticscience.org/resource/SIO_001215",
-  "@type": "Assessment"
+  "@type": "DataItem"
 }

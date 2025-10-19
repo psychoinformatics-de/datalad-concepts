@@ -1,7 +1,7 @@
-schema: src/flat-study/unreleased.yaml
-target_class: Assessment
+schema: src/flat-resources/unreleased.yaml
+target_class: DataItem
 data_sources:
-  - src/flat-study/unreleased/examples/Assessment-02-attributes.yaml
+  - src/flat-resources/unreleased/examples/DataItem-02-attributes.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

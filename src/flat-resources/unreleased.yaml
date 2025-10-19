@@ -68,6 +68,8 @@ emit_prefixes:
 imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
+  - dlschemas:prov-mixin/unreleased
+  - dlschemas:quantities-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
   - dlschemas:resources-mixin/unreleased
 
@@ -100,13 +102,71 @@ classes:
       - obo:MS_1000898
       - obo:T4FS_0000381
 
+  DataItem:
+    is_a: FlatThing
+    description: >-
+      An information content entity that is intended to be a truthful statement about
+      something (modulo, e.g., measurement precision or other systematic errors) and
+      is constructed/acquired by a method which reliably tends to produce
+      (approximately) truthful statements.
+
+      This is a conceptual entity. A single data item might be available in more than
+      one representation, with differing formats, and serializations.
+    slots:
+      - derived_from
+      - generated_by
+      - kind
+      - part_of
+      - quantitative_unit
+      - quantitative_value
+      - same_as
+    slot_usage:
+      part_of:
+        range: Dataset
+        annotations:
+          sh:order: 1
+      generated_by:
+        annotations:
+          sh:order: 2
+      derived_from:
+        annotations:
+          sh:order: 3
+      same_as:
+        title: Qualitative value
+        description: >-
+          The value of a qualitative assessment.
+        annotations:
+          sh:order: 4
+      quantitative_value:
+        title: Quantitative value
+        description: >-
+          The value of a quantitative assessment.
+        annotations:
+          sh:order: 5
+      quantitative_unit:
+        annotations:
+          sh:order: 6
+      kind:
+        # think datatype
+        annotations:
+          sh:order: 7
+    exact_mappings:
+      - obo:IAO_0000027
+    comments:
+      - The class enables the expressing quantitative and qualitative
+        assessments. For a quantitative value, the numerical value,
+        and a possible unit is given. For a qualitative value, `same_as`
+        is used to identify the quality of the assessment from a
+        controlled vocabulary or standard term. Both approaches can be
+        combined, for example when classifying numerical values into
+        qualitative/ordinal categories.
+
   Dataset:
     is_a: FlatThing
     description: >-
-      A collection of data, published or curated by a single agent. This is a
-      conceptual entity. A single dataset might be available in more than
-      one representation, with differing schematic layouts, formats, and
-      serializations.
+      A collection of data (data items), published or curated by a single agent.
+      This is a conceptual entity. A single dataset might be available in more than
+      one representation, with differing schematic layouts, formats, and serializations.
     slots:
       - title
       - short_name

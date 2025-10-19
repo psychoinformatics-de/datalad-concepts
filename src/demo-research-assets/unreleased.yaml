@@ -206,14 +206,51 @@ classes:
         close_mappings:
           - schema:dateReceived
 
-  XYZAssessment:
-    is_a: Assessment
-    title: Assessment
+  XYZDataItem:
+    is_a: DataItem
+    title: Data item
     description: >-
-      The final result of a determination of the value of something.
-      This is a conceptual entity. A assessment outcome might be
-      available in more than one representation, with differing formats,
-      and serializations.
+      An information content entity that is intended to be a truthful statement about
+      something (modulo, e.g., measurement precision or other systematic errors) and
+      is constructed/acquired by a method which reliably tends to produce
+      (approximately) truthful statements.
+
+      This is a conceptual entity. A single data item might be available in more than
+      one representation, with differing formats, and serializations.
+    slot_usage:
+      part_of:
+        range: XYZDataset
+        annotations:
+          sh:order: 1.0
+      generated_by:
+        range: XYZGenesis
+        annotations:
+          sh:order: 2.0
+      derived_from:
+        any_of:
+          - range: XYZDataItem
+          - range: XYZSubject
+        annotations:
+          sh:order: 3.0
+      same_as:
+        title: Qualitative value
+        description: >-
+          The value of a qualitative assessment.
+        annotations:
+          sh:order: 4.0
+      quantitative_value:
+        title: Quantitative value
+        description: >-
+          The value of a quantitative assessment.
+        annotations:
+          sh:order: 5.0
+      quantitative_unit:
+        annotations:
+          sh:order: 6.0
+      kind:
+        # think datatype
+        annotations:
+          sh:order: 7.0
 
   XYZAssessmentType:
     is_a: FlatThing
