@@ -366,6 +366,7 @@ classes:
     description: >-
       A process in which an entity comes into being as a result of the process.
     slots:
+      - conforms_to
       - name
     slot_usage:
       name:
@@ -375,6 +376,10 @@ classes:
         annotations:
           sh:order: 2.0
           dash:singleLine: false
+      conforms_to:
+        range: XYZConvention
+        annotations:
+          sh:order: 3.0
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
