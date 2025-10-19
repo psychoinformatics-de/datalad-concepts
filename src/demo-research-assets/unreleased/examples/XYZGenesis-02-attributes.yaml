@@ -1,3 +1,9 @@
-pid: obo:MAXO_0000494
-name: blood pressure measurement
+pid: https://example.org/bpm-1
+name: blood pressure measurement (children)
 conforms_to: doi:10.1111/j.1524-6175.2005.04377.x
+used:
+  # Blood pressure cuff, pediatric size (physical object)
+  - http://snomed.info/id/720736009
+broad_mappings:
+  # blood pressure measurement
+  - obo:MAXO_0000494
