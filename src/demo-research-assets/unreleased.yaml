@@ -30,6 +30,7 @@ license: MIT
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
   ISSN: http://identifiers.org/issn/
+  ODRL: http://www.w3.org/ns/odrl/2/
   bibo: http://purl.org/ontology/bibo/
   # TODO preliminary definition, pointing to a future resolver
   datalad: https://pid.datalad.org/datasets/
@@ -304,6 +305,7 @@ classes:
       A collection of data, published or curated by a single agent. This is a conceptual entity. A single dataset might be available in more than one representation, with differing schematic layouts, formats, and serializations.
     slots:
       - generated_by
+      - rules
     slot_usage:
       title:
         annotations:
@@ -318,6 +320,10 @@ classes:
         range: XYZDataset
         annotations:
           sh:order: 4.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 5.0
 
   XYZDimension:
     is_a: Dimension
@@ -341,6 +347,8 @@ classes:
     title: Distribution
     description: >-
       A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files.
+    slots:
+      - rules
     slot_usage:
       kind:
         range: XYZDataType
@@ -370,6 +378,10 @@ classes:
         inlined: true
         annotations:
           sh:order: 7.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 8.0
 
   XYZNamedDistributionPart:
     is_a: NamedDistributionPart
@@ -398,6 +410,8 @@ classes:
     title: Document
     description: >-
       A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
+    slots:
+      - rules
     slot_usage:
       title:
         annotations:
@@ -415,6 +429,10 @@ classes:
       part_of:
         annotations:
           sh:order: 4.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 5.0
 
   XYZFactor:
     is_a: Factor
@@ -486,6 +504,8 @@ classes:
     title: Grant
     description: >-
       A grant, typically financial or otherwise quantifiable, resources.
+    slots:
+      - rules
     slot_usage:
       title:
         annotations:
@@ -516,12 +536,18 @@ classes:
         range: XYZGrant
         annotations:
           sh:order: 7.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 8.0
 
   XYZInstrument:
     is_a: Instrument
     title: Instrument
     description: >-
       A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
+    slots:
+      - rules
     slot_usage:
       name:
         annotations:
@@ -536,6 +562,10 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 4.0
 
   XYZOrganization:
     is_a: Organization
@@ -620,6 +650,7 @@ classes:
       - derived_from
       - doi
       - generated_by
+      - rules
     slot_usage:
       doi:
         recommended: true
@@ -692,6 +723,10 @@ classes:
         multivalued: true
         annotations:
           sh:order: 10.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 11.0
 
   XYZBibliographicType:
     is_a: FlatThing
@@ -829,3 +864,27 @@ classes:
         range: XYZTopic
         annotations:
           sh:order: 2.0
+
+  XYZRule:
+    is_a: FlatThing
+    title: Rule
+    description: >-
+      Permissions, prohibitions, obligatations or other rights/policies.
+      This can be a standard license, a custom usage agreement, or a
+      codified policy.
+    slots:
+      # title because MIH thinks of these as documents
+      - title
+      # licenses often have them
+      - short_name
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false

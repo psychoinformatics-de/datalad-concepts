@@ -16,6 +16,7 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
+  ODRL: http://www.w3.org/ns/odrl/2/
   dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
@@ -49,6 +50,19 @@ imports:
   - dlschemas:things/v1
 
 slots:
+  rules:
+    title: Rules
+    description: >-
+      Permissions, prohibitions, obligatations or other rights/policies
+      associated with the resource. This could refer to a standard license,
+      a custom usage agreement, or a codified policy.
+    multivalued: true
+    range: Thing
+    narrow_mappings:
+      - odrl:hasPolicy
+      - dcterms:rights
+      - dcterms:license
+
   howto_acknowledge:
     description: >-
       A description of how the subject should be acknowledged.
