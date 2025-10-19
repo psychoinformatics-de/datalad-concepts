@@ -302,6 +302,22 @@ classes:
     title: Dataset
     description: >-
       A collection of data, published or curated by a single agent. This is a conceptual entity. A single dataset might be available in more than one representation, with differing schematic layouts, formats, and serializations.
+    slots:
+      - generated_by
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+      part_of:
+        range: XYZDataset
+        annotations:
+          sh:order: 4.0
 
   XYZDimension:
     is_a: Dimension
@@ -526,6 +542,22 @@ classes:
     title: Organization
     description: >-
       A social or legal institution such as a company, a society, or a university.
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      part_of:
+        description: >-
+          An organization that the subject is part of.
+        range: XYZOrganization
+        annotations:
+          sh:order: 4.0
 
   XYZPerson:
     is_a: Person
