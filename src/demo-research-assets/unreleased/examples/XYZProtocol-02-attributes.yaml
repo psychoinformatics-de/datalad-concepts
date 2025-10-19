@@ -1,9 +1,0 @@
-pid: https://example.org/proto/q01-v1
-name: Q01 MRI standard operations procedure
-short_name: Q01-SOP-MRI
-version_of: https://example.org/proto/q01
-enabled_by:
-  # NMR device
-  - obo:OBI_0000566
-description: >-
-  This is the agreed upon protocol for X in context Y.
