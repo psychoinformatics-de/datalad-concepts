@@ -368,6 +368,7 @@ classes:
     slots:
       - conforms_to
       - name
+      - used
     slot_usage:
       name:
         annotations:
@@ -380,12 +381,25 @@ classes:
         range: XYZConvention
         annotations:
           sh:order: 3.0
+      used:
+        multivalued: true
+        any_of:
+          # target a concrete form, not a concept
+          - range: XYZDistribution
+          # think "tool"
+          - range: XYZInstrument
+        annotations:
+          sh:order: 4.0
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
     exact_mappings:
       - obo:NCIT_C48151
       - obo:IDO_0000607
+    comments:
+      - This class is intended to cover generative processes and activities,
+        while `Study` covers investigational (scientific) activities, and
+        `Project` covers organizational activities.
 
   XYZGrant:
     is_a: Grant
