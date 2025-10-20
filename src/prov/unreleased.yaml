@@ -126,17 +126,6 @@ slots:
     exact_mappings:
       - prov:actedOnBehalfOf
 
-  attributed_to:
-    slot_uri: dlprov:attributed_to
-    description: >-
-      Attribution is the ascribing of an entity to an agent.
-    domain: Entity
-    range: Agent
-    inlined: false
-    multivalued: true
-    exact_mappings:
-      - prov:wasAttributedTo
-
   informed_by:
     slot_uri: dlprov:informed_by
     description: >-
@@ -231,6 +220,10 @@ classes:
       - derived_from
       - generated_by
     slot_usage:
+      attributed_to:
+        range: Agent
+        inlined: false
+        multivalued: true
       derived_from:
         range: Entity
         inlined: false
