@@ -55,6 +55,13 @@ imports:
   - dlschemas:things/v1
 
 slots:
+  attributed_to:
+    description: >-
+      Attribution is the ascribing of an entity to an agent.
+    range: Thing
+    exact_mappings:
+      - prov:wasAttributedTo
+
   associated_with:
     description: >-
       An activity association is an assignment of responsibility to an agent
