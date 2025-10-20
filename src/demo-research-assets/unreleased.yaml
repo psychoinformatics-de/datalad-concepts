@@ -65,6 +65,7 @@ prefixes:
   eunal: http://publications.europa.eu/resource/authority/
   geodata: http://sws.geonames.org/
   linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
   nfo: http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#
   obo: http://purl.obolibrary.org/obo/
   orcid: https://orcid.org/
@@ -304,6 +305,7 @@ classes:
     description: >-
       A collection of data, published or curated by a single agent. This is a conceptual entity. A single dataset might be available in more than one representation, with differing schematic layouts, formats, and serializations.
     slots:
+      - attributed_to
       - generated_by
       - rules
     slot_usage:
@@ -316,14 +318,21 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
       part_of:
         range: XYZDataset
         annotations:
-          sh:order: 4.0
+          sh:order: 5.0
       rules:
         range: XYZRule
         annotations:
-          sh:order: 5.0
+          sh:order: 6.0
 
   XYZDimension:
     is_a: Dimension
@@ -411,6 +420,7 @@ classes:
     description: >-
       A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
     slots:
+      - attributed_to
       - rules
     slot_usage:
       title:
@@ -426,6 +436,14 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      attributed_to:
+        title: Contributors
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
       part_of:
         annotations:
           sh:order: 4.0
@@ -547,6 +565,7 @@ classes:
     description: >-
       A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
     slots:
+      - attributed_to
       - rules
     slot_usage:
       name:
@@ -562,6 +581,13 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
       rules:
         range: XYZRule
         annotations:
@@ -625,6 +651,7 @@ classes:
     description: >-
       A collective endeavour of some kind. Typically it is a planned process that is undertaken or attempted to meet some requirement, or to achieve a particular goal.
     slots:
+      - attributed_to
       - part_of
     slot_usage:
       title:
@@ -636,6 +663,13 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
       part_of:
         range: XYZProject
         annotations:
@@ -647,6 +681,7 @@ classes:
     description: >-
       A resource that is the output of a publishing process.
     slots:
+      - attributed_to
       - derived_from
       - doi
       - generated_by
@@ -666,14 +701,21 @@ classes:
       authors:
         description: >-
           Authors of the publication who are anyhow contributors to XYZ.
-        required: true
         range: XYZPerson
         annotations:
           sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
       published_at:
         range: XYZPublicationVenue
         annotations:
-          sh:order: 4.0
+          sh:order: 5.0
       locator:
         title: Location within publication venue
         description: >-
@@ -682,14 +724,14 @@ classes:
           be a volume and/or page range. Format according to the conventions
           of the publication venue.
         annotations:
-          sh:order: 5.0
+          sh:order: 6.0
       kind:
         title: Publication type
         description: >-
           The type of this publication, e.g. journal article, book, webpage
         range: XYZBibliographicType
         annotations:
-          sh:order: 6.0
+          sh:order: 7.0
       about:
         recommended: true
         title: Topic(s)
@@ -698,13 +740,13 @@ classes:
         range: XYZTopic
         multivalued: true
         annotations:
-          sh:order: 7.0
+          sh:order: 8.0
       date_published:
         range: flexdate
         description: >-
           The date when a publication became available at the publication venue.
         annotations:
-          sh:order: 8.0
+          sh:order: 9.0
       generated_by:
         recommended: true
         title: Contributing project(s)
@@ -713,7 +755,7 @@ classes:
         range: XYZProject
         multivalued: true
         annotations:
-          sh:order: 9.0
+          sh:order: 10.0
       derived_from:
         recommended: true
         title: Associated dataset(s)
@@ -722,11 +764,11 @@ classes:
         range: XYZDataset
         multivalued: true
         annotations:
-          sh:order: 10.0
+          sh:order: 11.0
       rules:
         range: XYZRule
         annotations:
-          sh:order: 11.0
+          sh:order: 12.0
 
   XYZBibliographicType:
     is_a: FlatThing
@@ -778,6 +820,8 @@ classes:
     title: Study
     description: >-
       A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).
+    slots:
+      - attributed_to
     slot_usage:
       name:
         annotations:
@@ -795,6 +839,14 @@ classes:
       dimensions:
         multivalued: true
         range: XYZDimension
+        annotations:
+          sh:order: 4.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
         annotations:
           sh:order: 4.0
       part_of:
@@ -888,3 +940,42 @@ classes:
         annotations:
           sh:order: 3.0
           dash:singleLine: false
+
+  XYZAgentRole:
+    is_a: FlatThing
+    title: Agent role
+    description: >-
+      A role is the function of an agent with respect to a subject,
+      in the context of an attribution.
+    slots:
+      - name
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+    broad_mappings:
+      - prov:Role
+      - dcat:Role
+
+  XYZPersonAttribution:
+    description: >-
+      An association class for attributing a subject to a person and
+      qualifying the relationship with particular roles.
+    slots:
+      - roles
+      - object
+    slot_usage:
+      object:
+        title: Person
+        range: XYZPerson
+        annotations:
+          sh:order: 1.0
+      roles:
+        range: XYZAgentRole
+        multivalued: true
+        annotations:
+          sh:order: 2.0
