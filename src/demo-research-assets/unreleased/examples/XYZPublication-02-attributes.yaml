@@ -11,13 +11,27 @@ about:
   - https://www.nature.com/subjects/software
 # journal article
 kind: obo:OMIT_0016934
-authors:
-  - http://orcid.org/0000-0003-2917-3450
-  - http://orcid.org/0000-0003-2213-7465
-  - http://orcid.org/0000-0003-0820-2662
-  - http://orcid.org/0000-0001-7163-3110
-  - http://orcid.org/0000-0002-8402-6173
-  - http://orcid.org/0000-0001-7628-0801
-  - http://orcid.org/0000-0001-6398-6370
+attributed_to:
+  - object: http://orcid.org/0000-0003-2917-3450
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0003-2213-7465
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0003-0820-2662
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0001-7163-3110
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0002-8402-6173
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0001-7628-0801
+    roles:
+      - marcrel:aut
+  - object: http://orcid.org/0000-0001-6398-6370
+    roles:
+      - marcrel:aut
 generated_by:
   - https://example.org/ns/project-1
