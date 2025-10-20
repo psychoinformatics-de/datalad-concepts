@@ -968,6 +968,7 @@ classes:
     slots:
       - roles
       - object
+      - display_label
     slot_usage:
       object:
         title: Person
@@ -977,5 +978,8 @@ classes:
       roles:
         range: XYZAgentRole
         multivalued: true
+        annotations:
+          sh:order: 2.0
+      display_label:
         annotations:
           sh:order: 2.0
