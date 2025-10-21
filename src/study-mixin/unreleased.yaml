@@ -51,12 +51,14 @@ slots:
     title: Outcomes variables
     description: >-
       Associated outcome variables.
+    range: Thing
     multivalued: true
 
   factors:
     title: Influencing factors
     description: >-
       Factors that influence the subject matter.
+    range: Thing
     multivalued: true
 
   instruments:
@@ -64,9 +66,11 @@ slots:
     description: >-
       Instruments employed in a study activity. This could be physical
       devices, but also software tools.
+    range: Thing
     multivalued: true
 
   study:
     title: Study context
     description: >-
       The study in which the subject took place or existed.
+    range: Thing
