@@ -334,23 +334,6 @@ classes:
         annotations:
           sh:order: 6.0
 
-  XYZDimension:
-    is_a: Dimension
-    title: Dimension
-    description: >-
-      A dependent or outcome variable.
-    slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
-      part_of:
-        annotations:
-          sh:order: 3.0
-
   XYZDistribution:
     is_a: Distribution
     title: Distribution
@@ -452,22 +435,32 @@ classes:
         annotations:
           sh:order: 5.0
 
-  XYZFactor:
-    is_a: Factor
-    title: Factor
+  XYZConcept:
+    is_a: FlatThing
+    title: Concept
     description: >-
-      A tag associated with a categorical, independent variable in a study design. Factors can have an investigative role (e.g., treatments), or have an organizational nature (e.g., site labels).
+      An idea or notion; a unit of thought.
+
+      In the context of a study, this can be a tag associated with a
+      categorical, independent variable in a study design, an
+      investigative role (e.g., treatments), or an organizational
+      nature (e.g., site labels), or a dependent or outcome variable.
+
+      `Concept` is related to `Topic`. However a concept is more focused
+      and more clearly delineated in comparison.
+    comments:
+      - The relationship of a focused concept with the broader concept
+        can be described via `broader_mappings`.
+    slots:
+      - title
     slot_usage:
-      name:
+      title:
         annotations:
           sh:order: 1.0
       description:
         annotations:
           sh:order: 2.0
           dash:singleLine: false
-      part_of:
-        annotations:
-          sh:order: 3.0
 
   XYZGenesis:
     is_a: FlatThing
@@ -828,7 +821,7 @@ classes:
           sh:order: 1.0
       factors:
         multivalued: true
-        range: XYZFactor
+        range: XYZConcept
         annotations:
           sh:order: 2.0
       instruments:
@@ -838,7 +831,7 @@ classes:
           sh:order: 3.0
       dimensions:
         multivalued: true
-        range: XYZDimension
+        range: XYZConcept
         annotations:
           sh:order: 4.0
       attributed_to:
