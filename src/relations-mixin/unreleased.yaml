@@ -77,6 +77,13 @@ slots:
     exact_mappings:
       - dcterms:conformsTo
 
+  depends_on:
+    description: >-
+      The subject depends on object in some way.
+    range: Thing
+    exact_mappings:
+      - obo:RO_0002502
+
   kind:
     description: >-
       The nature of the subject.
