@@ -178,6 +178,17 @@ slots:
     range: string
     pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
+  target:
+    title: Target
+    description: >-
+      An objective that is the focus of an activity.
+    range: XYZObjective
+    related_mappings:
+      - obo:BFO_0000055
+    #exact_mappings:
+    #  - http://purl.allotrope.org/ontologies/property#AFX_0002750)
+    #close_mappings:
+    #  - sct:363702006
 
 classes:
   XYZAccolade:
@@ -471,6 +482,7 @@ classes:
       - conforms_to
       - name
       - part_of
+      - target
       - used
     slot_usage:
       name:
@@ -499,6 +511,10 @@ classes:
           - range: XYZGenesis
         annotations:
           sh:order: 5.0
+      target:
+        multivalued: true
+        annotations:
+          sh:order: 6.0
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
@@ -646,6 +662,7 @@ classes:
     slots:
       - attributed_to
       - part_of
+      - target
     slot_usage:
       title:
         annotations:
@@ -666,7 +683,11 @@ classes:
       part_of:
         range: XYZProject
         annotations:
-          sh:order: 4.0
+          sh:order: 5.0
+      target:
+        multivalued: true
+        annotations:
+          sh:order: 6.0
 
   XYZPublication:
     is_a: Publication
@@ -815,6 +836,7 @@ classes:
       A planned process that consists of parts: planning, study design execution, documentation and which produce conclusion(s).
     slots:
       - attributed_to
+      - target
     slot_usage:
       name:
         annotations:
@@ -848,6 +870,10 @@ classes:
           sh:order: 5.0
       associated_with:
         range: XYZProject
+        multivalued: true
+        annotations:
+          sh:order: 6.0
+      target:
         multivalued: true
         annotations:
           sh:order: 6.0
@@ -976,3 +1002,36 @@ classes:
       display_label:
         annotations:
           sh:order: 2.0
+
+  XYZObjective:
+    is_a: FlatThing
+    description: >-
+      A proposition that indicates a planned or anticipated outcome.
+    slots:
+      - attributed_to
+      - title
+      - part_of
+      - depends_on
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 2.0
+      depends_on:
+        range: XYZObjective
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
