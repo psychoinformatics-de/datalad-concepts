@@ -46,7 +46,8 @@ build/linkml-docs: \
 	build/linkml-docs/s/flat-files/unreleased \
 	build/linkml-docs/s/edistributions/unreleased \
 	build/linkml-docs/s/demo-empirical-data/unreleased \
-	build/linkml-docs/s/demo-research-assets/unreleased
+	build/linkml-docs/s/demo-research-assets/unreleased \
+	build/linkml-docs/s/demo-rse-group/unreleased
 build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-remote
 	# take the YAML schema verbatim
@@ -122,7 +123,8 @@ check-models: \
 	checkmodel/flat-files/unreleased \
 	checkmodel/edistributions/unreleased \
 	checkmodel/demo-empirical-data/unreleased \
-	checkmodel/demo-research-assets/unreleased
+	checkmodel/demo-research-assets/unreleased \
+	checkmodel/demo-rse-group/unreleased
 checkmodel/%: src/%.yaml
 	@echo [Check $<]
 	@echo "Run linter"
@@ -190,7 +192,9 @@ check-validation: \
 	convertexamples/demo-empirical-data/unreleased \
 	checkvalidation/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
-	checkvalidation/demo-research-assets/unreleased
+	checkvalidation/demo-research-assets/unreleased \
+	convertexamples/demo-rse-group/unreleased \
+	checkvalidation/demo-rse-group/unreleased
 checkvalidation/%:
 	$(MAKE) checkvalid/$* checkinvalid/$*
 checkvalid/%: src/%/validation src/%.yaml
@@ -223,7 +227,8 @@ convert-examples: \
 	convertexamples/flat-files/unreleased \
 	convertexamples/edistributions/unreleased \
 	convertexamples/demo-empirical-data/unreleased \
-	convertexamples/demo-research-assets/unreleased
+	convertexamples/demo-research-assets/unreleased \
+	convertexamples/demo-rse-group/unreleased
 convertexamples/%: src/%.yaml src/%/examples
 	# loop over all examples, skip the schema file itself
 	for ex in $^/*.yaml; do \

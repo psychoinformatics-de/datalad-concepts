@@ -1,0 +1,9 @@
+schema: src/demo-rse-group/unreleased.yaml
+target_class: XYZPublication
+data_sources:
+  - src/demo-rse-group/unreleased/examples/XYZPublication-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

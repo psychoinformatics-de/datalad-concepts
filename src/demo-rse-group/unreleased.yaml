@@ -1,0 +1,643 @@
+id: https://concepts.datalad.org/s/demo-rse-group/unreleased
+name: demo-rse-group-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Data models for a research software engineering group
+description: |
+  This schema is using the FLAT approach (Flexbile Low-complexity
+  Annotation Technique) and is geared toward metadata entry and
+  submission for pooling information across consortium sites and
+  partners.
+
+  It is to be taken as a demonstrator rather than a schema
+  building block.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  ADMS: http://www.w3.org/ns/adms#
+  ISSN: http://identifiers.org/issn/
+  ODRL: http://www.w3.org/ns/odrl/2/
+  bibo: http://purl.org/ontology/bibo/
+  # TODO preliminary definition, pointing to a future resolver
+  datalad: https://pid.datalad.org/datasets/
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  # TODO preliminary definition, pointing to a future resolver
+  dldi: https://pid.datalad.org/distributions/
+  # TODO preliminary definition, just to have something short
+  dlcdi: https://concepts.datalad.org/ns/content-defined-identifiers/
+  dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
+  dlflat: https://concepts.datalad.org/s/flat/unreleased/
+  dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
+  dlflatpublications: https://concepts.datalad.org/s/flat-publications/unreleased/
+  dlflatres: https://concepts.datalad.org/s/flat-resources/unreleased/
+  dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
+  dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
+  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlpublicationsmx: https://concepts.datalad.org/s/publications-mixin/unreleased/
+  dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
+  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
+  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
+  dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
+  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  dltypes: https://concepts.datalad.org/s/types/v1/
+  doi: https://doi.org/
+  eunal: http://publications.europa.eu/resource/authority/
+  geodata: http://sws.geonames.org/
+  linkml: https://w3id.org/linkml/
+  marcrel: http://id.loc.gov/vocabulary/relators/
+  nfo: http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#
+  obo: http://purl.obolibrary.org/obo/
+  orcid: https://orcid.org/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  ror: https://ror.org/
+  rrid: "https://scicrunch.org/resolver/RRID:"
+  sh: http://www.w3.org/ns/shacl#
+  sio: http://semanticscience.org/resource/
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+  xyzra: https://concepts.datalad.org/s/demo-rse-group/unreleased/
+  xyzrans: https://concepts.datalad.org/s/demo-rse-group/ns/
+
+default_prefix: xyzra
+
+emit_prefixes:
+  - dlcommonmx
+  - dlfilesmx
+  - dlflat
+  - dlflatfiles
+  - dlflatres
+  - dlflatpublications
+  - dlflatsocial
+  - dlflatstudy
+  - dlidentifiers
+  - dlprovmx
+  - dlpublicationsmx
+  - dlquantmx
+  - dlrelationsmx
+  - dlresmx
+  - dlspatialmx
+  - dlsocialmx
+  - dlstudymx
+  - dltemporalmx
+  - dlthings
+  - dltypes
+  - rdf
+  - rdfs
+  - skos
+  - w3ctr
+  - xsd
+  # a bunch more that are not needed for the structural aspects
+  # of the schema, but for records using the schema
+  - ISSN
+  - bibo
+  - datalad
+  - dcterms
+  - dldi
+  - doi
+  - geodata
+  - obo
+  - orcid
+  - ror
+  - rrid
+  - xyzrans
+
+
+imports:
+  - dlschemas:flat-files/unreleased
+  - dlschemas:flat-publications/unreleased
+  - dlschemas:flat-resources/unreleased
+  - dlschemas:flat-social/unreleased
+  - dlschemas:flat-study/unreleased
+  - dlschemas:prov-mixin/unreleased
+
+
+types:
+  flexdate:
+    # gen-shacl doesn't work without this
+    uri: xyzra:flexdate
+    base: str
+    typeof: string
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)$'
+
+
+enums:
+  YesNoUnknownClassifcation:
+    description: >-
+      Boolean classification with a third option indicating that
+      the true value is not known.
+    permissible_values:
+      "yes":
+        description: >-
+          Consent given
+      "no":
+        description: >-
+          No consent given
+      "unknown":
+        description:
+          The true value is not known (yet)
+
+
+slots:
+  orcid:
+    title: ORCID
+    description: >-
+      ORCID identifier of a person (see https://orcid.org).
+    range: string
+    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+
+  target:
+    title: Target
+    description: >-
+      An objective that is the focus of an activity.
+    range: XYZObjective
+    related_mappings:
+      - obo:BFO_0000055
+    #exact_mappings:
+    #  - http://purl.allotrope.org/ontologies/property#AFX_0002750)
+    #close_mappings:
+    #  - sct:363702006
+
+classes:
+  XYZConvention:
+    is_a: Convention
+    title: Convention
+    description: >-
+      A set of agreed, stipulated, or generally accepted standards, norms,
+      social norms, or criteria, often taking the form of a custom.
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+
+  XYZDocument:
+    is_a: Document
+    title: Document
+    description: >-
+      A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
+    slots:
+      - attributed_to
+      - rules
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Document type
+        description: >-
+          The type of this document, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        title: Contributors
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      part_of:
+        annotations:
+          sh:order: 4.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 5.0
+
+  XYZConcept:
+    is_a: FlatThing
+    title: Concept
+    description: >-
+      An idea or notion; a unit of thought.
+
+      In the context of a study, this can be a tag associated with a
+      categorical, independent variable in a study design, an
+      investigative role (e.g., treatments), or an organizational
+      nature (e.g., site labels), or a dependent or outcome variable.
+
+      `Concept` is related to `Topic`. However a concept is more focused
+      and more clearly delineated in comparison.
+    comments:
+      - The relationship of a focused concept with the broader concept
+        can be described via `broader_mappings`.
+    slots:
+      - title
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+
+  XYZGrant:
+    is_a: Grant
+    title: Grant
+    description: >-
+      A grant, typically financial or otherwise quantifiable, resources.
+    slots:
+      - rules
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      sponsor:
+        range: XYZOrganization
+        annotations:
+          sh:order: 3.0
+      received_by:
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
+        multivalued: true
+        annotations:
+          sh:order: 4.0
+      howto_acknowledge:
+        annotations:
+          sh:order: 5.0
+          dash:singleLine: false
+      description:
+        annotations:
+          sh:order: 6.0
+          dash:singleLine: false
+      part_of:
+        range: XYZGrant
+        annotations:
+          sh:order: 7.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 8.0
+
+  XYZOrganization:
+    is_a: Organization
+    title: Organization
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      part_of:
+        description: >-
+          An organization that the subject is part of.
+        range: XYZOrganization
+        annotations:
+          sh:order: 4.0
+
+  XYZPerson:
+    is_a: Person
+    title: Person
+    description: >-
+      Person agents are people, alive, dead, or fictional.
+    slots:
+      - part_of
+    slot_usage:
+      family_name:
+        annotations:
+          sh:order: 1.0
+      given_name:
+        annotations:
+          sh:order: 2.0
+      additional_names:
+        annotations:
+          sh:order: 3.0
+      honorific_name_prefix:
+        annotations:
+          sh:order: 4.0
+      honorific_name_suffix:
+        annotations:
+          sh:order: 5.0
+      part_of:
+        title: Member of
+        range: XYZOrganization
+        multivalued: true
+        annotations:
+          sh:order: 6.0
+
+  XYZProject:
+    is_a: Project
+    title: Project
+    description: >-
+      A collective endeavour of some kind. Typically it is a planned process that is undertaken or attempted to meet some requirement, or to achieve a particular goal.
+    slots:
+      - attributed_to
+      - part_of
+      - target
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 5.0
+      target:
+        multivalued: true
+        annotations:
+          sh:order: 6.0
+
+  XYZPublication:
+    is_a: Publication
+    title: Publication
+    description: >-
+      A resource that is the output of a publishing process.
+    slots:
+      - attributed_to
+      - derived_from
+      - doi
+      - generated_by
+      - rules
+    slot_usage:
+      doi:
+        recommended: true
+        title: DOI
+        annotations:
+          sh:order: 1.0
+      title:
+        description: >-
+          The full title of the publication.
+        required: false
+        annotations:
+          sh:order: 2.0
+      authors:
+        description: >-
+          Authors of the publication who are anyhow contributors to XYZ.
+        range: XYZPerson
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      published_at:
+        range: XYZPublicationVenue
+        annotations:
+          sh:order: 5.0
+      locator:
+        title: Location within publication venue
+        description: >-
+          A descriptive identifier that the publication within the
+          venue it was published at. For a journal article, this would
+          be a volume and/or page range. Format according to the conventions
+          of the publication venue.
+        annotations:
+          sh:order: 6.0
+      kind:
+        title: Publication type
+        description: >-
+          The type of this publication, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 7.0
+      about:
+        recommended: true
+        title: Topic(s)
+        description: >-
+          Topics covered by this publication.
+        range: XYZTopic
+        multivalued: true
+        annotations:
+          sh:order: 8.0
+      date_published:
+        range: flexdate
+        description: >-
+          The date when a publication became available at the publication venue.
+        annotations:
+          sh:order: 9.0
+      generated_by:
+        recommended: true
+        title: Contributing project(s)
+        description: >-
+          Any project that contributed to the outcomes described in the publication.
+        range: XYZProject
+        multivalued: true
+        annotations:
+          sh:order: 10.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 12.0
+
+  XYZBibliographicType:
+    is_a: FlatThing
+    title: Bibliographic type
+    description: >-
+      Type of a publication or document, e.g., journal article, book, or webpage.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
+  XYZPublicationVenue:
+    is_a: FlatThing
+    title: Publication venue
+    description: >-
+      "Place" of a publication, e.g., a journal, a website, an edited collection.
+    slots:
+      - title
+      - kind
+    slot_usage:
+      title:
+        description: >-
+          The full title of the publication.
+        required: false
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Publication venue type
+        description: >-
+          The type of this publication venue, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 2.0
+
+  XYZTopic:
+    is_a: FlatThing
+    title: Topic
+    description: >-
+      Topic a subject is about, e.g., a particular research question or domain
+    slots:
+      - part_of
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+      part_of:
+        range: XYZTopic
+        annotations:
+          sh:order: 2.0
+
+  XYZRule:
+    is_a: FlatThing
+    title: Rule
+    description: >-
+      Permissions, prohibitions, obligatations or other rights/policies.
+      This can be a standard license, a custom usage agreement, or a
+      codified policy.
+    slots:
+      # title because MIH thinks of these as documents
+      - title
+      # licenses often have them
+      - short_name
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+
+  XYZAgentRole:
+    is_a: FlatThing
+    title: Agent role
+    description: >-
+      A role is the function of an agent with respect to a subject,
+      in the context of an attribution.
+    slots:
+      - name
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+    broad_mappings:
+      - prov:Role
+      - dcat:Role
+
+  XYZPersonAttribution:
+    description: >-
+      An association class for attributing a subject to a person and
+      qualifying the relationship with particular roles.
+    slots:
+      - roles
+      - object
+      - display_label
+    slot_usage:
+      object:
+        title: Person
+        range: XYZPerson
+        annotations:
+          sh:order: 1.0
+      roles:
+        range: XYZAgentRole
+        multivalued: true
+        annotations:
+          sh:order: 2.0
+      display_label:
+        annotations:
+          sh:order: 2.0
+
+  XYZObjective:
+    is_a: FlatThing
+    title: Objective
+    description: >-
+      A proposition that indicates a planned or anticipated outcome.
+    slots:
+      - attributed_to
+      - title
+      - part_of
+      - depends_on
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 2.0
+      depends_on:
+        range: XYZObjective
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
+          dash:singleLine: false
