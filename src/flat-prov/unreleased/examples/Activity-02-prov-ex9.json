@@ -1,0 +1,13 @@
+{
+  "pid": "https://example.org/illustrationActivity",
+  "schema_type": "dlflatprov:Activity",
+  "associated_with": [
+    {
+      "object": "https://example.org/derek",
+      "roles": [
+        "https://example.org/illustrationist"
+      ]
+    }
+  ],
+  "@type": "Activity"
+}

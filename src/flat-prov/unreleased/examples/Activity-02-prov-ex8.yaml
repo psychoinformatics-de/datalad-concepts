@@ -1,0 +1,6 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-qualified-3
+# shows how used and qualifiedUsage are not distinguished here
+pid: https://example.org/illustrationActivity
+used:
+  - object: https://example.org/aggregatedByRegions
+    at_time: "2011-07-14T03:03:03Z"

@@ -1,0 +1,21 @@
+{
+  "pid": "https://example.org/",
+  "relations": {
+    "https://example.org/hard_disk_failure": {
+      "pid": "https://example.org/hard_disk_failure",
+      "schema_type": "dlflatprov:Activity",
+      "ended": {
+        "at_time": "2012-09-02T01:31:00Z"
+      }
+    }
+  },
+  "broad_mappings": [
+    "http://rdfs.org/sioc/ns#Post"
+  ],
+  "schema_type": "dlflatprov:Entity",
+  "invalidated_by": {
+    "object": "https://example.org/hard_disk_failure",
+    "at_time": "2012-09-02T01:31:00Z"
+  },
+  "@type": "Entity"
+}

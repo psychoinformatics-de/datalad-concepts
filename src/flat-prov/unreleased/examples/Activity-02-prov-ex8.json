@@ -1,0 +1,11 @@
+{
+  "pid": "https://example.org/illustrationActivity",
+  "schema_type": "dlflatprov:Activity",
+  "used": [
+    {
+      "object": "https://example.org/aggregatedByRegions",
+      "at_time": "2011-07-14T03:03:03Z"
+    }
+  ],
+  "@type": "Activity"
+}

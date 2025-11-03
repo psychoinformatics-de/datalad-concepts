@@ -1,0 +1,66 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-simple-1
+pid: https://example.org/bar_chart
+generated_by:
+  object: https://example.org/illustrationActivity
+derived_from:
+  - object: https://example.org/aggregatedByRegions
+attributed_to:
+  - object: https://example.org/derek
+relations:
+  https://example.org/derek:
+    schema_type: dlflatprov:Agent
+    delegated_by:
+      object: https://example.org/national_newspaper_in
+    broad_mappings:
+      - foaf:Person
+    attributes:
+      - predicate: foaf:givenName
+        value: Derek
+      - predicate: foaf:mbox
+        value: <mailto:derek@example.org>
+  https://example.org/national_newspaper_inc:
+    schema_type: dlflatprov:Agent
+    attributes:
+      - predicate: foaf:name
+        value: "National Newspaper, Inc."
+    exact_mappings:
+      - foaf:Organization
+  https://example.org/illustrationActivity:
+    schema_type: dlflatprov:Activity
+    associated_with:
+      - object: https://example.org/derek
+    informed_by:
+      - object: https://example.org/aggregationActivity
+    used:
+      - object: https://example.org/aggregatedByRegions
+  https://example.org/aggregatedByRegions:
+    schema_type: dlflatprov:Entity
+    generated_by:
+      object: https://example.org/aggregationActivity
+    attributed_to:
+      - object: https://example.org/derek
+  https://example.org/aggregationActivity:
+    schema_type: dlflatprov:Activity
+    started:
+      at_time: "2011-07-14T01:01:01Z"
+    ended:
+      at_time: "2011-07-14T02:02:02Z"
+    used:
+      - object: https://example.org/crimeData
+      - object: https://example.org/nationalRegionsList
+  https://example.org/crimeData:
+    schema_type: dlflatprov:Entity
+    attributed_to:
+      - object: https://example.org/government
+  https://example.org/government:
+    schema_type: dlflatprov:Agent
+    broad_mappings:
+      - foaf:Organization
+  https://example.org/nationalRegionsList:
+    schema_type: dlflatprov:Entity
+    attributed_to:
+      - object: https://example.org/civil_action_group
+  https://example.org/civil_action_group:
+    schema_type: dlflatprov:Agent
+    broad_mappings:
+      - foaf:Organization

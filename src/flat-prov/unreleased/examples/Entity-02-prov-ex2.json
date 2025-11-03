@@ -1,0 +1,79 @@
+{
+  "pid": "https://example.org/post9821v2",
+  "relations": {
+    "https://example.org/more-crime-happens-in-cities": {
+      "pid": "https://example.org/more-crime-happens-in-cities",
+      "characterized_by": [
+        {
+          "object": "https://example.org/post9821v2",
+          "predicate": "http://rdfs.org/sioc/ns#latest_version"
+        },
+        {
+          "object": "https://example.org/post9821v1",
+          "predicate": "http://rdfs.org/sioc/ns#previous_version"
+        }
+      ],
+      "schema_type": "dlflatprov:Entity"
+    },
+    "https://example.org/post9821v1": {
+      "pid": "https://example.org/post9821v1",
+      "attributes": [
+        {
+          "predicate": "dcterms:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "More crime happens in cities"
+        },
+        {
+          "predicate": "rdfs:value",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "I was curious..."
+        }
+      ],
+      "broad_mappings": [
+        "http://rdfs.org/sioc/ns#Post"
+      ],
+      "schema_type": "dlflatprov:Entity",
+      "generated_by": {
+        "object": "https://example.org/publicationActivity1123",
+        "at_time": "2011-07-16T01:52:02Z"
+      },
+      "derived_from": [
+        {
+          "object": "https://example.org/crimeData",
+          "roles": [
+            "http://purl.obolibrary.org/obo/NCIT_C142663"
+          ]
+        }
+      ],
+      "invalidated_by": {
+        "at_time": "2011-07-16T02:02:02Z"
+      },
+      "specialization_of": "https://example.org/more-crime-happens-in-cities",
+      "influenced_by": [
+        {
+          "object": "https://example.org/aggregatedByRegions"
+        }
+      ]
+    }
+  },
+  "attributes": [
+    {
+      "predicate": "rdfs:value",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "I was curious..."
+    }
+  ],
+  "broad_mappings": [
+    "http://rdfs.org/sioc/ns#Post"
+  ],
+  "schema_type": "dlflatprov:Entity",
+  "generated_by": {
+    "at_time": "2011-07-16T02:02:02Z"
+  },
+  "revision_of": {
+    "object": "https://example.org/post9821v1"
+  },
+  "alternate_of": "https://example.org/post9821v1",
+  "specialization_of": "https://example.org/more-crime-happens-in-cities",
+  "@type": "Entity"
+}

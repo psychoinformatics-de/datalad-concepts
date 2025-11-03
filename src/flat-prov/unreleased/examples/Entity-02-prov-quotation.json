@@ -1,0 +1,15 @@
+{
+  "pid": "https://example.org/bl-dagstuhl",
+  "attributes": [
+    {
+      "predicate": "rdfs:value",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "During the workshop, it became clear to me that the consensus based models (which are often graphical in nature) can not only be formalized but also be directly connected to these database focused formalizations. I just needed to get over the differences in syntax.  This could imply that we could have nice way to trace provenance across systems and through databases and be able to understand the mathematical properties of this interconnection."
+    }
+  ],
+  "schema_type": "dlflatprov:Entity",
+  "quoted_from": {
+    "object": "http://purl.org/twc/page/thoughts-from-the-dagstuhl-workshop"
+  },
+  "@type": "Entity"
+}

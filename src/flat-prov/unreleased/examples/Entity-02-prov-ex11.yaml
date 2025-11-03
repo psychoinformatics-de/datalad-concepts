@@ -1,0 +1,18 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-qualified-6
+pid: https://example.org/bar_chart
+derived_from:
+  # source of the derivation
+  - object: https://example.org/aggregatedByRegions
+    # The activity that derived the :bar_chart.
+    generated_by:
+      object: https://example.org/aggregating_activity
+      #at_time: ...
+relations:
+  https://example.org/aggregatedByRegions:
+    schema_type: dlflatprov:Entity
+  https://example.org/aggregating_activity:
+    schema_type: dlflatprov:Activity
+    used:
+      - object: https://example.org/aggregatedByRegions
+        #roles: ...
+

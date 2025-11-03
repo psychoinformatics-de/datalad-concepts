@@ -1,0 +1,11 @@
+schema: src/flat-prov/unreleased.yaml
+target_class: Activity
+data_sources:
+  - src/flat-prov/unreleased/examples/Activity-01-minimal.yaml
+  - src/flat-prov/unreleased/examples/Activity-02-prov-ex8.yaml
+  - src/flat-prov/unreleased/examples/Activity-02-prov-ex9.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

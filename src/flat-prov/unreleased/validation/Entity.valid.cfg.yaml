@@ -1,0 +1,15 @@
+schema: src/flat-prov/unreleased.yaml
+target_class: Entity
+data_sources:
+  - src/flat-prov/unreleased/examples/Entity-01-minimal.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-ex1.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-ex2.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-ex5.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-ex10.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-ex11.yaml
+  - src/flat-prov/unreleased/examples/Entity-02-prov-quotation.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

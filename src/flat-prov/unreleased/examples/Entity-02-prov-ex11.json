@@ -1,0 +1,28 @@
+{
+  "pid": "https://example.org/bar_chart",
+  "relations": {
+    "https://example.org/aggregatedByRegions": {
+      "pid": "https://example.org/aggregatedByRegions",
+      "schema_type": "dlflatprov:Entity"
+    },
+    "https://example.org/aggregating_activity": {
+      "pid": "https://example.org/aggregating_activity",
+      "schema_type": "dlflatprov:Activity",
+      "used": [
+        {
+          "object": "https://example.org/aggregatedByRegions"
+        }
+      ]
+    }
+  },
+  "schema_type": "dlflatprov:Entity",
+  "derived_from": [
+    {
+      "object": "https://example.org/aggregatedByRegions",
+      "generated_by": {
+        "object": "https://example.org/aggregating_activity"
+      }
+    }
+  ],
+  "@type": "Entity"
+}
