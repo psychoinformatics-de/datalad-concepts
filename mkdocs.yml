@@ -32,6 +32,7 @@ nav:
     - FLAT:
       - Base (dev): s/flat/unreleased/index.md
       - Social (dev): s/flat-social/unreleased/index.md
+      - Provenance (dev): s/flat-prov/unreleased/index.md
       - Resources (dev): s/flat-resources/unreleased/index.md
       - Study (dev): s/flat-study/unreleased/index.md
       - Files (dev): s/flat-files/unreleased/index.md
@@ -67,6 +68,7 @@ plugins:
           's/edistributions/index.md': 's/edistributions/unreleased/index.md'
           's/flat/index.md': 's/flat/unreleased/index.md'
           's/flat-social/index.md': 's/flat-social/unreleased/index.md'
+          's/flat-prov/index.md': 's/flat-prov/unreleased/index.md'
           's/social-mixin/index.md': 's/social-mixin/unreleased/index.md'
           's/common-mixin/index.md': 's/common-mixin/unreleased/index.md'
           's/relations-mixin/index.md': 's/relations-mixin/unreleased/index.md'

@@ -1,0 +1,44 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-expanded-1
+# The aspect of a PROV bundle is not included in this translation
+pid: https://example.org/post9821v2
+specialization_of: https://example.org/more-crime-happens-in-cities
+attributes:
+  - predicate: rdfs:value
+    value: "I was curious..."
+generated_by:
+  at_time: "2011-07-16T02:02:02Z"
+revision_of:
+  object: https://example.org/post9821v1
+alternate_of: https://example.org/post9821v1
+broad_mappings:
+  - http://rdfs.org/sioc/ns#Post
+relations:
+  https://example.org/more-crime-happens-in-cities:
+    schema_type: dlflatprov:Entity
+    characterized_by:
+      - predicate: http://rdfs.org/sioc/ns#latest_version
+        object: https://example.org/post9821v2
+      - predicate: http://rdfs.org/sioc/ns#previous_version
+        object: https://example.org/post9821v1
+  https://example.org/post9821v1:
+    schema_type: dlflatprov:Entity
+    specialization_of: https://example.org/more-crime-happens-in-cities
+    attributes:
+      - predicate: dcterms:title
+        value: "More crime happens in cities"
+      - predicate: rdfs:value
+        value: "I was curious..."
+    generated_by:
+      object: https://example.org/publicationActivity1123
+      at_time: "2011-07-16T01:52:02Z"
+    influenced_by:
+      - object: https://example.org/aggregatedByRegions
+    derived_from:
+      - object: https://example.org/crimeData
+        roles:
+          # raw data
+          - http://purl.obolibrary.org/obo/NCIT_C142663
+    invalidated_by:
+      at_time: "2011-07-16T02:02:02Z"
+    broad_mappings:
+      - http://rdfs.org/sioc/ns#Post

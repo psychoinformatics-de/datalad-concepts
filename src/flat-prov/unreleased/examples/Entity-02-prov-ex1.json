@@ -1,0 +1,137 @@
+{
+  "pid": "https://example.org/bar_chart",
+  "relations": {
+    "https://example.org/derek": {
+      "pid": "https://example.org/derek",
+      "attributes": [
+        {
+          "predicate": "foaf:givenName",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Derek"
+        },
+        {
+          "predicate": "foaf:mbox",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "<mailto:derek@example.org>"
+        }
+      ],
+      "broad_mappings": [
+        "foaf:Person"
+      ],
+      "schema_type": "dlflatprov:Agent",
+      "delegated_by": {
+        "object": "https://example.org/national_newspaper_in"
+      }
+    },
+    "https://example.org/national_newspaper_inc": {
+      "pid": "https://example.org/national_newspaper_inc",
+      "attributes": [
+        {
+          "predicate": "foaf:name",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "National Newspaper, Inc."
+        }
+      ],
+      "exact_mappings": [
+        "foaf:Organization"
+      ],
+      "schema_type": "dlflatprov:Agent"
+    },
+    "https://example.org/illustrationActivity": {
+      "pid": "https://example.org/illustrationActivity",
+      "schema_type": "dlflatprov:Activity",
+      "associated_with": [
+        {
+          "object": "https://example.org/derek"
+        }
+      ],
+      "used": [
+        {
+          "object": "https://example.org/aggregatedByRegions"
+        }
+      ],
+      "informed_by": [
+        {
+          "object": "https://example.org/aggregationActivity"
+        }
+      ]
+    },
+    "https://example.org/aggregatedByRegions": {
+      "pid": "https://example.org/aggregatedByRegions",
+      "schema_type": "dlflatprov:Entity",
+      "attributed_to": [
+        {
+          "object": "https://example.org/derek"
+        }
+      ],
+      "generated_by": {
+        "object": "https://example.org/aggregationActivity"
+      }
+    },
+    "https://example.org/aggregationActivity": {
+      "pid": "https://example.org/aggregationActivity",
+      "schema_type": "dlflatprov:Activity",
+      "started": {
+        "at_time": "2011-07-14T01:01:01Z"
+      },
+      "ended": {
+        "at_time": "2011-07-14T02:02:02Z"
+      },
+      "used": [
+        {
+          "object": "https://example.org/crimeData"
+        },
+        {
+          "object": "https://example.org/nationalRegionsList"
+        }
+      ]
+    },
+    "https://example.org/crimeData": {
+      "pid": "https://example.org/crimeData",
+      "schema_type": "dlflatprov:Entity",
+      "attributed_to": [
+        {
+          "object": "https://example.org/government"
+        }
+      ]
+    },
+    "https://example.org/government": {
+      "pid": "https://example.org/government",
+      "broad_mappings": [
+        "foaf:Organization"
+      ],
+      "schema_type": "dlflatprov:Agent"
+    },
+    "https://example.org/nationalRegionsList": {
+      "pid": "https://example.org/nationalRegionsList",
+      "schema_type": "dlflatprov:Entity",
+      "attributed_to": [
+        {
+          "object": "https://example.org/civil_action_group"
+        }
+      ]
+    },
+    "https://example.org/civil_action_group": {
+      "pid": "https://example.org/civil_action_group",
+      "broad_mappings": [
+        "foaf:Organization"
+      ],
+      "schema_type": "dlflatprov:Agent"
+    }
+  },
+  "schema_type": "dlflatprov:Entity",
+  "attributed_to": [
+    {
+      "object": "https://example.org/derek"
+    }
+  ],
+  "generated_by": {
+    "object": "https://example.org/illustrationActivity"
+  },
+  "derived_from": [
+    {
+      "object": "https://example.org/aggregatedByRegions"
+    }
+  ],
+  "@type": "Entity"
+}

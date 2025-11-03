@@ -1,0 +1,12 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-expanded-4
+pid: https://example.org/
+invalidated_by: 
+  object: https://example.org/hard_disk_failure
+  at_time: "2012-09-02T01:31:00Z"
+broad_mappings:
+  - http://rdfs.org/sioc/ns#Post
+relations:
+  https://example.org/hard_disk_failure:
+    schema_type: dlflatprov:Activity
+    ended:
+      at_time: "2012-09-02T01:31:00Z"

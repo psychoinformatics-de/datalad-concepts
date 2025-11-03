@@ -1,0 +1,5 @@
+{
+  "pid": "https://example.org/agent1",
+  "schema_type": "dlflatprov:Agent",
+  "@type": "Agent"
+}

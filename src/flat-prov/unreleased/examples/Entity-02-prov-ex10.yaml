@@ -1,0 +1,5 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-qualified-5
+pid: https://example.org/bar_chart
+generated_by:
+  object: https://example.org/illustrationActivity
+  at_time: "2011-07-14T15:52:14Z"

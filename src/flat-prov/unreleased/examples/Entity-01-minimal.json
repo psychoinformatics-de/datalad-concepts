@@ -1,0 +1,5 @@
+{
+  "pid": "https://example.org/entity1",
+  "schema_type": "dlflatprov:Entity",
+  "@type": "Entity"
+}

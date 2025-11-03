@@ -1,0 +1,9 @@
+schema: src/flat-prov/unreleased.yaml
+target_class: Agent
+data_sources:
+  - src/flat-prov/unreleased/examples/Agent-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

@@ -1,0 +1,5 @@
+{
+  "pid": "https://example.org/activity1",
+  "schema_type": "dlflatprov:Activity",
+  "@type": "Activity"
+}

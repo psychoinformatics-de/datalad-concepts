@@ -1,0 +1,8 @@
+# https://www.w3.org/TR/prov-o/#narrative-example-qualified-4
+pid: https://example.org/illustrationActivity
+associated_with:
+  - object: https://example.org/derek
+    roles:
+      - https://example.org/illustrationist
+    # no support for plan annotations
+    #had_plan: https://example.org/tutorial_blog
