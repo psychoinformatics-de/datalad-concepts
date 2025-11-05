@@ -49,7 +49,7 @@ prefixes:
   dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
   dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
   dlpublicationsmx: https://concepts.datalad.org/s/publications-mixin/unreleased/
   dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
   dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/

@@ -24,7 +24,7 @@ comments:
 license: MIT
 
 prefixes:
-  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/

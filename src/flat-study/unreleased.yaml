@@ -29,7 +29,7 @@ prefixes:
   dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
   dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
-  dlprovmx: https://concepts.datalad.org/s/provenance-mixin/unreleased/
+  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
   dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
   dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
