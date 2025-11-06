@@ -4,11 +4,57 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Collection of provenance properties for use in schemas
 description: |
-  This schema mixin provides a collection of provenance properties for use in other
-  schemas. It can be imported directly into other linkml schemas, or any of its
-  individual property definitions can be used by their URI as vocabulary
-  components or definitions (e.g., `prov-mixin:name` identified by this
-  [URI](`name`)).
+
+  This schema mixin provides the majority of the terms and relationships
+  defined by [PROV-O](https://www.w3.org/TR/prov-o/), with the following
+  exceptions and deviations. It is implemented as a mixin to be able to
+  flexibly add provenance-focused interfaces to classes that are part
+  of a topical class hierarchy already.
+
+  All relationships are implemented using the "qualified relation" pattern, but
+  combined with properties that are named after their (shortened) "binary"
+  equivalent. For example, a `wasDerivedFrom` is implemented as the
+  `derived_from` slot, and has the `Derivation` association class as its
+  `range`. This means that qualifying properties of a relationship are
+  consolidated into the respective relationship class. Consequently, there is
+  no equivalent of, for example, `generatedAtTime`. Instead, the time needs to
+  be annotated via the `at_time` slot of `Generation`.
+
+  All relationship classes uniformly use an `object` slot to reference the
+  respective entity, agent, or activity. PROV-O's `actedOnBehalfOf` is named
+  `delegated_by` for consistency with the association class `Delegation`.
+
+  No inverse properties are defined, i.e. there is `invalidated_by`, but not
+  `invalidated`.
+
+  This schema does not implement support for PROV bundles.
+
+  There is no support for annotating an `Influence` with an unspecific
+  `Activity` (`hadActivity`, optional in PROV-O). For describing, for example,
+  the generating activity in a derivation, `generated_by` is provided.
+
+  The annotation of `Agent` and `Entity` instances with a location (PROV-O
+  `atLocation`) is not supported. The idea of a (single) location for these
+  concepts is at odds with the core approach of this schema to use persistent
+  identifiers for all `Thing`s. However, `at_location` is supported within
+  `Start` and `End` that are available to annotate `Activity`, and
+  `EntityInfluence` like `Usage` with temporal and spatial locators.
+
+  There is not direct support for the PROV-O classes `Location`, `Plan`,
+  (and with it `hadPlan`), `Role`, and `SoftwareAgent`. The `Thing` class can
+  be used to express these concepts in a generic fashion. Dedicated support
+  is left to more application-specific schemas that require these concepts.
+
+  The PROV-O concept of `PrimarySource`, as a special case of a `Derivation`
+  is not supported. Use the role annotation to identify an influencing entity
+  in a `Derivation` as a "primary source".
+
+  More information may be available on the schema's [about page](about).
+
+
+
+
+
 
   The schema definition is available as
 
@@ -26,6 +72,8 @@ license: MIT
 prefixes:
   dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
+  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
+  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
@@ -34,21 +82,29 @@ prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlprovmx
 
 emit_prefixes:
   - dlprovmx
+  - dlrelationsmx
+  - dlspatialmx
+  - dltemporalmx
   - dlthings
   - dltypes
   - rdf
   - rdfs
   - skos
+  - w3ctr
   - xsd
 
 imports:
   - dlschemas:things/v1
+  - dlschemas:relations-mixin/unreleased
+  - dlschemas:spatial-mixin/unreleased
+  - dlschemas:temporal-mixin/unreleased
 
 slots:
   alternate_of:
@@ -247,3 +303,339 @@ slots:
       - PROV-O "used" is a short-cut property. "Usage" also has "entity".
     exact_mappings:
       - prov:used
+
+
+classes:
+  ActivityMixin:
+    mixin: true
+    description: >-
+      An activity is something that occurs over a period of time and acts
+      upon or with entities; it may include consuming, processing,
+      transforming, modifying, relocating, using, or generating entities.
+    slots:
+      - started
+      - ended
+      - associated_with
+      - used
+      - informed_by
+      - influenced_by
+    slot_usage:
+      associated_with:
+        range: Association
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      ended:
+        range: End
+        inlined: true
+      influenced_by:
+        range: Influence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      informed_by:
+        range: Communication
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      started:
+        range: Start
+        inlined: true
+      used:
+        range: Usage
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+    exact_mappings:
+      - prov:Activity
+
+  AgentMixin:
+    mixin: true
+    description: >-
+      Something that bears some form of responsibility for an activity
+      taking place, for the existence of an entity, or for another
+      agent's activity.
+    slots:
+      - delegated_by
+      - influenced_by
+    slot_usage:
+      delegated_by:
+        range: Delegation
+        inlined: true
+      influenced_by:
+        range: Influence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+    exact_mappings:
+      - prov:Agent
+
+  EntityMixin:
+    mixin: true
+    description: >-
+      A physical, digital, conceptual, or other kind of thing with some
+      fixed aspects; entities may be real or imaginary.
+    slots:
+      - attributed_to
+      - generated_by
+      - derived_from
+      - revision_of
+      - quoted_from
+      - invalidated_by
+      - alternate_of
+      - specialization_of
+      - influenced_by
+    slot_usage:
+      attributed_to:
+        range: Attribution
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      derived_from:
+        range: Derivation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      generated_by:
+        range: Generation
+        inlined: true
+      influenced_by:
+        range: Influence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+      invalidated_by:
+        range: Invalidation
+        inlined: true
+      quoted_from:
+        range: Quotation
+        inlined: true
+      revision_of:
+        range: Revision
+        inlined: true
+    exact_mappings:
+      - prov:Entity
+
+  # bases for non-Things
+  # Base for prov:Generation , prov:Start , prov:Invalidation , prov:End , prov:Usage 
+  # this means that this is NOT a Thing!
+  InstantaneousEventMixin:
+    mixin: true
+    description: >-
+      The PROV data model is implicitly based on a notion of instantaneous
+      events (or just events), that mark transitions in the world. Events
+      include generation, usage, or invalidation of entities, as well as
+      starting or ending of activities. This notion of event is not
+      first-class in the data model, but it is useful for explaining
+      its other concepts and its semantics
+    slots:
+      - at_location
+      - at_time
+    exact_mappings:
+      - prov:InstantaneousEvent
+
+  # association classes -- influences
+  # base for all influences
+  Influence:
+    description: >-
+      Influence is the capacity of an entity, activity, or agent to have
+      an effect on the character, development, or behavior of another by
+      means of usage, start, end, generation, invalidation, communication,
+      derivation, attribution, association, or delegation.
+    slots:
+      # influencer
+      - object
+      - roles
+    slot_usage:
+      object:
+        range: Thing
+    exact_mappings:
+      - prov:Influence
+
+  # base for the following four, not used directly
+  EntityInfluence:
+    is_a: Influence
+    description: >-
+      EntityInfluence is the capacity of an entity to have an effect on
+      the character, development, or behavior of another by means of
+      usage, start, end, derivation, or other.
+    slot_usage:
+      object:
+        title: Entity
+    exact_mappings:
+      - prov:EntityInfluence
+
+  Usage:
+    is_a: EntityInfluence
+    mixins:
+      - InstantaneousEventMixin
+    description: >-
+      Usage is the beginning of utilizing an entity by an activity.
+      Before usage, the activity had not begun to utilize this entity
+      and could not have been affected by the entity.
+    exact_mappings:
+      - prov:Usage
+
+  Start:
+    is_a: EntityInfluence
+    mixins:
+      - InstantaneousEventMixin
+    description: >-
+      Start is when an activity is deemed to have been started by an
+      entity, known as trigger. The activity did not exist before its
+      start. Any usage, generation, or invalidation involving an activity
+      follows the activity's start. A start may refer to a trigger entity
+      that set off the activity, or to an activity, known as starter, that
+      generated the trigger.
+    slot_usage:
+      object:
+        title: Trigger
+    exact_mappings:
+      - prov:Start
+
+  End:
+    is_a: EntityInfluence
+    mixins:
+      - InstantaneousEventMixin
+    description: >-
+      End is when an activity is deemed to have been ended by an entity,
+      known as trigger. The activity no longer exists after its end. Any
+      usage, generation, or invalidation involving an activity precedes
+      the activity's end. An end may refer to a trigger entity that
+      terminated the activity, or to an activity, known as ender that
+      generated the trigger.
+    slot_usage:
+      object:
+        title: Trigger
+    exact_mappings:
+      - prov:End
+
+  Derivation:
+    is_a: EntityInfluence
+    description: >-
+      A derivation is a transformation of an entity into another, an
+      update of an entity resulting in a new one, or the construction
+      of a new entity based on a pre-existing entity.
+    slots:
+      - generated_by
+      - used
+    slot_usage:
+      generated_by:
+        range:  Generation
+        inlined: true
+      used:
+        range: Usage
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+    exact_mappings:
+      - prov:Derivation
+
+  Quotation:
+    is_a: Derivation
+    description: >-
+      A quotation is the repeat of (some or all of) an entity, such as
+      text or image, by someone who may or may not be its original author.
+      Quotation is a particular case of derivation.
+    exact_mappings:
+      - prov:Quotation
+
+  Revision :
+    is_a: Derivation
+    description: >-
+      A revision is a derivation for which the resulting entity is a
+      revised version of some original. The implication here is that
+      the resulting entity contains substantial content from the
+      original. Revision is a particular case of derivation.
+    exact_mappings:
+      - prov:Revision
+
+  # base for the following three
+  ActivityInfluence:
+    is_a: Influence
+    description: >-
+      ActivitiyInfluence is the capacity of an activity to have an effect
+      on the character, development, or behavior of another by means of
+      generation, invalidation, communication, or other.
+    slot_usage:
+      object:
+        title: Activity
+    exact_mappings:
+      - prov:ActivityInfluence
+
+  Generation:
+    is_a: ActivityInfluence
+    mixins:
+      - InstantaneousEventMixin
+    description: >-
+      Generation is the completion of production of a new entity by an
+      activity. This entity did not exist before generation and becomes
+      available for usage after this generation.
+    exact_mappings:
+      - prov:Generation
+
+  Communication:
+    is_a: ActivityInfluence
+    description: >-
+      Communication is the exchange of an entity by two activities,
+      one activity using the entity generated by the other.
+    exact_mappings:
+      - prov:Communication
+
+  Invalidation:
+    is_a: ActivityInfluence
+    mixins:
+      - InstantaneousEventMixin
+    description: >-
+      Invalidation is the start of the destruction, cessation, or expiry
+      of an existing entity by an activity. The entity is no longer
+      available for use (or further invalidation) after invalidation.
+      Any generation or usage of an entity precedes its invalidation.
+    exact_mappings:
+      - prov:Invalidation
+
+  # base for the following three
+  AgentInfluence:
+    is_a: Influence
+    description: >-
+      AgentInfluence is the capacity of an agent to have an effect on the
+      character, development, or behavior of another by means of attribution,
+      association, delegation, or other.
+    slot_usage:
+      object:
+        title: Agent
+    exact_mappings:
+      - prov:AgentInfluence
+
+  Attribution:
+    is_a: AgentInfluence
+    description: >-
+      Attribution is the ascribing of an entity to an agent. When an entity
+      e is attributed to agent ag, entity e was generated by some unspecified
+      activity that in turn was associated to agent ag. Thus, this relation
+      is useful when the activity is not known, or irrelevant.
+    exact_mappings:
+      - prov:Attribution
+
+  Association:
+    is_a: AgentInfluence
+    description: >-
+      An activity association is an assignment of responsibility to an agent
+      for an activity, indicating that the agent had a role in the activity.
+    exact_mappings:
+      - prov:Association
+
+  Delegation:
+    is_a: AgentInfluence
+    description: >-
+      Delegation is the assignment of authority and responsibility to an
+      agent (by itself or by another agent) to carry out a specific activity
+      as a delegate or representative, while the agent it acts on behalf of
+      retains some responsibility for the outcome of the delegated work.
+      For example, a student acted on behalf of his supervisor, who acted on
+      behalf of the department chair, who acted on behalf of the university;
+      all those agents are responsible in some way for the activity that took
+      place but we do not say explicitly who bears responsibility and to what
+      degree.
+    exact_mappings:
+      - prov:Delegation
