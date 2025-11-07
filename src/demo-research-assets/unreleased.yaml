@@ -1165,6 +1165,8 @@ classes:
       Generation is the completion of production of a new entity by an
       activity. This entity did not exist before generation and becomes
       available for usage after this generation.
+    slots:
+      - used
     slot_usage:
       object:
         range: XYZGenesis
@@ -1175,12 +1177,23 @@ classes:
         #range:
         annotations:
           sh:order: 2.0
-      at_location:
+      used:
+        range: XYZUsage
         annotations:
           sh:order: 3.0
-      at_time:
+      at_location:
         annotations:
           sh:order: 4.0
+      at_time:
+        annotations:
+          sh:order: 5.0
+    comments:
+      - >-
+        The `used` slot is added to be able to express something like a sample
+        generation using a generic activity and combine them with a target entity
+        (like a subject) with an appropriate role declaration. PROV-O's approach
+        is to have a dedicated activity (which has `used`) instance for each
+        generation. Adding `used` here appears to be less effortful.
 
   XYZUsage:
     is_a: Usage
