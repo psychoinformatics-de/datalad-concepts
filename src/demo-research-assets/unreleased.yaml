@@ -231,6 +231,8 @@ classes:
 
   XYZDataItem:
     is_a: DataItem
+    mixins:
+      - EntityMixin
     title: Data item
     description: >-
       An information content entity that is intended to be a truthful statement about
@@ -355,7 +357,7 @@ classes:
         multivalued: true
         inlined_as_list: true
         inlined: true
-        range: XYZAgentAttribution
+        range: Attribution
         annotations:
           sh:order: 5.0
       landing_page:
@@ -363,7 +365,7 @@ classes:
           sh:order: 6.0
       generated_by:
         range: XYZGenesis
-        # TODO description explaning that this is about the dataset
+        # TODO description explaining that this is about the dataset
         # as a whole (curation, compilation), not about individual
         # items
         annotations:
