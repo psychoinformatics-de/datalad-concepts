@@ -4,7 +4,9 @@
     "obo:MAXO_0000494"
   ],
   "schema_type": "xyzra:XYZGenesis",
-  "conforms_to": "doi:10.1111/j.1524-6175.2005.04377.x",
+  "conforms_to": [
+    "doi:10.1111/j.1524-6175.2005.04377.x"
+  ],
   "name": "blood pressure measurement (children)",
   "used": [
     "http://snomed.info/id/720736009"
