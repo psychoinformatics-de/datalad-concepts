@@ -88,6 +88,14 @@ slots:
     description: >-
       The nature of the subject.
     range: Thing
+    comments:
+      - >-
+        This is conceptually the same as an instance-level `broad_mappings`.
+        It can make sense to use this slot (in addition) in order to enable
+        straightforward type declarations for instances from a controlled,
+        application specific vocabulary, while also keeping the ability to
+        use `broad_mappings` for alignment with external vocabularies and
+        applications.
     exact_mappings:
       - dcterms:type
 
