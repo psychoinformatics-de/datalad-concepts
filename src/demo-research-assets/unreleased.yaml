@@ -248,10 +248,11 @@ classes:
         annotations:
           sh:order: 1.0
       generated_by:
-        range: XYZGenesis
+        range: XYZGeneration
         annotations:
           sh:order: 2.0
       derived_from:
+        # TODO: Derivation
         any_of:
           - range: XYZDataItem
           - range: XYZSubject
@@ -364,7 +365,7 @@ classes:
         annotations:
           sh:order: 6.0
       generated_by:
-        range: XYZGenesis
+        range: XYZGeneration
         # TODO description explaining that this is about the dataset
         # as a whole (curation, compilation), not about individual
         # items
@@ -1112,3 +1113,15 @@ classes:
         annotations:
           sh:order: 5.0
           dash:singleLine: false
+
+  XYZGeneration:
+    is_a: Generation
+    description: >-
+      Generation is the completion of production of a new entity by an
+      activity. This entity did not exist before generation and becomes
+      available for usage after this generation.
+    slot_usage:
+      object:
+        range: XYZGenesis
+        annotations:
+          sh:order: 1.0
