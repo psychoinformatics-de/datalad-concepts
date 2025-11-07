@@ -68,7 +68,6 @@ emit_prefixes:
 imports:
   - dlschemas:flat/unreleased
   - dlschemas:common-mixin/unreleased
-  - dlschemas:prov-mixin/unreleased
   - dlschemas:quantities-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
   - dlschemas:resources-mixin/unreleased
@@ -113,8 +112,7 @@ classes:
       This is a conceptual entity. A single data item might be available in more than
       one representation, with differing formats, and serializations.
     slots:
-      - derived_from
-      - generated_by
+      # think datatype
       - kind
       - part_of
       - quantitative_unit
@@ -123,33 +121,14 @@ classes:
     slot_usage:
       part_of:
         range: Dataset
-        annotations:
-          sh:order: 1
-      generated_by:
-        annotations:
-          sh:order: 2
-      derived_from:
-        annotations:
-          sh:order: 3
       same_as:
         title: Qualitative value
         description: >-
           The value of a qualitative assessment.
-        annotations:
-          sh:order: 4
       quantitative_value:
         title: Quantitative value
         description: >-
           The value of a quantitative assessment.
-        annotations:
-          sh:order: 5
-      quantitative_unit:
-        annotations:
-          sh:order: 6
-      kind:
-        # think datatype
-        annotations:
-          sh:order: 7
     exact_mappings:
       - obo:IAO_0000027
     comments:
@@ -232,8 +211,10 @@ classes:
       resources.
     slots:
       - howto_acknowledge
+      # TODO leave to a PROV attribution
       - sponsor
       - title
+      # TODO leave to a PROV attribution
       - received_by
       - short_name
       - part_of
