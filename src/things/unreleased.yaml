@@ -106,6 +106,7 @@ emit_prefixes:
   - rdf
   - rdfs
   - skos
+  - xsd
 
 imports:
   - dlschemas:types/unreleased
@@ -251,6 +252,8 @@ slots:
       Reference to a `Thing` within a `Statement`.
     inlined: false
     multivalued: false
+    # TODO really could/should have a range defined
+    #range: Thing
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
@@ -311,7 +314,7 @@ slots:
   value:
     slot_uri: rdfs:value
     description: >-
-      Value of a thing.
+      Value that is a direct representation of a thing.
     relational_role: OBJECT
     range: string
     exact_mappings:
