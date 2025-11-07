@@ -178,6 +178,16 @@ slots:
     range: string
     pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
+  # TODO: this better becomes an access method (through landing page)
+  landing_page:
+    title: Landing page
+    description: >-
+      A Web page that can be navigated to in a Web browser to gain access to
+      a resource.
+    range: uri
+    exact_mappings:
+      - dcat:landingPage
+
   target:
     title: Target
     description: >-
@@ -316,9 +326,12 @@ classes:
     description: >-
       A collection of data, published or curated by a single agent. This is a conceptual entity. A single dataset might be available in more than one representation, with differing schematic layouts, formats, and serializations.
     slots:
+      - about
       - attributed_to
       - generated_by
+      - landing_page
       - rules
+      - same_as
     slot_usage:
       title:
         annotations:
@@ -329,21 +342,45 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+          dash:singleLine: false
+      about:
+        title: Topic(s)
+        description: >-
+          Topics covered associated with this dataset.
+        range: XYZTopic
+        multivalued: true
+        annotations:
+          sh:order: 4.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
-        range: XYZPersonAttribution
+        range: XYZAgentAttribution
         annotations:
-          sh:order: 4.0
+          sh:order: 5.0
+      landing_page:
+        annotations:
+          sh:order: 6.0
+      generated_by:
+        range: XYZGenesis
+        # TODO description explaning that this is about the dataset
+        # as a whole (curation, compilation), not about individual
+        # items
+        annotations:
+          sh:order: 7.0
       part_of:
         range: XYZDataset
         annotations:
-          sh:order: 5.0
+          sh:order: 8.0
       rules:
         range: XYZRule
         annotations:
-          sh:order: 6.0
+          sh:order: 9.0
+      same_as:
+        range: XYZDataset
+        multivalued: true
+        annotations:
+          sh:order: 10.0
 
   XYZDistribution:
     is_a: Distribution
@@ -351,6 +388,7 @@ classes:
     description: >-
       A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files.
     slots:
+      - conforms_to
       - rules
     slot_usage:
       kind:
@@ -385,6 +423,11 @@ classes:
         range: XYZRule
         annotations:
           sh:order: 8.0
+      conforms_to:
+        range: XYZConvention
+        multivalued: true
+        annotations:
+          sh:order: 9.0
 
   XYZNamedDistributionPart:
     is_a: NamedDistributionPart
@@ -414,6 +457,7 @@ classes:
     description: >-
       A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
     slots:
+      - about
       - attributed_to
       - rules
     slot_usage:
@@ -445,6 +489,14 @@ classes:
         range: XYZRule
         annotations:
           sh:order: 5.0
+      about:
+        title: Topic(s)
+        description: >-
+          Topics covered in this document.
+        range: XYZTopic
+        multivalued: true
+        annotations:
+          sh:order: 6.0
 
   XYZConcept:
     is_a: FlatThing
@@ -480,6 +532,7 @@ classes:
       A process in which an entity comes into being as a result of the process.
     slots:
       - conforms_to
+      - kind
       - name
       - part_of
       - target
@@ -488,12 +541,14 @@ classes:
       name:
         annotations:
           sh:order: 1.0
-      description:
+      kind:
+        range: XYZGenesis
         annotations:
           sh:order: 2.0
           dash:singleLine: false
       conforms_to:
         range: XYZConvention
+        multivalued: true
         annotations:
           sh:order: 3.0
       used:
@@ -515,6 +570,10 @@ classes:
         multivalued: true
         annotations:
           sh:order: 6.0
+      description:
+        annotations:
+          sh:order: 7.0
+          dash:singleLine: false
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
@@ -673,6 +732,7 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+          dash:singleLine: false
       attributed_to:
         multivalued: true
         inlined_as_list: true
@@ -869,6 +929,7 @@ classes:
         annotations:
           sh:order: 5.0
       associated_with:
+        # TODO this is a bug. Association is with an agent, not an activity
         range: XYZProject
         multivalued: true
         annotations:
@@ -888,6 +949,8 @@ classes:
     title: Subject
     description: >-
       A subject is an entity being investigated in a study. This is a contextual entity. One and the same entity can be different subjects in two different studies.
+    slots:
+      - same_as
     slot_usage:
       study:
         range: XYZStudy
@@ -897,6 +960,7 @@ classes:
         annotations:
           sh:order: 2.0
       kind:
+        range: XYZSubjectType
         annotations:
           sh:order: 3.0
       description:
@@ -907,6 +971,10 @@ classes:
         range: XYZSubject
         annotations:
           sh:order: 5.0
+      same_as:
+        range: XYZSubject
+        annotations:
+          sh:order: 6.0
 
   XYZSubjectType:
     is_a: FlatThing
@@ -995,13 +1063,17 @@ classes:
         annotations:
           sh:order: 1.0
       roles:
+        description: >-
+          Roles a person had with respect to the subject
         range: XYZAgentRole
         multivalued: true
         annotations:
           sh:order: 2.0
       display_label:
         annotations:
-          sh:order: 2.0
+          sh:order: 3.0
+    close_mappings:
+      - prov:Attribution
 
   XYZObjective:
     is_a: FlatThing
@@ -1023,6 +1095,7 @@ classes:
           sh:order: 2.0
       depends_on:
         range: XYZObjective
+        multivalued: true
         annotations:
           sh:order: 3.0
       attributed_to:
