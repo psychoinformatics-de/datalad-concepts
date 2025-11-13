@@ -4,7 +4,7 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Data models for an organization's research assets
 description: |
-  This schema is using the FLAT approach (Flexbile Low-complexity
+  This schema is using the FLAT approach (Flexible Low-complexity
   Annotation Technique) and is geared toward metadata entry and
   submission for pooling information across consortium sites and
   partners.
