@@ -33,6 +33,7 @@ prefixes:
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
+  fabio: http://purl.org/spar/fabio/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
@@ -127,6 +128,9 @@ classes:
         "me_at_the_party.jpg" elsewhere, but it would be the exact same
         image. Expressing naming in some context should be done within
         the scope of the containing entity (see `named_parts`).
+    exact_mappings:
+      - dcat:Distribution
+      - fabio:DigitalManifestation
 
   NamedDistributionPart:
     description: >-
