@@ -178,6 +178,13 @@ slots:
     range: string
     pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
+  # TODO: this should go away. It is presently only used to link a Project
+  # to an Objective. Instead of this dedicated slot, the project should
+  # use influenced_by, link the Objective and declare its role to be any of
+  # - http://purl.allotrope.org/ontologies/role#AFRL_0000015
+  # - http://semanticscience.org/resource/SIO_000337
+  # but probably obo:NCIT_C49155
+  # (all objective, the noun)
   target:
     title: Target
     description: >-
