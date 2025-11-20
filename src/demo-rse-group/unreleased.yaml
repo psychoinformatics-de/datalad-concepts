@@ -191,6 +191,7 @@ slots:
     #  - sct:363702006
 
 classes:
+  # classifier class -- no PROV mixin
   XYZConvention:
     is_a: Convention
     title: Convention
@@ -247,6 +248,7 @@ classes:
         annotations:
           sh:order: 5.0
 
+  # classifier class -- no PROV mixin
   XYZConcept:
     is_a: FlatThing
     title: Concept
@@ -491,6 +493,7 @@ classes:
         annotations:
           sh:order: 12.0
 
+  # classifier class -- no PROV mixin
   XYZBibliographicType:
     is_a: FlatThing
     title: Bibliographic type
@@ -502,6 +505,7 @@ classes:
           sh:order: 1.0
           dash:singleLine: false
 
+  # classifier class -- no PROV mixin
   XYZPublicationVenue:
     is_a: FlatThing
     title: Publication venue
@@ -525,6 +529,7 @@ classes:
         annotations:
           sh:order: 2.0
 
+  # classifier class -- no PROV mixin
   XYZTopic:
     is_a: FlatThing
     title: Topic
@@ -542,6 +547,7 @@ classes:
         annotations:
           sh:order: 2.0
 
+  # classifier class -- no PROV mixin
   XYZRule:
     is_a: FlatThing
     title: Rule
@@ -566,6 +572,7 @@ classes:
           sh:order: 3.0
           dash:singleLine: false
 
+  # classifier class -- no PROV mixin
   XYZAgentRole:
     is_a: FlatThing
     title: Agent role
