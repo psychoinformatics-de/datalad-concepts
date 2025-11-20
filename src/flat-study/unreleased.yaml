@@ -38,6 +38,7 @@ prefixes:
   dltypes: https://concepts.datalad.org/s/types/v1/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
+  FRAPO: http://purl.org/cerif/frapo/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
@@ -79,10 +80,19 @@ classes:
     is_a: FlatThing
     description: >-
       A planned process that consists of parts: planning, study design
-      execution, documentation and which produce conclusion(s).
+      execution, documentation and which produce conclusion(s). An investigational
+      endeavour that involves research, enabled by a project. The study
+      relates to the scholarly and practical aspects of conducting the research
+      itself, including the hypotheses being investigated, the data being
+      gathered and analysed, the interpretations being drawn from the data,
+      and the results obtained. In contrast, a project that enables it
+      encompasses the administrative aspects of undertaking the endeavour,
+      including the funding obtained, the people involved, and the management
+      of the project in terms of deadlines and deliverables.
     exact_mappings:
       - obo:OBI_0000066
       - sio:SIO_001066
+      - FRAPO:Investigation
     narrow_mappings:
       - sio:SIO_000994
       - obo:NCIT_C15206
