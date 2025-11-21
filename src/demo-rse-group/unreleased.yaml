@@ -39,8 +39,6 @@ prefixes:
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
-  # TODO preliminary definition, just to have something short
-  dlcdi: https://concepts.datalad.org/ns/content-defined-identifiers/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
   dlflat: https://concepts.datalad.org/s/flat/unreleased/
   dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
