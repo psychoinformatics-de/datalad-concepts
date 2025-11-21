@@ -1,0 +1,7 @@
+pid: https://example.org/p1
+family_name: TODO
+influenced_by:
+  - object: https://example.org/inf1
+    roles:
+      - https://example.org/r1
+      - https://example.org/r2

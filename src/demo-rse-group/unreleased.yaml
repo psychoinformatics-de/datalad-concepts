@@ -404,11 +404,11 @@ classes:
 
   XYZPerson:
     is_a: Person
+    mixins:
+      - AgentMixin
     title: Person
     description: >-
       Person agents are people, alive, dead, or fictional.
-    slots:
-      - part_of
     slot_usage:
       family_name:
         annotations:
@@ -425,10 +425,11 @@ classes:
       honorific_name_suffix:
         annotations:
           sh:order: 5.0
-      part_of:
-        title: Member of
-        range: XYZOrganization
+      influenced_by:
+        range: XYZInfluence
         multivalued: true
+        inlined: true
+        inlined_as_list: true
         annotations:
           sh:order: 6.0
 
@@ -712,3 +713,20 @@ classes:
         annotations:
           sh:order: 5.0
           dash:singleLine: false
+
+  # we derive to be able to customization the UI/docs
+  # TODO consider supporting temporally windows influences
+  XYZInfluence:
+    is_a: Influence
+    description: >-
+      Influence is the capacity of an entity, activity, or agent to have
+      an effect on the character, development, or behavior of another by
+      means of usage, start, end, generation, invalidation, communication,
+      derivation, attribution, association, or delegation.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
