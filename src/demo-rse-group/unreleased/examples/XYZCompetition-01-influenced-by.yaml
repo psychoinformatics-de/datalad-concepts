@@ -1,0 +1,9 @@
+about:
+- https://www.forschungsfoerderung.nrw/foerderaufruf/kooperationsplattformen-2022/
+application_deadline: 2022-10-28
+influenced_by:
+- object: datalad:object_1
+  roles:
+  - fabio:CallForApplication
+kind: frapo:FundingApplication
+pid: xyzrans:competition/kooperationsplattformen-2022
