@@ -1,14 +1,18 @@
-  {
-    "pid": "xyzrans:competition/kooperationsplattformen-2022",
-    "about": [
-      "https://www.forschungsfoerderung.nrw/foerderaufruf/kooperationsplattformen-2022/"
-    ],
-    "application_deadline": "2022-10-28",
-    "kind": "frapo:FundingApplication",
-    "influenced_by": [
-      {
-        "roles": ["fabio:CallForApplication"],
-        "object": "datalad:object_1"
-      }
-    ]
-  }
+{
+  "pid": "xyzrans:competition/kooperationsplattformen-2022",
+  "schema_type": "xyzra:XYZCompetition",
+  "about": [
+    "https://www.forschungsfoerderung.nrw/foerderaufruf/kooperationsplattformen-2022/"
+  ],
+  "application_deadline": "2022-10-28",
+  "kind": "frapo:FundingApplication",
+  "influenced_by": [
+    {
+      "object": "datalad:object_1",
+      "roles": [
+        "fabio:CallForApplication"
+      ]
+    }
+  ],
+  "@type": "XYZCompetition"
+}
