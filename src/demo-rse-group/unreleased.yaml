@@ -61,7 +61,7 @@ prefixes:
   dltypes: https://concepts.datalad.org/s/types/v1/
   doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
-  frabio: http://purl.org/spar/fabio/
+  fabio: http://purl.org/spar/fabio/
   FRAPO: http://purl.org/cerif/frapo/
   geodata: http://sws.geonames.org/
   linkml: https://w3id.org/linkml/
