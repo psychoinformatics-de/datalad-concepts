@@ -231,7 +231,10 @@ classes:
         annotations:
           sh:order: 3.0
       influenced_by:
-        # range: XYZAssociation
+        range: XYZInfluence
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
         annotations:
           sh:order: 4.0
       about:
@@ -242,14 +245,14 @@ classes:
         range: XYZTopic
         multivalued: true
         annotations:
-          sh:order: 3.0
+          sh:order: 5.0
       ended:
         title: End
         description: >-
           The conclusion of the competition, typically the point of decision-making, or
           announcement of the winners.
         annotations:
-          sh:order: 4.0
+          sh:order: 6.0
     narrow_mappings:
       - FRAPO:FundingProgramme
 
