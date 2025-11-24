@@ -37,6 +37,8 @@ prefixes:
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  # TODO this is also defined in demo_research_assets, but should probably be defined in flat-files
+  dlcdi: https://concepts.datalad.org/ns/content-defined-identifiers/
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
   dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
@@ -88,6 +90,7 @@ prefixes:
 default_prefix: xyzra
 
 emit_prefixes:
+  - dlcdi
   - dlcommonmx
   - dlfilesmx
   - dlflat
