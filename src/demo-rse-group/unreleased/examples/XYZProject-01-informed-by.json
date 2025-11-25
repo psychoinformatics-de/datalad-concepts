@@ -1,0 +1,14 @@
+{
+  "pid": "xyzrans:project/MyProjectA",
+  "schema_type": "xyzra:XYZProject",
+  "informed_by": [
+    {
+      "object": "xyzrans:activities/FundingApplication",
+      "roles": [
+        "fabio:CallForApplication"
+      ],
+      "entity": "xyzrans:docs/ApplicationDocument1"
+    }
+  ],
+  "@type": "XYZProject"
+}
