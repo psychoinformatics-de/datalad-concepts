@@ -225,6 +225,31 @@ slots:
     #  - sct:363702006
 
 classes:
+  XYZAssociation:
+    is_a: Association
+    description: >-
+      The assignment of responsibility to an agent for an activity,
+      indicating that the agent had a role in the activity.
+    slot_usage:
+      object:
+        title: Agent
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
+        annotations:
+          sh:order: 1.0
+      roles:
+        title: Roles
+        range: XYZAgentRole
+        annotations:
+          sh:order: 2.0
+      started:
+        annotations:
+          sh:order: 3.0
+      ended:
+        annotations:
+          sh:order: 4.0
+
   XYZCommunication:
     is_a: Communication
     title: Communication
@@ -449,6 +474,75 @@ classes:
         annotations:
           sh:order: 3.1
           shaclvue:gitAnnexUpload: true
+
+  XYZDistribution:
+    is_a: Distribution
+    title: Distribution
+    description: >-
+      A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files.
+    slots:
+      - conforms_to
+      - rules
+    slot_usage:
+      kind:
+        range: XYZDataType
+        annotations:
+          sh:order: 1.0
+      distribution_of:
+        # XXX this should be a superfluous reannotation of the `Distribution.distribution_of`
+        # slot as being multivalued (which it is in `Distribution`). But with linkml 1.9.4
+        # this information is not inherited
+        multivalued: true
+        annotations:
+          sh:order: 2.0
+      byte_size:
+        annotations:
+          sh:order: 3.0
+      format:
+        annotations:
+          sh:order: 4.0
+      media_type:
+        annotations:
+          sh:order: 5.0
+      checksums:
+        annotations:
+          sh:order: 6.0
+      parts:
+        range: XYZNamedDistributionPart
+        inlined: true
+        annotations:
+          sh:order: 7.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 8.0
+      conforms_to:
+        range: XYZConvention
+        multivalued: true
+        annotations:
+          sh:order: 9.0
+
+  XYZNamedDistributionPart:
+    is_a: NamedDistributionPart
+    description: >-
+      An association class for attaching a `locator` as additional information to a
+      `hasPart` relationship.
+    slot_usage:
+      roles:
+        range: XYZDistributionPartType
+
+  XYZDistributionPartType:
+    is_a: FlatThing
+    title: Distribution part type/role
+    description: >-
+      Type or role of a part of a distribution.
+      For example, a part could be an item in an archive,
+      or a file that is an executable.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZGrant:
     is_a: Grant
