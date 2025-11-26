@@ -341,6 +341,58 @@ classes:
           sh:order: 3.0
           dash:singleLine: false
 
+  XYZDataset:
+    is_a: Dataset
+    title: Dataset
+    mixins:
+      - EntityMixin
+    description: >-
+      A collection of data, published or curated by a single agent. This is a
+      conceptual entity. A single dataset might be available in more than
+      one representation, with differing schematic layouts, formats, and
+      serializations.
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      part_of:
+        range: XYZDataset
+        multivalued: true
+        annotations:
+          sh:order: 3.0
+      description:
+        annotations:
+          sh:order: 4.0
+          dash:singleLine: false
+      attributed_to:
+        title: Contributors
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZAttribution
+        annotations:
+          sh:order: 5.0
+      generated_by:
+        range: XYZGeneration
+        inlined: true
+        annotations:
+          sh:order: 6.0
+      derived_from:
+        range: XYZDerivation
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 7.0
+      revision_of:
+        range: XYZRevision
+        inlined: true
+        annotation:
+          sh:order: 8.0
+
   XYZDocument:
     is_a: Document
     title: Document
