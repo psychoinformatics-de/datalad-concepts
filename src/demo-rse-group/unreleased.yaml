@@ -230,6 +230,11 @@ classes:
     description: >-
       The assignment of responsibility to an agent for an activity,
       indicating that the agent had a role in the activity.
+    slots:
+      # we want to have temporally constrained relationships between agents
+      # and activities (think being the leader for some time)
+      - started
+      - ended
     slot_usage:
       object:
         title: Agent
@@ -365,7 +370,34 @@ classes:
         annotations:
           sh:order: 3.0
           dash:singleLine: false
-
+  
+  XYZDataType:
+    is_a: FlatThing
+    title: Data type or format
+    description: >-
+      Type of an data item.
+    slots:
+      - version_of
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+      version_of:
+        title: Variant of
+        range: XYZDataType
+        annotations:
+          sh:order: 2.0
+    broad_mappings:
+      - dcterms:format
+    narrow_mappings:
+      # Electronic File Format
+      - obo:NCIT_C171252
+      # Data Type
+      - obo:NCIT_C42645
+      # Electronic File Content Type
+      - obo:NCIT_C172272
+  
   XYZDocument:
     is_a: Document
     title: Document
