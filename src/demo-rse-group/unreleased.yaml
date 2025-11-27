@@ -390,7 +390,7 @@ classes:
       revision_of:
         range: XYZRevision
         inlined: true
-        annotation:
+        annotations:
           sh:order: 8.0
 
   XYZDocument:
