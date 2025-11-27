@@ -249,9 +249,11 @@ classes:
         annotations:
           sh:order: 2.0
       started:
+        range: XYZStart
         annotations:
           sh:order: 3.0
       ended:
+        range: XYZEnd
         annotations:
           sh:order: 4.0
 
@@ -319,6 +321,7 @@ classes:
         description: >-
           The conclusion of the competition, typically the point of decision-making, or
           announcement of the winners.
+        range: XYZEnd
         annotations:
           sh:order: 6.0
     narrow_mappings:
@@ -980,3 +983,43 @@ classes:
       roles:
         annotations:
           sh:order: 2.0
+
+  XYZStart:
+    is_a: Start
+    description: >-
+      Start is when an activity is deemed to have been started by an
+      entity, known as trigger. The activity did not exist before its
+      start. Any usage, generation, or invalidation involving an activity
+      follows the activity's start. A start may refer to a trigger entity
+      that set off the activity, or to an activity, known as starter, that
+      generated the trigger.
+    slot_usage:
+      at_time:
+        annotations:
+          sh:order: 1.0
+      at_location:
+        annotations:
+          sh:order: 2.0
+      object:
+        annotations:
+          sh:order: 3.0
+
+  XYZEnd:
+    is_a: End
+    description: >-
+      End is when an activity is deemed to have been ended by an entity,
+      known as trigger. The activity no longer exists after its end. Any
+      usage, generation, or invalidation involving an activity precedes
+      the activity's end. An end may refer to a trigger entity that
+      terminated the activity, or to an activity, known as ender that
+      generated the trigger.
+    slot_usage:
+      at_time:
+        annotations:
+          sh:order: 1.0
+      at_location:
+        annotations:
+          sh:order: 2.0
+      object:
+        annotations:
+          sh:order: 3.0
