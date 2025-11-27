@@ -984,6 +984,91 @@ classes:
         annotations:
           sh:order: 2.0
 
+  XYZGeneration:
+    is_a: Generation
+    description: >-
+      Generation is the completion of production of a new entity by an
+      activity. This entity did not exist before generation and becomes
+      available for usage after this generation.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      at_time:
+        annotations:
+          sh:order: 4.0
+
+  XYZUsage:
+    is_a: Usage
+    description: >-
+      Usage is the beginning of utilizing an entity by an activity.
+      Before usage, the activity had not begun to utilize this entity
+      and could not have been affected by the entity.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      at_time:
+        annotations:
+          sh:order: 4.0
+
+  XYZDerivation:
+    is_a: Derivation
+    description: >-
+      A derivation is a transformation of an entity into another, an
+      update of an entity resulting in a new one, or the construction
+      of a new entity based on a pre-existing entity.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      generated_by:
+        range:  XYZGeneration
+        annotations:
+          sh:order: 3.0
+      used:
+        range: XYZUsage
+        annotations:
+          sh:order: 4.0
+
+  XYZRevision :
+    is_a: Revision
+    description: >-
+      A revision is a derivation for which the resulting entity is a
+      revised version of some original. The implication here is that
+      the resulting entity contains substantial content from the
+      original. Revision is a particular case of derivation.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      generated_by:
+        range:  XYZGeneration
+        annotations:
+          sh:order: 3.0
+      used:
+        range: XYZUsage
+        annotations:
+          sh:order: 4.0
+
   XYZStart:
     is_a: Start
     description: >-
