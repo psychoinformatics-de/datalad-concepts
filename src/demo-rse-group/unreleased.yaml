@@ -435,11 +435,6 @@ classes:
     description: >-
       The assignment of responsibility to an agent for an activity,
       indicating that the agent had a role in the activity.
-    slots:
-      # we want to have temporally constrained relationships between agents
-      # and activities (think being the leader for some time)
-      - started
-      - ended
     slot_usage:
       object:
         title: Agent

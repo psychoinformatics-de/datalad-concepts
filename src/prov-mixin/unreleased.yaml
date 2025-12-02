@@ -417,7 +417,7 @@ classes:
       - prov:Entity
 
   # bases for non-Things
-  # Base for prov:Generation , prov:Start , prov:Invalidation , prov:End , prov:Usage 
+  # Base for prov:Generation , prov:Start , prov:Invalidation , prov:End , prov:Usage
   # this means that this is NOT a Thing!
   InstantaneousEventMixin:
     mixin: true
@@ -446,6 +446,8 @@ classes:
       # influencer
       - object
       - roles
+      - started
+      - ended
     slot_usage:
       object:
         range: Thing
