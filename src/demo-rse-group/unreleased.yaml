@@ -139,20 +139,6 @@ imports:
   - dlschemas:flat-study/unreleased
   - dlschemas:prov-mixin/unreleased
 
-types:
-  flexdate:
-    # gen-shacl doesn't work without this
-    uri: xyzrse:flexdate
-    base: str
-    typeof: string
-    description:
-      W3C variant/subset of IS08601 for specifying date(times).
-      Supported are
-      - YYYY (eg 1997)
-      - YYYY-MM (eg 1997-07)
-      - YYYY-MM-DD (eg 1997-07-16)
-    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)$'
-
 slots:
   application_deadline:
     title: Application deadline
@@ -775,7 +761,7 @@ classes:
         annotations:
           sh:order: 8.0
       date_published:
-        range: flexdate
+        range: W3CISO8601
         description: >-
           The date when a publication became available at the publication venue.
         annotations:
