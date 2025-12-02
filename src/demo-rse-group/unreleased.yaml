@@ -83,8 +83,6 @@ prefixes:
   vcard: http://www.w3.org/2006/vcard/ns#
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
-  xyzra: https://concepts.datalad.org/s/demo-research-assets/unreleased/
-  xyzrans: https://concepts.datalad.org/s/demo-research-assets/ns/
   xyzrse: https://concepts.datalad.org/s/demo-rse-group/unreleased/
   xyzrsens: https://concepts.datalad.org/s/demo-rse-group/ns/
 
@@ -131,7 +129,6 @@ emit_prefixes:
   - ror
   - rrid
   - shaclvue
-  - xyzrans
   - xyzrsens
 
 imports:
@@ -145,7 +142,7 @@ imports:
 types:
   flexdate:
     # gen-shacl doesn't work without this
-    uri: xyzra:flexdate
+    uri: xyzrse:flexdate
     base: str
     typeof: string
     description:
