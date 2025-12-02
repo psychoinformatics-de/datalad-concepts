@@ -153,22 +153,6 @@ types:
       - YYYY-MM-DD (eg 1997-07-16)
     pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)$'
 
-enums:
-  YesNoUnknownClassifcation:
-    description: >-
-      Boolean classification with a third option indicating that
-      the true value is not known.
-    permissible_values:
-      "yes":
-        description: >-
-          Consent given
-      "no":
-        description: >-
-          No consent given
-      "unknown":
-        description:
-          The true value is not known (yet)
-
 slots:
   application_deadline:
     title: Application deadline
