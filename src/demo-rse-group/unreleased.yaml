@@ -697,11 +697,11 @@ classes:
       description:
         annotations:
           sh:order: 3.0
-      attributed_to:
+      associated_with:
+        range: XYZAssociation
         multivalued: true
-        inlined_as_list: true
         inlined: true
-        range: XYZPersonAttribution
+        inlined_as_list: true
         annotations:
           sh:order: 4.0
       part_of:
@@ -719,6 +719,13 @@ classes:
         inlined_as_list: true
         annotations:
           sh:order: 7.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 8.0
 
   XYZPublication:
     is_a: Publication
