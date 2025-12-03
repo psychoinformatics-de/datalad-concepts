@@ -1,6 +1,6 @@
-pid: xyzrans:project/MyProjectA
+pid: xyzrsens:project/MyProjectA
 informed_by:
-- object: xyzrans:activities/FundingApplication
-  entity: xyzrans:docs/ApplicationDocument1
+- object: xyzrsens:activities/FundingApplication
+  entity: xyzrsens:docs/ApplicationDocument1
   roles:
   - fabio:CallForApplication
