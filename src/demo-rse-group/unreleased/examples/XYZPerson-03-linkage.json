@@ -1,6 +1,6 @@
 {
   "pid": "https://example.org/p1",
-  "schema_type": "xyzra:XYZPerson",
+  "schema_type": "xyzrse:XYZPerson",
   "family_name": "TODO",
   "influenced_by": [
     {

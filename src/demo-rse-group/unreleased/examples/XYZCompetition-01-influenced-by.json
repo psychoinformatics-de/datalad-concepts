@@ -1,6 +1,6 @@
 {
-  "pid": "xyzrans:competition/kooperationsplattformen-2022",
-  "schema_type": "xyzra:XYZCompetition",
+  "pid": "xyzrsens:competition/kooperationsplattformen-2022",
+  "schema_type": "xyzrse:XYZCompetition",
   "about": [
     "https://www.forschungsfoerderung.nrw/foerderaufruf/kooperationsplattformen-2022/"
   ],

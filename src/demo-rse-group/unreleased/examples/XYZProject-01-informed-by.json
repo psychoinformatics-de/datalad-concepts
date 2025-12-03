@@ -1,13 +1,13 @@
 {
-  "pid": "xyzrans:project/MyProjectA",
-  "schema_type": "xyzra:XYZProject",
+  "pid": "xyzrsens:project/MyProjectA",
+  "schema_type": "xyzrse:XYZProject",
   "informed_by": [
     {
-      "object": "xyzrans:activities/FundingApplication",
+      "object": "xyzrsens:activities/FundingApplication",
       "roles": [
         "fabio:CallForApplication"
       ],
-      "entity": "xyzrans:docs/ApplicationDocument1"
+      "entity": "xyzrsens:docs/ApplicationDocument1"
     }
   ],
   "@type": "XYZProject"
