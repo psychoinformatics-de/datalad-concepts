@@ -83,6 +83,10 @@ prefixes:
   vcard: http://www.w3.org/2006/vcard/ns#
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
+  # Prefixes `xyzra` and `xyzrans` allow records to be shared between
+  # collections with demo-research-assets and demo-rse-group schema.
+  xyzra: https://concepts.datalad.org/s/demo-research-assets/unreleased/
+  xyzrans: https://concepts.datalad.org/s/demo-research-assets/ns/
   xyzrse: https://concepts.datalad.org/s/demo-rse-group/unreleased/
   xyzrsens: https://concepts.datalad.org/s/demo-rse-group/ns/
 
