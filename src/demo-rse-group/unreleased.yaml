@@ -83,10 +83,6 @@ prefixes:
   vcard: http://www.w3.org/2006/vcard/ns#
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
-  # Prefixes `xyzra` and `xyzrans` allow records to be shared between
-  # collections with demo-research-assets and demo-rse-group schema.
-  xyzra: https://concepts.datalad.org/s/demo-research-assets/unreleased/
-  xyzrans: https://concepts.datalad.org/s/demo-research-assets/ns/
   xyzrse: https://concepts.datalad.org/s/demo-rse-group/unreleased/
   xyzrsens: https://concepts.datalad.org/s/demo-rse-group/ns/
 
@@ -178,41 +174,16 @@ slots:
     #  - sct:363702006
 
 classes:
-  # Classes XYZAgentRole ... XYZTopic are direct subclasses of FlatThing
+  # Classes here are grouped by their nature:
+  # - Things with a provenance interface
+  # - Thing that are "classifiers" (i.e., tags) without a provenance interface
+  # - Non-Things, such as association classes
+  #
+  # otherwise the order is alphanumeric
 
-  # classifier class -- no PROV mixin
-  XYZAgentRole:
-    is_a: FlatThing
-    title: Agent role
-    description: >-
-      A role is the function of an agent with respect to a subject,
-      in the context of an attribution.
-    slots:
-      - name
-    slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
-    broad_mappings:
-      - prov:Role
-      - dcat:Role
-
-  # classifier class -- no PROV mixin
-  XYZBibliographicType:
-    is_a: FlatThing
-    title: Bibliographic type
-    description: >-
-      Type of a publication or document, e.g., journal article, book, or webpage.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
-
+  #
+  #Things with a provenance interface
+  #
   XYZCompetition:
     is_a: FlatThing
     mixins:
@@ -263,241 +234,6 @@ classes:
           sh:order: 6.0
     narrow_mappings:
       - FRAPO:FundingProgramme
-
-  # classifier class -- no PROV mixin
-  XYZConcept:
-    is_a: FlatThing
-    title: Concept
-    description: >-
-      An idea or notion; a unit of thought.
-
-      In the context of a study, this can be a tag associated with a
-      categorical, independent variable in a study design, an
-      investigative role (e.g., treatments), or an organizational
-      nature (e.g., site labels), or a dependent or outcome variable.
-
-      `Concept` is related to `Topic`. However a concept is more focused
-      and more clearly delineated in comparison.
-    comments:
-      - The relationship of a focused concept with the broader concept
-        can be described via `broader_mappings`.
-    slots:
-      - title
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
-
-  XYZDataType:
-    is_a: FlatThing
-    title: Data type or format
-    description: >-
-      Type of an data item.
-    slots:
-      - version_of
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
-      version_of:
-        title: Variant of
-        range: XYZDataType
-        annotations:
-          sh:order: 2.0
-    broad_mappings:
-      - dcterms:format
-    narrow_mappings:
-      # Electronic File Format
-      - obo:NCIT_C171252
-      # Data Type
-      - obo:NCIT_C42645
-      # Electronic File Content Type
-      - obo:NCIT_C172272
-
-  XYZDistributionPartType:
-    is_a: FlatThing
-    title: Distribution part type/role
-    description: >-
-      Type or role of a part of a distribution.
-      For example, a part could be an item in an archive,
-      or a file that is an executable.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
-
-  XYZObjective:
-    is_a: FlatThing
-    title: Objective
-    description: >-
-      A proposition that indicates a planned or anticipated outcome.
-    slots:
-      - attributed_to
-      - title
-      - part_of
-      - depends_on
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      part_of:
-        range: XYZProject
-        annotations:
-          sh:order: 2.0
-      depends_on:
-        range: XYZObjective
-        annotations:
-          sh:order: 3.0
-      attributed_to:
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        title: Contributors
-        range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
-      description:
-        annotations:
-          sh:order: 5.0
-          dash:singleLine: false
-
-  # classifier class -- no PROV mixin
-  XYZPublicationVenue:
-    is_a: FlatThing
-    title: Publication venue
-    description: >-
-      "Place" of a publication, e.g., a journal, a website, an edited collection.
-    slots:
-      - title
-      - kind
-    slot_usage:
-      title:
-        description: >-
-          The full title of the publication.
-        required: false
-        annotations:
-          sh:order: 1.0
-      kind:
-        title: Publication venue type
-        description: >-
-          The type of this publication venue, e.g. journal article, book, webpage
-        range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
-
-  # classifier class -- no PROV mixin
-  XYZRule:
-    is_a: FlatThing
-    title: Rule
-    description: >-
-      Permissions, prohibitions, obligatations or other rights/policies.
-      This can be a standard license, a custom usage agreement, or a
-      codified policy.
-    slots:
-      # title because MIH thinks of these as documents
-      - title
-      # licenses often have them
-      - short_name
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
-
-  # classifier class -- no PROV mixin
-  XYZTopic:
-    is_a: FlatThing
-    title: Topic
-    description: >-
-      Topic a subject is about, e.g., a particular research question or domain
-    slots:
-      - part_of
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
-      part_of:
-        range: XYZTopic
-        annotations:
-          sh:order: 2.0
-
-  XYZAssociation:
-    is_a: Association
-    description: >-
-      The assignment of responsibility to an agent for an activity,
-      indicating that the agent had a role in the activity.
-    slot_usage:
-      object:
-        title: Agent
-        any_of:
-          - range: XYZPerson
-          - range: XYZOrganization
-        annotations:
-          sh:order: 1.0
-      roles:
-        title: Roles
-        range: XYZAgentRole
-        annotations:
-          sh:order: 2.0
-      started:
-        range: XYZStart
-        annotations:
-          sh:order: 3.0
-      ended:
-        range: XYZEnd
-        annotations:
-          sh:order: 4.0
-
-  XYZCommunication:
-    is_a: Communication
-    title: Communication
-    description: >-
-      The exchange of an entity by two activities, one activity using the entity
-      generated by the other.
-    slots:
-      - entity
-    slot_usage:
-      object:
-        annotations:
-          sh:order: 1.0
-      roles:
-        annotations:
-          sh:order: 2.0
-      entity:
-        annotations:
-          sh:order: 3.0
-
-  # classifier class -- no PROV mixin
-  XYZConvention:
-    is_a: Convention
-    title: Convention
-    description: >-
-      A set of agreed, stipulated, or generally accepted standards, norms,
-      social norms, or criteria, often taking the form of a custom.
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
 
   XYZDataset:
     is_a: Dataset
@@ -551,63 +287,6 @@ classes:
         annotations:
           sh:order: 8.0
 
-  XYZDocument:
-    is_a: Document
-    title: Document
-    description: >-
-      A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
-    slots:
-      - attributed_to
-      - rules
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      kind:
-        title: Document type
-        description: >-
-          The type of this document, e.g. journal article, book, webpage
-        range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-      attributed_to:
-        title: Contributors
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
-      part_of:
-        annotations:
-          sh:order: 5.0
-      rules:
-        range: XYZRule
-        annotations:
-          sh:order: 6.0
-
-  XYZDocumentExchange:
-    is_a: XYZCommunication
-    title: Document Exchange
-    description: >-
-      The exchange of a document by two activities, one activity using the document
-      generated by the other.
-    slot_usage:
-      object:
-        annotations:
-          sh:order: 1.1
-      roles:
-        annotations:
-          sh:order: 2.1
-      entity:
-        range: XYZDocument
-        annotations:
-          sh:order: 3.1
-          shaclvue:gitAnnexUpload: true
-
   XYZDistribution:
     is_a: Distribution
     title: Distribution
@@ -655,14 +334,43 @@ classes:
         annotations:
           sh:order: 9.0
 
-  XYZNamedDistributionPart:
-    is_a: NamedDistributionPart
+  XYZDocument:
+    is_a: Document
+    title: Document
     description: >-
-      An association class for attaching a `locator` as additional information to a
-      `hasPart` relationship.
+      A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
+    slots:
+      - attributed_to
+      - rules
     slot_usage:
-      roles:
-        range: XYZDistributionPartType
+      title:
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Document type
+        description: >-
+          The type of this document, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        title: Contributors
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      part_of:
+        annotations:
+          sh:order: 5.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 6.0
 
   XYZGrant:
     is_a: Grant
@@ -728,6 +436,7 @@ classes:
       description:
         annotations:
           sh:order: 3.0
+          dash:singleLine: false
       attributed_to:
         multivalued: true
         inlined_as_list: true
@@ -740,15 +449,39 @@ classes:
         annotations:
           sh:order: 4.0
 
-  XYZInstrumentType:
+  XYZObjective:
     is_a: FlatThing
-    title: Instrument type
+    title: Objective
     description: >-
-      Type of an instrument.
+      A proposition that indicates a planned or anticipated outcome.
+    slots:
+      - attributed_to
+      - title
+      - part_of
+      - depends_on
     slot_usage:
-      description:
+      title:
         annotations:
           sh:order: 1.0
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 2.0
+      depends_on:
+        range: XYZObjective
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        title: Contributors
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
           dash:singleLine: false
 
   XYZOrganization:
@@ -941,37 +674,239 @@ classes:
         annotations:
           sh:order: 12.0
 
-  XYZPersonAttribution:
-    is_a: XYZAttribution
+
+  #
+  # Thing that are "classifiers" (i.e., tags) without a provenance interface
+  #
+  XYZAgentRole:
+    is_a: FlatThing
+    title: Agent role
     description: >-
-      An association class for attributing a subject to a person and
-      qualifying the relationship with particular roles.
+      A role is the function of an agent with respect to a subject,
+      in the context of an attribution.
+    slots:
+      - name
     slot_usage:
-      object:
-        title: Person
-        range: XYZPerson
+      name:
         annotations:
           sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+    broad_mappings:
+      - prov:Role
+      - dcat:Role
+
+  XYZBibliographicType:
+    is_a: FlatThing
+    title: Bibliographic type
+    description: >-
+      Type of a publication or document, e.g., journal article, book, or webpage.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
+  XYZConcept:
+    is_a: FlatThing
+    title: Concept
+    description: >-
+      An idea or notion; a unit of thought.
+
+      In the context of a study, this can be a tag associated with a
+      categorical, independent variable in a study design, an
+      investigative role (e.g., treatments), or an organizational
+      nature (e.g., site labels), or a dependent or outcome variable.
+
+      `Concept` is related to `Topic`. However a concept is more focused
+      and more clearly delineated in comparison.
+    comments:
+      - The relationship of a focused concept with the broader concept
+        can be described via `broader_mappings`.
+    slots:
+      - title
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      description:
+        annotations:
+          sh:order: 2.0
+          dash:singleLine: false
+
+  XYZConvention:
+    is_a: Convention
+    title: Convention
+    description: >-
+      A set of agreed, stipulated, or generally accepted standards, norms,
+      social norms, or criteria, often taking the form of a custom.
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+
+  XYZDataType:
+    is_a: FlatThing
+    title: Data type or format
+    description: >-
+      Type of an data item.
+    slots:
+      - version_of
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+      version_of:
+        title: Variant of
+        range: XYZDataType
+        annotations:
+          sh:order: 2.0
+    broad_mappings:
+      - dcterms:format
+    narrow_mappings:
+      # Electronic File Format
+      - obo:NCIT_C171252
+      # Data Type
+      - obo:NCIT_C42645
+      # Electronic File Content Type
+      - obo:NCIT_C172272
+
+  XYZDistributionPartType:
+    is_a: FlatThing
+    title: Distribution part type/role
+    description: >-
+      Type or role of a part of a distribution.
+      For example, a part could be an item in an archive,
+      or a file that is an executable.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
+  XYZInstrumentType:
+    is_a: FlatThing
+    title: Instrument type
+    description: >-
+      Type of an instrument.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
+  XYZNamedDistributionPart:
+    is_a: NamedDistributionPart
+    description: >-
+      An association class for attaching a `locator` as additional information to a
+      `hasPart` relationship.
+    slot_usage:
       roles:
+        range: XYZDistributionPartType
+
+  XYZPublicationVenue:
+    is_a: FlatThing
+    title: Publication venue
+    description: >-
+      "Place" of a publication, e.g., a journal, a website, an edited collection.
+    slots:
+      - title
+      - kind
+    slot_usage:
+      title:
+        description: >-
+          The full title of the publication.
+        required: false
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Publication venue type
+        description: >-
+          The type of this publication venue, e.g. journal article, book, webpage
+        range: XYZBibliographicType
         annotations:
           sh:order: 2.0
 
-  # we derive to be able to customization the UI/docs
-  # TODO consider supporting temporally windows influences
-  XYZInfluence:
-    is_a: Influence
+  XYZRule:
+    is_a: FlatThing
+    title: Rule
     description: >-
-      Influence is the capacity of an entity, activity, or agent to have
-      an effect on the character, development, or behavior of another by
-      means of usage, start, end, generation, invalidation, communication,
-      derivation, attribution, association, or delegation.
+      Permissions, prohibitions, obligatations or other rights/policies.
+      This can be a standard license, a custom usage agreement, or a
+      codified policy.
+    slots:
+      # title because MIH thinks of these as documents
+      - title
+      # licenses often have them
+      - short_name
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+
+  XYZTopic:
+    is_a: FlatThing
+    title: Topic
+    description: >-
+      Topic a subject is about, e.g., a particular research question or domain
+    slots:
+      - part_of
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+      part_of:
+        range: XYZTopic
+        annotations:
+          sh:order: 2.0
+
+  #
+  # Non-Things, such as association classes
+  #
+  XYZAssociation:
+    is_a: Association
+    description: >-
+      The assignment of responsibility to an agent for an activity,
+      indicating that the agent had a role in the activity.
     slot_usage:
       object:
+        title: Agent
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
         annotations:
           sh:order: 1.0
       roles:
+        title: Roles
+        range: XYZAgentRole
         annotations:
           sh:order: 2.0
+      started:
+        range: XYZStart
+        annotations:
+          sh:order: 3.0
+      ended:
+        range: XYZEnd
+        annotations:
+          sh:order: 4.0
 
   XYZAttribution:
     is_a: Attribution
@@ -993,12 +928,14 @@ classes:
         annotations:
           sh:order: 2.0
 
-  XYZGeneration:
-    is_a: Generation
+  XYZCommunication:
+    is_a: Communication
+    title: Communication
     description: >-
-      Generation is the completion of production of a new entity by an
-      activity. This entity did not exist before generation and becomes
-      available for usage after this generation.
+      The exchange of an entity by two activities, one activity using the entity
+      generated by the other.
+    slots:
+      - entity
     slot_usage:
       object:
         annotations:
@@ -1006,32 +943,9 @@ classes:
       roles:
         annotations:
           sh:order: 2.0
-      at_location:
+      entity:
         annotations:
           sh:order: 3.0
-      at_time:
-        annotations:
-          sh:order: 4.0
-
-  XYZUsage:
-    is_a: Usage
-    description: >-
-      Usage is the beginning of utilizing an entity by an activity.
-      Before usage, the activity had not begun to utilize this entity
-      and could not have been affected by the entity.
-    slot_usage:
-      object:
-        annotations:
-          sh:order: 1.0
-      roles:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
-      at_time:
-        annotations:
-          sh:order: 4.0
 
   XYZDerivation:
     is_a: Derivation
@@ -1054,6 +968,97 @@ classes:
         range: XYZUsage
         annotations:
           sh:order: 4.0
+
+  XYZDocumentExchange:
+    is_a: XYZCommunication
+    title: Document Exchange
+    description: >-
+      The exchange of a document by two activities, one activity using the document
+      generated by the other.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.1
+      roles:
+        annotations:
+          sh:order: 2.1
+      entity:
+        range: XYZDocument
+        annotations:
+          sh:order: 3.1
+          shaclvue:gitAnnexUpload: true
+
+  XYZEnd:
+    is_a: End
+    description: >-
+      End is when an activity is deemed to have been ended by an entity,
+      known as trigger. The activity no longer exists after its end. Any
+      usage, generation, or invalidation involving an activity precedes
+      the activity's end. An end may refer to a trigger entity that
+      terminated the activity, or to an activity, known as ender that
+      generated the trigger.
+    slot_usage:
+      at_time:
+        annotations:
+          sh:order: 1.0
+      at_location:
+        annotations:
+          sh:order: 2.0
+      object:
+        annotations:
+          sh:order: 3.0
+
+  XYZGeneration:
+    is_a: Generation
+    description: >-
+      Generation is the completion of production of a new entity by an
+      activity. This entity did not exist before generation and becomes
+      available for usage after this generation.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      at_time:
+        annotations:
+          sh:order: 4.0
+
+  # we derive to be able to customization the UI/docs
+  # TODO consider supporting temporally windows influences
+  XYZInfluence:
+    is_a: Influence
+    description: >-
+      Influence is the capacity of an entity, activity, or agent to have
+      an effect on the character, development, or behavior of another by
+      means of usage, start, end, generation, invalidation, communication,
+      derivation, attribution, association, or delegation.
+    slot_usage:
+      object:
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+
+  XYZPersonAttribution:
+    is_a: XYZAttribution
+    description: >-
+      An association class for attributing a subject to a person and
+      qualifying the relationship with particular roles.
+    slot_usage:
+      object:
+        title: Person
+        range: XYZPerson
+        annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
 
   XYZRevision :
     is_a: Revision
@@ -1098,22 +1103,22 @@ classes:
         annotations:
           sh:order: 3.0
 
-  XYZEnd:
-    is_a: End
+  XYZUsage:
+    is_a: Usage
     description: >-
-      End is when an activity is deemed to have been ended by an entity,
-      known as trigger. The activity no longer exists after its end. Any
-      usage, generation, or invalidation involving an activity precedes
-      the activity's end. An end may refer to a trigger entity that
-      terminated the activity, or to an activity, known as ender that
-      generated the trigger.
+      Usage is the beginning of utilizing an entity by an activity.
+      Before usage, the activity had not begun to utilize this entity
+      and could not have been affected by the entity.
     slot_usage:
-      at_time:
-        annotations:
-          sh:order: 1.0
-      at_location:
-        annotations:
-          sh:order: 2.0
       object:
         annotations:
+          sh:order: 1.0
+      roles:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
           sh:order: 3.0
+      at_time:
+        annotations:
+          sh:order: 4.0
