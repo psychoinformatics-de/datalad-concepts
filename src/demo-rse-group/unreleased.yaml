@@ -706,6 +706,51 @@ classes:
         annotations:
           sh:order: 8.0
 
+  XYZInstrument:
+    is_a: Instrument
+    title: Instrument
+    description: >-
+      A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
+    slots:
+      - attributed_to
+      - rules
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      kind:
+        title: Instrument type
+        description: >-
+          The type of this instrument, e.g. microscope, software, chainsaw
+        range: XYZInstrumentType
+        annotations:
+          sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        inlined: true
+        range: XYZPersonAttribution
+        annotations:
+          sh:order: 4.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 4.0
+
+  XYZInstrumentType:
+    is_a: FlatThing
+    title: Instrument type
+    description: >-
+      Type of an instrument.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
   XYZOrganization:
     is_a: Organization
     title: Organization
