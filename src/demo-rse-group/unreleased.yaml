@@ -890,6 +890,32 @@ classes:
   #
   # Non-Things, such as association classes
   #
+  XYZAgentInfluence:
+    # this is not derived from AgentInfluence, because we only need it for UI
+    # purposed. it shows up as an alternative wherever XYZInfluence is the
+    # range (e.g. influenced_by). it provides an effective way to constrain
+    # the space for possible object and roles instances. other than that
+    # it does not change the semantics or structure compared to XYZInfluence,
+    # hence any instance continues to be fully compatible with no loss of
+    # information when "seen" through the interface of XYZInfluence
+    is_a: XYZInfluence
+    description: >-
+      Influence is the capacity of an agent to have an effect on the character,
+      development, or behavior of a subject.
+    slot_usage:
+      object:
+        title: Agent
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
+        annotations:
+          sh:order: 1.0
+      roles:
+        title: Roles
+        range: XYZAgentRole
+        annotations:
+          sh:order: 2.0
+
   XYZAssociation:
     is_a: Association
     description: >-
@@ -1051,6 +1077,26 @@ classes:
         annotations:
           sh:order: 1.0
       roles:
+        annotations:
+          sh:order: 2.0
+
+  XYZObjectiveInfluence:
+    # see XYZAgentRole for rationale on deriving from XYZInfluence rather
+    # than EntityInfluence
+    is_a: XYZInfluence
+    description: >-
+      Influence of an objective on the subject.
+    slot_usage:
+      object:
+        title: Objective
+        range: XYZObjective
+        annotations:
+          sh:order: 1.0
+      roles:
+        title: Roles
+        # TODO adopt some kind of classification of objective types
+        # (longterm goal, deliverable, ambition, contractual obligation, ...)
+        # range: XYZObjectiveRole
         annotations:
           sh:order: 2.0
 
