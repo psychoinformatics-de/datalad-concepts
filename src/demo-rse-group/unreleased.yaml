@@ -154,12 +154,6 @@ slots:
       The entity exchanged between two activities during a communication process
     range: Thing
 
-  orcid:
-    title: ORCID
-    description: >-
-      ORCID identifier of a person (see https://orcid.org).
-    range: string
-    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
 classes:
   # Classes here are grouped by their nature:
@@ -1073,6 +1067,33 @@ classes:
         # range: XYZObjectiveRole
         annotations:
           sh:order: 2.0
+
+  ORCID:
+    is_a: IssuedIdentifier
+    description: >-
+      Unique persistent identifier for a person, provided by the Open Researcher
+      and Contributor ID (ORCID) organisation.
+    slot_usage:
+      creator:
+        ifabsent: string(ror:04fa4r544)
+        description: By default, the creator is identified as "ror:04fa4r544".
+      notation:
+        description: >-
+          The identifier notation is specified without a URL-prefix,
+          or a `orcid:` prefix.
+        pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+      schema_agency:
+        ifabsent: string(Open Researcher and Contributor ID)
+        description: >-
+          By default, the schema agency is identified as `Open Researcher
+          and Contributor ID`.
+    unique_keys:
+      value:
+        description: The DOI notation is globally unique within the scope of DOIs
+        unique_key_slots:
+          - notation
+    exact_mappings:
+      - obo:IAO_0000708
 
   XYZPersonAttribution:
     is_a: XYZAttribution
