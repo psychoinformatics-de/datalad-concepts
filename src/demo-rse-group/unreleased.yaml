@@ -884,6 +884,7 @@ classes:
           - range: XYZOrganization
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
@@ -903,6 +904,7 @@ classes:
           - range: XYZOrganization
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
@@ -931,6 +933,7 @@ classes:
           - range: XYZOrganization
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         range: XYZAgentRole
         multivalued: true
@@ -950,6 +953,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -970,6 +974,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -992,6 +997,7 @@ classes:
       object:
         annotations:
           sh:order: 1.1
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.1
@@ -1014,6 +1020,7 @@ classes:
       at_time:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       at_location:
         annotations:
           sh:order: 2.0
@@ -1031,6 +1038,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -1054,6 +1062,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -1070,6 +1079,7 @@ classes:
         range: XYZObjective
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         # TODO adopt some kind of classification of objective types
@@ -1117,6 +1127,7 @@ classes:
         range: XYZPerson
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -1132,6 +1143,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
@@ -1157,6 +1169,7 @@ classes:
       at_time:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       at_location:
         annotations:
           sh:order: 2.0
@@ -1174,6 +1187,7 @@ classes:
       object:
         annotations:
           sh:order: 1.0
+          dash:propertyRole: dash:KeyInfoRole
       roles:
         annotations:
           sh:order: 2.0
