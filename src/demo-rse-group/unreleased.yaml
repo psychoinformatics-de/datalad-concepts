@@ -486,8 +486,6 @@ classes:
 
   XYZOrganization:
     is_a: Organization
-    mixins:
-      - AgentMixin
     title: Organization
     description: >-
       A social or legal institution such as a company, a society, or a university.
@@ -507,13 +505,6 @@ classes:
         range: XYZOrganization
         annotations:
           sh:order: 4.0
-      influenced_by:
-        range: XYZInfluence
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        annotations:
-          sh:order: 5.0
 
   XYZPerson:
     is_a: Person
