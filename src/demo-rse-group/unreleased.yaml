@@ -307,11 +307,6 @@ classes:
       checksums:
         annotations:
           sh:order: 6.0
-      parts:
-        range: XYZNamedDistributionPart
-        inlined: true
-        annotations:
-          sh:order: 7.0
       rules:
         range: XYZRule
         annotations:
@@ -764,19 +759,6 @@ classes:
       # Electronic File Content Type
       - obo:NCIT_C172272
 
-  XYZDistributionPartType:
-    is_a: FlatThing
-    title: Distribution part type/role
-    description: >-
-      Type or role of a part of a distribution.
-      For example, a part could be an item in an archive,
-      or a file that is an executable.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
-
   XYZInstrumentType:
     is_a: FlatThing
     title: Instrument type
@@ -787,15 +769,6 @@ classes:
         annotations:
           sh:order: 1.0
           dash:singleLine: false
-
-  XYZNamedDistributionPart:
-    is_a: NamedDistributionPart
-    description: >-
-      An association class for attaching a `locator` as additional information to a
-      `hasPart` relationship.
-    slot_usage:
-      roles:
-        range: XYZDistributionPartType
 
   XYZPublicationVenue:
     is_a: FlatThing
