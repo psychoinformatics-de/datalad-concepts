@@ -274,6 +274,9 @@ classes:
         inlined: true
         annotations:
           sh:order: 8.0
+      identifiers:
+        annotations:
+          sh:order: 9.0
 
   XYZDistribution:
     is_a: Distribution
