@@ -446,8 +446,6 @@ classes:
       # influencer
       - object
       - roles
-      - started
-      - ended
     slot_usage:
       object:
         range: Thing
@@ -655,6 +653,9 @@ classes:
       for an activity, indicating that the agent had a role in the activity.
     exact_mappings:
       - prov:Association
+    slots:
+      - started
+      - ended
 
   Delegation:
     is_a: AgentInfluence
@@ -668,5 +669,8 @@ classes:
       all those agents are responsible in some way for the activity that took
       place but we do not say explicitly who bears responsibility and to what
       degree.
+    slots:
+      - started
+      - ended
     exact_mappings:
       - prov:Delegation
