@@ -435,41 +435,6 @@ classes:
         annotations:
           sh:order: 4.0
 
-  XYZObjective:
-    is_a: FlatThing
-    title: Objective
-    description: >-
-      A proposition that indicates a planned or anticipated outcome.
-    slots:
-      - attributed_to
-      - title
-      - part_of
-      - depends_on
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      part_of:
-        range: XYZProject
-        annotations:
-          sh:order: 2.0
-      depends_on:
-        range: XYZObjective
-        annotations:
-          sh:order: 3.0
-      attributed_to:
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        title: Contributors
-        range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
-      description:
-        annotations:
-          sh:order: 5.0
-          dash:singleLine: false
-
   XYZPerson:
     is_a: Person
     mixins:
@@ -749,6 +714,32 @@ classes:
       description:
         annotations:
           sh:order: 1.0
+          dash:singleLine: false
+
+  XYZObjective:
+    is_a: FlatThing
+    title: Objective
+    description: >-
+      A proposition that indicates a planned or anticipated outcome.
+    slots:
+      - title
+      - part_of
+      - depends_on
+    slot_usage:
+      title:
+        annotations:
+          sh:order: 1.0
+      part_of:
+        range: XYZProject
+        annotations:
+          sh:order: 2.0
+      depends_on:
+        range: XYZObjective
+        annotations:
+          sh:order: 3.0
+      description:
+        annotations:
+          sh:order: 4.0
           dash:singleLine: false
 
   XYZOrganization:
