@@ -161,18 +161,6 @@ slots:
     range: string
     pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
 
-  target:
-    title: Target
-    description: >-
-      An objective that is the focus of an activity.
-    range: XYZObjective
-    related_mappings:
-      - obo:BFO_0000055
-    #exact_mappings:
-    #  - http://purl.allotrope.org/ontologies/property#AFX_0002750)
-    #close_mappings:
-    #  - sct:363702006
-
 classes:
   # Classes here are grouped by their nature:
   # - Things with a provenance interface
@@ -547,7 +535,6 @@ classes:
     slots:
       - attributed_to
       - part_of
-      - target
     slot_usage:
       title:
         annotations:
@@ -569,10 +556,6 @@ classes:
         range: XYZProject
         annotations:
           sh:order: 5.0
-      target:
-        multivalued: true
-        annotations:
-          sh:order: 6.0
       informed_by:
         range: XYZCommunication
         multivalued: true
