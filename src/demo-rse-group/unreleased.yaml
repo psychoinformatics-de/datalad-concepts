@@ -80,6 +80,7 @@ prefixes:
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
   spdx: http://spdx.org/rdf/terms#
+  spdxlic: https://spdx.org/licenses/
   vcard: http://www.w3.org/2006/vcard/ns#
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
