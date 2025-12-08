@@ -186,7 +186,7 @@ classes:
       - kind
     slot_usage:
       kind:
-        # range: TODO dedicated classifier type
+        range: XYZCompetitionType
         annotations:
           sh:order: 1.0
       application_deadline:
@@ -627,6 +627,17 @@ classes:
     title: Bibliographic type
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
+
+  XYZCompetitionType:
+    is_a: FlatThing
+    title: Competition type
+    description: >-
+      Type of a competitions, e.g., call for proposals, horse race, job opening.
     slot_usage:
       description:
         annotations:
