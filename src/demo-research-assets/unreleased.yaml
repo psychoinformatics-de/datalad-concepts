@@ -596,6 +596,8 @@ classes:
 
   XYZGrant:
     is_a: Grant
+    mixins:
+      - EntityMixin
     title: Grant
     description: >-
       A grant, typically financial or otherwise quantifiable, resources.
@@ -608,33 +610,22 @@ classes:
       short_name:
         annotations:
           sh:order: 2.0
-      sponsor:
-        range: XYZOrganization
-        annotations:
-          sh:order: 3.0
-      received_by:
-        any_of:
-          - range: XYZPerson
-          - range: XYZOrganization
-        multivalued: true
-        annotations:
-          sh:order: 4.0
       howto_acknowledge:
         annotations:
-          sh:order: 5.0
+          sh:order: 3.0
           dash:singleLine: false
       description:
         annotations:
-          sh:order: 6.0
+          sh:order: 4.0
           dash:singleLine: false
       part_of:
         range: XYZGrant
         annotations:
-          sh:order: 7.0
+          sh:order: 5.0
       rules:
         range: XYZRule
         annotations:
-          sh:order: 8.0
+          sh:order: 6.0
 
   XYZInstrument:
     is_a: Instrument
