@@ -34,4 +34,4 @@ attributed_to:
     roles:
       - marcrel:aut
 generated_by:
-  - https://example.org/ns/project-1
+  - object: https://example.org/ns/project-1

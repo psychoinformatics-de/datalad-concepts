@@ -184,23 +184,20 @@ classes:
       - about
       - application_deadline
       - kind
+      - title
     slot_usage:
       kind:
         range: XYZCompetitionType
         annotations:
           sh:order: 1.0
-      application_deadline:
+      title:
         annotations:
           sh:order: 2.0
-      associated_with:
-        # range: XYZAssociation
+      description:
         annotations:
           sh:order: 3.0
-      influenced_by:
-        range: XYZInfluence
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
+          dash:singleLine: false
+      application_deadline:
         annotations:
           sh:order: 4.0
       about:
@@ -212,6 +209,18 @@ classes:
         multivalued: true
         annotations:
           sh:order: 5.0
+      associated_with:
+        range: XYZAssociation
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 6.0
+      informed_by:
+        range: XYZCommunication
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 7.0
       ended:
         title: End
         description: >-
@@ -219,7 +228,16 @@ classes:
           announcement of the winners.
         range: XYZEnd
         annotations:
-          sh:order: 6.0
+          sh:order: 8.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 9.0
+      identifiers:
+        annotations:
+          sh:order: 10.0
     narrow_mappings:
       - FRAPO:FundingProgramme
 
@@ -253,33 +271,39 @@ classes:
         title: Contributors
         multivalued: true
         inlined_as_list: true
-        inlined: true
         range: XYZAttribution
         annotations:
           sh:order: 5.0
       generated_by:
         range: XYZGeneration
-        inlined: true
+        multivalued: true
+        inlined_as_list: true
         annotations:
           sh:order: 6.0
       derived_from:
         range: XYZDerivation
         multivalued: true
-        inlined: true
         inlined_as_list: true
         annotations:
           sh:order: 7.0
       revision_of:
         range: XYZRevision
-        inlined: true
         annotations:
           sh:order: 8.0
-      identifiers:
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
         annotations:
           sh:order: 9.0
+      identifiers:
+        annotations:
+          sh:order: 10.0
 
   XYZDistribution:
     is_a: Distribution
+    mixins:
+      - EntityMixin
     title: Distribution
     description: >-
       A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files.
@@ -292,10 +316,6 @@ classes:
         annotations:
           sh:order: 1.0
       distribution_of:
-        # XXX this should be a superfluous reannotation of the `Distribution.distribution_of`
-        # slot as being multivalued (which it is in `Distribution`). But with linkml 1.9.4
-        # this information is not inherited
-        multivalued: true
         annotations:
           sh:order: 2.0
       byte_size:
@@ -312,26 +332,40 @@ classes:
           sh:order: 6.0
       rules:
         range: XYZRule
+        multivalued: true
         annotations:
-          sh:order: 8.0
+          sh:order: 7.0
       conforms_to:
         range: XYZConvention
         multivalued: true
         annotations:
+          sh:order: 8.0
+      generated_by:
+        range: XYZGeneration
+        multivalued: true
+        inlined_as_list: true
+        annotations:
           sh:order: 9.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 10.0
+      identifiers:
+        annotations:
+          sh:order: 11.0
 
   XYZDocument:
     is_a: Document
+    mixins:
+      - EntityMixin
     title: Document
     description: >-
       A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
     slots:
-      - attributed_to
       - rules
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
       kind:
         title: Document type
         description: >-
@@ -339,27 +373,58 @@ classes:
         range: XYZBibliographicType
         annotations:
           sh:order: 2.0
+      title:
+        annotations:
+          sh:order: 1.0
       description:
         annotations:
           sh:order: 3.0
+          dash:singleLine: false
+      part_of:
+        annotations:
+          sh:order: 4.0
+      rules:
+        range: XYZRule
+        multivalued: true
+        annotations:
+          sh:order: 5.0
       attributed_to:
         title: Contributors
         multivalued: true
         inlined_as_list: true
-        inlined: true
-        range: XYZPersonAttribution
+        range: XYZAttribution
         annotations:
           sh:order: 4.0
-      part_of:
+      generated_by:
+        range: XYZGeneration
+        multivalued: true
+        inlined_as_list: true
         annotations:
           sh:order: 5.0
-      rules:
-        range: XYZRule
+      derived_from:
+        range: XYZDerivation
+        multivalued: true
+        inlined_as_list: true
         annotations:
           sh:order: 6.0
+      revision_of:
+        range: XYZRevision
+        annotations:
+          sh:order: 7.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 8.0
+      identifiers:
+        annotations:
+          sh:order: 9.0
 
   XYZGrant:
     is_a: Grant
+    mixins:
+      - EntityMixin
     title: Grant
     description: >-
       A grant, typically financial or otherwise quantifiable, resources.
@@ -372,68 +437,119 @@ classes:
       short_name:
         annotations:
           sh:order: 2.0
+      description:
+        annotations:
+          sh:order: 3.0
+          dash:singleLine: false
+      part_of:
+        range: XYZGrant
+        annotations:
+          sh:order: 4.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 5.0
+      howto_acknowledge:
+        annotations:
+          sh:order: 6.0
+          dash:singleLine: false
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        range: XYZAttribution
+        annotations:
+          sh:order: 7.0
+      revision_of:
+        range: XYZRevision
+        annotations:
+          sh:order: 8.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 9.0
+      identifiers:
+        annotations:
+          sh:order: 10.0
+      # TODO better use attributed_to and a funder role
       sponsor:
         range: XYZOrganization
         annotations:
-          sh:order: 3.0
+          sh:order: 11.0
+      # TODO better use attributed_to with an appropriate role
       received_by:
         any_of:
           - range: XYZPerson
           - range: XYZOrganization
         multivalued: true
         annotations:
-          sh:order: 4.0
-      howto_acknowledge:
-        annotations:
-          sh:order: 5.0
-          dash:singleLine: false
-      description:
-        annotations:
-          sh:order: 6.0
-          dash:singleLine: false
-      part_of:
-        range: XYZGrant
-        annotations:
-          sh:order: 7.0
-      rules:
-        range: XYZRule
-        annotations:
-          sh:order: 8.0
+          sh:order: 12.0
 
   XYZInstrument:
     is_a: Instrument
+    mixins:
+      - EntityMixin
     title: Instrument
     description: >-
       A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
     slots:
-      - attributed_to
       - rules
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
       kind:
         title: Instrument type
         description: >-
           The type of this instrument, e.g. microscope, software, chainsaw
         range: XYZInstrumentType
         annotations:
+          sh:order: 1.0
+      name:
+        annotations:
           sh:order: 2.0
       description:
         annotations:
           sh:order: 3.0
           dash:singleLine: false
-      attributed_to:
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
+        multivalued: true
         annotations:
           sh:order: 4.0
+      attributed_to:
+        range: XYZAttribution
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 5.0
+      generated_by:
+        range: XYZGeneration
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 6.0
+      revision_of:
+        range: XYZRevision
+        annotations:
+          sh:order: 7.0
+      alternate_of:
+        range: FlatThing
+        multivalued: true
+        annotations:
+          sh:order: 8.0
+      specialization_of:
+        range: FlatThing
+        multivalued: true
+        annotations:
+          sh:order: 9.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 10.0
+      identifiers:
+        annotations:
+          sh:order: 11.0
 
   XYZPerson:
     is_a: Person
@@ -458,13 +574,25 @@ classes:
       honorific_name_suffix:
         annotations:
           sh:order: 5.0
+      description:
+        annotations:
+          sh:order: 6.0
+          dash:singleLine: false
+      delegated_by:
+        range: XYZDelegation
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 7.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
-        inlined: true
         inlined_as_list: true
         annotations:
-          sh:order: 6.0
+          sh:order: 8.0
+      identifiers:
+        annotations:
+          sh:order: 9.0
 
   XYZProject:
     is_a: Project
@@ -474,7 +602,6 @@ classes:
     description: >-
       A collective endeavour of some kind. Typically it is a planned process that is undertaken or attempted to meet some requirement, or to achieve a particular goal.
     slots:
-      - attributed_to
       - part_of
     slot_usage:
       title:
@@ -486,69 +613,84 @@ classes:
       description:
         annotations:
           sh:order: 3.0
-      associated_with:
-        range: XYZAssociation
-        multivalued: true
-        inlined: true
-        inlined_as_list: true
-        annotations:
-          sh:order: 4.0
+          dash:singleLine: false
       part_of:
         range: XYZProject
         annotations:
+          sh:order: 4.0
+      associated_with:
+        range: XYZAssociation
+        multivalued: true
+        inlined_as_list: true
+        annotations:
           sh:order: 5.0
+      used:
+        range: XYZUsage
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 6.0
       informed_by:
         range: XYZCommunication
         multivalued: true
-        inlined: true
         inlined_as_list: true
         annotations:
           sh:order: 7.0
-      attributed_to:
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        range: XYZPersonAttribution
+      started:
+        title: Start
+        range: XYZStart
         annotations:
           sh:order: 8.0
+      ended:
+        title: End
+        range: XYZEnd
+        annotations:
+          sh:order: 9.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 10.0
+      identifiers:
+        annotations:
+          sh:order: 11.0
 
   XYZPublication:
     is_a: Publication
+    mixins:
+      - EntityMixin
     title: Publication
     description: >-
       A resource that is the output of a publishing process.
     slots:
-      - attributed_to
-      - derived_from
       - doi
-      - generated_by
       - rules
     slot_usage:
+      # this is here and placed first as a mere convenience. The "proper" way is to provide
+      # a `DOI` identifier
       doi:
         recommended: true
         title: DOI
         annotations:
           sh:order: 1.0
+      kind:
+        title: Publication type
+        description: >-
+          The type of this publication, e.g. journal article, book, webpage
+        range: XYZBibliographicType
+        annotations:
+          sh:order: 2.0
       title:
         description: >-
           The full title of the publication.
         required: false
         annotations:
-          sh:order: 2.0
-      authors:
-        description: >-
-          Authors of the publication who are anyhow contributors to XYZ.
-        range: XYZPerson
-        annotations:
           sh:order: 3.0
-      attributed_to:
-        multivalued: true
-        inlined_as_list: true
-        inlined: true
-        title: Contributors
-        range: XYZPersonAttribution
+      description:
         annotations:
           sh:order: 4.0
+          dash:singleLine: false
       published_at:
         range: XYZPublicationVenue
         annotations:
@@ -562,13 +704,6 @@ classes:
           of the publication venue.
         annotations:
           sh:order: 6.0
-      kind:
-        title: Publication type
-        description: >-
-          The type of this publication, e.g. journal article, book, webpage
-        range: XYZBibliographicType
-        annotations:
-          sh:order: 7.0
       about:
         recommended: true
         title: Topic(s)
@@ -577,29 +712,45 @@ classes:
         range: XYZTopic
         multivalued: true
         annotations:
-          sh:order: 8.0
+          sh:order: 7.0
       date_published:
         range: W3CISO8601
         description: >-
           The date when a publication became available at the publication venue.
         annotations:
-          sh:order: 9.0
-      generated_by:
-        recommended: true
-        title: Contributing project(s)
-        description: >-
-          Any project that contributed to the outcomes described in the publication.
-        range: XYZProject
-        multivalued: true
-        annotations:
-          sh:order: 10.0
+          sh:order: 8.0
       rules:
         range: XYZRule
         annotations:
+          sh:order: 9.0
+      attributed_to:
+        multivalued: true
+        inlined_as_list: true
+        title: Contributors
+        range: XYZAttribution
+        annotations:
+          sh:order: 10.0
+      generated_by:
+        range: XYZGeneration
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 11.0
+      revision_of:
+        range: XYZRevision
+        annotations:
           sh:order: 12.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 13.0
+      identifiers:
+        annotations:
+          sh:order: 14.0
 
 
-  #
   # Thing that are "classifiers" (i.e., tags) without a provenance interface
   #
   XYZAgentRole:
