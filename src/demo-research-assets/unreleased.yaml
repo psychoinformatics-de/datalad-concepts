@@ -241,6 +241,7 @@ classes:
     slot_usage:
       part_of:
         range: XYZDataset
+        multivalued: true
         annotations:
           sh:order: 1.0
       same_as:
@@ -374,6 +375,7 @@ classes:
           sh:order: 7.0
       part_of:
         range: XYZDataset
+        multivalued: true
         annotations:
           sh:order: 8.0
       rules:
@@ -487,6 +489,7 @@ classes:
         annotations:
           sh:order: 4.0
       part_of:
+        multivalued: true
         annotations:
           sh:order: 4.0
       rules:
@@ -568,6 +571,7 @@ classes:
         any_of:
           - range: XYZStudy
           - range: XYZGenesis
+        multivalued: true
         annotations:
           sh:order: 5.0
       target:
@@ -615,6 +619,7 @@ classes:
           dash:singleLine: false
       part_of:
         range: XYZGrant
+        multivalued: true
         annotations:
           sh:order: 5.0
       rules:
@@ -675,6 +680,7 @@ classes:
         description: >-
           An organization that the subject is part of.
         range: XYZOrganization
+        multivalued: true
         annotations:
           sh:order: 4.0
 
@@ -737,6 +743,7 @@ classes:
           sh:order: 4.0
       part_of:
         range: XYZProject
+        multivalued: true
         annotations:
           sh:order: 5.0
       target:
@@ -915,6 +922,7 @@ classes:
           sh:order: 4.0
       part_of:
         range: XYZStudy
+        multivalued: true
         annotations:
           sh:order: 5.0
       associated_with:
@@ -990,6 +998,7 @@ classes:
           dash:singleLine: false
       part_of:
         range: XYZTopic
+        multivalued: true
         annotations:
           sh:order: 2.0
 
@@ -1080,6 +1089,7 @@ classes:
           sh:order: 1.0
       part_of:
         range: XYZProject
+        multivalued: true
         annotations:
           sh:order: 2.0
       depends_on:

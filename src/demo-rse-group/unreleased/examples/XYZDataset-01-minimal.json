@@ -1,0 +1,5 @@
+{
+  "pid": "https://example.com/dataset1",
+  "schema_type": "xyzrse:XYZDataset",
+  "@type": "XYZDataset"
+}

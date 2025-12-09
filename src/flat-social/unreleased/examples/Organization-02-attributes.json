@@ -4,6 +4,8 @@
   "name": "Forschungszentrum Jülich",
   "short_name": "FZJ",
   "at_location": "https://sws.geonames.org/6557321",
-  "part_of": "https://ror.org/0281dp749",
+  "part_of": [
+    "https://ror.org/0281dp749"
+  ],
   "@type": "Organization"
 }

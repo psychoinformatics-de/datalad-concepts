@@ -121,6 +121,7 @@ classes:
     slot_usage:
       part_of:
         range: Dataset
+        multivalued: true
       same_as:
         title: Qualitative value
         description: >-
@@ -162,6 +163,7 @@ classes:
           sh:order: 3
       part_of:
         range: Dataset
+        multivalued: true
         annotations:
           sh:order: 4
     exact_mappings:
@@ -190,6 +192,7 @@ classes:
           sh:order: 3
       part_of:
         range: Document
+        multivalued: true
         annotations:
           sh:order: 3
     notes:
@@ -230,6 +233,7 @@ classes:
           sh:order: 4
       part_of:
         range: Grant
+        multivalued: true
         annotations:
           sh:order: 5
     exact_mappings:
