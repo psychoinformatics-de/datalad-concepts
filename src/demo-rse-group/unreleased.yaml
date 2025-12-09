@@ -251,6 +251,8 @@ classes:
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and
       serializations.
+    slots:
+      - rules
     slot_usage:
       title:
         annotations:
@@ -263,9 +265,14 @@ classes:
         multivalued: true
         annotations:
           sh:order: 3.0
-      description:
+      rules:
+        range: XYZRule
+        multivalued: true
         annotations:
           sh:order: 4.0
+      description:
+        annotations:
+          sh:order: 5.0
           dash:singleLine: false
       attributed_to:
         title: Contributors
@@ -273,32 +280,32 @@ classes:
         inlined_as_list: true
         range: XYZAttribution
         annotations:
-          sh:order: 5.0
+          sh:order: 6.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 6.0
+          sh:order: 7.0
       derived_from:
         range: XYZDerivation
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 7.0
+          sh:order: 8.0
       revision_of:
         range: XYZRevision
         annotations:
-          sh:order: 8.0
+          sh:order: 9.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 9.0
+          sh:order: 10.0
       identifiers:
         annotations:
-          sh:order: 10.0
+          sh:order: 11.0
 
   XYZDistribution:
     is_a: Distribution
