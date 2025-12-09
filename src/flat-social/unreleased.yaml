@@ -96,6 +96,7 @@ classes:
         description: >-
           An organization that the subject is part of.
         range: Organization
+        multivalued: true
         annotations:
           sh:order: 4
     exact_mappings:
@@ -156,3 +157,5 @@ classes:
       short_name:
         annotations:
           sh:order: 2
+      part_of:
+        multivalued: true

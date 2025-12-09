@@ -388,6 +388,7 @@ classes:
           sh:order: 3.0
           dash:singleLine: false
       part_of:
+        multivalued: true
         annotations:
           sh:order: 4.0
       rules:
@@ -450,6 +451,7 @@ classes:
           dash:singleLine: false
       part_of:
         range: XYZGrant
+        multivalued: true
         annotations:
           sh:order: 4.0
       rules:
@@ -610,6 +612,7 @@ classes:
           dash:singleLine: false
       part_of:
         range: XYZProject
+        multivalued: true
         annotations:
           sh:order: 4.0
       associated_with:
@@ -888,6 +891,7 @@ classes:
           sh:order: 1.0
       part_of:
         range: XYZObjective
+        multivalued: true
         annotations:
           sh:order: 2.0
       depends_on:
@@ -918,6 +922,7 @@ classes:
         description: >-
           An organization that the subject is part of.
         range: XYZOrganization
+        multivalued: true
         annotations:
           sh:order: 4.0
 
@@ -982,6 +987,7 @@ classes:
           dash:singleLine: false
       part_of:
         range: XYZTopic
+        multivalued: true
         annotations:
           sh:order: 2.0
 

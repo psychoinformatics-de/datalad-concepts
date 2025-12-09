@@ -122,6 +122,7 @@ classes:
           sh:order: 4
       part_of:
         range: Study
+        multivalued: true
         annotations:
           sh:order: 5
       associated_with:

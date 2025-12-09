@@ -7,4 +7,5 @@ quantitative_unit: http://purl.obolibrary.org/obo/UO_0000094
 # severe -> beaufort scale 9
 same_as: http://semanticscience.org/resource/SIO_001215
 # containing dataset
-part_of: https://example.org/dataset/windy
+part_of:
+  - https://example.org/dataset/windy
