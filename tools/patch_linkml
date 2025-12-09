@@ -12,3 +12,5 @@ patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.pa
 patch -d $(python -c 'import os; import linkml_runtime.utils.yamlutils as m; print(os.path.dirname(m.__file__))') < patches/linkml_runtime_utils_yamlutils.diff
 # Use `&` to separate multiple interfaces in graphql schemas
 patch -d $(python -c 'import os; import linkml.generators.graphqlgen as m; print(os.path.dirname(m.__file__))') < patches/graphqlgen_interface_list.diff
+# Do not emit python/rdflib upper case namespaces in `ifabsent`-default values
+patch -d $(python -c 'import os; import linkml.generators.common.ifabsent_processor as m; print(os.path.dirname(m.__file__))') < patches/linkml_generators_common_ifabsent.diff

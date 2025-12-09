@@ -1,0 +1,20 @@
+patch `ifabsent`-processing to work without python/rdflib namespaces
+
+The pydantic code generator does not emit the python/rdflib uppercase
+namespaces, but they were emitted in the `ifabsent`-processing code. That
+leads to Therefore, using them in `ifabsent`-processing leads to errors.
+
+diff --git a/linkml/generators/common/ifabsent_processor.py b/linkml/generators/common/ifabsent_processor.py
+index b2f68d67..0342a908 100644
+--- a/linkml/generators/common/ifabsent_processor.py
++++ b/linkml/generators/common/ifabsent_processor.py
+@@ -356,7 +356,8 @@ class IfAbsentProcessor(ABC):
+
+     def _uri_for(self, s: str) -> str:
+         uri = str(self.schema_view.namespaces().uri_for(s))
+-        return self.schema_view.namespaces().curie_for(uri, True, True) or self._strval(uri)
++        curie = self.schema_view.namespaces().curie_for(uri, True)
++        return f"'{curie}'" if curie else self._strval(uri)
+
+     def _strval(self, txt: str) -> str:
+         txt = str(txt).replace('"', '\\"')
