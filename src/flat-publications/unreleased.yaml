@@ -75,7 +75,6 @@ classes:
       A resource that is the output of a publishing process.
     slots:
       - about
-      - authors
       - date_published
       - kind
       - locator
@@ -86,9 +85,6 @@ classes:
         required: true
         annotations:
           sh:order: 1
-      authors:
-        annotations:
-          sh:order: 2
       published_at:
         annotations:
           sh:order: 3
@@ -112,3 +108,5 @@ classes:
           sh:order: 7
     exact_mappings:
       - obo:IAO_0000311
+    notes:
+      - There is not slow to indicate authorship. This is left to a PROV attribution.
