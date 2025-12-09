@@ -57,7 +57,9 @@
     }
   ],
   "generated_by": [
-    "https://example.org/ns/project-1"
+    {
+      "object": "https://example.org/ns/project-1"
+    }
   ],
   "@type": "XYZPublication"
 }
