@@ -1,8 +1,0 @@
-# a resource can declare itself to be part of another resource
-# including an identifier that enables locating the resource
-# within the containing resource.
-pid: https://doi.org/10.21105/joss.03262
-qualified_relations:
-  - schema_type: dlres:IndexedResourcePartOf
-    object: https://issn.org/resource/ISSN/2475-9066
-    locator: "6(63), 3262"

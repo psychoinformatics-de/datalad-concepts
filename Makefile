@@ -21,23 +21,16 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/flat/unreleased \
-	build/linkml-docs/s/roles/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
-	build/linkml-docs/s/spatial/unreleased \
 	build/linkml-docs/s/temporal-mixin/unreleased \
-	build/linkml-docs/s/temporal/unreleased \
 	build/linkml-docs/s/prov-mixin/unreleased \
-	build/linkml-docs/s/prov/unreleased \
 	build/linkml-docs/s/flat-prov/unreleased \
 	build/linkml-docs/s/publications-mixin/unreleased \
-	build/linkml-docs/s/publications/unreleased \
 	build/linkml-docs/s/flat-publications/unreleased \
 	build/linkml-docs/s/resources-mixin/unreleased \
-	build/linkml-docs/s/resources/unreleased \
 	build/linkml-docs/s/flat-resources/unreleased \
 	build/linkml-docs/s/social-mixin/unreleased \
 	build/linkml-docs/s/flat-social/unreleased \
-	build/linkml-docs/s/social/unreleased \
 	build/linkml-docs/s/study-mixin/unreleased \
 	build/linkml-docs/s/flat-study/unreleased \
 	build/linkml-docs/s/identifiers/unreleased \
@@ -45,7 +38,6 @@ build/linkml-docs: \
 	build/linkml-docs/s/versions-mixin/unreleased \
 	build/linkml-docs/s/files-mixin/unreleased \
 	build/linkml-docs/s/flat-files/unreleased \
-	build/linkml-docs/s/edistributions/unreleased \
 	build/linkml-docs/s/demo-empirical-data/unreleased \
 	build/linkml-docs/s/demo-research-assets/unreleased \
 	build/linkml-docs/s/demo-rse-group/unreleased
@@ -99,23 +91,16 @@ check-models: \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/flat/unreleased \
-	checkmodel/roles/unreleased \
 	checkmodel/spatial-mixin/unreleased \
-	checkmodel/spatial/unreleased \
 	checkmodel/temporal-mixin/unreleased \
-	checkmodel/temporal/unreleased \
 	checkmodel/prov-mixin/unreleased \
-	checkmodel/prov/unreleased \
 	checkmodel/flat-prov/unreleased \
 	checkmodel/publications-mixin/unreleased \
-	checkmodel/publications/unreleased \
 	checkmodel/flat-publications/unreleased \
 	checkmodel/resources-mixin/unreleased \
-	checkmodel/resources/unreleased \
 	checkmodel/flat-resources/unreleased \
 	checkmodel/social-mixin/unreleased \
 	checkmodel/flat-social/unreleased \
-	checkmodel/social/unreleased \
 	checkmodel/study-mixin/unreleased \
 	checkmodel/flat-study/unreleased \
 	checkmodel/identifiers/unreleased \
@@ -123,7 +108,6 @@ check-models: \
 	checkmodel/versions-mixin/unreleased \
 	checkmodel/files-mixin/unreleased \
 	checkmodel/flat-files/unreleased \
-	checkmodel/edistributions/unreleased \
 	checkmodel/demo-empirical-data/unreleased \
 	checkmodel/demo-research-assets/unreleased \
 	checkmodel/demo-rse-group/unreleased
@@ -163,36 +147,20 @@ check-validation: \
 	checkvalidation/things/v1 \
 	convertexamples/flat/unreleased \
 	checkvalidation/flat/unreleased \
-	convertexamples/roles/unreleased \
-	checkvalidation/roles/unreleased \
-	convertexamples/spatial/unreleased \
-	checkvalidation/spatial/unreleased \
-	convertexamples/temporal/unreleased \
-	checkvalidation/temporal/unreleased \
-	convertexamples/prov/unreleased \
-	checkvalidation/prov/unreleased \
 	convertexamples/flat-prov/unreleased \
 	checkvalidation/flat-prov/unreleased \
-	convertexamples/publications/unreleased \
-	checkvalidation/publications/unreleased \
 	convertexamples/flat-publications/unreleased \
 	checkvalidation/flat-publications/unreleased \
-	convertexamples/resources/unreleased \
-	checkvalidation/resources/unreleased \
 	convertexamples/flat-resources/unreleased \
 	checkvalidation/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
 	checkvalidation/flat-social/unreleased \
-	convertexamples/social/unreleased \
-	checkvalidation/social/unreleased \
 	convertexamples/flat-study/unreleased \
 	checkvalidation/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
 	checkvalidation/identifiers/unreleased \
 	convertexamples/flat-files/unreleased \
 	checkvalidation/flat-files/unreleased \
-	convertexamples/edistributions/unreleased \
-	checkvalidation/edistributions/unreleased \
 	convertexamples/demo-empirical-data/unreleased \
 	checkvalidation/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
@@ -216,21 +184,13 @@ convert-examples: \
 	convertexamples/things/unreleased \
 	convertexamples/things/v1 \
 	convertexamples/flat/unreleased \
-	convertexamples/roles/unreleased \
-	convertexamples/spatial/unreleased \
-	convertexamples/temporal/unreleased \
-	convertexamples/prov/unreleased \
 	convertexamples/flat-prov/unreleased \
-	convertexamples/publications/unreleased \
 	convertexamples/flat-publications/unreleased \
-	convertexamples/resources/unreleased \
 	convertexamples/flat-resources/unreleased \
 	convertexamples/flat-social/unreleased \
-	convertexamples/social/unreleased \
 	convertexamples/flat-study/unreleased \
 	convertexamples/identifiers/unreleased \
 	convertexamples/flat-files/unreleased \
-	convertexamples/edistributions/unreleased \
 	convertexamples/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
 	convertexamples/demo-rse-group/unreleased
