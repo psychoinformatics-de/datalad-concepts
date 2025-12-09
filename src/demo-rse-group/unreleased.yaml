@@ -887,7 +887,7 @@ classes:
         annotations:
           sh:order: 1.0
       part_of:
-        range: XYZProject
+        range: XYZObjective
         annotations:
           sh:order: 2.0
       depends_on:
