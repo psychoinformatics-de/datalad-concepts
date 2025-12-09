@@ -1,5 +1,0 @@
-pid: https://example.com/mop
-title: The mop
-access_methods:
-  - schema_type: dlres:PersonalRequest
-    description: Call the janitor and ask for a pick-up location
