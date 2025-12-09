@@ -10,7 +10,8 @@
       "schema_type": "dlflatprov:Activity",
       "used": [
         {
-          "object": "https://example.org/aggregatedByRegions"
+          "object": "https://example.org/aggregatedByRegions",
+          "schema_type": "dlprovmx:Usage"
         }
       ]
     }
@@ -19,8 +20,10 @@
   "derived_from": [
     {
       "object": "https://example.org/aggregatedByRegions",
+      "schema_type": "dlprovmx:Derivation",
       "generated_by": {
-        "object": "https://example.org/aggregating_activity"
+        "object": "https://example.org/aggregating_activity",
+        "schema_type": "dlprovmx:Generation"
       }
     }
   ],

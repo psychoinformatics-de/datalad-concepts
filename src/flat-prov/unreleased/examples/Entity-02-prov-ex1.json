@@ -20,7 +20,8 @@
       ],
       "schema_type": "dlflatprov:Agent",
       "delegated_by": {
-        "object": "https://example.org/national_newspaper_in"
+        "object": "https://example.org/national_newspaper_in",
+        "schema_type": "dlprovmx:Delegation"
       }
     },
     "https://example.org/national_newspaper_inc": {
@@ -42,17 +43,20 @@
       "schema_type": "dlflatprov:Activity",
       "associated_with": [
         {
-          "object": "https://example.org/derek"
+          "object": "https://example.org/derek",
+          "schema_type": "dlprovmx:Association"
         }
       ],
       "used": [
         {
-          "object": "https://example.org/aggregatedByRegions"
+          "object": "https://example.org/aggregatedByRegions",
+          "schema_type": "dlprovmx:Usage"
         }
       ],
       "informed_by": [
         {
-          "object": "https://example.org/aggregationActivity"
+          "object": "https://example.org/aggregationActivity",
+          "schema_type": "dlprovmx:Communication"
         }
       ]
     },
@@ -61,28 +65,34 @@
       "schema_type": "dlflatprov:Entity",
       "attributed_to": [
         {
-          "object": "https://example.org/derek"
+          "object": "https://example.org/derek",
+          "schema_type": "dlprovmx:Attribution"
         }
       ],
       "generated_by": {
-        "object": "https://example.org/aggregationActivity"
+        "object": "https://example.org/aggregationActivity",
+        "schema_type": "dlprovmx:Generation"
       }
     },
     "https://example.org/aggregationActivity": {
       "pid": "https://example.org/aggregationActivity",
       "schema_type": "dlflatprov:Activity",
       "started": {
+        "schema_type": "dlprovmx:Start",
         "at_time": "2011-07-14T01:01:01Z"
       },
       "ended": {
+        "schema_type": "dlprovmx:End",
         "at_time": "2011-07-14T02:02:02Z"
       },
       "used": [
         {
-          "object": "https://example.org/crimeData"
+          "object": "https://example.org/crimeData",
+          "schema_type": "dlprovmx:Usage"
         },
         {
-          "object": "https://example.org/nationalRegionsList"
+          "object": "https://example.org/nationalRegionsList",
+          "schema_type": "dlprovmx:Usage"
         }
       ]
     },
@@ -91,7 +101,8 @@
       "schema_type": "dlflatprov:Entity",
       "attributed_to": [
         {
-          "object": "https://example.org/government"
+          "object": "https://example.org/government",
+          "schema_type": "dlprovmx:Attribution"
         }
       ]
     },
@@ -107,7 +118,8 @@
       "schema_type": "dlflatprov:Entity",
       "attributed_to": [
         {
-          "object": "https://example.org/civil_action_group"
+          "object": "https://example.org/civil_action_group",
+          "schema_type": "dlprovmx:Attribution"
         }
       ]
     },
@@ -122,15 +134,18 @@
   "schema_type": "dlflatprov:Entity",
   "attributed_to": [
     {
-      "object": "https://example.org/derek"
+      "object": "https://example.org/derek",
+      "schema_type": "dlprovmx:Attribution"
     }
   ],
   "generated_by": {
-    "object": "https://example.org/illustrationActivity"
+    "object": "https://example.org/illustrationActivity",
+    "schema_type": "dlprovmx:Generation"
   },
   "derived_from": [
     {
-      "object": "https://example.org/aggregatedByRegions"
+      "object": "https://example.org/aggregatedByRegions",
+      "schema_type": "dlprovmx:Derivation"
     }
   ],
   "@type": "Entity"

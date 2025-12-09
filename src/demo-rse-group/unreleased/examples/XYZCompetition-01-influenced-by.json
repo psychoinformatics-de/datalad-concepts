@@ -11,7 +11,8 @@
       "object": "datalad:object_1",
       "roles": [
         "fabio:CallForApplication"
-      ]
+      ],
+      "schema_type": "xyzrse:XYZInfluence"
     }
   ],
   "@type": "XYZCompetition"

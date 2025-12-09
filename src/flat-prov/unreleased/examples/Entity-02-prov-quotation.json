@@ -9,7 +9,8 @@
   ],
   "schema_type": "dlflatprov:Entity",
   "quoted_from": {
-    "object": "http://purl.org/twc/page/thoughts-from-the-dagstuhl-workshop"
+    "object": "http://purl.org/twc/page/thoughts-from-the-dagstuhl-workshop",
+    "schema_type": "dlprovmx:Quotation"
   },
   "@type": "Entity"
 }

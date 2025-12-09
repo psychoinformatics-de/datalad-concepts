@@ -6,7 +6,8 @@
       "object": "xyzrsens:objectives/world-domination",
       "roles": [
         "xyzrsens:objective-types/longterm-goal"
-      ]
+      ],
+      "schema_type": "xyzrse:XYZInfluence"
     }
   ],
   "@type": "XYZProject"

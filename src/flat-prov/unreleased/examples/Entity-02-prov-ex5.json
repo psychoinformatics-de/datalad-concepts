@@ -5,6 +5,7 @@
       "pid": "https://example.org/hard_disk_failure",
       "schema_type": "dlflatprov:Activity",
       "ended": {
+        "schema_type": "dlprovmx:End",
         "at_time": "2012-09-02T01:31:00Z"
       }
     }
@@ -15,6 +16,7 @@
   "schema_type": "dlflatprov:Entity",
   "invalidated_by": {
     "object": "https://example.org/hard_disk_failure",
+    "schema_type": "dlprovmx:Invalidation",
     "at_time": "2012-09-02T01:31:00Z"
   },
   "@type": "Entity"
