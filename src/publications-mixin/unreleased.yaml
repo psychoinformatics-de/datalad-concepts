@@ -47,12 +47,6 @@ imports:
   - dlschemas:things/v1
 
 slots:
-  authors:
-    description: >-
-      People that contributed to a document in the author role.
-    range: Thing
-    multivalued: true
-
   doi:
     title: DOI
     description: >-

@@ -767,12 +767,6 @@ classes:
         required: false
         annotations:
           sh:order: 2.0
-      authors:
-        description: >-
-          Authors of the publication who are anyhow contributors to XYZ.
-        range: XYZPerson
-        annotations:
-          sh:order: 3.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
