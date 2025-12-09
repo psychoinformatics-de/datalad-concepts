@@ -36,6 +36,7 @@
       "specialization_of": "https://example.org/more-crime-happens-in-cities",
       "generated_by": {
         "object": "https://example.org/publicationActivity1123",
+        "schema_type": "dlprovmx:Generation",
         "at_time": "2011-07-16T01:52:02Z"
       },
       "derived_from": [
@@ -43,15 +44,18 @@
           "object": "https://example.org/crimeData",
           "roles": [
             "http://purl.obolibrary.org/obo/NCIT_C142663"
-          ]
+          ],
+          "schema_type": "dlprovmx:Derivation"
         }
       ],
       "invalidated_by": {
+        "schema_type": "dlprovmx:Invalidation",
         "at_time": "2011-07-16T02:02:02Z"
       },
       "influenced_by": [
         {
-          "object": "https://example.org/aggregatedByRegions"
+          "object": "https://example.org/aggregatedByRegions",
+          "schema_type": "dlprovmx:Influence"
         }
       ]
     }
@@ -70,10 +74,12 @@
   "alternate_of": "https://example.org/post9821v1",
   "specialization_of": "https://example.org/more-crime-happens-in-cities",
   "generated_by": {
+    "schema_type": "dlprovmx:Generation",
     "at_time": "2011-07-16T02:02:02Z"
   },
   "revision_of": {
-    "object": "https://example.org/post9821v1"
+    "object": "https://example.org/post9821v1",
+    "schema_type": "dlprovmx:Revision"
   },
   "@type": "Entity"
 }

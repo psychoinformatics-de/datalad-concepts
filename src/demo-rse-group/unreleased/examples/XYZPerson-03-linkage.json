@@ -8,7 +8,8 @@
       "roles": [
         "https://example.org/r1",
         "https://example.org/r2"
-      ]
+      ],
+      "schema_type": "xyzrse:XYZInfluence"
     }
   ],
   "@type": "XYZPerson"

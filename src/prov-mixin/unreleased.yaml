@@ -20,6 +20,14 @@ description: |
   no equivalent of, for example, `generatedAtTime`. Instead, the time needs to
   be annotated via the `at_time` slot of `Generation`.
 
+  Consistent with PROV-DM, all relationship classes support the expression of
+  arbitrary attributes to further characterize a relationship beyond the set of
+  dedicated slots. This is achieved by applying the core `ThingMixin` to the
+  `Influence` class, the base class of all relationships. This allows for the
+  same annotation patterns that are enabled by `Thing` to also be used for PROV
+  relationships. This includes, custom attributes, `characterized_by` relations,
+  mapping declarations, annotations, and semantic mappings.
+
   All relationship classes uniformly use an `object` slot to reference the
   respective entity, agent, or activity. PROV-O's `actedOnBehalfOf` is named
   `delegated_by` for consistency with the association class `Delegation`.
@@ -29,7 +37,7 @@ description: |
 
   This schema does not implement support for PROV bundles.
 
-  There is no support for annotating an `Influence` with an unspecific
+  There is no explicit support for annotating an `Influence` with an unspecific
   `Activity` (`hadActivity`, optional in PROV-O). For describing, for example,
   the generating activity in a derivation, `generated_by` is provided.
 
@@ -437,6 +445,8 @@ classes:
   # association classes -- influences
   # base for all influences
   Influence:
+    mixins:
+      - ThingMixin
     description: >-
       Influence is the capacity of an entity, activity, or agent to have
       an effect on the character, development, or behavior of another by

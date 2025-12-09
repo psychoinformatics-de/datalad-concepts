@@ -6,7 +6,8 @@
       "object": "https://example.org/derek",
       "roles": [
         "https://example.org/illustrationist"
-      ]
+      ],
+      "schema_type": "dlprovmx:Association"
     }
   ],
   "@type": "Activity"

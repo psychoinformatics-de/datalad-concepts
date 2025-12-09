@@ -1,5 +1,14 @@
 pid: https://gepris.dfg.de/gepris/projekt/512007073
-sponsor: https://ror.org/018mejw64
-received_by:
-  - https://orcid.org/0000-0003-0703-7722
-  - https://ror.org/04xfq0f34
+attributed_to:
+  - object: https://ror.org/018mejw64
+    roles:
+      # funder
+      - marcrel:fnd
+  - object: https://orcid.org/0000-0003-0703-7722
+    roles:
+      # project director
+      - marcrel:pdr
+  - object: https://ror.org/04xfq0f34
+    roles:
+      # supporting host
+      - marcrel:sht

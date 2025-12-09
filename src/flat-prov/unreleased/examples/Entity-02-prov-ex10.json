@@ -3,6 +3,7 @@
   "schema_type": "dlflatprov:Entity",
   "generated_by": {
     "object": "https://example.org/illustrationActivity",
+    "schema_type": "dlprovmx:Generation",
     "at_time": "2011-07-14T15:52:14Z"
   },
   "@type": "Entity"
