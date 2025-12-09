@@ -245,6 +245,8 @@ classes:
       conceptual entity. A single dataset might be available in more than
       one representation, with differing schematic layouts, formats, and
       serializations.
+    slots:
+      - rules
     slot_usage:
       title:
         annotations:
@@ -286,6 +288,10 @@ classes:
         inlined: true
         annotations:
           sh:order: 8.0
+      rules:
+        range: XYZRule
+        annotations:
+          sh:order: 9.0
 
   XYZDistribution:
     is_a: Distribution
