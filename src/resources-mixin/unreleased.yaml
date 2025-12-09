@@ -74,6 +74,8 @@ slots:
     range: Thing
     exact_mappings:
       - schema:funding
+    notes:
+      - This property is obsolete and should be removed.
 
   sponsor:
     description: >-
@@ -84,3 +86,5 @@ slots:
       - schema:sponsor
     close_mappings:
       - obo:SLSO_0001139
+    notes:
+      - This property is obsolete and only still here, because of a legacy use in the resources schema.

@@ -211,11 +211,7 @@ classes:
       resources.
     slots:
       - howto_acknowledge
-      # TODO leave to a PROV attribution
-      - sponsor
       - title
-      # TODO leave to a PROV attribution
-      - received_by
       - short_name
       - part_of
     slot_usage:
@@ -225,36 +221,23 @@ classes:
       short_name:
         annotations:
           sh:order: 2
-      sponsor:
-        range: Thing
-        comments:
-          - In a particular context, a sponsor might always be an organization,
-            but in others it could be one or more individuals. Leaving it
-            open here.
-        annotations:
-          sh:order: 3
-      received_by:
-        multivalued: true
-        annotations:
-          sh:order: 4
       howto_acknowledge:
         annotations:
-          sh:order: 5
+          sh:order: 3
           dash:singleLine: false
       description:
         annotations:
-          sh:order: 6
+          sh:order: 4
       part_of:
         range: Grant
         annotations:
-          sh:order: 7
+          sh:order: 5
     exact_mappings:
       - obo:NCIT_C16644
       - schema:Grant
     notes:
       - A grant is not a document. The associated document would be the
         grant agreement.
-      - Not all grants have titles, hence there is no such slot defined here.
 
   Instrument:
     is_a: FlatThing

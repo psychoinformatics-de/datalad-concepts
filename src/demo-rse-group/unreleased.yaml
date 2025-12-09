@@ -472,19 +472,6 @@ classes:
       identifiers:
         annotations:
           sh:order: 10.0
-      # TODO better use attributed_to and a funder role
-      sponsor:
-        range: XYZOrganization
-        annotations:
-          sh:order: 11.0
-      # TODO better use attributed_to with an appropriate role
-      received_by:
-        any_of:
-          - range: XYZPerson
-          - range: XYZOrganization
-        multivalued: true
-        annotations:
-          sh:order: 12.0
 
   XYZInstrument:
     is_a: Instrument
