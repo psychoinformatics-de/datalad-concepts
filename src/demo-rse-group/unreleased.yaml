@@ -682,6 +682,7 @@ classes:
         annotations:
           sh:order: 3.0
       description:
+        title: Abstract
         annotations:
           sh:order: 4.0
           dash:singleLine: false
