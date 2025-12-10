@@ -1,6 +1,7 @@
 schema: src/demo-rse-group/unreleased.yaml
 target_class: XYZProject
 data_sources:
+  - src/demo-rse-group/unreleased/examples/XYZProject-01-simple.yaml
   - src/demo-rse-group/unreleased/examples/XYZProject-01-informed-by.yaml
   - src/demo-rse-group/unreleased/examples/XYZProject-02-objective.yaml
 plugins:
