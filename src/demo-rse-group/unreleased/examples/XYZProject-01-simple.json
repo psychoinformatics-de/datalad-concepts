@@ -1,0 +1,9 @@
+{
+  "pid": "https://example.com/p1",
+  "schema_type": "xyzrse:XYZProject",
+  "started": {
+    "schema_type": "xyzrse:XYZStart",
+    "at_time": "2025-12-10"
+  },
+  "@type": "XYZProject"
+}

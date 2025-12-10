@@ -3,4 +3,4 @@ name: Demo
 description: >-
   very important science
 associated_with:
-  - https://en.wikipedia.org/wiki/Marie_Curie
+  - object: https://en.wikipedia.org/wiki/Marie_Curie
