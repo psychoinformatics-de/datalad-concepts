@@ -490,6 +490,7 @@ classes:
     description: >-
       A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
     slots:
+      - part_of
       - rules
     slot_usage:
       kind:
@@ -506,46 +507,51 @@ classes:
         annotations:
           sh:order: 3.0
           dash:singleLine: false
+      part_of:
+        range: XYZInstrument
+        multivalued: true
+        annotations:
+          sh:order: 4.0
       rules:
         range: XYZRule
         multivalued: true
         annotations:
-          sh:order: 4.0
+          sh:order: 5.0
       attributed_to:
         range: XYZAttribution
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 5.0
+          sh:order: 6.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 6.0
+          sh:order: 7.0
       revision_of:
         range: XYZRevision
         annotations:
-          sh:order: 7.0
+          sh:order: 8.0
       alternate_of:
         range: FlatThing
         multivalued: true
         annotations:
-          sh:order: 8.0
+          sh:order: 9.0
       specialization_of:
         range: FlatThing
         multivalued: true
         annotations:
-          sh:order: 9.0
+          sh:order: 10.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
         annotations:
-          sh:order: 10.0
+          sh:order: 11.0
       identifiers:
         annotations:
-          sh:order: 11.0
+          sh:order: 12.0
 
   XYZPerson:
     is_a: Person
