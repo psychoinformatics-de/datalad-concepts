@@ -1006,10 +1006,9 @@ classes:
       Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation.
     slot_usage:
-      # disable due to a bug in `ifabsent` handling
-      #creator:
-      #  ifabsent: string(ror:04fa4r544)
-      #  description: By default, the creator is identified as "ror:04fa4r544".
+      creator:
+        ifabsent: uriorcurie(ror:04fa4r544)
+        description: By default, the creator is identified as "ror:04fa4r544".
       notation:
         description: >-
           The identifier notation is specified without a URL-prefix,
