@@ -181,6 +181,7 @@ classes:
       notation:
         description: >-
           The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
+        pattern: '(?i)^(?!(?:https?://|doi:)).+$'
       schema_agency:
         ifabsent: string(DOI Foundation)
         description: By default, the schema agency is identified as `DOI Foundation`.
