@@ -62,6 +62,7 @@ prefixes:
   doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
   fabio: http://purl.org/spar/fabio/
+  foaf: http://xmlns.com/foaf/0.1/
   FRAPO: http://purl.org/cerif/frapo/
   geodata: http://sws.geonames.org/
   linkml: https://w3id.org/linkml/
