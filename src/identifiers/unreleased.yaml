@@ -176,7 +176,7 @@ classes:
       agencies.
     slot_usage:
       creator:
-        ifabsent: string(https://doi.org)
+        ifabsent: uriorcurie(https://doi.org)
         description: By default, the creator is identified as "https://doi.org".
       notation:
         description: >-
