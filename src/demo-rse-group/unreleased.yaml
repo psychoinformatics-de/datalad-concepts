@@ -1007,7 +1007,7 @@ classes:
       and Contributor ID (ORCID) organisation.
     slot_usage:
       creator:
-        ifabsent: uriorcurie(ror:04fa4r544)
+        #ifabsent: uriorcurie(ror:04fa4r544)
         description: By default, the creator is identified as "ror:04fa4r544".
       notation:
         description: >-
