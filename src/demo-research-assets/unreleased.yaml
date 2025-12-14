@@ -76,6 +76,7 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   ror: https://ror.org/
   rrid: "https://scicrunch.org/resolver/RRID:"
+  schema: http://schema.org/
   sh: http://www.w3.org/ns/shacl#
   sio: http://semanticscience.org/resource/
   skos: http://www.w3.org/2004/02/skos/core#
@@ -127,6 +128,7 @@ emit_prefixes:
   - orcid
   - ror
   - rrid
+  - schema
   - xyzrans
 
 
