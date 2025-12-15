@@ -76,6 +76,7 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   ror: https://ror.org/
   rrid: "https://scicrunch.org/resolver/RRID:"
+  schema: http://schema.org/
   sh: http://www.w3.org/ns/shacl#
   shaclvue: https://concepts.datalad.org/ns/shaclvue/
   sio: http://semanticscience.org/resource/
@@ -130,6 +131,7 @@ emit_prefixes:
   - orcid
   - ror
   - rrid
+  - schema
   - shaclvue
   - xyzrsens
 
