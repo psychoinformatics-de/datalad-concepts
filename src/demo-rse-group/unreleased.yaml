@@ -1305,22 +1305,6 @@ classes:
         annotations:
           sh:order: 2.0
 
-  XYZPersonAttribution:
-    is_a: XYZAttribution
-    description: >-
-      An association class for attributing a subject to a person and
-      qualifying the relationship with particular roles.
-    slot_usage:
-      object:
-        title: Person
-        range: XYZPerson
-        annotations:
-          sh:order: 1.0
-          dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
-
   XYZRevision :
     is_a: Revision
     description: >-
