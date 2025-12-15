@@ -556,6 +556,46 @@ classes:
         annotations:
           sh:order: 12.0
 
+  XYZOrganization:
+    is_a: Organization
+    mixins:
+      - AgentMixin
+    title: Organization
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+    slot_usage:
+      name:
+        annotations:
+          sh:order: 1.0
+      short_name:
+        annotations:
+          sh:order: 2.0
+      at_location:
+        annotations:
+          sh:order: 3.0
+      part_of:
+        description: >-
+          An organization that the subject is part of.
+        range: XYZOrganization
+        multivalued: true
+        annotations:
+          sh:order: 4.0
+      delegated_by:
+        range: XYZDelegation
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 5.0
+      influenced_by:
+        range: XYZInfluence
+        multivalued: true
+        inlined_as_list: true
+        annotations:
+          sh:order: 6.0
+      identifiers:
+        annotations:
+          sh:order: 7.0
+
   XYZPerson:
     is_a: Person
     mixins:
@@ -911,29 +951,6 @@ classes:
         annotations:
           sh:order: 4.0
           dash:singleLine: false
-
-  XYZOrganization:
-    is_a: Organization
-    title: Organization
-    description: >-
-      A social or legal institution such as a company, a society, or a university.
-    slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
-      part_of:
-        description: >-
-          An organization that the subject is part of.
-        range: XYZOrganization
-        multivalued: true
-        annotations:
-          sh:order: 4.0
 
   XYZPublicationVenue:
     is_a: FlatThing
