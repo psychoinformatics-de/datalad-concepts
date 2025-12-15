@@ -1266,8 +1266,6 @@ classes:
         annotations:
           sh:order: 4.0
 
-  # we derive to be able to customization the UI/docs
-  # TODO consider supporting temporally windows influences
   XYZInfluence:
     is_a: Influence
     description: >-
@@ -1275,6 +1273,9 @@ classes:
       an effect on the character, development, or behavior of another by
       means of usage, start, end, generation, invalidation, communication,
       derivation, attribution, association, or delegation.
+    slots:
+      - ended
+      - started
     slot_usage:
       object:
         annotations:
@@ -1283,6 +1284,18 @@ classes:
       roles:
         annotations:
           sh:order: 2.0
+      started:
+        range: XYZStart
+        annotations:
+          sh:order: 3.0
+      ended:
+        range: XYZEnd
+        annotations:
+          sh:order: 4.0
+    comments:
+      - This is effectively a `TimeLimitedInfluence` that could migrated
+        upstream.
+
 
   XYZObjectiveInfluence:
     # see XYZAgentRole for rationale on deriving from XYZInfluence rather
