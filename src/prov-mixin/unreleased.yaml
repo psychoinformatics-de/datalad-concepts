@@ -458,6 +458,7 @@ classes:
       - roles
     slot_usage:
       object:
+        title: Influencer
         range: Thing
       characterized_by:
         annotations:
