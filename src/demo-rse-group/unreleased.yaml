@@ -1145,10 +1145,14 @@ classes:
       degree.
     slot_usage:
       object:
+        any_of:
+          - range: XYZPerson
+          - range: XYZOrganization
         annotations:
           sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
+        range: XYZAgentRole
         annotations:
           sh:order: 2.0
       started:
