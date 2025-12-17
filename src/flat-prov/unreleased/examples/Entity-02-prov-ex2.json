@@ -20,12 +20,12 @@
       "attributes": [
         {
           "predicate": "dcterms:title",
-          "schema_type": "dlthings:AttributeSpecification",
+          "schema_type": "dlflat:FlatAttributeSpecification",
           "value": "More crime happens in cities"
         },
         {
           "predicate": "rdfs:value",
-          "schema_type": "dlthings:AttributeSpecification",
+          "schema_type": "dlflat:FlatAttributeSpecification",
           "value": "I was curious..."
         }
       ],
@@ -63,7 +63,7 @@
   "attributes": [
     {
       "predicate": "rdfs:value",
-      "schema_type": "dlthings:AttributeSpecification",
+      "schema_type": "dlflat:FlatAttributeSpecification",
       "value": "I was curious..."
     }
   ],

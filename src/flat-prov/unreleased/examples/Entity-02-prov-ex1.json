@@ -6,12 +6,12 @@
       "attributes": [
         {
           "predicate": "foaf:givenName",
-          "schema_type": "dlthings:AttributeSpecification",
+          "schema_type": "dlflat:FlatAttributeSpecification",
           "value": "Derek"
         },
         {
           "predicate": "foaf:mbox",
-          "schema_type": "dlthings:AttributeSpecification",
+          "schema_type": "dlflat:FlatAttributeSpecification",
           "value": "<mailto:derek@example.org>"
         }
       ],
@@ -29,7 +29,7 @@
       "attributes": [
         {
           "predicate": "foaf:name",
-          "schema_type": "dlthings:AttributeSpecification",
+          "schema_type": "dlflat:FlatAttributeSpecification",
           "value": "National Newspaper, Inc."
         }
       ],
