@@ -133,6 +133,7 @@ emit_prefixes:
   - rrid
   - schema
   - shaclvue
+  - sio
   - xyzrsens
 
 imports:
@@ -974,6 +975,19 @@ classes:
         range: XYZBibliographicType
         annotations:
           sh:order: 2.0
+
+  XYZQuality:
+    is_a: FlatThing
+    title: Quality
+    description: >-
+      A quality is an attribute that is intrinsically associated with its
+      bearer (or its parts), but whose presence/absence and observed/measured
+      value may vary.
+    slot_usage:
+      description:
+        annotations:
+          sh:order: 1.0
+          dash:singleLine: false
 
   XYZRule:
     is_a: FlatThing
