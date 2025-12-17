@@ -90,6 +90,7 @@ slots:
 classes:
   FlatThing:
     is_a: Thing
+    title: Thing
     description: >-
       `Thing` variant that provides a basis for the annotation and curation of more specialized
       concepts.
@@ -114,6 +115,7 @@ classes:
 
   FlatStatement:
     is_a: Statement
+    title: Statement
     description: >-
       An RDF statement that links a `predicate` (a `Property`) with an
       `object` (a `Thing`) to the subject to form a triple.
@@ -127,6 +129,7 @@ classes:
 
   FlatProperty:
     is_a: Property
+    title: Property
     description: >-
       An RDF property, a `Thing` used to define a `predicate`, for example
       in a `Statement`.
@@ -137,6 +140,7 @@ classes:
 
   FlatAttributeSpecification:
     is_a: AttributeSpecification
+    title: Attribute
     description: >-
       An attribute is conceptually a thing, but it requires no dedicated
       identifier (`pid`). Instead, it is linked to a `Thing` via its
