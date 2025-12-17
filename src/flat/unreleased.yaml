@@ -103,3 +103,45 @@ classes:
       - display_note
       - editorial_note
       - identifiers
+    slot_usage:
+      pid:
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
+      relations:
+        range: FlatThing
+
+  FlatStatement:
+    is_a: Statement
+    description: >-
+      An RDF statement that links a `predicate` (a `Property`) with an
+      `object` (a `Thing`) to the subject to form a triple.
+      A `Statement` is used to qualify a relation to a `Thing` referenced
+      by its identifier. For specifying a qualified relation to an
+      attribute that has no dedicated identifier, use
+      an `AttributeSpecification`.
+    slot_usage:
+      predicate:
+        range: FlatProperty
+
+  FlatProperty:
+    is_a: Property
+    description: >-
+      An RDF property, a `Thing` used to define a `predicate`, for example
+      in a `Statement`.
+    slots:
+      - display_label
+      - display_note
+      - editorial_note
+
+  FlatAttributeSpecification:
+    is_a: AttributeSpecification
+    description: >-
+      An attribute is conceptually a thing, but it requires no dedicated
+      identifier (`pid`). Instead, it is linked to a `Thing` via its
+      `attributes` slot and declares a `predicate` on the nature of
+      the relationship.
+    slot_usage:
+      predicate:
+        range: FlatProperty
