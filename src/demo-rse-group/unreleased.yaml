@@ -1087,6 +1087,10 @@ classes:
         range: XYZAgentRole
         annotations:
           sh:order: 2.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZAssociation:
     is_a: Association
@@ -1115,6 +1119,10 @@ classes:
         range: XYZEnd
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZAttribution:
     is_a: Attribution
@@ -1136,6 +1144,10 @@ classes:
         multivalued: true
         annotations:
           sh:order: 2.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZCommunication:
     is_a: Communication
@@ -1160,6 +1172,10 @@ classes:
           activity.
         annotations:
           sh:order: 3.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZDelegation:
     is_a: Delegation
@@ -1194,6 +1210,10 @@ classes:
         range: XYZEnd
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZDerivation:
     is_a: Derivation
@@ -1217,6 +1237,10 @@ classes:
         range: XYZUsage
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZDocumentExchange:
     is_a: XYZCommunication
@@ -1258,6 +1282,10 @@ classes:
       object:
         annotations:
           sh:order: 3.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZGeneration:
     is_a: Generation
@@ -1279,6 +1307,10 @@ classes:
       at_time:
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZInfluence:
     is_a: Influence
@@ -1306,6 +1338,10 @@ classes:
         range: XYZEnd
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
     comments:
       - This is effectively a `TimeLimitedInfluence` that could migrated
         upstream.
@@ -1355,6 +1391,10 @@ classes:
         range: XYZUsage
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZStart:
     is_a: Start
@@ -1376,6 +1416,10 @@ classes:
       object:
         annotations:
           sh:order: 3.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
 
   XYZUsage:
     is_a: Usage
@@ -1397,3 +1441,7 @@ classes:
       at_time:
         annotations:
           sh:order: 4.0
+      characterized_by:
+        range: FlatStatement
+      attributes:
+        range: FlatAttributeSpecification
