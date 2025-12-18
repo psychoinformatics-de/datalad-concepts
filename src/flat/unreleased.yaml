@@ -109,8 +109,6 @@ classes:
         range: FlatStatement
       attributes:
         range: FlatAttributeSpecification
-      relations:
-        range: FlatThing
       annotations:
         range: FlatAnnotation
 
