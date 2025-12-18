@@ -16,3 +16,5 @@ patch -d $(python -c 'import os; import linkml.generators.graphqlgen as m; print
 patch -d $(python -c 'import os; import linkml.generators.common.ifabsent_processor as m; print(os.path.dirname(m.__file__))') < patches/linkml_generators_common_ifabsent.diff
 # Support explicit type clauses with schema defined types when loading ttl
 patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.path.dirname(m.__file__))') < patches/rdflib_loader_custom_types.diff
+# Order type expressions that are emitted by gen-python correctly
+patch -d $(python -c 'import os; import linkml.generators.pythongen as m; print(os.path.dirname(m.__file__))') < patches/pythongen_type_reference_order.diff
