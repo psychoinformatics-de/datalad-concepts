@@ -327,6 +327,7 @@ classes:
         annotations:
           sh:order: 1.0
       distribution_of:
+        multivalued: true
         annotations:
           sh:order: 2.0
       byte_size:
