@@ -111,6 +111,8 @@ classes:
         range: FlatAttributeSpecification
       relations:
         range: FlatThing
+      annotations:
+        range: FlatAnnotation
 
   FlatStatement:
     is_a: Statement
@@ -148,3 +150,18 @@ classes:
     slot_usage:
       predicate:
         range: FlatProperty
+
+  AnnotationTag:
+    is_a: FlatThing
+    title: Annotation tag
+    description: A tag identifying an annotation.
+
+  FlatAnnotation:
+    is_a: Annotation
+    title: Annotation
+    description: >-
+      A tag/value pair with the semantics of OWL Annotation.
+    slot_usage:
+      annotation_tag:
+        key: true
+        range: AnnotationTag
