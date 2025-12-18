@@ -314,7 +314,7 @@ slots:
       - dcterms:relation
 
   value:
-    slot_uri: rdfs:value
+    slot_uri: rdf:value
     description: >-
       Value that is a direct representation of a thing.
     relational_role: OBJECT
