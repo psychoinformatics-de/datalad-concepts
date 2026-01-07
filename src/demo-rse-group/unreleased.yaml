@@ -29,6 +29,7 @@ license: MIT
 
 prefixes:
   ADMS: http://www.w3.org/ns/adms#
+  CiTO: http://purl.org/spar/cito/
   ISSN: http://identifiers.org/issn/
   ODRL: http://www.w3.org/ns/odrl/2/
   bibo: http://purl.org/ontology/bibo/
