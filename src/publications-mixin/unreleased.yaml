@@ -35,6 +35,7 @@ prefixes:
 default_prefix: dlpublicationsmx
 
 emit_prefixes:
+  - dlidentifiers
   - dlpublicationsmx
   - dlthings
   - dltypes
@@ -45,6 +46,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:things/v1
+  - dlschemas:identifiers/unreleased
 
 slots:
   doi:
@@ -54,7 +56,7 @@ slots:
       https://doi.org).  The value must be just the DOI without the URL
       project. So just `10.1038/s41597-022-01163-2` and not
       `https://doi.org/10.1038/s41597-022-01163-2`.
-    range: string
+    range: DOI
 
   issn:
     title: ISSN
