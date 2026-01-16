@@ -165,7 +165,6 @@ slots:
         range `Thing`. The concrete, initial use case was PROV's
         Communication.
 
-
 classes:
   # Classes here are grouped by their nature:
   # - Things with a provenance interface
@@ -606,6 +605,8 @@ classes:
     title: Person
     description: >-
       Person agents are people, alive, dead, or fictional.
+    slots:
+      - nickname
     slot_usage:
       family_name:
         annotations:
@@ -622,6 +623,9 @@ classes:
       honorific_name_suffix:
         annotations:
           sh:order: 5.0
+      nickname:
+        annotations:
+          sh:order: 5.5
       description:
         annotations:
           sh:order: 6.0

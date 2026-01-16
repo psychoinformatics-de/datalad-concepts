@@ -88,6 +88,16 @@ slots:
       - foaf:familyName
       - vcard:given-name
 
+  nickname:
+    is_a: name
+    title: Nickname
+    description: >-
+      A short informal, invented given name for a person or thing used instead of the
+      actual name of the person or thing.
+    range: string
+    exact_mappings:
+      - vcard:nickname
+
   additional_names:
     is_a: name
     title: Additional names
