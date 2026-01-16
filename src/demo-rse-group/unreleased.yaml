@@ -165,6 +165,19 @@ slots:
         range `Thing`. The concrete, initial use case was PROV's
         Communication.
 
+  depiction:
+    title: Depiction
+    description: >-
+      An image, or photograph information, or other visualization that
+      annotates some aspect of the subject (e.g., a digital image of a
+      portrait of a person).
+    range: Thing
+    exact_mappings:
+      - foaf:depiction
+    narrow_mappings:
+      - vcard:photo
+
+
 classes:
   # Classes here are grouped by their nature:
   # - Things with a provenance interface
@@ -607,6 +620,7 @@ classes:
       Person agents are people, alive, dead, or fictional.
     slots:
       - nickname
+      - depiction
     slot_usage:
       family_name:
         annotations:
@@ -630,6 +644,11 @@ classes:
         annotations:
           sh:order: 6.0
           dash:singleLine: false
+      depiction:
+        title: Photo
+        annotations:
+          sh:order: 6.5
+          shaclvue:gitAnnexUpload: true
       delegated_by:
         range: XYZDelegation
         multivalued: true
