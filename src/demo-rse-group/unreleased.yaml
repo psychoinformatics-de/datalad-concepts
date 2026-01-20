@@ -164,7 +164,6 @@ slots:
       - dcat:distribution
     broad_mappings:
       - sio:SIO_000341
-    inverse: distribution_of
 
   entity:
     description: >-
