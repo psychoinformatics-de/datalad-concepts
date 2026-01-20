@@ -462,6 +462,7 @@ classes:
       distributions:
         annotations:
           sh:order: 10.0
+          shaclvue:gitAnnexUpload: true
 
   XYZGrant:
     is_a: Grant
