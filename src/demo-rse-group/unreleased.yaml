@@ -154,6 +154,18 @@ slots:
       if it is to be considered for acceptance or funding.
     range: W3CISO8601
 
+  distributions:
+    title: Distributions
+    description: >-
+      Available distributions of the document
+    range: XYZDistribution
+    multivalued: true
+    exact_mappings:
+      - dcat:distribution
+    broad_mappings:
+      - sio:SIO_000341
+    inverse: distribution_of
+
   entity:
     description: >-
       An entity is a physical, digital, conceptual, or other kind of
@@ -390,6 +402,7 @@ classes:
       A conceptual entity representing things which a, broadly conceived, "documents. This includes non-textual things like images. A conceputal document is to be distinguished from its physical, or electronic distributions.
     slots:
       - rules
+      - distributions
     slot_usage:
       kind:
         title: Document type
@@ -446,6 +459,9 @@ classes:
       identifiers:
         annotations:
           sh:order: 9.0
+      distributions:
+        annotations:
+          sh:order: 10.0
 
   XYZGrant:
     is_a: Grant
