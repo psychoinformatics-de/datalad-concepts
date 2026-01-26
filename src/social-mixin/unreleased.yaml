@@ -103,7 +103,7 @@ slots:
     title: Additional names
     description: >-
       Additional name(s) associated with the subject, such as one or more
-      middle names, or a nick name.
+      middle names.
     range: string
     exact_mappings:
       - vcard:additional_name
