@@ -49,8 +49,6 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 	$(MAKE) imports-local
 	gen-doc \
 		--hierarchical-class-view \
-		--include-top-level-diagram \
-		--diagram-type er_diagram \
 		--metadata \
 		--format markdown \
 		--example-directory src/$*/examples/ \
