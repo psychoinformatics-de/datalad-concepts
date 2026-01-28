@@ -221,12 +221,11 @@ slots:
     range: Thing
 
   description:
-    slot_uri: dlthings:description
+    slot_uri: dcterms:description
     title: Description
     description: A free-text account of the subject.
     range: string
-    exact_mappings:
-      - dcterms:description
+    close_mappings:
       - rdfs:comment
     broad_mappings:
       - obo:IAO_0000300
