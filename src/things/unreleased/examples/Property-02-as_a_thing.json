@@ -1,5 +1,6 @@
 {
   "pid": "ex:modified",
+  "description": "Date on which the resource was changed.",
   "attributes": [
     {
       "predicate": "ex:title",
@@ -7,7 +8,6 @@
       "value": "modified"
     }
   ],
-  "description": "Date on which the resource was changed.",
   "schema_type": "dlthings:Property",
   "@type": "Property"
 }

@@ -1,7 +1,7 @@
 {
   "predicate": "ex:identifier",
   "exact_mappings": [
-    "ADMS:Identifier"
+    "obo:IAO_0020000"
   ],
   "attributes": [
     {
@@ -10,7 +10,7 @@
       "value": "5008462-8"
     },
     {
-      "predicate": "ADMS:schemaAgency",
+      "predicate": "dcterms:creator",
       "schema_type": "dlthings:AttributeSpecification",
       "value": "https://d-nb.info"
     }

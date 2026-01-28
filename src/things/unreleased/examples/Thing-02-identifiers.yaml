@@ -11,7 +11,7 @@ attributes:
   - predicate: ex:identifier
     value: 02nv7yv05
     attributes:
-      - predicate: ADMS:schemaAgency
+      - predicate: dcterms:creator
         value: https://ror.org
         range: uri
   # German National Library
@@ -19,11 +19,11 @@ attributes:
   #  a proper identifier with a `notation`)
   - predicate: ex:identifier
     exact_mappings:
-      - ADMS:Identifier
+      - obo:IAO_0020000
     attributes:
       - predicate: skos:notation
         value: 5008462-8
-      - predicate: ADMS:schemaAgency
+      - predicate: dcterms:creator
         value: https://d-nb.info
 characterized_by:
   # Use `sameAs` to point to other sources talking about the same thing

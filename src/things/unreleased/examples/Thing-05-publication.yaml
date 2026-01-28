@@ -20,11 +20,11 @@ attributes:
   # DOI
   - predicate: ex:identifier
     exact_mappings:
-      - ADMS:Identifier
+      - obo:IAO_0020000
     attributes:
       - predicate: skos:notation
         value: 10.1038/s41597-022-01163-2
-      - predicate: ADMS:schemaAgency
+      - predicate: dcterms:creator
         value: https://doi.org
   # bibliographic information
   - predicate: ex:bibliographicCitation
