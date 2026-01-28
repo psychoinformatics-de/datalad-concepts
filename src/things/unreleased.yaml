@@ -81,17 +81,6 @@ prefixes:
   # foundational
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
-  # Example convenience namespace that makes it possible to not think about
-  # a dedicated distribution/dataset/dataset-version-unqiue namespace.
-  # The prefix can be materialized ala
-  # linkml-convert -s ... -t rdf -P exthisns=http://example.org/ --infer ...
-  #
-  # The following prefix is an example, a use case specific derived
-  # schema needs to define its own, differently named and defined namespace(s).
-  #
-  # A custom umbrella namespace (e.g. for a project, a consortium, a domain)
-  # to keep vocabulary and entities local to this scope
-  exthisns: https://example.org/ns/
 
 default_prefix: dlthings
 
