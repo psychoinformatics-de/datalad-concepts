@@ -1,0 +1,10 @@
+schema: src/things/unreleased.yaml
+target_class: Identifier
+data_sources:
+  - src/things/unreleased/examples/Identifier-01-minimal.yaml
+  - src/things/unreleased/examples/Identifier-02-full.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
