@@ -34,9 +34,9 @@ description: |
   it and built targeted derivatives of `Thing` and other classes provided here.
   See the [PROV schema](/s/prov) for an example that is built on this schema.
 
-  This schema also incorporates the schema(s)
-
-  - [`types`](https://concepts.datalad.org/s/types/unreleased)
+  This schema also incorporates a few fundamental type definitions, such as
+  [`HexBinary`](HexBinary) (for checksum-like identifiers), and
+  [`NonNegativeInteger`](NonNegativeInteger) for counts.
 
   The schema definition is available as
 
@@ -60,7 +60,6 @@ prefixes:
   # self-reference
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/unreleased/
-  dltypes: https://concepts.datalad.org/s/types/unreleased/
   # here is a large, versatile source of controlled vocabularies/codes
   eunal: http://publications.europa.eu/resource/authority/
   ex: http://example.org/
@@ -89,15 +88,53 @@ default_prefix: dlthings
 # the target models.
 emit_prefixes:
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
   - xsd
 
 imports:
-  - dlschemas:types/unreleased
   - linkml:types
+
+types:
+  EmailAddress:
+    uri: dlthings:EmailAddress
+    base: str
+    typeof: string
+    description: RFC 5322 compliant email address
+    pattern: '(?:[A-Za-z0-9!#$%&''*+/=?^_`{|}~-]+(?:\.[A-Za-z0-9!#$%&''*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?\.)+[A-Za-z0-9](?:[A-Za-z0-9-]*[A-Za-z0-9])?|\[(?:(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9]))\.){3}(?:(2(5[0-5]|[0-4][0-9])|1[0-9][0-9]|[1-9]?[0-9])|[A-Za-z0-9-]*[A-Za-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])'
+    notes:
+      - The validation regex is taken from https://stackoverflow.com/a/201378
+      - The regex is single-quoted for YAML encoding, hence all inner "'" have been doubled
+
+  HexBinary:
+    uri: xsd:hexBinary
+    base: str
+    typeof: string
+    pattern: "^[a-fA-F0-9]+$"
+    description: >-
+      hex-encoded binary data.
+
+  NodeUriOrCurie:
+    typeof: uriorcurie
+    description: >-
+      A type referencing an graph node. This is like `uriorcurie`, but in
+      an RDF export leads to the desirable `rdf.type` declaration, rather
+      then an `rdf.literal` of the corresponding URI.
+    base: str
+    uri: rdfs:Resource
+
+  NonNegativeInteger:
+    uri: xsd:nonNegativeInteger
+    base: int
+    typeof: integer
+    description: An integer
+    notes:
+      - >-
+        Integer with minimum (inclusive) value of zero, i.e. the standard
+        mathematical concept of the non-negative integers.
+    broad_mappings:
+      - schema:Integer
 
 slots:
   broad_mappings:
@@ -295,6 +332,21 @@ slots:
     exact_mappings:
       - dcat:relation
       - dcterms:relation
+
+  schema_type:
+    slot_uri: rdf:type
+    designates_type: true
+    description: >-
+      State that the subject is an instance of a particular schema class.
+      Typically, no explicit value needs to be assigned to this slot,
+      because it matches the class type of a particular record.
+      However, this slots can be used as a type designator of a schema
+      element for validation and schema structure handling purposes.
+      This is used to indicate specialized schema classes for properties
+      that accept a hierarchy of classes as their range.
+    range: NodeUriOrCurie
+    exact_mappings:
+      - dcterms:type
 
   value:
     slot_uri: rdf:value
