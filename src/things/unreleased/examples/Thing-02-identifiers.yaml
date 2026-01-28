@@ -6,25 +6,15 @@
 # aggregation for individual things. Arbitrary other identifiers
 # can be recorded in addition.
 pid: https://ror.org/02nv7yv05
-attributes:
+identifiers:
   # Research Organization Registry
-  - predicate: ex:identifier
-    value: 02nv7yv05
-    attributes:
-      - predicate: dcterms:creator
-        value: https://ror.org
-        range: uri
+  - notation: 02nv7yv05
+    creator: https://ror.org
   # German National Library
   # (here not using the direct value specification, but defining
   #  a proper identifier with a `notation`)
-  - predicate: ex:identifier
-    exact_mappings:
-      - obo:IAO_0020000
-    attributes:
-      - predicate: skos:notation
-        value: 5008462-8
-      - predicate: dcterms:creator
-        value: https://d-nb.info
+  - notation: 5008462-8
+    creator: https://d-nb.info
 characterized_by:
   # Use `sameAs` to point to other sources talking about the same thing
   - object: https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich

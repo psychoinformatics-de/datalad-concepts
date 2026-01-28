@@ -1,37 +1,15 @@
 {
   "pid": "https://ror.org/02nv7yv05",
-  "attributes": [
+  "identifiers": [
     {
-      "predicate": "ex:identifier",
-      "attributes": [
-        {
-          "predicate": "dcterms:creator",
-          "schema_type": "dlthings:AttributeSpecification",
-          "range": "uri",
-          "value": "https://ror.org"
-        }
-      ],
-      "schema_type": "dlthings:AttributeSpecification",
-      "value": "02nv7yv05"
+      "notation": "02nv7yv05",
+      "creator": "https://ror.org",
+      "schema_type": "dlthings:Identifier"
     },
     {
-      "predicate": "ex:identifier",
-      "exact_mappings": [
-        "obo:IAO_0020000"
-      ],
-      "attributes": [
-        {
-          "predicate": "skos:notation",
-          "schema_type": "dlthings:AttributeSpecification",
-          "value": "5008462-8"
-        },
-        {
-          "predicate": "dcterms:creator",
-          "schema_type": "dlthings:AttributeSpecification",
-          "value": "https://d-nb.info"
-        }
-      ],
-      "schema_type": "dlthings:AttributeSpecification"
+      "notation": "5008462-8",
+      "creator": "https://d-nb.info",
+      "schema_type": "dlthings:Identifier"
     }
   ],
   "characterized_by": [
