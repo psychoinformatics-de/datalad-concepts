@@ -137,6 +137,49 @@ types:
       - schema:Integer
 
 slots:
+  annotations:
+    slot_uri: dlthings:annotations
+    title: Annotations
+    description: >-
+      A record of properties of the metadata record on a subject, a collection
+      of tag/text tuples with the semantics of OWL Annotation.
+    range: Annotation
+    inlined: true
+    multivalued: true
+    exact_mappings:
+      - obo:NCIT_C44272
+
+  annotation_tag:
+    description: A tag identifying an annotation.
+    range: Thing
+
+  annotation_value:
+    description: The actual annotation.
+    range: string
+
+  attributes:
+    slot_uri: dlthings:attributes
+    title: Attributes
+    description: >-
+      Declares a relation that associates a `Thing` (or another attribute)
+      with an attribute, where an attribute is an intrinsic characteristic,
+      such as a quality, capability, disposition, function, or is an
+      externally derived attribute determined from some descriptor
+      (e.g. a quantity, position, label/identifier).
+      Technically, this declaration is done via an `AttributeSpecification`
+      that combines a `predicate` with a value declaration and the
+      attribute-related slots of a `Thing`. Importantly, such attributes
+      are declared inline, because they do not have a unique identifier.
+      If an identifier is available, a `Thing` declaration (see `relation`),
+      and a qualification of that relationship via a `Statement` (see
+      `characterized_by`) should be preferred.
+    range: AttributeSpecification
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+    exact_mappings:
+      - sio:SIO_000008
+
   broad_mappings:
     slot_uri: skos:broadMatch
     is_a: mappings
@@ -146,6 +189,20 @@ slots:
       broader meaning.
     range: uriorcurie
     multivalued: true
+
+  characterized_by:
+    slot_uri: dlthings:characterized_by
+    title: Is characterized by
+    description: >-
+      Qualifies relationships between a subject `Thing` and an object `Thing`
+      with a `Statement` declaring a `predicate` on the nature of the
+      relationship.
+    range: Statement
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+    exact_mappings:
+      - obo:RO_0000053
 
   close_mappings:
     slot_uri: skos:closeMatch
@@ -180,54 +237,6 @@ slots:
     range: uriorcurie
     multivalued: true
 
-  attributes:
-    slot_uri: dlthings:attributes
-    title: Attributes
-    description: >-
-      Declares a relation that associates a `Thing` (or another attribute)
-      with an attribute, where an attribute is an intrinsic characteristic,
-      such as a quality, capability, disposition, function, or is an
-      externally derived attribute determined from some descriptor
-      (e.g. a quantity, position, label/identifier).
-      Technically, this declaration is done via an `AttributeSpecification`
-      that combines a `predicate` with a value declaration and the
-      attribute-related slots of a `Thing`. Importantly, such attributes
-      are declared inline, because they do not have a unique identifier.
-      If an identifier is available, a `Thing` declaration (see `relation`),
-      and a qualification of that relationship via a `Statement` (see
-      `characterized_by`) should be preferred.
-    range: AttributeSpecification
-    inlined: true
-    inlined_as_list: true
-    multivalued: true
-    exact_mappings:
-      - sio:SIO_000008
-
-  pid:
-    slot_uri: dlthings:pid
-    identifier: true
-    title: Persistent identifier
-    description: >-
-      Persistent and globally unique identifier of a `Thing`.
-    range: uriorcurie
-    exact_mappings:
-      - dcterms:identifier
-      - schema:identifier
-
-  characterized_by:
-    slot_uri: dlthings:characterized_by
-    title: Is characterized by
-    description: >-
-      Qualifies relationships between a subject `Thing` and an object `Thing`
-      with a `Statement` declaring a `predicate` on the nature of the
-      relationship.
-    range: Statement
-    inlined: true
-    inlined_as_list: true
-    multivalued: true
-    exact_mappings:
-      - obo:RO_0000053
-
   mappings:
     slot_uri: skos:mappingRelation
     description: >-
@@ -237,26 +246,6 @@ slots:
       related but not equivalent from a strict ontological perspective.
     range: uriorcurie
     multivalued: true
-
-  annotations:
-    slot_uri: dlthings:annotations
-    title: Annotations
-    description: >-
-      A record of properties of the metadata record on a subject, a collection
-      of tag/text tuples with the semantics of OWL Annotation.
-    range: Annotation
-    inlined: true
-    multivalued: true
-    exact_mappings:
-      - obo:NCIT_C44272
-
-  annotation_tag:
-    description: A tag identifying an annotation.
-    range: Thing
-
-  annotation_value:
-    description: The actual annotation.
-    range: string
 
   narrow_mappings:
     slot_uri: skos:narrowMatch
@@ -283,6 +272,17 @@ slots:
       - We do not declare a range here to be able to tighten the range in
         subclasses of class that need a particular range. This appears to
         be working around a linkml limitation.
+
+  pid:
+    slot_uri: dlthings:pid
+    identifier: true
+    title: Persistent identifier
+    description: >-
+      Persistent and globally unique identifier of a `Thing`.
+    range: uriorcurie
+    exact_mappings:
+      - dcterms:identifier
+      - schema:identifier
 
   predicate:
     slot_uri: rdf:predicate
