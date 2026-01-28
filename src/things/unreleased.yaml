@@ -227,7 +227,6 @@ slots:
     exact_mappings:
       - obo:NCIT_C44272
 
-
   annotation_tag:
     description: A tag identifying an annotation.
     range: Thing
@@ -422,43 +421,6 @@ classes:
     slots:
       - pid
       - relations
-    slot_usage:
-      pid:
-        annotations:
-          sh:order: 1
-      characterized_by:
-        annotations:
-          sh:order: 2
-      attributes:
-        annotations:
-          sh:order: 3
-      description:
-        annotations:
-          sh:order: 4
-          # reannotate to work around linkml issue
-          # https://hub.psychoinformatics.de/inm7/annotate.inm7.de-data/issues/2#issuecomment-4113
-          dash:singleLine: false
-      annotations:
-        annotations:
-          sh:order: 5
-      relations:
-        annotations:
-          sh:order: 6
-      exact_mappings:
-        annotations:
-          sh:order: 7
-      close_mappings:
-        annotations:
-          sh:order: 8
-      broad_mappings:
-        annotations:
-          sh:order: 9
-      narrow_mappings:
-        annotations:
-          sh:order: 10
-      related_mappings:
-        annotations:
-          sh:order: 11
     exact_mappings:
       - schema:Thing
 
