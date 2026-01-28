@@ -214,6 +214,12 @@ slots:
     range: uriorcurie
     multivalued: true
 
+  creator:
+    slot_uri: dcterms:creator
+    description: >-
+      An agent responsible for making an entity.
+    range: Thing
+
   description:
     slot_uri: dlthings:description
     title: Description
@@ -237,6 +243,16 @@ slots:
     range: uriorcurie
     multivalued: true
 
+  identifiers:
+    slot_uri: dcterms:identifier
+    description: An unambiguous reference to the subject within a given context.
+    exact_mappings:
+      - schema:identifier
+    range: Identifier
+    inlined: true
+    inlined_as_list: true
+    multivalued: true
+
   mappings:
     slot_uri: skos:mappingRelation
     description: >-
@@ -256,6 +272,13 @@ slots:
       narrower meaning.
     range: uriorcurie
     multivalued: true
+
+  notation:
+    slot_uri: skos:notation
+    description: >-
+      String of characters such as "T58:5" or "30:4833" used to uniquely
+      identify a concept within the scope of a given concept scheme.
+    range: string
 
   object:
     slot_uri: rdf:object
@@ -410,6 +433,22 @@ classes:
       - sio:SIO_000614
     close_mappings:
       - dlthings:Thing
+
+  Identifier:
+    class_uri: dlthings:Identifier
+    description: >-
+      An identifier is a label that uniquely identifies an item in a
+      particular context. Some identifiers are globally unique. All
+      identifiers are unique within their individual scope.
+    slots:
+      - creator
+      - notation
+      - schema_type
+    slot_usage:
+      notation:
+        required: true
+    exact_mappings:
+      - obo:IAO_0020000
 
   Property:
     class_uri: dlthings:Property
