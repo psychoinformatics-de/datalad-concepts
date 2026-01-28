@@ -151,7 +151,7 @@ slots:
 
   annotation_tag:
     description: A tag identifying an annotation.
-    range: Thing
+    range: AnnotationTag
 
   annotation_value:
     description: The actual annotation.
@@ -428,7 +428,11 @@ classes:
       - broad_mappings
       - close_mappings
       - description
+      - display_label
+      - display_note
+      - editorial_notes
       - exact_mappings
+      - identifiers
       - attributes
       - characterized_by
       - narrow_mappings
@@ -563,3 +567,8 @@ classes:
     slot_usage:
       annotation_tag:
         key: true
+
+  AnnotationTag:
+    is_a: Thing
+    title: Annotation tag
+    description: A tag identifying an annotation.
