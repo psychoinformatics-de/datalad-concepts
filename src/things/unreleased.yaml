@@ -49,10 +49,10 @@ description: |
 license: MIT
 
 prefixes:
-  # SHACL annotations
-  dash: http://datashapes.org/dash#
   # primarily for the examples, but also a foundational vocab
   bibo: http://purl.org/ontology/bibo/
+  # SHACL annotations
+  dash: http://datashapes.org/dash#
   # here for alignment of `relations`
   dcat: http://www.w3.org/ns/dcat#
   # foundational
@@ -446,6 +446,8 @@ classes:
     slot_usage:
       notation:
         required: true
+        annotations:
+          dash:propertyRole: dash:KeyInfoRole
     exact_mappings:
       - obo:IAO_0020000
 
