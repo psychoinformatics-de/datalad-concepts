@@ -216,18 +216,6 @@ classes:
     slot_usage:
       kind:
         range: XYZCompetitionType
-        annotations:
-          sh:order: 1.0
-      title:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
-      application_deadline:
-        annotations:
-          sh:order: 4.0
       about:
         recommended: true
         title: Topic(s)
@@ -235,37 +223,24 @@ classes:
           Topics related to this competition.
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 5.0
       associated_with:
         range: XYZAssociation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 6.0
       informed_by:
         range: XYZCommunication
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 7.0
       ended:
         title: End
         description: >-
           The conclusion of the competition, typically the point of decision-making, or
           announcement of the winners.
         range: XYZEnd
-        annotations:
-          sh:order: 8.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 9.0
-      identifiers:
-        annotations:
-          sh:order: 10.0
     narrow_mappings:
       - FRAPO:FundingProgramme
 
@@ -282,58 +257,31 @@ classes:
     slots:
       - rules
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
       part_of:
         range: XYZDataset
         multivalued: true
-        annotations:
-          sh:order: 3.0
       rules:
         range: XYZRule
         multivalued: true
-        annotations:
-          sh:order: 4.0
-      description:
-        annotations:
-          sh:order: 5.0
-          dash:singleLine: false
       attributed_to:
         title: Contributors
         multivalued: true
         inlined_as_list: true
         range: XYZAttribution
-        annotations:
-          sh:order: 6.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 7.0
       derived_from:
         range: XYZDerivation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 8.0
       revision_of:
         range: XYZRevision
-        annotations:
-          sh:order: 9.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 10.0
-      identifiers:
-        annotations:
-          sh:order: 11.0
 
   XYZDistribution:
     is_a: Distribution
@@ -348,49 +296,22 @@ classes:
     slot_usage:
       kind:
         range: XYZDataType
-        annotations:
-          sh:order: 1.0
       distribution_of:
         multivalued: true
-        annotations:
-          sh:order: 2.0
-      byte_size:
-        annotations:
-          sh:order: 3.0
-      format:
-        annotations:
-          sh:order: 4.0
-      media_type:
-        annotations:
-          sh:order: 5.0
-      checksums:
-        annotations:
-          sh:order: 6.0
       rules:
         range: XYZRule
         multivalued: true
-        annotations:
-          sh:order: 7.0
       conforms_to:
         range: XYZConvention
         multivalued: true
-        annotations:
-          sh:order: 8.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 9.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 10.0
-      identifiers:
-        annotations:
-          sh:order: 11.0
 
   XYZDocument:
     is_a: Document
@@ -408,60 +329,30 @@ classes:
         description: >-
           The type of this document, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
-      title:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       part_of:
         multivalued: true
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
         multivalued: true
-        annotations:
-          sh:order: 5.0
       attributed_to:
         title: Contributors
         multivalued: true
         inlined_as_list: true
         range: XYZAttribution
-        annotations:
-          sh:order: 4.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 5.0
       derived_from:
         range: XYZDerivation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 6.0
       revision_of:
         range: XYZRevision
-        annotations:
-          sh:order: 7.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 8.0
-      identifiers:
-        annotations:
-          sh:order: 9.0
-      distributions:
-        annotations:
-          sh:order: 10.0
-          shaclvue:gitAnnexUpload: true
 
   XYZGrant:
     is_a: Grant
@@ -473,48 +364,21 @@ classes:
     slots:
       - rules
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       part_of:
         range: XYZGrant
         multivalued: true
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 5.0
-      howto_acknowledge:
-        annotations:
-          sh:order: 6.0
-          dash:singleLine: false
       attributed_to:
         multivalued: true
         inlined_as_list: true
         range: XYZAttribution
-        annotations:
-          sh:order: 7.0
       revision_of:
         range: XYZRevision
-        annotations:
-          sh:order: 8.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 9.0
-      identifiers:
-        annotations:
-          sh:order: 10.0
 
   XYZInstrument:
     is_a: Instrument
@@ -532,60 +396,32 @@ classes:
         description: >-
           The type of this instrument, e.g. microscope, software, chainsaw
         range: XYZInstrumentType
-        annotations:
-          sh:order: 1.0
-      name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       part_of:
         range: XYZInstrument
         multivalued: true
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
         multivalued: true
-        annotations:
-          sh:order: 5.0
       attributed_to:
         range: XYZAttribution
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 6.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 7.0
       revision_of:
         range: XYZRevision
-        annotations:
-          sh:order: 8.0
       alternate_of:
         range: FlatThing
         multivalued: true
-        annotations:
-          sh:order: 9.0
       specialization_of:
         range: FlatThing
         multivalued: true
-        annotations:
-          sh:order: 10.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 11.0
-      identifiers:
-        annotations:
-          sh:order: 12.0
 
   XYZOrganization:
     is_a: Organization
@@ -595,37 +431,19 @@ classes:
     description: >-
       A social or legal institution such as a company, a society, or a university.
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
       part_of:
         description: >-
           An organization that the subject is part of.
         range: XYZOrganization
         multivalued: true
-        annotations:
-          sh:order: 4.0
       delegated_by:
         range: XYZDelegation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 5.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 6.0
-      identifiers:
-        annotations:
-          sh:order: 7.0
 
   XYZPerson:
     is_a: Person
@@ -638,48 +456,16 @@ classes:
       - nickname
       - depiction
     slot_usage:
-      family_name:
-        annotations:
-          sh:order: 1.0
-      given_name:
-        annotations:
-          sh:order: 2.0
-      additional_names:
-        annotations:
-          sh:order: 3.0
-      honorific_name_prefix:
-        annotations:
-          sh:order: 4.0
-      honorific_name_suffix:
-        annotations:
-          sh:order: 5.0
-      nickname:
-        annotations:
-          sh:order: 5.5
-      description:
-        annotations:
-          sh:order: 6.0
-          dash:singleLine: false
       depiction:
         title: Photo
-        annotations:
-          sh:order: 6.5
-          shaclvue:gitAnnexUpload: true
       delegated_by:
         range: XYZDelegation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 7.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 8.0
-      identifiers:
-        annotations:
-          sh:order: 9.0
 
   XYZProject:
     is_a: Project
@@ -691,58 +477,31 @@ classes:
     slots:
       - part_of
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       part_of:
         range: XYZProject
         multivalued: true
-        annotations:
-          sh:order: 4.0
       associated_with:
         range: XYZAssociation
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 5.0
       used:
         range: XYZUsage
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 6.0
       informed_by:
         range: XYZCommunication
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 7.0
       started:
         title: Start
         range: XYZStart
-        annotations:
-          sh:order: 8.0
       ended:
         title: End
         range: XYZEnd
-        annotations:
-          sh:order: 9.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 10.0
-      identifiers:
-        annotations:
-          sh:order: 11.0
 
   XYZPublication:
     is_a: Publication
@@ -760,30 +519,19 @@ classes:
       doi:
         recommended: true
         title: DOI
-        annotations:
-          sh:order: 1.0
       kind:
         title: Publication type
         description: >-
           The type of this publication, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
       title:
         description: >-
           The full title of the publication.
         required: false
-        annotations:
-          sh:order: 3.0
       description:
         title: Abstract
-        annotations:
-          sh:order: 4.0
-          dash:singleLine: false
       published_at:
         range: XYZPublicationVenue
-        annotations:
-          sh:order: 5.0
       locator:
         title: Location within publication venue
         description: >-
@@ -791,8 +539,6 @@ classes:
           venue it was published at. For a journal article, this would
           be a volume and/or page range. Format according to the conventions
           of the publication venue.
-        annotations:
-          sh:order: 6.0
       about:
         recommended: true
         title: Topic(s)
@@ -800,44 +546,27 @@ classes:
           Topics covered by this publication.
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 7.0
       date_published:
         range: W3CISO8601
         description: >-
           The date when a publication became available at the publication venue.
-        annotations:
-          sh:order: 8.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 9.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         title: Contributors
         range: XYZAttribution
-        annotations:
-          sh:order: 10.0
       generated_by:
         range: XYZGeneration
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 11.0
       revision_of:
         range: XYZRevision
-        annotations:
-          sh:order: 12.0
       influenced_by:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
-        annotations:
-          sh:order: 13.0
-      identifiers:
-        annotations:
-          sh:order: 14.0
 
 
   # Thing that are "classifiers" (i.e., tags) without a provenance interface
@@ -850,14 +579,6 @@ classes:
       in the context of an attribution.
     slots:
       - name
-    slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
     broad_mappings:
       - prov:Role
       - dcat:Role
@@ -867,22 +588,12 @@ classes:
     title: Bibliographic type
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZCompetitionType:
     is_a: FlatThing
     title: Competition type
     description: >-
       Type of a competitions, e.g., call for proposals, horse race, job opening.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZConcept:
     is_a: FlatThing
@@ -902,14 +613,6 @@ classes:
         can be described via `broader_mappings`.
     slots:
       - title
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
 
   XYZConvention:
     is_a: Convention
@@ -917,17 +620,6 @@ classes:
     description: >-
       A set of agreed, stipulated, or generally accepted standards, norms,
       social norms, or criteria, often taking the form of a custom.
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
 
   XYZDataType:
     is_a: FlatThing
@@ -937,15 +629,9 @@ classes:
     slots:
       - version_of
     slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
       version_of:
         title: Variant of
         range: XYZDataType
-        annotations:
-          sh:order: 2.0
     broad_mappings:
       - dcterms:format
     narrow_mappings:
@@ -961,11 +647,6 @@ classes:
     title: Instrument type
     description: >-
       Type of an instrument.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZObjective:
     is_a: FlatThing
@@ -977,22 +658,11 @@ classes:
       - part_of
       - depends_on
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
       part_of:
         range: XYZObjective
         multivalued: true
-        annotations:
-          sh:order: 2.0
       depends_on:
         range: XYZObjective
-        annotations:
-          sh:order: 3.0
-      description:
-        annotations:
-          sh:order: 4.0
-          dash:singleLine: false
 
   XYZPublicationVenue:
     is_a: FlatThing
@@ -1007,15 +677,11 @@ classes:
         description: >-
           The full title of the publication.
         required: false
-        annotations:
-          sh:order: 1.0
       kind:
         title: Publication venue type
         description: >-
           The type of this publication venue, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
 
   XYZQuality:
     is_a: FlatThing
@@ -1024,11 +690,6 @@ classes:
       A quality is an attribute that is intrinsically associated with its
       bearer (or its parts), but whose presence/absence and observed/measured
       value may vary.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZRule:
     is_a: FlatThing
@@ -1042,17 +703,6 @@ classes:
       - title
       # licenses often have them
       - short_name
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
 
   XYZTopic:
     is_a: FlatThing
@@ -1062,15 +712,9 @@ classes:
     slots:
       - part_of
     slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
       part_of:
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 2.0
 
   #
   # Non-Things, such as association classes
@@ -1121,13 +765,10 @@ classes:
           - range: XYZPerson
           - range: XYZOrganization
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
-        annotations:
-          sh:order: 2.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1145,21 +786,14 @@ classes:
           - range: XYZPerson
           - range: XYZOrganization
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
-        annotations:
-          sh:order: 2.0
       started:
         range: XYZStart
-        annotations:
-          sh:order: 3.0
       ended:
         range: XYZEnd
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1178,13 +812,10 @@ classes:
           - range: XYZPerson
           - range: XYZOrganization
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
         range: XYZAgentRole
         multivalued: true
-        annotations:
-          sh:order: 2.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1202,18 +833,11 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
       entity:
         description: >-
           An entity used by the subject, and produced by the associated
           activity.
-        annotations:
-          sh:order: 3.0
-          shaclvue:gitAnnexUpload: true
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1238,20 +862,13 @@ classes:
           - range: XYZPerson
           - range: XYZOrganization
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
         range: XYZAgentRole
-        annotations:
-          sh:order: 2.0
       started:
         range: XYZStart
-        annotations:
-          sh:order: 3.0
       ended:
         range: XYZEnd
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1266,19 +883,11 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
       generated_by:
         range:  XYZGeneration
-        annotations:
-          sh:order: 3.0
       used:
         range: XYZUsage
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1296,14 +905,7 @@ classes:
     slot_usage:
       at_time:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      at_location:
-        annotations:
-          sh:order: 2.0
-      object:
-        annotations:
-          sh:order: 3.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1318,17 +920,7 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
-      at_time:
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1347,19 +939,11 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
       started:
         range: XYZStart
-        annotations:
-          sh:order: 3.0
       ended:
         range: XYZEnd
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1380,15 +964,12 @@ classes:
         title: Objective
         range: XYZObjective
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         # TODO adopt some kind of classification of objective types
         # (longterm goal, deliverable, ambition, contractual obligation, ...)
         # range: XYZObjectiveRole
-        annotations:
-          sh:order: 2.0
 
   XYZRevision :
     is_a: Revision
@@ -1400,19 +981,11 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
       generated_by:
         range:  XYZGeneration
-        annotations:
-          sh:order: 3.0
       used:
         range: XYZUsage
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1430,14 +1003,7 @@ classes:
     slot_usage:
       at_time:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      at_location:
-        annotations:
-          sh:order: 2.0
-      object:
-        annotations:
-          sh:order: 3.0
       characterized_by:
         range: FlatStatement
       attributes:
@@ -1452,17 +1018,7 @@ classes:
     slot_usage:
       object:
         annotations:
-          sh:order: 1.0
           dash:propertyRole: dash:KeyInfoRole
-      roles:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
-      at_time:
-        annotations:
-          sh:order: 4.0
       characterized_by:
         range: FlatStatement
       attributes:
