@@ -232,6 +232,36 @@ slots:
     annotations:
       dash:singleLine: false
 
+  display_label:
+    title: Record display label
+    slot_uri: skos:prefLabel
+    description: >-
+      Label that can be shown when the metadata record is displayed as an item.
+    range: string
+
+  display_note:
+    title: Record display note
+    slot_uri: skos:note
+    description: >-
+      Note that can be shown when the record is displayed as an item.
+      This is typically longer than a label.
+    range: string
+    annotations:
+      dash:singleLine: false
+
+  editorial_notes:
+    slot_uri: skos:editorialNote
+    title: Editorial note
+    description: >-
+      A comment about a metadata record either providing additional information for
+      a record curation, or leaving a comment after curation occurred. This can be
+      used to include information that is deemed relevant, but could not be expressed
+      in the provided fields.
+    range: string
+    multivalued: true
+    annotations:
+      dash:singleLine: false
+
   exact_mappings:
     slot_uri: skos:exactMatch
     is_a: mappings
