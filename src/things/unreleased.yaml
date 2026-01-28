@@ -49,8 +49,6 @@ description: |
 license: MIT
 
 prefixes:
-  # here for alignment of `pid`
-  ADMS: http://www.w3.org/ns/adms#
   # SHACL annotations
   dash: http://datashapes.org/dash#
   # primarily for the examples, but also a foundational vocab
@@ -189,7 +187,6 @@ slots:
     exact_mappings:
       - dcterms:identifier
       - schema:identifier
-      - ADMS:identifier
 
   characterized_by:
     slot_uri: dlthings:characterized_by

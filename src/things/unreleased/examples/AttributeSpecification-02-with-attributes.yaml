@@ -2,9 +2,9 @@
 # own instead.
 predicate: ex:identifier
 exact_mappings:
-  - ADMS:Identifier
+  - obo:IAO_0020000
 attributes:
   - predicate: skos:notation
     value: 5008462-8
-  - predicate: ADMS:schemaAgency
+  - predicate: dcterms:creator
     value: https://d-nb.info
