@@ -217,13 +217,9 @@ classes:
     slot_usage:
       title:
         required: true
-        annotations:
-          sh:order: 1.0
       at_time:
         title: Received on
         range: flexdate
-        annotations:
-          sh:order: 3.0
         close_mappings:
           - schema:dateReceived
 
@@ -244,43 +240,26 @@ classes:
       part_of:
         range: XYZDataset
         multivalued: true
-        annotations:
-          sh:order: 1.0
       same_as:
         title: Qualitative value
         description: >-
           The value of a qualitative assessment.
-        annotations:
-          sh:order: 2.0
       quantitative_value:
         title: Quantitative value
         description: >-
           The value of a quantitative assessment.
-        annotations:
-          sh:order: 3.0
-      quantitative_unit:
-        annotations:
-          sh:order: 4.0
       kind:
         range: XYZDataType
-        annotations:
-          sh:order: 5.0
       generated_by:
         range: XYZGeneration
-        annotations:
-          sh:order: 6.0
       derived_from:
         range: XYZDerivation
         # TODO bring back somehow
         # any_of:
         #  - range: XYZDataItem
         #  - range: XYZSubject
-        annotations:
-          sh:order: 7.0
       attributed_to:
         range: XYZAttribution
-        annotations:
-          sh:order: 8.0
 
   XYZDataType:
     is_a: FlatThing
@@ -290,15 +269,9 @@ classes:
     slots:
       - version_of
     slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
       version_of:
         title: Variant of
         range: XYZDataType
-        annotations:
-          sh:order: 2.0
     broad_mappings:
       - dcterms:format
     narrow_mappings:
@@ -315,17 +288,6 @@ classes:
     description: >-
       A set of agreed, stipulated, or generally accepted standards, norms,
       social norms, or criteria, often taking the form of a custom.
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
 
   XYZDataset:
     is_a: Dataset
@@ -340,55 +302,30 @@ classes:
       - rules
       - same_as
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       about:
         title: Topic(s)
         description: >-
           Topics covered associated with this dataset.
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 4.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         range: Attribution
-        annotations:
-          sh:order: 5.0
-      landing_page:
-        annotations:
-          sh:order: 6.0
       generated_by:
         range: XYZGeneration
         # TODO description explaining that this is about the dataset
         # as a whole (curation, compilation), not about individual
         # items
-        annotations:
-          sh:order: 7.0
       part_of:
         range: XYZDataset
         multivalued: true
-        annotations:
-          sh:order: 8.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 9.0
       same_as:
         range: XYZDataset
         multivalued: true
-        annotations:
-          sh:order: 10.0
 
   XYZDistribution:
     is_a: Distribution
@@ -401,41 +338,19 @@ classes:
     slot_usage:
       kind:
         range: XYZDataType
-        annotations:
-          sh:order: 1.0
       distribution_of:
         # XXX this should be a superfluous reannotation of the `Distribution.distribution_of`
         # slot as being multivalued (which it is in `Distribution`). But with linkml 1.9.4
         # this information is not inherited
         multivalued: true
-        annotations:
-          sh:order: 2.0
-      byte_size:
-        annotations:
-          sh:order: 3.0
-      format:
-        annotations:
-          sh:order: 4.0
-      media_type:
-        annotations:
-          sh:order: 5.0
-      checksums:
-        annotations:
-          sh:order: 6.0
       parts:
         range: XYZNamedDistributionPart
         inlined: true
-        annotations:
-          sh:order: 7.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 8.0
       conforms_to:
         range: XYZConvention
         multivalued: true
-        annotations:
-          sh:order: 9.0
 
   XYZNamedDistributionPart:
     is_a: NamedDistributionPart
@@ -453,11 +368,6 @@ classes:
       Type or role of a part of a distribution.
       For example, a part could be an item in an archive,
       or a file that is an executable.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZDocument:
     is_a: Document
@@ -469,43 +379,27 @@ classes:
       - attributed_to
       - rules
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
       kind:
         title: Document type
         description: >-
           The type of this document, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
       attributed_to:
         title: Contributors
         multivalued: true
         inlined_as_list: true
         inlined: true
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       part_of:
         multivalued: true
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 5.0
       about:
         title: Topic(s)
         description: >-
           Topics covered in this document.
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 6.0
 
   XYZConcept:
     is_a: FlatThing
@@ -525,14 +419,6 @@ classes:
         can be described via `broader_mappings`.
     slots:
       - title
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
 
   XYZGenesis:
     is_a: FlatThing
@@ -547,19 +433,11 @@ classes:
       - target
       - used
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
       kind:
         range: XYZGenesis
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
       conforms_to:
         range: XYZConvention
         multivalued: true
-        annotations:
-          sh:order: 3.0
       used:
         multivalued: true
         any_of:
@@ -567,23 +445,13 @@ classes:
           - range: XYZDistribution
           # think "tool"
           - range: XYZInstrument
-        annotations:
-          sh:order: 4.0
       part_of:
         any_of:
           - range: XYZStudy
           - range: XYZGenesis
         multivalued: true
-        annotations:
-          sh:order: 5.0
       target:
         multivalued: true
-        annotations:
-          sh:order: 6.0
-      description:
-        annotations:
-          sh:order: 7.0
-          dash:singleLine: false
     broad_mappings:
       - obo:BFO_0000015
       - prov:Activity
@@ -605,29 +473,11 @@ classes:
     slots:
       - rules
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      howto_acknowledge:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
-      description:
-        annotations:
-          sh:order: 4.0
-          dash:singleLine: false
       part_of:
         range: XYZGrant
         multivalued: true
-        annotations:
-          sh:order: 5.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 6.0
 
   XYZInstrument:
     is_a: Instrument
@@ -638,30 +488,18 @@ classes:
       - attributed_to
       - rules
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
       kind:
         title: Instrument type
         description: >-
           The type of this instrument, e.g. microscope, software, chainsaw
         range: XYZInstrumentType
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 4.0
 
   XYZOrganization:
     is_a: Organization
@@ -669,22 +507,11 @@ classes:
     description: >-
       A social or legal institution such as a company, a society, or a university.
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
       part_of:
         description: >-
           An organization that the subject is part of.
         range: XYZOrganization
         multivalued: true
-        annotations:
-          sh:order: 4.0
 
   XYZPerson:
     is_a: Person
@@ -694,27 +521,10 @@ classes:
     slots:
       - part_of
     slot_usage:
-      family_name:
-        annotations:
-          sh:order: 1.0
-      given_name:
-        annotations:
-          sh:order: 2.0
-      additional_names:
-        annotations:
-          sh:order: 3.0
-      honorific_name_prefix:
-        annotations:
-          sh:order: 4.0
-      honorific_name_suffix:
-        annotations:
-          sh:order: 5.0
       part_of:
         title: Member of
         range: XYZOrganization
         multivalued: true
-        annotations:
-          sh:order: 6.0
 
   XYZProject:
     is_a: Project
@@ -726,32 +536,16 @@ classes:
       - part_of
       - target
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       part_of:
         range: XYZProject
         multivalued: true
-        annotations:
-          sh:order: 5.0
       target:
         multivalued: true
-        annotations:
-          sh:order: 6.0
 
   XYZPublication:
     is_a: Publication
@@ -768,26 +562,18 @@ classes:
       doi:
         recommended: true
         title: DOI
-        annotations:
-          sh:order: 1.0
       title:
         description: >-
           The full title of the publication.
         required: false
-        annotations:
-          sh:order: 2.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         title: Contributors
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       published_at:
         range: XYZPublicationVenue
-        annotations:
-          sh:order: 5.0
       locator:
         title: Location within publication venue
         description: >-
@@ -795,15 +581,11 @@ classes:
           venue it was published at. For a journal article, this would
           be a volume and/or page range. Format according to the conventions
           of the publication venue.
-        annotations:
-          sh:order: 6.0
       kind:
         title: Publication type
         description: >-
           The type of this publication, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 7.0
       about:
         recommended: true
         title: Topic(s)
@@ -811,14 +593,10 @@ classes:
           Topics covered by this publication.
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 8.0
       date_published:
         range: flexdate
         description: >-
           The date when a publication became available at the publication venue.
-        annotations:
-          sh:order: 9.0
       generated_by:
         recommended: true
         title: Contributing project(s)
@@ -826,8 +604,6 @@ classes:
           Any project that contributed to the outcomes described in the publication.
         range: XYZProject
         multivalued: true
-        annotations:
-          sh:order: 10.0
       derived_from:
         recommended: true
         title: Associated dataset(s)
@@ -835,34 +611,20 @@ classes:
           Any dataset that informed the outcomes described in the publication.
         range: XYZDataset
         multivalued: true
-        annotations:
-          sh:order: 11.0
       rules:
         range: XYZRule
-        annotations:
-          sh:order: 12.0
 
   XYZBibliographicType:
     is_a: FlatThing
     title: Bibliographic type
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZInstrumentType:
     is_a: FlatThing
     title: Instrument type
     description: >-
       Type of an instrument.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZPublicationVenue:
     is_a: FlatThing
@@ -877,15 +639,11 @@ classes:
         description: >-
           The full title of the publication.
         required: false
-        annotations:
-          sh:order: 1.0
       kind:
         title: Publication venue type
         description: >-
           The type of this publication venue, e.g. journal article, book, webpage
         range: XYZBibliographicType
-        annotations:
-          sh:order: 2.0
 
   XYZStudy:
     is_a: Study
@@ -896,51 +654,30 @@ classes:
       - attributed_to
       - target
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
       factors:
         multivalued: true
         range: XYZConcept
-        annotations:
-          sh:order: 2.0
       instruments:
         multivalued: true
         range: XYZInstrument
-        annotations:
-          sh:order: 3.0
       dimensions:
         multivalued: true
         range: XYZConcept
-        annotations:
-          sh:order: 4.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         title: Contributors
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
       part_of:
         range: XYZStudy
         multivalued: true
-        annotations:
-          sh:order: 5.0
       associated_with:
         # TODO this is a bug. Association is with an agent, not an activity
         range: XYZProject
         multivalued: true
-        annotations:
-          sh:order: 6.0
       target:
         multivalued: true
-        annotations:
-          sh:order: 6.0
-      description:
-        annotations:
-          sh:order: 7.0
-          dash:singleLine: false
 
 
   XYZSubject:
@@ -953,38 +690,18 @@ classes:
     slot_usage:
       study:
         range: XYZStudy
-        annotations:
-          sh:order: 1.0
-      name:
-        annotations:
-          sh:order: 2.0
       kind:
         range: XYZSubjectType
-        annotations:
-          sh:order: 3.0
-      description:
-        annotations:
-          sh:order: 4.0
-          dash:singleLine: false
       derived_from:
         range: XYZSubject
-        annotations:
-          sh:order: 5.0
       same_as:
         range: XYZSubject
-        annotations:
-          sh:order: 6.0
 
   XYZSubjectType:
     is_a: FlatThing
     title: Subject type
     description: >-
       Type of a subject.
-    slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
 
   XYZTopic:
     is_a: FlatThing
@@ -994,15 +711,9 @@ classes:
     slots:
       - part_of
     slot_usage:
-      description:
-        annotations:
-          sh:order: 1.0
-          dash:singleLine: false
       part_of:
         range: XYZTopic
         multivalued: true
-        annotations:
-          sh:order: 2.0
 
   XYZRule:
     is_a: FlatThing
@@ -1016,17 +727,6 @@ classes:
       - title
       # licenses often have them
       - short_name
-    slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
-      short_name:
-        annotations:
-          sh:order: 2.0
-      description:
-        annotations:
-          sh:order: 3.0
-          dash:singleLine: false
 
   XYZAgentRole:
     is_a: FlatThing
@@ -1036,14 +736,6 @@ classes:
       in the context of an attribution.
     slots:
       - name
-    slot_usage:
-      name:
-        annotations:
-          sh:order: 1.0
-      description:
-        annotations:
-          sh:order: 2.0
-          dash:singleLine: false
     broad_mappings:
       - prov:Role
       - dcat:Role
@@ -1060,18 +752,11 @@ classes:
       object:
         title: Person
         range: XYZPerson
-        annotations:
-          sh:order: 1.0
       roles:
         description: >-
           Roles a person had with respect to the subject
         range: XYZAgentRole
         multivalued: true
-        annotations:
-          sh:order: 2.0
-      display_label:
-        annotations:
-          sh:order: 3.0
     close_mappings:
       - prov:Attribution
 
@@ -1086,31 +771,18 @@ classes:
       - part_of
       - depends_on
     slot_usage:
-      title:
-        annotations:
-          sh:order: 1.0
       part_of:
         range: XYZProject
         multivalued: true
-        annotations:
-          sh:order: 2.0
       depends_on:
         range: XYZObjective
         multivalued: true
-        annotations:
-          sh:order: 3.0
       attributed_to:
         multivalued: true
         inlined_as_list: true
         inlined: true
         title: Contributors
         range: XYZPersonAttribution
-        annotations:
-          sh:order: 4.0
-      description:
-        annotations:
-          sh:order: 5.0
-          dash:singleLine: false
 
   #
   # PROV association classes
@@ -1122,13 +794,6 @@ classes:
       e is attributed to agent ag, entity e was generated by some unspecified
       activity that in turn was associated to agent ag. Thus, this relation
       is useful when the activity is not known, or irrelevant.
-    slot_usage:
-      object:
-        annotations:
-          sh:order: 1.0
-      roles:
-        annotations:
-          sh:order: 2.0
 
   XYZDerivation:
     is_a: Derivation
@@ -1137,20 +802,10 @@ classes:
       update of an entity resulting in a new one, or the construction
       of a new entity based on a pre-existing entity.
     slot_usage:
-      object:
-        annotations:
-          sh:order: 1.0
-      roles:
-        annotations:
-          sh:order: 2.0
       used:
         range: XYZUsage
-        annotations:
-          sh:order: 3.0
       generated_by:
         range: XYZGeneration
-        annotations:
-          sh:order: 4.0
 
   XYZGeneration:
     is_a: Generation
@@ -1163,23 +818,11 @@ classes:
     slot_usage:
       object:
         range: XYZGenesis
-        annotations:
-          sh:order: 1.0
       roles:
         # TODO ActivityRoles
         #range:
-        annotations:
-          sh:order: 2.0
       used:
         range: XYZUsage
-        annotations:
-          sh:order: 3.0
-      at_location:
-        annotations:
-          sh:order: 4.0
-      at_time:
-        annotations:
-          sh:order: 5.0
     comments:
       - >-
         The `used` slot is added to be able to express something like a sample
@@ -1195,17 +838,6 @@ classes:
       Before usage, the activity had not begun to utilize this entity
       and could not have been affected by the entity.
     slot_usage:
-      object:
-        annotations:
-          sh:order: 1.0
       roles:
         # TODO EntityRoles
         #range:
-        annotations:
-          sh:order: 2.0
-      at_location:
-        annotations:
-          sh:order: 3.0
-      at_time:
-        annotations:
-          sh:order: 4.0
