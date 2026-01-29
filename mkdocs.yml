@@ -35,8 +35,7 @@ nav:
   - Dump-things storage: dump-things-storage-v0.md
   - Usage considerations: usage-considerations.md
 plugins:
-  # some models are too large to even show
-  #- mermaid2
+  - mermaid2
   #- panzoom:
   #    full_screen: True # default False
   - redirects:
