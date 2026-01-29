@@ -1,0 +1,22 @@
+{
+  "pid": "https://example.com/a_file.zip",
+  "schema_type": "dlthings:Distribution",
+  "parts": {
+    "file1.txt": {
+      "locator": "file1.txt",
+      "object": "https://example.com/a_file.txt"
+    },
+    "file2.sh": {
+      "locator": "file2.sh",
+      "object": "https://example.com/b_file.sh",
+      "roles": [
+        "https://example.com/ns/Executable"
+      ]
+    },
+    "dir1/file1.txt": {
+      "locator": "dir1/file1.txt",
+      "object": "https://example.com/a_file.json"
+    }
+  },
+  "@type": "Distribution"
+}

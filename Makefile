@@ -22,6 +22,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/things-properties/unreleased \
 	build/linkml-docs/s/things-spatial/unreleased \
+	build/linkml-docs/s/things-files/unreleased \
 	build/linkml-docs/s/flat/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/temporal-mixin/unreleased \
@@ -92,6 +93,7 @@ check-models: \
 	checkmodel/things/v1 \
 	checkmodel/things-properties/unreleased \
 	checkmodel/things-spatial/unreleased \
+	checkmodel/things-files/unreleased \
 	checkmodel/flat/unreleased \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/temporal-mixin/unreleased \
@@ -147,6 +149,8 @@ check-validation: \
 	convertexamples/things/v1 \
 	checkvalidation/things/unreleased \
 	checkvalidation/things/v1 \
+	convertexamples/things-files/unreleased \
+	checkvalidation/things-files/unreleased \
 	convertexamples/flat/unreleased \
 	checkvalidation/flat/unreleased \
 	convertexamples/flat-prov/unreleased \
@@ -185,6 +189,7 @@ checkinvalid/%: src/%/validation src/%.yaml
 convert-examples: \
 	convertexamples/things/unreleased \
 	convertexamples/things/v1 \
+	convertexamples/things-files/unreleased \
 	convertexamples/flat/unreleased \
 	convertexamples/flat-prov/unreleased \
 	convertexamples/flat-publications/unreleased \

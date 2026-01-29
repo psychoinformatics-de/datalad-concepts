@@ -1,0 +1,6 @@
+{
+  "notation": "be32eeadb443c00c3e6ca43f2295e2ee",
+  "creator": "spdx:checksumAlgorithm_md5",
+  "schema_type": "dlthings:Checksum",
+  "@type": "Checksum"
+}

@@ -1,0 +1,23 @@
+{
+  "pid": "https://example.com/a_file.json",
+  "schema_type": "dlthings:Distribution",
+  "byte_size": 23176,
+  "checksums": [
+    {
+      "notation": "0a7254fc5be8c41f98339aba02a87856",
+      "creator": "spdx:checksumAlgorithm_md5",
+      "schema_type": "dlthings:Checksum"
+    },
+    {
+      "notation": "2252e32f027eb769be4b3729fb0e98f24ac20754",
+      "creator": "spdx:checksumAlgorithm_sha1",
+      "schema_type": "dlthings:Checksum"
+    }
+  ],
+  "distribution_of": [
+    "https://example.com/a_file"
+  ],
+  "format": "http://edamontology.org/format_3475",
+  "media_type": "application/json",
+  "@type": "Distribution"
+}
