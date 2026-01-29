@@ -151,7 +151,7 @@ slots:
 
   annotation_tag:
     description: A tag identifying an annotation.
-    range: AnnotationTag
+    range: Thing
 
   annotation_value:
     description: The actual annotation.
@@ -313,20 +313,12 @@ slots:
     slot_uri: rdf:object
     description: >-
       Reference to a `Thing` within a `Statement`.
-    inlined: false
-    multivalued: false
-    # TODO really could/should have a range defined
-    #range: Thing
+    range: Thing
     relational_role: OBJECT
     exact_mappings:
       - rdf:object
-    notes:
-      - We do not declare a range here to be able to tighten the range in
-        subclasses of class that need a particular range. This appears to
-        be working around a linkml limitation.
 
   pid:
-    slot_uri: dlthings:pid
     identifier: true
     title: Persistent identifier
     description: >-
@@ -340,8 +332,7 @@ slots:
     slot_uri: rdf:predicate
     description: >-
       Reference to a `Property` within a `Statement`.
-    range: Property
-    inlined: false
+    range: Thing
     multivalued: false
     relational_role: PREDICATE
     exact_mappings:
@@ -352,7 +343,7 @@ slots:
     description: >-
       Declares that the value of a `Thing` or `AttributeSpecification`
       are instances of a particular class.
-    range: uriorcurie
+    range: Thing
     exact_mappings:
       - rdfs:range
 
@@ -374,9 +365,6 @@ slots:
       `Thing`. This schema slot is used to define related things inline.
       If such a definition is not needed. A qualified relationship can be
       declared directly using the `characterized_by` slot.
-    domain: Thing
-    inlined: true
-    inlined_as_list: false
     multivalued: true
     range: Thing
     relational_role: OBJECT
@@ -452,16 +440,17 @@ classes:
     mixins:
       - ThingMixin
       - ValueSpecificationMixin
-    slots:
-      - predicate
-    slot_usage:
-      predicate:
-        required: true
     description: >-
       An attribute is conceptually a thing, but it requires no dedicated
       identifier (`pid`). Instead, it is linked to a `Thing` via its
       `attributes` slot and declares a `predicate` on the nature of
       the relationship.
+    slots:
+      - predicate
+    slot_usage:
+      predicate:
+        range: Property
+        required: true
     exact_mappings:
       - sio:SIO_000614
     close_mappings:
@@ -511,6 +500,7 @@ classes:
         required: true
         range: Thing
       predicate:
+        range: Property
         required: true
     exact_mappings:
       - rdf:Statement
@@ -533,6 +523,10 @@ classes:
     slots:
       - pid
       - relations
+    slot_usage:
+      relations:
+        inlined: true
+        inlined_as_list: false
     exact_mappings:
       - schema:Thing
 
@@ -566,7 +560,10 @@ classes:
       - annotation_value
     slot_usage:
       annotation_tag:
+        range: AnnotationTag
         key: true
+        annotations:
+          dash:propertyRole: dash:KeyInfoRole
 
   AnnotationTag:
     is_a: Thing
