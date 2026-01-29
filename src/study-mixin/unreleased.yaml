@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/study-mixin/unreleased
 name: study-mixin-schema
 version: UNRELEASED
-status: eunal:concept-status/DRAFT
+status: eunal:concept-status/DEPRECATED
 title: Collection of study properties for use in schemas
 description: |
   This schema mixin provides a collection of study properties for use in other
