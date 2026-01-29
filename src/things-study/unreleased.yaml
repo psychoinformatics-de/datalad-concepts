@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/s/flat-study/unreleased
-name: flat-study-schema
+id: https://concepts.datalad.org/s/things-study/unreleased
+name: things-study-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: FLAT study schema
+status: eunal:concept-status/DRAFT
+title: Concept related to scientific studies for use with the things schema
 description: |
   FLAT stands for Flexbile Low-complexity Annotation Technique.
   The FLAT-study schema contains classes to describe scientific studies.
@@ -25,17 +25,8 @@ license: MIT
 prefixes:
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
-  dlflat: https://concepts.datalad.org/s/flat/unreleased/
-  dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
-  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
-  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
-  dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
-  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
-  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   FRAPO: http://purl.org/cerif/frapo/
@@ -50,34 +41,43 @@ prefixes:
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
 
-default_prefix: dlflatstudy
+default_prefix: dlthings
 
 emit_prefixes:
-  - dlflat
-  - dlflatstudy
-  - dlidentifiers
-  - dlcommonmx
-  - dlprovmx
-  - dlquantmx
-  - dlrelationsmx
-  - dlstudymx
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
   - xsd
 
 imports:
-  - dlschemas:flat/unreleased
-  - dlschemas:common-mixin/unreleased
-  - dlschemas:study-mixin/unreleased
-  - dlschemas:prov-mixin/unreleased
-  - dlschemas:relations-mixin/unreleased
+  - dlschemas:things-properties/unreleased
+
+slots:
+  dimensions:
+    title: Outcomes variables
+    description: >-
+      Associated outcome variables.
+    range: Thing
+    multivalued: true
+
+  factors:
+    title: Influencing factors
+    description: >-
+      Factors that influence the subject matter.
+    range: Thing
+    multivalued: true
+
+  study:
+    title: Study context
+    description: >-
+      The study in which, for example, a subject was investigated.
+    range: Study
+
 
 classes:
   Study:
-    is_a: FlatThing
+    is_a: Thing
     description: >-
       A planned process that consists of parts: planning, study design
       execution, documentation and which produce conclusion(s). An investigational
@@ -100,59 +100,26 @@ classes:
       - prov:Activity
       - obo:BFO_0000015
     slots:
-      - associated_with
       - dimensions
       - factors
-      - instruments
-      - name
+      - title
       - part_of
     slot_usage:
-      name:
-        annotations:
-          sh:order: 1
-      factors:
-        annotations:
-          sh:order: 2
-      instruments:
-        range: Thing
-        annotations:
-          sh:order: 3
-      dimensions:
-        annotations:
-          sh:order: 4
       part_of:
         range: Study
         multivalued: true
-        annotations:
-          sh:order: 5
-      associated_with:
-        multivalued: true
-        annotations:
-          sh:order: 6
-      description:
-        annotations:
-          sh:order: 7
-          dash:singleLine: false
 
   Subject:
-    is_a: FlatThing
+    is_a: Thing
     description: >-
       A subject is an entity being investigated in a study. This is a
       contextual entity. One and the same entity can be different
       subjects in two different studies.
     slots:
-      - derived_from
-      - kind
-      - name
       - study
     slot_usage:
       study:
         range: Study
-        annotations:
-          sh:order: 1
-      name:
-        annotations:
-          sh:order: 2
       kind:
         title: Type
         description: >-
@@ -160,13 +127,3 @@ classes:
           For specimen (a subject derived/taken from another subject),
           this classifier should be more precise than the classifier
           of the source subject.
-        annotations:
-          sh:order: 3
-      description:
-        annotations:
-          sh:order: 4
-          dash:singleLine: false
-      derived_from:
-        range: Subject
-        annotations:
-          sh:order: 5
