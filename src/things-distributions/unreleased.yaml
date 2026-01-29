@@ -1,0 +1,91 @@
+id: https://concepts.datalad.org/s/things-distributions/unreleased
+name: things-distributions-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concept related to distributions for use with the things schema
+description: |
+  Distributions are (physical) manifestations of conceptual entities.
+  An example is a physical book (a distribution) that contains a particular
+  story (conceptual entity).
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  fabio: http://purl.org/spar/fabio/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/unreleased
+
+slots:
+  distributions:
+    title: Distributions
+    description: >-
+      Available distributions of an entity.
+    domain: Thing
+    range: Distribution
+    multivalued: true
+    exact_mappings:
+      - dcat:distribution
+    broad_mappings:
+      - sio:SIO_000341
+    inverse: distribution_of
+
+  distribution_of:
+    description: >-
+      The resource that the subject is a distribution of.
+    domain: Distribution
+    range: Thing
+    broad_mappings:
+      - sio:SIO_000426
+    inverse: distributions
+
+classes:
+  Distribution:
+    is_a: Thing
+    description: >-
+      A specific (physical) manifestation conceptual entity.
+    slots:
+      - distribution_of
+      - kind
+    slot_usage:
+      distribution_of:
+        multivalued: true
+    exact_mappings:
+      - dcat:Distribution

@@ -1,0 +1,11 @@
+pid: ex:a_file.zip
+part_of:
+  - ex:a_directory
+parts:
+  file1.txt: ex:a_file.txt
+  file2.sh:
+    locator: file2.sh
+    object: ex:b_file.sh
+    roles:
+      - https://example.com/ns/Executable
+  dir1/file1.txt: ex:a_file.json

@@ -9,6 +9,7 @@ nav:
       - Things properties: s/things-properties/unreleased/index.md
       - Things spatial: s/things-spatial/unreleased/index.md
       - Things temporal: s/things-temporal/unreleased/index.md
+      - Things distributions: s/things-distributions/unreleased/index.md
       - Things files: s/things-files/unreleased/index.md
       - Things publications: s/things-publications/unreleased/index.md
       - Types: s/types/v1/index.md
@@ -53,6 +54,7 @@ plugins:
           's/things-properties/index.md': 's/things-properties/unreleased/index.md'
           's/things-spatial/index.md': 's/things-spatial/unreleased/index.md'
           's/things-temporal/index.md': 's/things-temporal/unreleased/index.md'
+          's/things-distributions/index.md': 's/things-distributions/unreleased/index.md'
           's/things-files/index.md': 's/things-files/unreleased/index.md'
           's/things-publications/index.md': 's/things-publications/unreleased/index.md'
           's/types/index.md': 's/types/v1/index.md'

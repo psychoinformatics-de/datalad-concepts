@@ -47,7 +47,7 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:things-properties/unreleased
+  - dlschemas:things-distributions/unreleased
   - dlschemas:things-spatial/unreleased
 
 slots:
@@ -68,28 +68,6 @@ slots:
     inlined_as_list: true
     exact_mappings:
       - spdx:checksum
-
-  distributions:
-    title: Distributions
-    description: >-
-      Available distributions of the document
-    domain: Thing
-    range: Distribution
-    multivalued: true
-    exact_mappings:
-      - dcat:distribution
-    broad_mappings:
-      - sio:SIO_000341
-    inverse: distribution_of
-
-  distribution_of:
-    description: >-
-      The resource that the subject is a distribution of.
-    domain: Distribution
-    range: Thing
-    broad_mappings:
-      - sio:SIO_000426
-    inverse: distributions
 
   format:
     description: >-
@@ -137,26 +115,30 @@ classes:
         exact_mappings:
           - spdx:checksumValue
 
-  Distribution:
-    is_a: Thing
+  File:
+    is_a: Distribution
     description: >-
-      A specific representation of a data item, which may come in the form of
-      an electronic file, or an archive or directory of many files, may be
-      standalone or part of a larger collection.
+      A specific representation of a data item in the form of
+      an electronic file. The concept of a file here is aligned
+      with the broad UNIX philoshopy of "everything is a file".
+      An archive, a disk image, a directory are all valid instances
+      of a file.
     slots:
       - byte_size
       - checksums
-      - distribution_of
       - format
-      - kind
       - media_type
       - parts
+      - part_of
     slot_usage:
       distribution_of:
         multivalued: true
       parts:
-        range: NamedDistributionPart
+        range: NamedFilePart
         inlined: true
+      part_of:
+        range: File
+        multivalued: true
     comments:
       - There is no `name` property or similar, because the focus is on the
         identity of the distribution content, not how it might be named
@@ -165,14 +147,13 @@ classes:
         "me_at_the_party.jpg" elsewhere, but it would be the exact same
         image. Expressing naming in some context should be done within
         the scope of the containing entity (see `named_parts`).
-    exact_mappings:
-      - dcat:Distribution
+    broad_mappings:
       - fabio:DigitalManifestation
 
-  NamedDistributionPart:
+  NamedFilePart:
     description: >-
       An association class for attaching a `locator` as additional information to a
-      `hasPart` relationship.
+      `hasPart` relationship between two files.
     slots:
       - locator
       - roles
@@ -189,4 +170,4 @@ classes:
         # implies that we cannot support listings without content
         # identifiers
         required: true
-        range: Distribution
+        range: File
