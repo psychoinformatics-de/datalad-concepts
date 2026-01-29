@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/s/flat-files/unreleased
-name: flat-files-schema
+id: https://concepts.datalad.org/s/things-files/unreleased
+name: things-files-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: FLAT files schema
+status: eunal:concept-status/DRAFT
+title: Concept related to files for use with the things schema
 description: |
   More information may be available on the schema's [about page](about).
 
@@ -21,17 +21,10 @@ license: CC-BY-4.0
 
 prefixes:
   dash: http://datashapes.org/dash#
+  dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
-  dlflat: https://concepts.datalad.org/s/flat/unreleased/
-  dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
-  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
-  dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
-  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   fabio: http://purl.org/spar/fabio/
   foaf: http://xmlns.com/foaf/0.1/
@@ -40,35 +33,31 @@ prefixes:
   owl: http://www.w3.org/2002/07/owl#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
-  sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
   spdx: http://spdx.org/rdf/terms#
   xsd: http://www.w3.org/2001/XMLSchema#
 
-default_prefix: dlflatfiles
+default_prefix: dlthings
 
 emit_prefixes:
-  - dlflat
-  - dlflatfiles
-  - dlidentifiers
-  - dlcommonmx
-  - dlrelationsmx
-  - dlspatialmx
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
   - xsd
 
 imports:
-  - dlschemas:flat/unreleased
-  - dlschemas:common-mixin/unreleased
-  - dlschemas:relations-mixin/unreleased
-  - dlschemas:spatial-mixin/unreleased
-  - dlschemas:files-mixin/unreleased
+  - dlschemas:things-distributions/unreleased
+  - dlschemas:things-spatial/unreleased
 
 slots:
+  byte_size:
+    description: >-
+      The size of the subject in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
   checksums:
     description: >-
       The checksum property provides a mechanism that can be used to verify
@@ -80,46 +69,76 @@ slots:
     exact_mappings:
       - spdx:checksum
 
-classes:
-  Distribution:
-    is_a: FlatThing
+  format:
     description: >-
-      A specific representation of a data item, which may come in the form of
-      an electronic file, or an archive or directory of many files, may be
-      standalone or part of a larger collection.
+      The file format of a distribution.
+    range: Thing
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  media_type:
+    description: >-
+      The media type of a distribution as defined by IANA
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
+classes:
+  Checksum:
+    is_a: Identifier
+    description: >-
+      A Checksum is a value that allows to check the integrity of the contents
+      of a file. Even small changes to the content of the file will change its
+      checksum. This class allows the results of a variety of checksum and
+      cryptographic message digest algorithms to be represented.
+    exact_mappings:
+      - spdx:Checksum
+    slot_usage:
+      creator:
+        description: >-
+          Identifies the software agent (algorithm) used to produce the subject
+          `Checksum`.
+        required: true
+        exact_mappings:
+          - spdx:algorithm
+      notation:
+        description: >-
+          Lower case hexadecimal encoded checksum digest value.
+        range: HexBinary
+        required: true
+        exact_mappings:
+          - spdx:checksumValue
+
+  File:
+    is_a: Distribution
+    description: >-
+      A specific representation of a data item in the form of
+      an electronic file. The concept of a file here is aligned
+      with the broad UNIX philoshopy of "everything is a file".
+      An archive, a disk image, a directory are all valid instances
+      of a file.
     slots:
       - byte_size
       - checksums
-      - distribution_of
       - format
-      - kind
       - media_type
       - parts
+      - part_of
     slot_usage:
-      kind:
-        annotations:
-          sh:order: 1
       distribution_of:
         multivalued: true
-        annotations:
-          sh:order: 2
-      byte_size:
-        annotations:
-          sh:order: 3
-      format:
-        annotations:
-          sh:order: 4
-      media_type:
-        annotations:
-          sh:order: 5
-      checksums:
-        annotations:
-          sh:order: 6
       parts:
-        range: NamedDistributionPart
+        range: NamedFilePart
         inlined: true
-        annotations:
-          sh:order: 7
+      part_of:
+        range: File
+        multivalued: true
     comments:
       - There is no `name` property or similar, because the focus is on the
         identity of the distribution content, not how it might be named
@@ -128,14 +147,13 @@ classes:
         "me_at_the_party.jpg" elsewhere, but it would be the exact same
         image. Expressing naming in some context should be done within
         the scope of the containing entity (see `named_parts`).
-    exact_mappings:
-      - dcat:Distribution
+    broad_mappings:
       - fabio:DigitalManifestation
 
-  NamedDistributionPart:
+  NamedFilePart:
     description: >-
       An association class for attaching a `locator` as additional information to a
-      `hasPart` relationship.
+      `hasPart` relationship between two files.
     slots:
       - locator
       - roles
@@ -152,4 +170,4 @@ classes:
         # implies that we cannot support listings without content
         # identifiers
         required: true
-        range: Distribution
+        range: File

@@ -1,0 +1,122 @@
+id: https://concepts.datalad.org/s/things-publications/unreleased
+name: things-publications-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concept related to publications for use with the things schema
+description: |
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/unreleased
+  - dlschemas:things-temporal/unreleased
+  - dlschemas:things-spatial/unreleased
+  - linkml:types
+
+slots:
+  doi:
+    title: DOI
+    description: >-
+      Associated Digital Object Identifier (DOI; ISO 26324; see
+      https://doi.org).  The value must be just the DOI without the URL
+      project. So just `10.1038/s41597-022-01163-2` and not
+      `https://doi.org/10.1038/s41597-022-01163-2`.
+    range: string
+    pattern: '(?i)^(?!(?:https?://|doi:)).+$'
+
+  issn:
+    title: ISSN
+    description: >-
+      Associated International Standard Serial Number (ISSN) identifier (see https://www.issn.org).
+    range: string
+    pattern: '^\d{4}-\d{3}[0-9X]{1}$'
+
+  published_at:
+    description: >-
+      The venue a publication was made.
+    range: Thing
+
+classes:
+  DOI:
+    is_a: Identifier
+    description: >-
+      Digital Object Identifier (DOI; ISO 26324), an identifier system governed by the
+      DOI Foundation, where individual identifiers are issued by one of several registration
+      agencies.
+    slot_usage:
+      # TODO: creator has range: Thing, ie. OWL:Thing.
+      # But uricurie is a literal.
+      #creator:
+      #  ifabsent: uriorcurie(https://doi.org)
+      #  description: By default, the creator is identified as "https://doi.org".
+      notation:
+        description: >-
+          The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
+        pattern: '(?i)^(?!(?:https?://|doi:)).+$'
+    unique_keys:
+      value:
+        description: The DOI notation is globally unique within the scope of DOIs
+        unique_key_slots:
+          - notation
+
+  Publication:
+    is_a: Thing
+    description: >-
+      A resource that is the output of a publishing process.
+    slots:
+      - about
+      - date_published
+      - kind
+      - locator
+      - title
+      - published_at
+    slot_usage:
+      locator:
+        description: >-
+          A descriptive identifier that locates the publication within
+          the publication venue. This can be a unique name,
+          a numerical key, or another notation that uniquely
+          identifies the subject within that context.
+      about:
+        multivalued: true
+    exact_mappings:
+      - obo:IAO_0000311
+    notes:
+      - There is not slow to indicate authorship. This is left to a PROV attribution.

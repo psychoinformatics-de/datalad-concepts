@@ -1,0 +1,9 @@
+schema: src/things-publications/unreleased.yaml
+target_class: Publication
+data_sources:
+  - src/things-publications/unreleased/examples/Publication-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

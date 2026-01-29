@@ -1,0 +1,8 @@
+{
+  "pid": "ex:mybook",
+  "schema_type": "dlthings:Distribution",
+  "distribution_of": [
+    "ex:mywritings"
+  ],
+  "@type": "Distribution"
+}

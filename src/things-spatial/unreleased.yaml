@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/s/spatial-mixin/unreleased
-name: spatial-mixin-schema
+id: https://concepts.datalad.org/s/things-spatial/unreleased
+name: things-spatial-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: Collection of spatial properties for use in schemas
+status: eunal:concept-status/DRAFT
+title: Collection of spatial properties for use with the things schema
 description: |
   The schema definition is available as
 
@@ -18,13 +18,9 @@ prefixes:
   bibo: http://purl.org/ontology/bibo/
   dcterms: http://purl.org/dc/terms/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
-  foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
-  obo: http://purl.obolibrary.org/obo/
   prov: http://www.w3.org/ns/prov#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
@@ -32,19 +28,17 @@ prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
 
-default_prefix: dlspatialmx
+default_prefix: dlthings
 
 emit_prefixes:
-  - dlspatialmx
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
   - xsd
 
 imports:
-  - dlschemas:things/v1
+  - dlschemas:things/unreleased
 
 slots:
   at_location:
@@ -57,8 +51,6 @@ slots:
     exact_mappings:
       - prov:atLocation
       - schema:location
-    comments:
-      - Does not define a range, because the desired type is highly use case specific.
 
   locator:
     description: >-
