@@ -1,20 +1,22 @@
-id: https://concepts.datalad.org/s/relations-mixin/unreleased
-name: relations-mixin-schema
+id: https://concepts.datalad.org/s/things-properties/unreleased
+name: things-properties-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: Collection of relations for use in schemas
+status: eunal:concept-status/DRAFT
+title: Collection of common properties for use with the things schema
 description: |
-  This schema mixin provides a collection of relations for use in other
-  schemas. It can be imported directly into other linkml schemas, or any of its
+  This schema provides a collection of common data properties and object
+  properties for use with the things schema.
+  It can be imported directly into other linkml schemas, or any of its
   individual property definitions can be used by their URI as vocabulary
-  components or definitions (e.g., `dlprops-mixin:name` identified by this
+  components or definitions (e.g., `dlthings:name` identified by this
   [URI](`name`)).
 
   Slot names use the plural form whenever they are directly declared as
   "multivalued" in this schema, otherwise the singular form is used for
   the slot name. The `slot_uri` always uses the singular form.
 
-  Every property declared here is mapped to standard/established vocabularies.
+  Every property declared here is mapped to at least one standard/established
+  vocabulary.
 
   The schema definition is available as
 
@@ -29,14 +31,14 @@ license: MIT
 prefixes:
   dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
-  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
   owl: http://www.w3.org/2002/07/owl#
+  pq: http://www.wikidata.org/prop/qualifier/
   prov: http://www.w3.org/ns/prov#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
@@ -44,19 +46,14 @@ prefixes:
   skos: http://www.w3.org/2004/02/skos/core#
   xsd: http://www.w3.org/2001/XMLSchema#
 
-default_prefix: dlrelationsmx
+default_prefix: dlthings
 
 emit_prefixes:
-  - dlrelationsmx
   - dlthings
-  - dltypes
-  - rdf
-  - rdfs
-  - skos
-  - xsd
 
 imports:
-  - dlschemas:things/v1
+  - dlschemas:things/unreleased
+  - linkml:types
 
 slots:
   about:
@@ -84,6 +81,16 @@ slots:
     exact_mappings:
       - obo:RO_0002502
 
+  keywords:
+    description: >-
+      One or more keywords or tags describing the subject.
+    range: string
+    multivalued: true
+    exact_mappings:
+      - dcat:keyword
+      - schema:keywords
+      - obo:IAO_0000629
+
   kind:
     description: >-
       The nature of the subject.
@@ -99,6 +106,22 @@ slots:
     exact_mappings:
       - dcterms:type
 
+  name:
+    description: >-
+      Name of the subject. A name is closely related to a `title`, but often
+      more compact and identifier-like, but without the implication of
+      uniqueness of an identifier. A name is often used by technical systems
+      to display an item in an organizational structure, such as a file
+      in a directory hierarchy.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
+      - foaf:name
+    close_mappings:
+      - dcterms:title
+      - obo:IAO_0000590
+    range: string
+
   part_of:
     description: >-
       The entity that the subject is a part of. A core relation that
@@ -107,7 +130,9 @@ slots:
       - obo:BFO_0000050
       - dcterms:isPartOf
       - schema:isPartOf
+    domain: Thing
     range: Thing
+    inverse: parts
 
   parts:
     description: >-
@@ -116,8 +141,10 @@ slots:
     exact_mappings:
       - dcterms:hasPart
       - schema:hasPart
+    domain: Thing
     range: Thing
     multivalued: true
+    inverse: part_of
 
   roles:
     description: >-
@@ -140,6 +167,28 @@ slots:
       - owl:sameAs
     close_mappings:
       - schema:sameAs
+
+  short_name:
+    is_a: name
+    description: >-
+      A shortened name for the subject. For example, an acronym, initialism,
+      nickname, or other abbreviation of the `name`.
+    exact_mappings:
+      - pq:P1813
+    broad_mappings:
+      - obo:NCIT_C42610
+    range: string
+
+  title:
+    description: >-
+      A summarily description of the subject. It is closely related to
+      a `name`, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+    related_mappings:
+      - schema:name
+    range: string
 
   version_of:
     description: >-
