@@ -101,9 +101,7 @@ classes:
     description: >-
       A resource that is the output of a publishing process.
     slots:
-      - about
       - date_published
-      - kind
       - locator
       - title
       - published_at
@@ -114,8 +112,6 @@ classes:
           the publication venue. This can be a unique name,
           a numerical key, or another notation that uniquely
           identifies the subject within that context.
-      about:
-        multivalued: true
     exact_mappings:
       - obo:IAO_0000311
     notes:

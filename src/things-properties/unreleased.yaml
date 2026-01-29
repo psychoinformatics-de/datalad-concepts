@@ -56,15 +56,6 @@ imports:
   - linkml:types
 
 slots:
-  about:
-    description: >-
-      A relation of an information artifact to the subject, such as
-      a URL identifying the topic of a document.
-    range: Thing
-    exact_mappings:
-      - schema:about
-      - obo:IAO_0000136
-
   conforms_to:
     description: >-
       An established standard to which the subject conforms.
@@ -90,21 +81,6 @@ slots:
       - dcat:keyword
       - schema:keywords
       - obo:IAO_0000629
-
-  kind:
-    description: >-
-      The nature of the subject.
-    range: Thing
-    comments:
-      - >-
-        This is conceptually the same as an instance-level `broad_mappings`.
-        It can make sense to use this slot (in addition) in order to enable
-        straightforward type declarations for instances from a controlled,
-        application specific vocabulary, while also keeping the ability to
-        use `broad_mappings` for alignment with external vocabularies and
-        applications.
-    exact_mappings:
-      - dcterms:type
 
   name:
     description: >-

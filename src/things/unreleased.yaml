@@ -137,6 +137,16 @@ types:
       - schema:Integer
 
 slots:
+  about:
+    slot_uri: dcterms:subject
+    description: >-
+      A relation of an information artifact to the subject, such as
+      a URL identifying the topic of a document.
+    range: Thing
+    exact_mappings:
+      - schema:about
+      - obo:IAO_0000136
+
   annotations:
     slot_uri: dlthings:annotations
     title: Annotations
@@ -220,6 +230,13 @@ slots:
       An agent responsible for making an entity.
     range: Thing
 
+  defined_by:
+    slot_uri: rdfs:isDefinedBy
+    description: >-
+      Indicate a resource defining the subject. This may be a vocabulary
+      that describes the subject.
+    range: uriorcurie
+
   description:
     slot_uri: dcterms:description
     title: Description
@@ -282,6 +299,22 @@ slots:
     inlined_as_list: true
     multivalued: true
 
+  kind:
+    slot_uri: dcterms:type
+    description: >-
+      The nature of the subject.
+    range: Thing
+    comments:
+      - >-
+        This is conceptually the same as an instance-level `broad_mappings`.
+        It can make sense to use this slot (in addition) in order to enable
+        straightforward type declarations for instances from a controlled,
+        application specific vocabulary, while also keeping the ability to
+        use `broad_mappings` for alignment with external vocabularies and
+        applications.
+    exact_mappings:
+      - dcterms:type
+
   mappings:
     slot_uri: skos:mappingRelation
     description: >-
@@ -343,9 +376,7 @@ slots:
     description: >-
       Declares that the value of a `Thing` or `AttributeSpecification`
       are instances of a particular class.
-    range: Thing
-    exact_mappings:
-      - rdfs:range
+    range: uriorcurie
 
   related_mappings:
     slot_uri: skos:relatedMatch
@@ -388,6 +419,12 @@ slots:
     exact_mappings:
       - dcterms:type
 
+  unit:
+    slot_uri: obo:UO_0000000
+    description: >-
+      A unit of measurement is a standardized quantity of a physical quality.
+    range: uriorcurie
+
   value:
     slot_uri: rdf:value
     description: >-
@@ -412,6 +449,7 @@ classes:
       A set of `mappings` slots enables the alignment for arbitrary external
       schemas and terminologies.
     slots:
+      - about
       - annotations
       - broad_mappings
       - close_mappings
@@ -421,6 +459,7 @@ classes:
       - editorial_notes
       - exact_mappings
       - identifiers
+      - kind
       - attributes
       - characterized_by
       - narrow_mappings
@@ -433,7 +472,9 @@ classes:
       Mix-in for a (structured) value specification. Two slots are provided
       to define a (literal) value (`value`) and its type (`range`).
     slots:
+      - defined_by
       - range
+      - unit
       - value
 
   AttributeSpecification:
@@ -448,6 +489,8 @@ classes:
     slots:
       - predicate
     slot_usage:
+      about:
+        multivalued: true
       predicate:
         range: Property
         required: true
@@ -524,6 +567,8 @@ classes:
       - pid
       - relations
     slot_usage:
+      about:
+        multivalued: true
       relations:
         inlined: true
         inlined_as_list: false
