@@ -1,6 +1,9 @@
 {
   "pid": "https://example.com/a_file.json",
-  "schema_type": "dlthings:Distribution",
+  "schema_type": "dlthings:File",
+  "distribution_of": [
+    "https://example.com/a_file"
+  ],
   "byte_size": 23176,
   "checksums": [
     {
@@ -14,10 +17,7 @@
       "schema_type": "dlthings:Checksum"
     }
   ],
-  "distribution_of": [
-    "https://example.com/a_file"
-  ],
   "format": "http://edamontology.org/format_3475",
   "media_type": "application/json",
-  "@type": "Distribution"
+  "@type": "File"
 }

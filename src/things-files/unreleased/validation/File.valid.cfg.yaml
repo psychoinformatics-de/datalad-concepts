@@ -1,8 +1,8 @@
 schema: src/things-files/unreleased.yaml
-target_class: Distribution
+target_class: File
 data_sources:
-  - src/things-files/unreleased/examples/Distribution-02-attributes.yaml
-  - src/things-files/unreleased/examples/Distribution-03-parts.yaml
+  - src/things-files/unreleased/examples/File-02-attributes.yaml
+  - src/things-files/unreleased/examples/File-03-parts.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

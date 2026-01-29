@@ -1,22 +1,25 @@
 {
-  "pid": "https://example.com/a_file.zip",
-  "schema_type": "dlthings:Distribution",
+  "pid": "ex:a_file.zip",
+  "schema_type": "dlthings:File",
   "parts": {
     "file1.txt": {
       "locator": "file1.txt",
-      "object": "https://example.com/a_file.txt"
+      "object": "ex:a_file.txt"
     },
     "file2.sh": {
       "locator": "file2.sh",
-      "object": "https://example.com/b_file.sh",
+      "object": "ex:b_file.sh",
       "roles": [
         "https://example.com/ns/Executable"
       ]
     },
     "dir1/file1.txt": {
       "locator": "dir1/file1.txt",
-      "object": "https://example.com/a_file.json"
+      "object": "ex:a_file.json"
     }
   },
-  "@type": "Distribution"
+  "part_of": [
+    "ex:a_directory"
+  ],
+  "@type": "File"
 }
