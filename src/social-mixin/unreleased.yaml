@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/social-mixin/unreleased
 name: social-mixin-schema
 version: UNRELEASED
-status: eunal:concept-status/DRAFT
+status: eunal:concept-status/DEPRECATED
 title: Schema mixin for social concepts
 description: |
   The schema definition is available as

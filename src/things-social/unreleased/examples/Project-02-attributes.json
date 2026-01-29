@@ -1,0 +1,14 @@
+{
+  "pid": "https://trr379.de/projects/q02",
+  "identifiers": [
+    {
+      "notation": "Q02",
+      "creator": "https://trr379.de",
+      "schema_type": "dlthings:Identifier"
+    }
+  ],
+  "schema_type": "dlthings:Project",
+  "short_name": "Q02",
+  "title": "Data management for computational modelling",
+  "@type": "Project"
+}
