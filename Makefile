@@ -21,6 +21,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/things-properties/unreleased \
+	build/linkml-docs/s/things-temporal/unreleased \
 	build/linkml-docs/s/things-spatial/unreleased \
 	build/linkml-docs/s/things-files/unreleased \
 	build/linkml-docs/s/flat/unreleased \
@@ -92,6 +93,7 @@ check-models: \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
 	checkmodel/things-properties/unreleased \
+	checkmodel/things-temporal/unreleased \
 	checkmodel/things-spatial/unreleased \
 	checkmodel/things-files/unreleased \
 	checkmodel/flat/unreleased \

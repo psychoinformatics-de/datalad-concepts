@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/s/temporal-mixin/unreleased
-name: temporal-mixin-schema
+id: https://concepts.datalad.org/s/things-temporal/unreleased
+name: things-temporal-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: Collection of temporal properties for use in schemas
+status: eunal:concept-status/DRAFT
+title: Collection of temporal properties for use with the things schema
 description: |
   The schema definition is available as
 
@@ -16,7 +16,7 @@ license: MIT
 
 prefixes:
   dcterms: http://purl.org/dc/terms/
-  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   obo: http://purl.obolibrary.org/obo/
@@ -25,17 +25,17 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   schema: http://schema.org/
 
-default_prefix: dltemporalmx
+default_prefix: dlthings
 
 emit_prefixes:
-  - dltemporalmx
+  - dlthings
 
 imports:
   - linkml:types
 
 types:
   W3CISO8601:
-    uri: w3ctr:NOTE-datetime
+    uri: dlthings:w3ctr-datetime
     base: str
     typeof: string
     description:

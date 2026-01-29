@@ -8,6 +8,7 @@ nav:
       - Things: s/things/v1/index.md
       - Things properties: s/things-properties/unreleased/index.md
       - Things spatial: s/things-spatial/unreleased/index.md
+      - Things temporal: s/things-temporal/unreleased/index.md
       - Things files: s/things-files/unreleased/index.md
       - Types: s/types/v1/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
@@ -50,6 +51,7 @@ plugins:
           's/things/index.md': 's/things/v1/index.md'
           's/things-properties/index.md': 's/things-properties/unreleased/index.md'
           's/things-spatial/index.md': 's/things-spatial/unreleased/index.md'
+          's/things-temporal/index.md': 's/things-temporal/unreleased/index.md'
           's/things-files/index.md': 's/things-files/unreleased/index.md'
           's/types/index.md': 's/types/v1/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
