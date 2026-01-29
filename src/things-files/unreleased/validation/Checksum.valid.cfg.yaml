@@ -1,0 +1,9 @@
+schema: src/things-files/unreleased.yaml
+target_class: Checksum
+data_sources:
+  - src/things-files/unreleased/examples/Checksum-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

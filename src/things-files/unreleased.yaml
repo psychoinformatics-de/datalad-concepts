@@ -1,0 +1,192 @@
+id: https://concepts.datalad.org/s/things-files/unreleased
+name: things-files-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concept related to files for use with the things schema
+description: |
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  fabio: http://purl.org/spar/fabio/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdx: http://spdx.org/rdf/terms#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/unreleased
+  - dlschemas:things-spatial/unreleased
+
+slots:
+  byte_size:
+    description: >-
+      The size of the subject in bytes.
+    range: NonNegativeInteger
+    exact_mappings:
+      - dcat:byteSize
+
+  checksums:
+    description: >-
+      The checksum property provides a mechanism that can be used to verify
+      that the contents of a file or package have not changed.
+    range: Checksum
+    multivalued: true
+    inlined: true
+    inlined_as_list: true
+    exact_mappings:
+      - spdx:checksum
+
+  distributions:
+    title: Distributions
+    description: >-
+      Available distributions of the document
+    domain: Thing
+    range: Distribution
+    multivalued: true
+    exact_mappings:
+      - dcat:distribution
+    broad_mappings:
+      - sio:SIO_000341
+    inverse: distribution_of
+
+  distribution_of:
+    description: >-
+      The resource that the subject is a distribution of.
+    domain: Distribution
+    range: Thing
+    broad_mappings:
+      - sio:SIO_000426
+    inverse: distributions
+
+  format:
+    description: >-
+      The file format of a distribution.
+    range: Thing
+    exact_mappings:
+      - dcterms:format
+    notes:
+      - When type of the distribution is defined by IANA, `media_type` should be used.
+
+  media_type:
+    description: >-
+      The media type of a distribution as defined by IANA
+    range: string
+    examples:
+      - value: text/csv
+    see_also:
+      - https://www.iana.org/assignments/media-types
+    exact_mappings:
+      - dcat:mediaType
+
+classes:
+  Checksum:
+    is_a: Identifier
+    description: >-
+      A Checksum is a value that allows to check the integrity of the contents
+      of a file. Even small changes to the content of the file will change its
+      checksum. This class allows the results of a variety of checksum and
+      cryptographic message digest algorithms to be represented.
+    exact_mappings:
+      - spdx:Checksum
+    slot_usage:
+      creator:
+        description: >-
+          Identifies the software agent (algorithm) used to produce the subject
+          `Checksum`.
+        required: true
+        exact_mappings:
+          - spdx:algorithm
+      notation:
+        description: >-
+          Lower case hexadecimal encoded checksum digest value.
+        range: HexBinary
+        required: true
+        exact_mappings:
+          - spdx:checksumValue
+
+  Distribution:
+    is_a: Thing
+    description: >-
+      A specific representation of a data item, which may come in the form of
+      an electronic file, or an archive or directory of many files, may be
+      standalone or part of a larger collection.
+    slots:
+      - byte_size
+      - checksums
+      - distribution_of
+      - format
+      - kind
+      - media_type
+      - parts
+    slot_usage:
+      distribution_of:
+        multivalued: true
+      parts:
+        range: NamedDistributionPart
+        inlined: true
+    comments:
+      - There is no `name` property or similar, because the focus is on the
+        identity of the distribution content, not how it might be named
+        in a particular context. For example, an image in JPEG format
+        might be names "20250825_102385.jpg" on a camera and
+        "me_at_the_party.jpg" elsewhere, but it would be the exact same
+        image. Expressing naming in some context should be done within
+        the scope of the containing entity (see `named_parts`).
+    exact_mappings:
+      - dcat:Distribution
+      - fabio:DigitalManifestation
+
+  NamedDistributionPart:
+    description: >-
+      An association class for attaching a `locator` as additional information to a
+      `hasPart` relationship.
+    slots:
+      - locator
+      - roles
+      - object
+    slot_usage:
+      locator:
+        description: A relative path in POSIX notation.
+        key: true
+        # ensure no leading slash
+        pattern: '^[^/]+.*$'
+      object:
+        # this must be required, if we want to support key-based
+        # access to the named distribution parts. this also
+        # implies that we cannot support listings without content
+        # identifiers
+        required: true
+        range: Distribution
