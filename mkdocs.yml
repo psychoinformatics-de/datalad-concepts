@@ -7,6 +7,7 @@ nav:
     - Foundational:
       - Things: s/things/v1/index.md
       - Things properties: s/things-properties/unreleased/index.md
+      - Things spatial: s/things-spatial/unreleased/index.md
       - Types: s/types/v1/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
@@ -47,6 +48,7 @@ plugins:
           'dump-things-storage.md': 'dump-things-storage-v0.md'
           's/things/index.md': 's/things/v1/index.md'
           's/things-properties/index.md': 's/things-properties/unreleased/index.md'
+          's/things-spatial/index.md': 's/things-spatial/unreleased/index.md'
           's/types/index.md': 's/types/v1/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/temporal-mixin/index.md': 's/temporal-mixin/unreleased/index.md'

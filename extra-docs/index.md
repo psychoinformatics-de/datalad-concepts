@@ -32,6 +32,7 @@ The sources for all schemas are on [GitHub](https://github.com/psychoinformatics
 ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 
 - [Things properties schema](s/things-properties/unreleased/index.md)
+- [Things spatial schema](s/things-spatial/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
