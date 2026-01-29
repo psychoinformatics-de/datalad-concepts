@@ -3,6 +3,7 @@ target_class: ValueSpecification
 data_sources:
   - src/things/unreleased/examples/ValueSpecification-01-minimal.yaml
   - src/things/unreleased/examples/ValueSpecification-02-quantitative-measurement.yaml
+  - src/things/unreleased/examples/ValueSpecification-02-qualitative-assessment.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

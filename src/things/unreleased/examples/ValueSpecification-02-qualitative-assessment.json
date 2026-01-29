@@ -1,0 +1,12 @@
+{
+  "pid": "ex:assessment123",
+  "about": [
+    "obo:MF_0000202"
+  ],
+  "kind": "ex:sct-363881005",
+  "schema_type": "dlthings:ValueSpecification",
+  "value": "Extrovert",
+  "defined_by": "ex:isbn-of-Jung-1923",
+  "range": "xsd:string",
+  "@type": "ValueSpecification"
+}

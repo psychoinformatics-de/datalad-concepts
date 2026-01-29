@@ -83,7 +83,6 @@ classes:
       A specific (physical) manifestation conceptual entity.
     slots:
       - distribution_of
-      - kind
     slot_usage:
       distribution_of:
         multivalued: true

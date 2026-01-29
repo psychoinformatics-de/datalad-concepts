@@ -1,5 +1,9 @@
 {
   "pid": "ex:measurement853",
+  "about": [
+    "obo:PATO_0000125"
+  ],
+  "kind": "obo:IAO_0000109",
   "attributes": [
     {
       "predicate": "ex:title",
@@ -7,22 +11,9 @@
       "value": "measured mass (kg)"
     }
   ],
-  "characterized_by": [
-    {
-      "object": "obo:IAO_0000109",
-      "predicate": "ex:subject"
-    },
-    {
-      "object": "obo:PATO_0000125",
-      "predicate": "ex:subject"
-    },
-    {
-      "object": "obo:UO_0000009",
-      "predicate": "obo:UO_0000000"
-    }
-  ],
   "schema_type": "dlthings:ValueSpecification",
   "value": "145.3",
   "range": "xsd:decimal",
+  "unit": "obo:UO_0000009",
   "@type": "ValueSpecification"
 }
