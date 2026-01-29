@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/flat/unreleased
 name: flat-schema
 version: UNRELEASED
-status: eunal:concept-status/DRAFT
+status: eunal:concept-status/DEPRECATED
 title: Base for FLAT schemas
 description: |
   FLAT stands for Flexbile Low-complexity Annotation Technique.
