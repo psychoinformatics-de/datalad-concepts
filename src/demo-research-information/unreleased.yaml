@@ -459,14 +459,8 @@ classes:
     description: >-
       A resource that is the output of a publishing process.
     slots:
-      - doi
       - rules
     slot_usage:
-      # this is here and placed first as a mere convenience. The "proper" way is to provide
-      # a `DOI` identifier
-      doi:
-        recommended: true
-        title: DOI
       kind:
         title: Publication type
         description: >-
