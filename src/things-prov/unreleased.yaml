@@ -443,35 +443,6 @@ classes:
     slot_usage:
       object:
         title: Influencer
-        range: Thing
-      characterized_by:
-        annotations:
-          sh:order: 100
-      attributes:
-        annotations:
-          sh:order: 110
-      description:
-        annotations:
-          sh:order: 120
-          dash:singleLine: false
-      annotations:
-        annotations:
-          sh:order: 130
-      exact_mappings:
-        annotations:
-          sh:order: 140
-      close_mappings:
-        annotations:
-          sh:order: 141
-      broad_mappings:
-        annotations:
-          sh:order: 142
-      narrow_mappings:
-        annotations:
-          sh:order: 143
-      related_mappings:
-        annotations:
-          sh:order: 144
     exact_mappings:
       - prov:Influence
 
