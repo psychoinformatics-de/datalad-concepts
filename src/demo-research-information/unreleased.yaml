@@ -115,7 +115,6 @@ imports:
   - dlschemas:things-resources/unreleased
   - dlschemas:things-prov/unreleased
   - dlschemas:things-social/unreleased
-  - dlschemas:things-study/unreleased
   - dlschemas:things-rules/unreleased
 
 slots:
@@ -537,6 +536,7 @@ classes:
     description: >-
       Type of a competitions, e.g., call for proposals, horse race, job opening.
 
+  # TODO: move to study? or too generic?
   XYZConcept:
     is_a: Thing
     title: Concept
