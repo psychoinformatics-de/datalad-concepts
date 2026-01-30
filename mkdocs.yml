@@ -44,8 +44,6 @@ nav:
       - Empirical data: s/demo-empirical-data/unreleased/index.md
       - Research assets: s/demo-research-assets/unreleased/index.md
       - RSE group: s/demo-rse-group/unreleased/index.md
-    - Deprecated:
-
   - Dump-things storage: dump-things-storage-v0.md
   - Usage considerations: usage-considerations.md
 plugins:
