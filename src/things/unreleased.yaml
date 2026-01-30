@@ -476,6 +476,12 @@ classes:
       - range
       - unit
       - value
+    comments:
+      - This mixin enables the expression of quantitative and qualitative
+        assessments/measurements/values. For a quantitative value, the
+        numerical value, and a possible unit is given. For a qualitative
+        value, `defined_by` is used to identify the quality of the
+        assessment from a controlled vocabulary or standard term.
 
   AttributeSpecification:
     mixins:
