@@ -23,6 +23,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things-properties/unreleased \
 	build/linkml-docs/s/things-temporal/unreleased \
 	build/linkml-docs/s/things-spatial/unreleased \
+	build/linkml-docs/s/things-data/unreleased \
 	build/linkml-docs/s/things-study/unreleased \
 	build/linkml-docs/s/things-resources/unreleased \
 	build/linkml-docs/s/things-rules/unreleased \
@@ -103,6 +104,7 @@ check-models: \
 	checkmodel/things-temporal/unreleased \
 	checkmodel/things-spatial/unreleased \
 	checkmodel/things-study/unreleased \
+	checkmodel/things-data/unreleased \
 	checkmodel/things-resources/unreleased \
 	checkmodel/things-rules/unreleased \
 	checkmodel/things-distributions/unreleased \
@@ -171,6 +173,8 @@ check-validation: \
 	checkvalidation/things-social/unreleased \
 	convertexamples/things-study/unreleased \
 	checkvalidation/things-study/unreleased \
+	convertexamples/things-data/unreleased \
+	checkvalidation/things-data/unreleased \
 	convertexamples/things-resources/unreleased \
 	checkvalidation/things-resources/unreleased \
 	convertexamples/things-rules/unreleased \
@@ -220,6 +224,7 @@ convert-examples: \
 	convertexamples/things-distributions/unreleased \
 	convertexamples/things-social/unreleased \
 	convertexamples/things-study/unreleased \
+	convertexamples/things-data/unreleased \
 	convertexamples/things-resources/unreleased \
 	convertexamples/things-rules/unreleased \
 	convertexamples/things-files/unreleased \
