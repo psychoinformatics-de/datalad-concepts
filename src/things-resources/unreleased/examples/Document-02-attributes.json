@@ -1,0 +1,6 @@
+{
+  "pid": "https://example.com/README",
+  "schema_type": "dlthings:Document",
+  "title": "All you need to know about life",
+  "@type": "Document"
+}

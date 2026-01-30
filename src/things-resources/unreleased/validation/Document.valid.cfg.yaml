@@ -1,0 +1,9 @@
+schema: src/things-resources/unreleased.yaml
+target_class: Document
+data_sources:
+  - src/things-resources/unreleased/examples/Document-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

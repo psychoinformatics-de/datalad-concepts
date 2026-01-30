@@ -1,0 +1,139 @@
+id: https://concepts.datalad.org/s/things-resources/unreleased
+name: things-resources-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concepts related to resources for use with the things schema
+description: |
+  Resources here are things that enable, inform, or are otherwise utilizes
+  by activities.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/unreleased
+
+classes:
+  Convention:
+    is_a: Thing
+    description: >-
+      A set of agreed, stipulated, or generally accepted standards, norms,
+      social norms, or criteria, often taking the form of a custom.
+    slots:
+      - title
+      - short_name
+    exact_mappings:
+      # normative example
+      - obo:NCIT_C61300
+      - obo:GSSO_010111
+    narrow_mappings:
+      # standard
+      - obo:MS_1000898
+      - obo:T4FS_0000381
+
+  Document:
+    is_a: Thing
+    description: >-
+      A conceptual entity representing things which a, broadly conceived,
+      "documents. This includes non-textual things like images.
+      A conceputal document is to be distinguished from its physical,
+      or electronic distributions.
+    slots:
+      - title
+      - part_of
+    slot_usage:
+      part_of:
+        range: Document
+        multivalued: true
+    notes:
+      - The key difference between a dataset and a document is the
+        collection-nature of the dataset (multiple items of a kind in
+        a collection), whereas a document is "one of its kind". A
+        dataset could comprise multiple documents.
+      - A document typically has at least one author. However, there are
+        also generated documents (e.g., a birth certificate) for which this is
+        irrelevant. And there are more roles that could be relevant for a
+        document's provenance. Rather than adding them all, none is provided.
+        PROV should be used to express this information.
+    exact_mappings:
+      - foaf:Document
+
+  Grant:
+    is_a: Thing
+    description: >-
+      A grant, typically financial or otherwise quantifiable,
+      resources.
+    slots:
+      - title
+      - short_name
+      - part_of
+    slot_usage:
+      part_of:
+        range: Grant
+        multivalued: true
+    exact_mappings:
+      - obo:NCIT_C16644
+      - schema:Grant
+    notes:
+      - A grant is not a document. The associated document would be the
+        grant agreement.
+
+  Instrument:
+    is_a: Thing
+    description: >-
+      A thing that enables an agent to perform an action. This is typically a device
+      (e.g., a machine to perform a particular type of measurement), but it can also be
+      a questionnaire that is used to perform a particular kind of assessment.
+      An instrument is typically not a "reagent".
+    related_mappings:
+      - schema:instrument
+    narrow_mappings:
+      - obo:NCIT_C62103
+    notes:
+      - It is unclear whether an instrument `name` would provide meaningful
+        and precise information (vs a description or an identifier).
+        There is `display_label`, if the need for a name is just for display
+        purposes (e.g., to say something generic like 'thermometer').
+      - Slot `name` is added to avoid `display_label` having to carry unique
+        information.
+    slots:
+      - name

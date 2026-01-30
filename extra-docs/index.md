@@ -35,6 +35,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Things spatial schema](s/things-spatial/unreleased/index.md)
 - [Things data schema](s/things-data/unreleased/index.md)
 - [Things study schema](s/things-study/unreleased/index.md)
+- [Things resources schema](s/things-resources/unreleased/index.md)
 - [Things temporal schema](s/things-temporal/unreleased/index.md)
 - [Things distributions schema](s/things-distributions/unreleased/index.md)
 - [Things social schema](s/things-social/unreleased/index.md)
