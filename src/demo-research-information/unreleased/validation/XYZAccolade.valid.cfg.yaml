@@ -1,0 +1,9 @@
+schema: src/demo-research-information/unreleased.yaml
+target_class: XYZAccolade
+data_sources:
+  - src/demo-research-information/unreleased/examples/XYZAccolade-03-prov.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

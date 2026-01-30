@@ -150,6 +150,16 @@ classes:
   #
   #Things with a provenance interface
   #
+  XYZAccolade:
+    is_a: Thing
+    mixins:
+      - EntityMixin
+    title: Accolade
+    description: >-
+      An award, prize, or other honor received in recognition of an achievement.
+    slots:
+      - title
+
   XYZCompetition:
     is_a: Thing
     mixins:
