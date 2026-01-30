@@ -1,0 +1,91 @@
+id: https://concepts.datalad.org/s/things-data/unreleased
+name: things-data-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concepts for hierarchical data representations for use with the things schema
+description: |
+  The schema defines conceptual models for datasets and individual data items
+  to describe their nature and relationships across formats and linked with
+  their serializationa (see `things-distribution` and `things-files`)
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../unreleased.context.jsonld)
+  - [LinkML YAML](../unreleased.yaml)
+  - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
+  - [OWL TTL](../unreleased.owl.ttl)
+  - [SHACL TTL](../unreleased.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  w3ctr: https://www.w3.org/TR/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/unreleased
+
+classes:
+  DataItem:
+    is_a: ValueSpecification
+    description: >-
+      An information content entity that is intended to be a truthful statement
+      about something (modulo, e.g., measurement precision or other systematic
+      errors) and is constructed/acquired by a method which reliably tends to
+      produce (approximately) truthful statements.
+
+      This is a conceptual entity. A single data item might be available in
+      more than one representation, with differing formats, and serializations.
+    slots:
+      - part_of
+    slot_usage:
+      part_of:
+        range: Dataset
+        multivalued: true
+    exact_mappings:
+      - obo:IAO_0000027
+
+  Dataset:
+    is_a: Thing
+    description: >-
+      A collection of data (data items), published or curated by a single
+      agent.  This is a conceptual entity. A single dataset might be available
+      in more than one representation, with differing schematic layouts,
+      formats, and serializations.
+    slots:
+      - title
+      - short_name
+      - part_of
+    slot_usage:
+      part_of:
+        range: Dataset
+        multivalued: true
+    exact_mappings:
+      - dcat:Dataset

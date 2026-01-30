@@ -1,0 +1,9 @@
+schema: src/things-data/unreleased.yaml
+target_class: DataItem
+data_sources:
+  - src/things-data/unreleased/examples/DataItem-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
