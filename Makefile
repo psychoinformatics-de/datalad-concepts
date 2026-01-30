@@ -29,6 +29,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/things-social/unreleased \
 	build/linkml-docs/s/things-files/unreleased \
 	build/linkml-docs/s/things-publications/unreleased \
+	build/linkml-docs/s/things-prov/unreleased \
 	build/linkml-docs/s/flat/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/temporal-mixin/unreleased \
@@ -106,6 +107,7 @@ check-models: \
 	checkmodel/things-social/unreleased \
 	checkmodel/things-files/unreleased \
 	checkmodel/things-publications/unreleased \
+	checkmodel/things-prov/unreleased \
 	checkmodel/flat/unreleased \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/temporal-mixin/unreleased \

@@ -41,6 +41,7 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Things social schema](s/things-social/unreleased/index.md)
 - [Things files schema](s/things-files/unreleased/index.md)
 - [Things publications schema](s/things-publications/unreleased/index.md)
+- [Things provenance schema](s/things-prov/unreleased/index.md)
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
