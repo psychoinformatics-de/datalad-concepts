@@ -1,0 +1,8 @@
+{
+  "pid": "spdxlic:CC0-1.0",
+  "kind": "obo:NCIT_C43611",
+  "schema_type": "dlthings:Rule",
+  "title": "Creative Commons Zero v1.0 Universal",
+  "short_name": "CC0-1.0",
+  "@type": "Rule"
+}
