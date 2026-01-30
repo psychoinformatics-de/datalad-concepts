@@ -11,6 +11,7 @@ nav:
       - Things data: s/things-data/unreleased/index.md
       - Things study: s/things-study/unreleased/index.md
       - Things resources: s/things-resources/unreleased/index.md
+      - Things rules: s/things-rules/unreleased/index.md
       - Things temporal: s/things-temporal/unreleased/index.md
       - Things distributions: s/things-distributions/unreleased/index.md
       - Things social: s/things-social/unreleased/index.md
@@ -61,6 +62,7 @@ plugins:
           's/things-data/index.md': 's/things-data/unreleased/index.md'
           's/things-study/index.md': 's/things-study/unreleased/index.md'
           's/things-resources/index.md': 's/things-resources/unreleased/index.md'
+          's/things-rules/index.md': 's/things-rules/unreleased/index.md'
           's/things-temporal/index.md': 's/things-temporal/unreleased/index.md'
           's/things-distributions/index.md': 's/things-distributions/unreleased/index.md'
           's/things-social/index.md': 's/things-social/unreleased/index.md'
