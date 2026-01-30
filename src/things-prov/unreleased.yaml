@@ -1,10 +1,9 @@
-id: https://concepts.datalad.org/s/prov-mixin/unreleased
-name: prov-mixin-schema
+id: https://concepts.datalad.org/s/things-prov/unreleased
+name: things-prov-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: Collection of provenance properties for use in schemas
+status: eunal:concept-status/DRAFT
+title: Provenance properties and class mixins for use with the things schema
 description: |
-
   This schema mixin provides the majority of the terms and relationships
   defined by [PROV-O](https://www.w3.org/TR/prov-o/), with the following
   exceptions and deviations. It is implemented as a mixin to be able to
@@ -59,11 +58,6 @@ description: |
 
   More information may be available on the schema's [about page](about).
 
-
-
-
-
-
   The schema definition is available as
 
   - [JSON-LD context](../unreleased.context.jsonld)
@@ -78,12 +72,8 @@ comments:
 license: MIT
 
 prefixes:
-  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
-  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   eunal: http://publications.europa.eu/resource/authority/
   linkml: https://w3id.org/linkml/
   prov: http://www.w3.org/ns/prov#
@@ -93,15 +83,10 @@ prefixes:
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
 
-default_prefix: dlprovmx
+default_prefix: dlthings
 
 emit_prefixes:
-  - dlprovmx
-  - dlrelationsmx
-  - dlspatialmx
-  - dltemporalmx
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
@@ -109,10 +94,9 @@ emit_prefixes:
   - xsd
 
 imports:
-  - dlschemas:things/v1
-  - dlschemas:relations-mixin/unreleased
-  - dlschemas:spatial-mixin/unreleased
-  - dlschemas:temporal-mixin/unreleased
+  - dlschemas:things-properties/unreleased
+  - dlschemas:things-spatial/unreleased
+  - dlschemas:things-temporal/unreleased
 
 slots:
   alternate_of:

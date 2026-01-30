@@ -16,6 +16,7 @@ nav:
       - Things social: s/things-social/unreleased/index.md
       - Things files: s/things-files/unreleased/index.md
       - Things publications: s/things-publications/unreleased/index.md
+      - Things provenance: s/things-prov/unreleased/index.md
       - Types: s/types/v1/index.md
       - Identifiers (dev): s/identifiers/unreleased/index.md
       - Common mixin (dev): s/common-mixin/unreleased/index.md
@@ -65,6 +66,7 @@ plugins:
           's/things-social/index.md': 's/things-social/unreleased/index.md'
           's/things-files/index.md': 's/things-files/unreleased/index.md'
           's/things-publications/index.md': 's/things-publications/unreleased/index.md'
+          's/things-prov/index.md': 's/things-prov/unreleased/index.md'
           's/types/index.md': 's/types/v1/index.md'
           's/identifiers/index.md': 's/identifiers/unreleased/index.md'
           's/temporal-mixin/index.md': 's/temporal-mixin/unreleased/index.md'
