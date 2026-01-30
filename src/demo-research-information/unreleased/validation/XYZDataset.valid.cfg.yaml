@@ -1,0 +1,9 @@
+schema: src/demo-research-information/unreleased.yaml
+target_class: XYZDataset
+data_sources:
+  - src/demo-research-information/unreleased/examples/XYZDataset-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

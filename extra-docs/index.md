@@ -85,6 +85,7 @@ are **not** intended to be reusable as building blocks for derived schemas.
 
 - [Empirical data](s/demo-empirical-data/unreleased/index.md)
 - [Research assets](s/demo-research-assets/unreleased/index.md)
+- [Research information](s/demo-research-information/unreleased/index.md)
 - [Research software engineering group](s/demo-rse-group/unreleased/index.md)
 
 

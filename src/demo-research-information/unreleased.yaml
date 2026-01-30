@@ -1,8 +1,8 @@
-id: https://concepts.datalad.org/s/demo-rse-group/unreleased
-name: demo-rse-group-schema
+id: https://concepts.datalad.org/s/demo-research-information/unreleased
+name: demo-research-information-schema
 version: UNRELEASED
-status: eunal:concept-status/DEPRECATED
-title: Data models for a research software engineering group
+status: eunal:concept-status/DRAFT
+title: Data model for capturing information on research (progress)
 description: |
   This schema is using the FLAT approach (Flexbile Low-complexity
   Annotation Technique) and is geared toward metadata entry and
@@ -11,6 +11,16 @@ description: |
 
   It is to be taken as a demonstrator rather than a schema
   building block.
+
+  Key features of this schema:
+
+  - adds a PROV interface to a select set of concepts where provenance
+    information shall be recorded. Not all classes receive a PROV interface,
+    because some are just used as classifiers or tags. This limits the
+    expressiveness of the schema, but also its complexity. For example,
+    it is an active decision to *not* be interested in the provenance
+    of a `Convention` or a `Rule`, but to only represent them as facts
+    about the world.
 
   More information may be available on the schema's [about page](about).
 
@@ -28,7 +38,6 @@ comments:
 license: MIT
 
 prefixes:
-  ADMS: http://www.w3.org/ns/adms#
   CiTO: http://purl.org/spar/cito/
   ISSN: http://identifiers.org/issn/
   ODRL: http://www.w3.org/ns/odrl/2/
@@ -37,29 +46,10 @@ prefixes:
   datalad: https://pid.datalad.org/datasets/
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
-  dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
-  dlfilesmx: https://concepts.datalad.org/s/files-mixin/unreleased/
-  dlflat: https://concepts.datalad.org/s/flat/unreleased/
-  dlflatfiles: https://concepts.datalad.org/s/flat-files/unreleased/
-  dlflatpublications: https://concepts.datalad.org/s/flat-publications/unreleased/
-  dlflatres: https://concepts.datalad.org/s/flat-resources/unreleased/
-  dlflatsocial: https://concepts.datalad.org/s/flat-social/unreleased/
-  dlflatstudy: https://concepts.datalad.org/s/flat-study/unreleased/
-  dlidentifiers: https://concepts.datalad.org/s/identifiers/unreleased/
-  dlprovmx: https://concepts.datalad.org/s/prov-mixin/unreleased/
-  dlpublicationsmx: https://concepts.datalad.org/s/publications-mixin/unreleased/
-  dlquantmx: https://concepts.datalad.org/s/quantities-mixin/unreleased/
-  dlrelationsmx: https://concepts.datalad.org/s/relations-mixin/unreleased/
-  dlresmx: https://concepts.datalad.org/s/resources-mixin/unreleased/
   dlschemas: https://concepts.datalad.org/s/
-  dlsocialmx: https://concepts.datalad.org/s/social-mixin/unreleased/
-  dlspatialmx: https://concepts.datalad.org/s/spatial-mixin/unreleased/
-  dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
-  dltemporalmx: https://concepts.datalad.org/s/temporal-mixin/unreleased/
-  dlthings: https://concepts.datalad.org/s/things/v1/
-  dltypes: https://concepts.datalad.org/s/types/v1/
+  dlthings: https://concepts.datalad.org/s/things/unreleased/
   doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
   fabio: http://purl.org/spar/fabio/
@@ -87,33 +77,14 @@ prefixes:
   vcard: http://www.w3.org/2006/vcard/ns#
   w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
-  xyzrse: https://concepts.datalad.org/s/demo-rse-group/unreleased/
-  xyzrsens: https://concepts.datalad.org/s/demo-rse-group/ns/
+  xyzri: https://concepts.datalad.org/s/demo-research-information/unreleased/
+  xyzrins: https://concepts.datalad.org/s/demo-research-information/ns/
 
-default_prefix: xyzrse
+default_prefix: xyzri
 
 emit_prefixes:
   - dldi
-  - dlcommonmx
-  - dlfilesmx
-  - dlflat
-  - dlflatfiles
-  - dlflatres
-  - dlflatpublications
-  - dlflatsocial
-  - dlflatstudy
-  - dlidentifiers
-  - dlprovmx
-  - dlpublicationsmx
-  - dlquantmx
-  - dlrelationsmx
-  - dlresmx
-  - dlspatialmx
-  - dlsocialmx
-  - dlstudymx
-  - dltemporalmx
   - dlthings
-  - dltypes
   - rdf
   - rdfs
   - skos
@@ -135,15 +106,17 @@ emit_prefixes:
   - schema
   - shaclvue
   - sio
-  - xyzrsens
+  - xyzrins
 
 imports:
-  - dlschemas:flat-files/unreleased
-  - dlschemas:flat-publications/unreleased
-  - dlschemas:flat-resources/unreleased
-  - dlschemas:flat-social/unreleased
-  - dlschemas:flat-study/unreleased
-  - dlschemas:prov-mixin/unreleased
+  - dlschemas:things-data/unreleased
+  - dlschemas:things-files/unreleased
+  - dlschemas:things-publications/unreleased
+  - dlschemas:things-resources/unreleased
+  - dlschemas:things-prov/unreleased
+  - dlschemas:things-social/unreleased
+  - dlschemas:things-study/unreleased
+  - dlschemas:things-rules/unreleased
 
 slots:
   application_deadline:
@@ -153,17 +126,6 @@ slots:
       a fellowship application or a grant application, has to be submitted
       if it is to be considered for acceptance or funding.
     range: W3CISO8601
-
-  distributions:
-    title: Distributions
-    description: >-
-      Available distributions of the document
-    range: XYZDistribution
-    multivalued: true
-    exact_mappings:
-      - dcat:distribution
-    broad_mappings:
-      - sio:SIO_000341
 
   entity:
     description: >-
@@ -175,18 +137,6 @@ slots:
         an `object` and an additional property that broadly use a
         range `Thing`. The concrete, initial use case was PROV's
         Communication.
-
-  depiction:
-    title: Depiction
-    description: >-
-      An image, or photograph information, or other visualization that
-      annotates some aspect of the subject (e.g., a digital image of a
-      portrait of a person).
-    range: Thing
-    exact_mappings:
-      - foaf:depiction
-    narrow_mappings:
-      - vcard:photo
 
 
 classes:
@@ -201,7 +151,7 @@ classes:
   #Things with a provenance interface
   #
   XYZCompetition:
-    is_a: FlatThing
+    is_a: Thing
     mixins:
       - ActivityMixin
     title: Competition
@@ -209,9 +159,7 @@ classes:
       A process where multiple agents compete for a resource, such as funding,
       recognition, or participation.
     slots:
-      - about
       - application_deadline
-      - kind
       - title
     slot_usage:
       kind:
@@ -413,10 +361,10 @@ classes:
       revision_of:
         range: XYZRevision
       alternate_of:
-        range: FlatThing
+        range: Thing
         multivalued: true
       specialization_of:
-        range: FlatThing
+        range: Thing
         multivalued: true
       influenced_by:
         range: XYZInfluence
@@ -572,7 +520,7 @@ classes:
   # Thing that are "classifiers" (i.e., tags) without a provenance interface
   #
   XYZAgentRole:
-    is_a: FlatThing
+    is_a: Thing
     title: Agent role
     description: >-
       A role is the function of an agent with respect to a subject,
@@ -584,19 +532,19 @@ classes:
       - dcat:Role
 
   XYZBibliographicType:
-    is_a: FlatThing
+    is_a: Thing
     title: Bibliographic type
     description: >-
       Type of a publication or document, e.g., journal article, book, or webpage.
 
   XYZCompetitionType:
-    is_a: FlatThing
+    is_a: Thing
     title: Competition type
     description: >-
       Type of a competitions, e.g., call for proposals, horse race, job opening.
 
   XYZConcept:
-    is_a: FlatThing
+    is_a: Thing
     title: Concept
     description: >-
       An idea or notion; a unit of thought.
@@ -622,7 +570,7 @@ classes:
       social norms, or criteria, often taking the form of a custom.
 
   XYZDataType:
-    is_a: FlatThing
+    is_a: Thing
     title: Data type or format
     description: >-
       Type of an data item.
@@ -643,13 +591,13 @@ classes:
       - obo:NCIT_C172272
 
   XYZInstrumentType:
-    is_a: FlatThing
+    is_a: Thing
     title: Instrument type
     description: >-
       Type of an instrument.
 
   XYZObjective:
-    is_a: FlatThing
+    is_a: Thing
     title: Objective
     description: >-
       A proposition that indicates a planned or anticipated outcome.
@@ -665,7 +613,7 @@ classes:
         range: XYZObjective
 
   XYZPublicationVenue:
-    is_a: FlatThing
+    is_a: Thing
     title: Publication venue
     description: >-
       "Place" of a publication, e.g., a journal, a website, an edited collection.
@@ -684,7 +632,7 @@ classes:
         range: XYZBibliographicType
 
   XYZQuality:
-    is_a: FlatThing
+    is_a: Thing
     title: Quality
     description: >-
       A quality is an attribute that is intrinsically associated with its
@@ -692,20 +640,15 @@ classes:
       value may vary.
 
   XYZRule:
-    is_a: FlatThing
+    is_a: Rule
     title: Rule
     description: >-
       Permissions, prohibitions, obligatations or other rights/policies.
       This can be a standard license, a custom usage agreement, or a
       codified policy.
-    slots:
-      # title because MIH thinks of these as documents
-      - title
-      # licenses often have them
-      - short_name
 
   XYZTopic:
-    is_a: FlatThing
+    is_a: Thing
     title: Topic
     description: >-
       Topic a subject is about, e.g., a particular research question or domain
@@ -720,27 +663,19 @@ classes:
   # Non-Things, such as association classes
   #
   ORCID:
-    is_a: IssuedIdentifier
+    is_a: Identifier
     description: >-
       Unique persistent identifier for a person, provided by the Open Researcher
       and Contributor ID (ORCID) organisation.
     slot_usage:
-      creator:
-        ifabsent: uriorcurie(ror:04fa4r544)
-        description: By default, the creator is identified as "ror:04fa4r544".
       notation:
         description: >-
           The identifier notation is specified without a URL-prefix,
           or a `orcid:` prefix.
         pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
-      schema_agency:
-        ifabsent: string(Open Researcher and Contributor ID)
-        description: >-
-          By default, the schema agency is identified as `Open Researcher
-          and Contributor ID`.
     unique_keys:
       value:
-        description: The DOI notation is globally unique within the scope of DOIs
+        description: The ORCID notation is globally unique within the scope of ORCIDs
         unique_key_slots:
           - notation
     exact_mappings:
@@ -764,15 +699,9 @@ classes:
         any_of:
           - range: XYZPerson
           - range: XYZOrganization
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZAssociation:
     is_a: Association
@@ -785,8 +714,6 @@ classes:
         any_of:
           - range: XYZPerson
           - range: XYZOrganization
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         range: XYZAgentRole
@@ -794,10 +721,6 @@ classes:
         range: XYZStart
       ended:
         range: XYZEnd
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZAttribution:
     is_a: Attribution
@@ -811,15 +734,9 @@ classes:
         any_of:
           - range: XYZPerson
           - range: XYZOrganization
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       roles:
         range: XYZAgentRole
         multivalued: true
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZCommunication:
     is_a: Communication
@@ -831,17 +748,10 @@ classes:
     slots:
       - entity
     slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       entity:
         description: >-
           An entity used by the subject, and produced by the associated
           activity.
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZDelegation:
     is_a: Delegation
@@ -861,18 +771,12 @@ classes:
         any_of:
           - range: XYZPerson
           - range: XYZOrganization
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       roles:
         range: XYZAgentRole
       started:
         range: XYZStart
       ended:
         range: XYZEnd
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZDerivation:
     is_a: Derivation
@@ -881,17 +785,10 @@ classes:
       update of an entity resulting in a new one, or the construction
       of a new entity based on a pre-existing entity.
     slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       generated_by:
-        range:  XYZGeneration
+        range: XYZGeneration
       used:
         range: XYZUsage
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZEnd:
     is_a: End
@@ -902,14 +799,6 @@ classes:
       the activity's end. An end may refer to a trigger entity that
       terminated the activity, or to an activity, known as ender that
       generated the trigger.
-    slot_usage:
-      at_time:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZGeneration:
     is_a: Generation
@@ -917,14 +806,6 @@ classes:
       Generation is the completion of production of a new entity by an
       activity. This entity did not exist before generation and becomes
       available for usage after this generation.
-    slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZInfluence:
     is_a: Influence
@@ -937,21 +818,10 @@ classes:
       - ended
       - started
     slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       started:
         range: XYZStart
       ended:
         range: XYZEnd
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
-    comments:
-      - This is effectively a `TimeLimitedInfluence` that could migrated
-        upstream.
-
 
   XYZObjectiveInfluence:
     # see XYZAgentRole for rationale on deriving from XYZInfluence rather
@@ -963,8 +833,6 @@ classes:
       object:
         title: Objective
         range: XYZObjective
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       roles:
         title: Roles
         # TODO adopt some kind of classification of objective types
@@ -979,17 +847,10 @@ classes:
       the resulting entity contains substantial content from the
       original. Revision is a particular case of derivation.
     slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
       generated_by:
         range:  XYZGeneration
       used:
         range: XYZUsage
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZStart:
     is_a: Start
@@ -1000,14 +861,6 @@ classes:
       follows the activity's start. A start may refer to a trigger entity
       that set off the activity, or to an activity, known as starter, that
       generated the trigger.
-    slot_usage:
-      at_time:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification
 
   XYZUsage:
     is_a: Usage
@@ -1015,11 +868,3 @@ classes:
       Usage is the beginning of utilizing an entity by an activity.
       Before usage, the activity had not begun to utilize this entity
       and could not have been affected by the entity.
-    slot_usage:
-      object:
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
-      characterized_by:
-        range: FlatStatement
-      attributes:
-        range: FlatAttributeSpecification

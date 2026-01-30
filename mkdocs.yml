@@ -43,6 +43,7 @@ nav:
     - Demonstrators:
       - Empirical data: s/demo-empirical-data/unreleased/index.md
       - Research assets: s/demo-research-assets/unreleased/index.md
+      - Research information: s/demo-research-information/unreleased/index.md
       - RSE group: s/demo-rse-group/unreleased/index.md
   - Dump-things storage: dump-things-storage-v0.md
   - Usage considerations: usage-considerations.md
@@ -89,6 +90,7 @@ plugins:
           's/flat-files/index.md': 's/flat-files/unreleased/index.md'
           's/demo-empirical-data/index.md': 's/demo-empirical-data/unreleased/index.md'
           's/demo-research-assets/index.md': 's/demo-research-assets/unreleased/index.md'
+          's/demo-research-information/index.md': 's/demo-research-information/unreleased/index.md'
           's/demo-rse-group/index.md': 's/demo-rse-group/unreleased/index.md'
   - search
 site_author: DataLad Team

@@ -1,0 +1,5 @@
+pid: xyzrins:project/MyProjectA
+influenced_by:
+- object: xyzrins:objectives/world-domination
+  roles:
+  - xyzrins:objective-types/longterm-goal

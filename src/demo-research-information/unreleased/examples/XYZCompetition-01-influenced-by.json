@@ -1,0 +1,19 @@
+{
+  "pid": "xyzrins:competition/kooperationsplattformen-2022",
+  "about": [
+    "https://www.forschungsfoerderung.nrw/foerderaufruf/kooperationsplattformen-2022/"
+  ],
+  "kind": "frapo:FundingApplication",
+  "schema_type": "xyzri:XYZCompetition",
+  "application_deadline": "2022-10-28",
+  "influenced_by": [
+    {
+      "object": "datalad:object_1",
+      "roles": [
+        "fabio:CallForApplication"
+      ],
+      "schema_type": "xyzri:XYZInfluence"
+    }
+  ],
+  "@type": "XYZCompetition"
+}
