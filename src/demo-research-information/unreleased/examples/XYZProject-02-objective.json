@@ -1,0 +1,14 @@
+{
+  "pid": "xyzrins:project/MyProjectA",
+  "schema_type": "xyzri:XYZProject",
+  "influenced_by": [
+    {
+      "object": "xyzrins:objectives/world-domination",
+      "roles": [
+        "xyzrins:objective-types/longterm-goal"
+      ],
+      "schema_type": "xyzri:XYZInfluence"
+    }
+  ],
+  "@type": "XYZProject"
+}

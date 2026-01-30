@@ -1,0 +1,15 @@
+{
+  "pid": "xyzrins:project/MyProjectA",
+  "schema_type": "xyzri:XYZProject",
+  "informed_by": [
+    {
+      "object": "xyzrins:activities/FundingApplication",
+      "roles": [
+        "fabio:CallForApplication"
+      ],
+      "schema_type": "xyzri:XYZCommunication",
+      "entity": "xyzrins:docs/ApplicationDocument1"
+    }
+  ],
+  "@type": "XYZProject"
+}

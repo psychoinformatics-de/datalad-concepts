@@ -1,0 +1,6 @@
+pid: xyzrins:project/MyProjectA
+informed_by:
+- object: xyzrins:activities/FundingApplication
+  entity: xyzrins:docs/ApplicationDocument1
+  roles:
+  - fabio:CallForApplication

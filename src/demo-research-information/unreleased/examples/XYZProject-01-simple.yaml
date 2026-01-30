@@ -1,0 +1,6 @@
+pid: https://example.com/p1
+started:
+  # it is critical that the date is quoted, otherwise the YAML
+  # parser will turn it into a datetime object, causing a validation
+  # failure
+  at_time: "2025-12-10"

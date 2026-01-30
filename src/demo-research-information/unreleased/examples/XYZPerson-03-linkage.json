@@ -1,0 +1,16 @@
+{
+  "pid": "https://example.org/p1",
+  "schema_type": "xyzri:XYZPerson",
+  "family_name": "TODO",
+  "influenced_by": [
+    {
+      "object": "https://example.org/inf1",
+      "roles": [
+        "https://example.org/r1",
+        "https://example.org/r2"
+      ],
+      "schema_type": "xyzri:XYZInfluence"
+    }
+  ],
+  "@type": "XYZPerson"
+}

@@ -1,0 +1,9 @@
+schema: src/demo-research-information/unreleased.yaml
+target_class: XYZPerson
+data_sources:
+  - src/demo-research-information/unreleased/examples/XYZPerson-03-linkage.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

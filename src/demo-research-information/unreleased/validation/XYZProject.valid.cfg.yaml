@@ -1,0 +1,11 @@
+schema: src/demo-research-information/unreleased.yaml
+target_class: XYZProject
+data_sources:
+  - src/demo-research-information/unreleased/examples/XYZProject-01-simple.yaml
+  - src/demo-research-information/unreleased/examples/XYZProject-01-informed-by.yaml
+  - src/demo-research-information/unreleased/examples/XYZProject-02-objective.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
