@@ -1,0 +1,9 @@
+pid: https://scicrunch.org/resolver/RRID:SCR_016124
+title: Brain Imaging Data Structure
+short_name: BIDS
+broad_mappings:
+  # standard
+  - obo:T4FS_0000381
+characterized_by:
+  - predicate: http://purl.org/spar/cito/citesAsAuthority
+    object: https://doi.org/10.1038/sdata.2016.44

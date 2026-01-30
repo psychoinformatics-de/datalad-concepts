@@ -1,7 +1,7 @@
 id: https://concepts.datalad.org/s/resources-mixin/unreleased
 name: resources-mixin-schema
 version: UNRELEASED
-status: eunal:concept-status/DRAFT
+status: eunal:concept-status/DEPRECATED
 title: Collection of resource properties for use in schemas
 description: |
   The schema definition is available as
