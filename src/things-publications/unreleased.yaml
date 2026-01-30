@@ -51,16 +51,6 @@ imports:
   - linkml:types
 
 slots:
-  doi:
-    title: DOI
-    description: >-
-      Associated Digital Object Identifier (DOI; ISO 26324; see
-      https://doi.org).  The value must be just the DOI without the URL
-      project. So just `10.1038/s41597-022-01163-2` and not
-      `https://doi.org/10.1038/s41597-022-01163-2`.
-    range: string
-    pattern: '(?i)^(?!(?:https?://|doi:)).+$'
-
   issn:
     title: ISSN
     description: >-
