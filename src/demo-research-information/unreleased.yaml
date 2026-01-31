@@ -160,6 +160,27 @@ classes:
     slots:
       - title
 
+  XYZActivity:
+    is_a: Thing
+    mixins:
+      - ActivityMixin
+    title: Competition
+    description: >-
+      An activity is something that occurs over a period of time and acts upon
+      or with entities; it may include consuming, processing, transforming,
+      modifying, relocating, using, or generating entities.
+    slots:
+      - name
+      - part_of
+    slot_usage:
+      part_of:
+        range: XYZActivity
+        multivalued: true
+    broad_mappings:
+      - obo:BFO_0000015
+    exact_mappings:
+      - prov:Activity
+
   XYZCompetition:
     is_a: Thing
     mixins:
