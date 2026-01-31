@@ -520,6 +520,50 @@ classes:
         multivalued: true
         inlined_as_list: true
 
+  XYZStudy:
+    is_a: Study
+    mixins:
+      - EntityMixin
+    title: Study
+    description: >-
+      A planned process that consists of parts: planning, study design
+      execution, documentation and which produce conclusion(s). An investigational
+      endeavour that involves research, enabled by a project. The study
+      relates to the scholarly and practical aspects of conducting the research
+      itself, including the hypotheses being investigated, the data being
+      gathered and analysed, the interpretations being drawn from the data,
+      and the results obtained. In contrast, a project that enables it
+      encompasses the administrative aspects of undertaking the endeavour,
+      including the funding obtained, the people involved, and the management
+      of the project in terms of deadlines and deliverables.
+    slots:
+      # for stuff like "secret" subject identifiers imposed by DUAs
+      - rules
+    slot_usage:
+      dimensions:
+        range: XYZConcept
+      factors:
+        range: XYZConcept
+      kind:
+        range: XYZSubjectType
+
+  XYZSubject:
+    is_a: Subject
+    mixins:
+      - EntityMixin
+    title: Subject
+    description: >-
+      A subject is an entity being investigated in a study.
+      This is a contextual entity. One and the same individual can be different
+      subjects in two different studies.
+    slots:
+      # for stuff like "secret" subject identifiers imposed by DUAs
+      - rules
+    slot_usage:
+      study:
+        range: XYZStudy
+      kind:
+        range: XYZSubjectType
 
   # Thing that are "classifiers" (i.e., tags) without a provenance interface
   #
@@ -650,6 +694,13 @@ classes:
       Permissions, prohibitions, obligatations or other rights/policies.
       This can be a standard license, a custom usage agreement, or a
       codified policy.
+
+  XYZSubjectType:
+    is_a: Thing
+    title: Subject type
+    description: >-
+      Type of a subject (e.g., human study participant, soil sample,
+      cell culture).
 
   XYZTopic:
     is_a: Thing

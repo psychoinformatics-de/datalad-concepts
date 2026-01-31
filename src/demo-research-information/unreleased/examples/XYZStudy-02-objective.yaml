@@ -1,0 +1,9 @@
+pid: xyzrins:studies/MyStudyA
+factors:
+  - xyzrins:concepts/season
+dimensions:
+  - xyzrins:concepts/coffee-consumption
+influenced_by:
+- object: xyzrins:objectives/quest-for-enlightenment
+  roles:
+  - xyzrins:objective-types/longterm-goal
