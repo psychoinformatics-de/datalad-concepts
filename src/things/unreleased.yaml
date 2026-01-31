@@ -518,8 +518,6 @@ classes:
     slot_usage:
       notation:
         required: true
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
     exact_mappings:
       - obo:IAO_0020000
 
@@ -613,8 +611,6 @@ classes:
       annotation_tag:
         range: AnnotationTag
         key: true
-        annotations:
-          dash:propertyRole: dash:KeyInfoRole
 
   AnnotationTag:
     is_a: Thing
