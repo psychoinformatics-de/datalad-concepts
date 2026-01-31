@@ -1,0 +1,20 @@
+{
+  "pid": "xyzrins:studies/MyStudyA",
+  "schema_type": "xyzri:XYZStudy",
+  "dimensions": [
+    "xyzrins:concepts/coffee-consumption"
+  ],
+  "factors": [
+    "xyzrins:concepts/season"
+  ],
+  "influenced_by": [
+    {
+      "object": "xyzrins:objectives/quest-for-enlightenment",
+      "roles": [
+        "xyzrins:objective-types/longterm-goal"
+      ],
+      "schema_type": "dlthings:Influence"
+    }
+  ],
+  "@type": "XYZStudy"
+}
