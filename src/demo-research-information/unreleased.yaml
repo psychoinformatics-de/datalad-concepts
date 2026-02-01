@@ -250,7 +250,6 @@ classes:
         multivalued: true
         inlined_as_list: true
       derived_from:
-        range: XYZDerivation
         multivalued: true
         inlined_as_list: true
       influenced_by:
@@ -320,7 +319,6 @@ classes:
         multivalued: true
         inlined_as_list: true
       derived_from:
-        range: XYZDerivation
         multivalued: true
         inlined_as_list: true
       influenced_by:
@@ -814,13 +812,6 @@ classes:
           - range: XYZOrganization
       roles:
         range: XYZAgentRole
-
-  XYZDerivation:
-    is_a: Derivation
-    description: >-
-      A derivation is a transformation of an entity into another, an
-      update of an entity resulting in a new one, or the construction
-      of a new entity based on a pre-existing entity.
 
   XYZInfluence:
     is_a: Influence
