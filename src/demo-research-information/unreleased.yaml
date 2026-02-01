@@ -239,7 +239,7 @@ classes:
         range: XYZDataset
         multivalued: true
       rules:
-        range: XYZRule
+        range: Rule
         multivalued: true
       attributed_to:
         title: Contributors
@@ -277,7 +277,7 @@ classes:
       distribution_of:
         multivalued: true
       rules:
-        range: XYZRule
+        range: Rule
         multivalued: true
       conforms_to:
         range: Convention
@@ -311,7 +311,7 @@ classes:
       part_of:
         multivalued: true
       rules:
-        range: XYZRule
+        range: Rule
         multivalued: true
       attributed_to:
         title: Contributors
@@ -346,7 +346,7 @@ classes:
         range: XYZGrant
         multivalued: true
       rules:
-        range: XYZRule
+        range: Rule
       attributed_to:
         multivalued: true
         inlined_as_list: true
@@ -378,7 +378,7 @@ classes:
         range: XYZInstrument
         multivalued: true
       rules:
-        range: XYZRule
+        range: Rule
         multivalued: true
       attributed_to:
         range: XYZAttribution
@@ -519,7 +519,7 @@ classes:
         description: >-
           The date when a publication became available at the publication venue.
       rules:
-        range: XYZRule
+        range: Rule
       attributed_to:
         multivalued: true
         inlined_as_list: true
@@ -694,14 +694,6 @@ classes:
       A quality is an attribute that is intrinsically associated with its
       bearer (or its parts), but whose presence/absence and observed/measured
       value may vary.
-
-  XYZRule:
-    is_a: Rule
-    title: Rule
-    description: >-
-      Permissions, prohibitions, obligatations or other rights/policies.
-      This can be a standard license, a custom usage agreement, or a
-      codified policy.
 
   XYZSubjectType:
     is_a: Thing
