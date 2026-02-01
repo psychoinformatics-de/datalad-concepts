@@ -467,7 +467,6 @@ classes:
         multivalued: true
         inlined_as_list: true
       used:
-        range: XYZUsage
         multivalued: true
         inlined_as_list: true
       informed_by:
@@ -866,8 +865,6 @@ classes:
     slot_usage:
       generated_by:
         range: XYZGeneration
-      used:
-        range: XYZUsage
 
   XYZEnd:
     is_a: End
@@ -928,8 +925,6 @@ classes:
     slot_usage:
       generated_by:
         range: XYZGeneration
-      used:
-        range: XYZUsage
 
   XYZStart:
     is_a: Start
@@ -940,10 +935,3 @@ classes:
       follows the activity's start. A start may refer to a trigger entity
       that set off the activity, or to an activity, known as starter, that
       generated the trigger.
-
-  XYZUsage:
-    is_a: Usage
-    description: >-
-      Usage is the beginning of utilizing an entity by an activity.
-      Before usage, the activity had not begun to utilize this entity
-      and could not have been affected by the entity.
