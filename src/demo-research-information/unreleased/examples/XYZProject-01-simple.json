@@ -2,7 +2,7 @@
   "pid": "https://example.com/p1",
   "schema_type": "xyzri:XYZProject",
   "started": {
-    "schema_type": "xyzri:XYZStart",
+    "schema_type": "dlthings:Start",
     "at_time": "2025-12-10"
   },
   "@type": "XYZProject"

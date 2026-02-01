@@ -18,55 +18,55 @@
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0003-2213-7465",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0003-0820-2662",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0001-7163-3110",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0002-8402-6173",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0001-7628-0801",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "http://orcid.org/0000-0001-6398-6370",
       "roles": [
         "marcrel:aut"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     }
   ],
   "generated_by": [
     {
       "object": "https://example.org/ns/project-1",
-      "schema_type": "xyzri:XYZGeneration"
+      "schema_type": "dlthings:Generation"
     }
   ],
   "@type": "XYZPublication"

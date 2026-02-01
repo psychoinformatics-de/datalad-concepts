@@ -25,7 +25,7 @@
   "generated_by": [
     {
       "object": "ex:processes/gen-doc1",
-      "schema_type": "xyzri:XYZGeneration"
+      "schema_type": "dlthings:Generation"
     }
   ],
   "@type": "XYZFile"

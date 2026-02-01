@@ -7,21 +7,21 @@
       "roles": [
         "marcrel:fnd"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "https://orcid.org/0000-0003-0703-7722",
       "roles": [
         "marcrel:pdr"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     },
     {
       "object": "https://ror.org/04xfq0f34",
       "roles": [
         "marcrel:sht"
       ],
-      "schema_type": "xyzri:XYZAttribution"
+      "schema_type": "dlthings:Attribution"
     }
   ],
   "@type": "XYZGrant"
