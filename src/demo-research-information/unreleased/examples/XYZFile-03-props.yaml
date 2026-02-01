@@ -1,0 +1,17 @@
+pid: ex:MD5E-s23176--0a7254fc5be8c41f98339aba02a87856.json
+byte_size: 23176
+checksums:
+  - creator: spdx:checksumAlgorithm_md5
+    notation: "0a7254fc5be8c41f98339aba02a87856"
+  - creator: spdx:checksumAlgorithm_sha1
+    notation: "2252e32f027eb769be4b3729fb0e98f24ac20754"
+media_type: application/json
+# file format specification via custom definition IRI
+# (here effectively also pointing to IANA)
+format: http://edamontology.org/format_3475
+distribution_of:
+  - ex:documents/a_file
+rules:
+  - spdxlic:CC0-1.0
+generated_by:
+  - object: ex:processes/gen-doc1
