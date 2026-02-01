@@ -262,13 +262,14 @@ classes:
         multivalued: true
         inlined_as_list: true
 
-  XYZDistribution:
-    is_a: Distribution
+  XYZFile:
+    is_a: File
     mixins:
       - EntityMixin
-    title: Distribution
+    title: File
     description: >-
-      A specific representation of a data item, which may come in the form of an electronic file, or an archive or directory of many files.
+      A specific representation of a data item, which may come in the form of an electronic file,
+      or an archive or (also) a directory comprising many files.
     slots:
       - conforms_to
       - rules
@@ -285,6 +286,8 @@ classes:
         multivalued: true
       generated_by:
         range: XYZGeneration
+        # one and the same file content can be produced in different ways
+        # (for an extreme case, think "empty file")
         multivalued: true
         inlined_as_list: true
       influenced_by:
@@ -915,7 +918,7 @@ classes:
         # (longterm goal, deliverable, ambition, contractual obligation, ...)
         # range: XYZObjectiveRole
 
-  XYZRevision :
+  XYZRevision:
     is_a: Revision
     description: >-
       A revision is a derivation for which the resulting entity is a
@@ -924,7 +927,7 @@ classes:
       original. Revision is a particular case of derivation.
     slot_usage:
       generated_by:
-        range:  XYZGeneration
+        range: XYZGeneration
       used:
         range: XYZUsage
 
