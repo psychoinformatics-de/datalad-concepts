@@ -248,7 +248,6 @@ classes:
         inlined_as_list: true
         range: XYZAttribution
       generated_by:
-        range: XYZGeneration
         multivalued: true
         inlined_as_list: true
       derived_from:
@@ -285,7 +284,6 @@ classes:
         range: XYZConvention
         multivalued: true
       generated_by:
-        range: XYZGeneration
         # one and the same file content can be produced in different ways
         # (for an extreme case, think "empty file")
         multivalued: true
@@ -322,7 +320,6 @@ classes:
         inlined_as_list: true
         range: XYZAttribution
       generated_by:
-        range: XYZGeneration
         multivalued: true
         inlined_as_list: true
       derived_from:
@@ -389,7 +386,6 @@ classes:
         multivalued: true
         inlined_as_list: true
       generated_by:
-        range: XYZGeneration
         multivalued: true
         inlined_as_list: true
       revision_of:
@@ -532,7 +528,6 @@ classes:
         title: Contributors
         range: XYZAttribution
       generated_by:
-        range: XYZGeneration
         multivalued: true
         inlined_as_list: true
       revision_of:
@@ -857,9 +852,6 @@ classes:
       A derivation is a transformation of an entity into another, an
       update of an entity resulting in a new one, or the construction
       of a new entity based on a pre-existing entity.
-    slot_usage:
-      generated_by:
-        range: XYZGeneration
 
   XYZEnd:
     is_a: End
@@ -870,13 +862,6 @@ classes:
       the activity's end. An end may refer to a trigger entity that
       terminated the activity, or to an activity, known as ender that
       generated the trigger.
-
-  XYZGeneration:
-    is_a: Generation
-    description: >-
-      Generation is the completion of production of a new entity by an
-      activity. This entity did not exist before generation and becomes
-      available for usage after this generation.
 
   XYZInfluence:
     is_a: Influence
@@ -915,6 +900,3 @@ classes:
       revised version of some original. The implication here is that
       the resulting entity contains substantial content from the
       original. Revision is a particular case of derivation.
-    slot_usage:
-      generated_by:
-        range: XYZGeneration
