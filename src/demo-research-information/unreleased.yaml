@@ -253,8 +253,6 @@ classes:
         range: XYZDerivation
         multivalued: true
         inlined_as_list: true
-      revision_of:
-        range: XYZRevision
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -325,8 +323,6 @@ classes:
         range: XYZDerivation
         multivalued: true
         inlined_as_list: true
-      revision_of:
-        range: XYZRevision
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -351,8 +347,6 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: XYZAttribution
-      revision_of:
-        range: XYZRevision
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -387,8 +381,6 @@ classes:
       generated_by:
         multivalued: true
         inlined_as_list: true
-      revision_of:
-        range: XYZRevision
       alternate_of:
         range: Thing
         multivalued: true
@@ -528,8 +520,6 @@ classes:
       generated_by:
         multivalued: true
         inlined_as_list: true
-      revision_of:
-        range: XYZRevision
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -858,11 +848,3 @@ classes:
         # TODO adopt some kind of classification of objective types
         # (longterm goal, deliverable, ambition, contractual obligation, ...)
         # range: XYZObjectiveRole
-
-  XYZRevision:
-    is_a: Revision
-    description: >-
-      A revision is a derivation for which the resulting entity is a
-      revised version of some original. The implication here is that
-      the resulting entity contains substantial content from the
-      original. Revision is a particular case of derivation.
