@@ -280,7 +280,7 @@ classes:
         range: XYZRule
         multivalued: true
       conforms_to:
-        range: XYZConvention
+        range: Convention
         multivalued: true
       generated_by:
         # one and the same file content can be produced in different ways
@@ -624,13 +624,6 @@ classes:
         can be described via `broader_mappings`.
     slots:
       - title
-
-  XYZConvention:
-    is_a: Convention
-    title: Convention
-    description: >-
-      A set of agreed, stipulated, or generally accepted standards, norms,
-      social norms, or criteria, often taking the form of a custom.
 
   XYZDataType:
     is_a: Thing
