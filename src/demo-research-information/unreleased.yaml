@@ -215,7 +215,6 @@ classes:
         description: >-
           The conclusion of the competition, typically the point of decision-making, or
           announcement of the winners.
-        range: XYZEnd
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -473,7 +472,6 @@ classes:
         title: Start
       ended:
         title: End
-        range: XYZEnd
       influenced_by:
         range: XYZInfluence
         multivalued: true
@@ -789,8 +787,6 @@ classes:
       roles:
         title: Roles
         range: XYZAgentRole
-      ended:
-        range: XYZEnd
 
   XYZAttribution:
     is_a: Attribution
@@ -843,8 +839,6 @@ classes:
           - range: XYZOrganization
       roles:
         range: XYZAgentRole
-      ended:
-        range: XYZEnd
 
   XYZDerivation:
     is_a: Derivation
@@ -852,16 +846,6 @@ classes:
       A derivation is a transformation of an entity into another, an
       update of an entity resulting in a new one, or the construction
       of a new entity based on a pre-existing entity.
-
-  XYZEnd:
-    is_a: End
-    description: >-
-      End is when an activity is deemed to have been ended by an entity,
-      known as trigger. The activity no longer exists after its end. Any
-      usage, generation, or invalidation involving an activity precedes
-      the activity's end. An end may refer to a trigger entity that
-      terminated the activity, or to an activity, known as ender that
-      generated the trigger.
 
   XYZInfluence:
     is_a: Influence
@@ -873,9 +857,6 @@ classes:
     slots:
       - ended
       - started
-    slot_usage:
-      ended:
-        range: XYZEnd
 
   XYZObjectiveInfluence:
     # see XYZAgentRole for rationale on deriving from XYZInfluence rather
