@@ -80,7 +80,6 @@ prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   skos: http://www.w3.org/2004/02/skos/core#
-  w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlthings
@@ -90,7 +89,6 @@ emit_prefixes:
   - rdf
   - rdfs
   - skos
-  - w3ctr
   - xsd
 
 imports:
