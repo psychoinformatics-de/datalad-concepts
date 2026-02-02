@@ -257,9 +257,6 @@ classes:
       part_of:
         range: XYZDataset
         multivalued: true
-      rules:
-        range: Rule
-        multivalued: true
       attributed_to:
         title: Contributors
         multivalued: true
@@ -290,9 +287,6 @@ classes:
       kind:
         range: XYZDataType
       distribution_of:
-        multivalued: true
-      rules:
-        range: Rule
         multivalued: true
       conforms_to:
         range: Convention
@@ -325,9 +319,6 @@ classes:
         range: XYZBibliographicType
       part_of:
         multivalued: true
-      rules:
-        range: Rule
-        multivalued: true
       attributed_to:
         title: Contributors
         multivalued: true
@@ -356,8 +347,6 @@ classes:
       part_of:
         range: XYZGrant
         multivalued: true
-      rules:
-        range: Rule
       attributed_to:
         multivalued: true
         inlined_as_list: true
@@ -384,9 +373,6 @@ classes:
         range: XYZInstrumentType
       part_of:
         range: XYZInstrument
-        multivalued: true
-      rules:
-        range: Rule
         multivalued: true
       attributed_to:
         multivalued: true
@@ -520,8 +506,6 @@ classes:
         range: W3CISO8601
         description: >-
           The date when a publication became available at the publication venue.
-      rules:
-        range: Rule
       attributed_to:
         multivalued: true
         inlined_as_list: true
