@@ -221,6 +221,26 @@ classes:
     narrow_mappings:
       - FRAPO:FundingProgramme
 
+  XYZDataItem:
+    is_a: DataItem
+    mixins:
+      - EntityMixin
+    title: Data item
+    description: >-
+      An information content entity that is intended to be a truthful statement about
+      something (modulo, e.g., measurement precision or other systematic errors) and
+      is constructed/acquired by a method which reliably tends to produce
+      (approximately) truthful statements.
+
+      This is a conceptual entity. A single data item might be available in more than
+      one representation, with differing formats, and serializations.
+    slot_usage:
+      part_of:
+        range: XYZDataset
+        multivalued: true
+      kind:
+        range: XYZDataType
+
   XYZDataset:
     is_a: Dataset
     title: Dataset
