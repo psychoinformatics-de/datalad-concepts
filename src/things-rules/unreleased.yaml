@@ -66,7 +66,7 @@ slots:
       associated with the resource. This could refer to a standard license,
       a custom usage agreement, or a codified policy.
     multivalued: true
-    range: Thing
+    range: Rule
     narrow_mappings:
       - ODRL:hasPolicy
       - dcterms:rights
