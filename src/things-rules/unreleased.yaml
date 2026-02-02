@@ -41,7 +41,6 @@ prefixes:
   sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
   spdxlic: https://spdx.org/licenses/
-  w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
 
 default_prefix: dlthings
