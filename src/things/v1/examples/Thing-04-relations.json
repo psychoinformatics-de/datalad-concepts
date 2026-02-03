@@ -1,8 +1,8 @@
 {
   "pid": "https://doi.org/10.21105/joss.03262",
   "relations": {
-    "https://portal.issn.org/resource/issn/2475-9066": {
-      "pid": "https://portal.issn.org/resource/issn/2475-9066",
+    "ISSN:2475-9066": {
+      "pid": "ISSN:2475-9066",
       "attributes": [
         {
           "predicate": "ex:title",
