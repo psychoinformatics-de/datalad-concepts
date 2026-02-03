@@ -4,7 +4,7 @@
 pid: https://doi.org/10.21105/joss.03262
 relations:
   # the containing journal
-  https://portal.issn.org/resource/issn/2475-9066:
+  ISSN:2475-9066:
     # inlined information
     attributes:
       - predicate: ex:title

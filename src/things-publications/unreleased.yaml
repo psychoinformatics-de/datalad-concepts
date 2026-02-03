@@ -51,13 +51,6 @@ imports:
   - linkml:types
 
 slots:
-  issn:
-    title: ISSN
-    description: >-
-      Associated International Standard Serial Number (ISSN) identifier (see https://www.issn.org).
-    range: string
-    pattern: '^\d{4}-\d{3}[0-9X]{1}$'
-
   published_at:
     description: >-
       The venue a publication was made.
@@ -85,6 +78,25 @@ classes:
         description: The DOI notation is globally unique within the scope of DOIs
         unique_key_slots:
           - notation
+
+  ISSN:
+    is_a: Identifier
+    description: >-
+      International Standard Serial Number (ISSN).
+    slot_usage:
+      notation:
+        description: >-
+          The identifier notation is specified without any prefix.
+        pattern: '^\d{4}-\d{3}[\dX]$'
+    unique_keys:
+      value:
+        description: The ISSN notation is globally unique within the scope of ISSNs
+        unique_key_slots:
+          - notation
+    related_mappings:
+      - schema:issn
+    comments:
+      - The creator is ror:026ytr635
 
   Publication:
     is_a: Thing
