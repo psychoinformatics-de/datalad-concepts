@@ -20,10 +20,12 @@ comments:
 license: CC-BY-4.0
 
 prefixes:
+  ISSN: http://identifiers.org/issn/
   dash: http://datashapes.org/dash#
   dcterms: http://purl.org/dc/terms/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/unreleased/
+  doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
   foaf: http://xmlns.com/foaf/0.1/
   linkml: https://w3id.org/linkml/
