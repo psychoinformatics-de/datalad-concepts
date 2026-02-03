@@ -50,8 +50,10 @@ prefixes:
   dldi: https://pid.datalad.org/distributions/
   dlschemas: https://concepts.datalad.org/s/
   dlthings: https://concepts.datalad.org/s/things/unreleased/
+  dlvocab: https://concepts.datalad.org/vocab/
   doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
+  ex: http://example.org/
   fabio: http://purl.org/spar/fabio/
   foaf: http://xmlns.com/foaf/0.1/
   FRAPO: http://purl.org/cerif/frapo/
