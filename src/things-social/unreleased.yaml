@@ -57,17 +57,6 @@ imports:
   - dlschemas:things-spatial/unreleased
 
 slots:
-  depiction:
-    description: >-
-      An image, or photograph information, or other visualization that
-      annotates some aspect of the subject (e.g., a digital image of a
-      portrait of a person).
-    range: Thing
-    exact_mappings:
-      - foaf:depiction
-    narrow_mappings:
-      - vcard:photo
-
   family_name:
     is_a: name
     title: Family name

@@ -72,6 +72,15 @@ slots:
     exact_mappings:
       - obo:RO_0002502
 
+  depiction:
+    description: >-
+      An image, or photograph information, or other visualization that
+      annotates some aspect of the subject (e.g., a digital image of a
+      portrait of a person).
+    range: Thing
+    exact_mappings:
+      - foaf:depiction
+
   keywords:
     description: >-
       One or more keywords or tags describing the subject.
