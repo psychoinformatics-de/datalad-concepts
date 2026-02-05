@@ -160,7 +160,12 @@ classes:
     description: >-
       An award, prize, or other honor received in recognition of an achievement.
     slots:
+      - depiction
       - title
+    slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
 
   XYZActivity:
     is_a: Thing
@@ -254,8 +259,12 @@ classes:
       one representation, with differing schematic layouts, formats, and
       serializations.
     slots:
+      - depiction
       - rules
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       part_of:
         range: XYZDataset
         multivalued: true
@@ -273,6 +282,37 @@ classes:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
+
+  XYZDepiction:
+    is_a: Thing
+    mixins:
+      - EntityMixin
+    title: Depiction
+    description: >-
+      Reference conveyed through pictures.
+
+      This is a conceptual entity. A single depiction can be available,
+      for example, as a digital images in various (file) formats.
+    slots:
+      # e.g. passport picture, social media card, ...
+      - conforms_to
+      - distributions
+      - rules
+    slot_usage:
+      kind:
+        # portrait photo, oil painting, figure, clipart
+        range: XYZDepictionType
+      distributions:
+        range: XYZFile
+        multivalued: true
+      conforms_to:
+        range: Convention
+        multivalued: true
+    comments:
+      - A `Depiction` can be annotated with various common aspects using
+        standard PROV properties. For example, `attribution_to` a
+        photographer, depicted subjects or content via a link through
+        `derived_from`, etc.
 
   XYZFile:
     is_a: File
@@ -365,9 +405,13 @@ classes:
     description: >-
       A thing that enables an agent to perform an action. This is typically a device (e.g., a machine to perform a particular type of measurement), but it can also be a questionnaire that is used to perform a particular kind of assessment. An instrument is typically not a "reagent".
     slots:
+      - depiction
       - part_of
       - rules
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       kind:
         title: Instrument type
         description: >-
@@ -400,7 +444,12 @@ classes:
     title: Organization
     description: >-
       A social or legal institution such as a company, a society, or a university.
+    slots:
+      - depiction
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       part_of:
         description: >-
           An organization that the subject is part of.
@@ -422,11 +471,12 @@ classes:
     description: >-
       Person agents are people, alive, dead, or fictional.
     slots:
-      - nickname
       - depiction
+      - nickname
     slot_usage:
       depiction:
-        title: Photo
+        range: XYZDepiction
+        multivalued: true
       delegated_by:
         multivalued: true
         inlined_as_list: true
@@ -443,8 +493,12 @@ classes:
     description: >-
       A collective endeavour of some kind. Typically it is a planned process that is undertaken or attempted to meet some requirement, or to achieve a particular goal.
     slots:
+      - depiction
       - part_of
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       part_of:
         range: XYZProject
         multivalued: true
@@ -475,8 +529,12 @@ classes:
     description: >-
       A resource that is the output of a publishing process.
     slots:
+      - depiction
       - rules
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       kind:
         title: Publication type
         description: >-
@@ -537,9 +595,13 @@ classes:
       including the funding obtained, the people involved, and the management
       of the project in terms of deadlines and deliverables.
     slots:
+      - depiction
       # for stuff like "secret" subject identifiers imposed by DUAs
       - rules
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       dimensions:
         range: XYZConcept
       factors:
@@ -631,6 +693,12 @@ classes:
       # Electronic File Content Type
       - obo:NCIT_C172272
 
+  XYZDepictionType:
+    is_a: Thing
+    title: Depiction type
+    description: >-
+      Type of a depiction.
+
   XYZInstrumentType:
     is_a: Thing
     title: Instrument type
@@ -643,10 +711,14 @@ classes:
     description: >-
       A proposition that indicates a planned or anticipated outcome.
     slots:
+      - depiction
       - title
       - part_of
       - depends_on
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       part_of:
         range: XYZObjective
         multivalued: true
@@ -693,8 +765,12 @@ classes:
     description: >-
       Topic a subject is about, e.g., a particular research question or domain
     slots:
+      - depiction
       - part_of
     slot_usage:
+      depiction:
+        range: XYZDepiction
+        multivalued: true
       part_of:
         range: XYZTopic
         multivalued: true
