@@ -126,3 +126,8 @@ classes:
           For specimen (a subject derived/taken from another subject),
           this classifier should be more precise than the classifier
           of the source subject.
+    comments:
+      - Rather than adding a `name` slot to assign a subject identifier,
+        the `identifiers` slot should be used for that -- possible
+        also identifying the issuing entity of that identifier via
+        `creator`.
