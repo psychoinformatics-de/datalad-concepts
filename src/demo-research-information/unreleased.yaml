@@ -77,7 +77,6 @@ prefixes:
   spdx: http://spdx.org/rdf/terms#
   spdxlic: https://spdx.org/licenses/
   vcard: http://www.w3.org/2006/vcard/ns#
-  w3ctr: https://www.w3.org/TR/
   xsd: http://www.w3.org/2001/XMLSchema#
   xyzri: https://concepts.datalad.org/s/demo-research-information/unreleased/
   xyzrins: https://concepts.datalad.org/s/demo-research-information/ns/
@@ -90,7 +89,6 @@ emit_prefixes:
   - rdf
   - rdfs
   - skos
-  - w3ctr
   - xsd
   # a bunch more that are not needed for the structural aspects
   # of the schema, but for records using the schema
