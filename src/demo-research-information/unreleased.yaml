@@ -448,12 +448,16 @@ classes:
       - title
       - part_of
       - depends_on
+      - depiction
     slot_usage:
       part_of:
         range: XYZObjective
         multivalued: true
       depends_on:
         range: XYZObjective
+        multivalued: true
+      depiction:
+        range: XYZDepiction
         multivalued: true
 
   XYZOrganization:
