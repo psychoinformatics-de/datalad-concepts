@@ -7,7 +7,6 @@ nav:
     - Foundational:
       - Things: s/things/v1/index.md
       - Things properties: s/things-properties/unreleased/index.md
-      - Things spatial: s/things-spatial/unreleased/index.md
       - Things data: s/things-data/unreleased/index.md
       - Things study: s/things-study/unreleased/index.md
       - Things resources: s/things-resources/unreleased/index.md
@@ -56,7 +55,6 @@ plugins:
           'dump-things-storage.md': 'dump-things-storage-v0.md'
           's/things/index.md': 's/things/v1/index.md'
           's/things-properties/index.md': 's/things-properties/unreleased/index.md'
-          's/things-spatial/index.md': 's/things-spatial/unreleased/index.md'
           's/things-data/index.md': 's/things-data/unreleased/index.md'
           's/things-study/index.md': 's/things-study/unreleased/index.md'
           's/things-resources/index.md': 's/things-resources/unreleased/index.md'
