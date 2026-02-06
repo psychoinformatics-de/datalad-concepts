@@ -2,12 +2,12 @@
   "pid": "ex:wind-strength-on-20250815",
   "kind": "obo:ENVO_01001362",
   "schema_type": "xyzri:XYZDataItem",
-  "value": "22",
-  "defined_by": "sio:SIO_001215",
-  "unit": "obo:UO_0000094",
   "part_of": [
     "ex:dataset/windy"
   ],
+  "defined_by": "sio:SIO_001215",
+  "unit": "obo:UO_0000094",
+  "value": "22",
   "attributed_to": [
     {
       "object": "ex:dr-no",

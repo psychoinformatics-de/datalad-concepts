@@ -53,7 +53,9 @@ imports:
 
 classes:
   DataItem:
-    is_a: ValueSpecification
+    is_a: Thing
+    mixins:
+      - ValueSpecificationMixin
     description: >-
       An information content entity that is intended to be a truthful statement
       about something (modulo, e.g., measurement precision or other systematic
