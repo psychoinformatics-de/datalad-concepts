@@ -54,7 +54,6 @@ emit_prefixes:
 
 imports:
   - dlschemas:things-properties/unreleased
-  - dlschemas:things-spatial/unreleased
 
 slots:
   family_name:
