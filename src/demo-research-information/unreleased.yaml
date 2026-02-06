@@ -546,15 +546,6 @@ classes:
         required: false
       description:
         title: Abstract
-      published_at:
-        range: XYZPublicationVenue
-      locator:
-        title: Location within publication venue
-        description: >-
-          A descriptive identifier that the publication within the
-          venue it was published at. For a journal article, this would
-          be a volume and/or page range. Format according to the conventions
-          of the publication venue.
       about:
         recommended: true
         title: Topic(s)
@@ -562,10 +553,6 @@ classes:
           Topics covered by this publication.
         range: XYZTopic
         multivalued: true
-      date_published:
-        range: W3CISO8601
-        description: >-
-          The date when a publication became available at the publication venue.
       attributed_to:
         multivalued: true
         inlined_as_list: true
