@@ -48,15 +48,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:things-properties/unreleased
-  - dlschemas:things-temporal/unreleased
-  - dlschemas:things-spatial/unreleased
   - linkml:types
-
-slots:
-  published_at:
-    description: >-
-      The venue a publication was made.
-    range: Thing
 
 classes:
   DOI:
@@ -105,18 +97,9 @@ classes:
     description: >-
       A resource that is the output of a publishing process.
     slots:
-      - date_published
-      - locator
       - title
-      - published_at
-    slot_usage:
-      locator:
-        description: >-
-          A descriptive identifier that locates the publication within
-          the publication venue. This can be a unique name,
-          a numerical key, or another notation that uniquely
-          identifies the subject within that context.
     exact_mappings:
       - obo:IAO_0000311
     notes:
-      - There is not slow to indicate authorship. This is left to a PROV attribution.
+      - There is not slot to indicate authorship, or a publication venue.
+        This is left to a PROV attribution.
