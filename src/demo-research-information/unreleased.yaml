@@ -437,6 +437,25 @@ classes:
         multivalued: true
         inlined_as_list: true
 
+  XYZObjective:
+    is_a: Thing
+    mixins:
+      - EntityMixin
+    title: Objective
+    description: >-
+      A proposition that indicates a planned or anticipated outcome.
+    slots:
+      - title
+      - part_of
+      - depends_on
+    slot_usage:
+      part_of:
+        range: XYZObjective
+        multivalued: true
+      depends_on:
+        range: XYZObjective
+        multivalued: true
+
   XYZOrganization:
     is_a: Organization
     mixins:
@@ -691,26 +710,6 @@ classes:
     title: Instrument type
     description: >-
       Type of an instrument.
-
-  XYZObjective:
-    is_a: Thing
-    title: Objective
-    description: >-
-      A proposition that indicates a planned or anticipated outcome.
-    slots:
-      - depiction
-      - title
-      - part_of
-      - depends_on
-    slot_usage:
-      depiction:
-        range: XYZDepiction
-        multivalued: true
-      part_of:
-        range: XYZObjective
-        multivalued: true
-      depends_on:
-        range: XYZObjective
 
   XYZPublicationVenue:
     is_a: Thing
