@@ -635,6 +635,18 @@ classes:
 
   # Thing that are "classifiers" (i.e., tags) without a provenance interface
   #
+  XYZActivityRole:
+    is_a: Thing
+    title: Activity role
+    description: >-
+      A role is the function of an activity with respect to a subject,
+      in the context of an influence.
+    slots:
+      - name
+    broad_mappings:
+      - prov:Role
+      - dcat:Role
+
   XYZAgentRole:
     is_a: Thing
     title: Agent role
