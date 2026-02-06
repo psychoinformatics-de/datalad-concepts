@@ -94,7 +94,6 @@ emit_prefixes:
 imports:
   - dlschemas:things-properties/unreleased
   - dlschemas:things-spatial/unreleased
-  - dlschemas:things-temporal/unreleased
 
 slots:
   alternate_of:
