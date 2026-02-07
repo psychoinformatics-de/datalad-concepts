@@ -1,0 +1,11 @@
+schema: src/things/v2.yaml
+target_class: ValueSpecification
+data_sources:
+  - src/things/v2/examples/ValueSpecification-01-minimal.yaml
+  - src/things/v2/examples/ValueSpecification-02-quantitative-measurement.yaml
+  - src/things/v2/examples/ValueSpecification-02-qualitative-assessment.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

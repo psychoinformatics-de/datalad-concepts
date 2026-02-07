@@ -1,0 +1,74 @@
+# A record on a scientific publication, as an example of describing
+# a rather specialized thing without any dedicated support for
+# specialized concepts by the schema itself.
+# other schemas for those aspects.
+pid: https://doi.org/10.1038/s41597-022-01163-2
+exact_mappings:
+  - bibo:AcademicArticle
+description: "Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset)."
+relations:
+  # the containing journal with some information on it
+  ISSN:2052-4463:
+    exact_mappings:
+      - bibo:Journal
+    attributes:
+      - predicate: ex:title
+        value: "Scientific Data"
+attributes:
+  - predicate: ex:title
+    value: "FAIRly big: A framework for computationally reproducible processing of large-scale data"
+  # DOI
+  - predicate: ex:identifier
+    exact_mappings:
+      - obo:IAO_0020000
+    attributes:
+      - predicate: skos:notation
+        value: 10.1038/s41597-022-01163-2
+      - predicate: dcterms:creator
+        value: https://doi.org
+  # bibliographic information
+  - predicate: ex:bibliographicCitation
+    value: "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
+  - predicate: bibo:doi
+    attributes:
+      - predicate: ex:title
+        value: DOI
+    value: https://doi.org/10.1038/s41597-022-01163-2
+  - predicate: bibo:volume
+    attributes:
+      - predicate: ex:title
+        value: Volume
+    value: "9"
+  - predicate: bibo:number
+    attributes:
+      - predicate: ex:title
+        value: Document number
+    value: "80"
+  - predicate: bibo:numPages
+    attributes:
+      - predicate: ex:title
+        value: Number of pages
+    value: "17"
+    range: xsd:nonNegativeInteger
+  - predicate: ex:modified
+    range: xsd:date
+    value: "2022-02-11"
+  - predicate: ex:date
+    range: xsd:date
+    value: "2022-03-11"
+characterized_by:
+  # containing journal
+  - predicate: ex:isPartOf
+    object: ISSN:2052-4463
+  # related topics
+  - predicate: ex:subject
+    object: https://www.nature.com/subjects/data-processing
+  - predicate: ex:subject
+    object: https://www.nature.com/subjects/data-publication-and-archiving
+  - predicate: ex:subject
+    object: https://www.nature.com/subjects/software
+  # publisher landing page
+  - predicate: owl:sameAs
+    object: https://www.nature.com/articles/s41597-022-01163-2
+  - predicate: ex:license
+    object: https://spdx.org/licenses/CC-BY-4.0

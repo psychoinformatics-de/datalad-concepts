@@ -1,0 +1,143 @@
+{
+  "pid": "https://doi.org/10.1038/s41597-022-01163-2",
+  "relations": {
+    "ISSN:2052-4463": {
+      "pid": "ISSN:2052-4463",
+      "exact_mappings": [
+        "bibo:Journal"
+      ],
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Scientific Data"
+        }
+      ],
+      "schema_type": "dlthings:Thing"
+    }
+  },
+  "description": "Large-scale datasets present unique opportunities to perform scientific investigations with unprecedented breadth. However, they also pose considerable challenges for the findability, accessibility, interoperability, and reusability (FAIR) of research outcomes due to infrastructure limitations, data usage constraints, or software license restrictions. Here we introduce a DataLad-based, domain-agnostic framework suitable for reproducible data processing in compliance with open science mandates. The framework attempts to minimize platform idiosyncrasies and performance-related complexities. It affords the capture of machine-actionable computational provenance records that can be used to retrace and verify the origins of research outcomes, as well as be re-executed independent of the original computing infrastructure. We demonstrate the framework’s performance using two showcases: one highlighting data sharing and transparency (using the studyforrest.org dataset) and another highlighting scalability (using the largest public brain imaging dataset available: the UK Biobank dataset).",
+  "exact_mappings": [
+    "bibo:AcademicArticle"
+  ],
+  "attributes": [
+    {
+      "predicate": "ex:title",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "FAIRly big: A framework for computationally reproducible processing of large-scale data"
+    },
+    {
+      "predicate": "ex:identifier",
+      "exact_mappings": [
+        "obo:IAO_0020000"
+      ],
+      "attributes": [
+        {
+          "predicate": "skos:notation",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "10.1038/s41597-022-01163-2"
+        },
+        {
+          "predicate": "dcterms:creator",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "https://doi.org"
+        }
+      ],
+      "schema_type": "dlthings:AttributeSpecification"
+    },
+    {
+      "predicate": "ex:bibliographicCitation",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "Wagner, A.S., Waite, L.K., Wierzba, M. et al. FAIRly big: A framework for computationally reproducible processing of large-scale data. Sci Data 9, 80 (2022)."
+    },
+    {
+      "predicate": "bibo:doi",
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "DOI"
+        }
+      ],
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "https://doi.org/10.1038/s41597-022-01163-2"
+    },
+    {
+      "predicate": "bibo:volume",
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Volume"
+        }
+      ],
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "9"
+    },
+    {
+      "predicate": "bibo:number",
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Document number"
+        }
+      ],
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "80"
+    },
+    {
+      "predicate": "bibo:numPages",
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Number of pages"
+        }
+      ],
+      "schema_type": "dlthings:AttributeSpecification",
+      "range": "xsd:nonNegativeInteger",
+      "value": "17"
+    },
+    {
+      "predicate": "ex:modified",
+      "schema_type": "dlthings:AttributeSpecification",
+      "range": "xsd:date",
+      "value": "2022-02-11"
+    },
+    {
+      "predicate": "ex:date",
+      "schema_type": "dlthings:AttributeSpecification",
+      "range": "xsd:date",
+      "value": "2022-03-11"
+    }
+  ],
+  "characterized_by": [
+    {
+      "object": "ISSN:2052-4463",
+      "predicate": "ex:isPartOf"
+    },
+    {
+      "object": "https://www.nature.com/subjects/data-processing",
+      "predicate": "ex:subject"
+    },
+    {
+      "object": "https://www.nature.com/subjects/data-publication-and-archiving",
+      "predicate": "ex:subject"
+    },
+    {
+      "object": "https://www.nature.com/subjects/software",
+      "predicate": "ex:subject"
+    },
+    {
+      "object": "https://www.nature.com/articles/s41597-022-01163-2",
+      "predicate": "owl:sameAs"
+    },
+    {
+      "object": "https://spdx.org/licenses/CC-BY-4.0",
+      "predicate": "ex:license"
+    }
+  ],
+  "schema_type": "dlthings:Thing",
+  "@type": "Thing"
+}

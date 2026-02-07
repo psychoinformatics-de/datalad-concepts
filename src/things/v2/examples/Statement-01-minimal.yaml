@@ -1,0 +1,5 @@
+# A statement contains the missing predicate and object to link to
+# a subject in order to form a full RDF triple. Both are required,
+# and both must be referenced (URI or CURIE) and not be inlined.
+predicate: ex:subject
+object: https://helmholtz.de

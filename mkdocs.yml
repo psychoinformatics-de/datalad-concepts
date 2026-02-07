@@ -5,7 +5,7 @@ nav:
   - About: about.md
   - Schemas:
     - Foundational:
-      - Things: s/things/v1/index.md
+      - Things: s/things/v2/index.md
       - Things data: s/things-data/unreleased/index.md
       - Things distributions: s/things-distributions/unreleased/index.md
       - Things files: s/things-files/unreleased/index.md
@@ -28,7 +28,7 @@ plugins:
       redirect_maps:
           # map unversioned URLs to the latest version
           'dump-things-storage.md': 'dump-things-storage-v0.md'
-          's/things/index.md': 's/things/v1/index.md'
+          's/things/index.md': 's/things/v2/index.md'
           's/things-properties/index.md': 's/things-properties/unreleased/index.md'
           's/things-data/index.md': 's/things-data/unreleased/index.md'
           's/things-study/index.md': 's/things-study/unreleased/index.md'

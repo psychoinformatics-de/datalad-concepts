@@ -1,0 +1,6 @@
+{
+  "predicate": "ex:title",
+  "schema_type": "dlthings:AttributeSpecification",
+  "value": "My attribute",
+  "@type": "AttributeSpecification"
+}

@@ -1,0 +1,13 @@
+pid: ex:measurement853
+# mass
+about:
+  - obo:PATO_0000125
+attributes:
+  - predicate: ex:title
+    value: "measured mass (kg)"
+# measurement datum
+kind: obo:IAO_0000109
+range: xsd:decimal
+# kilogram
+unit: obo:UO_0000009
+value: "145.3"

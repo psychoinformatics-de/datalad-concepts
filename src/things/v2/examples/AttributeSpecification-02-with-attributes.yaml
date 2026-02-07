@@ -1,0 +1,10 @@
+# An attribute without a singular value, but attributes of it
+# own instead.
+predicate: ex:identifier
+exact_mappings:
+  - obo:IAO_0020000
+attributes:
+  - predicate: skos:notation
+    value: 5008462-8
+  - predicate: dcterms:creator
+    value: https://d-nb.info
