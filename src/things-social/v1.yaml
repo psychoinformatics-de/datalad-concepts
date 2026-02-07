@@ -1,0 +1,184 @@
+id: https://concepts.datalad.org/s/things-social/v1
+name: things-social-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Basic social concepts for use with the things schema
+description: |
+  *This is an unreleased development version*
+
+  This schema defines basic social concepts (people, organizations,
+  projects) as extensions of the general `things` model. It builds
+  on the `properties` and `spatial` add-ons and provides name-related
+  slots plus three classes (`Organization`, `Person`, `Project`)
+  with mappings to common vocabularies.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../v1.context.jsonld)
+  - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
+  - [OWL TTL](../v1.owl.ttl)
+  - [SHACL TTL](../v1.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  vcard: http://www.w3.org/2006/vcard/ns#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/v1
+
+slots:
+  family_name:
+    is_a: name
+    title: Family name
+    description: >-
+      The (inherited) family name of the subject. In many Western languages this is the
+      "last name".
+    range: string
+    exact_mappings:
+      - foaf:familyName
+      - vcard:family-name
+
+  formatted_name:
+    is_a: name
+    description: >-
+      A formatted text corresponding to the name of the subject.
+    range: string
+    exact_mappings:
+      - vcard:fn
+
+  honorific_name_prefix:
+    is_a: name
+    title: Title or prefix
+    description: >-
+      The honorific prefix(es) of the subject's name. For example, (academic/formal) titles
+      like "Mrs", or "Dr", "Dame".
+    range: string
+    exact_mappings:
+      - vcard:honorific-prefix
+
+  honorific_name_suffix:
+    is_a: name
+    title: Suffix
+    description: >-
+      The honorific suffix(es) of the subject's name. For example, generation labels ("III"),
+      or indicators of an academic degree, a profession, or a position ("MD", "BA").
+    range: string
+    exact_mappings:
+      - vcard:honorific-suffix
+
+  given_name:
+    is_a: name
+    title: Given name
+    description: >-
+      The given (non-inherited) name of the subject.
+    range: string
+    exact_mappings:
+      - foaf:givenName
+      - vcard:given-name
+
+  nickname:
+    is_a: name
+    title: Nickname
+    description: >-
+      A short informal, invented given name for a person or thing used instead of the
+      actual name of the person or thing.
+    range: string
+    exact_mappings:
+      - vcard:nickname
+
+  additional_names:
+    is_a: name
+    title: Additional names
+    description: >-
+      Additional name(s) associated with the subject, such as one or more
+      middle names.
+    range: string
+    exact_mappings:
+      - vcard:additional_name
+    multivalued: true
+
+classes:
+  Organization:
+    is_a: Thing
+    description: >-
+      A social or legal institution such as a company, a society, or a university.
+    slots:
+      - name
+      - short_name
+      - at_location
+      - part_of
+    slot_usage:
+      part_of:
+        description: >-
+          An organization that the subject is part of.
+        range: Organization
+        multivalued: true
+    exact_mappings:
+      - prov:Organization
+
+  Person:
+    is_a: Thing
+    description: >-
+      Person agents are people, alive, dead, or fictional.
+    exact_mappings:
+      - foaf:Person
+      - prov:Person
+    slots:
+      - additional_names
+      - family_name
+      - given_name
+      - honorific_name_prefix
+      - honorific_name_suffix
+      - formatted_name
+
+  Project:
+    is_a: Thing
+    description: >-
+      A collective endeavour of some kind. Typically it is a planned
+      process that is undertaken or attempted to meet some requirement,
+      or to achieve a particular goal.
+    exact_mappings:
+      - foaf:Project
+    close_mappings:
+      - obo:NCIT_C47885
+    broad_mappings:
+      # process
+      - obo:BFO_0000015
+    slots:
+      - short_name
+      - title
+      - part_of
+    slot_usage:
+      part_of:
+        multivalued: true

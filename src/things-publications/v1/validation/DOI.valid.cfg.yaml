@@ -1,0 +1,9 @@
+schema: src/things-publications/v1.yaml
+target_class: DOI
+data_sources:
+  - src/things-publications/v1/examples/DOI-01-minimal.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

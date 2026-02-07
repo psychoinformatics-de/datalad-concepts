@@ -1,0 +1,9 @@
+schema: src/things-resources/v1.yaml
+target_class: Convention
+data_sources:
+  - src/things-resources/v1/examples/Convention-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

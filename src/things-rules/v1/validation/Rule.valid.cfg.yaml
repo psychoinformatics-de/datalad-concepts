@@ -1,0 +1,9 @@
+schema: src/things-rules/v1.yaml
+target_class: Rule
+data_sources:
+  - src/things-rules/v1/examples/Rule-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

@@ -1,0 +1,9 @@
+schema: src/things-social/v1.yaml
+target_class: Project
+data_sources:
+  - src/things-social/v1/examples/Project-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

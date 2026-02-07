@@ -1,0 +1,9 @@
+schema: src/things-distributions/v1.yaml
+target_class: Distribution
+data_sources:
+  - src/things-distributions/v1/examples/Distribution-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:
