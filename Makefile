@@ -22,15 +22,25 @@ build/linkml-docs: \
 	build/linkml-docs/s/things/v1 \
 	build/linkml-docs/s/things/v2 \
 	build/linkml-docs/s/things-properties/unreleased \
+	build/linkml-docs/s/things-properties/v1 \
 	build/linkml-docs/s/things-data/unreleased \
+	build/linkml-docs/s/things-data/v1 \
 	build/linkml-docs/s/things-study/unreleased \
+	build/linkml-docs/s/things-study/v1 \
 	build/linkml-docs/s/things-resources/unreleased \
+	build/linkml-docs/s/things-resources/v1 \
 	build/linkml-docs/s/things-rules/unreleased \
+	build/linkml-docs/s/things-rules/v1 \
 	build/linkml-docs/s/things-distributions/unreleased \
+	build/linkml-docs/s/things-distributions/v1 \
 	build/linkml-docs/s/things-social/unreleased \
+	build/linkml-docs/s/things-social/v1 \
 	build/linkml-docs/s/things-files/unreleased \
+	build/linkml-docs/s/things-files/v1 \
 	build/linkml-docs/s/things-publications/unreleased \
+	build/linkml-docs/s/things-publications/v1 \
 	build/linkml-docs/s/things-prov/unreleased \
+	build/linkml-docs/s/things-prov/v1 \
 	build/linkml-docs/s/flat/unreleased \
 	build/linkml-docs/s/spatial-mixin/unreleased \
 	build/linkml-docs/s/temporal-mixin/unreleased \
@@ -102,15 +112,25 @@ check-models: \
 	checkmodel/things/v1 \
 	checkmodel/things/v2 \
 	checkmodel/things-properties/unreleased \
+	checkmodel/things-properties/v1 \
 	checkmodel/things-study/unreleased \
+	checkmodel/things-study/v1 \
 	checkmodel/things-data/unreleased \
+	checkmodel/things-data/v1 \
 	checkmodel/things-resources/unreleased \
+	checkmodel/things-resources/v1 \
 	checkmodel/things-rules/unreleased \
+	checkmodel/things-rules/v1 \
 	checkmodel/things-distributions/unreleased \
+	checkmodel/things-distributions/v1 \
 	checkmodel/things-social/unreleased \
+	checkmodel/things-social/v1 \
 	checkmodel/things-files/unreleased \
+	checkmodel/things-files/v1 \
 	checkmodel/things-publications/unreleased \
+	checkmodel/things-publications/v1 \
 	checkmodel/things-prov/unreleased \
+	checkmodel/things-prov/v1 \
 	checkmodel/flat/unreleased \
 	checkmodel/spatial-mixin/unreleased \
 	checkmodel/temporal-mixin/unreleased \
@@ -171,20 +191,36 @@ check-validation: \
 	checkvalidation/things/v2 \
 	convertexamples/things-distributions/unreleased \
 	checkvalidation/things-distributions/unreleased \
+	convertexamples/things-distributions/v1 \
+	checkvalidation/things-distributions/v1 \
 	convertexamples/things-social/unreleased \
 	checkvalidation/things-social/unreleased \
+	convertexamples/things-social/v1 \
+	checkvalidation/things-social/v1 \
 	convertexamples/things-study/unreleased \
 	checkvalidation/things-study/unreleased \
+	convertexamples/things-study/v1 \
+	checkvalidation/things-study/v1 \
 	convertexamples/things-data/unreleased \
 	checkvalidation/things-data/unreleased \
+	convertexamples/things-data/v1 \
+	checkvalidation/things-data/v1 \
 	convertexamples/things-resources/unreleased \
 	checkvalidation/things-resources/unreleased \
+	convertexamples/things-resources/v1 \
+	checkvalidation/things-resources/v1 \
 	convertexamples/things-rules/unreleased \
 	checkvalidation/things-rules/unreleased \
+	convertexamples/things-rules/v1 \
+	checkvalidation/things-rules/v1 \
 	convertexamples/things-files/unreleased \
 	checkvalidation/things-files/unreleased \
+	convertexamples/things-files/v1 \
+	checkvalidation/things-files/v1 \
 	convertexamples/things-publications/unreleased \
 	checkvalidation/things-publications/unreleased \
+	convertexamples/things-publications/v1 \
+	checkvalidation/things-publications/v1 \
 	convertexamples/demo-empirical-data/unreleased \
 	checkvalidation/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
@@ -211,13 +247,21 @@ convert-examples: \
 	convertexamples/things/v1 \
 	convertexamples/things/v2 \
 	convertexamples/things-distributions/unreleased \
+	convertexamples/things-distributions/v1 \
 	convertexamples/things-social/unreleased \
+	convertexamples/things-social/v1 \
 	convertexamples/things-study/unreleased \
+	convertexamples/things-study/v1 \
 	convertexamples/things-data/unreleased \
+	convertexamples/things-data/v1 \
 	convertexamples/things-resources/unreleased \
+	convertexamples/things-resources/v1 \
 	convertexamples/things-rules/unreleased \
+	convertexamples/things-rules/v1 \
 	convertexamples/things-files/unreleased \
+	convertexamples/things-files/v1 \
 	convertexamples/things-publications/unreleased \
+	convertexamples/things-publications/v1 \
 	convertexamples/flat/unreleased \
 	convertexamples/flat-prov/unreleased \
 	convertexamples/flat-publications/unreleased \
