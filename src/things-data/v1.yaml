@@ -4,8 +4,6 @@ version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concepts for hierarchical data representations for use with the things schema
 description: |
-  *This is an unreleased development version*
-
   The schema defines conceptual models for datasets and individual data items
   to describe their nature and relationships across formats and linked with
   their serializationa (see `things-distributions` and `things-files`).
@@ -19,6 +17,9 @@ description: |
   - [LinkML YAML (static/resolved)](../v1.static.yaml)
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
+
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../things-data/unreleased).
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

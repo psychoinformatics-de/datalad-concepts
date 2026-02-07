@@ -4,8 +4,6 @@ version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concept related to scientific studies for use with the things schema
 description: |
-  *This is an unreleased development version*
-
   This schema provides the foundational concepts of `Study` and `Subject`
   for capturing key aspects of a scientific investigation.
 
@@ -26,6 +24,9 @@ description: |
   - [LinkML YAML (static/resolved)](../v1.static.yaml)
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
+
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../things-study/unreleased).
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

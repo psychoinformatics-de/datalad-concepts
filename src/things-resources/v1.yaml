@@ -4,8 +4,6 @@ version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concepts related to resources for use with the things schema
 description: |
-  *This is an unreleased development version*
-
   Resources here are things that enable, inform, or are otherwise utilizes
   by activities. This schema provides a number of classes for select
   concept in this domain, such as `Convention`, `Document`, and
@@ -20,6 +18,9 @@ description: |
   - [LinkML YAML (static/resolved)](../v1.static.yaml)
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
+
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../things-resources/unreleased).
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

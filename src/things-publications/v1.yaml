@@ -4,8 +4,6 @@ version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concept related to publications for use with the things schema
 description: |
-  *This is an unreleased development version*
-
   The schema primarily provides classes for `DOI` and `ISSN` identifiers.
   In addition, a simplistic `Publication` class is included. This class
   does not provide any slots targeting bibliographic metadata. Instead,
@@ -28,6 +26,9 @@ description: |
   - [LinkML YAML (static/resolved)](../v1.static.yaml)
   - [OWL TTL](../v1.owl.ttl)
   - [SHACL TTL](../v1.shacl.ttl)
+
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../things-publications/unreleased).
 
 comments:
   - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME

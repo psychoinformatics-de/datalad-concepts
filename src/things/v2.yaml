@@ -4,8 +4,6 @@ version: 2.0.0
 status: eunal:concept-status/DRAFT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |
-  *This is an unreleased development version*
-
   This schema provides a generic [`Thing`](Thing) concept as a basic building block.
   Key concepts of this schema are that any `Thing`
  
@@ -47,6 +45,9 @@ description: |
   - [LinkML YAML (static/resolved)](../v2.static.yaml)
   - [OWL TTL](../v2.owl.ttl)
   - [SHACL TTL](../v2.shacl.ttl)
+
+  Upcoming changes to this schema may be available in an [(unreleased)
+  development version](../../things/unreleased).
 
   ## Upgrading vom Version 1
 
