@@ -1,0 +1,12 @@
+{
+  "pid": "https://example.org/wind-strength-on-20250815",
+  "kind": "http://purl.obolibrary.org/obo/ENVO_01001362",
+  "schema_type": "dlthings:DataItem",
+  "part_of": [
+    "https://example.org/dataset/windy"
+  ],
+  "defined_by": "http://semanticscience.org/resource/SIO_001215",
+  "unit": "obo:UO_0000094",
+  "value": "22",
+  "@type": "DataItem"
+}

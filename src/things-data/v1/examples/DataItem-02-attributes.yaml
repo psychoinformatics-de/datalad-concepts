@@ -1,0 +1,11 @@
+pid: https://example.org/wind-strength-on-20250815
+# atmospheric wind speed
+kind: http://purl.obolibrary.org/obo/ENVO_01001362
+value: "22"
+# m/s
+unit: obo:UO_0000094
+# severe -> beaufort scale 9
+defined_by: http://semanticscience.org/resource/SIO_001215
+# containing dataset
+part_of:
+  - https://example.org/dataset/windy

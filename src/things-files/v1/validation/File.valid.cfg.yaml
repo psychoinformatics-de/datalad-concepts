@@ -1,0 +1,10 @@
+schema: src/things-files/v1.yaml
+target_class: File
+data_sources:
+  - src/things-files/v1/examples/File-02-attributes.yaml
+  - src/things-files/v1/examples/File-03-parts.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

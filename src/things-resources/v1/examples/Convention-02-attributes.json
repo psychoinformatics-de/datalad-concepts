@@ -1,0 +1,16 @@
+{
+  "pid": "https://scicrunch.org/resolver/RRID:SCR_016124",
+  "broad_mappings": [
+    "obo:T4FS_0000381"
+  ],
+  "characterized_by": [
+    {
+      "object": "https://doi.org/10.1038/sdata.2016.44",
+      "predicate": "http://purl.org/spar/cito/citesAsAuthority"
+    }
+  ],
+  "schema_type": "dlthings:Convention",
+  "title": "Brain Imaging Data Structure",
+  "short_name": "BIDS",
+  "@type": "Convention"
+}

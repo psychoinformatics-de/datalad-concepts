@@ -1,0 +1,9 @@
+schema: src/things-study/v1.yaml
+target_class: Study
+data_sources:
+  - src/things-study/v1/examples/Study-1.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

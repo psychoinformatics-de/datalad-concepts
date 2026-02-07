@@ -1,0 +1,92 @@
+id: https://concepts.datalad.org/s/things-rules/v1
+name: things-rules-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concepts related to rules applying to resources for use with the things schema
+description: |
+  *This is an unreleased development version*
+
+  Rules can be restricting or granting permissions. A concrete example
+  is a license. However, a rule can also be a requirement that has to be met
+  in order to be able to use a resource, such as a citation or acknowledgment
+  requirement.
+
+  This schema provides a `rules` slot, and an associated `Rule` class that
+  can be used to capture permissions and regulation for a wide range of
+  concepts.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../v1.context.jsonld)
+  - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
+  - [OWL TTL](../v1.owl.ttl)
+  - [SHACL TTL](../v1.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  ODRL: http://www.w3.org/ns/odrl/2/
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  spdxlic: https://spdx.org/licenses/
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - spdxlic
+  - xsd
+
+imports:
+  - dlschemas:things-properties/v1
+
+
+slots:
+  rules:
+    title: Rules
+    description: >-
+      Permissions, prohibitions, obligations or other rights/policies
+      associated with the resource. This could refer to a standard license,
+      a custom usage agreement, or a codified policy.
+    multivalued: true
+    range: Rule
+    narrow_mappings:
+      - ODRL:hasPolicy
+      - dcterms:rights
+      - dcterms:license
+
+
+classes:
+  Rule:
+    is_a: Thing
+    description: >-
+      Permissions, prohibitions, obligations or other rights/policies.
+      This can be a standard license, a custom usage agreement, or a
+      codified policy.
+    slots:
+      # title because MIH thinks of these as documents
+      - title
+      # licenses often have them
+      - short_name

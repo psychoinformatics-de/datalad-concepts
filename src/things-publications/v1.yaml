@@ -1,0 +1,120 @@
+id: https://concepts.datalad.org/s/things-publications/v1
+name: things-publications-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concept related to publications for use with the things schema
+description: |
+  *This is an unreleased development version*
+
+  The schema primarily provides classes for `DOI` and `ISSN` identifiers.
+  In addition, a simplistic `Publication` class is included. This class
+  does not provide any slots targeting bibliographic metadata. Instead,
+  it is suggested to capture the linkage of a publication to authors,
+  publishers, sponsors, and publication venues via provenance metadata
+  (see `things-prov` and the `research-information` demonstrator).
+
+  Using the standard `attributes` slots of a `Thing` it is nevertheless
+  straightforward to describe a publication via the many properties
+  provided by the `bibo`, `CiTO`, and other vocabularies. For the
+  description of licenses, or access policies concerning publications,
+  please see the `things-rules` schema addon.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../v1.context.jsonld)
+  - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
+  - [OWL TTL](../v1.owl.ttl)
+  - [SHACL TTL](../v1.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: CC-BY-4.0
+
+prefixes:
+  ISSN: http://identifiers.org/issn/
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  doi: https://doi.org/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/v1
+  - linkml:types
+
+classes:
+  DOI:
+    is_a: Identifier
+    description: >-
+      Digital Object Identifier (DOI; ISO 26324), an identifier system governed by the
+      DOI Foundation, where individual identifiers are issued by one of several registration
+      agencies.
+    slot_usage:
+      # TODO: creator has range: Thing, ie. OWL:Thing.
+      # But uricurie is a literal.
+      #creator:
+      #  ifabsent: uriorcurie(https://doi.org)
+      #  description: By default, the creator is identified as "https://doi.org".
+      notation:
+        description: >-
+          The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
+        pattern: '(?i)^(?!(?:https?://|doi:)).+$'
+    unique_keys:
+      value:
+        description: The DOI notation is globally unique within the scope of DOIs
+        unique_key_slots:
+          - notation
+
+  ISSN:
+    is_a: Identifier
+    description: >-
+      International Standard Serial Number (ISSN).
+    slot_usage:
+      notation:
+        description: >-
+          The identifier notation is specified without any prefix.
+        pattern: '^\d{4}-\d{3}[\dX]$'
+    unique_keys:
+      value:
+        description: The ISSN notation is globally unique within the scope of ISSNs
+        unique_key_slots:
+          - notation
+    related_mappings:
+      - schema:issn
+    comments:
+      - The creator is ror:026ytr635
+
+  Publication:
+    is_a: Thing
+    description: >-
+      A resource that is the output of a publishing process.
+    slots:
+      - title
+    exact_mappings:
+      - obo:IAO_0000311
+    notes:
+      - There is not slot to indicate authorship, or a publication venue.
+        This is left to a PROV attribution.

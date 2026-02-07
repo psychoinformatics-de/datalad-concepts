@@ -1,0 +1,10 @@
+schema: src/things-social/v1.yaml
+target_class: Person
+data_sources:
+  - src/things-social/v1/examples/Person-01-minimal.yaml
+  - src/things-social/v1/examples/Person-02-attributes.yaml
+plugins:
+  JsonschemaValidationPlugin:
+    closed: true
+    include_range_class_descendants: false
+  RecommendedSlotsPlugin:

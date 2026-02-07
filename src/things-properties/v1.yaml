@@ -1,0 +1,233 @@
+id: https://concepts.datalad.org/s/things-properties/v1
+name: things-properties-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Collection of common properties for use with the things schema
+description: |
+  *This is an unreleased development version*
+
+  This schema provides a collection of common data properties and object
+  properties for use with the things schema.
+  It can be imported directly into other linkml schemas, or any of its
+  individual property definitions can be used by their URI as vocabulary
+  components or definitions (e.g., `dlthings:name` identified by this
+  [URI](`name`)).
+
+  Slot names use the plural form whenever they are directly declared as
+  "multivalued" in this schema, otherwise the singular form is used for
+  the slot name. The `slot_uri` always uses the singular form.
+
+  Every property declared here is mapped to at least one standard/established
+  vocabulary.
+
+  The schema definition is available as
+
+  - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  bibo: http://purl.org/ontology/bibo/
+  dcat: http://www.w3.org/ns/dcat#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  pq: http://www.wikidata.org/prop/qualifier/
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  schema: http://schema.org/
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+
+imports:
+  - dlschemas:things/v1
+  - linkml:types
+
+types:
+  W3CISO8601:
+    uri: dlthings:w3ctr-datetime
+    base: str
+    typeof: string
+    description:
+      W3C variant/subset of IS08601 for specifying date(times).
+      Supported are
+      - YYYY (eg 1997)
+      - YYYY-MM (eg 1997-07)
+      - YYYY-MM-DD (eg 1997-07-16)
+      - YYYY-MM-DDThh:mmTZD (eg 1997-07-16T19:20+01:00)
+      - YYYY-MM-DDThh:mm:ssTZD (eg 1997-07-16T19:20:30+01:00)
+      - YYYY-MM-DDThh:mm:ss.sTZD (eg 1997-07-16T19:20:30.45+01:00)
+      where TZD is the time zone designator (Z or +hh:mm or -hh:mm)
+    pattern: '^([-+]\d+)|(\d{4})|(\d{4}-[01]\d)|(\d{4}-[01]\d-[0-3]\d)|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d\.\d+([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))|(\d{4}-[01]\d-[0-3]\dT[0-2]\d:[0-5]\d([+-][0-2]\d:[0-5]\d|Z))$'
+    see_also:
+      - https://www.w3.org/TR/NOTE-datetime
+
+slots:
+  at_location:
+    description: >-
+      Associate the subject with a location. This can be a geographic place,
+      or another uniquely identified object.
+    range: Thing
+    notes:
+      - For specifying a context-specific location see `locator`.
+    exact_mappings:
+      - prov:atLocation
+      - schema:location
+
+  at_time:
+    description: >-
+      Time at which an instanteneous event takes place or took place.
+    range: W3CISO8601
+    exact_mappings:
+      - prov:atTime
+
+  conforms_to:
+    description: >-
+      An established standard to which the subject conforms.
+    range: Thing
+    comments:
+      - This property SHOULD be used to indicate a model, schema, ontology, view or profile that the subject conforms to.
+    exact_mappings:
+      - dcterms:conformsTo
+
+  depends_on:
+    description: >-
+      The subject depends on object in some way.
+    range: Thing
+    exact_mappings:
+      - obo:RO_0002502
+
+  depiction:
+    description: >-
+      An image, or photograph information, or other visualization that
+      annotates some aspect of the subject (e.g., a digital image of a
+      portrait of a person).
+    range: Thing
+    exact_mappings:
+      - foaf:depiction
+
+  keywords:
+    description: >-
+      One or more keywords or tags describing the subject.
+    range: string
+    multivalued: true
+    exact_mappings:
+      - dcat:keyword
+      - schema:keywords
+      - obo:IAO_0000629
+
+  locator:
+    description: >-
+      A descriptive identifier that locates a resource within a containing resource.
+      This can be a unique name, a numerical key, or another notation that uniquely
+      identifies the subject within the containing resource.
+    range: string
+    notes:
+      - For specifying a location via a globally unique identifier see `at_location`.
+    exact_mappings:
+      - bibo:locator
+  name:
+    description: >-
+      Name of the subject. A name is closely related to a `title`, but often
+      more compact and identifier-like, but without the implication of
+      uniqueness of an identifier. A name is often used by technical systems
+      to display an item in an organizational structure, such as a file
+      in a directory hierarchy.
+    exact_mappings:
+      - rdfs:label
+      - schema:name
+      - foaf:name
+    close_mappings:
+      - dcterms:title
+      - obo:IAO_0000590
+    range: string
+
+  part_of:
+    description: >-
+      The entity that the subject is a part of. A core relation that
+      holds between a part and its whole.
+    exact_mappings:
+      - obo:BFO_0000050
+      - dcterms:isPartOf
+      - schema:isPartOf
+    domain: Thing
+    range: Thing
+    inverse: parts
+
+  parts:
+    description: >-
+      A related resource that is included either physically or logically
+      in the described resource.
+    exact_mappings:
+      - dcterms:hasPart
+      - schema:hasPart
+    domain: Thing
+    range: Thing
+    multivalued: true
+    inverse: part_of
+
+  roles:
+    description: >-
+      Describes the function of an entity or agent (object) within the scope of
+      a relationship with the subject.
+    range: Thing
+    multivalued: true
+    exact_mappings:
+      - prov:hadRole
+      - dcat:had_role
+
+  same_as:
+    description: >-
+      Declares that the subject and an object are equal.
+      Can be used to indicate a URL of a reference Web page that unambiguously
+      indicates the subject's identity. For example, the URL of the subject's
+      Wikipedia page, Wikidata entry, or official website.
+    range: Thing
+    exact_mappings:
+      - owl:sameAs
+    close_mappings:
+      - schema:sameAs
+
+  short_name:
+    is_a: name
+    description: >-
+      A shortened name for the subject. For example, an acronym, initialism,
+      nickname, or other abbreviation of the `name`.
+    exact_mappings:
+      - pq:P1813
+    broad_mappings:
+      - obo:NCIT_C42610
+    range: string
+
+  title:
+    description: >-
+      A summarily description of the subject. It is closely related to
+      a `name`, but often less compact and more descriptive. Typically used for
+      documents.
+    exact_mappings:
+      - dcterms:title
+    related_mappings:
+      - schema:name
+    range: string
+
+  version_of:
+    description: >-
+      A related resource of which the described resource is a version, edition, or adaptation.
+    range: Thing
+    exact_mappings:
+      - dcterms:isVersionOf

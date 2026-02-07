@@ -1,0 +1,10 @@
+{
+  "pid": "https://doi.org/1234/demo",
+  "about": [
+    "https://en.wikipedia.org/wiki/Marie_Curie"
+  ],
+  "description": "very important science",
+  "schema_type": "dlthings:Study",
+  "title": "Demo",
+  "@type": "Study"
+}

@@ -1,0 +1,143 @@
+id: https://concepts.datalad.org/s/things-study/v1
+name: things-study-schema
+version: UNRELEASED
+status: eunal:concept-status/DRAFT
+title: Concept related to scientific studies for use with the things schema
+description: |
+  *This is an unreleased development version*
+
+  This schema provides the foundational concepts of `Study` and `Subject`
+  for capturing key aspects of a scientific investigation.
+
+  A `Subject` a domain agnostic model that identifies the context of a `Study`
+  for which it is valid. A `Study` supports classification of investigated
+  `factors`, and observed outcome variable (`dimensions`).
+
+  It is suggested to use provenance information (`things-prov`) to capture
+  the relationship with investigative or data generating activities and actors.
+  Consequently, no such slots are provided by this schema.
+
+  More information may be available on the schema's [about page](about).
+
+  The schema definition is available as
+
+  - [JSON-LD context](../v1.context.jsonld)
+  - [LinkML YAML](../v1.yaml)
+  - [LinkML YAML (static/resolved)](../v1.static.yaml)
+  - [OWL TTL](../v1.owl.ttl)
+  - [SHACL TTL](../v1.shacl.ttl)
+
+comments:
+  - ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
+
+license: MIT
+
+prefixes:
+  dash: http://datashapes.org/dash#
+  dcterms: http://purl.org/dc/terms/
+  dlschemas: https://concepts.datalad.org/s/
+  dlthings: https://concepts.datalad.org/s/things/v1/
+  eunal: http://publications.europa.eu/resource/authority/
+  foaf: http://xmlns.com/foaf/0.1/
+  FRAPO: http://purl.org/cerif/frapo/
+  linkml: https://w3id.org/linkml/
+  obo: http://purl.obolibrary.org/obo/
+  owl: http://www.w3.org/2002/07/owl#
+  prov: http://www.w3.org/ns/prov#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  xsd: http://www.w3.org/2001/XMLSchema#
+
+default_prefix: dlthings
+
+emit_prefixes:
+  - dlthings
+  - rdf
+  - rdfs
+  - skos
+  - xsd
+
+imports:
+  - dlschemas:things-properties/v1
+
+slots:
+  dimensions:
+    title: Outcomes variables
+    description: >-
+      Associated outcome variables.
+    range: Thing
+    multivalued: true
+
+  factors:
+    title: Influencing factors
+    description: >-
+      Factors that influence the subject matter.
+    range: Thing
+    multivalued: true
+
+  study:
+    title: Study context
+    description: >-
+      The study in which, for example, a subject was investigated.
+    range: Study
+
+
+classes:
+  Study:
+    is_a: Thing
+    description: >-
+      A planned process that consists of parts: planning, study design
+      execution, documentation and which produce conclusion(s). An investigational
+      endeavour that involves research, enabled by a project. The study
+      relates to the scholarly and practical aspects of conducting the research
+      itself, including the hypotheses being investigated, the data being
+      gathered and analysed, the interpretations being drawn from the data,
+      and the results obtained. In contrast, a project that enables it
+      encompasses the administrative aspects of undertaking the endeavour,
+      including the funding obtained, the people involved, and the management
+      of the project in terms of deadlines and deliverables.
+    exact_mappings:
+      - obo:OBI_0000066
+      - sio:SIO_001066
+      - FRAPO:Investigation
+    narrow_mappings:
+      - sio:SIO_000994
+      - obo:NCIT_C15206
+    broad_mappings:
+      - prov:Activity
+      - obo:BFO_0000015
+    slots:
+      - dimensions
+      - factors
+      - title
+      - part_of
+    slot_usage:
+      part_of:
+        range: Study
+        multivalued: true
+
+  Subject:
+    is_a: Thing
+    description: >-
+      A subject is an entity being investigated in a study. This is a
+      contextual entity. One and the same entity can be different
+      subjects in two different studies.
+    slots:
+      - study
+    slot_usage:
+      study:
+        range: Study
+      kind:
+        title: Type
+        description: >-
+          A classifier that identifies the nature/type of a subject.
+          For specimen (a subject derived/taken from another subject),
+          this classifier should be more precise than the classifier
+          of the source subject.
+    comments:
+      - Rather than adding a `name` slot to assign a subject identifier,
+        the `identifiers` slot should be used for that -- possible
+        also identifying the issuing entity of that identifier via
+        `creator`.
