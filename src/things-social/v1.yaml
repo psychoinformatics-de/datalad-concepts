@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-social/v1
 name: things-social-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Basic social concepts for use with the things schema
 description: |

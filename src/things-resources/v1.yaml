@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-resources/v1
 name: things-resources-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concepts related to resources for use with the things schema
 description: |

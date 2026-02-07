@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-data/v1
 name: things-data-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concepts for hierarchical data representations for use with the things schema
 description: |

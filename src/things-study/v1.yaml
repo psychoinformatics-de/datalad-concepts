@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-study/v1
 name: things-study-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concept related to scientific studies for use with the things schema
 description: |

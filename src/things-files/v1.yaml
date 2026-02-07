@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-files/v1
 name: things-files-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concept related to files for use with the things schema
 description: |
