@@ -21,6 +21,7 @@ description: |
     validation and precise data transformations ([`schema_type`](schema_type))
     without limiting the general expressiveness to a fixed set of classes
     available this foundational schema.
+  - can be associated with any number of ([`identifiers`](identifiers).
 
   More information on this schema is available on a [dedicated page](about).
   Each class comes with dedicated examples that exemplify its use. A good
@@ -28,11 +29,12 @@ description: |
 
   Although this generic schema could be used directly, it is meant to be used
   as a foundational building block for more targeted schemas. Therefore, the
-  schema does not define common slots like `name`, or `description`, and leaves
+  schema does not define common slots like `name`, or `title`, and leaves
   this to more targeted schemas to decide if such slots are needed, and how they
   should be defined. The envisioned use and reuse of this schema is to import
   it and built targeted derivatives of `Thing` and other classes provided here.
-  See the [PROV schema](/s/prov) for an example that is built on this schema.
+  See the [things-data schema](/s/things-data) for an example that is built on
+  this schema.
 
   This schema also incorporates a few fundamental type definitions, such as
   [`HexBinary`](HexBinary) (for checksum-like identifiers), and
@@ -45,6 +47,20 @@ description: |
   - [LinkML YAML (static/resolved)](../unreleased.static.yaml)
   - [OWL TTL](../unreleased.owl.ttl)
   - [SHACL TTL](../unreleased.shacl.ttl)
+
+  ## Upgrading vom Version 1
+
+  Most changes to the schema have been additions and should not break existing
+  use cases. However, the following changes are backward incompatible
+
+  - All `sh:order` slot annotations have been removed.
+  - The `ADMS` vocabulary is no longer used and the prefix definition was removed.
+  - The obsolete `dltypes` prefix has been removed.
+  - The `exthisns` prefix definition was removed. The `ex` prefix continues to be
+    available.
+
+  A dedicated `AnnotationTag` class has been added, and is used as the `range`
+  of the `annotation_tag` slot.
 
 license: MIT
 
