@@ -24,22 +24,17 @@ The sources for all schemas are on [GitHub](https://github.com/psychoinformatics
 
 ### Latest releases
 
-- [Things (v1)](s/things/v1/index.md): foundational schema to describe any "thing"
-
-### Development
-
-ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
-
-- [Things properties schema](s/things-properties/unreleased/index.md)
-- [Things data schema](s/things-data/unreleased/index.md)
-- [Things study schema](s/things-study/unreleased/index.md)
-- [Things resources schema](s/things-resources/unreleased/index.md)
-- [Things rules schema](s/things-rules/unreleased/index.md)
-- [Things distributions schema](s/things-distributions/unreleased/index.md)
-- [Things social schema](s/things-social/unreleased/index.md)
-- [Things files schema](s/things-files/unreleased/index.md)
-- [Things publications schema](s/things-publications/unreleased/index.md)
-- [Things provenance schema](s/things-prov/unreleased/index.md)
+- [Things (v2)](s/things/v2/index.md): foundational schema to describe any "thing"
+- [Things properties add-on (v1)](s/things-properties/v1/index.md)
+- [Things data add-on (v1)](s/things-data/v1/index.md)
+- [Things study add-on (v1)](s/things-study/v1/index.md)
+- [Things resources add-on (v1)](s/things-resources/v1/index.md)
+- [Things rules add-on (v1)](s/things-rules/v1/index.md)
+- [Things distributions add-on (v1)](s/things-distributions/v1/index.md)
+- [Things social add-on (v1)](s/things-social/v1/index.md)
+- [Things files add-on (v1)](s/things-files/v1/index.md)
+- [Things publications add-on (v1)](s/things-publications/v1/index.md)
+- [Things provenance add-on (v1)](s/things-prov/v1/index.md)
 
 ### Previous versions
 
