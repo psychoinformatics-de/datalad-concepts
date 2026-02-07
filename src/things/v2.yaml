@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things/v2
 name: things-schema
-version: unreleased
+version: 2.0.0
 status: eunal:concept-status/DRAFT
 title: Generic schema for an arbitrarily detailed description of "things"
 description: |

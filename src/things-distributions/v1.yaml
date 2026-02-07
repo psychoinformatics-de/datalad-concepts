@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-distributions/v1
 name: things-distributions-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concept related to distributions for use with the things schema
 description: |

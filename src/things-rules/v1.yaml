@@ -1,6 +1,6 @@
 id: https://concepts.datalad.org/s/things-rules/v1
 name: things-rules-schema
-version: UNRELEASED
+version: 1.0.0
 status: eunal:concept-status/DRAFT
 title: Concepts related to rules applying to resources for use with the things schema
 description: |
