@@ -4,6 +4,8 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Basic social concepts for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   This schema defines basic social concepts (people, organizations,
   projects) as extensions of the general `things` model. It builds
   on the `properties` and `spatial` add-ons and provides name-related

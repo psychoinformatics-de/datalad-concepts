@@ -4,6 +4,8 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Provenance properties and class mixins for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   This schema mixin provides the majority of the terms and relationships
   defined by [PROV-O](https://www.w3.org/TR/prov-o/), with the following
   exceptions and deviations. It is implemented as a mixin to be able to

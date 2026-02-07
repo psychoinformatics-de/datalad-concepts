@@ -4,8 +4,12 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concepts related to resources for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   Resources here are things that enable, inform, or are otherwise utilizes
-  by activities.
+  by activities. This schema provides a number of classes for select
+  concept in this domain, such as `Convention`, `Document`, and
+  `Instrument`.
 
   More information may be available on the schema's [about page](about).
 

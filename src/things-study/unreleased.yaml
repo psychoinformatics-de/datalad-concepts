@@ -4,8 +4,18 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concept related to scientific studies for use with the things schema
 description: |
-  FLAT stands for Flexbile Low-complexity Annotation Technique.
-  The FLAT-study schema contains classes to describe scientific studies.
+  *This is an unreleased development version*
+
+  This schema provides the foundational concepts of `Study` and `Subject`
+  for capturing key aspects of a scientific investigation.
+
+  A `Subject` a domain agnostic model that identifies the context of a `Study`
+  for which it is valid. A `Study` supports classification of investigated
+  `factors`, and observed outcome variable (`dimensions`).
+
+  It is suggested to use provenance information (`things-prov`) to capture
+  the relationship with investigative or data generating activities and actors.
+  Consequently, no such slots are provided by this schema.
 
   More information may be available on the schema's [about page](about).
 

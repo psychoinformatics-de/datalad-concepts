@@ -4,6 +4,21 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concept related to publications for use with the things schema
 description: |
+  *This is an unreleased development version*
+
+  The schema primarily provides classes for `DOI` and `ISSN` identifiers.
+  In addition, a simplistic `Publication` class is included. This class
+  does not provide any slots targeting bibliographic metadata. Instead,
+  it is suggested to capture the linkage of a publication to authors,
+  publishers, sponsors, and publication venues via provenance metadata
+  (see `things-prov` and the `research-information` demonstrator).
+
+  Using the standard `attributes` slots of a `Thing` it is nevertheless
+  straightforward to describe a publication via the many properties
+  provided by the `bibo`, `CiTO`, and other vocabularies. For the
+  description of licenses, or access policies concerning publications,
+  please see the `things-rules` schema addon.
+
   More information may be available on the schema's [about page](about).
 
   The schema definition is available as

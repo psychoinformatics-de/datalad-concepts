@@ -4,9 +4,11 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concepts for hierarchical data representations for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   The schema defines conceptual models for datasets and individual data items
   to describe their nature and relationships across formats and linked with
-  their serializationa (see `things-distribution` and `things-files`)
+  their serializationa (see `things-distributions` and `things-files`).
 
   More information may be available on the schema's [about page](about).
 
