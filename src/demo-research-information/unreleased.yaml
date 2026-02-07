@@ -49,7 +49,7 @@ prefixes:
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
   dlschemas: https://concepts.datalad.org/s/
-  dlthings: https://concepts.datalad.org/s/things/unreleased/
+  dlthings: https://concepts.datalad.org/s/things/v2/
   dlvocab: https://concepts.datalad.org/vocab/
   doi: https://doi.org/
   eunal: http://publications.europa.eu/resource/authority/
@@ -109,14 +109,14 @@ emit_prefixes:
   - xyzrins
 
 imports:
-  - dlschemas:things-data/unreleased
-  - dlschemas:things-files/unreleased
-  - dlschemas:things-publications/unreleased
-  - dlschemas:things-resources/unreleased
-  - dlschemas:things-prov/unreleased
-  - dlschemas:things-social/unreleased
-  - dlschemas:things-study/unreleased
-  - dlschemas:things-rules/unreleased
+  - dlschemas:things-data/v1
+  - dlschemas:things-files/v1
+  - dlschemas:things-publications/v1
+  - dlschemas:things-resources/v1
+  - dlschemas:things-prov/v1
+  - dlschemas:things-social/v1
+  - dlschemas:things-study/v1
+  - dlschemas:things-rules/v1
 
 slots:
   application_deadline:
