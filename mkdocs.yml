@@ -6,43 +6,18 @@ nav:
   - Schemas:
     - Foundational:
       - Things: s/things/v1/index.md
-      - Things properties: s/things-properties/unreleased/index.md
       - Things data: s/things-data/unreleased/index.md
-      - Things study: s/things-study/unreleased/index.md
+      - Things distributions: s/things-distributions/unreleased/index.md
+      - Things files: s/things-files/unreleased/index.md
       - Things resources: s/things-resources/unreleased/index.md
       - Things rules: s/things-rules/unreleased/index.md
-      - Things distributions: s/things-distributions/unreleased/index.md
       - Things social: s/things-social/unreleased/index.md
-      - Things files: s/things-files/unreleased/index.md
-      - Things publications: s/things-publications/unreleased/index.md
+      - Things study: s/things-study/unreleased/index.md
+      - Things properties: s/things-properties/unreleased/index.md
       - Things provenance: s/things-prov/unreleased/index.md
-      - Types: s/types/v1/index.md
-      - Identifiers (dev): s/identifiers/unreleased/index.md
-      - Common mixin (dev): s/common-mixin/unreleased/index.md
-      - Files mixin (dev): s/files-mixin/unreleased/index.md
-      - Provenance mixin (dev): s/prov-mixin/unreleased/index.md
-      - Publications mixin (dev): s/publications-mixin/unreleased/index.md
-      - Quantities mixin (dev): s/quantities-mixin/unreleased/index.md
-      - Relations mixin (dev): s/relations-mixin/unreleased/index.md
-      - Resources mixin (dev): s/resources-mixin/unreleased/index.md
-      - Social mixin (dev): s/social-mixin/unreleased/index.md
-      - Spatial mixin (dev): s/spatial-mixin/unreleased/index.md
-      - Study mixin (dev): s/study-mixin/unreleased/index.md
-      - Temporal mixin (dev): s/temporal-mixin/unreleased/index.md
-      - Versions mixin (dev): s/versions-mixin/unreleased/index.md
-    - FLAT:
-      - Base (dev): s/flat/unreleased/index.md
-      - Social (dev): s/flat-social/unreleased/index.md
-      - Provenance (dev): s/flat-prov/unreleased/index.md
-      - Resources (dev): s/flat-resources/unreleased/index.md
-      - Study (dev): s/flat-study/unreleased/index.md
-      - Files (dev): s/flat-files/unreleased/index.md
-      - Publications (dev): s/flat-publications/unreleased/index.md
-    - Demonstrators:
-      - Empirical data: s/demo-empirical-data/unreleased/index.md
-      - Research assets: s/demo-research-assets/unreleased/index.md
+      - Things publications: s/things-publications/unreleased/index.md
+    - Demonstrator:
       - Research information: s/demo-research-information/unreleased/index.md
-      - RSE group: s/demo-rse-group/unreleased/index.md
   - Dump-things storage: dump-things-storage-v0.md
   - Usage considerations: usage-considerations.md
 plugins:
