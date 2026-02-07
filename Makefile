@@ -162,8 +162,8 @@ checkmodel-outputs/%: src/%.yaml
 # converted formats
 check-validation: \
 	convertexamples/things/unreleased \
-	convertexamples/things/v1 \
 	checkvalidation/things/unreleased \
+	convertexamples/things/v1 \
 	checkvalidation/things/v1 \
 	convertexamples/things-distributions/unreleased \
 	checkvalidation/things-distributions/unreleased \
@@ -181,22 +181,6 @@ check-validation: \
 	checkvalidation/things-files/unreleased \
 	convertexamples/things-publications/unreleased \
 	checkvalidation/things-publications/unreleased \
-	convertexamples/flat/unreleased \
-	checkvalidation/flat/unreleased \
-	convertexamples/flat-prov/unreleased \
-	checkvalidation/flat-prov/unreleased \
-	convertexamples/flat-publications/unreleased \
-	checkvalidation/flat-publications/unreleased \
-	convertexamples/flat-resources/unreleased \
-	checkvalidation/flat-resources/unreleased \
-	convertexamples/flat-social/unreleased \
-	checkvalidation/flat-social/unreleased \
-	convertexamples/flat-study/unreleased \
-	checkvalidation/flat-study/unreleased \
-	convertexamples/identifiers/unreleased \
-	checkvalidation/identifiers/unreleased \
-	convertexamples/flat-files/unreleased \
-	checkvalidation/flat-files/unreleased \
 	convertexamples/demo-empirical-data/unreleased \
 	checkvalidation/demo-empirical-data/unreleased \
 	convertexamples/demo-research-assets/unreleased \
