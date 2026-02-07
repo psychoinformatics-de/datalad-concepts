@@ -25,7 +25,6 @@ The sources for all schemas are on [GitHub](https://github.com/psychoinformatics
 ### Latest releases
 
 - [Things (v1)](s/things/v1/index.md): foundational schema to describe any "thing"
-- [Types (v1)](s/types/v1/index.md): basic types and schema building blocks
 
 ### Development
 
@@ -41,6 +40,55 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Things files schema](s/things-files/unreleased/index.md)
 - [Things publications schema](s/things-publications/unreleased/index.md)
 - [Things provenance schema](s/things-prov/unreleased/index.md)
+
+### Previous versions
+
+- [Things (v1)](s/things/v1/index.md)
+- [Types (v1)](s/types/v1/index.md): this functionality has been merged into the
+  `things` schema directly
+
+## Application schema demonstrators
+
+The following example documents how the provided schema components can be
+combined in to complete schemes for particular purposes. This demonstrator
+is **not** intended to be reusable as a building block for derived schemas.
+
+- [Research information](s/demo-research-information/unreleased/index.md)
+
+### Deprecated components
+
+[Empirical data](s/demo-empirical-data/unreleased/index.md) was a demonstrator
+of an early schema development. It has been completely superseded the any
+demonstrator listed above.
+
+#### Flexible Low-complexity Annotation Technique (FLAT) schema components
+
+These schema componts have deprecated. Their functionality and design aspects
+have been incorporated in the latest released of the `things` schema collection.
+
+These FLAT schemas aimed for being maximally lean and orthogonal with respect to
+other FLAT schema components.  This is achieved by reducing the included slots
+to bare necessities, and by avoiding class inheritance from other (even closely
+related) concepts.  As a result, the FLAT schemas are most suitable for
+mix-and-match composition of schemas geared towards (meta)data submission
+systems and form generation.  They minimizes the required cognitive complexity
+for providing complete records in a particular context, by avoiding the forced
+inclusion of meaningful, but undesired concepts and relationships.  This
+simplification typically comes with the need to further subclass and extend
+these base concepts for any given application context.  The provided
+demonstrator schemas illustrator this concept.
+
+- [FLAT base schema](s/flat/unreleased/index.md)
+- [Social schema](s/flat-social/unreleased/index.md)
+- [Provenance schema](s/flat-prov/unreleased/index.md)
+- [Resources schema](s/flat-resources/unreleased/index.md)
+- [Study schema](s/flat-study/unreleased/index.md)
+- [Files schema](s/flat-files/unreleased/index.md)
+- [Publications schema](s/flat-publications/unreleased/index.md)
+
+The deprecated schemas above were built on the following, also deprecated,
+schema components.
+
 - [Identifiers schema](s/identifiers/unreleased/index.md)
 - [Common properties mixin](s/common-mixin/unreleased/index.md)
 - [Files mixin](s/files-mixin/unreleased/index.md)
@@ -55,35 +103,10 @@ ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
 - [Temporal properties mixin](s/temporal-mixin/unreleased/index.md)
 - [Versions mixin](s/versions-mixin/unreleased/index.md)
 
-## Flexible Low-complexity Annotation Technique (FLAT) schema components
+The following examples documented how the FLAT schema components can be
+combined in to complete schemes for particular purposes.
 
-These FLAT schemas aim for being maximally lean and orthogonal with respect to other FLAT schema components.
-This is achieved by reducing the included slots to bare necessities, and by avoiding class inheritance from other (even closely related) concepts.
-As a result, the FLAT schemas are most suitable for mix-and-match composition of schemas geared towards (meta)data submission systems and form generation.
-They minimizes the required cognitive complexity for providing complete records in a particular context, by avoiding the forced inclusion of meaningful, but undesired concepts and relationships.
-This simplification typically comes with the need to further subclass and extend these base concepts for any given application context.
-The provided demonstrator schemas illustrator this concept.
-
-ALL CONTENT HERE IS UNRELEASED AND MAY CHANGE ANY TIME
-
-- [FLAT base schema](s/flat/unreleased/index.md)
-- [Social schema](s/flat-social/unreleased/index.md)
-- [Provenance schema](s/flat-prov/unreleased/index.md)
-- [Resources schema](s/flat-resources/unreleased/index.md)
-- [Study schema](s/flat-study/unreleased/index.md)
-- [Files schema](s/flat-files/unreleased/index.md)
-- [Publications schema](s/flat-publications/unreleased/index.md)
-
-
-## Application schema demonstrators
-
-The following examples document how the provided schema components can be
-combined in to complete schemes for particular purposes. These demonstrators
-are **not** intended to be reusable as building blocks for derived schemas.
-
-- [Empirical data](s/demo-empirical-data/unreleased/index.md)
 - [Research assets](s/demo-research-assets/unreleased/index.md)
-- [Research information](s/demo-research-information/unreleased/index.md)
 - [Research software engineering group](s/demo-rse-group/unreleased/index.md)
 
 
