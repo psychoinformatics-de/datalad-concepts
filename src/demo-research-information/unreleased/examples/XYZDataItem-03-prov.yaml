@@ -14,3 +14,9 @@ attributed_to:
     roles:
       # Data contributor
       - marcrel:dtc
+generated_by:
+  # measuring
+  object: sio:SIO_001054
+  used:
+    # anemometer (physical object)
+    - object: http://snomed.info/id/701921001

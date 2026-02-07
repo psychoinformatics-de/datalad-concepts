@@ -17,5 +17,15 @@
       "schema_type": "dlthings:Attribution"
     }
   ],
+  "generated_by": {
+    "object": "sio:SIO_001054",
+    "schema_type": "dlthings:Generation",
+    "used": [
+      {
+        "object": "http://snomed.info/id/701921001",
+        "schema_type": "dlthings:Usage"
+      }
+    ]
+  },
   "@type": "XYZDataItem"
 }

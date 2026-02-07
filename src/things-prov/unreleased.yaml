@@ -576,6 +576,8 @@ classes:
       Generation is the completion of production of a new entity by an
       activity. This entity did not exist before generation and becomes
       available for usage after this generation.
+    slots:
+      - used
     slot_usage:
       object:
         description: Generating activity.
@@ -585,6 +587,12 @@ classes:
         description: Location where the generating activity took place.
       at_time:
         description: Timepoint when the generating activity happened.
+      used:
+        range: Usage
+        description: Entities used for the generation (e.g., instruments).
+        multivalued: true
+        inlined: true
+        inlined_as_list: true
     exact_mappings:
       - prov:Generation
 
