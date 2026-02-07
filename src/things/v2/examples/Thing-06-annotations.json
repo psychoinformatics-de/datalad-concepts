@@ -1,0 +1,18 @@
+{
+  "pid": "https://example.org/thething",
+  "annotations": {
+    "obo:NCIT_C42615": {
+      "annotation_tag": "obo:NCIT_C42615",
+      "annotation_value": "https://www.trr379.de/contributors/michael-hanke"
+    },
+    "dcterms:audience": {
+      "annotation_tag": "dcterms:audience",
+      "annotation_value": "obo:NCIT_C49060"
+    },
+    "obo:NCIT_C71491": {
+      "annotation_tag": "obo:NCIT_C71491"
+    }
+  },
+  "schema_type": "dlthings:Thing",
+  "@type": "Thing"
+}

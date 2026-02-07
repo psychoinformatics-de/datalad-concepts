@@ -20,6 +20,7 @@ build/linkml-docs: \
 	build/linkml-docs/s/relations-mixin/unreleased \
 	build/linkml-docs/s/things/unreleased \
 	build/linkml-docs/s/things/v1 \
+	build/linkml-docs/s/things/v2 \
 	build/linkml-docs/s/things-properties/unreleased \
 	build/linkml-docs/s/things-data/unreleased \
 	build/linkml-docs/s/things-study/unreleased \
@@ -99,6 +100,7 @@ check-models: \
 	checkmodel/relations-mixin/unreleased \
 	checkmodel/things/unreleased \
 	checkmodel/things/v1 \
+	checkmodel/things/v2 \
 	checkmodel/things-properties/unreleased \
 	checkmodel/things-study/unreleased \
 	checkmodel/things-data/unreleased \
@@ -165,6 +167,8 @@ check-validation: \
 	checkvalidation/things/unreleased \
 	convertexamples/things/v1 \
 	checkvalidation/things/v1 \
+	convertexamples/things/v2 \
+	checkvalidation/things/v2 \
 	convertexamples/things-distributions/unreleased \
 	checkvalidation/things-distributions/unreleased \
 	convertexamples/things-social/unreleased \
@@ -205,6 +209,7 @@ checkinvalid/%: src/%/validation src/%.yaml
 convert-examples: \
 	convertexamples/things/unreleased \
 	convertexamples/things/v1 \
+	convertexamples/things/v2 \
 	convertexamples/things-distributions/unreleased \
 	convertexamples/things-social/unreleased \
 	convertexamples/things-study/unreleased \

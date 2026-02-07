@@ -1,0 +1,22 @@
+{
+  "pid": "https://doi.org/10.21105/joss.03262",
+  "relations": {
+    "ISSN:2475-9066": {
+      "pid": "ISSN:2475-9066",
+      "attributes": [
+        {
+          "predicate": "ex:title",
+          "schema_type": "dlthings:AttributeSpecification",
+          "value": "Journal of Open Source Software"
+        }
+      ],
+      "schema_type": "dlthings:Thing"
+    },
+    "https://www.scicrunch.org/resolver/SCR_003931": {
+      "pid": "https://www.scicrunch.org/resolver/SCR_003931",
+      "schema_type": "dlthings:Thing"
+    }
+  },
+  "schema_type": "dlthings:Thing",
+  "@type": "Thing"
+}

@@ -1,0 +1,5 @@
+# Technically, the only required aspect of an AttributeSpecification
+# is a predicate. That is because an attribute may not only have a
+# single value, but is a more complex collection of attribute facets.
+predicate: ex:title
+value: "My attribute"

@@ -1,0 +1,13 @@
+# generic record annotation available for any `Thing`.
+# annotation tags can be Thing identifiers, enabling the
+# use of convention-driven local annotation patterns.
+# annotation values are arbitrary strings, their interpretation
+# being subject to such conventions
+pid: https://example.org/thething
+annotations:
+  # approved by
+  obo:NCIT_C42615: https://www.trr379.de/contributors/michael-hanke
+  # target audience is the public
+  dcterms:audience: obo:NCIT_C49060
+  # deprecated
+  obo:NCIT_C71491:

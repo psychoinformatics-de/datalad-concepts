@@ -1,0 +1,20 @@
+{
+  "predicate": "ex:identifier",
+  "exact_mappings": [
+    "obo:IAO_0020000"
+  ],
+  "attributes": [
+    {
+      "predicate": "skos:notation",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "5008462-8"
+    },
+    {
+      "predicate": "dcterms:creator",
+      "schema_type": "dlthings:AttributeSpecification",
+      "value": "https://d-nb.info"
+    }
+  ],
+  "schema_type": "dlthings:AttributeSpecification",
+  "@type": "AttributeSpecification"
+}

@@ -1,0 +1,13 @@
+# `relations` is the only slot that allows for inlining other `Thing`
+# records
+# example: a paper
+pid: https://doi.org/10.21105/joss.03262
+relations:
+  # the containing journal
+  ISSN:2475-9066:
+    # inlined information
+    attributes:
+      - predicate: ex:title
+        value: "Journal of Open Source Software"
+  # the datalad software (no information beyond the `pid` is inlined)
+  https://www.scicrunch.org/resolver/SCR_003931:

@@ -1,0 +1,6 @@
+# Relate a thing to topic/subjects
+pid: https://doi.org/10.21105/joss.03262
+characterized_by:
+  # DataLad software
+  - object: https://www.scicrunch.org/resolver/SCR_003931
+    predicate: ex:subject

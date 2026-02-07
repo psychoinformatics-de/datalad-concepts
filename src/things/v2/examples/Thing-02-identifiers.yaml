@@ -1,0 +1,23 @@
+# Identification options for a thing.
+#
+# `pid` is the identifier of the metadata record. In practice it can
+# by any of the identifiers below. In a particular context, it is often
+# useful to agree on a particular type of identifier to simplify knowledge
+# aggregation for individual things. Arbitrary other identifiers
+# can be recorded in addition.
+pid: https://ror.org/02nv7yv05
+identifiers:
+  # Research Organization Registry
+  - notation: 02nv7yv05
+    creator: https://ror.org
+  # German National Library
+  # (here not using the direct value specification, but defining
+  #  a proper identifier with a `notation`)
+  - notation: 5008462-8
+    creator: https://d-nb.info
+characterized_by:
+  # Use `sameAs` to point to other sources talking about the same thing
+  - object: https://en.wikipedia.org/wiki/Forschungszentrum_J%C3%BClich
+    predicate: owl:sameAs
+  - object: https://www.wikidata.org/wiki/Q697111
+    predicate: owl:sameAs

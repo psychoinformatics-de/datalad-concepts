@@ -1,0 +1,5 @@
+{
+  "object": "https://helmholtz.de",
+  "predicate": "ex:subject",
+  "@type": "Statement"
+}
