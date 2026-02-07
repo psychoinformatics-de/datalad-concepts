@@ -4,6 +4,16 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concept related to files for use with the things schema
 description: |
+  *This is an unreleased development version*
+
+  Files are modeled as a special case of a `Distribution`, a manifestation
+  of some information in the form of a concrete electronic file. Files
+  have a certain formation, size in bytes, and checksum. They do not, however,
+  have a particular file name. The filename is considered contextual
+  information, captured an entity containing a file (such as an archive,
+  or a directory). With this approach, one and the same `File` object
+  can be reused by multiple "containers" without duplication.
+
   More information may be available on the schema's [about page](about).
 
   The schema definition is available as

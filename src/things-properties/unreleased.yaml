@@ -4,6 +4,8 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Collection of common properties for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   This schema provides a collection of common data properties and object
   properties for use with the things schema.
   It can be imported directly into other linkml schemas, or any of its

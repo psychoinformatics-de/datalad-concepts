@@ -4,10 +4,16 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concepts related to rules applying to resources for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   Rules can be restricting or granting permissions. A concrete example
   is a license. However, a rule can also be a requirement that has to be met
   in order to be able to use a resource, such as a citation or acknowledgment
   requirement.
+
+  This schema provides a `rules` slot, and an associated `Rule` class that
+  can be used to capture permissions and regulation for a wide range of
+  concepts.
 
   More information may be available on the schema's [about page](about).
 

@@ -4,6 +4,8 @@ version: UNRELEASED
 status: eunal:concept-status/DRAFT
 title: Concept related to distributions for use with the things schema
 description: |
+  *This is an unreleased development version*
+
   Distributions are (physical) manifestations of conceptual entities.
   An example is a physical book (a distribution) that contains a particular
   story (conceptual entity).
