@@ -155,6 +155,7 @@ types:
 slots:
   about:
     slot_uri: dcterms:subject
+    title: About
     description: >-
       A relation of an information artifact to the subject, such as
       a URL identifying the topic of a document.
@@ -176,10 +177,12 @@ slots:
       - obo:NCIT_C44272
 
   annotation_tag:
+    title: Tag
     description: A tag identifying an annotation.
     range: Thing
 
   annotation_value:
+    title: Value
     description: The actual annotation.
     range: string
 
@@ -218,7 +221,7 @@ slots:
 
   characterized_by:
     slot_uri: dlthings:characterized_by
-    title: Is characterized by
+    title: Characterized by
     description: >-
       Qualifies relationships between a subject `Thing` and an object `Thing`
       with a `Statement` declaring a `predicate` on the nature of the
@@ -242,12 +245,14 @@ slots:
 
   creator:
     slot_uri: dcterms:creator
+    title: Creator
     description: >-
       An agent responsible for making an entity.
     range: Thing
 
   defined_by:
     slot_uri: rdfs:isDefinedBy
+    title: Defined by
     description: >-
       Indicate a resource defining the subject. This may be a vocabulary
       that describes the subject.
@@ -307,6 +312,7 @@ slots:
 
   identifiers:
     slot_uri: dcterms:identifier
+    title: Identifiers
     description: An unambiguous reference to the subject within a given context.
     exact_mappings:
       - schema:identifier
@@ -317,6 +323,7 @@ slots:
 
   kind:
     slot_uri: dcterms:type
+    title: Kind
     description: >-
       The nature of the subject.
     range: Thing
@@ -353,6 +360,7 @@ slots:
 
   notation:
     slot_uri: skos:notation
+    title: Notation
     description: >-
       String of characters such as "T58:5" or "30:4833" used to uniquely
       identify a concept within the scope of a given concept scheme.
@@ -360,6 +368,7 @@ slots:
 
   object:
     slot_uri: rdf:object
+    title: Object
     description: >-
       Reference to a `Thing` within a `Statement`.
     range: Thing
@@ -379,6 +388,7 @@ slots:
 
   predicate:
     slot_uri: rdf:predicate
+    title: Predicate
     description: >-
       Reference to a `Property` within a `Statement`.
     range: Thing
@@ -389,6 +399,7 @@ slots:
 
   range:
     slot_uri: rdfs:range
+    title: Value type (range)
     description: >-
       Declares that the value of a `Thing` or `AttributeSpecification`
       are instances of a particular class.
@@ -423,6 +434,7 @@ slots:
   schema_type:
     slot_uri: rdf:type
     designates_type: true
+    title: Schema type
     description: >-
       State that the subject is an instance of a particular schema class.
       Typically, no explicit value needs to be assigned to this slot,
@@ -437,12 +449,14 @@ slots:
 
   unit:
     slot_uri: obo:UO_0000000
+    title: Unit
     description: >-
       A unit of measurement is a standardized quantity of a physical quality.
     range: uriorcurie
 
   value:
     slot_uri: rdf:value
+    title: Value
     description: >-
       Value that is a direct representation of a thing.
     relational_role: OBJECT
