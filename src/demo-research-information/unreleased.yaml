@@ -45,6 +45,7 @@ prefixes:
   # TODO preliminary definition, pointing to a future resolver
   datalad: https://pid.datalad.org/datasets/
   dash: http://datashapes.org/dash#
+  dcat: http://www.w3.org/ns/dcat#
   dcterms: http://purl.org/dc/terms/
   # TODO preliminary definition, pointing to a future resolver
   dldi: https://pid.datalad.org/distributions/
