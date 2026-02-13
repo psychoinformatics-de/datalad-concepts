@@ -272,7 +272,6 @@ classes:
         range: XYZDataset
         multivalued: true
       attributed_to:
-        title: Contributors
         multivalued: true
         inlined_as_list: true
       generated_by:
@@ -285,6 +284,8 @@ classes:
         range: XYZInfluence
         multivalued: true
         inlined_as_list: true
+      kind:
+        range: XYZDataType
 
   XYZDepiction:
     is_a: Thing
@@ -301,6 +302,7 @@ classes:
       - conforms_to
       - distributions
       - rules
+      - title
     slot_usage:
       kind:
         # portrait photo, oil painting, figure, clipart
@@ -673,7 +675,7 @@ classes:
     title: Agent role
     description: >-
       A role is the function of an agent with respect to a subject,
-      in the context of an attribution.
+      in the context of an influence.
     slots:
       - name
     broad_mappings:
@@ -741,6 +743,18 @@ classes:
     title: Depiction type
     description: >-
       Type of a depiction.
+
+  XYZEntityRole:
+    is_a: Thing
+    title: Entity role
+    description: >-
+      A role is the function of an entity with respect to a subject,
+      in the context of an influence.
+    slots:
+      - name
+    broad_mappings:
+      - prov:Role
+      - dcat:Role
 
   XYZInstrumentType:
     is_a: Thing
@@ -820,28 +834,6 @@ classes:
     exact_mappings:
       - obo:IAO_0000708
 
-  XYZAgentInfluence:
-    # this is not derived from AgentInfluence, because we only need it for UI
-    # purposed. it shows up as an alternative wherever XYZInfluence is the
-    # range (e.g. influenced_by). it provides an effective way to constrain
-    # the space for possible object and roles instances. other than that
-    # it does not change the semantics or structure compared to XYZInfluence,
-    # hence any instance continues to be fully compatible with no loss of
-    # information when "seen" through the interface of XYZInfluence
-    is_a: XYZInfluence
-    description: >-
-      Influence is the capacity of an agent to have an effect on the character,
-      development, or behavior of a subject.
-    slot_usage:
-      object:
-        title: Agent
-        any_of:
-          - range: XYZPerson
-          - range: XYZOrganization
-      roles:
-        title: Roles
-        range: XYZAgentRole
-
   XYZCommunication:
     is_a: Communication
     title: Communication
@@ -867,19 +859,3 @@ classes:
     slots:
       - ended
       - started
-
-  XYZObjectiveInfluence:
-    # see XYZAgentRole for rationale on deriving from XYZInfluence rather
-    # than EntityInfluence
-    is_a: XYZInfluence
-    description: >-
-      Influence of an objective on the subject.
-    slot_usage:
-      object:
-        title: Objective
-        range: XYZObjective
-      roles:
-        title: Roles
-        # TODO adopt some kind of classification of objective types
-        # (longterm goal, deliverable, ambition, contractual obligation, ...)
-        # range: XYZObjectiveRole
