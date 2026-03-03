@@ -280,13 +280,13 @@ convertexamples/%: src/%.yaml src/%/examples
 		[ "$$ex" = "$<" ] && continue; \
 		echo "Converting $$ex" ; \
 		for outf in json rdf; do \
-			linkml-convert \
-				-s "$<" \
+			( cd $$(dirname "$<"); linkml-convert \
+				-s "$$(basename "$<")" \
 				--target-class-from-path \
 				--infer \
 				-t "$$outf" \
-				"$$ex" \
-				> $${ex%.yaml}.$${outf}.tmp && \
+				../../"$$ex" \
+				) > $${ex%.yaml}.$${outf}.tmp && \
 			mv $${ex%.yaml}.$${outf}.tmp $${ex%.yaml}.$${outf} ; \
 		done \
 	done
