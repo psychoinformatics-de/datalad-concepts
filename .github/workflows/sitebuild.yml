@@ -14,6 +14,9 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  PYTHONWARNINGS: ignore
+
 jobs:
   build:
     runs-on: ubuntu-latest
