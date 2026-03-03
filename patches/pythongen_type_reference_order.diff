@@ -9,7 +9,7 @@ index bcf13d0f..feb5b7bc 100644
  import os
  import re
 +from collections import defaultdict
- from collections.abc import Iterator
+ from collections.abc import Callable, Iterator
  from copy import copy
  from dataclasses import dataclass
 +from graphlib import TopologicalSorter
