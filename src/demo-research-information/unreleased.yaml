@@ -41,6 +41,7 @@ prefixes:
   CiTO: http://purl.org/spar/cito/
   ISSN: http://identifiers.org/issn/
   ODRL: http://www.w3.org/ns/odrl/2/
+  SCoRO: http://purl.org/spar/scoro/
   bibo: http://purl.org/ontology/bibo/
   # TODO preliminary definition, pointing to a future resolver
   datalad: https://pid.datalad.org/datasets/
