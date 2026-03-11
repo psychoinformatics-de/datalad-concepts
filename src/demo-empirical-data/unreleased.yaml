@@ -66,6 +66,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:flat/unreleased
+  - dlschemas:types/unreleased
 
 
 enums:
@@ -176,8 +177,7 @@ slots:
     title: ORCID
     description: >-
       Associated ORCID identifier (see https://orcid.org).
-    range: string
-    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+    range: OrcidNotation
 
   organization_type:
     title: Organization type

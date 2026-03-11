@@ -81,7 +81,7 @@ classes:
       notation:
         description: >-
           The identifier notation is specified without a URL-prefix, or a `doi:` prefix.
-        pattern: '(?i)^(?!(?:https?://|doi:)).+$'
+        range: DoiNotation
     unique_keys:
       value:
         description: The DOI notation is globally unique within the scope of DOIs
@@ -96,7 +96,7 @@ classes:
       notation:
         description: >-
           The identifier notation is specified without any prefix.
-        pattern: '^\d{4}-\d{3}[\dX]$'
+        range: IssnNotation
     unique_keys:
       value:
         description: The ISSN notation is globally unique within the scope of ISSNs

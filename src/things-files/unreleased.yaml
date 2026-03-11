@@ -172,7 +172,7 @@ classes:
         description: A relative path in POSIX notation.
         key: true
         # ensure no leading slash
-        pattern: '^[^/]+.*$'
+        range: RelativePath
       object:
         # this must be required, if we want to support key-based
         # access to the named distribution parts. this also

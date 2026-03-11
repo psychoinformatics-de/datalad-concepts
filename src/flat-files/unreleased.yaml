@@ -63,6 +63,7 @@ emit_prefixes:
 
 imports:
   - dlschemas:flat/unreleased
+  - dlschemas:types/unreleased
   - dlschemas:common-mixin/unreleased
   - dlschemas:relations-mixin/unreleased
   - dlschemas:spatial-mixin/unreleased
@@ -145,7 +146,7 @@ classes:
         description: A relative path in POSIX notation.
         key: true
         # ensure no leading slash
-        pattern: '^[^/]+.*$'
+        range: RelativePath
       object:
         # this must be required, if we want to support key-based
         # access to the named distribution parts. this also

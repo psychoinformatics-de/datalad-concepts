@@ -144,6 +144,7 @@ imports:
   - dlschemas:flat-social/unreleased
   - dlschemas:flat-study/unreleased
   - dlschemas:prov-mixin/unreleased
+  - dlschemas:types/unreleased
 
 slots:
   application_deadline:
@@ -732,7 +733,7 @@ classes:
         description: >-
           The identifier notation is specified without a URL-prefix,
           or a `orcid:` prefix.
-        pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+        range: OrcidNotation
       schema_agency:
         ifabsent: string(Open Researcher and Contributor ID)
         description: >-

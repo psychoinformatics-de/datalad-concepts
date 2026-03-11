@@ -139,6 +139,7 @@ imports:
   - dlschemas:flat-social/unreleased
   - dlschemas:flat-study/unreleased
   - dlschemas:prov-mixin/unreleased
+  - dlschemas:types/unreleased
 
 
 types:
@@ -178,8 +179,7 @@ slots:
     title: ORCID
     description: >-
       ORCID identifier of a person (see https://orcid.org).
-    range: string
-    pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+    range: OrcidNotation
 
   # TODO: this better becomes an access method (through landing page)
   landing_page:

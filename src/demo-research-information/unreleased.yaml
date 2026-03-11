@@ -119,6 +119,7 @@ imports:
   - dlschemas:things-social/v1
   - dlschemas:things-study/v1
   - dlschemas:things-rules/v1
+  - dlschemas:types/unreleased
 
 slots:
   application_deadline:
@@ -826,7 +827,7 @@ classes:
         description: >-
           The identifier notation is specified without a URL-prefix,
           or a `orcid:` prefix.
-        pattern: '^\d{4}-\d{4}-\d{4}-\d{3}[0-9X]{1}$'
+        range: OrcidNotation
     unique_keys:
       value:
         description: The ORCID notation is globally unique within the scope of ORCIDs
