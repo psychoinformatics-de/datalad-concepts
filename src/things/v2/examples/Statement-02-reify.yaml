@@ -1,0 +1,7 @@
+# make statements about a statement (reification), here annotating
+# generation provenance (of this statement)
+predicate: ex:subject
+object: https://helmholtz.de
+characterized_by:
+  - predicate: http://www.w3.org/ns/prov#wasGeneratedBy
+    object: ex:my-scraper-script

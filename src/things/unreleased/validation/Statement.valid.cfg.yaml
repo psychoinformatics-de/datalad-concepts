@@ -2,6 +2,7 @@ schema: src/things/unreleased.yaml
 target_class: Statement
 data_sources:
   - src/things/unreleased/examples/Statement-01-minimal.yaml
+  - src/things/unreleased/examples/Statement-02-reify.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

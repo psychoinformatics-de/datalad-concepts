@@ -573,6 +573,7 @@ classes:
     slots:
       - object
       - predicate
+      - characterized_by
     slot_usage:
       object:
         required: true
@@ -580,6 +581,11 @@ classes:
       predicate:
         range: Property
         required: true
+      characterized_by:
+        description: >-
+          Make statements about statement, also known as reification.
+        see_also:
+          - https://patterns.dataincubator.org/book/reified-statement.html
     exact_mappings:
       - rdf:Statement
 
