@@ -1,0 +1,5 @@
+creator: ex:org1
+notation: "1234567"
+kind: ex:sap-project-id
+annotations:
+  ex:replaced-by: "1234567new"

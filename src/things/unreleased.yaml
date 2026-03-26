@@ -537,6 +537,8 @@ classes:
 
   Identifier:
     class_uri: dlthings:Identifier
+    mixins:
+      - ThingMixin
     description: >-
       An identifier is a label that uniquely identifies an item in a
       particular context. Some identifiers are globally unique. All
@@ -544,7 +546,6 @@ classes:
     slots:
       - creator
       - notation
-      - schema_type
     slot_usage:
       notation:
         required: true
