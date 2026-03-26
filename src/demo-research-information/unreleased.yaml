@@ -611,7 +611,7 @@ classes:
   XYZStudy:
     is_a: Study
     mixins:
-      - EntityMixin
+      - ActivityMixin
     title: Study
     description: >-
       A planned process that consists of parts: planning, study design
