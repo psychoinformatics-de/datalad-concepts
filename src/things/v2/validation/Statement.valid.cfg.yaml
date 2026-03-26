@@ -2,6 +2,7 @@ schema: src/things/v2.yaml
 target_class: Statement
 data_sources:
   - src/things/v2/examples/Statement-01-minimal.yaml
+  - src/things/v2/examples/Statement-02-reify.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

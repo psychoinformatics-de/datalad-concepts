@@ -1,0 +1,11 @@
+{
+  "object": "https://helmholtz.de",
+  "predicate": "ex:subject",
+  "characterized_by": [
+    {
+      "object": "ex:my-scraper-script",
+      "predicate": "http://www.w3.org/ns/prov#wasGeneratedBy"
+    }
+  ],
+  "@type": "Statement"
+}
