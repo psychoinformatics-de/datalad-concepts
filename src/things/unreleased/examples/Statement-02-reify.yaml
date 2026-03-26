@@ -5,3 +5,7 @@ object: https://helmholtz.de
 characterized_by:
   - predicate: http://www.w3.org/ns/prov#wasGeneratedBy
     object: ex:my-scraper-script
+annotations:
+  ex:review-requested: auto-generated annotations, review required
+editorial_notes:
+  - This subject declaration appears to be too broad.

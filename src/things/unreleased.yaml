@@ -573,7 +573,9 @@ classes:
     slots:
       - object
       - predicate
+      - annotations
       - characterized_by
+      - editorial_notes
     slot_usage:
       object:
         required: true

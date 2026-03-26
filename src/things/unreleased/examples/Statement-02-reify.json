@@ -1,11 +1,20 @@
 {
   "object": "https://helmholtz.de",
   "predicate": "ex:subject",
+  "annotations": {
+    "ex:review-requested": {
+      "annotation_tag": "ex:review-requested",
+      "annotation_value": "auto-generated annotations, review required"
+    }
+  },
   "characterized_by": [
     {
       "object": "ex:my-scraper-script",
       "predicate": "http://www.w3.org/ns/prov#wasGeneratedBy"
     }
+  ],
+  "editorial_notes": [
+    "This subject declaration appears to be too broad."
   ],
   "@type": "Statement"
 }
