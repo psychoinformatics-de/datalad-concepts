@@ -3,6 +3,7 @@ target_class: Identifier
 data_sources:
   - src/things/unreleased/examples/Identifier-01-minimal.yaml
   - src/things/unreleased/examples/Identifier-02-full.yaml
+  - src/things/unreleased/examples/Identifier-03-thingprops.yaml
 plugins:
   JsonschemaValidationPlugin:
     closed: true

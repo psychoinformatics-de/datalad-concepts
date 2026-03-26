@@ -1,0 +1,13 @@
+{
+  "notation": "1234567",
+  "creator": "ex:org1",
+  "annotations": {
+    "ex:replaced-by": {
+      "annotation_tag": "ex:replaced-by",
+      "annotation_value": "1234567new"
+    }
+  },
+  "kind": "ex:sap-project-id",
+  "schema_type": "dlthings:Identifier",
+  "@type": "Identifier"
+}
