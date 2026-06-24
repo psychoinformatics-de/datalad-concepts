@@ -125,12 +125,14 @@ types:
       - The regex is single-quoted for YAML encoding, hence all inner "'" have been doubled
 
   HexBinary:
-    uri: xsd:hexBinary
+    uri: dlthings:HexBinary
     base: str
     typeof: string
     pattern: "^[a-fA-F0-9]+$"
     description: >-
       hex-encoded binary data.
+    exact_mappings:
+      - xsd:hexBinary
 
   NodeUriOrCurie:
     typeof: uriorcurie
