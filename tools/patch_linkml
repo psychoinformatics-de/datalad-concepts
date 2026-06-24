@@ -9,7 +9,8 @@ patch -d $(python -c 'import os; import linkml.generators.shaclgen as m; print(o
 # Honor type-designator slots when loading graphs
 patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.path.dirname(m.__file__))') < patches/rdflib_loader_typedesignator.diff
 # Use correct constructor arguments when normalizing inlined objects
-patch -d $(python -c 'import os; import linkml_runtime.utils.yamlutils as m; print(os.path.dirname(m.__file__))') < patches/linkml_runtime_utils_yamlutils.diff
+# An equivalent change is included in LinkML 1.11.1
+#patch -d $(python -c 'import os; import linkml_runtime.utils.yamlutils as m; print(os.path.dirname(m.__file__))') < patches/linkml_runtime_utils_yamlutils.diff
 # Use `&` to separate multiple interfaces in graphql schemas
 patch -d $(python -c 'import os; import linkml.generators.graphqlgen as m; print(os.path.dirname(m.__file__))') < patches/graphqlgen_interface_list.diff
 # Do not emit python/rdflib upper case namespaces in `ifabsent`-default values
@@ -17,4 +18,5 @@ patch -d $(python -c 'import os; import linkml.generators.common.ifabsent_proces
 # Support explicit type clauses with schema defined types when loading ttl
 patch -d $(python -c 'import os; import linkml_runtime.loaders as m; print(os.path.dirname(m.__file__))') < patches/rdflib_loader_custom_types.diff
 # Order type expressions that are emitted by gen-python correctly
-patch -d $(python -c 'import os; import linkml.generators.pythongen as m; print(os.path.dirname(m.__file__))') < patches/pythongen_type_reference_order.diff
+# LinkML 1.11.1 has the patched function reimplemented, docs suggest the patched issue is addressed
+#patch -d $(python -c 'import os; import linkml.generators.pythongen as m; print(os.path.dirname(m.__file__))') < patches/pythongen_type_reference_order.diff
