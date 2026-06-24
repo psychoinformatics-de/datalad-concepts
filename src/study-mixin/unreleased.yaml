@@ -30,6 +30,7 @@ license: MIT
 prefixes:
   dcterms: http://purl.org/dc/terms/
   dlcommonmx: https://concepts.datalad.org/s/common-mixin/unreleased/
+  dlschemas: https://concepts.datalad.org/s/
   dlstudymx: https://concepts.datalad.org/s/study-mixin/unreleased/
   dlthings: https://concepts.datalad.org/s/things/v1/
   dltypes: https://concepts.datalad.org/s/types/v1/
