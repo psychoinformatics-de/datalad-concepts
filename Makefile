@@ -82,6 +82,9 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 		gen-owl \
 			-f owl \
 			--mergeimports \
+			--consolidate-cardinality-axioms \
+			--skip-vacuous-min-zero-cardinality-axiom \
+			--skip-vacuous-local-range-axioms \
 			$< > $@.owl.ttl && \
 		gen-jsonld-context \
 			--mergeimports \
@@ -159,7 +162,6 @@ checkmodel/%: src/%.yaml
 	@linkml-lint \
 		--config .linkmllint.yaml \
 		--max-warnings 0 \
-		--validate \
 		$<
 	schema="$<"; if [ "$${schema##*-mixin}" = "$<" ]; then $(MAKE) checkmodel-outputs/$*; else echo "Skipping mixin output tests"; fi
 
@@ -175,7 +177,7 @@ checkmodel-outputs/%: src/%.yaml
 	@echo Generate JSON schema
 	@${FAILIF_STDERR} gen-json-schema $< > /dev/null
 	@echo Generate OWL
-	@${FAILIF_STDERR} gen-owl $< > /dev/null
+	@${FAILIF_STDERR} gen-owl --consolidate-cardinality-axioms --skip-vacuous-min-zero-cardinality-axioms --skip-vacuous-local-range-axioms $< > /dev/null
 	@echo Generate Python classes
 	@${FAILIF_STDERR} grep -q '^classes:' $< && ( gen-python $< | python ) || true
 

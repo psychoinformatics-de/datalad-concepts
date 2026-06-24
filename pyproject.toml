@@ -33,7 +33,7 @@ classifiers = [
   "Programming Language :: Python :: Implementation :: PyPy",
 ]
 dependencies = [
-  "linkml >= 1.10",
+  "linkml >= 1.11",
   "dump-things-service",
 ]
 
