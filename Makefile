@@ -83,7 +83,7 @@ build/linkml-docs/s/%: src/%.yaml src/%/extra-docs
 			-f owl \
 			--mergeimports \
 			--consolidate-cardinality-axioms \
-			--skip-vacuous-min-zero-cardinality-axiom \
+			--skip-vacuous-min-zero-cardinality-axioms \
 			--skip-vacuous-local-range-axioms \
 			$< > $@.owl.ttl && \
 		gen-jsonld-context \
