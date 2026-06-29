@@ -74,3 +74,6 @@ strict: false
 theme:
   name: material
   locale: en
+markdown_extensions:
+  - attr_list
+  - md_in_html
